@@ -43,7 +43,7 @@ function OnInit()
     Sound_SetMuteActor("All_")
     Sound_EnableAllSpeech(0)
     
-    SinglePlayer_OnInit()
+    --SinglePlayer_OnInit()
     
     -- Keep accolades hidden for the player (player 0 + 1 for array index)
     PlayerUI_HideAccoladeDisplay[1] = 1
