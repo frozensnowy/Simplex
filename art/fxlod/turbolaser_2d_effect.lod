@@ -1,0 +1,18 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "TURBOLASER_2D_EFFECT",
+		distance = 20000,
+	},
+	lod1 = 
+	{
+		fx = "BASE_TURBOLASER_2D_LOD",
+		distance = 45000,
+	},
+	lod2 = 
+	{
+		fx = "",
+		distance = 70000,
+	},		
+}

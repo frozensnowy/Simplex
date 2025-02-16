@@ -1,0 +1,18 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","smallcannontracer","Normal",2500,4000,0,0,0,0,1,1,0,0.2,4,1,1,1,200,200,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",70,100,"")
+setPenetration(NewWeaponType,90,1,{
+  PlanetKillerArmour = 0,
+},{
+  SubSystemArmour = 1.5,
+})
+setAccuracy(NewWeaponType,0,{
+  Fighter = 0.08,
+  damage = 1,
+},{
+  Corvette = 0.12,
+  damage = 1,
+},{
+  munition = 0.05,
+  damage = 1,
+})
+setAngles(NewWeaponType,0,-60,60,-60,60)

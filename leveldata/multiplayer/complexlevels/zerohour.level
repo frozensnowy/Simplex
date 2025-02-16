@@ -1,0 +1,91 @@
+-- The Simplex Project
+-- 2011/7/9 22:02:08
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+levelDesc = "Zero Hour"
+maxPlayers = 6
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 5, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+function DetermChunk()
+		local height = 45000
+    addPoint("StartPos0", 
+    { 5002, 3003+height, -90006} , 
+    { 0, 0, 0, })
+    addPoint("StartPos1", 
+    { -5001, 3002+height, -90003} , 
+    { 0, 0, 0, })
+    
+  AddAstroidRing(9000, 40, 80, 0, 3002+height, -83006)
+  AddAstroidRing(9000, 40, 80, 0, 1502+height, -75006)
+	
+	local j = -100000
+	for alpha = 45, 135, 30 do
+		local step = 6000
+		local p = 20000
+		local counter = 0
+		local modifier = 0
+		if alpha == 75 then
+			modifier = 2000
+		elseif alpha == 105 then
+			modifier = 4000
+		end
+		local y = height-modifier
+		for z = j+p, step, step do
+			counter = counter + 1
+			addSquadron("Balcora1", "anc_hyperspace_bridge", {p*cos(alpha), y, z+p*sin(alpha),}, -1, {90, alpha, 0,}, 0, 0)
+			if z > 0 then
+				if alpha == 45 then
+					addPoint("StartPos2", {p*cos(alpha), y+3003, z+p*sin(alpha)}, { 0, -135, 0, })
+					AddAstroidRing(9000, alpha, 40, p*cos(alpha), y+3003, z+p*sin(alpha))
+				elseif alpha == 75 then
+					addPoint("StartPos3", {p*cos(alpha), y+3002, z+p*sin(alpha)}, { 0, -165, 0, })
+					AddAstroidRing(9000, alpha, 40, p*cos(alpha), y+3003, z+p*sin(alpha))
+				elseif alpha == 105 then
+					addPoint("StartPos4", {p*cos(alpha), y+3004, z+p*sin(alpha)}, { 0, 165, 0, })
+					AddAstroidRing(9000, alpha, 40, p*cos(alpha), y+3003, z+p*sin(alpha))
+				elseif alpha == 135 then
+					addPoint("StartPos5", {p*cos(alpha), y+3001, z+p*sin(alpha)}, { 0, 135, 0, })
+					AddAstroidRing(9000, alpha, 40, p*cos(alpha), y+3003, z+p*sin(alpha))
+				end
+			end
+			p = p+step
+			y = y-step
+		end
+	end
+	
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {0, height, -90000,}, -1, {90, 90, 0,}, 0, 0)
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {-10000, height-2000, -85000,}, -1, {90, 90, 0,}, 0, 0)
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {10000, height-4000, -85000,}, -1, {90, 90, 0,}, 0, 0)
+	
+	addSquadron("Balcora1", "meg_balcoragate", {0, 0, -100000,}, -1, {0, 0, 0,}, 0, 0)
+	addSquadron("Balcora1", "meg_balcoragate", {0, 0, 100000,}, -1, {0, 180, 0,}, 0, 0)
+	
+
+    setWorldBoundsInner(
+    { 0, 0, 0} , 
+    { 130000, 130000, 130000, })
+end
+
+function AddAstroidRing(r, phi, q, x, y, z)
+	local delta = 360/q
+	for a = 1, q, 1 do
+		addAsteroid("Asteroid_"..random(3,5), {x+r*cos(phi), y, z+r*sin(phi)}, 100, 0, 0, 0, 0)
+		phi = phi+delta
+	end
+end
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("gardenofkadesh")	
+end

@@ -1,0 +1,13 @@
+bulletfx = "mine_clear_combo"
+nopenetratefx = "nopen_generic"
+deathtype = "deathCannon"
+
+hit_clamp = 
+{
+	1,
+	1,
+}
+
+scartype = "Pulse/Pulse"
+bullet_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"

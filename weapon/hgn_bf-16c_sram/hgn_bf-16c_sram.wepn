@@ -1,0 +1,38 @@
+StartWeaponConfig(NewWeaponType,"Fixed","Missile","Hgn_SRAM","Special Attack",100,4000,0,0,0,0,1,0,1,15,0,0,1,0,0,0,0.1,"Normal",1,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",1500,1500,"")
+AddWeaponResult(NewWeaponType,"Hit","Disable","Target",3,3,"")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"Hgn_BF-16C_SRAM_Burst")
+setPenetration(NewWeaponType,5,0.5,{
+  LightArmour = 0.75,
+},{
+  ResArmour = 0.34,
+},{
+  MediumArmour = 0.85,
+},{
+  TurretArmour = 0.34,
+},{
+  HeavyArmour = 0.35,
+},{
+  SubsystemArmour = 0.5,
+},{
+  PlanetKillerArmour = 0,
+},{
+  unarmoured = 0.05,
+})
+setAccuracy(NewWeaponType,1,{
+  Fighter = 0,
+},{
+  Corvette = 0,
+},{
+  munition = 0,
+},{
+  Frigate = 1,
+},{
+  Capturer = 1,
+},{
+  Resource = 1,
+},{
+  ResourceLarge = 1,
+})
+setAngles(NewWeaponType,25,0,0,0,0)
+setMiscValues(NewWeaponType,0,1)

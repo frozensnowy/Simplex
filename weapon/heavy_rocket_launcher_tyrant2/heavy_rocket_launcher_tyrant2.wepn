@@ -1,0 +1,45 @@
+StartWeaponConfig(NewWeaponType,"Fixed","Missile","Tyrant_Heavy_Rocket","Normal",500,25000,0,0,0,0,1,0,0,25,0,0,0,0,0,0,1,Normal,0,0,0)
+
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",16500,16500,"")
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "kad_heavyburst")
+
+
+setPenetration(NewWeaponType,25,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=1,},
+{HeavyArmour=1,},
+{SubSystemArmour=1,},
+{TurretArmour=1,},
+{ResArmour=1,},
+{MoverArmour=1,},
+{PlanetKillerArmour=1,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=1,},
+{Corvette=1,},
+{Frigate=1,},
+{Utility=1, damage=1,},
+{Munition=1,},
+{SmallCapitalShip=1,},
+{BigCapitalShip=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1,},
+{Resource=1,},
+{ResourceLarge=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+
+setAngles(NewWeaponType, 90, -45, 45, -45, 45)
+setMiscValues(NewWeaponType,0,3)
+

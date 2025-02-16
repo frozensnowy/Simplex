@@ -1,0 +1,15 @@
+--=============================================================================
+--    Name    : Kpr_AttackDroid.madStates
+--    Purpose : Animation state data.
+--
+--Created 050503 by cgladstone
+--Copyright Relic Entertainment, Inc.  All rights reserved.
+--=============================================================================*/
+
+RAD_HSBOUEY_Launched_OnSet = function(ship)
+    startTime = 0
+    startAnim(ship, "Open")
+    startEffect(ship, "Open")
+    setTime(ship,"Open",startTime)
+    setPauseTime(ship, "Open", 1000)
+end

@@ -1,0 +1,25 @@
+--Freespace: A New Age v0.25
+fps = 30
+startFrame = 0
+loopCount = -1
+texture = 
+    { "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0000.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0001.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0002.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0003.tga",
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0004.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0005.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0006.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0007.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0008.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0009.tga",
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0010.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0011.tga",
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0012.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0013.tga", 
+    "data:/art/fx/hyperspace fx/Vaygr_WarpMap01_0014.tga",}
+
+
+
+
+

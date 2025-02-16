@@ -1,0 +1,32 @@
+StartWeaponConfig(NewWeaponType, 
+	"Gimble", 			--Mount type: Gimble, AnimatedTurret, or Fixed
+	"Mine", 			--Weapon type: IntantHit, Bullet, Mine, Missile, or SphereBurst
+	"frn_FFM_mine", 	--Weapon effect name
+	"Dropped", 			--Activation type: Normal, Special Attack, Normal Only, or Dropped.
+	400, 				--Projectile velocity(probably m/s)
+	1000, 				--Maximum range that the weapon will fire at, does not nessicairly equpate to maximum bullet travel range
+	0, 					--Blast radius, only affects SphereBurst weapons
+	0, 					--Projectile lifetime, karos says affects beams only
+	0, 					--Delay before firing and beam appearing with beam weapons
+	0, 					--Missile fire direction, 0=forward, 1=left, 2=up
+	1, 					--MaxEffectsSpawned, seems to exist to make sure a beam doesn't spawn too many hit effects
+	0, 					--1 leads target, anything else fires stupidly
+	0, 					--1 checks for freindlies in the way, anything else fires stupidly
+	0.5, 				--Delay between shots in a burst, in seconds
+	0, 					--Duration of a burst, in seconds
+	0, 					--Delay between bursts, in seconds.
+	0, 					--1 picks bandbox targets when it can't hit main target
+	0, 					--1 picks targets of opertuniy when it can't hit main target, karos says this is slow
+	0, 					--Horiztonal tracking speed(probably degrees/second)
+	0, 					--Vertical tracking speed(probably degrees/second)
+	0.1, 				--Makes the gun track faster or slower when it's on target.
+	"Normal", 			--Normal, Enhanced, or Bypass, Karos says this doesn't do anything.
+	0, 					--1 tracks targets outside range, anything else deson't
+	0, 					--1 waits for .mad junk to finish before firing, anything else doesn't
+	0)					--Beams punch through targets with less than this much health
+
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 8500, 8500, "") -- that's... well, not enough!
+setPenetration(NewWeaponType, 5, 1, {PlanetKillerArmour = 0}, {MineArmour = 0})
+setAccuracy(NewWeaponType, 1, {Fighter = 0}, {Corvette = 0}, {munition = 0})
+setAngles(NewWeaponType, 179, 0, 0, 0, 0)
+

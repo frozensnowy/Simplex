@@ -1,0 +1,55 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Asteroid Belt"
+NewShipType.sobDescription = "Cleavable Asteroid"
+NewShipType.maxhealth = 18000
+NewShipType.regentime = 0
+NewShipType.minRegenTime = 0
+NewShipType.alwaysInRenderList = 1
+NewShipType.sideArmourDamage = 0
+NewShipType.rearArmourDamage = 0
+NewShipType.frontArmourDamage = 0
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 10000
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.AttackFamily = "AsteroidSmasher"
+NewShipType.AvoidanceFamily = "BigRock"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.buildCost = 18000
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.healthBarStyle = 3
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 400000
+NewShipType.dotRenderLimit = 100
+NewShipType.visibleInSecondary = 1
+NewShipType.minimumZoomFactor = 1
+NewShipType.upLOD = 25000
+NewShipType.upLOD = 28000
+NewShipType.downLOD = 25015
+NewShipType.downLOD = 28015
+NewShipType.minimumZoomFactor = 0.95
+NewShipType.preciseATILimit = 7176.37507192516
+NewShipType.selectionPriority = 65
+NewShipType.militaryUnit = 0
+LoadModel(NewShipType, 1)
+SpawnSalvageOnDeath(NewShipType, "asteroid_5_grey", 1, 0.53, 0, 0, 0, 50, 0, 0, 0, 200, 0, 0, 0, 150, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_5_grey", 1, 0.12, 30, -20, 200, 25, 300, 150, 85, 50, 0, 0, 0, 255, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_5_grey", 1, 0.09, 50, 40, -150, 50, 65, 25, 5, 25, 0, 0, 0, 285, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_4_grey", 1, 0.06, 25, 10, -100, 30, 35, 75, 62, 75, 0, 0, 0, 240, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_4_grey", 1, 0.05, 60, 30, 150, 25, 35, 125, 65, 75, 0, 0, 0, 180, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_3_grey", 1, 0.03, 80, 125, 60, 75, 125, 80, 65, 75, 0, 0, 0, 200, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_4_grey", 2, 0.025, 25, 0, -125, 50, 80, 35, 120, 75, 0, 0, 0, 220, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_4_grey", 1, 0.03, 60, 95, 200, 50, 15, 200, 20, 125, 0, 0, 0, 260, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_3_grey", 2, 0.01, 10, 60, -300, 25, 35, 80, 65, 75, 0, 0, 0, 160, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_3_grey", 1, 0.02, 60, 10, 30, 75, 35, 25, 65, 75, 0, 0, 0, 300, 0, 0, 0, 50)
+NewShipType.sobDieTime = 1
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 1
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0

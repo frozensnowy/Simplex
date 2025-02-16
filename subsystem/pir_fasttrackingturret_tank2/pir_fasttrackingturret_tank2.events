@@ -1,0 +1,71 @@
+effects = 
+{ 
+    animations = 
+    { 
+       animation1 = 
+        { 
+            name = "Weapon_Fire", 
+            length = 1.3, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, 
+    	}, 
+    	animation2 = 
+        { 
+            name = "Weapon_Fire1", 
+            length = 0.7, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, 
+    	}, 
+    }, 
+    events = 
+    { 
+     		event1 = 
+            { 
+                { "anim", "Weapon_Fire", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_T_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_scale", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/weapon_destroyer_cannon_shell_HWR", }, 
+                { "fx_scale", ".3", }, 
+            }, 
+	  		event2 = 
+            { 
+                { "anim", "Weapon_Fire", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_TSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_scale", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/weapon_destroyer_cannon_shell_HWR", }, 
+                { "fx_scale", ".3", }, 
+            }, 
+    		event3 = 
+            { 
+                { "anim", "Weapon_Fire1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_T_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_scale", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/weapon_destroyer_cannon_shell_HWR", }, 
+                { "fx_scale", ".5", }, 
+            }, 
+	  		event4 = 
+            { 
+                { "anim", "Weapon_Fire1", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_TSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_scale", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/weapon_destroyer_cannon_shell_HWR", }, 
+                { "fx_scale", ".5", }, 
+            },         
+    },
+
+ 
+
+}
+

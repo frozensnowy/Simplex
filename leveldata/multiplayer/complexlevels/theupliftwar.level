@@ -1,0 +1,112 @@
+
+levelDesc = "The Uplift War"
+maxPlayers = 3
+player = {}
+
+for k = 0, maxPlayers - 1 do
+	player[k] = {id = k, name = "", raceName = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	-- seed value for random functions
+	local my_seed_1 = {seed = -random(278981)}
+
+	setWorldBoundsInner({0, 0, 0,}, {70000, 70000, 70000,})
+	setWorldBoundsOuter({0, 0, 0}, {80000, 80000, 80000})
+	
+  addSquadron("zzz_praxis", "zzz_praxis", {-90532, -6408, -13568}, -1, {0, 0, 0}, 0, 0)
+  addSquadron("zzz_praxis_chunk_1", "zzz_praxis_chunk_1", {-44860, 0, 2835}, -1, {35, 0, 59}, 0, 0)
+  addSquadron("zzz_praxis_chunk_4", "zzz_praxis_chunk_4", {-20391, 0, -3070}, -1, {0, -90, 0}, 0, 0)
+  addSquadron("zzz_praxis_chunk_2", "zzz_praxis_chunk_2", {9879, 0, 7761}, -1, {0, -90, 42}, 0, 0)
+  addSquadron("zzz_praxis_chunk_5", "zzz_praxis_chunk_5", {30814, 0, -5104}, -1, {0, -90, 0}, 0, 0)
+  addSquadron("zzz_praxis_chunk_3", "zzz_praxis_chunk_3", {52656, 0, 2782}, -1, {100, -90, 0}, 0, 0)
+  addSquadron("zzz_praxis_chunk_6", "zzz_praxis_chunk_6", {75138, 0, -10869}, -1, {0, -90, 0}, 0, 0)
+
+	local pos = {
+	{13636.35, 0, -35833.7},
+	{-1658.825,0,21295.645},
+	{-39276.125,-544.25,10888.01},
+	{-16003.19,-3882.9,-27443.955},
+	{-9374.4,-3882.9,-24669.4},
+	{36094.17,14792.505,34775.265}
+	}
+	for w=1,6,1 do
+		addPoint("StartPos"..(w-1), {pos[w][1], pos[w][2], pos[w][3]}, {0, random(0,360), 0})
+  	local x = pos[w][1] + random(-9000,9000)
+  	local y = pos[w][2] + random(-9000,9000)
+  	local z = pos[w][3] + random(-9000,9000)
+	  addSquadron("shelter", "meg_asteroidmp", {x+random(-100,100), y+random(-100,100), z+random(-100,100)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	  local megalith = {"meg_bentus", "meg_balcoragate", "meg_reinforcementpad", "meg_dreadnaughtberth", "meg_chimera_nobuild", "meg_veildebris_chunk_lighthouse_nobuild", "meg_foundry", "meg_titan_cruiser", "meg_hvdreadnaught", "meg_headshotasteroid", "meg_bigred", "meg_tanis"}
+		addSquadron("megalith", megalith[random(1,getn(megalith))], {x+random(-10000,10000), y+random(-10000,10000), z+random(-10000,10000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	  local gamma = random(0,360)
+	  local small_r = 2000
+	  local large_r = 5000
+	  for i = 1, 29, 1 do
+	  	addSquadron("light", "meg_NavBouy", {x+sin(gamma)*small_r, y+random(-100,100), z+cos(gamma)*small_r}, -1, {0, gamma+180, 0}, 0, 0)
+	  	if random(1,4)==1 then
+		  	addAsteroid("Asteroid_"..random(2,5).."_blue", {x+sin(gamma)*large_r, y+random(-100,100), z+cos(gamma)*large_r}, 100, 0, 0, 0, 0)
+	  	end
+	  	gamma=gamma+12
+	  end
+	end
+
+--	addCamera("pieplatetest", {0,0,0,}, {0, 32768,0,})
+
+	for i = 1, maxPlayers do
+		local u, v, r = srandom(my_seed_1, 360), srandom(my_seed_1, 45, 135), sqrt(sqrt(srandom(my_seed_1))) * 15000 + 25000
+		local tCoo =
+		{
+			r * cos(u) * sin(v),
+			r * cos(v),
+			r * sin(u) * sin(v),
+		}
+		--addPoint("StartPos" .. (i-1), tCoo, {0,srandom(my_seed_1,360), 0,})
+--		addCloud("polySurface1", "cloud_text_" .. i, tCoo, {1, 1, 1, 1}, 0, 4096)
+	end
+
+	local cloudColor = {srandom(my_seed_1), srandom(my_seed_1), srandom(my_seed_1), 1}
+
+	-- distributions
+	local threeRings =
+	{
+--		addPebble(<sPebbleType>, <tPosition>, ?, ?, ?)
+		{ 4, "Pebble", "Pebble_2", {0,0,0,}, 0, 0, 0,},
+--		addAsteroid(<sAsteroidType>, <tPosition>, <fRU>, ?, ?, ?, ?)
+		{ 4, "Asteroid", "Asteroid_2", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{ 2, "Asteroid", "Asteroid_3", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{ 1, "Asteroid", "Asteroid_4", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{ 1, "Function", easyPatch, {0,0,0,}, 100,},
+--		addDustCloud(<sObjName>, <sDustCloudType>, <tPosition>, <tColor>, ?, <fSize>)
+		{ 1, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, {0, random(0,68), random(72,129), random(64,128)/255}, 0, srandom(my_seed_1, 10000),},
+		{ 1, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, {0, random(0,68), random(72,129), random(64,128)/255}, 0, srandom(my_seed_1, 10000),},
+		{ 1, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, {0, random(0,68), random(72,129), random(64,128)/255}, 0, srandom(my_seed_1, 10000),},
+		{ 1, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, {0, random(0,68), random(72,129), random(64,128)/255}, 0, srandom(my_seed_1, 10000),},
+	}
+
+	for i = 1, 16 do
+		local u, v, r = srandom(my_seed_1, 360), srandom(my_seed_1, 45, 135), sqrt(sqrt(srandom(my_seed_1))) * 25000
+		local tCoo =
+		{
+			r * cos(u) * sin(v),
+			r * cos(v),
+			r * sin(u) * sin(v),
+		}
+		--branchAdd(<tPos>, <tDst>, {<tDiv>, <tInt>, <tFrq>, <tBeg>, <tEnd>, <tRad>, <tLen>, <tThk>, <tAng>, <iMod>,}, <tRot>, <tSeed>, ...)
+		branchAdd(tCoo, threeRings, {{1,3,}, {1,6,}, {1,2,}, {1,6,}, {1,6,}, {100,500,}, {1000,5000,}, {100,100,}, {0,30,}, 2,},{srandom(my_seed_1,360),srandom(my_seed_1,360),srandom(my_seed_1,360),}, my_seed_1)
+	end
+end
+
+function NonDetermChunk()
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.136719, 0.228516, 0.427734, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+  setLevelShadowColour(0, 0, 0, 1)
+  loadBackground ("darkbluenebula")
+  setSensorsManagerCameraDistances(61000, 307700)
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

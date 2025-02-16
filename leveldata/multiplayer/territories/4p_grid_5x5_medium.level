@@ -1,0 +1,118 @@
+
+
+--*********** LEVEL INTERFACE ***********
+levelDesc = "Grid: 5 x 5 (Medium)" --display name for the map (built-in variable)
+levelName = "4p_grid_5x5_medium" --name of level file
+levelSize = {1000000, 1000000, 1000007}
+levelBackground = "m03" --POSSIBLE VALUES: m01 to m15, black, white
+defaultMusic = "Data:sound/music/AMBIENT/amb_05" --POSSIBLE MUSIC: amb_01, amb_03, amb_05, amb_07, amb_08
+cameraMaxZoom = 160000
+
+
+function AddTerritoryPebbles()
+	local idx = 0
+	local territory = 0
+	for idx,territory in Territories do
+		if idx ~= "n" then
+			
+			--*********** ADD TERRITORY PEBBLES HERE ***********
+			--Pebbles can be added for any or all territories
+			--("idx" refers to the territory ID)
+			--("territory" refers to the Territories table entry)
+			
+			--POSSIBLE "if" STATEMENTS TO USE:
+			--if idx == 5 then
+			--if idx == 10 or idx == 20 then
+			--if territory[PARENTID] == PARENT then
+			
+			--PEBBLE FUNCTIONS:
+			--MakePebbleRing({tCentreLocation}, "sAxis", iRadius, iNumberOfPebbles, iDegreeToStartOn, iMaxVariance, tDegreeRanges, sPebbleType)
+			--MakePebbleSphere(tCentreLocation, iRadius, iOuterThickness, iNumberOfPebbles, sPebbleType)
+			--MakePebbleLine({tStartPoint}, {tEndPoint}, iDistanceBetweenPebbles, iMaxVariance, tDistanceRanges, sPebbleType)
+			--PEBBLE TYPES: pebble_0, pebble_1, pebble_2
+			
+			--MakePebbleRing(territory[LOCATION], "Z", GetTerritorySize(idx), 100, 0, 200)
+			--MakePebbleSphere(territory[LOCATION], GetTerritorySize(idx), 50, 150)
+			
+			if idx == 13 then
+				MakePebbleSphere(territory[LOCATION], GetTerritorySize(idx), 50, 200)
+			elseif territory[PARENTID] == PARENT then
+				MakePebbleRing(territory[LOCATION], "Z", GetTerritorySize(idx), 130, 0, 400)
+			end
+			
+			
+			
+			
+			
+			
+		end
+	end
+	
+	
+	
+	--*********** MISCELLANEOUS PEBBLES ***********
+	--add any other pebbles here
+	
+	
+	
+	
+	
+	
+	
+end
+
+
+function AddMegaliths()
+	
+	--*********** ADD ANY MEGALITHS OR OTHER DETERMINISTIC THINGS HERE ***********
+	
+	
+	
+	
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--*********** CODE (NO NEED TO MODIFY) ***********
+dofilepath("Data:leveldata/multiplayer/territories/level_common.lua")
+dofilepath("Data:leveldata/multiplayer/territories/" .. levelName .. "_config.lua")
+
+
+function DetermChunk()
+    setWorldBoundsInner({0, 0, 0}, levelSize)
+    SetupTerritories()
+    SetupTerritoryConnections()
+    AddMegaliths()
+end
+
+
+function NonDetermChunk()
+    SetupTerritoryTables()
+    AddConnectionPebbles()
+    AddTerritoryPebbles()
+    PrintPebbleCount()
+    
+    --add fog and lighting details here, if needed
+    
+    fogSetActive(0)
+    setGlareIntensity(0)
+    setLevelShadowColour(0, 0, 0, 1)
+    loadBackground(levelBackground)
+    setSensorsManagerCameraDistances(14000, cameraMaxZoom)
+    setDefaultMusic(defaultMusic)
+end
+

@@ -1,0 +1,15 @@
+hitfx = "DMG_MASSIVE_MESH_SPHERE_RINGZZ"
+bulletfx = "bullet_generic"
+nopenetratefx = "DMG_MASSIVE_MESH_SPHERE_RINGZZ"
+deathtype = "deathCannon"
+firefx = "torpedo_steam_spray"
+scartype = "Vgr_HeavyMissile/Vgr_HeavyMissile"
+fire_sfx = "generic/heavymissilefire"
+hit_sfx = "explosion/large/etg_explode_large_energy"
+nopenetrate_sfx = "explosion/large/etg_explode_large_energy"
+--nopenetrate_sfx = "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA"
+--hit_sfx = "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA"
+hit_clamp = {
+  1,
+  1,
+}

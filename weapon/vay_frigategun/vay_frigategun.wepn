@@ -1,0 +1,60 @@
+StartWeaponConfig(NewWeaponType,
+	"AnimatedTurret",			--Mount type: Gimble, AnimatedTurret, or Fixed
+	"Bullet",                   --Weapon type: IntantHit, Bullet, Mine, Missile, or SphereBurst
+	"vay_frigategun",   --Weapon effect name
+	"Normal",                   --Activation type: Normal, Special Attack, Normal Only, or Dropped.
+	1350,                       --Projectile velocity(probably m/s) --was 1440
+	1800,                       --Maximum range that the weapon will fire at, does not nessicairly equpate to maximum bullet travel range
+	0,                          --Blast radius, only affects SphereBurst weapons
+	0,                          --Projectile lifetime, karos says affects beams only
+	0,                          --Delay before firing and beam appearing with beam weapons
+	0,                          --Missile fire direction, 0=forward, 1=left, 2=up
+	1,                          --MaxEffectsSpawned, seems to exist to make sure a beam doesn't spawn too many hit effects
+	1,                          --1 leads target, anything else fires stupidly
+	1,                          --1 checks for freindlies in the way, anything else fires stupidly
+	2.5,                        --Delay between shots in a burst, in seconds
+	0,                          --Duration of a burst, in seconds
+	0,                          --Delay between bursts, in seconds.
+	1,                          --1 picks bandbox targets when it can't hit main target
+	1,                          --1 picks targets of opertuniy when it can't hit main target, karos says this is slow
+	45,                         --Horiztonal tracking speed(probably degrees/second)
+	45,                         --Vertical tracking speed(probably degrees/second)
+	0.1,                        --Makes the gun track faster or slower when it's on target.
+	"Normal",                   --Normal, Enhanced, or Bypass, Karos says this doesn't do anything.
+	1,                          --1 tracks targets outside range, anything else deson't
+	0,                          --1 waits for .mad junk to finish before firing, anything else doesn't
+	0)                          --Beams punch through targets with less than this much health                                            
+	
+AddWeaponResult(NewWeaponType,
+	"Hit",			--Condition: Hit or Miss. Self evident.	
+	"DamageHealth", --Effect: DamageHealth, Disable, Push, or SpawnWeaponfire
+	                --DamageHealth damages health, Disable does EMP damage, push moves the target, SpawnWeaponFire calls another weapon at the target point.
+	"Target",       --Target: either Target or Self. Self evident as well
+	600,             --Lower bound of the random range of effect
+	600,             --Upper bound of the random range of effect
+	"")             --Effect to be spawned in the case of SpawnWeaponFire        	
+setPenetration(NewWeaponType,5,1,{
+  PlanetKillerArmour = 0,
+})
+setAccuracy(NewWeaponType,1,
+{Fighter=0.91,},
+{Corvette=0.91,},
+{Frigate=0.91, damage=1,},
+{Utility=0.91,},
+{munition=0.91,},
+{SmallCapitalShip=1, damage=1,},
+{BigCapitalShip=1, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1, damage=1,},
+{Resource=1,},
+{ResourceLarge=1, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+setAngles(NewWeaponType,0,-180,180,-5,85)
+setMiscValues(NewWeaponType,1.6,0) --recoil distance 1.9m // too much, 1.6 is enough.
+addAnimTurretSound(NewWeaponType,"Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

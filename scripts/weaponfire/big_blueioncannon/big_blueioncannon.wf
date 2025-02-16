@@ -1,0 +1,12 @@
+hitfx = "ion_dmg_ring_spray"
+bulletfx = "alos_ion_burst_beam_combo"
+nopenetratefx = "photon_explosion_combo"
+deathtype = "deathBeam"
+fire_sfx = "WEAPON/MEGASHIP/FIRE/DREADNAUGHT_FIRE_1"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY"
+nopenetrate_sfx = "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY"
+hit_clamp = {
+  1,
+  1,
+}

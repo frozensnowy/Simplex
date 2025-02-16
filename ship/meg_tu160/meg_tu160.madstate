@@ -1,0 +1,49 @@
+--=============================================================================
+--    Name    : Hgn_Mothership.madStates
+--    Purpose : Animation state data.
+--
+--Created 260403 by cgladstone
+--Copyright Relic Entertainment, Inc.  All rights reserved.
+--=============================================================================*/
+
+-- DOCK PATHS ---------------------------------------------------------
+MEG_TU160_DefenseFieldActivate_OnSet = function(ship)
+    setState(ship, "DefenseFieldActivate", 0)
+    if(isAnimRunning(ship,"ArrayOpen") == 0) then
+        startTime = 0
+        if(isAnimRunning(ship,"ArrayClose") ~= 0) then
+            startTime = getAnimLength(ship, "ArrayClose") - getTime(ship, "ArrayClose")
+            stopAnim(ship, "ArrayClose")
+            endEffect(ship, "ArrayClose")
+        end
+		    startAnim(ship, "ArrayOpen")
+		    startEffect(ship, "ArrayOpen")
+		    setTime(ship,"ArrayOpen",startTime)
+		    setPauseTime(ship, "ArrayOpen", 1000)
+    else
+        setState(ship, "DefenseFieldActivate", 1)
+    end
+end
+
+MEG_TU160_DefenseFieldActivate_OnPause = function(ship)
+    setState(ship, "DefenseFieldActivate", 1)
+    endEffect(ship, "ArrayOpen")
+end
+
+MEG_TU160_DefenseFieldDeActivate_OnSet = function(ship)
+    if(isAnimRunning(ship,"ArrayClose") == 0) then
+        startTime = 0
+        if(isAnimRunning(ship,"ArrayOpen") ~= 0) then
+            startTime = getAnimLength(ship, "ArrayOpen") - getTime(ship, "ArrayOpen")
+            stopAnim(ship, "ArrayOpen")
+            endEffect(ship, "ArrayOpen")
+        end
+				startAnim(ship, "ArrayClose")
+		    startEffect(ship, "ArrayClose")
+		    setTime(ship,"ArrayClose",startTime)
+		    setPauseTime(ship, "ArrayClose", 1000)
+		    
+		end
+    setState(ship, "DefenseFieldDeActivate", 1)
+end
+

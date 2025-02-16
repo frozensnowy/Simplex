@@ -1,0 +1,17 @@
+-- LuaDC version 0.9.19
+-- 2011-3-10 12:29:12
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = ""
+bulletfx = ""
+nopenetratefx = ""
+deathtype = "deathCannon"
+firefx = "muzzle_flash_combo_small_capital"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Kinetic_Small/Kinetic_Small"
+hit_sfx = ""
+hit_nlips = 0.0005
+bullet_nlips = 0.0001
+hit_clamp = 
+    { 1, 1, }

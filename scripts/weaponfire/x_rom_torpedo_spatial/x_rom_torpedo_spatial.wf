@@ -1,0 +1,10 @@
+
+hitfx = "xplosion_hit_large_emitter"
+bulletfx = "bullet_generic"
+nopenetratefx = "dmg_missle_explode_combo"
+deathtype = "deathCannon"
+scartype = "Torpedo/Torpedo"
+fire_sfx = "WEAPON/ALL/FIRE/MISSILE_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HIT"
+nopenetrate_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HIT"
+hit_clamp = {1.0, 1.0}

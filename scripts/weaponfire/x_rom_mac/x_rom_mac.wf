@@ -1,0 +1,14 @@
+
+hitfx = "xplosion_hit_large_emitter"
+bulletfx = "MAC/MAC_bullet_combo"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+firefx = "MAC/muzzle_flash_combo"
+fire_sfx = "WEAPON/ROM/ENT/MAC"
+hit_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HIT"
+nopenetrate_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HIT"
+hit_nlips = 0.000005
+bullet_nlips = 0.00005
+hit_clamp = 
+    { 1, 1, }

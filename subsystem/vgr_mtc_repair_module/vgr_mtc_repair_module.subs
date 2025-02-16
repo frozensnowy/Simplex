@@ -1,0 +1,38 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Repair Module"
+NewSubSystemType.sobDescription = "Repair Module"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0.0035
+NewSubSystemType.tacticalIconMinFadeSize = 0.0045
+NewSubSystemType.tacticalIconMaxFadeSize = 0.008
+NewSubSystemType.groupMergeSize = 0
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 118450
+NewSubSystemType.regentime = 118
+NewSubSystemType.meshRenderLimit = 0
+NewSubSystemType.minimumZoomFactor = 0.5
+NewSubSystemType.selectionLimit = 0
+NewSubSystemType.preciseSelectionLimit = 0
+NewSubSystemType.preciseATILimit = 0
+NewSubSystemType.selectionPriority = 0
+NewSubSystemType.type = "System"
+NewSubSystemType.typeString = "Module"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 45
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.healthBarStyle = 1
+NewSubSystemType.costToBuild = 1000
+NewSubSystemType.timeToBuild = 35
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 0
+NewSubSystemType.innate = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Vgr"
+NewSubSystemType.AttackFamily = "Destroyer"
+NewSubSystemType.DockFamily = "Fighter"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "Shield_Cap_2D"
+AddSubSystemMultiplier(NewSubsystemType,"HealthRegenerationRate","OwnShipsWithinRadiusExcludingThisShip","Linear",6,6,2000)
+AddSubSystemMultiplier(NewSubsystemType,"ShieldRegenerationRate","OwnShipsWithinRadiusExcludingThisShip","Linear",100,100,2000)
+AddSubSystemMultiplier(NewSubsystemType,"ShipHoldRepairSpeed","OwnShipsWithinRadiusExcludingThisShip","Linear",100,100,2000)

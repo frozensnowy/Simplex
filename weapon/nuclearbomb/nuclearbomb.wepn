@@ -1,0 +1,30 @@
+-- LuaDC version 0.9.19
+-- 16/06/2004 22.44.03
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "Missile", "NuclearBomb", "Normal", 30, 100000, 0, 0, 0, 0, 1, 0, 1, 57, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 12607, 12607, "")
+setPenetration(NewWeaponType, 75, 1, 
+{
+    TurretArmour = 0.7,
+}, 
+{
+    SubSystemArmour = 0.4,
+},
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    unarmoured = 0.5, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, })
+setAngles(NewWeaponType, 179, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 0.5)

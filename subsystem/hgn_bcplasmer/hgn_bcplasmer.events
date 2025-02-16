@@ -1,0 +1,72 @@
+-- LuaDC version 0.9.19
+-- 25/07/2005 21.25.25
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Top", 
+            length = 12.5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = { "", }, },                      
+    }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Top_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo_bc", },                  
+                { "fx_scale", "9", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_TopSlave_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo_bc", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_MS_ION_CANNON_BEAM", }, 
+                { "fx_scale", "9", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "Weapon_Top_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", },                
+                { "fx_scale", "7", },   
+            },
+        event4 = 
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Weapon_TopSlave_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", },                
+                { "fx_scale", "7", },   
+            },                
+        event5 = 
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Top_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray1", },                 
+                { "fx_scale", "7", },   
+            },
+        event6 = 
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_TopSlave_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray1", },
+                { "sound", "DAMAGE/SMOKE/ION_BEAM_DISCHARGE", }, 
+                { "fx_scale", "7", },   
+            },            
+}, }

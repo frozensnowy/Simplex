@@ -1,0 +1,26 @@
+StartWeaponConfig(NewWeaponType,"Fixed","Missile","vgr_heavymissilenoeg","Normal",40,15000,0,0,0,0,1,0,1,60,0,0,1,0,0,0,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",6000,6000,"")
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "missile_burst")
+AddWeaponResult(NewWeaponType, "Miss", "SpawnWeaponFire", "Target", 0, 0, "missile_burst")
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "missile_burst_damagearea")
+AddWeaponResult(NewWeaponType, "Miss", "SpawnWeaponFire", "Target", 0, 0, "missile_burst_damagearea")
+setPenetration(NewWeaponType,50,1,{ 
+    lightarmour = 0.1, 
+},{
+  PlanetKillerArmour = 0,
+},{
+  SubSystemArmour = 0.3,
+},{
+  resarmour = 0.2,
+},{
+  MediumArmour = 0.6,
+})
+setAccuracy(NewWeaponType,1,{
+  Fighter = 0,
+},{
+  Corvette = 0,
+},{
+  munition = 0,
+})
+setAngles(NewWeaponType,95,0,0,0,0)
+setMiscValues(NewWeaponType,0,1)

@@ -1,0 +1,11 @@
+hitfx = "dmg_cloud_combo_small"
+bulletfx = "Kinetic_90"
+nopenetratefx = "dmg_cloud_combo_small"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PEA_SHOOTER_HIT"
+firefx = "muzzle_flash_combo"
+hit_clamp = {
+  1,
+  1,
+}

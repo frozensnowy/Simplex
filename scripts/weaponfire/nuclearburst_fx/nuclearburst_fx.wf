@@ -1,0 +1,13 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:49 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+bulletfx = "DMG_MASSIVE_MESH_SPHERE_ring"
+nopenetratefx = "DMG_MASSIVE_MESH_SPHERE_ring"
+deathtype = "deathCannon"
+hit_clamp = 
+    { 1, 1, }
+scartype = "Hgn_TorpedoNuke/TorpedoNuke"
+bullet_sfx = "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_NUCLEAR"
+nopenetrate_sfx = "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_NUCLEAR"

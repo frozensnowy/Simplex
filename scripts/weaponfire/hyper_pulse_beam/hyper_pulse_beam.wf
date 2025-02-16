@@ -1,0 +1,11 @@
+hitfx = "hyper_pulse_explosion_combo"
+bulletfx = "hyper_pulse_beam_combo"
+nopenetratefx = "hyper_pulse_explosion_combo"
+deathtype = "deathBeam"
+firefx = "hyper_pulse_muzzle_combo"
+fire_sfx = "WEAPON/CARRIER/FIRE/VWEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_clamp = {
+  1,
+  1,
+}

@@ -1,0 +1,33 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "ACCURACY"
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 100
+NewSubSystemType.regentime = 0
+NewSubSystemType.nlips = 0
+NewSubSystemType.meshRenderLimit = 0
+NewSubSystemType.minimumZoomFactor = 0
+NewSubSystemType.selectionLimit = 0
+NewSubSystemType.preciseATILimit = 0
+NewSubSystemType.selectionPriority = 0
+NewSubSystemType.type = "System"
+NewSubSystemType.typeString = "STEALTH"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 0
+NewSubSystemType.activateHealthPercentage = 0
+NewSubSystemType.costToBuild = 0
+NewSubSystemType.timeToBuild = 0
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 0
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Vgr"
+NewSubSystemType.AttackFamily = "SubSystem"
+NewSubSystemType.DockFamily = "Fighter"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+AddSubSystemMultiplier(NewSubSystemType, "WeaponAccuracy", "ThisShipOnly", "Linear", 1, 0.25, 0)
+AddSubSystemMultiplier(NewSubSystemType, "WeaponDamage", "ThisShipOnly", "Linear", 1, 0.25, 0)
+--HealthRegenerationRate
+--WeaponAccuracy
+--WeaponDamage
+--ShieldRegenerationRate

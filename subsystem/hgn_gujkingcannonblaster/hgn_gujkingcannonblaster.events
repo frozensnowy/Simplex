@@ -1,0 +1,59 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_Turret",
+      length = 3.2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },    
+  },
+  events = { 
+    
+    event40 = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Turret_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "5",},
+                { "fx_nlips", "on", }, 
+            },            
+    event41 = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Weapon_TurretSlave_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "5",},
+                { "fx_nlips", "on", }, 
+            },
+    event42 = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_TurretSlave1_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "5",},
+                { "fx_nlips", "on", }, 
+            },      
+    event43 = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "Weapon_TurretSlave2_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "5",},
+                { "fx_nlips", "on", }, 
+            },                            
+    
+  },
+}

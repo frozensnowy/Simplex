@@ -1,0 +1,11 @@
+hitfx = "dmg_nuke_sphere_ring_med"
+bulletfx = "bullet_generic"
+nopenetratefx = "dmg_cloud_ASM_combo"
+deathtype = "deathCannon"
+scartype = "Vgr_HeavyMissile/Vgr_HeavyMissile"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+hit_clamp = {
+  1,
+  1,
+}

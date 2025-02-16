@@ -1,0 +1,27 @@
+
+
+
+
+function VGR_PLANETKILLER_CUSTOM_NIS00_OnSet(ship)
+    local timeToJumpTo = 4
+    startAnim(ship, "Open")
+    setTime(ship,"Open",timeToJumpTo)
+    setPauseTime(ship, "Open", timeToJumpTo)
+end
+
+function VGR_PLANETKILLER_CUSTOM_NIS01_OnSet(ship)
+    local timeToJumpTo = 8
+    startAnim(ship, "Open")
+    setTime(ship,"Open",timeToJumpTo)
+    setPauseTime(ship, "Open", timeToJumpTo)
+end
+
+function VGR_PLANETKILLER_CUSTOM_NIS02_OnSet(ship)
+    local timeToJumpTo = 12.5
+    startAnim(ship, "Open")
+    setTime(ship,"Open",timeToJumpTo)
+    setPauseTime(ship, "Open", timeToJumpTo)
+end
+
+
+

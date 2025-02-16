@@ -1,0 +1,37 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName="Fast Plasma Cannon"
+NewSubSystemType.sobDescription="Adv. Anti-Fighter/Corvette"
+NewSubSystemType.tacticalIcon="hexagon"
+NewSubSystemType.tacticalIconMinSize=0.0035
+NewSubSystemType.tacticalIconMinFadeSize=0.0045
+NewSubSystemType.tacticalIconMaxFadeSize=0.008
+NewSubSystemType.groupMergeSize=0.001
+NewSubSystemType.mouseOverMinFadeSize=0.045
+NewSubSystemType.mouseOverMaxFadeSize=0.1
+NewSubSystemType.maxhealth=30000
+NewSubSystemType.regentime=250
+NewSubSystemType.nlips=0
+NewSubSystemType.nlipsRange=0
+NewSubSystemType.nlipsFar=0
+NewSubSystemType.nlipsFarRange=0
+NewSubSystemType.meshRenderLimit=0.004
+NewSubSystemType.minimumZoomFactor=0.68
+NewSubSystemType.selectionLimit = 2500
+NewSubSystemType.preciseATILimit = 2500
+NewSubSystemType.selectionPriority = 18.75
+NewSubSystemType.type="Weapon"
+NewSubSystemType.typeString="2xPulsars3"
+NewSubSystemType.collateralDamage=0	--100
+NewSubSystemType.inactiveTimeAfterDamage=60
+NewSubSystemType.activateHealthPercentage=0.2
+NewSubSystemType.costToBuild=900
+NewSubSystemType.timeToBuild=45
+NewSubSystemType.isResearch=0
+NewSubSystemType.visible=1
+LoadSharedModel(NewSubSystemType, "hgn_pulsers")
+NewSubSystemType.BuildFamily = "SubSystem_Hgn"
+NewSubSystemType.AttackFamily = "SubSystem"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "SubSystemSensorsleft"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"hgn_pulsers","Weapon_SCT","Weapon_Turret");

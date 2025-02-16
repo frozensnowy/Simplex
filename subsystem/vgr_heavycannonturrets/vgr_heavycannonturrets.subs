@@ -1,0 +1,43 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Heavy Cannon Turrets"
+NewSubSystemType.sobDescription = "Heavy Modular Weapon Systems"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0.0035
+NewSubSystemType.tacticalIconMinFadeSize = 0.0045
+NewSubSystemType.tacticalIconMaxFadeSize = 0.008
+NewSubSystemType.groupMergeSize = 0.001
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 90000  --45000
+NewSubSystemType.regentime = 250
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.6800000000000001
+NewSubSystemType.selectionLimit = 5000
+NewSubSystemType.preciseATILimit = 5000
+NewSubSystemType.selectionPriority = 18.75
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "BCIonBeamTurret"
+NewSubSystemType.collateralDamage = 0   --100
+NewSubSystemType.inactiveTimeAfterDamage = 90
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 1900
+NewSubSystemType.timeToBuild = 80
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_vgr"
+NewSubSystemType.AttackFamily = "SubSystem"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "Weapon"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"vgr_flechettecannonHCT","Weapon_Gun_R","Weapon_Gun_R")
+StartSubSystemWeaponConfig(NewSubSystemType,"vgr_flechettecannonHCT","Weapon_Gun_L","Weapon_Gun_L")
+StartSubSystemWeaponConfig(NewSubSystemType,"vgr_flechettecannonHCTR","Weapon_Gun_FRT","Weapon_Gun_FRT")
+StartSubSystemWeaponConfig(NewSubSystemType,"vgr_flechettecannonHCTL","Weapon_Gun_FLT","Weapon_Gun_FLT")
+StartSubSystemWeaponConfig(NewSubSystemType,"vgr_flechettecannonHCTL","Weapon_Gun_FRB","Weapon_Gun_FRB")
+StartSubSystemWeaponConfig(NewSubSystemType,"vgr_flechettecannonHCTR","Weapon_Gun_FLB","Weapon_Gun_FLB")
+

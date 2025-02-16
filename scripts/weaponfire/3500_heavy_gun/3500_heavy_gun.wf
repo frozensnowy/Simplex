@@ -1,0 +1,13 @@
+hitfx = "4800mm_explosion_combo"
+bulletfx = "1200mm_bullet_combo"
+nopenetratefx = "1400_cannon_explosion_combo"
+deathtype = "deathCannon"
+firefx = "siegecannon_fiery_fire"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Hgn_Torpedo/Torpedo"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+hit_clamp = {
+  1,
+  1,
+}

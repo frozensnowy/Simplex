@@ -1,0 +1,11 @@
+hitfx = "dora_burst"
+bulletfx = "dora_burst"
+nopenetratefx = "dora_burst"
+deathtype = "deathBeam"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+hit_clamp = {
+  1,
+  1,
+}

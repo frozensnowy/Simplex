@@ -1,0 +1,30 @@
+-- =============================================================================
+-- Homeworld 2 Clean Data Resource Project
+-- By S110
+-- Version 1.0
+-- 02/06/2010
+-- Tools used: EditPad Lite, LuaDC version 0.9.19, and Cold Fusion LUA Decompiler v1.0.0
+-- =============================================================================
+
+RAD_GATTLINGFRIGATE_Launched_OnSet = function(ship)
+	stopAnim(ship, "Close")
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+
+RAD_GATTLINGFRIGATE_Docked_OnSet = function(ship)
+	stopAnim(ship, "Open")
+    startAnim(ship, "Close")
+    setPauseTime(ship, "Close", 1000)
+end
+
+RAD_GATTLINGFRIGATE_CodeRed_OnSet = function(ship)
+	setState(ship, "CodeRed", 1)
+	startAnim(ship, "GunFire")
+	setLoopCount(ship, "GunFire", 1000000)
+end
+
+RAD_GATTLINGFRIGATE_CodeGreen_OnSet = function(ship)
+	stopAnim(ship, "GunFire")
+end

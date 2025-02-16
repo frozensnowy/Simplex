@@ -1,0 +1,14 @@
+hitfx = "flak_Anime_Ring"
+bulletfx = "kinetic_huge_bullet"
+nopenetratefx = "flak_Anime_Ring"
+deathtype = "deathCannon"
+firefx = "muzzle_flash_combo_small_capital"
+scartype = "Kinetic_Large/Kinetic_Large"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_CANNON_SHELL"
+hit_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = {
+  1,
+  1,
+}
+

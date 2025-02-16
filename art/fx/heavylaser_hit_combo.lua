@@ -1,0 +1,63 @@
+-- Pretty-Printed using HW2 Pretty-Printer 1.21 by Mikail.
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:09:52 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+
+fx = 
+{
+	style = "STYLE_COMBO",
+	properties = 
+	{
+		property_06 = 
+		{
+			name = "FX7",
+			type = "VARTYPE_STRING",
+			value = "heavylaser_hit_shockwave",
+		},
+		property_05 = 
+		{
+			name = "FX6",
+			type = "VARTYPE_STRING",
+			value = "explosionjetfrigatenew_red",
+		},
+		property_07 = 
+		{
+			name = "FX8",
+			type = "VARTYPE_STRING",
+			value = "",
+		},
+		property_02 = 
+		{
+			name = "FX3",
+			type = "VARTYPE_STRING",
+			value = "ionsphere_flash_glow_red",
+		},
+		property_01 = 
+		{
+			name = "Fx2",
+			type = "VARTYPE_STRING",
+			value = "",	--ion_squirt_charge_particle_red
+		},
+		property_04 = 
+		{
+			name = "FX5",
+			type = "VARTYPE_STRING",
+			value = "heavylaser_hit_flare",	--"ionsphere_lensflare_red",
+		},
+		property_03 = 
+		{
+			name = "FX4",
+			type = "VARTYPE_STRING",
+			value = "ionsphere_charged_particle_circle_red",
+		},
+		property_00 = 
+		{
+			name = "Fx1",
+			type = "VARTYPE_STRING",
+			value = "ionsphere_light_red",
+		},
+	},
+}
+

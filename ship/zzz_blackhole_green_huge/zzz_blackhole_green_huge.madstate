@@ -1,0 +1,4 @@
+ZZZ_BLACKHOLE_GREEN_HUGE_Launched_OnSet = function(ship)
+	startEffect(ship, "disk")
+end
+---stop

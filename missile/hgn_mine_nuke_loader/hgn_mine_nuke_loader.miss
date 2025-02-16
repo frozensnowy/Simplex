@@ -1,0 +1,86 @@
+--===========================================================================
+--  Purpose : Lua definition file for Homeworld Ship.
+--            Contains loading information and flight dynamics information (among other things?)
+--
+--  Copyright Relic Entertainment, Inc.  All rights reserved.
+--===========================================================================
+NewShipType = StartMissileConfig()
+NewShipType.displayedName="Nuclear Mine"
+NewShipType.sobDescription="Anti-Capital ship mine"
+NewShipType.TOIcon="star"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 6000
+NewShipType.TODistanceDisappear0 = 5500
+NewShipType.TODistanceFade1 = 5000
+NewShipType.TODistanceDisappear1 = 4500
+NewShipType.TODistanceFade2 = 35000
+NewShipType.TODistanceDisappear2 = 17500
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize=0.045
+NewShipType.mouseOverMaxFadeSize=0.1
+NewShipType.maxhealth=600
+NewShipType.regentime=0
+NewShipType.sideArmourDamage=1
+NewShipType.rearArmourDamage=1
+NewShipType.maxShield=0
+NewShipType.shieldRechargeTime=0
+NewShipType.nlips=0.0015
+NewShipType.nlipsRange=1500
+NewShipType.nlipsFar=0.0001
+NewShipType.nlipsFarRange=12000
+NewShipType.SMRepresentation="Invisible"
+NewShipType.meshRenderLimit=12000
+NewShipType.dotRenderLimit=8000
+NewShipType.minimumZoomFactor=0.55
+NewShipType.selectionPriority=30
+NewShipType.weaponName="Hgn_MonsterNUKE"
+NewShipType.lifeTime=120
+NewShipType.launchTime=2
+NewShipType.detectionDistance=4000
+NewShipType.clusterDistance=1666
+NewShipType.numberSubMunitions=1
+NewShipType.subMunitionName="hgn_mine_nuke"
+NewShipType.clusterAngle=0.0001
+NewShipType.sobDieTime=0.5
+NewShipType.trackingSpeedMultiplier=1.8
+NewShipType.density=1
+NewShipType.thrusterMaxSpeed=80
+NewShipType.mainEngineMaxSpeed=95
+NewShipType.rotationMaxSpeed=60
+NewShipType.thrusterAccelTime=1
+NewShipType.thrusterBrakeTime=1
+NewShipType.mainEngineAccelTime=1
+NewShipType.mainEngineBrakeTime=1
+NewShipType.rotationAccelTime=0.4
+NewShipType.rotationBrakeTime=0.4
+NewShipType.thrusterUsage=1
+NewShipType.accelerationAngle=60
+NewShipType.mirrorAngle=0
+NewShipType.maxBankingAmount=85
+NewShipType.descendPitch=0
+NewShipType.goalReachEpsilon=5
+NewShipType.controllerType="Missile"
+NewShipType.slowdownFactor=0.5
+NewShipType.tumbleStaticX=0
+NewShipType.tumbleStaticY=0
+NewShipType.tumbleStaticZ=0
+NewShipType.tumbleDynamicX=0
+NewShipType.tumbleDynamicY=0
+NewShipType.tumbleDynamicZ=0
+NewShipType.tumbleSpeed=0
+NewShipType.targetAngle=0
+NewShipType.spiralsPerSecondMin=0
+NewShipType.spiralsPerSecondMax=0
+NewShipType.BuildFamily="NotBuildable"
+NewShipType.AttackFamily="Munition"
+NewShipType.DockFamily="CantDock"
+NewShipType.AvoidanceFamily="DontAvoid"
+NewShipType.DisplayFamily="Munition"
+NewShipType.AutoFormationFamily="Fighter"
+NewShipType.ArmourFamily="MineArmour"
+LoadHODFile(NewShipType,1);
+NewShipType.trailLinger=0.25
+setEngineBurn(NewShipType,6,2,3,8,1.1,0.1,0.25,16);
+loadShipPatchList(NewShipType,"data:sound/sfx/ship/vaygr/NonMilitary/Ambience/"
+                             ,1,"VMineAmb");

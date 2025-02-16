@@ -1,0 +1,80 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "MissileTrail",
+      length = 15,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "EngineNozzle1",
+      },
+      {
+        "fx",
+        "dmg_flare_blue_spray_CFB",
+      },
+      {
+        "sound",
+        "",
+      },
+      {
+        "fx_scale",
+        "1.0",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT",
+      },
+      {
+        "fx",
+        "plasma_hit_spray",
+      },
+      {
+        "fx_scale",
+        "2.5",
+      },
+    },
+  },
+}

@@ -1,0 +1,69 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Boarding", 
+            length = 3, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "markerB", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation3 = 
+        { 
+            name = "MissileTrail", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Boarding", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "pod_spark_combo", }, 
+                { "sound", "SP_ELEMENTS/HGN_RESOURCECOLLECTOR_REPAIRING", }, 
+                { "fx_scale", "entity", }, 
+            },  
+        event2 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker2", }, 
+                { "fx", "missle_ignite_pod_combo", },
+                { "sound", "SPECIAL/minomet", }, 
+                { "fx_scale", "0.7", }, 
+            }, 
+        event2s = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker2", }, 
+                { "fx", "ion_cannon_steam_spray", },
+                { "fx_scale", "1", }, 
+            }, 
+}, }

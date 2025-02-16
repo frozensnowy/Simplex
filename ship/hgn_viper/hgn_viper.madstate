@@ -1,0 +1,5 @@
+HGN_VIPER_Launched_OnSet = function(ship)    
+    startEffect(ship, "launch")
+    startEffect(ship, "amb")
+    --startAnim(ship, "launch")    
+end

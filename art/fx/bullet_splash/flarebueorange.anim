@@ -1,0 +1,10 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:01:36
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+fps = 20
+startFrame = 0
+loopCount = 1
+texture = 
+    { "data:/art/fx/Clouds/Big_flash_ring.tga", "data:/art/fx/Bullet_Splash/Flare_orange.tga", }

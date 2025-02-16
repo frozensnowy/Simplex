@@ -1,0 +1,8 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "corvettehit_combo",
+		distance = 3000,
+	},
+}

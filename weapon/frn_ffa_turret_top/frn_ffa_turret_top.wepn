@@ -1,0 +1,50 @@
+StartWeaponConfig(NewWeaponType, -- <sWeaponName>
+"AnimatedTurret", -- <sWeaponType>
+"Bullet", -- <sWeaponFireType>
+"frn_frigcannon", -- <sWeaponFireName>
+"Normal", -- <sActivation>
+1900, -- <fWeaponFireSpeed> 
+3000, -- <fWeaponFireRange> 
+0, -- <fWeaponFireRadius>
+0, -- <fWeaponFireLifetime>
+0, -- <fWeaponFireMisc1>
+0, -- <iWeaponFireAxis>
+1, -- <iMaxEffectsSpawned>
+1, -- <iUseVelocityPred>
+0, -- <iCheckLineOfFire>
+0.8, -- <fFireTime> -- hope I understood how it works.
+0, -- <fBurstFireTime>
+0, -- <fBurstWaitTime>
+1, -- <iShootAtSecondaries>
+0, -- <iShootAtSurroundings>
+60, -- <fMaxAzimuthSpeed>
+60, -- <fMaxDeclinationSpeed>
+0.1, -- <fSpeedMultiplierWhenPointingAtTarget>
+"Normal", -- <sWeaponShieldPenetration>
+1, -- <iTrackTargetsOutsideRange>
+0, -- <fWaitUntillCodeRedState>
+0) -- <iInstantHitThreshold>
+
+AddWeaponResult(NewWeaponType, 
+	"Hit",			--Condition: Hit or Miss. Self evident.
+	"DamageHealth", --Effect: DamageHealth, Disable, Push, or SpawnWeaponfire
+	                --DamageHealth damages health, Disable does EMP damage, push moves the target, SpawnWeaponFire calls another weapon at the target point.
+	"Target",       --Target: either Target or Self. Self evident as well
+	200,            --Lower bound of the random range of effect
+	200,            --Upper bound of the random range of effect
+	"")             --Effect to be spawned in the case of SpawnWeaponFire                                                                                   
+                  
+setPenetration(NewWeaponType, 5, 1, 
+{PlanetKillerArmour = 0,})
+
+setAccuracy(NewWeaponType, 1, 
+	{Fighter = 0.56,},	--Family name, chance out of 1 of hitting that family. Don't know what the damage entries mean.
+	{Corvette = 0.73,},
+	{Frigate = 0.88,},
+	{Resource = 0.52,},
+	{munition = 0.9,}
+	)
+
+setAngles(NewWeaponType, 10, -180, 180, -7.5, 85)
+setMiscValues(NewWeaponType, 3.5, 0.2) -- 12.5 feet.
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

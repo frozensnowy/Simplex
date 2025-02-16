@@ -1,0 +1,6 @@
+mesh = 
+{
+	"data:art/fx/debris_asteroid/asteroid_pebble_0.hod",
+	"data:art/fx/debris_asteroid/asteroid_pebble_1.hod",
+	"data:art/fx/debris_asteroid/asteroid_pebble_2.hod",    
+}

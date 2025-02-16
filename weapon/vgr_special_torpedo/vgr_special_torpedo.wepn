@@ -1,0 +1,38 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:07 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "Missile", "vgr_as_torp", "Special Attack", 300, 3800, 0, 0, 0, 0, 1, 1, 0, 30, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 17500, 17500, "")
+AddWeaponResult(NewWeaponType, "Hit", "Disable", "Target", 10, 10, "")
+setPenetration(NewWeaponType, 70, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, 
+}, 
+{ 
+    Frigate = 1, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 1, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 1, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 1, 
+    damage = 1, })
+setAngles(NewWeaponType, 30, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 1.1, 0.1)

@@ -1,0 +1,266 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:02 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+-- scale= 0.8
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Avatar"
+NewShipType.sobDescription = "Giant Squid"
+NewShipType.maxhealth = 975000
+NewShipType.regentime = 1000
+NewShipType.minRegenTime = 400
+NewShipType.sideArmourDamage = 1.3
+NewShipType.rearArmourDamage = 1.5
+NewShipType.isTransferable = 1
+NewShipType.useEngagementRanges = 1
+NewShipType.unitCapsNumber = 2
+NewShipType.SquadronSize = 1
+NewShipType.paradeData = "kad_needle_parade"
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "x"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 7500
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 415
+NewShipType.mainEngineMaxSpeed = 360
+NewShipType.rotationMaxSpeed = 35
+NewShipType.thrusterAccelTime = 10
+NewShipType.thrusterBrakeTime = 5
+NewShipType.mainEngineAccelTime = 24
+NewShipType.mainEngineBrakeTime = 12
+NewShipType.rotationAccelTime = 15
+NewShipType.rotationBrakeTime = 5
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 180	--40
+NewShipType.mirrorAngle = 30
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 360
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 30
+NewShipType.slideMoveRange = 100
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 2
+NewShipType.tumbleStaticY = 4
+NewShipType.tumbleStaticZ = 3
+NewShipType.tumbleDynamicX = 1
+NewShipType.tumbleDynamicY = 2
+NewShipType.tumbleDynamicZ = 1
+NewShipType.tumbleSpecialDynamicX = 1
+NewShipType.tumbleSpecialDynamicY = 2
+NewShipType.tumbleSpecialDynamicZ = 1
+NewShipType.relativeMoveFactor = 3
+NewShipType.swayUpdateTime = 4
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.1
+NewShipType.swayRotateFactor = 0
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.15
+NewShipType.targetRandomPointXMax = 0.15
+NewShipType.targetRandomPointYMin = -0.15
+NewShipType.targetRandomPointYMax = 0.15
+NewShipType.targetRandomPointZMin = -0.2
+NewShipType.targetRandomPointZMax = 0.8
+NewShipType.dustCloudDamageTime = 160
+NewShipType.nebulaDamageTime = 200
+NewShipType.MinimalFamilyToFindPathAround = "MotherShip"
+NewShipType.mirrorAboveManeuver = "ImmelMann"
+NewShipType.mirrorBelowManeuver = "Split_S"
+NewShipType.specialTurnLeftManeuver = "NinetyDegLeftTurn, JinkLeft, OneEightyDegLeftTurn"
+NewShipType.specialTurnRightManeuver = "NinetyDegRightTurn, JinkRight, OneEightyDegRightTurn"
+NewShipType.testManeuver1 = "RollCW"
+NewShipType.testManeuver2 = "RollCCW"
+NewShipType.testManeuver3 = "Loop"
+NewShipType.BuildFamily = "SuperCap_Kad"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "UltraCap"
+NewShipType.AvoidanceFamily = "SuperCap"
+NewShipType.DisplayFamily = "Capital"
+NewShipType.AutoFormationFamily = "CapShip"
+NewShipType.CollisionFamily = "Big"
+NewShipType.ArmourFamily = "SuperHeavyArmor"
+NewShipType.UnitCapsFamily = "Capital"
+NewShipType.UnitCapsShipType = "Battlecruiser"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 80
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 3
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 120
+NewShipType.totalValue = 80
+NewShipType.buildCost = 10000
+NewShipType.buildTime = 185
+NewShipType.buildPriorityOrder = 120
+NewShipType.retaliationRange = 15000
+NewShipType.retaliationDistanceFromGoal = 160
+NewShipType.visualRange = 7000
+NewShipType.prmSensorRange = 9500
+NewShipType.secSensorRange = 9500
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "Arrow"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 14000
+NewShipType.TODistanceDisappear0 = 12000
+NewShipType.TODistanceFade1 = 5500
+NewShipType.TODistanceDisappear1 = 5000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 1
+NewShipType.nlips = 0
+NewShipType.nlipsRange = 75000
+NewShipType.nlipsFar = 0
+NewShipType.nlipsFarRange = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 150000	--32500
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 0.25
+NewShipType.goblinsStartFade = 16000	--4500
+NewShipType.goblinsOff = 16000		--4500
+NewShipType.upLOD = 16000	--5950
+NewShipType.downLOD = 16015	--5965
+NewShipType.minimumZoomFactor = 0.5
+NewShipType.selectionLimit = 500000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 1
+addAbility(NewShipType, "MoveCommand", 1, 0)
+addAbility(NewShipType, "CanDock", 1, 1)
+NewShipType.dockTimeBetweenTwoFormations = 1
+NewShipType.dockTimeBeforeStart = 2
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "delta"
+NewShipType.queueFormation = "dockline"
+NewShipType.dontDockWithOtherRaceShips = 1
+NewShipType.ignoreRaceWhenDocking = 0
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 1
+NewShipType.launchTimeBeforeStart = 2
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "delta"
+addAbility(NewShipType, "ParadeCommand", 1)
+addAbility(NewShipType, "WaypointMove")
+addAbility(NewShipType, "HyperSpaceCommand", 0, 3, 500, 100000, 3, 5)
+addAbility(NewShipType, "CanAttack", 1, 1, 0, 0, 0.35, 1.5, "SmallCapitalShip, BigCapitalShip, Mothership, Capturer, Frigate, Corvette, Fighter", "frontal_kadesh", 
+{ 
+	Fighter = "flyround_destroyer", 
+}, 
+{ 
+	Corvette = "flyround_destroyer", 
+}, 
+{ 
+	Munition = "MoveToTargetAndShoot", 
+}, 
+{ 
+	SubSystem = "FrontalVsSubSystem", })
+addAbility(NewShipType, "ShipHold", 1, 40, 8, "rallypoint", "Fighter, Corvette, Utility", 35, 
+{ 
+    Corvette = "55", })
+-- AddShipAbility(NewShipType, "HyperspaceInhibitor", 1, "ThisShipOnly", 0)
+addAbility(NewShipType, "HyperspaceInhibitorAbility", 0, 12000)
+-- AddShipMultiplier(NewShipType, "MaxSpeed", "EnemyShipsWithinRadius", "Linear", 0.9, 0.9, 2000)
+addAbility(NewShipType, "DefenseFieldAbility", 0, 0, 10, 100, 100, 1, 0.5, 0, "")
+addAbility(NewShipType, "GuardCommand", 1, 3000, 600)
+addAbility(NewShipType, "HyperspaceViaGateCommand", 1, 3, 1, 0.3)
+addAbility(NewShipType, "CanBuildShips", 1, "Orders_Hgn, kad_perks, Fighter_Kad, Corvette_Kad, Subsystem_Kad", "Fighter, Corvette, SubSystemModule, PrimaryPerk, SecondaryPerk, Orders")
+addAbility(NewShipType, "CanBeCaptured", 195, 0.5)
+addAbility(NewShipType, "CanBeRepaired")
+addAbility(NewShipType, "RetireAbility", 1, 1)
+addAbility(NewShipType,"MinelayerAbility",1,0)
+LoadModel(NewShipType, 1)
+-- engine
+StartShipHardPointConfig(NewShipType, "Engine", "Hardpoint_Engine", "System", "Innate", "Damageable", "kad_destroyer_engine", "", "", "", "", "", "", "", "") 
+-- Production systems
+StartShipHardPointConfig(NewShipType, "Production 3", "Hardpoint_Production3", "System", "Production", "Destroyable", "", "kad_needle_corvette", "", "", "", "", "", "", "")
+StartShipHardPointConfig(NewShipType, "Production 2", "Hardpoint_Production2", "System", "Production", "Destroyable", "", "kad_needle_fighter", "", "", "", "", "", "", "")
+-- root module
+StartShipHardPointConfig(NewShipType, "RootPoint", "Hardpoint_RootPoint", "System", "Sensors", "Destroyable", "", "kad_avatar_progenarmor", "", "", "", "", "", "", "")  
+StartShipHardPointConfig(NewShipType, "TailPoint", "Hardpoint_TailPoint", "System", "Sensors", "Destroyable", "", "kad_avatar_prayerpod", "", "", "", "", "", "", "") 
+
+StartShipHardPointConfig(NewShipType, "Generic 1", "Hardpoint_Generic1", "System", "Generic", "Destroyable", "", "Kad_D_Module_CloakGenerator",  "Kad_D_Module_HyperspaceInhibitor", "Kad_D_Module_Hyperspace", "Kad_D_Module_1GResearch", "", "", "", "", "", "","")
+StartShipHardPointConfig(NewShipType, "Generic 2", "Hardpoint_Generic2", "System", "Generic", "Destroyable", "", "Kad_D_Module_CloakGenerator", "Kad_D_Module_HyperspaceInhibitor", "Kad_D_Module_Hyperspace", "Kad_D_Module_1GResearch", "", "", "", "", "", "","")
+StartShipHardPointConfig(NewShipType, "Generic 3", "Hardpoint_Generic3", "System", "Generic", "Destroyable", "", "Kad_D_Module_CloakGenerator", "Kad_D_Module_HyperspaceInhibitor", "Kad_D_Module_Hyperspace", "Kad_D_Module_1GResearch", "", "", "", "", "", "","")
+StartShipHardPointConfig(NewShipType, "Generic 4", "Hardpoint_Generic4", "System", "Generic", "Destroyable", "", "Kad_D_Module_CloakGenerator", "Kad_D_Module_HyperspaceInhibitor", "Kad_D_Module_Hyperspace", "Kad_D_Module_1GResearch", "", "", "", "", "", "","")
+ 
+-- large guns
+StartShipWeaponConfig(NewShipType, "kad_destroyergun", "Weapon_Heavy1", "Weapon_Heavy1")
+StartShipWeaponConfig(NewShipType, "kad_destroyergun", "Weapon_Heavy2", "Weapon_Heavy2")
+StartShipWeaponConfig(NewShipType, "kad_destroyergun", "Weapon_Heavy3", "Weapon_Heavy3")
+StartShipWeaponConfig(NewShipType, "kad_destroyergun", "Weapon_Heavy4", "Weapon_Heavy4")
+-- small guns
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun", "Weapon_Small1", "Weapon_Small1")
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun", "Weapon_Small2", "Weapon_Small2")
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun", "Weapon_Small3", "Weapon_Small3")
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun", "Weapon_Small4", "Weapon_Small4")
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun_heretic", "Weapon_Small1", "Weapon_Small1")
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun_heretic", "Weapon_Small2", "Weapon_Small2")
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun_heretic", "Weapon_Small3", "Weapon_Small3")
+StartShipWeaponConfig(NewShipType, "kad_templarsmallgun_heretic", "Weapon_Small4", "Weapon_Small4")
+-- missile launcher
+StartShipWeaponConfig(NewShipType, "kad_heavymissilelauncher_destroyer", "Weapon_Missile", "Weapon_Missile")
+-- ion
+StartShipWeaponConfig(NewShipType, "kad_superplasmapulse", "Weapon_IonCannon", "Weapon_IonCannon")
+StartShipWeaponConfig(NewShipType, "kad_avatar_heretic", "Weapon_IonCannon", "Weapon_IonCannon_Heretic")
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg03", 1, 0.75, 0, 0, 0, 50, 0, 0, 0, 200, 0, 0, 0, 50, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg02", 1, 0.05, 30, -20, 200, 25, 300, 150, 85, 50, 0, 0, 0, 85, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg04", 1, 0.05, 50, 40, -150, 50, 65, 25, 5, 25, 0, 0, 0, 95, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg05", 1, 0.05, 25, 10, -100, 30, 35, 75, 62, 75, 0, 0, 0, 80, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg01", 1, 0.05, 60, 30, 150, 25, 35, 125, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml01", 1, 0.01, 80, 125, 60, 75, 125, 80, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml02", 1, 0.01, 25, 0, -125, 50, 80, 35, 120, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml03", 1, 0.01, 60, 95, 200, 50, 15, 200, 20, 125, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml04", 1, 0.01, 10, 60, -300, 25, 35, 80, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml05", 1, 0.01, 60, 10, 30, 75, 35, 25, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+addShield(NewShipType, "EMP", 20000, 80)
+StartShipHardPointConfig(NewShipType,"Weight","Hardpoint_Engine","System","Innate","Damageable","weight","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"experience","Hardpoint_Engine","System","Innate","Damageable","experience_limited","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"efficency","Hardpoint_Engine","System","Innate","Damageable","efficency","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"en","Hardpoint_Engine","System","Innate","Damageable","en","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"invulnerability","Hardpoint_Engine","System","Innate","Damageable","invulnerability","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"wrecktime","Hardpoint_Engine","System","Innate","Damageable","wrecktime","","","","","","","","")
+
+StartShipHardPointConfig(NewShipType, "hgn_orders_parade", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "hgn_orders_parade")
+StartShipHardPointConfig(NewShipType, "hgn_orders_guard", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "hgn_orders_guard")
+StartShipHardPointConfig(NewShipType, "hgn_orders_dock", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "hgn_orders_dock")
+StartShipHardPointConfig(NewShipType, "hgn_orders_clear", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "hgn_orders_clear")
+StartShipHardPointConfig(NewShipType, "hgn_orders_needle", "Hardpoint_Support", "System", "Innate", "Destroyable", "", "hgn_orders_needle")
+
+--primary perks
+StartShipHardPointConfig(NewShipType, "kad_perks_clear", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_clear")
+StartShipHardPointConfig(NewShipType, "kad_perks_survivalist", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_survivalist")
+StartShipHardPointConfig(NewShipType, "kad_perks_rage", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_rage")
+StartShipHardPointConfig(NewShipType, "kad_perks_stealth", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_stealth")
+StartShipHardPointConfig(NewShipType, "kad_perks_safefall", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_safefall")
+StartShipHardPointConfig(NewShipType, "kad_perks_training", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_training")
+StartShipHardPointConfig(NewShipType, "kad_perks_hitandrun", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_hitandrun")
+StartShipHardPointConfig(NewShipType, "kad_perks_bounty", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_bounty")
+
+--secondary perks
+StartShipHardPointConfig(NewShipType, "kad_perks_clear1", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_clear1")
+StartShipHardPointConfig(NewShipType, "kad_perks_damagecontrol", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_damagecontrol")
+StartShipHardPointConfig(NewShipType, "kad_perks_curse", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_curse")
+StartShipHardPointConfig(NewShipType, "kad_perks_revealer", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_revealer")
+StartShipHardPointConfig(NewShipType, "kad_perks_superheavy", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_superheavy")
+StartShipHardPointConfig(NewShipType, "kad_perks_potential", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_potential")
+StartShipHardPointConfig(NewShipType, "kad_perks_retreat", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_retreat")
+StartShipHardPointConfig(NewShipType, "kad_perks_miracle", "Hardpoint_Engine", "System", "Innate", "Destroyable", "", "kad_perks_miracle")
+
+NewShipType.battleScarMaxTriBase = 988
+NewShipType.battleScarMaxTriInc = 1318
+NewShipType.sobDieTime = 14
+NewShipType.sobSpecialDieTime = 5
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0
+NewShipType.trailLinger = 4
+setEngineBurn(NewShipType, 12, 0.5, 1, 165, 0, 0.7, 0.1, 175)
+-- setEngineGlow(NewShipType, 1, 1, 1.02, 20, 300, 50, 1.5, 
+    --{ 0.27, 0.47, 0.69, 0.25, })
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/Hiigaran/Frigate/", 0, "Engines/HFrigateEng", "", 1, "Ambience/HFrigateAmb", "")

@@ -1,0 +1,44 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:05 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Gimble", "Bullet", "Hddread", "Normal Only", 3500, 2500, 0, 0, 0, 0, 1, 1, 0, 0.6, 1.2, 0.5, 0, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 40, 40, "")
+setPenetration(NewWeaponType, 25, 1, 
+{ 
+    MediumArmour = 0.8, 
+}, 
+{ 
+    HeavyArmour = 1.05, 
+}, 
+{ 
+    MoverArmour = 0.85, 
+}, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0.1, 
+    damage = 1, 
+}, 
+{ 
+    Corvette = 0.25, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.3, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.25, 
+    damage = 1, 
+}, 
+{ 
+    Frigate = 0.5, 
+    damage = 1, 
+}, 
+{ 
+    SubSystem = 0.25, 
+    damage = 1, })
+setAngles(NewWeaponType, 15, 0, 0, 0, 0)

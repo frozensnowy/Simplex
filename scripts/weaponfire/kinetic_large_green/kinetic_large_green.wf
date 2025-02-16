@@ -1,0 +1,16 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:51 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "flare_shotgun_hit_spray" --"dmg_cloud_spray_large"
+bulletfx = "kinetic_large_bullet_green_combo"		--"bullet_green_spray"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_sfx = "WEAPON/FLAREGUN" --"WEAPON/fed_pulse_fire"
+nopenetrate_sfx = "WEAPON/FLAREGUN" --"WEAPON/fed_pulse_fire"
+firefx = "muzzle_flash_combo_med_green"
+fire_sfx = "WEAPON/maxim"
+hit_clamp = 
+    { 1, 1, }

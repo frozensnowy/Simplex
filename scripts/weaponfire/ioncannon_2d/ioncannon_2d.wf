@@ -1,0 +1,12 @@
+hitfx = ""
+bulletfx = "Ion_Cannon_2D_EFFECT"
+nopenetratefx = ""
+deathtype = "deathBeam"
+firefx = "ion_laser_small"
+fire_sfx = "ion/ion_sm"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_ION_CANNON_BEAM_HIT"
+nopentrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_ION_CANNON_BEAM_HIT"
+hit_clamp = {
+  1,
+  1,
+}

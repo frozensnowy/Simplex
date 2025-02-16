@@ -1,0 +1,106 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "MissileTrail",
+      length = 15,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "0.01",
+      },
+      {
+        "marker",
+        "EngineNozzle1",
+      },
+      {
+        "fx",
+        "missile_trail",
+      },
+      {
+        "sound",
+        "",
+      },
+      {
+        "fx_scale",
+        "1.5",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "EngineNozzle1",
+      },
+      {
+        "fx",
+        "",
+      },
+      {
+        "sound",
+        "TFS_SOUNDS/MISSILE_ENGINE1",
+      },
+      {
+        "fx_scale",
+        "entity",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "TFS_SOUNDS/VAYGR_LRCM_BURST",
+      },
+      {
+        "fx",
+        "ca_LRCM_small_combo",
+      },
+      {
+        "fx_transform",
+        "None",
+      },
+    },
+  },
+}

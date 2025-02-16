@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "Ion_Cannon_3D_EFFECT",
+		distance = 19000,
+	},
+	lod1 = 
+	{
+		fx = "",
+		distance = 20000,
+	},	
+}

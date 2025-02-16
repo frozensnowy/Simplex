@@ -1,0 +1,80 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "MissileTrail",
+      length = 20,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "MissleEngine1",
+      },
+      {
+        "fx",
+        "ASM73_ignite_combo",
+      },
+      {
+        "sound",
+        "TFS_SOUNDS/MISSILE_ENGINE1",
+      },
+      {
+        "fx_scale",
+        "5",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "TFS_SOUNDS/VAYGR_LRCM_BURST",
+      },
+      {
+        "fx",
+        "ca_cloud_spray",
+      },
+      {
+        "fx_scale",
+        "2.5",
+      },
+    },
+  },
+}

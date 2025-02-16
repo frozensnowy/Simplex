@@ -1,0 +1,24 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:11:24 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+lensflares = 
+{ 
+
+    lensflare0 = 
+    { 
+        name = "cloudysun", 
+        position = 
+            { -244.654, 8925.553, 7987.769, }, 
+        infinite = 1, }, 
+
+    lensflare1 = 
+    { 
+        name = "cloudysun", 
+        position = 
+            { 1244.654, -2225.553, 7987.769, }, 
+        infinite = 1, }, 
+        
+
+}

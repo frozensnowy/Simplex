@@ -1,0 +1,16 @@
+-- LuaDC version 0.9.19
+-- 2011-3-10 13:07:40
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_cloud_torpedo_combo"
+bulletfx = "siegecannon_bullet_combo"
+nopenetratefx = "dmg_wave_explosion_combo"
+deathtype = "deathBeam"
+firefx = "siegecannon_fiery_fire"
+fire_sfx = "WEAPON/bomber_turret_fire"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/ExpMissileMed"
+nopenetrate_sfx = "WEAPON/ExpMissileMed"
+hit_clamp = 
+    { 1, 1, }

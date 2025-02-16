@@ -1,0 +1,35 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:11:27 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+fadetimes = 
+    { 0.1, 0.1, 0.1, 1, }
+washoutColour = 
+    { 0.4, 0.4, 0.1, 1, }
+washoutStrength = 0.1
+hotspots = 
+    { 
+    { 
+        texture = "data:Effect/LensFlare/sparkleyellow_sm.tga", 
+        offset = 1, 
+        scale = 1, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 1, }, }, 
+{ 
+        texture = "data:Effect/LensFlare/whitehalo.tga", 
+        offset = 1.3, 
+        scale = 2, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, .2, }, },
+{ 
+        texture = "data:Effect/LensFlare/M01_Flare.tga", 
+        offset = 1, 
+        scale = 3, 
+        rotation = 1, 
+        colour = 
+            { 1, 1, 1, 1, }, },  
+}
+

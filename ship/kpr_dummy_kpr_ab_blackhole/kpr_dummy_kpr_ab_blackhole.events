@@ -1,0 +1,97 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 5, 
+			loop = 1, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		fire = 
+		{ 
+			name = "fire", 
+			length = 10, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		disksmall = 
+		{ 
+			name = "disksmall", 
+			length = 5, 
+			loop = 1, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		firesmall = 
+		{ 
+			name = "firesmall", 
+			length = 10, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "-1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_inverse_bubble_blackhole", }, 
+			{ "sound", "weapon/RandomSample/thunder", },    --WEAPON/bubbles2
+			{ "fx_scale", "20", }, 
+			{ "fx_sm", "on", }, 
+		}, 
+		disk1 = 
+		{ 
+			{ "anim", "fire", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "xplosion_rom_singularity", },    --kpr_phase_ball_blackhole
+			{ "fx_scale", "20", },    --50
+			{ "fx_sm", "on", }, 
+		}, 
+		smalldisk = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "-1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_inverse_bubble_blackhole", }, 
+			{ "sound", "weapon/RandomSample/thunder", },    --WEAPON/bubbles2
+			{ "fx_scale", "10", }, 
+			{ "fx_sm", "on", }, 
+		}, 
+		smalldisk1 = 
+		{ 
+			{ "anim", "firesmall", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "xplosion_rom_singularity", },    --kpr_phase_ball_blackhole
+			{ "fx_scale", "10", },    --50
+			{ "fx_sm", "on", }, 
+		}, 
+		
+	},
+	
+}

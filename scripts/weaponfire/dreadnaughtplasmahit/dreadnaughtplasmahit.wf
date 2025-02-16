@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:53 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+-- temporary flak effect placeholder till I get something better. 
+bulletfx = "plasma_explosion_combo"
+deathtype = "deathPlasma"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+bullet_sfx = "WEAPON/avatar_plasma"
+hit_sfx = "WEAPON/plasma_rifle_projectile_hit"		--"WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/plasma_rifle_projectile_hit"		--"WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = 
+    { 1, 1, }

@@ -1,0 +1,52 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:10 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "launch", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "smoke", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+    events = 
+    { 
+        smoke = 
+            { 
+                { "anim", "smoke", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "smokescreen_combo", }, 
+                { "sound", "WEAPON/smokePoof", }, 
+                { "fx_nlips", "on", }, 
+                { "fx_scale", "100", }, 
+            }, 
+
+---launch            
+            launch = 
+            { 
+                { "anim", "launch", }, 
+                { "animtime", "0", }, 
+                { "sound", "WEAPON/smokeEject", }, 
+            },   
+
+}, }

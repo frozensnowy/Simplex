@@ -1,0 +1,10 @@
+bulletfx = "dmg_cloud_torpedo_combo"
+nopenetratefx = "dmg_cloud_torpedo_combo"
+deathtype = "deathCannon"
+hit_clamp = {
+  1,
+  1,
+}
+scartype = "Bullet/Bullet"
+bullet_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"

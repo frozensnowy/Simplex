@@ -1,0 +1,83 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations =     { 
+        
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "MissileTrail", 
+            length = 5.5, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+    events = 
+    {         
+       event1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "ion_cannon_steam_spray_green", }, 
+		{ "fx_scale", "4", }, 
+            }, 
+       event1fire = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "muzzle_flash_combo_small_capital_borad", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_transform", "None", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "dmg_damage_cloud_puff_spray", }, 
+                { "fx_scale", "1", }, 
+            }, 
+    event4 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "fx_scale", "4",},
+                { "fx_nlips", "on", }, 
+            }, 
+    event4smoke = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "2.75", }, 
+                { "fx_nlips", "on", },
+            },    
+}, }

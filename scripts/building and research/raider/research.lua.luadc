@@ -1,0 +1,15 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:42 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+Icon_Speed = "data:ui/newui/research/icons/speed.mres"
+Icon_Health = "data:ui/newui/research/icons/health.mres"
+Icon_Tech = "data:ui/newui/research/icons/tech.mres"
+Icon_Ability = "data:ui/newui/research/icons/ability.mres"
+Modifier = 0
+Ability = 1
+AllShips = 0
+Family = 1
+Ship = 2
+research = {}

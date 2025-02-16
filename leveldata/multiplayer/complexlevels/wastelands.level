@@ -1,0 +1,164 @@
+levelDesc = "Wastelands"
+maxPlayers = 6
+--This is War of the Giants, Classic, tested by ZuliJin, UFO
+player = {}
+
+player[0] = {
+ id = 0,
+ name = "Vaygr",
+ resources = 1500,
+ raceID = 1,
+ startPos = 1,
+}
+
+player[1] = {
+ id = 1,
+ name = "Hiigaran",
+ resources = 1500,
+ raceID = 0,
+ startPos = 1,
+}
+
+player[2] = {
+ id = 2,
+ name = "Vaygr",
+ resources = 1500,
+ raceID = 1,
+ startPos = 1,
+}
+
+player[3] = {
+ id = 3,
+ name = "Hiigaran",
+ resources = 1500,
+ raceID = 0,
+ startPos = 1,
+}
+
+player[4] = {
+ id = 4,
+ name = "Vaygr",
+ resources = 1500,
+ raceID = 1,
+ startPos = 1,
+}
+
+player[5] = {
+ id = 5,
+ name = "Hiigaran",
+ resources = 1500,
+ raceID = 0,
+ startPos = 1,
+}
+
+function DetermChunk()
+ addPoint("StartPos0", {0, 23000, 0}, {0, 0, 0})
+ addPoint("StartPos1", {23000, 0, 0}, {0, 270, 0})
+ addPoint("StartPos2", {0, -23000, 0}, {0, 0, 0})
+ addPoint("StartPos3", {-23000, 0, 0}, {0, 90, 0})
+ addPoint("StartPos4", {0, 0, -23000}, {0, 0, 0})
+ addPoint("StartPos5", {0, 0, 23000}, {0, 180, 0})
+--player asteroids
+ addAsteroid("Asteroid_1", {-23000.0, -200.0, 3000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {-23000.0, 2000.0, 0.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_2", {-22000.0, -1000.0, -200.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-24000.0, 400.0, -1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-23000.0, -400.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-23000.0, 2000.0, 500.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {-22000.0, 400.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {23000.0, -1200.0, 300.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {23000.0, 2000.0, -400.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_2", {22000.0, -100.0, -200.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {24000.0, 400.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {23000.0, -1400.0, 100.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {23000.0, 400.0, 500.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {22000.0, -400.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {-200.0, -23000.0, 3000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {2000.0, -23000.0, 0.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_2", {-1000.0, -22000.0, -200.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {400.0, -24000.0, -1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-400.0, -23000.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {1500.0, -23000.0, 500.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {100.0, -22000.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {-200.0, 23000.0, 1300.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {1200.0, 23000.0, 0.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_2", {-1000.0, 22000.0, -200.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {800.0, 24000.0, 100.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {0.0, 23000.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {1000.0, 23000.0, 500.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {0.0, 22000.0, 1000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {-200.0, 1300.0, 23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {200.0, 1000.0, 23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_2", {-1000.0, 0.0, 22000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {1000.0, 100.0, 24000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {0.0, 1000.0, 23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {0.0, -1500.0, 23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {900.0, 1000.0, 22000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {-200.0, 1300.0, -23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_1", {200.0, 1000.0, -23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_2", {-1000.0, 0.0, -22000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {100.0, 100.0, -24000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {0.0, 1000.0, -23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {0.0, -500.0, -23000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {500.0, 1000.0, -22000.0}, 100, 0, 0, 0, 0)
+--center asteroids
+ addAsteroid("Asteroid_5", {200.0, 0.0, 400.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {500.0, 0.0, 100.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {0.0, -800.0, 200.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {-300.0, 100.0, 500.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {500.0, -200.0, -100.0}, 100, 0, 0, 0, 0)
+--midway asteroids
+ addAsteroid("Asteroid_3", {9000.0, 9000.0, 10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {10000.0, 9000.0, -9000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {10000.0, -9000.0, -9000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-9000.0, -9000.0, -10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-9000.0, -9000.0, 10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-10000.0, 9000.0, 9000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_3", {-10000.0, 10000.0, -9000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {10000.0, 10000.0, 10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {10000.0, 10000.0, -10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {10000.0, -10000.0, -10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {-10000.0, -10000.0, -10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {-10000.0, -10000.0, 10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {-10000.0, 10000.0, 10000.0}, 100, 0, 0, 0, 0)
+ addAsteroid("Asteroid_4", {-10000.0, 10000.0, -10000.0}, 100, 0, 0, 0, 0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {100.0, 1000.0, -10000.0}, {.5, .5, .5, 1}, 10000.0, 10000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {1000.0, -1000.0, 100.0}, {.5, .5, .5, 1}, 10000.0, 10000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {100.0, 10000.0, -100.0}, {.5, .5, .5, 1}, 10000.0, 10000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {10000.0, -1000.0, 100.0}, {.5, .5, .5, 1}, 10000.0, 10000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {100.0, 1000.0, -100.0}, {.5, .5, .5, 1}, 10000.0, 10000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {1000.0, -1000.0, 100.0}, {.5, .5, .5, 1}, 10000.0, 10000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {1000.0, -100.0, 100.0}, {.5, .5, .5, 1}, 40000.0, 15000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {1000.0, -100.0, 100.0}, {.5, .5, .5, 1}, 20000.0, 15000.0)
+ addDustCloud("polySurface1", "DustCloud_NoRes2", {1000.0, -100.0, 1000.0}, {.5, .5, .5, 1}, 20000.0, 15000.0)
+ addSquadron("meg_bigred", "meg_hvdreadnaught", {5000, 500, -3000}, -1, {20, 20, 20}, 0, 0)
+ addSquadron("meg_misslefrigate", "meg_gehenna_1ctm", {-5000, -500, 3000}, -1, {0, 80, 20}, 0, 0)
+ addSquadron("meg_sajhulknose_ui", "meg_gehenna_1ctm", {5000, -5000, -3000}, -1, {100, 80, 20}, 0, 0)
+ addSquadron("meg_sajhulkpanels", "meg_gehenna_1ctm", {5000, -500, -13000}, -1, {0, -20, 50}, 0, 0)
+ local battleship = {"meg_foundry","meg_carrier_huge"}
+ addSquadron("meg_foundry", battleship[random(1,2)], {-5000, -13000, 10000}, -1, {0, 80, 20}, 0, 0)
+ local battleship = {"meg_engineeringbay","meg_carrier_huge"}
+ addSquadron("meg_foundrydebris_chunk2", battleship[random(1,2)], {5000, -15000, -3000}, -1, {100, 80, 20}, 0, 0)
+ addSquadron("meg_veildebris_chunk1", "meg_reinforcementpad", {5000, -5000, -1000}, -1, {0, -20, 50}, 0, 0)
+ addSalvage("Slv_Chunk_Lrg03", {0.0, 2000, -1000}, 100, 0, 0, 0, 0)
+ addSalvage("Slv_Chunk_Lrg05", {500.0, -2000, -1000}, 100, 0, 0, 0, 0)
+ addSalvage("Slv_Chunk_Lrg02", {2000.0, 1000, 0}, 100, 0, 0, 0, 0)
+ addSalvage("Slv_Chunk_Lrg04", {100.0, -2000, 1000}, 100, 0, 0, 0, 0)
+ addSalvage("Slv_Chunk_Lrg03", {-100.0, 0, 1000}, 100, 0, 0, 0, 0)
+ addSalvage("Slv_Chunk_Lrg04", {800.0, 200, -1000}, 100, 0, 0, 0, 0)
+ setWorldBoundsInner({0, 0, 0}, {50000, 50000, 50000})
+end
+
+function NonDetermChunk()
+
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.136719, 0.228516, 0.427734, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+  setLevelShadowColour(0, 0, 0, 1)
+  loadBackground ("ponds")
+  setSensorsManagerCameraDistances(61000, 120000)
+end

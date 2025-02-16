@@ -1,0 +1,82 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:54 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "death2", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "death_generic", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "marker4", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_main_explosion_combo", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "20", }, 
+            }, 
+        event17= 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "3", }, 
+            }, }, }

@@ -1,0 +1,47 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = ""
+NewSubSystemType.sobDescription = ""
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0
+NewSubSystemType.tacticalIconMinFadeSize = 0
+NewSubSystemType.tacticalIconMaxFadeSize = 0
+NewSubSystemType.groupMergeSize = 0
+NewSubSystemType.mouseOverMinFadeSize = 0
+NewSubSystemType.mouseOverMaxFadeSize = 0
+NewSubSystemType.maxhealth = 10000000
+NewSubSystemType.regentime = 0
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0
+NewSubSystemType.minimumZoomFactor = 0
+NewSubSystemType.selectionLimit = 0
+NewSubSystemType.preciseATILimit = 0
+NewSubSystemType.selectionPriority = 0
+NewSubSystemType.type = "System"
+NewSubSystemType.typeString = "rad_xp_coffee"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 0
+NewSubSystemType.activateHealthPercentage = 0
+NewSubSystemType.costToBuild = 2000
+NewSubSystemType.timeToBuild = 1
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 0
+LoadSharedModel(NewSubSystemType, "3000ru")
+NewSubSystemType.BuildFamily = "Subsystem_Rad"
+NewSubSystemType.AttackFamily = "UnAttackable"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "ExperienceAbility"
+NewSubSystemType.ArmourFamily = "Unarmoured"
+
+AddSubSystemMultiplier(NewSubSystemType, "MaxSpeed", "ThisShipOnly", "Linear", 1.3, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "WeaponAccuracy", "ThisShipOnly", "Linear", 2, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "WeaponDamage", "ThisShipOnly", "Linear", 2, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "HealthRegenerationRate", "ThisShipOnly", "Linear", 10, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "ShipHoldRepairSpeed", "ThisShipOnly", "Linear", 10, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "BuildSpeed", "ThisShipOnly", "Linear", 2, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "VisualRange", "ThisShipOnly", "Linear", 1.3, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "PrimarySensorsRange", "ThisShipOnly", "Linear", 1.3, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "SecondarySensorsRange", "ThisShipOnly", "Linear", 1.3, 1, 0)
+AddSubSystemMultiplier(NewSubSystemType, "CloakDetection", "ThisShipOnly", "Linear", 2, 1, 0)

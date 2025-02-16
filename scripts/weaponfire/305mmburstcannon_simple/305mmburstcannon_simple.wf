@@ -1,0 +1,13 @@
+hitfx = "dmg_missle_explode_combo"
+bulletfx = "305mm_cannonshot"
+nopenetratefx = "dmg_missle_explode_combo"
+deathtype = "deathCannon"
+firefx = "muzzle_flash_combo_small_capital"
+fire_sfx = "WEAPON/CARRIER/FIRE/VWEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+hit_clamp = {
+  1,
+  1,
+}

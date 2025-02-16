@@ -1,0 +1,166 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:11 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Patcher"
+NewShipType.sobDescription = "Plastic Surgeon"
+NewShipType.maxhealth = 8000
+NewShipType.regentime = 140
+NewShipType.minRegenTime = 14
+--NewShipType.maxShield = 100000
+NewShipType.frontArmourDamage = 0.5
+NewShipType.sideArmourDamage = 0.4
+NewShipType.rearArmourDamage = 0.5
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.unitCapsNumber = 1
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 40
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 300	--600
+NewShipType.mainEngineMaxSpeed = 300	--600
+NewShipType.rotationMaxSpeed = 285
+NewShipType.thrusterAccelTime = 3
+NewShipType.thrusterBrakeTime = 1
+NewShipType.mainEngineAccelTime = 3
+NewShipType.mainEngineBrakeTime = 1
+NewShipType.rotationAccelTime = 1
+NewShipType.rotationBrakeTime = 0.6
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 90
+NewShipType.mirrorAngle = 30
+NewShipType.secondaryTurnAngle = 90
+NewShipType.maxBankingAmount = 85
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 5
+NewShipType.slideMoveRange = 0
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 0
+NewShipType.tumbleStaticY = 0
+NewShipType.tumbleStaticZ = 0
+NewShipType.tumbleDynamicX = 0
+NewShipType.tumbleDynamicY = 0
+NewShipType.tumbleDynamicZ = 0
+NewShipType.tumbleSpecialDynamicX = 0
+NewShipType.tumbleSpecialDynamicY = 0
+NewShipType.tumbleSpecialDynamicZ = 0
+NewShipType.relativeMoveFactor = 6
+NewShipType.swayUpdateTime = 2
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.2
+NewShipType.swayRotateFactor = 0.2
+NewShipType.dustCloudDamageTime = 160
+NewShipType.nebulaDamageTime = 80
+NewShipType.MinimalFamilyToFindPathAround = "SuperCap"
+NewShipType.BuildFamily = "Patcher"
+NewShipType.AttackFamily = "Utility"
+NewShipType.DockFamily = "Mover"
+NewShipType.AvoidanceFamily = "Strikecraft"
+NewShipType.DisplayFamily = "Utility"
+NewShipType.AutoFormationFamily = "Fighter"
+NewShipType.CollisionFamily = "Small"
+NewShipType.ArmourFamily = "ResArmour"
+NewShipType.UnitCapsFamily = "Utility"
+NewShipType.UnitCapsShipType = "Patcher"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 0
+NewShipType.buildCost = 800
+NewShipType.buildTime = 30
+NewShipType.buildPriorityOrder = 30
+NewShipType.retaliationRange = 0
+NewShipType.retaliationDistanceFromGoal = 0
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 1200
+NewShipType.secSensorRange = 1400
+NewShipType.detectionStrength = 0
+NewShipType.TOIcon = "Diamond"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 7000
+NewShipType.TODistanceDisappear0 = 5000
+NewShipType.TODistanceFade1 = 2500
+NewShipType.TODistanceDisappear1 = 2000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 0.0005
+NewShipType.TOGroupMergeSize = 6000
+NewShipType.mouseOverMinFadeSize = 0.0002
+NewShipType.mouseOverMaxFadeSize = 10000
+NewShipType.healthBarStyle = 0
+NewShipType.nlips = 0.0005
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.0002
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "HardDot"
+NewShipType.meshRenderLimit = 50000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 0.25
+NewShipType.goblinsStartFade = 400
+NewShipType.goblinsOff = 400
+NewShipType.upLOD = 1400
+NewShipType.upLOD = 3600
+NewShipType.upLOD = 7500
+NewShipType.downLOD = 1405
+NewShipType.downLOD = 3605
+NewShipType.downLOD = 7505
+NewShipType.minimumZoomFactor = 0.5
+NewShipType.selectionLimit = 500000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 0
+addAbility(NewShipType, "CanDock", 1, 0)
+addAbility(NewShipType, "RepairCommand", 1, 450, 17, 
+{ 
+    massshield = "75", 
+}, 
+{ 
+    SuperCap = "32", 
+}, 
+{ 
+    Flagship = "48", })
+NewShipType.dockTimeBetweenTwoFormations = 0
+NewShipType.dockTimeBeforeStart = 0
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "dockline"
+NewShipType.queueFormation = "dockline"
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.ignoreRaceWhenDocking = 1
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 0
+NewShipType.launchTimeBeforeStart = 7
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "dockline"
+addAbility(NewShipType,"DefenseFieldAbility",0,0,90,100,0,0,2,0,"defensefield_sphere_spray")
+addAbility(NewShipType,"DefenseFieldShieldAbility",0,90,0,0)
+LoadModel(NewShipType, 1)
+--StartShipWeaponConfig(NewShipType,"hgn_cthpulsar","Weapon_Gun0","Weapon_Gun0");
+StartShipHardPointConfig(NewShipType,"lancio","Hardpoint_lancio","System","Innate","Damageable","lancio","","","","","","","","")
+addShield(NewShipType, "EMP", 10000, 20)
+AddShipMultiplier(NewShipType, "NebulaSensitivity", "ThisShipOnly", "Linear", 0.2, 0.2, 0)
+AddShipMultiplier(NewShipType, "DustCloudSensitivity", "ThisShipOnly", "Linear", 0.2, 0.2, 0)
+NewShipType.sobDieTime = 0.1
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 1
+setEngineTrail(NewShipType, 0, 1.4, "trail_ribbon.tga", 0.1, 0.1, 0.025, 2)
+setEngineTrail(NewShipType, 1, 1.4, "trail_ribbon.tga", 0.1, 0.1, 0.025, 2)
+setEngineTrail(NewShipType, 2, 1.4, "trail_ribbon.tga", 0.1, 0.1, 0.025, 2)
+setEngineTrail(NewShipType, 3, 1.4, "trail_ribbon.tga", 0.1, 0.1, 0.025, 2)
+setEngineBurn(NewShipType, 6, 3, 3, 4, 0.1, 0.1, 0.1, 15)
+setEngineGlow(NewShipType, 1, 1, 1.02, 20, 300, 50, 1.5, 
+    { 0.27, 0.47, 0.69, 0.25, })
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/misc/", 0, "Engines/KeeperMoverEng", "", 1, "Ambience/KeeperMoverAmb", "")

@@ -1,0 +1,9 @@
+-- Pretty-Printed using HW2 Pretty-Printer 1.27 by Mikail.
+mips = 
+{
+	"Data:UI/Pings/Meshes/Circle_128x128.tga",
+	"Data:UI/Pings/Meshes/Circle_64x64.tga",
+	"Data:UI/Pings/Meshes/Circle_32x32.tga",
+	"Data:UI/Pings/Meshes/Circle_16x16.tga",
+	"Data:UI/Pings/Meshes/Circle_8x8.tga",
+}

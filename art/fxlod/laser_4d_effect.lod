@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "laser_4D_EFFECT",
+		distance = 34000,
+	},
+	lod1 = 
+	{
+		fx = "",
+		distance = 35000,
+	},	
+}

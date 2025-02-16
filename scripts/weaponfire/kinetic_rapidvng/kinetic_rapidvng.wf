@@ -1,0 +1,15 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:51 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "DMG_CLOUD_COMBO"
+bulletfx = "bullet_tracer_combo"
+nopenetratefx = "dmg_cloud_combo"
+deathtype = "deathCannon"
+scartype = "Bullet/Bullet"
+hit_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PEA_SHOOTER_HIT"
+--hit_nlips = 0.0005
+--bullet_nlips = 0.0001
+hit_clamp = 
+    { 1, 1, }

@@ -1,0 +1,11 @@
+hitfx = "torpexplode_hit"
+bulletfx = "torpexplode_hit"
+nopenetratefx = "torpexplode_hit"
+deathtype = "deathCannon"
+scartype = "Vgr_HeavyMissile/Vgr_HeavyMissile"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+hit_clamp = {
+  1,
+  1,
+}

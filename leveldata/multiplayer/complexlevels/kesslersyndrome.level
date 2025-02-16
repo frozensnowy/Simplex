@@ -1,0 +1,136 @@
+
+levelDesc = "Kessler Syndrome"
+maxPlayers = 6
+player = {}
+
+for k = 0, maxPlayers - 1 do
+	player[k] = {id = k, name = "", raceName = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	-- seed value for random functions
+	local my_seed_1 = {seed = -random(12345)}
+	local cloudColor = { 1, 0, 0, 1/14}	--{srandom(my_seed_1), srandom(my_seed_1), srandom(my_seed_1), 1/4}
+
+	setWorldBoundsInner({0, 0, 0,}, {75000, 75000, 75000,})
+	setWorldBoundsOuter({0, 0, 0}, {91000, 91000, 91000})
+	
+  addSquadron("skybox_starfield_left", "skybox_moon_left", {10000000, 0, 0}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_bottom", "skybox_magellanic_bottom", {0, -10000000, 0}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_back", "skybox_earthNASA_back", {0, 0, -10000000}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_front", "skybox_starfield_front", {0, 0, 10000000}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_top", "skybox_starfield_top", {0, 10000000, 0}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_right", "skybox_starfield_right", {-10000000, 0, 0}, -1, {0, 0, 0}, 0, 0)
+
+	local argu = 0
+	local r = 30000
+	local num = 9
+	local delt = 360/num
+	for i = 1, num, 1 do
+		addSquadron("BigProduction", "meg_chimera_nobuild", {r*cos(argu), 0, r*sin(argu)}, -1, {0, 180-argu, 0,}, 0, 0)
+		argu = argu + delt
+	end
+	addSquadron("battleship", "meg_executor_ssd", {random(-1000,1000), random(-1000,1000), random(-1000,1000)}, -1, {random(-10,10), random(0,360), random(-10,10)}, 0, 0)
+	addSquadron("berth1", "meg_dreadnaughtberth_med", {65000, -12000, 0}, -1, {-3, 80, 3}, 0, 0)
+	addSquadron("berth2", "meg_foundry_med", 					{-60000, -10000, 0}, -1, {4, 70, 4}, 0, 0)
+
+
+--	addCamera("pieplatetest", {0,0,0,}, {0, 32768,0,})
+
+--	easyPatch({     0, 0,  35000,}, 100, my_seed_1)
+--	easyPatch({ 35000, 0,      0,}, 100, my_seed_1)
+--	easyPatch({     0, 0, -35000,}, 100, my_seed_1)
+--	easyPatch({-35000, 0,      0,}, 100, my_seed_1)
+--	addPoint("StartPos0", {     0, 0,  35000 + 3000,}, {0, 180, 0,})
+--	addPoint("StartPos1", { 35000 + 3000, 0,      0,}, {0, 270, 0,})
+--	addPoint("StartPos2", {     0, 0, -35000 - 3000,}, {0,   0, 0,})
+--	addPoint("StartPos3", {-35000 - 3000, 0,      0,}, {0,  90, 0,})
+
+	local aPoint = {}
+	local aU = {}
+	local aV = {}
+	local aR = {}
+	local iMax = maxPlayers
+	local stepU = 360/iMax * 2
+	local stepV = 180/iMax * 2
+	for i = 1, iMax do
+		if (i == 1) then
+			aU[i] = srandom(my_seed_1, stepU)
+			aV[i] = srandom(my_seed_1, stepV)
+			aR[i] = sqrt(sqrt(srandom(my_seed_1))) * 50000
+		else
+			aU[i] = aU[i - 1] + srandom(my_seed_1, stepU)
+			aV[i] = aV[i - 1] + srandom(my_seed_1, stepV)
+			aR[i] = sqrt(sqrt(srandom(my_seed_1))) * 50000
+		end
+		aPoint[i] =
+		{
+			aR[i] * cos(aU[i]) * sin(aV[i]),
+			aR[i] * cos(aV[i]) * 2/3,
+			aR[i] * sin(aU[i]) * sin(aV[i]),
+		}
+		addPoint("StartPos" .. (i-1), aPoint[i], {0,0,0,})
+--		addCloud("polySurface1", "cloud_text_" .. i, aPoint[i], {1, 1, 1, 1}, 0, 4096)
+		easyPatch(vadd(aPoint[i], 3000), 100, my_seed_1)
+	end
+
+	-- distributions
+	local threeRings =
+	{
+		--addPebble(<sPebbleType>, <tPosition>, ?, ?, ?)
+		--{ 2, "Pebble", "Pebble_2", {0,0,0,}, 0, 0, 0,},
+--		{ 128, "Pebble", "Pebble_2", {0,0,0,}, 0, 0, 0,},
+		--addAsteroid(<sAsteroidType>, <tPosition>, <fRU>, ?, ?, ?, ?)
+		{ 2, "Asteroid", "Asteroid_1", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{ 1, "Asteroid", "Asteroid_2", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{ 1, "Asteroid", "Asteroid_3", {0,0,0,}, 100, 0, 0, 0, 0,},
+		--addDustCloud(<sObjName>, <sDustCloudType>, <tPosition>, <tColor>, ?, <fSize>)
+		--{ 2, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, cloudColor, 0, srandom(my_seed_1, 15000),},
+		--{ 2, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, cloudColor, 0, srandom(my_seed_1, 15000),},
+		--{ 2, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, cloudColor, 0, srandom(my_seed_1, 15000),},
+		--{ 2, "DustCloud", "polySurface1", "DustCloud_NoRes3", {0,0,0,}, cloudColor, 0, srandom(my_seed_1, 15000),},
+		-- easyPatch(<tPos>, <fRUs>, <tSeed>)
+		{  1, "Function", easyPatch, {0,0,0,}, 100,},
+	}
+
+	local aPoint = {}
+	local aRadius = {}
+	local aU = {}
+	local aV = {}
+	local aR = {}
+	local iMax = 32		-- needs to be an even number
+	local stepU = 360/iMax * 4
+	local stepV = 180/iMax * 4
+	for i = 1, iMax do
+		if (i == 1) then
+			aU[i] = srandom(my_seed_1, stepU)
+			aV[i] = srandom(my_seed_1, stepV)
+			aR[i] = sqrt(sqrt(srandom(my_seed_1))) * 50000
+		else
+			aU[i] = aU[i - 1] + srandom(my_seed_1, stepU)
+			aV[i] = aV[i - 1] + srandom(my_seed_1, stepV)
+			aR[i] = sqrt(sqrt(srandom(my_seed_1))) * 50000
+		end
+		aPoint[i] =
+		{
+			aR[i] * cos(aU[i]) * sin(aV[i]),
+			aR[i] * cos(aV[i]) * 2/3,
+			aR[i] * sin(aU[i]) * sin(aV[i]),
+		}
+		aRadius[i] = srandom(my_seed_1, 4000) + 100
+		if (i > 3) and (mod(i, 2) == 0) then
+			spline3Add({0,0,0,}, threeRings, {aPoint[i-3], aPoint[i-2], aPoint[i-1], aPoint[i], {aRadius[i-2], aRadius[i]}, {100,100}}, {0,0,0}, my_seed_1)
+		end
+--		addAsteroid("Asteroid_5", aPoint[i], 100, 0, 0, 0, 0)
+	end
+end
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(46000, 120000)
+	loadBackground("skybox_earthNASA")
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

@@ -1,0 +1,27 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Missile","rad_RPG_small","Normal Only",2000,6500,0,0,0,0,1,1,1,7,0,0,1,0,40,40,.1,"Normal",1,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",2500,2500,"")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"rad_smallmissileburst")
+
+setAngles(NewWeaponType,0,-180,180,-5,20)
+
+setMiscValues(NewWeaponType,5,.3)
+
+setPenetration(NewWeaponType,35,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=2,},
+{HeavyArmour=3,},
+{SubSystemArmour=1,},
+{TurretArmour=1,},
+{ResArmour=1,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=3,})
+
+setAccuracy(NewWeaponType,1)
+
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

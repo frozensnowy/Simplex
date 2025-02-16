@@ -1,0 +1,150 @@
+-- LuaDC version 0.9.19
+-- 10/06/2004 22.37.54
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Hyperspace Gate"
+NewShipType.sobDescription = "?"
+NewShipType.maxhealth = 5500
+NewShipType.regentime = 250
+NewShipType.minRegenTime = 80
+NewShipType.sideArmourDamage = 1
+NewShipType.rearArmourDamage = 1
+NewShipType.isTransferable = 1
+NewShipType.useEngagementRanges = 0
+NewShipType.unitCapsNumber = 1
+NewShipType.SquadronSize = 1
+NewShipType.formationSpacing = 35
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "x"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 20
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 70
+NewShipType.mainEngineMaxSpeed = 60
+NewShipType.rotationMaxSpeed = 120
+NewShipType.thrusterAccelTime = 2.6
+NewShipType.thrusterBrakeTime = 1
+NewShipType.mainEngineAccelTime = 2.6
+NewShipType.mainEngineBrakeTime = 1
+NewShipType.rotationAccelTime = 0.6
+NewShipType.rotationBrakeTime = 0.3
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 90
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 15
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 5
+NewShipType.slideMoveRange = 0
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 10
+NewShipType.tumbleStaticY = 20
+NewShipType.tumbleStaticZ = 5
+NewShipType.tumbleDynamicX = 2
+NewShipType.tumbleDynamicY = 10
+NewShipType.tumbleDynamicZ = 5
+NewShipType.tumbleSpecialDynamicX = 2
+NewShipType.tumbleSpecialDynamicY = 10
+NewShipType.tumbleSpecialDynamicZ = 5
+NewShipType.relativeMoveFactor = 6
+NewShipType.swayUpdateTime = 2
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0
+NewShipType.swayRotateFactor = 0
+NewShipType.dustCloudDamageTime = 160
+NewShipType.nebulaDamageTime = 35
+NewShipType.MinimalFamilyToFindPathAround = "SuperCap"
+NewShipType.BuildFamily = "Platform_Hgn"
+NewShipType.AttackFamily = "Frigate"
+NewShipType.DockFamily = "Platform"
+NewShipType.AvoidanceFamily = "Frigate"
+NewShipType.DisplayFamily = "Platform"
+NewShipType.AutoFormationFamily = "Frigate"
+NewShipType.CollisionFamily = "Small"
+NewShipType.ArmourFamily = "TurretArmour"
+NewShipType.UnitCapsFamily = "Platform"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 4
+NewShipType.neutralValue = 5
+NewShipType.antiFighterValue = 8
+NewShipType.antiCorvetteValue = 4
+NewShipType.antiFrigateValue = 1
+NewShipType.totalValue = 9
+NewShipType.buildCost = 1
+NewShipType.buildTime = 1
+NewShipType.buildPriorityOrder = 10
+NewShipType.retaliationRange = 4500
+NewShipType.retaliationDistanceFromGoal = 160
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 4000
+NewShipType.secSensorRange = 5000
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "Hexagon"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 7000
+NewShipType.TODistanceDisappear0 = 5000
+NewShipType.TODistanceFade1 = 2500
+NewShipType.TODistanceDisappear1 = 2000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 1
+NewShipType.nlips = 0.0007
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.00015
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "HardDot"
+NewShipType.meshRenderLimit = 50000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.goblinsStartFade = 1800
+NewShipType.goblinsOff = 1800
+NewShipType.upLOD = 1800
+NewShipType.upLOD = 2800
+NewShipType.downLOD = 1800
+NewShipType.downLOD = 2800
+NewShipType.minimumZoomFactor = 1
+NewShipType.selectionLimit = 500000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 1
+addAbility(NewShipType, "MoveCommand", 1, 0)
+NewShipType.ignoreRaceWhenDocking = 0
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 1
+NewShipType.launchTimeBeforeStart = 2
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "n_delta"
+addAbility(NewShipType, "HyperSpaceCommand", 0, 1.5, 250, 750, 0.5, 4)
+--addAbility(NewShipType, "CanBeRepaired")
+addAbility(NewShipType, "ParadeCommand", 1)
+addAbility(NewShipType, "CanAttack", 1, 1, 0, 0, 0.35, 1, "Fighter, Corvette, Munition, Frigate, Utility, SmallCapitalShip, BigCapitalShip", "JustShoot")
+addAbility(NewShipType, "HyperspaceViaGateCommand", 1, 3, 1, 0.3)
+NewShipType.disableOnRaceChange = 0
+LoadModel(NewShipType, 1)
+--StartShipWeaponConfig(NewShipType, "Hgn_VulcanKineticTurretLongRange", "Weapon_Top", "Weapon_Top")
+--StartShipWeaponConfig(NewShipType, "Hgn_VulcanKineticTurretLongRange", "Weapon_Bottom", "Weapon_Bottom")
+--StartShipWeaponConfig(NewShipType, "Hgn_VulcanKineticTurretLongRangeAM", "Weapon_Top", "Weapon_Top")
+--StartShipWeaponConfig(NewShipType, "Hgn_VulcanKineticTurretLongRangeAM", "Weapon_Bottom", "Weapon_Bottom")
+addShield(NewShipType, "EMP", 40, 20)
+--SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml03",1,0.01,60,95,200,50,15,200,20,125,0,0,0,60,0,0,0,50)
+--SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml04",1,0.01,10,60,-300,25,35,80,65,75,0,0,0,60,0,0,0,50)
+NewShipType.battleScarMaxTriBase = 20
+NewShipType.battleScarMaxTriInc = 30
+NewShipType.sobDieTime = 1
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 1
+setEngineTrail(NewShipType, 0, 4, "trail_ribbon.tga", 0.01, 0.2, 0.025, 3)
+setEngineTrail(NewShipType, 1, 4, "trail_ribbon.tga", 0.01, 0.2, 0.025, 3)
+setEngineBurn(NewShipType, 15, 2, 3, 9, 1.2, 0.1, 0.5, 50)
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/Hiigaran/NonMilitary/", 0, "Engines/HWeaponPlatformEng", "", 1, "Ambience/HWeaponPlatformAmb", "")

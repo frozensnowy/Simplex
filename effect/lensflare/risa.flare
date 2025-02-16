@@ -1,0 +1,205 @@
+-- created by Stargazer
+--
+-- orange sun lensflare
+--
+
+local flarecolour = { 0.125, 0.071, 0.059 }
+local flareintensity = 0.3
+local flarescale = 0.25
+
+fadetimes= { 0.1, 0.1, 0.1, 1.0 }
+washoutColour = { 0.7, 0.2, 0.1, 1, }
+washoutStrength = 0.06
+
+hotspots= {
+
+  -- main
+  {
+    texture = "data:Effect/LensFlare/glow_Bright01.tga",
+    offset = 1.0, 
+    scale = 2.0,
+    rotation = 0,
+    colour = { 1, 1, 1, 1, },
+  },
+  {
+    texture = "data:Effect/LensFlare/glow_Bright01.tga",
+    offset = 1.0,
+    scale = 1.5,
+    rotation = 0,
+    colour = { 1, 1, 1, 0.75, },
+  },
+  
+  -- flares
+  {
+    texture="data:Effect/LensFlare/reflex_Disc01.tga",
+    offset = 1.4,
+    scale = 3 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_Disc03.tga",
+    offset = 0.74,
+    scale = 1.8 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_Disc02.tga",
+    offset = 0.7,
+    scale = 5 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_Disc03.tga",
+    offset = 0.64,
+    scale = 2.7 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_Disc03.tga",
+    offset = 0.5,
+    scale = 1.5 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.36,
+    scale = 0.5 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+  
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.12,
+    scale = 0.7 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_Disc02.tga",
+    offset = 0.08,
+    scale = 5.2 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_Disc02.tga",
+    offset = -0.08,
+    scale = 2.5 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = -0.2,
+    scale = 3.3 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+  
+  {
+    texture="data:Effect/LensFlare/reflex_Ring01.tga",
+    offset = -0.6,
+    scale = 7 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_Disc01.tga",
+    offset = -0.6,
+    scale = 7 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+  
+  {
+    texture="data:Effect/LensFlare/reflex_RainbowRing01.tga",
+    offset = -1.0,
+    scale = 10 * flarescale,
+    rotation = 0,
+    colour = {
+      255 * flarecolour[1] * flareintensity/255,
+      255 * flarecolour[2] * flareintensity/255,
+      255 * flarecolour[3] * flareintensity/255,
+      1
+    }
+  },
+  
+}
+  
+  
+  

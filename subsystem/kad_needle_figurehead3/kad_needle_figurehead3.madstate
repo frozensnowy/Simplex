@@ -1,0 +1,4 @@
+KAD_NEEDLE_FIGUREHEAD3_Normal_OnSet = function(ship)
+    startAnim(ship, "Roll")
+    setLoopCount(ship, "Roll", 100000)   --infinite looping
+end

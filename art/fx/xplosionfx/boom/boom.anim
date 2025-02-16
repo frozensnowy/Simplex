@@ -1,0 +1,15 @@
+fps = 0
+startFrame = 0
+loopCount = 1
+layout = 
+    { 1, 1, }
+textureLayout = 
+    { 
+
+{ "data:/ART/FX/xplosionFX/boom/bam.tga", 0, 0, },
+{ "data:/ART/FX/xplosionFX/boom/boom.tga", 0, 0, },
+{ "data:/ART/FX/xplosionFX/boom/paff.tga", 0, 0, },
+{ "data:/ART/FX/xplosionFX/boom/pow.tga", 0, 0, },
+
+
+    }

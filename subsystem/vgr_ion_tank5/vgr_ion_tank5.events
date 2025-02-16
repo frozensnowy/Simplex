@@ -1,0 +1,57 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_BCUberPulse",
+      length = 3,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+     ion1 = 
+            { 
+                { "anim", "Weapon_BCUberPulse", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_StbdAft_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },
+                
+                { "fx_scale", "0.35", }, 
+                { "fx_nlips", "on", },
+            },       
+    ion2 = 
+            { 
+                { "anim", "Weapon_BCUberPulse", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Weapon_StbdAftSlave_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                
+                { "fx_scale", "0.35", }, 
+                { "fx_nlips", "on", },    
+            },
+     ion3 = 
+            { 
+                { "anim", "Weapon_BCUberPulse", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_StbdAft_Position", }, 
+                { "fx", "super_beam_flare_spray", },
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "0.55", }, 
+                { "fx_nlips", "on", },
+            },       
+    ion4 = 
+            { 
+                { "anim", "Weapon_BCUberPulse", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "Weapon_StbdAftSlave_Position", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "0.55", }, 
+                { "fx_nlips", "on", },    
+            },
+},
+}

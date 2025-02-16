@@ -1,0 +1,100 @@
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },         
+    },          
+    events = 
+    {
+    
+---smoke
+        smokeinstant1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },       
+                { "sound", "BACKGROUNDBOMB", },          
+                { "fx_scale", "entity", }, 
+            },
+        smokeinstant2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+        smokeinstant3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },               
+        smoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_5", },                 
+                { "fx_scale", "entity", }, 
+            },
+        smoke2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_10", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+        smoke3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_15", },                 
+                { "fx_scale", "entity", }, 
+            },  
+        smoke4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_20", },                 
+                { "fx_scale", "entity", }, 
+            },     
+
+---rapid smoke       
+        rapidsmoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_outline_smoke_thick", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+            
+---chunks
+        
+        chunk1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.9", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_asteroid_noscar", },  
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "11", }, 
+            },          
+                        
+}, }

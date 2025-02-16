@@ -1,0 +1,43 @@
+StartWeaponConfig(NewWeaponType,"Gimble","SphereBurst","Gravity","Normal",1000,200000,2500,3.2,0,0,1,0,0,.01,0,0,1,0,120,120,0,"Normal",1,0,2000)
+
+AddWeaponResult(NewWeaponType,"Hit","Push","Target",-310,-310,"")
+AddWeaponResult(NewWeaponType,"Hit","Disable","Target",12,12,"")
+
+setAngles(NewWeaponType,180,-180,180,-180,180)
+
+setMiscValues(NewWeaponType,0,0)
+
+setPenetration(NewWeaponType,100,0,
+{Unarmoured=0,},
+{LightArmour=0,},
+{MediumArmour=0,},
+{HeavyArmour=0,},
+{SubSystemArmour=0,},
+{TurretArmour=0,},
+{ResArmour=0,},
+{MoverArmour=0,},
+{PlanetKillerArmour=0,},
+{MineArmour=0,},
+{ChunkArmour=0,},
+{CruiseMissileArmour=0,},
+{SuperHeavyArmor=0,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=1, damage=1,},
+{Corvette=1, damage=1,},
+{Frigate=1, damage=1,},
+{Utility=1, damage=1,},
+{munition=1, damage=1,},
+{SmallCapitalShip=1, damage=1,},
+{BigCapitalShip=1, damage=1,},
+{Mothership=1, damage=1,},
+{Emplacement=1, damage=1,},
+{UnAttackable=1, damage=1,},
+{SubSystem=1, damage=0,},
+{Resource=1, damage=1,},
+{ResourceLarge=1, damage=1,},
+{Capturer=1, damage=1,},
+{Chimera=1, damage=1,},
+{Missile=1, damage=1,},
+{AsteroidSmasher=1, damage=1,},
+{Location=1, damage=1,})

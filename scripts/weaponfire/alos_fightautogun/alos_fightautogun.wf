@@ -1,0 +1,17 @@
+-- LuaDC version 0.9.19
+-- 2011-3-10 12:58:01
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "hit_generic"
+bulletfx = "bullet_tracer_combo"
+nopenetratefx = "hit_generic"
+deathtype = "deathCannon"
+firefx = "muzzle_flash_combo"
+fire_sfx = "weapon/fighter/fire/WEAPON_FIGHTER_KINETIC_AUTOGUN_SHELL"
+scartype = "Bullet/Bullet"
+hit_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PEA_SHOOTER_HIT"
+hit_nlips = 0.0005
+bullet_nlips = 0.0001
+hit_clamp = 
+    { 1, 1, }

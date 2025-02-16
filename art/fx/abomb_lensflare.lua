@@ -1,0 +1,86 @@
+fx = {
+style = "STYLE_LENSFLARE",
+properties = {
+property_02 = {
+name = "LensFlare",
+type = "VARTYPE_STRING",
+value = "PlanetKiller_Flare",
+},
+property_01 = {
+name = "Colour",
+type = "VARTYPE_ARRAY_TIMECOLOUR",
+value = {
+entry_00 = {
+0,
+0,
+0,
+0,
+0,
+},
+entry_01 = {
+0.02537,
+0,
+0,
+0,
+0,
+},
+entry_02 = {
+0.03582,
+1,
+1,
+1,
+1,
+},
+entry_03 = {
+0.15224,
+1,
+1,
+1,
+0.66981,
+},
+entry_04 = {
+0.52239,
+0.44366,
+0.44366,
+0.44366,
+0,
+},
+entry_05 = {
+1,
+0,
+0,
+0,
+0,
+},
+},
+},
+property_04 = {
+name = "Infinite",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_03 = {
+name = "Duration",
+type = "VARTYPE_FLOAT",
+value = 2,
+},
+property_00 = {
+name = "Radius",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+0.06594,
+0.04125,
+0.09816,
+0.07500,
+0.10492,
+0.12125,
+0.10489,
+0.25250,
+0.09658,
+1,
+0.04304,
+},
+},
+},
+}

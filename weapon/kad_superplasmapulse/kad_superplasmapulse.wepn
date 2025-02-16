@@ -1,0 +1,55 @@
+StartWeaponConfig(NewWeaponType,"Gimble","Missile","plasma_bomb_big","Normal Only",3850,9000,0,0,0,0,50,1,0,2,8,26,0,0,260,40,0.1,"Normal",0,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"vgr_doomgiver_burst_avatar")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"vgr_doomgiver_burst_avatar")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"hyper_pulse_explosion2")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"hyper_pulse_explosion2")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"Hgn_NuclearBurst")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"Hgn_NuclearBurst")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"kad_superplasmaburstemp")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"kad_superplasmaburstemp")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"kad_superplasmaburst")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"kad_superplasmaburst")
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",100000,100000,"")
+AddWeaponResult(NewWeaponType,"Hit","Disable","Target",5600,5600,"")
+AddWeaponResult(NewWeaponType,"Hit","Push","Target",150,150,"")
+
+setAngles(NewWeaponType,10,0,0,0,0)
+
+setMiscValues(NewWeaponType,3,0.2)
+
+setPenetration(NewWeaponType,75,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=1,},
+{HeavyArmour=1.2,},
+{SubSystemArmour=2.25,},
+{TurretArmour=0.5,},
+{ResArmour=0.24,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=0,},
+{Corvette=0,},
+{Frigate=0.3, damage=1,},
+{Utility=1,},
+{munition=0,},
+{SmallCapitalShip=1, damage=1,},
+{BigCapitalShip=1, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1,},
+{Resource=1,},
+{ResourceLarge=0.6, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+

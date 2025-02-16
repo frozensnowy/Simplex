@@ -1,0 +1,16 @@
+fps = 36
+startFrame = 0
+loopCount = 36
+
+texture = 
+{
+	"data:/ART/FX/gungnir/gungnir_beam.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_01.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_02.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_03.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_04.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_05.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_06.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_07.tga",
+	"data:/ART/FX/gungnir/gungnir_beam_08.tga",
+}

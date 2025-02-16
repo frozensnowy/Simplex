@@ -1,0 +1,498 @@
+effects = {
+  animations = {
+	animation_damage = 
+	{
+	  name = "Damage",
+	  length = 1,
+	  loop = 1,
+	  parent = "",
+	  minimum = 0,
+	  maximum = 0,
+	  markers = 
+	        { "", }, }, 
+	animation_dmg01 = 
+	{
+	  name = "dmg01",
+	  length = 1,
+	  loop = 1,
+	  parent = "Damage",
+	  minimum = 0.25,
+	  maximum = 1,
+	  markers = 
+	        { "", }, }, 
+	animation_dmg02 = 
+	{
+	  name = "dmg02",
+	  length = 1,
+	  loop = 1,
+	  parent = "Damage",
+	  minimum = 0.5,
+	  maximum = 1,
+	  markers = 
+	        { "", }, }, 
+	animation_dmg03 = 
+	{
+	  name = "dmg03",
+	  length = 1,
+	  loop = 1,
+	  parent = "Damage",
+	  minimum = 0.75,
+	  maximum = 1,
+	  markers = 
+	        { "", }, }, 
+    animation1 = {
+      name = "Death",
+      length = 1.5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Weapon_TurretBottom",
+      length = 1.2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+animation4 = {
+      name = "Weapon_Turret1",
+      length = 1.2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+animation5 = {
+      name = "Weapon_Turret2",
+      length = 1.2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+animation6 = {
+      name = "Weapon_Turret3",
+      length = 1.2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    
+    animation7 = 
+        { 
+            name = "Weapon_Mine", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation8 = 
+        { 
+            name = "AfterBurn", 
+            length = 2, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+    
+  },
+  events = {
+    event1 = 
+            { 
+                { "anim", "death2", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "death_generic_fighter", }, 
+                { "sound", "EXPLOSION/SMALL/ETG_EXPLODE_SMALL_PLASMA_FAR", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+    event2 = {
+      {
+        "anim",
+        "Weapon_TurretBottom",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_TurretBottom_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", }, 
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Weapon_TurretBottom",
+      },
+      {
+        "animtime",
+        "0.7",
+      },
+      {
+        "marker",
+        "Weapon_TurretBottomSlave_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    	event4 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event5 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/SMALL/ETG_EXPLODE_SMALL_PLASMA_FAR", }, 
+                { "fx_scale", "0.6", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_main_explosion_combo", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event7 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker1", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "1", }, 
+            }, 
+    event8 = {
+      {
+        "anim",
+        "dmg01",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker1,marker2,EngineNozzle1,EngineNozzle2,Weapon_Mine_Muzzle",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event9 = {
+      {
+        "anim",
+        "dmg02",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker3,marker4,EngineNozzle1,EngineNozzle2,Weapon_Mine_Muzzle",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event10 = {
+      {
+        "anim",
+        "dmg03",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker5,EngineNozzle1,EngineNozzle2,Weapon_Mine_Muzzle",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "5",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },    
+
+event12 = {
+      {
+        "anim",
+        "Weapon_Turret1",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret1_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+event13 = {
+      {
+        "anim",
+        "Weapon_Turret1",
+      },
+      {
+        "animtime",
+        "0.7",
+      },
+      {
+        "marker",
+        "Weapon_Turret1Slave_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+event14 = {
+      {
+        "anim",
+        "Weapon_Turret2",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret2_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+event15 = {
+      {
+        "anim",
+        "Weapon_Turret2",
+      },
+      {
+        "animtime",
+        "0.7",
+      },
+      {
+        "marker",
+        "Weapon_Turret2Slave_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+event16 = {
+      {
+        "anim",
+        "Weapon_Turret3",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret3_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+event17 = {
+      {
+        "anim",
+        "Weapon_Turret3",
+      },
+      {
+        "animtime",
+        "0.7",
+      },
+      {
+        "marker",
+        "Weapon_Turret3Slave_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM",
+      },
+      { "fx_scale", "0.75", },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event18 = 
+            { 
+                { "anim", "Weapon_Mine", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Mine_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/MINELOW", }, 
+                { "fx_scale", "1", }, 
+            },
+        event19 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "missilelike_boost_blue", }, 
+		{ "fx_scale", "2", }, 
+            }, 
+        event20 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle2", }, 
+                { "fx", "missilelike_boost_blue", }, 
+		{ "fx_scale", "2", }, 
+            }, 
+  },
+}

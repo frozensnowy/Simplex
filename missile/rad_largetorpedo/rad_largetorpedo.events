@@ -1,0 +1,72 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:26:48 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "MissileTrail", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "missilelike_boost_yellow", }, 
+                { "fx_scale", "4", }, 
+            }, 
+       event1fire = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "torpedo_ignite_combo", }, 
+		{ "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+            }, 
+       event1launch = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "torpedo_steam_spray", }, 
+		{ "sound", "WEAPON/Missle_Launch", }, 
+		{ "fx_nlips", "on", }, 
+            }, 
+        smoke0 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "missile_trail_scud", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+				{ "fx", "death_generic_fighter", },
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+            }, }, }

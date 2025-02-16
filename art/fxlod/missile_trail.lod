@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "missile_trail",
+		distance = 8000,
+	},
+	lod1 = 
+	{
+		fx = "missile_trail_LOD",
+		distance = 20000,
+	},		
+}

@@ -1,0 +1,3 @@
+dmg_missle_explode_combo_Fusion = Standard Fusion / Torpedo hit effect with experimental shockwaves from HGN Cluster missile bursts
+dmg_cloud_MRM_combo = Smaller-scale HGN cluster torpedo hit effect for light missiles
+dmg_cloud_ASM_Combo = Larger-scale HGN cluster torpedo hit effect for LRCT / HGN BBIG missiles

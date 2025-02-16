@@ -1,0 +1,29 @@
+fadetimes = 
+    { 0.1, 0.1, 0.1, 1, }
+washoutColour = 
+    { 0, 0.25, 0.15, 1, }
+washoutStrength = 0.2
+hotspots = 
+    { 
+    { 
+        texture = "data:Effect/LensFlare/green.tga", 
+        offset = 1, 
+        scale = 1, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 1, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/sparklegreen.tga", 
+        offset = 1, 
+        scale = 1, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 1, }, }, 
+{ 
+        texture = "data:Effect/LensFlare/Moni01_Flare.tga", 
+        offset = 1, 
+        scale = 1, 
+        rotation = 1, 
+        colour = 
+            { 1, 1, 1, 1, }, }, 
+}

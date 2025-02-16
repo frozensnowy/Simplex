@@ -1,0 +1,31 @@
+function DetermChunk()
+	LoadPersistentData_Level({0,0,0,},{0,0,0,})
+	SpawnExitSpheres()
+	if (sectorsCleared[currentMission] == 0) then
+		createSOBGroup("CRGroup")
+		addSquadron("CR", "hgn_carrier", {0, 0, 5000}, 0, {0, 0, 0}, 0, 0)
+		addToSOBGroup("CR", "CRGroup")
+		createSOBGroup("EnyGroup")
+		for i = 1, 6 do
+			addSquadron("Vgr_Bomber" .. i, "Vgr_Bomber", {5000, 0, 0}, 1, {0, 0, 0}, 0, 0)
+			addToSOBGroup("Vgr_Bomber" .. i, "EnyGroup")
+		end
+	end
+	setWorldBoundsInner({0, 0, 0}, {30000, 30000, 30000})
+end
+
+function NonDetermChunk()
+        fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	loadBackground("m07")
+	setSensorsManagerCameraDistances(12000, 60000)
+	setDefaultMusic("Data:sound/music/STAGING/STAGING_04")
+end
+
+maxPlayers = 2
+player =
+{
+	{ id = 0, name = "", resources = 0, raceID = 1, startPos = 0, },
+	{ id = 1, name = "", resources = 0, raceID = 2, startPos = 0, },
+}

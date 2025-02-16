@@ -1,0 +1,16 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:50 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "pro_tech_key_flare"
+bulletfx = ""
+nopenetratefx = "pro_tech_key_flare"
+deathtype = "deathCannon"
+scartype = ""
+firefx = "pro_tech_hyperspace_vacuum"
+fire_sfx = ""
+nopenetrate_sfx = ""
+hit_sfx = ""
+hit_clamp = 
+    { 1, 1, }

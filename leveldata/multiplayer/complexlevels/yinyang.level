@@ -1,0 +1,120 @@
+levelDesc = "Yin-Yang"
+-- This version had been added with more ru patch. So it should be plenty for all 4players to use anystrats neccessary to win a victory against your aponent
+-- Concept by TroublePSA
+-- Players engage on a close quarter combat, mysterious and deadly is what some describes this hostile part of region.
+-- Dedicated to the ppl who loves a good teamsplay scenario <Salute>PaktuSjetArmada 
+maxPlayers = 6
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 5, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+
+function DetermChunk()
+	local r = 45000
+	local delta = -30
+	for i = 0, 5, 1 do
+		if i == 3 then
+			delta = 150
+		end
+		addPoint("StartPos"..i, {r*cos(delta)+random(-100,100), random(-100,100), r*sin(delta)+random(-100,100)}, {0, -90-delta, 0})
+		--addSquadron("ReinforcementPad", "meg_reinforcementpad", {r*cos(delta)*0.95, 0, r*sin(delta)*0.95}, -1, {0, -90-delta, 0,}, 0, 0)
+		for k = 1, 6, 1 do
+			addAsteroid("Asteroid_"..random(3,5), {r*cos(delta)+random(-3000,3000), random(1300,2600), r*sin(delta)+random(-3000,3000)}, random(80,100), 0, 0, 0, 0)
+			addAsteroid("Asteroid_"..random(3,5), {r*cos(delta)+random(-3000,3000), -random(1300,2600), r*sin(delta)+random(-3000,3000)}, random(80,100), 0, 0, 0, 0)
+		end
+		delta = delta + 30
+	end
+
+  createSOBGroup("sob_AllBlackholes")
+  addSquadron("sqd_Blackhole1", "zzz_singularity_small", {0, 0, 16500}, -1, {0, 0, 0}, 0, 0)
+  createSOBGroup("sob_Blackhole1")
+  addToSOBGroup("sqd_Blackhole1", "sob_Blackhole1")
+  addToSOBGroup("sqd_Blackhole1", "sob_AllBlackholes")
+  addSquadron("sqd_Blackhole2", "zzz_singularity_small", {0, 0, -16500}, -1, {0, 0, 0}, 0, 0)
+  createSOBGroup("sob_Blackhole2")
+  addToSOBGroup("sqd_Blackhole2", "sob_Blackhole2")
+  addToSOBGroup("sqd_Blackhole2", "sob_AllBlackholes")
+  
+  addSquadron("Meg_Gehenna_1", "meg_gehenna_3ctm", {-3000, 0, 38000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", {3000, 0, 38000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  addSquadron("Meg_Gehenna_1", "meg_gehenna_3ctm", {3000, 0, -38000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", {-3000, 0, -38000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  
+  addSquadron("MediumBattleship", "meg_titan_cruiser", {0, 0, -35000}, -1, {0, 0, 0,}, 0, 0)
+  addSquadron("MediumBattleship", "meg_titan_cruiser", {0, 0, 35000}, -1, {0, 180, 0,}, 0, 0)
+	
+	local argu = random(0,3600)/10
+	local r = 38000
+	local num = 150
+	local step = 360/num
+	local ring_num = 4
+	for z = 1, ring_num, 1 do
+		r = random(41000,49000)
+		num = r/2000
+		step = 360/num
+		for i = 1, num, 1 do
+			addAsteroid("Asteroid_3", {r*cos(argu), random(-3500,3500), r*sin(argu)}, random(50,100), 0, 0, 0, 0)
+			argu = argu+step
+		end
+		r = r + 3500
+	end
+	
+	local u, v , r, d = 0, 0, 12000, 45000
+	for h = 1, random(300,310), 1 do
+		u = random(0,360)
+		v = random(0,360)
+		addDustCloud("polySurface1", "dustcloud_0", {(d+r*cos(v))*cos(u), r*sin(v), (d+r*cos(v))*sin(u)}, {0, random(68,127), random(72,129), (sin(v+90)+1)/2}, 0.0, 6154)
+		--addNebula("polySurface3", "M11_Bentusi_Radiation", {(d+r*cos(v))*cos(u), r*sin(v), (d+r*cos(v))*sin(u)}, {0, random(68,127), random(72,129), 0.33}, 100.00, 5000.00)
+	end
+
+
+
+  setWorldBoundsInner({0, 0, 0}, {72500, 72500, 72500})
+  setWorldBoundsOuter({0, 0, 0}, {73500, 73500, 73500})
+end
+
+function NonDetermChunk()
+	local r = 33000/2
+	local z = r
+	local n = 100
+	local step = 360/n
+	local argu = 0
+	for i = 1, n, 1 do
+		if argu <= -180 then
+			z = -r
+		end
+		addPebble("Pebble_1", { r*sin(argu), 0, z+r*cos(argu)}, random(0,360), random(0,360), random(0,360))
+		if mod(n, 2) == 0 then
+			addPebble("Pebble_1", { r/6*sin(argu), 0, r+r/6*cos(argu)}, random(0,360), random(0,360), random(0,360))
+			addPebble("Pebble_1", { r/6*sin(argu), 0, -r+r/6*cos(argu)}, random(0,360), random(0,360), random(0,360))
+		end
+		argu = argu - step
+	end
+	addPebble("Pebble_1", { 0, 0, 0}, random(0,360), random(0,360), random(0,360))
+	local r = 33000
+	local r1 = 57000
+	local n = 200
+	local step = 360/n
+	local argu = 0
+	for i = 1, n, 1 do
+		addPebble("Pebble_1", { r*sin(argu), 0, r*cos(argu)}, random(0,360), random(0,360), random(0,360))
+		addPebble("Pebble_1", { r1*sin(argu), 0, r1*cos(argu)}, random(0,360), random(0,360), random(0,360))
+		argu = argu + step
+	end
+
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.136719, 0.228516, 0.427734, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+  setLevelShadowColour(0.4, 0.4, 0.4, 1)
+  loadBackground("m01_aqua")
+	setSensorsManagerCameraDistances(61000, 120000)
+end

@@ -1,0 +1,87 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Fire_MBar",
+      length = 8,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = { "", }
+    },
+  },
+  events = {
+    event1 = 
+      { 
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0", }, 
+        { "marker", "Weapon_MBarL_Muzzle, Weapon_MBarR_Muzzle", }, 
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", }, 
+      },
+    event2 = 
+      { 
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0.125", }, 
+        { "marker", "Weapon_MBarLSlave_Muzzle, Weapon_MBarRSlave_Muzzle", }, 
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", }, 
+      },
+    event3 = 
+      { 
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0.25", }, 
+        { "marker", "Weapon_MBarLSlave1_Muzzle, Weapon_MBarRSlav1e_Muzzle", }, 
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", }, 
+      },
+    event4 = 
+      { 
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0.375", }, 
+        { "marker", "Weapon_MBarLSlave2_Muzzle, Weapon_MBarRSlave2_Muzzle", }, 
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", }, 
+      },
+    event5 = 
+      { 
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0.5", }, 
+        { "marker", "Weapon_MBarLSlave3_Muzzle, Weapon_MBarRSlave3_Muzzle", }, 
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", }, 
+      },
+    event6 = 
+      { 
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0.625", }, 
+        { "marker", "Weapon_MBarLSlave4_Muzzle, Weapon_MBarRSlave4_Muzzle", }, 
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", }, 
+      },
+    event7 = 
+      { 
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0.75", }, 
+        { "marker", "Weapon_MBarLSlave5_Muzzle, Weapon_MBarRSlave5_Muzzle", },
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", }, 
+      },
+    event8 = 
+      {
+        { "anim", "Fire_MBar", }, 
+        { "animtime", "0.875", }, 
+        { "marker", "Weapon_MBarLSlave6_Muzzle, Weapon_MBarRSlave6_Muzzle", }, 
+        { "fx", "torpedo_steam_spray, muzzle_flash_combo_small_frigate", }, 
+        { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+        { "fx_scale", "1", },
+      },
+    },
+}

@@ -1,0 +1,29 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Quad Class 5 Turbolaser"
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 4500
+NewSubSystemType.regentime = 150
+NewSubSystemType.nlips = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.5
+NewSubSystemType.selectionLimit = 500
+NewSubSystemType.preciseATILimit = 1000
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "TurboLaser"
+NewSubSystemType.collateralDamage = 7000
+NewSubSystemType.inactiveTimeAfterDamage = 90
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 0
+NewSubSystemType.timeToBuild = 0
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Vgr"
+NewSubSystemType.AttackFamily = "Emplacement"
+NewSubSystemType.DockFamily = "Fighter"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"Script_TurboLaser_5D_Lateral","Weapon_T","")
+StartSubSystemWeaponConfig(NewSubSystemType,"Script_TurboLaser_5D_Lateral","Weapon_TSlave0","")

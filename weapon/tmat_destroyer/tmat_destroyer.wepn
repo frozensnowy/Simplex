@@ -1,0 +1,22 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:02 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Gimble", "Bullet", "tmat_projectile", "Normal", 12000, 24000, 0, 0, 0, 0, 1, 1, 1, 9, 0, 0, 1, 1, 0, 0, 0.1, "Normal", 1, 1, 0)
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "tmat_burst")
+AddWeaponResult(NewWeaponType, "Miss", "SpawnWeaponFire", "Target", 0, 0, "tmat_burst")
+setPenetration(NewWeaponType, 100, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0.005, 
+}, 
+{ 
+    Corvette = 0.005, 
+}, 
+{ 
+    munition = 0.05, })
+setAngles(NewWeaponType, 5, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 1.5, 2)

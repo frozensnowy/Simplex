@@ -1,0 +1,37 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "高能激光发射塔"
+NewSubSystemType.sobDescription = "激光发射塔"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0.0035
+NewSubSystemType.tacticalIconMinFadeSize = 0.0045
+NewSubSystemType.tacticalIconMaxFadeSize = 0.008
+NewSubSystemType.groupMergeSize = 0.001
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 99200000
+NewSubSystemType.regentime = 5
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.6800000000000001
+NewSubSystemType.selectionLimit = 0
+NewSubSystemType.preciseATILimit = 0
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "weaponMP1"
+NewSubSystemType.collateralDamage = 100
+NewSubSystemType.inactiveTimeAfterDamage = 80
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 1800
+NewSubSystemType.timeToBuild = 5
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "smallweaponsub_Hgn"
+NewSubSystemType.AttackFamily = "SubSystem"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "Frigate"
+NewSubSystemType.ArmourFamily = "PlanetKillerArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"vgr_huge_hugemisslesideAI","weapon01","Weapon_TurretTop")

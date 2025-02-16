@@ -1,0 +1,12 @@
+hitfx = "shield_hit_bullet_combo"
+bulletfx = "grn_pulse_bullet"
+nopenetratefx = "ion_dmg_ring_spray"
+blowthroughfx = "blowthrough_generic"
+deathtype = "deathCannon"
+scartype = "Pulse/Pulse"
+firefx = "muzzle_flash_combo_small_frigate"
+fire_sfx = "WEAPON/MISC/TMP/GORN/GORN_DISRUPTOR_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/SHIELD_PULSE_HIT"
+nopentrate_sfx = "WEAPON/ALL/HIT/SHIELD_PULSE_HIT"
+hit_clamp = 
+    { 1, 1, }

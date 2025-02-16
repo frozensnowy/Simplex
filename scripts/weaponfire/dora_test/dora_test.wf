@@ -1,0 +1,13 @@
+hitfx = "dora_hit_combo"
+bulletfx = "siegecannon_bullet_combo"
+nopenetratefx = "dora_hit_combo"
+deathtype = "deathBeam"
+firefx = "siegecannon_fiery_fire"
+fire_sfx = "WEAPON/CARRIER/FIRE/VWEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+hit_clamp = {
+  1,
+  1,
+}

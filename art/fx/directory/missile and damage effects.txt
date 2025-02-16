@@ -1,0 +1,16 @@
+--Effects with Capital lensflare:
+dmg_nuke_sphere_ring_med
+dmg_nuke_sphere_ring_sml: Half duration of flare; smaller radius ~ 0.75
+ _NOFLARE variation is same without lensflare
+
+--Missile hit effects with no flare:
+dmg_missile_explode_combo
+dmg_nukemissile_explode_combo_NOFLARE
+
+--Combined missile hit and capital lensflare:
+dmg_nukemissile_explode_combo_sml: small capital lensflare effect added
+dmg_nukemissile_explode_combo_med
+
+
+--For SRM and Small Missiles:
+dmg_missle_cloud_spray_Short: Default TFS missile impact with 50% duration

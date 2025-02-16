@@ -1,0 +1,52 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:01 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "Missile", "Hgn_ClusterTorpedoB", "Normal", 120, 3200, 0, 0, 0, 0, 1, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 800, 800, "")
+AddWeaponResult(NewWeaponType, "Hit", "Disable", "Target", 4, 4, "")
+setPenetration(NewWeaponType, 35, 1, 
+{ 
+    ResArmour = 0.6, 
+}, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    SubSystemArmour = 0.8, 
+}, 
+{ 
+    unarmoured = 0.05, 
+}, 
+{ 
+    lightarmour = 0.1, 
+}, 
+{ 
+    TurretArmour = 0.6, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, },
+{ 
+    Frigate = 1, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 1, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 1, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 1,
+    damage = 1, })
+setAngles(NewWeaponType, 33, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 6, 0)

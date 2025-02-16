@@ -1,0 +1,23 @@
+--=============================================================================
+--    Name    : Hgn_ResourceCollector.madStates
+--    Purpose : Animation state data.
+--
+--Created 250403 by cgladstone
+--Copyright Relic Entertainment, Inc.  All rights reserved.
+--=============================================================================*/
+
+-- REPAIRING -------------------------------------------------------------------
+
+KPR_MOVER_CaptureActive_OnSet = function(ship)
+	stopAnim(ship, "Close")
+    startAnim(ship, "Open")
+    startEffect(ship, "Phase_loop")
+    setPauseTime(ship, "Open", 1000)
+end
+
+KPR_MOVER_CaptureInActive_OnSet = function(ship)
+	stopAnim(ship, "Open")
+    startAnim(ship, "Close")
+    endEffect(ship, "Phase_loop")
+    setPauseTime(ship, "Close", 1000)
+end

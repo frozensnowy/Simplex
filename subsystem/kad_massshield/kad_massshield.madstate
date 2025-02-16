@@ -1,0 +1,4 @@
+--KAD_MASSSHIELD_Normal_OnSet = function(ship)
+--    startAnim(ship, "shieldb")
+--    setLoopCount(ship, "shieldb", 100000)   --infinite looping
+--end

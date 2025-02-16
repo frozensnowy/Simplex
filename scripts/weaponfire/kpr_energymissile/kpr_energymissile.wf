@@ -1,0 +1,15 @@
+
+-- formats:
+-- SetFireEffect(NewWeaponFireType, <filename>, real32 distance)
+-- SetBulletEffect(NewWeaponFireType, <filename>, real32 distance)
+-- SetHitEffect(NewWeaponFireType, <filename>, real32 distance)
+-- the 'distance' variable sets the max distance to which this effect is visible.
+
+hitfx = "super_beam_dmg_combo"
+bulletfx = "bullet_generic"
+nopenetratefx = "plasma_hit_spray"
+deathtype = "deathPlasma"
+hit_clamp = {1.0, 1.0}
+hit_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+nopenetrate_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"

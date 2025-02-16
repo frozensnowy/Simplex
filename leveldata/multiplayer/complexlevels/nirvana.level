@@ -1,0 +1,263 @@
+levelDesc = "Nirvana <c=0095D9>(Air Combat)</c>"
+maxPlayers = 6
+
+
+player = {}
+
+player[0] = {
+  id = 0,
+  name = "Vaygr",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[1] = {
+  id = 1,
+  name = "Hiigaran",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+
+player[2] = {
+  id = 0,
+  name = "Vaygr",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[3] = {
+  id = 1,
+  name = "Hiigaran",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+
+player[4] = {
+  id = 0,
+  name = "Vaygr",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[5] = {
+  id = 1,
+  name = "Hiigaran",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+
+
+function DetermChunk()
+  addPoint("StartPos0", {40000, 10000, 0},        {0,-90,0})
+  addPoint("StartPos1", {40000, -5000, 10000},    {0,-90,0})
+  addPoint("StartPos2", {40000, -5000, -10000},   {0,-90,0})
+  addPoint("StartPos3", {-40000, 10000, 0},       {0,90,0} )
+  addPoint("StartPos4", {-40000, -5000, 10000},   {0,90,0} )
+  addPoint("StartPos5", {-40000, -5000, -10000},  {0,90,0} )
+
+addSquadron("Aircraft Carrier", "meg_carrier_huge", {random(-1500,1500), random(-150,150), 40000+random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+addSquadron("Aircraft Carrier", "meg_carrier_huge", {random(-1500,1500), random(-150,150), -40000+random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+
+addSquadron("SmallBattleship", "meg_hvdreadnaught", {20000, 0, 5000}, -1, {0, -90, 0}, 0, 0)
+addSquadron("SmallBattleship", "meg_hvdreadnaught", {20000, 0, -5000}, -1, {0, -90, 0}, 0, 0)
+addSquadron("SmallBattleship", "meg_hvdreadnaught", {-20000, 0, 5000}, -1, {0, 90, 0}, 0, 0)
+addSquadron("SmallBattleship", "meg_hvdreadnaught", {-20000, 0, -5000}, -1, {0, 90, 0}, 0, 0)
+
+addSquadron("meg_gehenna_1ctm", "meg_gehenna_1ctm", {10000, 0, 40000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+addSquadron("meg_gehenna_1ctm", "meg_gehenna_1ctm", {-10000, 0, 40000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+addSquadron("meg_gehenna_1ctm", "meg_gehenna_1ctm", {10000, 0, -40000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+addSquadron("meg_gehenna_1ctm", "meg_gehenna_1ctm", {-10000, 0, -40000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+
+--roids start here :)
+
+--roids near ms's
+
+addAsteroid("Asteroid_5", {35000.0, 10000.0, 0.0},         200, 0, 0, 0, 0)
+addAsteroid("Asteroid_5", {35000.0, -5000.0, 12000.0},     200, 0, 0, 0, 0)
+addAsteroid("Asteroid_5", {35000.0, -5000.0, -12000.0},    200, 0, 0, 0, 0)
+addAsteroid("Asteroid_5", {-35000.0, 10000.0, 0.0},        200, 0, 0, 0, 0)
+addAsteroid("Asteroid_5", {-35000.0, -5000.0, 12000.0},    200, 0, 0, 0, 0)
+addAsteroid("Asteroid_5", {-35000.0, -5000.0, -12000.0},   200, 0, 0, 0, 0)
+
+addAsteroid("Asteroid_4", {35000.0, 9500.0, -250.0},       112, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {35000.0, -4500.0, 12250.0},     112, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {35000.0, -4500.0, -12250.0},    112, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {-35000.0, 9500.0, -250.0},      112, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {-35000.0, -4500.0, 12250.0},    112, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {-35000.0, -4500.0, -12250.0},   112, 0, 0, 0, 0)
+
+addAsteroid("Asteroid_3", {35000.0, 9500.0, 250.0},        112, 0, 0, 0, 0)
+addAsteroid("Asteroid_3", {35000.0, -4500.0, 11750.0},     112, 0, 0, 0, 0)
+addAsteroid("Asteroid_3", {35000.0, -4500.0, -11750.0},    112, 0, 0, 0, 0)
+addAsteroid("Asteroid_3", {-35000.0, 9500.0, 250.0},       112, 0, 0, 0, 0)
+addAsteroid("Asteroid_3", {-35000.0, -4500.0, 11750.0},    112, 0, 0, 0, 0)
+addAsteroid("Asteroid_3", {-35000.0, -4500.0, -11750.0},   112, 0, 0, 0, 0)
+
+addAsteroid("Asteroid_4", {34500.0, 10000.0, 0.0},         50, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {34500.0, -5000.0, 12000.0},     50, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {34500.0, -5000.0, -12000.0},    50, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {-34500.0, 10000.0, 0.0},        50, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {-34500.0, -5000.0, 12000.0},    50, 0, 0, 0, 0)
+addAsteroid("Asteroid_4", {-34500.0, -5000.0, -12000.0},   50, 0, 0, 0, 0)
+
+--team resource pocket
+
+addAsteroid("Asteroid_5", {35000.0, 0.0, 0.0},             600, 0, 0, 0, 0)
+addAsteroid("Asteroid_5", {-35000.0, 0.0, 0.0},            600, 0, 0, 0, 0)
+
+addAsteroid("ASteroid_4", {34500.0, 0.0, 100.0},           100, 0, 0, 0, 0)
+addAsteroid("ASteroid_4", {-34500.0, 0.0, 100.0},          100, 0, 0, 0, 0)
+
+addAsteroid("asteroid_4", {35500.0, 0.0, 250.0},           75, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {-35500.0, 0.0, 250.0},          75, 0, 0, 0, 0)
+
+addAsteroid("asteroid_4", {35000.0, 500.0, 500.0},         125, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {-35000.0, 500.0, 500.0},        125, 0, 0, 0, 0)
+
+addAsteroid("asteroid_4", {35000.0, 250.0, -500.0},        125, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {-35000.0, 250.0, -500.0},       125, 0, 0, 0, 0)
+
+addAsteroid("asteroid_3", {35000.0, -500.0, -500.0},       60, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-35000.0, -500.0, -500.0},      60, 0, 0, 0, 0)
+
+addAsteroid("asteroid_3", {35000.0, -250.0, 500.0},        80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-35000.0, -250.0, 500.0},       80, 0, 0, 0, 0)
+
+addAsteroid("asteroid_3", {34500.0, -250.0, -250.0},       80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-34500.0, -250.0, -250.0},      80, 0, 0, 0, 0)
+
+addAsteroid("asteroid_3", {35000.0, -500.0, 500.0},        100, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-35000.0, -500.0, 500.0},       100, 0, 0, 0, 0)
+
+addAsteroid("asteroid_3", {35500.0, -250.0, -0.0},         80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-35500.0, -250.0, -0.0},        80, 0, 0, 0, 0)
+
+--reserve, out of the way roids
+
+addAsteroid("asteroid_5", {0.0, -20000.0, 0.0},            100, 0, 0, 0, 0)
+addAsteroid("asteroid_5", {0.0, 20000.0, 0.0},             100, 0, 0, 0, 0)
+
+addAsteroid("asteroid_4", {0.0, -19500.0, 0.0},            50, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {0.0, 19500.0, 0.0},             50, 0, 0, 0, 0)
+
+--misc roids in the map on 2D plane
+
+addAsteroid("asteroid_5", {0.0, 0.0, 0.0},                 100, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {0.0, 500.0, 0.0},               75, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {0.0, -500.0, 0.0},              75, 0, 0, 0, 0)
+
+--middle secondary
+
+addAsteroid("asteroid_4", {20000.0, 0.0, 0.0},             100, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {-20000.0, 0.0, 0.0},            100, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20000.0, 100.0, 500},           115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20000.0, 100.0, 500},          115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {19500.0, -50.0, -500},          115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-19500.0, -50.0, -500},         115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20000.0, -50.0, 750},           80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20000.0, -50.0, 750},          80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20500.0, 100.0, -750},          80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20500.0, 100.0, -750},         80, 0, 0, 0, 0)
+
+--left outer secondary roids
+
+addAsteroid("asteroid_4", {20000.0, 0.0, 20000.0},         100, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {-20000.0, 0.0, 20000.0},        100, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20000.0, 100.0, 20500},         115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20000.0, 100.0, 20500},        115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {19500.0, -50.0, 19500},         115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-19500.0, -50.0, 19500},        115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20000.0, -50.0, 20750},         80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20000.0, -50.0, 20750},        80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20500.0, 100.0, 19750},         80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20500.0, 100.0, 19750},        80, 0, 0, 0, 0)
+
+--right outer secondary roids
+
+addAsteroid("asteroid_4", {20000.0, 0.0, -20000.0},        100, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {-20000.0, 0.0, -20000.0},       100, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20000.0, 100.0, -20500},        115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20000.0, 100.0, -20500},       115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {19500.0, -50.0, -19500},        115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-19500.0, -50.0, -19500},       115, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20000.0, -50.0, -20750},        80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20000.0, -50.0, -20750},       80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {20500.0, 100.0, -19750},        80, 0, 0, 0, 0)
+addAsteroid("asteroid_3", {-20500.0, 100.0, -19750},       80, 0, 0, 0, 0)
+
+--middle outer roids
+
+addAsteroid("asteroid_5", {0.0, 0.0, 25000},               200, 0, 0, 0, 0)
+addAsteroid("asteroid_5", {0.0, 0.0, -25000},              200, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {0.0, 0.0, -24500},              75, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {0.0, 0.0, 24500},               75, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {0.0, 0.0, -25500},              97, 0, 0, 0, 0)
+addAsteroid("asteroid_4", {0.0, 0.0, 25500},               97, 0, 0, 0, 0)
+
+--the 4 new roids
+addAsteroid("asteroid_5", {20000.0, 0, 10000.0},        150, 0, 0, 0, 0)
+addAsteroid("asteroid_5", {20000.0, 0, -10000.0},      150, 0, 0, 0, 0)
+addAsteroid("asteroid_5", {-20000.0, 0, 10000.0},       150, 0, 0, 0, 0)
+addAsteroid("asteroid_5", {-20000.0, 0, -10000.0},     150, 0, 0, 0, 0)
+
+
+
+
+
+
+--end of roids
+
+--beginning dustclouds
+
+--middle dustclouds
+
+addDustCloud("polySurface13", "dustcloud_NoRes", {0, 0, 0}, {100, 100, 100, 1}, 0, 7500)
+
+addDustCloud("polySurface13", "dustcloud_NoRes", {0.0, -20000.0, 0.0}, {100, 100, 100, 1}, 0, 5000)
+addDustCloud("polySurface13", "dustcloud_NoRes", {0.0, 20000.0, 0.0}, {100, 100, 100, 1}, 0, 5000)
+
+--dustcloud path, round the middle
+
+addDustCloud("polySurface1", "dustcloud_NoRes", {0.0, 0.0, -25000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {0.0, 0.0, 25000}, {100, 100, 100, 1}, 0, 7500)
+
+addDustCloud("polySurface1", "dustcloud_NoRes", {20000, 0, 20000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-20000, 0, -20000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {20000, 0, -20000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-20000, 0, 20000}, {100, 100, 100, 1}, 0, 7500)
+
+addDustCloud("polySurface1", "dustcloud_NoRes", {16700, 0, 22000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-16700, 0, -22000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {16700, 0, -22000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-16700, 0, 22000}, {100, 100, 100, 1}, 0, 7500)
+
+addDustCloud("polySurface1", "dustcloud_NoRes", {10000, 0, 23000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-10000, 0, -23000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {10000, 0, -23000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-10000, 0, 23000}, {100, 100, 100, 1}, 0, 7500)
+
+addDustCloud("polySurface1", "dustcloud_NoRes", {7500, 0, 24000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-7500, 0, -24000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {7500, 0, -24000}, {100, 100, 100, 1}, 0, 7500)
+addDustCloud("polySurface1", "dustcloud_NoRes", {-7500, 0, 24000}, {100, 100, 100, 1}, 0, 7500)
+
+
+
+
+  setWorldBoundsInner({0, 0, 0}, {60000, 30000, 60000})
+
+end
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("brazil")	
+end

@@ -1,0 +1,36 @@
+-- The Simplex Project
+-- 2011/7/9 22:03:06
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "AnimatedTurret", "Bullet", "Dread_Bomb", "Normal", 1500, 6000, 0, 0, 0, 0, 1, 1, 1, 0.5, 2, 3, 1, 0, 120, 120, 0.1, "Normal", 1, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 3000, 3000, "")
+setPenetration(NewWeaponType, 30, 1, 
+{ 
+    MediumArmour = 0.7, 
+}, 
+{ 
+    HeavyArmour = 0.5, 
+}, 
+{ 
+    MoverArmour = 0.4, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, 
+}, 
+{ 
+    SubSystem = 0, 
+}, 
+{ 
+    Utility = 0, 
+}, 
+{ 
+    Resource = 0, })
+setAngles(NewWeaponType, 30, -170, 170, -1, 30)
+setMiscValues(NewWeaponType, 5, 0.4)

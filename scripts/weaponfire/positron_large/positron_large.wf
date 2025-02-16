@@ -1,0 +1,13 @@
+hitfx = "dmg_cloud_spray_large"
+firefx = "cza_muzzle_flash_combo_positron"
+bulletfx = "positroncannonlargecombo"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+fire_sfx = "WEAPON/MOD/FGUN14"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+hit_clamp = {
+  1,
+  1,
+}

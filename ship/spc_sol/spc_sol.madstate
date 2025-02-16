@@ -1,0 +1,4 @@
+SPC_SOL_Launched_OnSet = function(ship)
+	startEffect(ship, "disk")
+end
+

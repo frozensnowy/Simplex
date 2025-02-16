@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+function Vgr_InfiltratorPod1_Open_OnSet(ship)
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+function Vgr_InfiltratorPod1_Docked_OnSet(ship)
+    startAnim(ship, "Latch")
+    setPauseTime(ship, "Latch", 1000)
+end

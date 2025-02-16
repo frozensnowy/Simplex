@@ -1,0 +1,21 @@
+function DetermChunk()
+	LoadPersistentData_Level({0,0,0,},{0,0,0,})
+	SpawnExitSpheres()
+	setWorldBoundsInner({0, 0, 0}, {30000, 30000, 30000})
+end
+
+function NonDetermChunk()
+        fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	loadBackground("m11")
+	setSensorsManagerCameraDistances(12000, 60000)
+	setDefaultMusic("Data:sound/music/STAGING/STAGING_04")
+end
+
+maxPlayers = 2
+player =
+{
+	{ id = 0, name = "", resources = 1000, raceID = 1, startPos = 0, },
+	{ id = 1, name = "", resources = 0, raceID = 2, startPos = 0, },
+}

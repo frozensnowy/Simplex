@@ -1,0 +1,247 @@
+--
+-- Lightwave Flare v1.0
+--
+-- CnlPepper 20/10/2008
+-- 
+-- A direct copy of the lens flare from lightwave, used heavily in Babylon 5. When adding this flare for a new light
+-- make a new copy and tweak the flarecolour parameters to match the light the flare is to be applied to.
+--
+-- This version has the central flare removed, only the reflections remain.
+
+local flarecolour = { 1.0, 1.0, 1.0 }
+local flareintensity = 1.0
+local flarescale = 3.5
+
+fadetimes= { 0.1, 0.1, 0.1, 1.0 }
+washoutColour = { 1, 1, 1, 1, }
+washoutStrength = 0
+
+hotspots= {
+
+	-- element 1
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=1.52,
+		scale=0.40 * flarescale,
+		rotation=1,
+		colour={
+			3 * flarecolour[1] * flareintensity/255,
+			3 * flarecolour[2] * flareintensity/255,
+			3 * flarecolour[3] * flareintensity/255,
+			1
+		}
+	},
+
+	-- element 2	
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=1.5,
+		scale=0.92 * flarescale,
+		rotation=1,
+		colour={
+			10 * flarecolour[1] * flareintensity/255,
+			5 * flarecolour[2] * flareintensity/255,
+			0 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 3	
+	{
+		texture="data:Effect/LensFlare/lw_pr.tga",
+		offset=1.3,
+		scale=0.11 * flarescale,
+		rotation=1,
+		colour={
+			20 * flarecolour[1] * flareintensity/255,
+			20 * flarecolour[2] * flareintensity/255,
+			20 * flarecolour[3] * flareintensity/255,
+			1
+		}
+	},
+
+	-- element 4	
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=0.505,
+		scale=0.055 * flarescale,
+		rotation=1,
+		colour={
+			3 * flarecolour[1] * flareintensity/255,
+			8 * flarecolour[2] * flareintensity/255,
+			15 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 5
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=0.45,
+		scale=0.16 * flarescale,
+		rotation=1,
+		colour={
+			0 * flarecolour[1] * flareintensity/255,
+			3 * flarecolour[2] * flareintensity/255,
+			13 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 6
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=0.41,
+		scale=0.085 * flarescale,
+		rotation=1,
+		colour={
+			3 * flarecolour[1] * flareintensity/255,
+			10 * flarecolour[2] * flareintensity/255,
+			15 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 7
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=0.2,
+		scale=0.055 * flarescale,
+		rotation=1,
+		colour={
+			41 * flarecolour[1] * flareintensity/255,
+			20 * flarecolour[2] * flareintensity/255,
+			0 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 8
+	{
+		texture="data:Effect/LensFlare/lw_bc.tga",
+		offset=0.01,
+		scale=0.03 * flarescale,
+		rotation=1,
+		colour={
+			153 * flarecolour[1] * flareintensity/255,
+			153 * flarecolour[2] * flareintensity/255,
+			153 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 9
+	{
+		texture="data:Effect/LensFlare/lw_bc.tga",
+		offset=-0.27,
+		scale=0.045 * flarescale,
+		rotation=1,
+		colour={
+			128 * flarecolour[1] * flareintensity/255,
+			178 * flarecolour[2] * flareintensity/255,
+			204 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 10
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=-0.415,
+		scale=0.11 * flarescale,
+		rotation=1,
+		colour={
+			28 * flarecolour[1] * flareintensity/255,
+			18 * flarecolour[2] * flareintensity/255,
+			0 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 11
+	{
+		texture="data:Effect/LensFlare/lw_dc.tga",
+		offset=-0.455,
+		scale=0.19 * flarescale,
+		rotation=1,
+		colour={
+			33 * flarecolour[1] * flareintensity/255,
+			20 * flarecolour[2] * flareintensity/255,
+			3 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 12
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=-0.475,
+		scale=0.055 * flarescale,
+		rotation=1,
+		colour={
+			23 * flarecolour[1] * flareintensity/255,
+			15 * flarecolour[2] * flareintensity/255,
+			0 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 13
+	{
+		texture="data:Effect/LensFlare/lw_ec.tga",
+		offset=-0.655,
+		scale=0.085 * flarescale,
+		rotation=1,
+		colour={
+			10 * flarecolour[1] * flareintensity/255,
+			31 * flarecolour[2] * flareintensity/255,
+			28 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+	
+	-- element 14
+	{
+		texture="data:Effect/LensFlare/lw_bc.tga",
+		offset=-0.675,
+		scale=0.13 * flarescale,
+		rotation=1,
+		colour={
+			10 * flarecolour[1] * flareintensity/255,
+			10 * flarecolour[2] * flareintensity/255,
+			102 * flarecolour[3] * flareintensity/255,
+			1
+		}
+	},
+	
+	-- element 15
+	{
+		texture="data:Effect/LensFlare/lw_pr.tga",
+		offset=-1.005,
+		scale=0.27 * flarescale,
+		rotation=1,
+		colour={
+			23 * flarecolour[1] * flareintensity/255,
+			31 * flarecolour[2] * flareintensity/255,
+			0 * flarecolour[3] * flareintensity/255,
+			1
+		}
+	},
+	
+	-- element 16
+	{
+		texture="data:Effect/LensFlare/lw_rainbow.tga",
+		offset=-1.31,
+		scale=0.53 * flarescale,
+		rotation=1,
+		colour={
+			15 * flarecolour[1] * flareintensity/255,
+			15 * flarecolour[2] * flareintensity/255,
+			15 * flarecolour[3] * flareintensity/255,
+			1
+		}		
+	},
+}
+	
+	
+	

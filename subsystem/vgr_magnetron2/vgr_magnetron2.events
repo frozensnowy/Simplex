@@ -1,0 +1,37 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_BCUberPulse",
+      length = 1.1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    eventtrinity = 
+            { 
+                { "anim", "Weapon_BCUberPulse", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_StbdAft_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "30",},
+                { "fx_nlips", "on", }, 
+            },     
+    eventtrinity1 = 
+            { 
+                { "anim", "Weapon_BCUberPulse", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_StbdAftSlave_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "30",},
+                { "fx_nlips", "on", }, 
+            },             
+},
+}

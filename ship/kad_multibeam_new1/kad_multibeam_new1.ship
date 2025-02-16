@@ -1,0 +1,181 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:01 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+-- scale: 0.45
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Multibeam Frigate"
+NewShipType.sobDescription = "Armour Tailor"
+NewShipType.maxhealth = 112000
+NewShipType.regentime = 1000
+NewShipType.minRegenTime = 400
+NewShipType.sideArmourDamage = 1.1
+NewShipType.rearArmourDamage = 1.2
+NewShipType.isTransferable = 1
+NewShipType.useEngagementRanges = 1
+NewShipType.unitCapsNumber = 2
+NewShipType.SquadronSize = 1
+NewShipType.formationSpacing = 250
+NewShipType.passiveFormation = "2x2_wall"
+NewShipType.defensiveFormation = "2x2_wall"
+NewShipType.aggressiveFormation = "2x2_wall"
+NewShipType.mass = 500
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 585
+NewShipType.mainEngineMaxSpeed = 585
+NewShipType.rotationMaxSpeed = 45
+NewShipType.thrusterAccelTime = 10
+NewShipType.thrusterBrakeTime = 5
+NewShipType.mainEngineAccelTime = 16
+NewShipType.mainEngineBrakeTime = 8
+NewShipType.rotationAccelTime = 1.25
+NewShipType.rotationBrakeTime = 0.75
+NewShipType.thrusterUsage = 0.75
+NewShipType.accelerationAngle = 180
+NewShipType.mirrorAngle = 30
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 85
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 30
+NewShipType.slideMoveRange = 100
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 10
+NewShipType.tumbleStaticY = 20
+NewShipType.tumbleStaticZ = 5
+NewShipType.tumbleDynamicX = 2
+NewShipType.tumbleDynamicY = 10
+NewShipType.tumbleDynamicZ = 5
+NewShipType.tumbleSpecialDynamicX = 2
+NewShipType.tumbleSpecialDynamicY = 10
+NewShipType.tumbleSpecialDynamicZ = 5
+NewShipType.relativeMoveFactor = 3
+NewShipType.swayUpdateTime = 4
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.05
+NewShipType.swayRotateFactor = 0
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.3
+NewShipType.targetRandomPointXMax = 0.4
+NewShipType.targetRandomPointYMin = -0.35
+NewShipType.targetRandomPointYMax = 0.6
+NewShipType.targetRandomPointZMin = -0.75
+NewShipType.targetRandomPointZMax = 0.85
+NewShipType.dustCloudDamageTime = 160
+NewShipType.nebulaDamageTime = 200
+NewShipType.MinimalFamilyToFindPathAround = "MotherShip"
+NewShipType.mirrorAboveManeuver = "ImmelMann_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn, ImmelMann_speedy, ImmelMann_speedy, ImmelMann_speedy"
+NewShipType.mirrorBelowManeuver = "Split_S_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn, Split_S_speedy, Split_S_speedy, Split_S_speedy"
+NewShipType.specialTurnLeftManeuver = "NinetyDegLeftTurn, None, None"
+NewShipType.specialTurnRightManeuver = "NinetyDegRightTurn, None, None"
+NewShipType.testManeuver1 = "RollCW"
+NewShipType.testManeuver2 = "RollCCW"
+NewShipType.testManeuver3 = "Loop"
+NewShipType.BuildFamily = "Frigate_Kad"
+NewShipType.AttackFamily = "Frigate"
+NewShipType.DockFamily = "Frigate"
+NewShipType.AvoidanceFamily = "Frigate"
+NewShipType.DisplayFamily = "Frigate"
+NewShipType.AutoFormationFamily = "Frigate"
+NewShipType.CollisionFamily = "Big"
+NewShipType.ArmourFamily = "MediumArmour"
+NewShipType.UnitCapsFamily = "Stop"    --"Frigate"		--"SwarmCap"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 18
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 38
+NewShipType.totalValue = 12
+NewShipType.buildCost = 2400
+NewShipType.buildTime = 60
+NewShipType.buildPriorityOrder = 30
+NewShipType.retaliationRange = 5500
+NewShipType.retaliationDistanceFromGoal = 160
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 3000--3000
+NewShipType.secSensorRange =  4000--4000
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "Diamond"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 9000
+NewShipType.TODistanceDisappear0 = 7000
+NewShipType.TODistanceFade1 = 4500
+NewShipType.TODistanceDisappear1 = 3500
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000	--35000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 1
+NewShipType.nlips = 0.000125
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.0001
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "HardDot"
+NewShipType.meshRenderLimit = 13000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 0.25
+NewShipType.goblinsStartFade = 1500
+NewShipType.goblinsOff = 1500
+NewShipType.upLOD = 2500
+NewShipType.downLOD = 2515
+NewShipType.minimumZoomFactor = 0.6
+NewShipType.selectionLimit = 500000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 1
+addAbility(NewShipType, "MoveCommand", 1, 0)
+addAbility(NewShipType, "CanDock", 1, 1)
+NewShipType.dockTimeBetweenTwoFormations = 1
+NewShipType.dockTimeBeforeStart = 0.5
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "n_delta"
+NewShipType.queueFormation = "ScatterNarrow"
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.ignoreRaceWhenDocking = 0
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 1
+NewShipType.launchTimeBeforeStart = 2
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "delta"
+addAbility(NewShipType, "ParadeCommand", 1)
+addAbility(NewShipType, "WaypointMove")
+addAbility(NewShipType, "HyperSpaceCommand", 0, 1, 200, 500, 0, 3)
+addAbility(NewShipType, "CanAttack", 1, 1, 0, 1, 0.35, 1.5, "Capturer, Frigate, SmallCapitalShip, BigCapitalShip, Mothership, Utility, Corvette", "circlestrafe_multibeam", 
+{ 
+    SubSystem = "FrontalVsSubSystem", 
+})
+addAbility(NewShipType, "GuardCommand", 1, 3000, 600)
+addAbility(NewShipType, "HyperspaceViaGateCommand", 1, 3, 1, 0.3)
+addAbility(NewShipType, "DefenseFieldAbility", 0, 0, 0, 400, 400, 1, 0.4, 0, "")
+addAbility(NewShipType, "CanBeCaptured", 50, 0.1)
+addAbility(NewShipType, "CanBeRepaired")
+addAbility(NewShipType, "RetireAbility", 1, 1)
+LoadSharedModel(NewShipType, "kad_multibeam_new")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion", "Weapon_Turret1", "Weapon_Turret1")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion", "Weapon_Turret2", "Weapon_Turret2")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion_front", "Weapon_Turret3", "Weapon_Turret3")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion_front", "Weapon_Turret4", "Weapon_Turret4")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion_heretic", "Weapon_Turret1", "Weapon_Turret1_Heretic")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion_heretic", "Weapon_Turret2", "Weapon_Turret2_Heretic")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion_heretic", "Weapon_Turret3", "Weapon_Turret3_Heretic")
+StartShipWeaponConfig(NewShipType, "kad_multi_ion_heretic", "Weapon_Turret4", "Weapon_Turret4_Heretic")
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg03", 1, 0.75, 0, 0, 0, 50, 0, 0, 0, 200, 0, 0, 0, 50, 0, 0, 0, 50)
+addShield(NewShipType, "EMP", 20, 10)
+NewShipType.battleScarMaxTriBase = 75
+NewShipType.battleScarMaxTriInc = 100
+NewShipType.sobDieTime = 1
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0
+NewShipType.trailLinger = 4
+setEngineGlow(NewShipType, 1, 1, 1.02, 20, 300, 50, 1.5, 
+    { 0.8, 0.2, 0.2, 0.35, })
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/Hiigaran/Frigate/", 0, "Engines/HFrigateEng", "", 1, "Ambience/HFrigateAmb", "")

@@ -1,0 +1,69 @@
+-- LuaDC version 0.9.19
+-- 19/04/2005 23.00.25
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "MissileTrail", 
+            length = 10, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "torpedo_ignite_combo", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+            },        
+        event1fire = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "ion_cannon_steam_spray_blue", }, 
+                { "sound", "weapon/MissileDie1", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "ca_cloud_spray", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_scale", "5", }, 
+            },           
+        event30 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA", }, 
+                { "fx_scale", "1", }, 
+                { "fx_sm", "on", },                 
+            },       
+            
+ }, }

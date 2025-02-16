@@ -1,0 +1,59 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Boarding", 
+            length = 3, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "markerB", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation3 = 
+        { 
+            name = "MissileTrail", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Boarding", }, 
+                { "animtime", "0", }, 
+                { "marker", "markerB", }, 
+                { "fx", "pod_spark_combo", }, 
+                { "sound", "SP_ELEMENTS/HGN_RESOURCECOLLECTOR_REPAIRING", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "markerE", }, 
+                { "fx", "missle_ignite_pod_combo", }, 
+                { "sound", "SP_ELEMENTS/VGR_INFILTRATORFRIGATE_LAUNCH", }, 
+                { "fx_scale", "2", }, 
+            }, }, }

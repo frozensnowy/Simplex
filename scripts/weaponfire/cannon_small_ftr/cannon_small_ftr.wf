@@ -1,0 +1,11 @@
+hitfx = "hit_generic"
+bulletfx = "smallcannontracer_ftr"
+nopenetratefx = "hit_generic"
+deathtype = "deathCannon"
+scartype = "Bullet/Bullet"
+hit_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PEA_SHOOTER_HIT"
+hit_nlips = 0.0005
+hit_clamp = {
+  1,
+  1,
+}

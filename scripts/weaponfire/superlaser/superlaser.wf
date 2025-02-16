@@ -1,0 +1,13 @@
+hitfx = "DMG_LASER_HIT"
+bulletfx = "SuperLaser_EFFECT"
+nopenetratefx = "DMG_LASER_HIT"
+deathtype = "deathBeam"
+firefx = "sunfire_squirt_small"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+fire_sfx = "Imp/IMP_TL_H"
+hit_sfx = "etg/damage/surfaceWEAPON/CORVETTE/IMPACT/etg_damage_large_burning_gash"
+nopenetrate = "etg/damage/surfaceWEAPON/CORVETTE/IMPACT/etg_damage_large_burning_gash"
+hit_clamp = {
+  1,
+  1,
+}

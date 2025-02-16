@@ -1,0 +1,9 @@
+StartWeaponConfig(NewWeaponType,"Fixed","Missile","LatchPod","Normal",200,5000,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0.1,"Normal",0,1,0)
+AddWeaponResult(NewWeaponType, "Hit", "LatchWithTarget", "Target", 0, 0, "")
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 1000, 1000, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1)
+setAngles(NewWeaponType, 180, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 0.3)

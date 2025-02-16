@@ -1,0 +1,149 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_IonCan1",
+      length = 6,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Weapon_IonCan1",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_turrettop_Muzzle",
+      },
+      {
+        "fx",
+        "alos_thor_hammer_fire_combo",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+      { "fx_nlips", "on", }, 
+      { "sound", "weapon/RandomSample/sfx_weapon_s_railgun_near", }, 
+    },
+    event1trail = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.0", }, 
+                { "marker", "Weapon_turrettop_Muzzle", }, 
+                { "fx", "explosionjet_railgun", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },    
+    event1puff = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "Weapon_turrettop_Muzzle", }, 
+                { "fx", "repair_spark_combo", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },                  
+    event1smoke = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "Weapon_turrettop_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate_blue", },                 
+                { "fx_scale", "5.5", }, 
+                { "fx_nlips", "on", },
+            },    
+    event1RetroFire = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.16", }, 
+                { "sound", "SP_ELEMENTS/reload", }, 
+            },         
+    event2 = {
+      {
+        "anim",
+        "Weapon_IonCan1",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_turrettopSlave_Muzzle",
+      },
+      {
+        "fx",
+        "alos_thor_hammer_fire_combo",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+      { "fx_nlips", "on", }, 
+      { "sound", "weapon/RandomSample/sfx_weapon_s_railgun_near", }, 
+    },
+    event2trail = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.0", }, 
+                { "marker", "Weapon_turrettopSlave_Muzzle", }, 
+                { "fx", "explosionjet_railgun", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },       
+    event2puff = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "Weapon_turrettopSlave_Muzzle", }, 
+                { "fx", "repair_spark_combo", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },             
+    event2smoke = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "Weapon_turrettopSlave_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate_blue", },                 
+                { "fx_scale", "5.5", }, 
+                { "fx_nlips", "on", },
+            },                         
+    event2RetroFire = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.16", }, 
+                { "sound", "SP_ELEMENTS/turretOverheat", }, 
+            },    
+    event3 = {
+      {
+        "anim",
+        "Weapon_IonCan1",
+      },
+      {
+        "animtime",
+        "0.2",
+      },
+      {
+        "marker",
+        "vent1",
+      },
+      {
+        "fx",
+        "ion_cannon_steam_spray",
+      },
+    },
+  },
+}

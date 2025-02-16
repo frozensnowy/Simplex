@@ -1,0 +1,10 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:11:18 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+fps = 15
+startFrame = 0
+loopCount = 1
+texture = 
+    { "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", "data:/ART/FX/Super_Beam/kdsbeam_small_00006.tga", }

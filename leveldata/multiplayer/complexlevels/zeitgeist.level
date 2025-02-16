@@ -1,0 +1,460 @@
+levelDesc = "Zeitgeist"
+maxPlayers = 6
+player = {
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 5, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+
+startNum = 0
+function asteroidAdd(fPosX, fPosY, fPosZ, sLayout, rDistTable, a, b, c, fRotY, fRotZ)	
+	local rel, cooX, cooY, cooZ = 0, 0, 0, 0
+	for k, iCount in rDistTable do
+		rel = rel + iCount.number
+	end
+	for k, iCount in rDistTable do
+		local minAB, maxAB = min(a, b), max(a, b)
+		for i = 1, iCount.number do		--for i = 1, num*iCount.number do
+			local r, u, v, l, w, h = random(minAB, maxAB), random(0, 180), random(0, 360), random(-0.5*a, 0.5*a), random(-0.5*b, 0.5*b), random(-0.5*c, 0.5*c)
+			if sLayout == "Cylinder" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) - sin(fRotZ)*r*sin(v)
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) + cos(fRotZ)*r*sin(v)
+				cooZ = cos(rotY)*h - sin(rotY)*r*cos(v)
+			elseif sLayout == "Sphere" then
+				cooX = sqrt(r^2-(r*cos(u))^2)*cos(v)
+				cooY = sqrt(r^2-(r*cos(u))^2)*sin(v)
+				cooZ = r*cos(u);
+			elseif sLayout == "Box" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) - sin(fRotZ)*w
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) + cos(fRotZ)*w
+				cooZ = cos(fRotY)*h - sin(fRotY)*l
+			end
+			if (iCount.class == "Point") then
+				if (iCount.name == "StartPos") then
+					addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+					startNum = startNum + 1					
+				else
+					addPoint(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+				end
+			elseif (iCount.class == "Sphere") then
+				addSphere(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.size)
+			elseif (iCount.class == "Camera") then
+				addCamera(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+			elseif (iCount.class == "Squadron") then
+				addSquadron(iCount.name .. (i-1), iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.player, iCount.rotation, 0, 0)
+			elseif (iCount.class == "Asteroid") then
+				addAsteroid(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Salvage") then
+				addSalvage(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Pebble") then
+				addPebble(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 0, 0, 0)
+			elseif (iCount.class == "Cloud") then
+				addCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "DustCloud") then
+				addDustCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "Nebula") then
+				addNebula(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "EasyPatch") then
+				easyPatch(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)
+			end
+		end
+	end
+end
+
+function DetermChunk()
+
+  addPoint("StartPos0", {-10000, -45000, 0}, {-90, 90, 0})
+  addPoint("StartPos1", {5000, -45000, 8660}, {-90, -150, 0})
+  addPoint("StartPos2", {5000, -45000, -8660}, {-90, -30, 0})
+  addPoint("StartPos3", {10000, 45000, 0}, {90, -90, 0})
+  addPoint("StartPos4", {-5000, 45000, -8660}, {90, 30, 0}) 
+  addPoint("StartPos5", {-5000, 45000, 8660}, {90, 150, 0})
+
+	--addSquadron("meg_balcoragate", "meg_balcoragate", {0, 0, -60000}, -1, {0, 0, 0}, 0, 0)
+	
+	local asteroidbelt =
+	{		
+		asteroidbelt1 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_4",
+			number = 4,
+		},
+		asteroidbelt2 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_2",
+			number = 4,
+		}, 		
+		asteroidbelt3 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_3",
+			number = 4,
+		}, 			
+		asteroidbelt5 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_5",
+			number = 4,
+		}, 			
+	}
+
+	local salvagebelt =
+	{		
+		asteroidbelt1 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt1",
+			type = "asteroid_3_grey_nosalvage",
+			rotation = {random(0, 360), -random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		},
+		asteroidbelt2 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt2",
+			type = "asteroid_4_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt3 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt3",
+			type = "asteroid_5_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt4 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt4",
+			type = "asteroid_4_grey_nosalvage_big",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 
+		asteroidbelt5 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt5",
+			type = "asteroid_3_grey_nosalvage",
+			rotation = {random(0, 360), -random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		},
+		asteroidbelt6 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt6",
+			type = "asteroid_4_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt7 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt7",
+			type = "asteroid_5_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt8 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt8",
+			type = "asteroid_4_grey_nosalvage_big",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 
+	}
+
+	asteroidAdd(0, 0, -41000, "Box", salvagebelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	asteroidAdd(0, 0, 41000, "Box", salvagebelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))	
+	asteroidAdd(0, 0, -41000, "Box", asteroidbelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	asteroidAdd(0, 0, 41000, "Box", asteroidbelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+
+  addNebula("polySurface1", "mp_bentusi_radiation", {8000, 4000, 1000}, {1, 0.98, 0.973, 1}, 4900.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {10000, 5000, 3000}, {1, 0.98, 0.973, 1}, 4000.497, 4500.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {12000, 6000, 5500}, {1, 0.98, 0.973, 1}, 4000.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {14000, 7000, 8500}, {1, 0.98, 0.973, 1}, 4600.497, 8000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {16000, 8000, 12000}, {1, 0.98, 0.973, 1}, 6000.497, 4100.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-8000, -4000, 1000}, {1, 0.98, 0.973, 1}, 4800.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-10000, -5000, 3000}, {1, 0.98, 0.973, 1}, 4000.497, 4700.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-12000, -6000, 5500}, {1, 0.98, 0.973, 1}, 4800.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-14000, -7000, 8500}, {1, 0.98, 0.973, 1}, 6000.497, 4500.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-16000, -8000, 12000}, {1, 0.98, 0.973, 1}, 4600.497, 5000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {8000, -4000, 1000}, {1, 0.98, 0.973, 1}, 4200.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {10000, -5000, -3000}, {1, 0.98, 0.973, 1}, 4400.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {12000, -6000, -5500}, {1, 0.98, 0.973, 1}, 4000.497, 4400.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {14000, -7000, -8500}, {1, 0.98, 0.973, 1}, 4800.497, 7000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {16000, -8000, -12000}, {1, 0.98, 0.973, 1}, 5000.497, 4100.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-8000, 4000, 1000}, {1, 0.98, 0.973, 1}, 4800.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-10000, 5000, -3000}, {1, 0.98, 0.973, 1}, 4500.497, 4000.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-12000, 6000, -5500}, {1, 0.98, 0.973, 1}, 4000.497, 4400.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-14000, 7000, -8500}, {1, 0.98, 0.973, 1}, 6000.497, 4600.717)
+  addNebula("polySurface1", "mp_bentusi_radiation", {-16000, 8000, -12000}, {1, 0.98, 0.973, 1}, 4900.497, 5000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-16000, 0, -16000}, {1, 0.98, 0.973, 1}, 5500.497, 5000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {16000, 0, -16500}, {1, 0.98, 0.973, 1}, 5000.497, 5400.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-16000, 0, 16500}, {1, 0.98, 0.973, 1}, 6000.497, 5600.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {16000, 0, 16000}, {1, 0.98, 0.973, 1}, 5900.497, 5000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {8500, 4500, 1500}, {1, 0.98, 0.973, 1}, 2900.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {15000, 5500, 3500}, {1, 0.98, 0.973, 1}, 2000.497, 2500.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {12500, 6500, 5500}, {1, 0.98, 0.973, 1}, 2000.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {14500, 7000, 8500}, {1, 0.98, 0.973, 1}, 2600.497, 4000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {16000, 8500, 12500}, {1, 0.98, 0.973, 1}, 3000.497, 2100.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-8000, -4000, 1000}, {1, 0.98, 0.973, 1}, 2800.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-10500, -5000, 3000}, {1, 0.98, 0.973, 1}, 2000.497, 2700.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-12000, -6500, 5500}, {1, 0.98, 0.973, 1}, 2800.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-14500, -7000, 8500}, {1, 0.98, 0.973, 1}, 3000.497, 2500.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-16000, -8500, 12500}, {1, 0.98, 0.973, 1}, 2600.497, 2500.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {8500, -4000, 1000}, {1, 0.98, 0.973, 1}, 2200.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {10000, -5500, -3000}, {1, 0.98, 0.973, 1}, 2400.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {12000, -6500, -5500}, {1, 0.98, 0.973, 1}, 2000.497, 2400.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {14500, -7000, -8500}, {1, 0.98, 0.973, 1}, 2800.497, 3000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {16500, -8000, -12000}, {1, 0.98, 0.973, 1}, 2500.497, 2100.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-8000, 4500, 1000}, {1, 0.98, 0.973, 1}, 2800.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-10000, 5500, -3500}, {1, 0.98, 0.973, 1}, 2500.497, 2000.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-12500, 6000, -5500}, {1, 0.98, 0.973, 1}, 2000.497, 2400.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-14500, 7000, -8500}, {1, 0.98, 0.973, 1}, 3000.497, 2600.717)
+  addNebula("polySurface2", "mp_bentusi_radiation", {-16000, 8000, -12500}, {1, 0.98, 0.973, 1}, 2900.497, 3000.717)
+  addNebula("polySurface3", "mp_bentusi_radiation", {0, 17000, -5500}, {1, 0.98, 0.973, 1}, 2000.497, 4600.717)
+  addNebula("polySurface3", "mp_bentusi_radiation", {0, 17000, 5500}, {1, 0.98, 0.973, 1}, 2900.497, 5000.717)
+  addNebula("polySurface3", "mp_bentusi_radiation", {-5500, -17000, 000}, {1, 0.98, 0.973, 1}, 2900.497, 4600.717)
+  addNebula("polySurface3", "mp_bentusi_radiation", {5500, -17000, 000}, {1, 0.98, 0.973, 1}, 2900.497, 5000.717)
+
+  addNebula("polySurface5", "nebula01_cream", {4000, -1000, 16000}, {1, 0.98, 0.973, 1}, 12592.497, 4999.717)
+  addNebula("polySurface5", "nebula_hiding", {3000, -4000, 16000}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula_hiding", {9000, -1500, -13000}, {1, 0.98, 0.973, 1}, 13592.497, 2999.717)
+  addNebula("polySurface5", "nebula_hiding", {7000, 1000, -15000}, {1, 0.98, 0.973, 1}, 6792.497, 6999.717)
+  addNebula("polySurface5", "nebula_hiding", {9000, -1000, 17500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)
+  addNebula("polySurface5", "nebula01_cream", {-5000, 1000, 12900}, {1, 0.98, 0.973, 1}, 12592.497, 8999.717)
+  addNebula("polySurface5", "nebula_hiding", {-3000, 4000, -16600}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula01_teal", {-2000, 1500, 14300}, {1, 0.98, 0.973, 1}, 13592.497, 4999.717)
+  addNebula("polySurface5", "nebula01_teal", {-7000, -1000, 12700}, {1, 0.98, 0.973, 1}, 6792.497, 2999.717)
+  addNebula("polySurface5", "nebula_hiding", {-5000, 1000, -17500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)
+  addNebula("polySurface5", "nebula_hiding", {5000, -1000, 18000}, {1, 0.98, 0.973, 1}, 12592.497, 4999.717)
+  addNebula("polySurface5", "nebula_hiding", {3000, -4000, -14000}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula01_cream", {2000, 1500, -13000}, {1, 0.98, 0.973, 1}, 13592.497, 2999.717)
+  addNebula("polySurface5", "nebula01_cream", {7000, 1000, -16000}, {1, 0.98, 0.973, 1}, 6792.497, 2999.717)
+  addNebula("polySurface5", "nebula_hiding", {9000, -1000, -13500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)
+  addNebula("polySurface5", "nebula01_teal", {-5000, 7000, -16500}, {1, 0.98, 0.973, 1}, 12592.497, 6099.717)
+  addNebula("polySurface5", "nebula_hiding", {-3000, -5000, -13600}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula01_cream", {-2000, 8500, 13000}, {1, 0.98, 0.973, 1}, 13592.497, 12999.717)
+  addNebula("polySurface5", "nebula_hiding", {-7000, -6000, 14000}, {1, 0.98, 0.973, 1}, 6792.497, 12999.717)
+  addNebula("polySurface5", "nebula_hiding", {-9000, 2000, -13500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)  
+  addNebula("polySurface5", "nebula_hiding", {-3000, 19000, -8600}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula01_cream", {9000, 21500, 6000}, {1, 0.98, 0.973, 1}, 4592.497, 8999.717)
+  addNebula("polySurface5", "nebula_hiding", {10000, -18000, 4900}, {1, 0.98, 0.973, 1}, 6792.497, 8999.717)
+  addNebula("polySurface5", "nebula_hiding", {-9000, -20000, -7500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717) 
+  addNebula("polySurface5", "nebula01_teal", {19000, 0, -6500}, {1, 0.98, 0.973, 1}, 4992.497, 5999.717)  
+  addNebula("polySurface5", "nebula01_cream", {14000, -1000, 36000}, {1, 0.98, 0.973, 1}, 12592.497, 4999.717)
+  addNebula("polySurface5", "nebula_hiding", {23000, -4000, 26000}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula_hiding", {19000, -1500, -33000}, {1, 0.98, 0.973, 1}, 13592.497, 2999.717)
+  addNebula("polySurface5", "nebula_hiding", {27000, 1000, -25000}, {1, 0.98, 0.973, 1}, 6792.497, 6999.717)
+  addNebula("polySurface5", "nebula_hiding", {19000, -1000, 37500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)
+  addNebula("polySurface5", "nebula01_cream", {-35000, 1000, 12900}, {1, 0.98, 0.973, 1}, 12592.497, 8999.717)
+  addNebula("polySurface5", "nebula_hiding", {-33000, 4000, -26600}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula01_teal", {-32000, 1500, 24300}, {1, 0.98, 0.973, 1}, 13592.497, 4999.717)
+  addNebula("polySurface5", "nebula01_teal", {-27000, -1000, 12700}, {1, 0.98, 0.973, 1}, 6792.497, 2999.717)
+  addNebula("polySurface5", "nebula_hiding", {-35000, 1000, -17500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)
+  addNebula("polySurface5", "nebula_hiding", {15000, -1000, 28000}, {1, 0.98, 0.973, 1}, 12592.497, 4999.717)
+  addNebula("polySurface5", "nebula_hiding", {23000, -4000, -34000}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula01_cream", {22000, 1500, -23000}, {1, 0.98, 0.973, 1}, 13592.497, 2999.717)
+  addNebula("polySurface5", "nebula01_cream", {17000, 1000, -36000}, {1, 0.98, 0.973, 1}, 6792.497, 2999.717)
+  addNebula("polySurface5", "nebula_hiding", {19000, -1000, -33500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)
+  addNebula("polySurface5", "nebula01_teal", {-25000, 7000, -16500}, {1, 0.98, 0.973, 1}, 12592.497, 6099.717)
+  addNebula("polySurface5", "nebula_hiding", {-33000, -5000, -23600}, {1, 0.98, 0.973, 1}, 8902.497, 5299.717)
+  addNebula("polySurface5", "nebula01_cream", {-32000, 8500, 13000}, {1, 0.98, 0.973, 1}, 13592.497, 12999.717)
+  addNebula("polySurface5", "nebula_hiding", {-27000, -6000, 14000}, {1, 0.98, 0.973, 1}, 6792.497, 12999.717)
+  addNebula("polySurface5", "nebula_hiding", {-39000, 2000, -13500}, {1, 0.98, 0.973, 1}, 4992.497, 3999.717)  
+
+  
+
+	local x,y,z = 0+random(-350,350),0+random(-350,350),0+random(-350,350)
+	local rot_x,rot_y,rot_z = random(0,360), random(0,360), random(0,360)
+	addSquadron("hgn_planet_earth_aerosol", "hgn_planet_earth_aerosol", {x, y, z}, -1, {rot_x,rot_y,rot_z}, 0, 0)
+	local gamma = random(0,360)
+  local small_r = 32000
+  local large_r = 33000
+  for i = 1, 360, 1 do
+  	addSquadron("light", "meg_NavBouy_Blue", {x+sin(i)*small_r, y+small_r*cos(i+rot_x)*sin(i+rot_y)*cos(i+rot_z), z+cos(i)*small_r}, -1, {0, i+180, 0}, 0, 0)
+  	if random(1,4)==1 then
+	  	addAsteroid("Asteroid_"..random(2,5).."_blue", {x+sin(i)*large_r, y+large_r*cos(i+rot_x)*sin(i+rot_y)*cos(i+rot_z), z+cos(i)*large_r}, 100, 0, 0, 0, 0)
+  	end
+  end
+  
+  local megalith = {"meg_bentus", "meg_dreadnaughtberth", "meg_reinforcementpad", "meg_veildebris_chunk_lighthouse_nobuild", "meg_hvdreadnaught", "meg_tanis", "meg_foundry", "meg_bentusiexchange", "meg_chimera_nobuild"}
+	for i=1,random(4,8),1 do
+		phi=random(0,36000)/100
+		r=random(30000,50000)
+		h=random(-15000,15000)
+		addSquadron("megalith", megalith[random(1,getn(megalith))], {r*cos(phi), h, r*sin(phi)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	end
+
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {11925, -39669, 91915}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {23764, -39669, 93960}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {45706, -39669, 103918}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {63479, -39669, 105728}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {86893, -39669, 105729}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {93668, -39669, 96757}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {95230, -39669, 65383}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {89408, -39669, 25669}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {105624, -39668, 45273}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {105180, -39668, 1777}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {101146, -39668, -37594}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {94345, -39668, -60027}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {117418, -39668, -89459}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {122800, -39668, -56089}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {112708, -39668, -31740}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {114147, -39668, 5852}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {55959, -39668, 61834}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {63582, -39668, 24901}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {64429, -39668, -17322}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {65120, -39668, -51755}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {86796, -39668, -102397}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {60489, -39668, -106264}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {40974, -39668, -100133}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {32734, -39668, -64296}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {27026, -39668, -23336}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {25731, -39668, 10762}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {24949, -39668, 43898}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {8586, -39667, 121977}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-15185, -39667, 115396}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-43315, -39667, 102964}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-91089, -39667, 107435}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-72568, -39667, 117246}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-106319, -39666, 77015}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-88674, -39666, 32584}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-46502, -39666, 74668}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-6131, -39666, 56762}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-99337, -39666, 44014}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-40647, -39666, 35481}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-24968, -39666, 23679}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-9164, -39665, -14236}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-2844, -39665, -51619}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {14934, -39665, -87665}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {9555, -39665, -117308}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-27030, -39665, -113186}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-120148, -39665, -109870}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-66863, -39665, -127851}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-126040, -39665, -123729}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-149116, -39665, -96024}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-157216, -39665, -35258}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-153305, -39665, 6676}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-159130, -39665, 69869}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-156589, -39665, 115113}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-119139, -39665, 118851}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-144582, -39665, 79514}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-121966, -39665, 45275}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-102188, -39665, -9538}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-107166, -39665, -62389}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-72141, -39665, -81946}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-43959, -39664, -72134}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-47958, -39664, -21661}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-68256, -39664, -29933}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-68171, -39664, 3612}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {88224, -18111, -87787}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {67644, -18111, -92803}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {40851, -18111, -94542}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {8468, -18111, -91953}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-16747, -18111, -88999}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-14942, -18111, -67394}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {9727, -18111, -70853}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {50587, -18111, -78973}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {42331, -18111, -53190}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {26651, -18111, -33239}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-41042, -18110, -94955}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-64420, -18110, -95043}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {14360, 145, -23946}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {17304, -2785, -6161}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-4998, -11737, -43596}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {11396, -17130, 28789}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {3542, -24800, 55948}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-10160, -28715, 84668}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-30550, -28715, 77251}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-57770, 36169, 49030}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-52368, 36169, 24177}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-61556, 36169, -10840}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-63972, 1604, 22739}, {0.50, 0.00, 1.00, 1}, 0.0, 50000)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-12059, -11734, -7635}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {47370, -12069, -15307}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {43919, -12069, -48051}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {33458, -14447, 15112}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {22693, -17896, 32058}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-12422, -16043, 8994}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-2446, -11874, 34447}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {69138, -16638, 24351}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {81532, -23710, 39040}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {86539, -20382, 24327}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {82416, -18395, 60035}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-23006, -9926, 78320}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-6036, -16293, 80691}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-98536, -16292, 57392}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {-66727, -16292, 61105}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+  addDustCloud("polySurface1", "DustCloud_NoRes3", {111524, -16292, -28804}, {0.50, 0.00, 1.00, 1}, 0.0, 40957)
+
+  addNebula("polySurface4", "nebula_hiding", {2400, 7000, 0}, {1, 0.98, 0.973, 1}, 2192.497, 3999.717)
+  addNebula("polySurface4", "nebula01_cream", {515, -6850, -750}, {1, 0.98, 0.973, 1}, 7192.497, 5499.717)
+
+
+  setWorldBoundsInner({0, 0, 0}, {60000, 100000, 60000})
+  setWorldBoundsOuter({0, 0, 0}, {690000, 360000, 690000})
+
+end
+
+function NonDetermChunk()
+
+  addPebble("Pebble_0", {-700, 300, -100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-7000, 3000, -1000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {900, 2000, 1200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {700, 3300, -100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {700, 300, 3100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {3700, 300, -1300}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {500, 3300, -3100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-16000, 300, -1900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {15500, 300, 2300}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-16400, 300, 2900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {15900, 300, -2300}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-13800, 300, -2900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {13000, 300, 1900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-14000, 300, 1100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {17000, 300, -1200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-12000, 300, -4100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {11000, 300, 6100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-18400, 300, 4100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-1700, 300, -19000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {1700, 300, -14500}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-3700, 300, 13000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {2700, 300, 18000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-1700, 300, -16500}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6700, 300, 15500}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-4700, 300, 13200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {1700, 300, -19800}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-4700, 300, -14600}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6700, 300, 17700}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {1700, 300, 14700}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {1700, -700, -8800}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-4700, 1300, -7600}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6700, -300, -6700}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-1700, 1500, -5700}, 10000, 10000, 10000)
+
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("tower_nebula")	
+
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

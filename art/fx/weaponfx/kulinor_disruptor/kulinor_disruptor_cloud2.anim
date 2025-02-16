@@ -1,0 +1,61 @@
+fps = 25
+startFrame = 0 -- 30
+loopCount = 0
+layout = 
+    { 1, 1, }
+textureLayout = 
+    { 
+
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0000.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0001.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0002.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0003.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0004.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0005.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0006.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0007.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0008.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0009.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0010.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0011.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0012.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0013.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0014.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0015.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0016.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0017.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0018.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0019.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0020.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0021.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0022.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0023.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0024.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0025.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0026.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0027.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0028.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0029.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0030.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0031.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0032.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0033.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0034.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0035.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0036.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0037.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0038.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0039.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0040.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0041.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0042.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0043.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0044.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0045.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0046.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0047.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0048.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/KULINOR_DISRUPTOR/kulinor_disruptor_cloud2_0049.tga", 0, 0, },
+
+
+    }

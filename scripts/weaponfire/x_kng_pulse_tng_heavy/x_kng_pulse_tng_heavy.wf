@@ -1,0 +1,12 @@
+hitfx = "generic_beam_dmg_combo"
+bulletfx = "kng_pulse_heavy_bullet"
+nopenetratefx = "ion_dmg_ring_spray"
+blowthroughfx = "blowthrough_generic"
+deathtype = "deathCannon"
+scartype = "Pulse/Pulse"
+firefx = "kng_pulse_heavy_muzzle"
+fire_sfx = "WEAPON/KNG/TNG/KNG_HEAVY_PULSE_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HIT"
+nopentrate_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HIT"
+hit_clamp = 
+    { 1, 1, }

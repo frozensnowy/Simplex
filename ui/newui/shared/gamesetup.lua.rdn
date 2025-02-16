@@ -1,0 +1,1966 @@
+-- Pretty-Printed using HW2 Pretty-Printer 1.27 by Mikail.
+GameSetup = 
+{
+	size = 
+	{
+		0,
+		0,
+		800,
+		600,
+	},
+	stylesheet = "HW2StyleSheet",
+	RootElementSettings = 
+	{
+		--backgroundColor = "FEColorBackground2",																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											,
+	},
+	pixelUVCoords = 1,
+	-- Custom data
+	titleSkirmish = "$3310",
+	--SKIRMISH
+	titleMultiplayer = "$3311",
+	--MULTIPLAYER
+	subtitleSkirmish = "$3312",
+	--CREATE NEW GAME
+	showLobbyPlayersText = "$3320",
+	--SHOW PLAYERS LIST
+	hideLobbyPlayersText = "$3315",
+	--COLLAPSE PLAYERS LIST
+	openString = "$3316",
+	--OPEN
+	closedString = "$3317",
+	--CLOSED
+	labelGameChat = "$3296",
+	labelLobbyChat = "$3297",
+	posSkirmish = 
+	{
+		157,
+		97,
+	},
+	posMultiplayer = 
+	{
+		12,
+		97,
+	},
+	levelString = "$3318",
+	--%s (%d Players)
+	-- where first %s is the gamemode and the second %s is the filename of the level
+	levelThumbnail = "Data:UI\\MapThumbnails\\Multiplayer\\%s\\%s.tga",
+	defaultThumbnail = "Data:UI\\MapThumbnails\\Multiplayer\\Default.tga",
+	-- thumbnail to show if no map available
+	-- IDs for the Localizer::FormatText string.  The parameter is the gamename
+	subtitleMultiplayerJoinID = 3313,
+	--JOIN GAME
+	subtitleMultiplayerHostID = 3314,
+	--HOST GAME
+	-- Localizer format IDs for broadcast and whisper chat messages.  These should be the same in all screens ChatUI is used.
+	sayFormatID = 3364,
+	whisperFormatID = 3365,
+	whisperEchoFormatID = 3369,
+	playerJoinedFormatID = 3525,
+	playerLeftFormatID = 3526,
+	fStringCPU = "$3294",
+	-- format string for cpu players CPU%d
+	ErrorMessages = 
+	{
+		-- Note: This disconnected from server is the same message as in GameRoom.lua and ServerRoom.lua so it can share a localizer ID
+		[LM_Disconnected] = "$3319",
+		--Disconnected from server,
+	},
+	;
+	{
+		type = "Frame",
+		position = 
+		{
+			0,
+			0,
+		},
+		size = 
+		{
+			800,
+			600,
+		},
+		name = "frmTheRoot",
+		;
+		{
+			type = "TextListBoxItem",
+			buttonStyle = "FEListBoxItemButtonStyle",
+			name = "listBoxItemToClone",
+			resizeToListBox = 1,
+			visible = 0,
+			Text = 
+			{
+				textStyle = "FEListBoxItemTextStyle",
+			},
+		},
+		--DEFINITION FOR: (txtLbl) TITLE
+		{
+			type = "TextLabel",
+			position = 
+			{
+				16,
+				 - 2,
+			},
+			size = 
+			{
+				600,
+				36,
+			},
+			name = "txtLblTITLE",
+			Text = 
+			{
+				text = "$3300",
+				-- MULITPLAYER
+				textStyle = "FEHeading1",
+			},
+			;
+		},
+		--DEFINITION FOR: (txtLbl) SUBTITLE
+		{
+			type = "TextLabel",
+			position = 
+			{
+				17,
+				34,
+			},
+			size = 
+			{
+				600,
+				21,
+			},
+			name = "txtLblSUBTITLE",
+			Text = 
+			{
+				text = "$3301",
+				-- HOST GAME / JOIN GAME
+				textStyle = "FEHeading2",
+			},
+			;
+		},
+		--DEFINITION FOR: (txtLbl) IP_ADDRESS
+		{
+			type = "TextLabel",
+			position = 
+			{
+				638,
+				40,
+			},
+			size = 
+			{
+				144,
+				13,
+			},
+			name = "txtLblIPADDRESS",
+			Text = 
+			{
+				text = "$3360",
+				-- IP ADDRESS
+				textStyle = "FEHeading4",
+				hAlign = "Right",
+			},
+			helpTipTextLabel = "txtLblHELPTEXT",
+			helpTip = "$3321",
+			--THIS IS YOUR COMPUTERS IP ADDRESS
+			
+		},
+		-- GAMESPY / RELIC LOGO'S
+		--DEFINITION FOR: (frmgr) 1gamespy.tga
+		{
+			type = "Frame",
+			BackgroundGraphic = 
+			{
+				type = "Graphic",
+				size = 
+				{
+					128,
+					32,
+				},
+				texture = "Data:UI\\NewUI\\Network\\gamespy.mres",
+				textureUV = 
+				{
+					0,
+					0,
+					128,
+					32,
+				},
+			},
+			position = 
+			{
+				656,
+				9,
+			},
+			size = 
+			{
+				128,
+				32,
+			},
+			name = "frmgr1gamespytga",
+			;
+		},
+		--DEFINITION FOR: (frmgr) 1gamespy.tga (visible for LAN games only)
+		{
+			type = "Frame",
+			BackgroundGraphic = 
+			{
+				type = "Graphic",
+				size = 
+				{
+					128,
+					35,
+				},
+				texture = "Data:UI\\NewUI\\Network\\relic.mres",
+				textureUV = 
+				{
+					0,
+					0,
+					128,
+					35,
+				},
+			},
+			position = 
+			{
+				656,
+				5,
+			},
+			size = 
+			{
+				128,
+				35,
+			},
+			name = "frmgr1relictgaLAN",
+			;
+		},
+		{
+			type = "Frame",
+			name = "frmSkirmish",
+			autosize = 1,
+			;
+			------------------------------------------------------------------------------------
+			-- PLAYER FRAME
+			------------------------------------------------------------------------------------
+			--DEFINITION FOR: (frmRoot) PlayersBox
+			{
+				type = "Frame",
+				backgroundColor = "FEColorBackground1",
+				position = 
+				{
+					0,
+					195,
+				},
+				size = 
+				{
+					483,
+					196,
+				},
+				name = "frmRootPlayersBox",
+				;
+				--DEFINITION FOR: (txtLbl) GAME_PLAYERS
+				{
+					type = "TextLabel",
+					position = 
+					{
+						5,
+						2,
+					},
+					--size = {400,13},
+					autosize = 1,
+					name = "txtLblGAMEPLAYERS",
+					Text = 
+					{
+						text = "$3305",
+						-- GAME PLAYERS
+						textStyle = "FEHeading3",
+						vAlign = "Top",
+						hAlign = "Left",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) PLAYER_OPTIONS
+				{
+					type = "TextLabel",
+					position = 
+					{
+						5,
+						19,
+					},
+					--size = {125,9},
+					autosize = 1,
+					name = "txtLblPLAYEROPTIONS",
+					Text = 
+					{
+						text = "$3309",
+						-- PLAYER OPTIONS//
+						textStyle = "FEHeading4",
+						vAlign = "Top",
+						hAlign = "Left",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) COLOURS
+				{
+					type = "TextLabel",
+					position = 
+					{
+						133,
+						19,
+					},
+					size = 
+					{
+						70,
+						9,
+					},
+					name = "txtLblCOLOURS",
+					Text = 
+					{
+						text = "$3340",
+						textStyle = "FEHeading4",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) RACE
+				{
+					type = "TextLabel",
+					position = 
+					{
+						206,
+						19,
+					},
+					size = 
+					{
+						86,
+						9,
+					},
+					name = "txtLblRACE",
+					Text = 
+					{
+						text = "$3341",
+						textStyle = "FEHeading4",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) TEAM
+				{
+					type = "TextLabel",
+					position = 
+					{
+						297,
+						19,
+					},
+					size = 
+					{
+						56,
+						9,
+					},
+					name = "txtLblTEAM",
+					Text = 
+					{
+						text = "$3342",
+						textStyle = "FEHeading4",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) POSITION
+				{
+					type = "TextLabel",
+					position = 
+					{
+						356,
+						19,
+					},
+					size = 
+					{
+						60,
+						9,
+					},
+					name = "txtLblPOSITION",
+					Text = 
+					{
+						text = "$3343",
+						textStyle = "FEHeading4",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) PING
+				{
+					type = "TextLabel",
+					position = 
+					{
+						420,
+						19,
+					},
+					size = 
+					{
+						42,
+						9,
+					},
+					name = "txtLblPING",
+					Text = 
+					{
+						text = "$3344",
+						textStyle = "FEHeading4",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) OK
+				{
+					type = "TextLabel",
+					position = 
+					{
+						464,
+						19,
+					},
+					size = 
+					{
+						22,
+						9,
+					},
+					name = "txtLblOK",
+					Text = 
+					{
+						text = "$3345",
+						textStyle = "FEHeading4",
+					},
+					;
+				},
+				--DEFINITION FOR: (frm) PlayerSlots
+				{
+					type = "Frame",
+					borderWidth = 2,
+					borderColor = "FEColorOutline",
+					position = 
+					{
+						2,
+						32,
+					},
+					size = 
+					{
+						479,
+						162,
+					},
+					name = "frmPlayerSlots",
+					autoarrange = 1,
+					autoarrangeWidth = 480,
+					;
+				},
+				--DEFINITION FOR: (frm) plr1frm
+				{
+					type = "Frame",
+					borderWidth = 1,
+					borderColor = "FEColorOutline",
+					position = 
+					{
+						3,
+						32,
+					},
+					size = 
+					{
+						479,
+						27,
+					},
+					name = "frmplr1frm",
+					visible = 0,
+					;
+					--DEFINITION FOR: (ddLst) ChooseTeam
+					{
+						type = "DropDownListBox",
+						dropDownListBoxStyle = "FEDropDownListBoxStyle",
+						position = 
+						{
+							292,
+							7,
+						},
+						size = 
+						{
+							60,
+							13,
+						},
+						name = "ddLstChooseTeam",
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3322",
+						--CHOOSE YOUR TEAM
+						
+					},
+					--DEFINITION FOR: (txtLbl) pingpl1
+					{
+						type = "TextLabel",
+						position = 
+						{
+							416,
+							6,
+						},
+						size = 
+						{
+							41,
+							15,
+						},
+						name = "txtLblpingpl1",
+						Text = 
+						{
+							text = "$3344",
+							textStyle = "FEListBoxItemTextStyle",
+							offset = 
+							{
+								1,
+								0,
+							},
+						},
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3323",
+						--PING FOR REMOTE PLAYER
+						
+					},
+					--DEFINITION FOR: (ddLst) ChooseRace
+					{
+						type = "DropDownListBox",
+						dropDownListBoxStyle = "FEDropDownListBoxStyle",
+						position = 
+						{
+							200,
+							7,
+						},
+						size = 
+						{
+							90,
+							13,
+						},
+						name = "ddLstChooseRace",
+						enabled = 1,
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3324",
+						--CHOOSE YOUR RACE
+						
+					},
+					--DEFINITION FOR: (btn) PCheck
+					{
+						type = "Button",
+						buttonStyle = "FEReadyButtonStyle",
+						position = 
+						{
+							461,
+							7,
+						},
+						name = "btnPCheck",
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3325",
+						--CHECK THIS WHEN YOU ARE READY
+						
+					},
+					--DEFINITION FOR: (ddLst) ChoosePos
+					{
+						type = "DropDownListBox",
+						dropDownListBoxStyle = "FEDropDownListBoxStyle",
+						position = 
+						{
+							354,
+							7,
+						},
+						enabled = 1,
+						size = 
+						{
+							60,
+							13,
+						},
+						name = "ddLstChoosePos",
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3326",
+						--CHOOSE YOUR STARTING POSITION
+						
+					},
+					----------------------------------------------------------------------------------
+					--DEFINITION FOR: (frm) PlayerInfo LOCAL
+					{
+						type = "Frame",
+						position = 
+						{
+							4,
+							4,
+						},
+						size = 
+						{
+							184,
+							19,
+						},
+						name = "frmPlayerInfoLocal",
+						;
+						{
+							type = "Button",
+							name = "btnEmblem",
+							size = 
+							{
+								184,
+								19,
+							},
+							borderWidth = 1,
+							borderColor = 
+							{
+								215,
+								215,
+								215,
+								255,
+							},
+							overBorderColor = 
+							{
+								255,
+								255,
+								255,
+								255,
+							},
+							disabledBorderColor = 
+							{
+								175,
+								175,
+								175,
+								255,
+							},
+							giveParentMouseInput = 1,
+							disabledHelpTip = " ",
+							helpTipTextLabel = "txtLblHELPTEXT",
+							helpTip = "$3368",
+							-- EDIT PROFILE
+							
+							--DEFINITION FOR: (txtLbl) SelectedPlayer
+							{
+								type = "TextLabel",
+								position = 
+								{
+									6,
+									1,
+								},
+								size = 
+								{
+									177,
+									17,
+								},
+								name = "txtLblSelectedPlayerName",
+								giveParentMouseInput = 1,
+								dropShadow = 1,
+								Text = 
+								{
+									color = 
+									{
+										255,
+										255,
+										255,
+										255,
+									},
+									textStyle = "FEButtonTextStyle",
+									hAlign = "Left",
+									dropShadow = 1,
+								},
+								;
+								{
+									type = "Frame",
+									position = 
+									{
+										115,
+										0,
+									},
+									size = 
+									{
+										60,
+										17,
+									},
+									name = "frmEmblem",
+									giveParentMouseInput = 1,
+									;
+									--DEFINITION FOR: (frmgr) 2m_flg.tga
+									{
+										type = "Frame",
+										BackgroundGraphic = 
+										{
+											type = "Graphic",
+											size = 
+											{
+												60,
+												17,
+											},
+											texture = "Data:UI\\NewUI\\Network\\stripes.mres",
+											textureUV = 
+											{
+												0,
+												0,
+												60,
+												17,
+											},
+										},
+										size = 
+										{
+											60,
+											17,
+										},
+										name = "frmStripe",
+										giveParentMouseInput = 1,
+										;
+									},
+									--DEFINITION FOR: (frmgr) 2Emblem.tga
+									{
+										type = "Frame",
+										BackgroundGraphic = 
+										{
+											type = "Graphic",
+											size = 
+											{
+												17,
+												17,
+											},
+											texture = "DATA:Badges/Hiigaran.tga",
+											textureUV = 
+											{
+												0,
+												0,
+												64,
+												64,
+											},
+										},
+										backgroundColor = 
+										{
+											25,
+											25,
+											25,
+											0,
+										},
+										size = 
+										{
+											17,
+											17,
+										},
+										name = "frmBadge",
+										giveParentMouseInput = 1,
+										;
+									},
+								},
+							},
+						},
+					},
+					----------------------------------------------------------------------------------
+					--DEFINITION FOR: (frm) PlayerInfo OTHER - Slot for cpu players and other human players (MP only)
+					{
+						type = "Frame",
+						position = 
+						{
+							4,
+							4,
+						},
+						size = 
+						{
+							184,
+							19,
+						},
+						name = "frmPlayerInfoOther",
+						;
+						{
+							-- todo: this needs to be disabled to kill mouse over state
+							type = "Button",
+							name = "btnEmblem",
+							position = 
+							{
+								120,
+								1,
+							},
+							size = 
+							{
+								60,
+								17,
+							},
+							outerBorderWidth = 1,
+							disabledBorderColor = 
+							{
+								175,
+								175,
+								175,
+								255,
+							},
+							overBorderColor = 
+							{
+								255,
+								255,
+								255,
+								255,
+							},
+							borderColor = 
+							{
+								215,
+								215,
+								215,
+								255,
+							},
+							helpTipTextLabel = "txtLblHELPTEXT",
+							helpTip = "$3448",
+							-- EDIT CPU PROFILE
+							disabledHelpTip = " ",
+							-- *none*,
+							;
+							{
+								type = "Frame",
+								position = 
+								{
+									0,
+									0,
+								},
+								size = 
+								{
+									60,
+									17,
+								},
+								name = "frmEmblem",
+								giveParentMouseInput = 1,
+								;
+								--DEFINITION FOR: (frmgr) 2m_flg.tga
+								{
+									type = "Frame",
+									BackgroundGraphic = 
+									{
+										type = "Graphic",
+										size = 
+										{
+											60,
+											17,
+										},
+										texture = "Data:UI\\NewUI\\Network\\stripes.mres",
+										textureUV = 
+										{
+											0,
+											0,
+											60,
+											17,
+										},
+									},
+									size = 
+									{
+										60,
+										17,
+									},
+									name = "frmStripe",
+									giveParentMouseInput = 1,
+									;
+								},
+								--DEFINITION FOR: (frmgr) 2Emblem.tga
+								{
+									type = "Frame",
+									BackgroundGraphic = 
+									{
+										type = "Graphic",
+										size = 
+										{
+											17,
+											17,
+										},
+										texture = "DATA:Badges/Hiigaran.tga",
+										textureUV = 
+										{
+											0,
+											0,
+											64,
+											64,
+										},
+									},
+									backgroundColor = 
+									{
+										25,
+										25,
+										25,
+										0,
+									},
+									size = 
+									{
+										17,
+										17,
+									},
+									name = "frmBadge",
+									giveParentMouseInput = 1,
+									;
+								},
+							},
+						},
+						--DEFINITION FOR: (ddLst) ChooseDifficulty
+						{
+							type = "DropDownListBox",
+							dropDownListBoxStyle = "FEDropDownListBoxStyle",
+							giveParentMouseInput = 1,
+							position = 
+							{
+								2,
+								2,
+							},
+							size = 
+							{
+								111,
+								13,
+							},
+							name = "ddLstDifficulty",
+							visible = 0,
+							helpTipTextLabel = "txtLblHELPTEXT",
+							helpTip = "$3327",
+							--CHOOSE THE DIFFICULTY OF THE CPU OPPONENT
+							disabledHelpTip = " ",
+							;
+						},
+						--DEFINITION FOR: (ddLst) ChooseSlotType
+						{
+							visible = 0,
+							type = "DropDownListBox",
+							dropDownListBoxStyle = "FEDropDownListBoxStyle",
+							giveParentMouseInput = 1,
+							position = 
+							{
+								2,
+								2,
+							},
+							size = 
+							{
+								111,
+								13,
+							},
+							name = "ddLstSlotControl",
+							helpTipTextLabel = "txtLblHELPTEXT",
+							helpTip = "$3328",
+							disabledHelpTip = " ",
+							;
+						},
+					},
+				},
+			},
+			------------------------------------------------------------------------------------
+			-- MAP FRAME
+			------------------------------------------------------------------------------------
+			--DEFINITION FOR: (frmRoot) MapBox
+			{
+				type = "Frame",
+				backgroundColor = "FEColorBackground1",
+				position = 
+				{
+					0,
+					0,
+				},
+				size = 
+				{
+					192,
+					188,
+				},
+				name = "frmRootMapBox",
+				helpTipTextLabel = "txtLblHELPTEXT",
+				helpTip = "$3329",
+				--SELECT YOUR MAP
+				
+				--DEFINITION FOR: (txtLbl) MAP
+				{
+					type = "TextLabel",
+					position = 
+					{
+						5,
+						2,
+					},
+					--size = {170,13},
+					autosize = 1,
+					name = "txtLblMAP",
+					Text = 
+					{
+						text = "$3302",
+						-- MAP
+						textStyle = "FEHeading3",
+						vAlign = "Top",
+						hAlign = "Left",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) SELECT_YOUR_MAP
+				{
+					type = "TextLabel",
+					position = 
+					{
+						5,
+						19,
+					},
+					--size = {170,9},
+					autosize = 1,
+					name = "txtLblSELECTYOURMAP",
+					Text = 
+					{
+						text = "$3306",
+						-- SELECT YOUR MAP//
+						textStyle = "FEHeading4",
+						vAlign = "Top",
+						hAlign = "Left",
+					},
+					;
+				},
+				--DEFINITION FOR: (frm) MapFrame
+				{
+					type = "Frame",
+					borderWidth = 2,
+					borderColor = "FEColorOutline",
+					position = 
+					{
+						2,
+						30,
+					},
+					size = 
+					{
+						188,
+						156,
+					},
+					name = "frmMapFrame",
+					;
+					--DEFINITION FOR: (ddLst) Choose_Map
+					{
+						type = "DropDownListBox",
+						dropDownListBoxStyle = "FEDropDownListBoxStyle",
+						position = 
+						{
+							5,
+							5,
+						},
+						width = 179,
+						name = "ddLstChooseMap",
+						;
+					},
+					--DEFINITION FOR: (frmgr) 1m_map.tga
+					{
+						type = "Frame",
+						BackgroundGraphic = 
+						{
+							type = "Graphic",
+							texture = "Data:UI\\MapThumbnails\\Multiplayer\\Default.tga",
+							textureUV = 
+							{
+								0,
+								0,
+								360,
+								266,
+							},
+						},
+						position = 
+						{
+							4,
+							19,
+						},
+						size = 
+						{
+							180,
+							133,
+						},
+						name = "frmMapThumbnail",
+						;
+					},
+					-- ListBoxItemToClone
+					{
+						type = "TextListBoxItem",
+						buttonStyle = "FEListBoxItemButtonStyle",
+						visible = 0,
+						enabled = 0,
+						resizeToListBox = 1,
+						Text = 
+						{
+							textStyle = "FEListBoxItemTextStyle",
+						},
+						position = 
+						{
+							4,
+							4,
+						},
+						width = 165,
+						name = "ddLstChooseMapTemplate",
+						;
+					},
+				},
+			},
+			------------------------------------------------------------------------------------
+			-- OPTIONS FRAME
+			------------------------------------------------------------------------------------
+			{
+				type = "Frame",
+				backgroundColor = "FEColorBackground1",
+				position = 
+				{
+					199,
+					0,
+				},
+				size = 
+				{
+					284,
+					188,
+				},
+				name = "frmRootOptionsBox",
+				;
+				--DEFINITION FOR: (txtLbl) OPTIONS
+				{
+					type = "TextLabel",
+					position = 
+					{
+						5,
+						2,
+					},
+					--size = {280,13},
+					autosize = 1,
+					name = "txtLblOPTIONS",
+					Text = 
+					{
+						text = "$3303",
+						-- OPTIONS
+						textStyle = "FEHeading3",
+						vAlign = "Top",
+						hAlign = "Left",
+					},
+					;
+				},
+				--DEFINITION FOR: (txtLbl) GAME_SETUP
+				{
+					type = "TextLabel",
+					position = 
+					{
+						5,
+						19,
+					},
+					--size = {280,9},
+					autosize = 1,
+					name = "txtLblGAMESETUP",
+					Text = 
+					{
+						text = "$3307",
+						-- GAME SETUP//
+						textStyle = "FEHeading4",
+						vAlign = "Top",
+						hAlign = "Left",
+					},
+					;
+				},
+				--DEFINITION FOR: (frm) OptFrame
+				{
+					type = "Frame",
+					borderWidth = 2,
+					borderColor = "FEColorOutline",
+					position = 
+					{
+						2,
+						30,
+					},
+					size = 
+					{
+						280,
+						156,
+					},
+					name = "frmOptFrame",
+					autoarrange = 1,
+					autoarrangeWidth = 280,
+					autoarrangeSpace = 1,
+				},
+				-- line below game type
+				{
+					type = "Line",
+					p1 = 
+					{
+						2,
+						49,
+					},
+					p2 = 
+					{
+						280,
+						49,
+					},
+					color = "FEColorOutline",
+					lineWidth = 2,
+					above = 0,
+				},
+			},
+		},
+		--DEFINITION FOR: (frm) GameTypeToClone
+		{
+			type = "Frame",
+			name = "frmGameTypeToClone",
+			size = 
+			{
+				276,
+				21,
+			},
+			visible = 0,
+			helpTipTextLabel = "txtLblHELPTEXT",
+			helpTip = "$3245"
+			-- CHOOSE THE GAME TYPE
+			
+			-- Game info button
+			{
+				type = "Button",
+				name = "btnGameInfo",
+				position = 
+				{
+					136,
+					2,
+				},
+				buttonStyle = "FEInfoButtonStyle",
+				helpTipTextLabel = "txtLblHELPTEXT",
+				helpTip = "$3246",
+				-- SHOW GAME TYPE INFORMATION,
+			},
+			--DEFINITION FOR: (ddLst) OptionChoices
+			{
+				type = "DropDownListBox",
+				dropDownListBoxStyle = "FEDropDownListBoxStyle",
+				position = 
+				{
+					154,
+					3,
+				},
+				width = 120,
+				name = "ddLstOptionChoices",
+				helpTipTextLabel = "txtLblHELPTEXT",
+				helpTip = "$3245"
+				-- CHOOSE THE GAME TYPE
+				
+			},
+			{
+				type = "TextLabel",
+				position = 
+				{
+					3,
+					2,
+				},
+				size = 
+				{
+					134,
+					13,
+				},
+				Text = 
+				{
+					textStyle = "FEHeading4",
+					text = "$3244",
+					-- GAME TYPE,
+				},
+				giveParentMouseInput = 1,
+				;
+			},
+		},
+		--DEFINITION FOR: (frm) OptionToClone
+		{
+			type = "Frame",
+			position = 
+			{
+				1,
+				1,
+			},
+			size = 
+			{
+				276,
+				17,
+			},
+			visible = 0,
+			name = "frmOptionToClone",
+			helpTipTextLabel = "txtLblHELPTEXT",
+			;
+			--DEFINITION FOR: (ddLst) OptionChoices
+			{
+				type = "DropDownListBox",
+				dropDownListBoxStyle = "FEDropDownListBoxStyle",
+				position = 
+				{
+					154,
+					4,
+				},
+				width = 120,
+				name = "ddLstOptionChoices",
+				;
+			},
+			--DEFINITION FOR: (txtLbl) OptionName
+			{
+				type = "TextLabel",
+				position = 
+				{
+					3,
+					2,
+				},
+				size = 
+				{
+					134,
+					13,
+				},
+				name = "txtLblOptionName",
+				Text = 
+				{
+					textStyle = "FEHeading4",
+				},
+				;
+			},
+		},
+		------------------------------------------------------------------------------------
+		-- CHAT FRAME
+		------------------------------------------------------------------------------------
+		{
+			type = "Frame",
+			backgroundColor = "FEColorBackground1",
+			position = 
+			{
+				502,
+				97,
+			},
+			size = 
+			{
+				286,
+				391,
+			},
+			name = "frmRootChatBox",
+			;
+			-- dummy frame used to nest the child/parent structure 1 deeper (to force the line to draw behind all children)
+			{
+				type = "Frame",
+				size = 
+				{
+					286,
+					391,
+				},
+				;
+				-- line to left of scrollbar
+				{
+					type = "Line",
+					lineWidth = 2,
+					color = "FEColorOutline",
+					above = 0,
+					p1 = 
+					{
+						261 + 4,
+						32 + 19,
+					},
+					p2 = 
+					{
+						261 + 4,
+						362 - 45 - 19 + 32 + 19,
+					},
+				},
+			},
+			{
+				-- Listbox Object to clone
+				type = "TextListBoxItem",
+				buttonStyle = "FEListBoxItemButtonStyle",
+				name = "lstBoxLobbyPlayersTemplate",
+				width = 255,
+				visible = 0,
+				enabled = 0,
+				backgroundColor = 
+				{
+					0,
+					0,
+					0,
+					0,
+				},
+				Text = 
+				{
+					font = "ListBoxItemFont",
+					color = 
+					{
+						255,
+						255,
+						255,
+						255,
+					},
+					offset = 
+					{
+						4,
+						0,
+					},
+				},
+			},
+			-- Tab buttons frame
+			{
+				type = "Frame",
+				autoarrange = 1,
+				autoarrangeSpace = 1,
+				position = 
+				{
+					93,
+					35,
+				},
+				autoarrangeWidth = 300,
+				autosize = 1,
+				;
+				--
+				{
+					type = "RadioButton",
+					buttonStyle = "FETabButtonStyle",
+					name = "txtBtnLOBBYCHAT",
+					Text = 
+					{
+						text = "$3304",
+						-- LOBBY CHAT
+						textStyle = "FEButtonTextStyle",
+					},
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3299",
+					--VIEW CHAT MESSAGES FOR GAME ROOM (GAMESPY ONLY),
+					;
+				},
+				--
+				{
+					type = "RadioButton",
+					buttonStyle = "FETabButtonStyle",
+					name = "txtBtnGAMECHAT",
+					Text = 
+					{
+						text = "$3350",
+						-- GAME CHAT
+						textStyle = "FEButtonTextStyle",
+					},
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3298",
+					--VIEW CHAT MESSAGES FOR THIS GAME ONLY
+					
+				},
+			},
+			--DEFINITION FOR: (txtLbl) LOBBY_CHAT
+			{
+				type = "TextLabel",
+				position = 
+				{
+					5,
+					2,
+				},
+				autosize = 1,
+				--size = {270,13},
+				Text = 
+				{
+					text = "$3295",
+					-- CHAT
+					textStyle = "FEHeading3",
+					vAlign = "Top",
+					hAlign = "Left",
+				},
+				;
+			},
+			--DEFINITION FOR: (txtLbl) TYPE_MESSAGE_HERE
+			{
+				type = "TextLabel",
+				position = 
+				{
+					5,
+					19,
+				},
+				--size = {270,9},
+				autosize = 1,
+				name = "txtLblLOBBYCHAT",
+				Text = 
+				{
+					--text = --set by tab buttons
+					textStyle = "FEHeading4",
+					vAlign = "Top",
+					hAlign = "Left",
+				},
+				;
+			},
+			{
+				type = "Frame",
+				outerBorderWidth = 2,
+				borderColor = "FEColorOutline",
+				position = 
+				{
+					4,
+					32 + 19,
+				},
+				size = 
+				{
+					278,
+					400 - 45 - 19,
+				},
+				;
+				--DEFINITION FOR: (lstBox) LobbyPlayers
+				{
+					type = "ListBox",
+					position = 
+					{
+						0,
+						0,
+					},
+					size = 
+					{
+						278,
+						161 - 19,
+					},
+					name = "lstBoxLobbyPlayers",
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3330",
+					--THIS IS A LIST OF ALL PLAYERS
+					marginWidth = 2,
+					;
+				},
+				--DEFINITION FOR: (txtBtn) CollapsePlayersList
+				{
+					type = "TextButton",
+					position = 
+					{
+						0,
+						161 - 19,
+					},
+					size = 
+					{
+						278,
+						13,
+					},
+					name = "txtBtnCollapsePlayers",
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3331",
+					--HIDE THE LIST OF ALL PLAYERS
+					Text = 
+					{
+						text = showLobbyPlayersText,
+						textStyle = "FEButtonTextStyle",
+					},
+					--borderWidth = 2,
+					--borderColor = "FEColorOutline",
+					backgroundColor = "FEColorOutline",
+					overTextColor = 
+					{
+						255,
+						255,
+						255,
+						255,
+					},
+					pressedTextColor = 
+					{
+						215,
+						215,
+						215,
+						255,
+					},
+					textColor = 
+					{
+						0,
+						0,
+						0,
+						255,
+					},
+					BackgroundGraphic = 
+					{
+						position = 
+						{
+							6,
+							0,
+						},
+						size = 
+						{
+							13,
+							13,
+						},
+						texture = "DATA:UI\\NewUI\\Styles\\ArrowButtons\\vert_default.mres",
+						textureUV = 
+						{
+							0,
+							0,
+							13,
+							13,
+						},
+					},
+					BackgroundGraphic2 = 
+					{
+						position = 
+						{
+							6,
+							0,
+						},
+						size = 
+						{
+							13,
+							13,
+						},
+						texture = "DATA:UI\\NewUI\\Styles\\ArrowButtons\\vert_default.mres",
+						textureUV = 
+						{
+							0,
+							13,
+							13,
+							0,
+						},
+					},
+					;
+				},
+				--DEFINITION FOR: (lstBox) Chat
+				{
+					type = "ListBox",
+					position = 
+					{
+						0,
+						172 - 17,
+					},
+					size = 
+					{
+						276,
+						143,
+					},
+					-- old width = 278
+					name = "lstBoxChat",
+					hugBottom = 1,
+					maxItems = 200,
+					;
+				},
+				{
+					-- Listbox Object to clone
+					type = "ListBoxItem",
+					visible = 0,
+					enabled = 0,
+					autosize = 1,
+					name = "lstBoxChatTemplate",
+					;
+					{
+						type = "TextLabel",
+						name = "m_lblText",
+						Text = 
+						{
+							textStyle = "FEListBoxItemTextStyle",
+							color = 
+							{
+								255,
+								255,
+								255,
+								255,
+							},
+							font = "ChatFont",
+							offset = 
+							{
+								0,
+								0,
+							},
+						},
+						width = 259,
+						wrapping = 1,
+						autosize = 1,
+						marginWidth = 2,
+					},
+				},
+				--DEFINITION FOR: (frm) chatframebtns
+				{
+					type = "Frame",
+					position = 
+					{
+						 - 2,
+						339 - 19,
+					},
+					size = 
+					{
+						280,
+						19,
+					},
+					name = "frmchatframebtns",
+					;
+					--DEFINITION FOR: (txtBtn) SEND
+					{
+						type = "TextButton",
+						buttonStyle = "FEButtonStyle1",
+						position = 
+						{
+							189,
+							1,
+						},
+						width = 90,
+						name = "txtBtnSEND",
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3332",
+						--SEND YOUR CHAT MESSAGE
+						Text = 
+						{
+							text = "$3349",
+							-- SEND
+							textStyle = "FEButtonTextStyle",
+						},
+						;
+					},
+					-- DEFINITION FOR: (btn) Chat to All
+					{
+						type = "Button",
+						name = "btnToAll",
+						visible = 1,
+						size = 
+						{
+							64,
+							13,
+						},
+						position = 
+						{
+							3,
+							1,
+						},
+						borderColor = 
+						{
+							0,
+							175,
+							255,
+							255,
+						},
+						borderWidth = 2,
+						DefaultGraphic = 
+						{
+							texture = "data:ui/newui/network/chat_icons.tga",
+							textureUV_TL = 
+							{
+								0,
+								26,
+							},
+							textureUV_WH = 
+							{
+								64,
+								13,
+							},
+						},
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3333",
+						--SEND CHAT MESSAGE TO ALL
+						-- swap with the whisper button
+						onMouseClicked = [[UI_SetElementVisible( "", "btnToAll", 0 ); UI_SetElementVisible( "", "btnWhisper", 1 );]]
+					},
+					-- DEFINITION FOR: (btn) Chat to Player (whisper)				
+					{
+						type = "Button",
+						name = "btnWhisper",
+						visible = 0,
+						size = 
+						{
+							64,
+							13,
+						},
+						position = 
+						{
+							3,
+							1,
+						},
+						borderColor = 
+						{
+							0,
+							175,
+							255,
+							255,
+						},
+						borderWidth = 2,
+						DefaultGraphic = 
+						{
+							texture = "data:ui/newui/network/chat_icons.tga",
+							textureUV_TL = 
+							{
+								0,
+								0,
+							},
+							textureUV_WH = 
+							{
+								64,
+								13,
+							},
+						},
+						helpTipTextLabel = "txtLblHELPTEXT",
+						helpTip = "$3334",
+						--WHISPER TO ANOTHER PLAYER
+						-- swap with the broadcast button
+						onMouseClicked = [[UI_SetElementVisible( "", "btnWhisper", 0 ); UI_SetElementVisible( "", "btnToAll", 1 );]]
+					},
+				},
+				-- chat prompt cursor >
+				{
+					type = "TextLabel",
+					position = 
+					{
+						1,
+						321 - 19,
+					},
+					size = 
+					{
+						8,
+						13,
+					},
+					Text = 
+					{
+						font = "ChatFont",
+						color = 
+						{
+							255,
+							255,
+							255,
+							255,
+						},
+						hAlign = "Left",
+						text = "$2848",
+						-- >,
+					},
+					giveParentMouseInput = 1,
+				},
+				--DEFINITION FOR: (txInput) Chat
+				{
+					type = "TextInput",
+					textInputStyle = "FEChatTextInputStyle",
+					borderWidth = 2,
+					borderColor = "FEColorOutline",
+					position = 
+					{
+						 - 2,
+						317 - 19,
+					},
+					size = 
+					{
+						282,
+						21,
+					},
+					name = "txtInputChat",
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3335",
+					--TYPE YOUR CHAT MESSAGE
+					maxTextLength = 100,
+					marginWidth = 10,
+					Text = 
+					{
+						font = "ChatFont",
+					},
+					onAccept = "UI_GiveFocus('txtInputChat', 'GameSetup')",
+					;
+				},
+			},
+		},
+		------------------------------------------------------------------------------------
+		-- BOTTOM NAVIGATION FRAME
+		------------------------------------------------------------------------------------
+		{
+			type = "Frame",
+			backgroundColor = "FEColorBackground1",
+			position = 
+			{
+				12,
+				544,
+			},
+			size = 
+			{
+				776,
+				44,
+			},
+			name = "frmRootbottombigfrm",
+			;
+			-- OUTLINE FRAME
+			{
+				type = "Frame",
+				borderWidth = 2,
+				borderColor = "FEColorOutline",
+				position = 
+				{
+					2,
+					2,
+				},
+				size = 
+				{
+					772,
+					40,
+				},
+				name = "frmbottomframe",
+				;
+				-- HELP TEXT
+				{
+					type = "TextLabel",
+					position = 
+					{
+						4,
+						4,
+					},
+					size = 
+					{
+						764,
+						13,
+					},
+					name = "txtLblHELPTEXT",
+					Text = 
+					{
+						textStyle = "FEHelpTipTextStyle",
+					},
+					;
+				},
+				-- LINE
+				{
+					type = "Line",
+					above = 0,
+					lineWidth = 2,
+					color = "FEColorOutline",
+					p1 = 
+					{
+						2,
+						19,
+					},
+					p2 = 
+					{
+						770,
+						19,
+					},
+				},
+				-- BUTTONS			
+				-- BACK BUTTON
+				{
+					type = "TextButton",
+					buttonStyle = "FEButtonStyle1",
+					position = 
+					{
+						4,
+						23,
+					},
+					name = "txtBtnBACK",
+					Text = 
+					{
+						text = "$3362",
+						-- BACK
+						textStyle = "FEButtonTextStyle",
+					},
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3336",
+					--GO BACK TO THE PREVIOUS SCREEN,
+				},
+				--DEFINITION FOR: (txtBtn) START_GAME
+				{
+					type = "TextButton",
+					buttonStyle = "FEButtonStyle2",
+					position = 
+					{
+						648,
+						23,
+					},
+					name = "txtBtnSTARTGAME",
+					Text = 
+					{
+						text = "$3363",
+						--START GAME
+						textStyle = "FEButtonTextStyle",
+					},
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3337",
+					--START THE GAME
+					
+				},
+				-- LOAD_GAME
+				{
+					type = "TextButton",
+					buttonStyle = "FEButtonStyle1",
+					position = 
+					{
+						126,
+						23,
+					},
+					name = "txtBtnLOADGAME",
+					Text = 
+					{
+						text = "$3338",
+						--LOAD GAME
+						textStyle = "FEButtonTextStyle",
+					},
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3339",
+					;
+				},
+				-- LOAD_GAME
+				{
+					type = "TextButton",
+					buttonStyle = "FEButtonStyle1",
+					position = 
+					{
+						248,
+						23,
+					},
+					visible = 0,
+					name = "txtBtnLOADRECORDEDGAME",
+					Text = 
+					{
+						text = "$3366",
+						--LOAD RECORDED
+						textStyle = "FEButtonTextStyle",
+					},
+					helpTipTextLabel = "txtLblHELPTEXT",
+					helpTip = "$3367",
+					--PLAYBACK A PREVIOUSLY RECORDED GAME
+					
+				},
+			},
+		},
+	},
+}

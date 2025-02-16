@@ -1,0 +1,229 @@
+filerange 44500 44999
+rangestart 44500 44999
+
+// objectives
+//obj_prim_destroykeepers
+44500	Defeat the Keepers.
+// obj_prim_repairdread
+44501	Repair the Dreadnaught.
+// obj_prim_defendbentus
+44502	Defend Bentus.
+
+// pings
+44503	Minimum Safe Distance
+
+//ping description for 44503
+44504	Move to this location to escape the blast
+
+// Player Names
+44505	Hiigaran Navy
+44506	Progenitors
+44507	Bentusi
+
+// location cards
+44510	GREAT WASTELANDS - EN ROUTE TO THADDIS SABBAH
+
+// pings
+44520	Keeper
+44521	Bentus
+
+// EVENTS
+
+//  IntelEvent: Pulled out of Hyperspace
+//  Fleet Command
+44540	Something's wrong.
+44541	We've been pulled out of Hyperspace.
+//  Fleet Intel
+44542	Massive anomaly detected.
+// FI It would be nice to explain what the Keeper is doing here (ie, that it ambushed you) a little more clearly.
+44553	*** AXED *** It's a Keeper.  It must have been lying in wait for us.
+//  Keeper
+44543	TRANSLATION IN PROGRESS
+//  Fleet Intel
+44544	Alert!
+44545	Second hyperspace signature detected.
+44546	There are now two Keepers.
+// FI I just hate the "there are now two keepers" line.  Partially because the delivery stinks.  I'd much prefer this 'un instead
+44554	*** AXED *** It appears the Keeper has summoned reinforcements.
+//  Keeper
+44547	TRANSLATION IN PROGRESS
+//  Fleet Intel
+44548	Translating:
+44549	"We are the Keepers of Abassid."
+44550	"We are the servants of Sajuuk."
+44551	The Keepers are assuming attack formation and launching attack drones.
+44552	Full combat alert!
+
+//  SpeechEvent: Keeper Eliminated?
+//  Fleet Intel
+44555	A Keeper has vanished.
+44556	Sensors indicate there was a major energy distortion in the vessel before it disappeared. 
+44557	There are no signs of debris.
+
+//  SpeechEvent: Stunned
+//  Fleet Intel
+44560	The Keepers are using an unknown energy weapon.
+
+//  SpeechEvent: Capture!
+//  Fleet Intel
+44565	The Keeper is using Movers to capture the Dreadnaught.
+44566	They must be stopped!
+
+//  SpeechEvent: Captured!
+//  Fleet Intel
+44570	The Keeper has seized control of the Dreadnaught.  Recapture it immediately!
+44571	Critical alert!
+
+//  SpeechEvent: Capture!
+//  Fleet Intel
+44575	The Dreadnaught is back under our control.
+
+//  SpeechEvent: Keepers shielded
+//  Fleet Intel
+44580	The Dreadnaught cannon seems useless against the Keepers.
+44581	They have been designed to withstand it.
+
+//  IntelEvent: Keepers Destroyed
+//  Fleet Intel
+44585	The Keepers have simply disappeared!
+44586	No known cloaking field signature was detected.
+//  Fleet Command
+44587	The Bentusi are here.
+// The line regarding the Bentusi arrival is a little unclear regarding Karens prescience atm, I'd like something like this. We could just go for the usual old "I hear movement in the void" but that's been more than a little overdone.
+//  Bentusi
+44588	We see you have acquired a Progenitor Dreadnaught.
+44589	This is a most powerful weapon.
+44590	Bring it to us and we will repair the Great Cannon.
+
+//  IntelEvent: Dock Dreadnaught
+//  Fleet Command
+44645	The Bentusi can repair the Dreadnaught cannon.
+//  Fleet Intel
+44646	We must dock the Dreadnaught with Bentus.
+
+
+//  IntelEvent: Incoming readings
+//  Fleet Intel
+44600	Alert! Four inbound contacts acquired.
+44601	The Keepers have returned.
+
+// IntelEvent : Keepers attacking Bentus
+// FI - breakup of previous single intel event. Would "liberate" be better than "free the dreadnaught"?
+44602	We must defend Bentus at all costs.
+
+//  SpeechEvent: Keeper Dead
+//  Fleet Intel
+44655	The Keeper has phased out to avoid destruction.
+44656	Analysis confirms the Keepers energy profile is gaining in power.
+44667	It appears they're getting stronger with every Hyperspace jump.
+44668	The Keepers are avoiding our weapon fire by phasing out.
+44669	The Keepers cannot be stopped. 
+44692	Keeper phase out detected.
+
+// Speech : Come back
+44695	Keeper return detected.
+44697	A Keeper has emerged.  
+44698	Status report.  A Keeper has returned.
+
+//  SpeechEvent: Dreadnaught Latched
+//  Fleet Intel
+44605	Beginning Archive transfer.
+44606	Bentus and the Dreadnaught must be defended.
+
+// Keepers focusing
+44603	The Keepers are focusing their attacks on Bentus.
+
+//  SpeechEvent: Bentus Damaged
+//  Fleet Intel
+44610	Bentus is taking heavy damage.  We must defend it from the Keepers.
+
+//  SpeechEvent: Keeper Dead
+//  Fleet Intel
+44615	A Keeper has phased out.
+44616	Analysis confirms the Keeper energy profile is gaining in power.
+44617	It appears they're getting stronger with time
+
+// Speech event - Keeper phase lines
+// FI - We need more lines to cover phasing, in case this mission is extended to allow for the keepers to act for longer.  These are all single, stand alone lines
+// 44691	*** AXED *** A Keeper has phased out.
+
+44693	*** AXED *** Continue pressing the attack.  We've forced another Keeper to phase out.  Keep it up.
+44694	*** AXED *** We've stopped another Keeper.  But for how long?
+// FI - And these are some lines to cover Keepers returning from Phased state
+
+44696	*** AXED *** No matter what we do, they keep coming back.
+
+
+
+//  AutoFocus: Keeper Weakness 
+//  Fleet Command
+//  Again, line was never recorded.
+44620	*** AXED *** The Bentusi have finished transferring the Great Archive.
+44621	The Dreadnaught has been repaired. 
+// Bentusi
+44622	We have repaired the Great Cannon.
+44623	You will find it requires time to recharge after it has been fired.
+
+//  AutoFocus: BENTUS 
+//  Fleet Intel
+44625	There is only one way to destroy the Keepers.
+44626	They must be taken with us.
+44627	Our task is now done. But yours remains.
+
+//  
+//  Fleet Command
+44630	Power surge detected on Bentus.
+44631	They are collapsing their quantum wave field to consume the Keepers in its blast.
+44632	They will not survive.
+//  Fleet Intel
+44633	We must move away from Bentus or we will be caught in the explosion.
+44634	5 minutes before detonation.
+44635	4 minutes before detonation.
+44636	3 minutes before detonation.
+44637	2 minutes before detonation.
+44638	1 minute before detonation.
+
+//  AutoFocus: HS OUT 
+//  Fleet Intel
+44640	Bentus is going critical!
+//  Fleet Command
+44641	Hyperspace initiated.
+
+
+
+//  SpeechEvent: Dreadnaught Latched
+// Bentusi
+44650	This weapon is more than you imagine.  We will initiate repairs.
+
+// speechevent_dreaddamaged
+44690	The Dreadnaught is taking heavy damage.
+
+// speechevent_dreaddestroyed
+44691	The Dreadnaught has been destroyed.
+
+// MISC
+
+// Objective Descriptions
+// For 44500
+44680	Defeat the Keepers.
+44687	Recommend using Capital Ships to fight the Keepers.
+44688	The Keepers appear to be indestructible. Our only hope are the Bentusi.
+44700	Defend against the Keepers for as long as possible.
+
+// For 44501
+44681	Dock the Dreadnaught with Bentus to repair the Phased Cannon.
+// For 44502
+44682	Defend Bentus from attack.
+
+// Timer
+44685	Phased Cannon Repair in %1MINUTES%:%2SECONDS%
+
+// Save game message
+44689	SAVING GAME
+
+// MISSION FAILED
+44670	MISSION FAILED.  BENTUS DESTROYED.
+44671	MISSION FAILED.  DREADNAUGHT LOST.
+44672	MISSION FAILED.  MOTHERSHIP LOST.
+
+rangeend

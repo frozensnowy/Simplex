@@ -1,0 +1,3 @@
+KAD_DARKREALM_1_Normal_OnSet = function(ship)
+    startEffect(ship, "Bubble")
+end

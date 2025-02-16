@@ -1,0 +1,16 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:52 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_pulsar_laser_hit"
+bulletfx = "fed_phaser_blue"   --"pulsar_laser_combo"
+firefx = "fed_phaser_blue_muzzle_steam"   --"lance_charged_particle"
+fire_sfx = "WEAPON/FED/TNG/FED_PULSE_FIRE"   --"WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_VULCAN_KINETIC_TURRET_SHEL_KAD"
+nopenetratefx = "dmg_pulsar_laser_hit"
+deathtype = "deathBeam"
+scartype = "Beam"   --"Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/CORVETTE/IMPACT/HWEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/CORVETTE/IMPACT/HWEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = 
+    { 1, 1, }

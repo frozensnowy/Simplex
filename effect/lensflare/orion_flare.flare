@@ -1,0 +1,37 @@
+--Flare for the map background orion_nebula
+--by Bo "TonViper" Christiansen
+fadetimes = 
+{
+	0.1,
+	0.1,
+	0.1,
+	1,
+}
+
+washoutColour = 
+{
+	0.25,
+	0.25,
+	0.27,
+	0.5,
+}
+
+washoutStrength = 0.1
+
+hotspots = 
+{
+	{
+		texture = "data:Effect/LensFlare/orion_flare0.tga",
+		offset = 1,
+		scale = 2,
+		rotation = 1,
+		colour = 
+		{
+			1,
+			1,
+			1,
+			0.75,
+		},
+	},
+}
+

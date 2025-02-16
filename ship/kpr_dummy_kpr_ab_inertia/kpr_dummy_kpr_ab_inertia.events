@@ -1,0 +1,88 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		disksmall = 
+		{ 
+			name = "disksmall", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_phase_repulsor", }, 
+			{ "sound", "WEAPON/mine_detonate_UW", }, 
+			{ "fx_scale", "40", }, 
+		}, 
+		disk1 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+			{ "fx_scale", "5", }, 
+		}, 
+		disk2 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "dmg_capital_explosion_combo", }, 
+			{ "fx_scale", "100", }, 
+		}, 
+
+		disks = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_phase_repulsor", }, 
+			{ "sound", "WEAPON/mine_detonate_UW", }, 
+			{ "fx_scale", "20", }, 
+		}, 
+		disk1s = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+			{ "fx_scale", "2.5", }, 
+		}, 
+		disk2s = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "dmg_capital_explosion_combo", }, 
+			{ "fx_scale", "50", }, 
+		}, 
+		
+	},
+	
+}

@@ -1,0 +1,91 @@
+effects = 
+{
+	animations = 
+	{
+		animation1 = 
+		{
+			name = "MissileTrail",
+			length = 30,
+			loop = 1,
+			parent = "",
+			minimum = 0,
+			maximum = 0,
+			markers = 
+			{
+				"core",
+			},
+		},
+		animation2 = 
+		{
+			name = "Death",
+			length = 1,
+			loop = 0,
+			parent = "",
+			minimum = 0,
+			maximum = 0,
+			markers = 
+			{
+				"",
+			},
+		},
+	},
+	events = 
+	{
+		event1 = 
+		{
+			{
+				"anim",
+				"MissileTrail",
+			},
+			{
+				"animtime",
+				"0",
+			},
+			{
+				"marker",
+				"core",
+			},
+			{
+				"fx",
+				"TOS_Red_torpedo_plasma_bullet",
+			},
+			{
+				"sound",
+				"WEAPON/ROM/TMP/LARGE_PLASMA_TORPEDO_FIRE",
+			},
+
+		},
+		event2 = 
+		{
+			{
+				"anim",
+				"Death",
+			},
+			{
+				"animtime",
+				"0",
+			},
+			{
+				"marker",
+				"Root",
+			},
+			{
+				"fx",
+				"xplosion_small",
+			},
+			{
+				"sound",
+				"Explosion/Small/ETG_Explode_Small_Plasma",
+			},
+			{
+				"fx_scale", 
+				"0.1",
+			},
+			{
+				"fx_transform",
+				"None",
+			},
+		},
+	},
+}
+

@@ -1,0 +1,457 @@
+      effects = {
+  animations = {
+    animation1 = {
+      name = "Death",
+      length = 3.5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation3 = {
+      name = "dmg01",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.25,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation4 = {
+      name = "dmg02",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.5,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation5 = {
+      name = "dmg03",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.75,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation6 = 
+    {
+      name = "Weapon_BigGun",
+      length = 5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = 
+      {
+        "",
+      },
+    },
+    animation7 = 
+    {
+      name = "CodeGreen",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = 
+      {
+        "",
+      },
+    },
+        animation_afterburn = 
+        { 
+            name = "AfterBurn", 
+            length = 3, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+  },
+  events = {
+    event1 = {
+      {"anim", "death2",},
+      {"animtime", "0",},
+      {"marker","marker3",},
+      {"fx","dmg_capital_explosion_large_hull_flare",},
+      {"sound","EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",},
+      {"fx_scale","2",}, --was 1 kinda nicely
+    },
+    event2 = {
+      {"anim","death",},
+      {"animtime","0",},
+      {"marker","marker1",},
+      {"fx","dmg_cloud_explosion_large",},
+      {"sound","Explosion/Small/ETG_Explode_Small_Plasma",},
+      {"fx_scale","1",},
+    },
+    event3 = {
+      {"anim","death",},
+      {"animtime","0.1",},
+      {"marker","marker2", "marker3",},
+      {"fx","dmg_cloud_explosion_large",},
+      {"fx_scale","1",},
+    },
+    event4 = {
+      {"anim","death",},
+      {"animtime","0.2",},
+      {"marker","marker4",},
+      {"fx","dmg_cloud_explosion_large",},
+      {"sound","Explosion/Small/ETG_Explode_Small_Firey",},
+      {"fx_scale","1.5",},
+    },
+    event5 = {
+      {"anim","death",},
+      {"animtime","0.32",},
+      {"marker","root",},
+      {"fx","explosionjetfrigatedeluxe",},--dmg_cloud_explosion_large
+      {"fx_scale","entity",},
+    },
+    event6 = {
+      {"anim","death",},
+      {"animtime","0.35",},
+      {"marker","root",},
+      {"fx","",}, --dmg_capital_explosion_combo_nosparks
+      {"sound","EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",},
+      {"fx_scale","6",},
+    },
+    event7 = {
+      {
+        "anim",
+        "dmg01",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker1","marker8",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "3", --was5
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event8 = {
+      {
+        "anim",
+        "dmg02",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker3","marker11",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "3.5",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event9 = {
+      {
+        "anim",
+        "dmg03",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker10","marker9", "marker7", "marker8",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event10 = {
+      {"anim","death",},
+      {"animtime","0",},
+      {"marker","marker14","marker8","marker6","marker5",},
+      {"fx","dmg_cloud_explosion_large",},
+      {"sound","",},
+      {"fx_scale","0.5",},
+    },
+    event11 = {
+      {"anim","death",},
+      {"animtime","0.05",},
+      {"marker","marker14","marker8","marker6","marker5",},
+      {"fx","dmg_cloud_explosion_large",},
+      {"sound","",},
+      {"fx_scale","0.5",},
+      },    
+      event12 = {
+      {"anim","death",},
+      {"animtime","0.23",},
+      {"marker","root",},
+      {"fx","death_spark_thrower_shortrange",},
+      {"sound","",},
+      {"fx_scale","0.7",},
+      },
+     event13 = {
+      {"anim","death",},
+      {"animtime","0.45",},
+      {"marker","root",},
+      {"fx","",}, --death_generic
+      {"fx_scale","1",},
+    },
+	event14 =   {
+      {
+        "anim",
+        "Weapon_BigGun",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "fx",
+        "vaygr_FFionArray_glows_mesh",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+	  },
+        event15 = {
+      {
+        "anim",
+        "Weapon_BigGun",
+      },
+      {
+        "animtime",
+        "0.1",
+      },
+      {
+        "marker",
+        "marker15",
+      },
+      {
+        "fx",
+        "ion_cannon_steam_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/ION_BEAM_DISCHARGE",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+            event16 = {
+      {
+        "anim",
+        "Weapon_BigGun",
+      },
+      {
+        "animtime",
+        "0.2",
+      },
+      {
+        "marker",
+        "Smokey1",
+      },
+      {
+        "fx",
+        "ion_cannon_steam_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/ION_BEAM_DISCHARGE",
+      },
+      {
+        "fx_scale",
+        "0.5",
+      },
+    },
+                event17 = {
+      {
+        "anim",
+        "Weapon_BigGun",
+      },
+      {
+        "animtime",
+        "0.2",
+      },
+      {
+        "marker",
+        "Smokey2",
+      },
+      {
+        "fx",
+        "ion_cannon_steam_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/ION_BEAM_DISCHARGE",
+      },
+      {
+        "fx_scale",
+        "0.5",
+      },
+    },
+                event18 = {
+      {
+        "anim",
+        "Weapon_BigGun",
+      },
+      {
+        "animtime",
+        "0.2",
+      },
+      {
+        "marker",
+        "marker18",
+      },
+      {
+        "fx",
+        "ion_cannon_steam_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/ION_BEAM_DISCHARGE",
+      },
+      {
+        "fx_scale",
+        "0.5",
+      },
+    },
+    event19 =   {
+      {
+        "anim",
+        "Weapon_BigGun",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "fx",
+        "vaygr_FFionArray_glows_mesh2",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+	  },
+
+    event20 = {
+      {
+        "anim",
+        "CodeGreen",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "marker20",
+      },
+      {
+        "fx",
+        "01",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/ION_BEAM_DISCHARGE",
+      },
+      {
+        "fx_scale",
+        "0.5",
+      },
+    },
+    event21 = {
+      {"anim","death",},
+      {"animtime","0.25",}, --was 0.4
+      {"marker","root",},
+      {"fx","ionsphere",}, --dmg_capital_explosion_large
+      {"sound","EXPLOSION/MOD/KERBOOM/KERBOOM",}, --
+      {"fx_scale","entity",},
+    },
+
+        Afterburner1 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "ab1", }, 
+                { "fx", "ion_cannon_steam_spray_magenta", }, 
+		{ "fx_scale", "2", }, 
+            },
+
+    },
+  }

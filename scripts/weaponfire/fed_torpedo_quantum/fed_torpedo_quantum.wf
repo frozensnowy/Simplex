@@ -1,0 +1,12 @@
+
+hitfx = "shield_explosionhit_large_bullet"
+bulletfx = "bullet_generic"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Torpedo/Torpedo"
+firefx = ""
+fire_sfx = "WEAPON/FED/TNG/FED_QUANTUM_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/SHIELD_TORPEDO_HIT"
+nopenetrate_sfx = "WEAPON/ALL/HIT/SHIELD_TORPEDO_HIT"
+hit_clamp = 
+    { 1, 1, }

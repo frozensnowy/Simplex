@@ -1,0 +1,273 @@
+levelDesc = "Cloud Atlas"
+maxPlayers = 6
+
+player = {}
+
+player[0] = {
+  id = 0,
+  name = "",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[1] = {
+  id = 1,
+  name = "",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[2] = {
+  id = 2,
+  name = "",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[3] = {
+  id = 3,
+  name = "",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[4] = {
+  id = 4,
+  name = "",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[5] = {
+  id = 5,
+  name = "",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+startNum = 0
+function asteroidAdd(fPosX, fPosY, fPosZ, sLayout, rDistTable, a, b, c, fRotY, fRotZ)	
+	local rel, cooX, cooY, cooZ = 0, 0, 0, 0
+	for k, iCount in rDistTable do
+		rel = rel + iCount.number
+	end
+	for k, iCount in rDistTable do
+		local minAB, maxAB = min(a, b), max(a, b)
+		for i = 1, iCount.number do		--for i = 1, num*iCount.number do
+			local r, u, v, l, w, h = random(minAB, maxAB), random(0, 180), random(0, 360), random(-0.5*a, 0.5*a), random(-0.5*b, 0.5*b), random(-0.5*c, 0.5*c)
+			if sLayout == "Cylinder" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) - sin(fRotZ)*r*sin(v)
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) + cos(fRotZ)*r*sin(v)
+				cooZ = cos(rotY)*h - sin(rotY)*r*cos(v)
+			elseif sLayout == "Sphere" then
+				cooX = sqrt(r^2-(r*cos(u))^2)*cos(v)
+				cooY = sqrt(r^2-(r*cos(u))^2)*sin(v)
+				cooZ = r*cos(u);
+			elseif sLayout == "Box" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) - sin(fRotZ)*w
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) + cos(fRotZ)*w
+				cooZ = cos(fRotY)*h - sin(fRotY)*l
+			end
+			if (iCount.class == "Point") then
+				if (iCount.name == "StartPos") then
+					addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+					startNum = startNum + 1					
+				else
+					addPoint(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+				end
+			elseif (iCount.class == "Sphere") then
+				addSphere(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.size)
+			elseif (iCount.class == "Camera") then
+				addCamera(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+			elseif (iCount.class == "Squadron") then
+				addSquadron(iCount.name .. (i-1), iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.player, iCount.rotation, 0, 0)
+			elseif (iCount.class == "Asteroid") then
+				addAsteroid(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Salvage") then
+				addSalvage(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Pebble") then
+				addPebble(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 0, 0, 0)
+			elseif (iCount.class == "Cloud") then
+				addCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "DustCloud") then
+				addDustCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "Nebula") then
+				addNebula(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "EasyPatch") then
+				easyPatch(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)
+			end
+		end
+	end
+end
+
+function DetermChunk()
+
+	local asteroidbelt =
+	{		
+		asteroidbelt1 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_4",
+			number = 4,
+		},
+		asteroidbelt2 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_2",
+			number = 4,
+		}, 		
+		asteroidbelt3 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_3",
+			number = 4,
+		}, 			
+		asteroidbelt5 =
+		{
+			class = "Asteroid",
+			type = "Asteroid_5",
+			number = 4,
+		}, 			
+	}
+	local salvagebelt =
+	{		
+		asteroidbelt1 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt1",
+			type = "asteroid_3_grey_nosalvage",
+			rotation = {random(0, 360), -random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		},
+		asteroidbelt2 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt2",
+			type = "asteroid_4_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt3 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt3",
+			type = "asteroid_5_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt4 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt4",
+			type = "asteroid_4_grey_nosalvage_big",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 
+		asteroidbelt5 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt5",
+			type = "asteroid_3_grey_nosalvage",
+			rotation = {random(0, 360), -random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		},
+		asteroidbelt6 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt6",
+			type = "asteroid_4_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt7 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt7",
+			type = "asteroid_5_grey_nosalvage",
+			rotation = {random(0, 360), random(0, 360), random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 	
+		asteroidbelt8 =
+		{
+			class = "Squadron",
+			name = "asteroidbelt8",
+			type = "asteroid_4_grey_nosalvage_big",
+			rotation = {random(0, 360), random(0, 360), -random(0, 360),},
+			player = -1,
+			number = 1,
+		}, 
+	}
+
+local delta = random(0,360)
+local m = 40000
+local n = 20000
+for i=0,2,1 do
+	addPoint("StartPos"..i, {m*cos(delta)+random(-100,100), m*sin(delta)+random(-100,100), -3000+random(-100,100)}, {0, 0, 0})
+	asteroidAdd(m*cos(delta), 0, m*sin(delta), "Box", asteroidbelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	addPoint("StartPos"..(i+3), {n*cos(delta+60)+random(-100,100), n*sin(delta+60)+random(-100,100), 3000+random(-100,100)}, {0, 180, 0})
+	asteroidAdd(n*cos(delta+60), 0, n*sin(delta+60), "Box", asteroidbelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	asteroidAdd(m*cos(delta+60), 0, m*sin(delta+60), "Box", salvagebelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	addSquadron("ReinforcementPad", "meg_reinforcementpad", {n*cos(delta), n*sin(delta), 0,}, -1, {-90, 0, delta-90,}, 0, 0)
+	addSquadron("meg_balcoragate", "meg_balcoragate", {30000*cos(delta+30), 30000*sin(delta+30), 0}, -1, {0, 0, delta-90}, 0, 0)
+	addSquadron("SmallBattleship", "meg_hvdreadnaught", {30000*cos(delta-30), 30000*sin(delta-30), 0}, -1, {0, -90, delta-90}, 0, 0)
+	asteroidAdd(30000*cos(delta-30), 0, 30000*sin(delta-30), "Box", salvagebelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	addSquadron("meg_gehenna_1ctm", "meg_gehenna_1ctm", {30000*cos(delta+30), 30000*sin(delta+30), 5000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	addSquadron("meg_gehenna_1ctm", "meg_gehenna_1ctm", {30000*cos(delta+30), 30000*sin(delta+30), -5000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	addSquadron("BigProduction", "meg_dreadnaughtberth", {60000*cos(delta+60), 60000*sin(delta+60), 0,}, -1, {90, 0, delta,}, 0, 0)
+	addSquadron("EngineeringBay", "meg_engineeringbay", {60000*cos(delta), 60000*sin(delta), 0,}, -1, {0, 180, delta-90,}, 0, 0)
+	asteroidAdd(60000*cos(delta+30), 0, 60000*sin(delta+30), "Box", asteroidbelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	addDustCloud("polySurface1", "dustcloud_nores", {60000*cos(delta+30), 60000*sin(delta+30), 0}, {200, 50, 50, 50}, 20000, 40000) 
+	asteroidAdd(60000*cos(delta-30), 0, 60000*sin(delta-30), "Box", asteroidbelt, random(0, 9600), random(0, 9600), random(0, 9600), random(0, 360), random(0, 360))
+	addDustCloud("polySurface1", "dustcloud_nores", {60000*cos(delta-30), 60000*sin(delta-30), 0}, {200, 50, 50, 50}, 20000, 40000)
+	delta = delta + 120
+end
+
+addSquadron("Balcora1", "anc_hyperspace_bridge", {0, 0, 4000,}, -1, {0, 0, random(0,360),}, 0, 0)
+addSquadron("Balcora1", "anc_hyperspace_bridge", {0, 0, -4000,}, -1, {0, 180, random(0,360),}, 0, 0)
+
+local beta = random(0,360)
+for i=1,36,1 do
+	addAsteroid("Asteroid_"..random(3,4), {10000*cos(beta), 10000*sin(beta), 0}, 100, 0, 0, 0, 0)
+	beta = beta + 10
+end
+
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 20000, 40000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 15000, 20000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 10000, 15000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 7500, 10000)
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 7500, 10000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 5000, 7500)
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 5000, 7500)  
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 2500, 5000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 2500, 5000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 0, 5000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {random(-400,400), random(-400,400), random(-400,400)}, {200, 50, 50, 50}, 0, 5000)
+
+setWorldBoundsInner({0, 0, 0}, {80000, 80000, 30000})
+end
+
+function NonDetermChunk()
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.031372, 0.070588, 0.133333, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.1)
+  setGlareIntensity (0)
+  setLevelShadowColour(0, 0, 0, 1)
+loadBackground ("cloud")
+setSensorsManagerCameraDistances(61000, 120000)
+end

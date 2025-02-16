@@ -1,0 +1,4 @@
+function VGR_DREADNAUGHTB_Normal_OnSet(ship)
+    startParamAnim(ship, "HorizontalThrustVectoring", "HorizontalRotation")
+end
+

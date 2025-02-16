@@ -1,0 +1,826 @@
+
+levelDesc = "Supernova"
+maxPlayers = 6
+player = {}
+
+for k = 0, (maxPlayers - 1) do
+	player[k] = {id = k, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	setWorldBoundsInner({0, 0, 0}, {120000, 120000, 120000})
+	setWorldBoundsOuter({0, 0, 0}, {690000, 360000, 690000})
+
+	local coordRing =
+	{
+		Coord0 = {class = "Coordinate", number = 1,},
+	}
+	local polarRing =
+	{
+		EasyPatch0 = {class = "EasyPatch", number = 2,},
+	}
+	local centerSphere =
+	{
+		Nebula0 = {class = "Nebula", kind = "Nebula4_OLD1", type = "M11_Bentusi_Radiation", color = {1, 1, 1, 1}, size = 10000, number = 8,},
+		Bentus1 = {class = "Squadron", name = "Bentus1", type = "meg_bentus_ruin_1", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus2 = {class = "Squadron", name = "Bentus2", type = "meg_bentus_ruin_2", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus3 = {class = "Squadron", name = "Bentus3", type = "meg_bentus_ruin_3", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus4 = {class = "Squadron", name = "Bentus4", type = "meg_bentus_ruin_4", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus5 = {class = "Squadron", name = "Bentus5", type = "meg_bentus_ruin_5", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus6 = {class = "Squadron", name = "Bentus6", type = "meg_bentus_ruin_6", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus7 = {class = "Squadron", name = "Bentus7", type = "meg_bentus_ruin_7", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus8 = {class = "Squadron", name = "Bentus8", type = "meg_bentus_ruin_8", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus9 = {class = "Squadron", name = "Bentus9", type = "meg_bentus_ruin_9", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus10 = {class = "Squadron", name = "Bentus10", type = "meg_bentus_ruin_10", rotation = {0, 0, 0,}, player = -1, number = 1,},
+		Bentus11 = {class = "Squadron", name = "Bentus11", type = "meg_bentus_ruin_11", rotation = {0, 0, 0,}, player = -1, number = 1,},
+	}
+	local pebbleRing1 =
+	{
+		Pebble0 = {class = "Pebble", type = "Pebble_0", number = 320,},
+		Pebble2 = {class = "Pebble", type = "Pebble_2", number = 160,},
+	}
+	local pebbleRing2 =
+	{
+		Pebble0 = {class = "Pebble", type = "Pebble_0", number = 80,},
+		Pebble2 = {class = "Pebble", type = "Pebble_2", number = 40,},
+	}
+	local rockRing =
+	{
+		Asteroid5 = {class = "Asteroid", type = "Asteroid_5", number = maxPlayers,},
+	}
+	local dustSpiral =
+	{
+		Cloud0 = {class = "DustCloud", kind = "polySurface1", type = "DustCloud_0", color = {random(), random(), 1, 1}, size = 4000, number = 144,},
+		Cloud1 = {class = "DustCloud", kind = "polySurface1", type = "DustCloud_0", color = {random(), random(), 1, 1}, size = 8000, number = 72,},
+		Cloud2 = {class = "DustCloud", kind = "polySurface1", type = "DustCloud_0", color = {random(), random(), 1, 1}, size = 16000, number = 36,},
+	}
+
+	-- ringAdd: tPosition, tDistribution, fAxis1, fAxis2, fThickness, fHeight, fArc1, fArc2, fTilt, fRotate, iMode
+	-- spiralAdd: tPosition, sLayout, tDistribution, fRadius, iNumArms, iNumRotations, fAngle, fThickness, fHeight, fTilt, fRotate, iMode
+
+	-- player positions & patches
+	coordNum = 1
+	coordTable = {}
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 10, 50, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 70, 110, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 130, 170, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 190, 230, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 250, 290, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 310, 350, 15, 45, 1)
+
+	--dofilepath("data:ship\\vgr_asteroidinhibitor_flag.lua")
+	local vgr_asteroidinhibitor_flag = 0
+	for k, iCount in coordTable do
+		local playerNum = k - 1
+		addPoint("StartPos" .. playerNum, iCount, {0, random(360), 0,})
+		easyPatch({iCount[1] + 5000 * randomSign(), iCount[2], iCount[3] + 5000 * randomSign(),})
+		addSquadron("HyperGateA" .. (k), "Vgr_HyperSpace_Platform", {iCount[1] + 1000 * randomSign(), iCount[2] + 1000 * randomSign(), iCount[3] + 1000 * randomSign(),}, playerNum, {random(360),random(360),random(360),}, 0, 0)
+		if (vgr_asteroidinhibitor_flag == 1) then
+			addSquadron("AsteroidMeg" .. (k), "vgr_asteroidinhibitor", {iCount[1] + 3000 * randomSign(), iCount[2] + 3000 * randomSign(), iCount[3] + 3000 * randomSign(),}, playerNum, {random(360),random(360),random(360),}, 0, 0)
+		else
+			addSquadron("AsteroidMeg" .. (k), "Meg_AsteroidMP", {iCount[1] + 3000 * randomSign(), iCount[2] + 3000 * randomSign(), iCount[3] + 3000 * randomSign(),}, -1, {random(360),random(360),random(360),}, 0, 0)
+		end
+	end
+
+	-- sibling patches
+	coordNum = 1
+	coordTable = {}
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 10, 50, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 70, 110, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 130, 170, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 190, 230, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 250, 290, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 310, 350, 15, 45, 1)
+
+	for k, iCount in coordTable do
+		local playerNum = k - 1
+		easyPatch({iCount[1] + 5000 * randomSign(), iCount[2], iCount[3] + 5000 * randomSign(),})
+		addSquadron("AsteroidMeg" .. (k), "Meg_AsteroidMP", {iCount[1] + 3000 * randomSign(), iCount[2] + 3000 * randomSign(), iCount[3] + 3000 * randomSign(),}, -1, {random(360),random(360),random(360),}, 0, 0)
+		addSquadron("HyperGateB" .. (k), "Vgr_HyperSpace_Platform", {iCount[1] + 1000 * randomSign(), iCount[2] + 1000 * randomSign(), iCount[3] + 1000 * randomSign(),}, playerNum, {random(360),random(360),random(360),}, 0, 0)
+	end
+
+	-- give each player a HS platform
+	coordNum = 1
+	coordTable = {}
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+
+	for k, iCount in coordTable do
+		local playerNum = k - 1
+		addSquadron("HyperGateC" .. (k), "Vgr_HyperSpace_Platform", {iCount[1] + 1000 * randomSign(), iCount[2] + 1000 * randomSign(), iCount[3] + 1000 * randomSign(),}, playerNum, {random(360),random(360),random(360),}, 0, 0)
+	end
+
+	-- give each player a HS platform
+	coordNum = 1
+	coordTable = {}
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, coordRing, 105000, 105000, 90000, 1000, 0, 360, 15, 45, 1)
+
+	for k, iCount in coordTable do
+		local playerNum = k - 1
+		addSquadron("HyperGateD" .. (k), "Vgr_HyperSpace_Platform", {iCount[1] + 1000 * randomSign(), iCount[2] + 1000 * randomSign(), iCount[3] + 1000 * randomSign(),}, playerNum, {random(360),random(360),random(360),}, 0, 0)
+	end
+
+	-- polar patches
+	ringAdd({0, 0, 0,}, polarRing, 60000, 60000, 0, 0, 0, 360, 105, 45, 0)
+
+	-- planar rocks
+	ringAdd({0, 0, 0,}, rockRing, 120000, 120000, 90000, 0, 0, 360, 15, 45, 1)
+	ringAdd({0, 0, 0,}, rockRing, 120000, 120000, 90000, 0, 0, 360, 15, 45, 1)
+
+	-- spiral arms
+	spiralAdd({0, 0, 0,}, "Nautilus", dustSpiral, 15000, 2, 2, 60, 15000, 1000, 15, 45, 1)
+	spiralAdd({0, 0, 0,}, "Nautilus", pebbleRing1, 15000, 2, 2, 60, 120000, 1000, 15, 45, 1)
+	spiralAdd({0, 0, 0,}, "Nautilus", pebbleRing1, 15000, 2, 2, 60, 120000, 1000, 15, 45, 1)
+--	spiralAdd({0, 0, 0,}, "Nautilus", rockRing, 15000, 2, 2, 60, 120000, 30000, 15, 45, 1)
+--	spiralAdd({0, 0, 0,}, "Nautilus", rockRing, 15000, 2, 2, 60, 120000, 30000, 15, 45, 1)
+
+	-- center sphere
+	shapeAdd({0, 0, 0,}, "Ellipsoid", centerSphere, 6000, 6000, 6000, 6000, 0, 0, 1)
+	addSquadron("BentusMain", "meg_bentus_ruined", {0, 0, 0,}, -1, {0, 0, 0,}, 0, 0)
+end
+
+--------------------------------------------------------------------------------
+
+-- MapFunctions v1.12
+-- Created 10/07/04 by Mikail
+-- Last updated: 06/22/05
+
+-- ISSUES
+-- * Tilting (Y-axis rotation) can only be done along one axis. Have to add another rotation step.
+-- * I would prefer that RUs were specified by density (or by relative amount, ala HW1), as well as by absolute amount.
+-- * The elliptical rings are supposed to be wider where the curvature is least (as if formed of concentric ellipses sharing the same foci). I'm not sure if it works.
+-- * The map will sometimes crash during online-multiplayer gameplay, if less than 6 players are playing and a map function is used to generate the starting positions. This may have something to do with the global <startNum> variable and the 'appendShape()' function.
+-- * I would like to be able to specify the name of the table that coordinates are stored in when class equals "Coordinate". However, I need to use 'tinsert()' in order to do this.
+-- * Should add an 'offset' parameter to the distribution tables. The final position will be offset by this amount.
+
+-- Needed for player positions. May be the reason why the game crashes.
+startNum = 0
+
+-- Needed to store coordinates. Need to find a better way of doing this.
+coordNum = 1
+coordTable = {}
+
+function appendShape(tPosition, iCount, i, tCoordinates, fTilt, fRotate)
+	-- function created by Mikail
+	-- General shape-adding function that all the other functions call.
+	local rotyX, rotyY, rotyZ, rotzX, rotzY, rotzZ = 0, 0, 0, 0, 0, 0
+	rotyX = sin(fTilt) * tCoordinates[2] + cos(fTilt) * tCoordinates[1]
+	rotyY = tCoordinates[3]
+	rotyZ = cos(fTilt) * tCoordinates[2] - sin(fTilt) * tCoordinates[1]
+	rotzX = cos(fRotate) * rotyX - sin(fRotate) * rotyY
+	rotzY = sin(fRotate) * rotyX + cos(fRotate) * rotyY
+	rotzZ = rotyZ
+	tCoordinates = {rotzX + tPosition[1], rotzZ + tPosition[2], rotzY + tPosition[3],}
+	if (iCount.class == "Point") then
+		-- special case requires global counter variable
+		if (iCount.name == "StartPos") then
+			addPoint("StartPos" .. startNum, tCoordinates, {0, 0, 0,})
+			startNum = startNum + 1					
+		else
+			addPoint(iCount.name .. (i - 1), tCoordinates, {0, 0, 0,})
+		end
+	elseif (iCount.class == "Sphere") then
+		addSphere(iCount.name .. (i - 1), tCoordinates, iCount.size)
+	elseif (iCount.class == "Camera") then
+		addCamera(iCount.name .. (i - 1), tCoordinates, {0, 0, 0,})
+	elseif (iCount.class == "Squadron") then
+		addSquadron(iCount.name .. (i - 1), iCount.type, tCoordinates, iCount.player, iCount.rotation, 0, 0)
+	elseif (iCount.class == "Asteroid") then
+		addAsteroid(iCount.type, tCoordinates, 100, 0, 0, 0, 0)
+	elseif (iCount.class == "Salvage") then
+		addSalvage(iCount.type, tCoordinates, 100, 0, 0, 0, 0)
+	elseif (iCount.class == "Pebble") then
+		addPebble(iCount.type, tCoordinates, 0, 0, 0)
+	elseif (iCount.class == "Cloud") then
+		addCloud(iCount.kind, iCount.type, tCoordinates, iCount.color, 0.0, iCount.size)
+	elseif (iCount.class == "DustCloud") then
+		addDustCloud(iCount.kind, iCount.type, tCoordinates, iCount.color, 0.0, iCount.size)
+	elseif (iCount.class == "Nebula") then
+		addNebula(iCount.kind, iCount.type, tCoordinates, iCount.color, 0.0, iCount.size)
+	elseif (iCount.class == "EasyPatch") then
+		easyPatch(tCoordinates)
+	elseif (iCount.class == "Coordinate") then
+		coordTable[coordNum] = tCoordinates
+		coordNum = coordNum + 1
+	end
+end
+
+function circumAdd(tPosition, tOffset, fRadius, fMinDist, fTilt, iNumPlayers, EndPoint1, EndPoint2, EndPoint3)
+	-- function created by Mikail
+	-- adds a team-symmetric, keleidoscopic pattern. Only available for 3 and 6 players.
+	-- <tPosition>: the center of the shape.
+	-- <tOffset>: the shape is offset from <tPosition> by this amount.
+	-- <fRadius>: the outer radius of the shape.
+	-- <fMinDist>: the minimum distance that starting positions may be near each other. May not always apply to 6-player maps.
+	-- <fTilt>: the maximum amount that a starting position will tilt above the ecliptic.
+	-- <iNumPlayers>: may be 3 or 6, only.
+	-- <EndPoint1>: (optional) specify a location to use as starting point 1.
+	-- <EndPoint2>: (optional) specify a location to use as starting point 2.
+	-- <EndPoint3>: (optional) specify a location to use as starting point 3.
+	-- Recommended positions:
+	-- 	EndPoint[1] = {31517.1953125, -6945.9267578125, 31517.1953125,}
+	-- 	EndPoint[2] = {-19169.44140625, -2790.259033203125, -19169.44140625,}
+	-- 	EndPoint[3] = {-11043.232421875, -2093.438232421875, -11043.232421875,}
+	local DistPass = 1
+	local u = {}
+	local h = {}
+	local Delta = {}
+	local EndPoints = {}
+	local CrossPoints = {}
+	local CrossAvgs = {}
+
+	if ((EndPoint1 ~= mil) and (EndPoint1 ~= mil) and (EndPoint1 ~= mil)) then
+		EndPoints[1] = EndPoint1
+		EndPoints[2] = EndPoint2
+		EndPoints[3] = EndPoint3
+	else
+		for k = 1, 3 do
+			u[k] = random(360)
+			h[k] = random(fTilt)
+			Delta[k] = {}
+			Delta[k][1] = sin(h[k]) * 0 + cos(h[k]) * fRadius
+			Delta[k][2] = cos(h[k]) * 0 - sin(h[k]) * fRadius
+			Delta[k][3] = 0
+			EndPoints[k] = {}
+			EndPoints[k][1] = cos(u[k]) * Delta[k][1] - sin(u[k]) * Delta[k][3] + tOffset[1]
+			EndPoints[k][2] = Delta[k][2] + tOffset[2]
+			EndPoints[k][3] = sin(u[k]) * Delta[k][1] + cos(u[k]) * Delta[k][3] + tOffset[3]
+			print("EndPoint[" .. k .. "] = {" .. EndPoints[k][1] .. ", " .. EndPoints[k][2] .. ", " .. EndPoints[k][1] .. ",}")
+		end
+	end
+
+--	for k = 1, 3 do
+--		u[k] = random(360)
+--		h[k] = random(fHeight)
+--		EndPoints[k] = {}
+--		EndPoints[k][1] = cos(u[k]) * fRadius
+--		EndPoints[k][2] = h[k]
+--		EndPoints[k][3] = sin(u[k]) * fRadius
+--	end
+
+	local MidPoints =
+	{
+		{(EndPoints[1][1] + EndPoints[2][1]) / 2, (EndPoints[1][2] + EndPoints[2][2]) / 2, (EndPoints[1][3] + EndPoints[2][3]) / 2,},
+		{(EndPoints[1][1] + EndPoints[3][1]) / 2, (EndPoints[1][2] + EndPoints[3][2]) / 2, (EndPoints[1][3] + EndPoints[3][3]) / 2,},
+		{(EndPoints[3][1] + EndPoints[2][1]) / 2, (EndPoints[3][2] + EndPoints[2][2]) / 2, (EndPoints[3][3] + EndPoints[2][3]) / 2,},
+	}
+	local CenterPoint =
+	{
+		{(EndPoints[1][1] + EndPoints[2][1] + EndPoints[3][1]) / 3, (EndPoints[1][2] + EndPoints[2][2] + EndPoints[3][2]) / 3, (EndPoints[1][3] + EndPoints[2][3] + EndPoints[3][3]) / 3,},
+	}
+	local Lengths =
+	{
+		sqrt((EndPoints[1][1] - EndPoints[2][1])^2 + (EndPoints[1][2] - EndPoints[2][2])^2 + (EndPoints[1][3] - EndPoints[2][3])^2),
+		sqrt((EndPoints[1][1] - EndPoints[3][1])^2 + (EndPoints[1][2] - EndPoints[3][2])^2 + (EndPoints[1][3] - EndPoints[3][3])^2),
+		sqrt((EndPoints[3][1] - EndPoints[2][1])^2 + (EndPoints[3][2] - EndPoints[2][2])^2 + (EndPoints[3][3] - EndPoints[2][3])^2),
+	}
+	local Diameter = 2 * sqrt((EndPoints[1][1] - tPosition[1])^2 + (EndPoints[1][2] - tPosition[2])^2 + (EndPoints[1][3] - tPosition[3])^2)
+	local MidPercent =
+	{
+		100 * Lengths[1] / Diameter,
+		100 * Lengths[2] / Diameter,
+		100 * Lengths[3] / Diameter,
+	}
+	local EndPercent =
+	{
+		(MidPercent[1] + MidPercent[2]) / 2,
+		(MidPercent[1] + MidPercent[3]) / 2,
+		(MidPercent[3] + MidPercent[2]) / 2,
+	}
+	if (iNumPlayers == 6) then
+		for k = 1, 3 do
+			EndPoints[k + 3] = {}
+			EndPoints[k + 3][1] = EndPoints[k][1] * -1
+			EndPoints[k + 3][2] = EndPoints[k][2] * -1
+			EndPoints[k + 3][3] = EndPoints[k][3] * -1
+			MidPoints[k + 3] = {}
+			MidPoints[k + 3][1] = MidPoints[k][1] * -1
+			MidPoints[k + 3][2] = MidPoints[k][2] * -1
+			MidPoints[k + 3][3] = MidPoints[k][3] * -1
+			Lengths[k + 3] = Lengths[k]
+			MidPercent[k + 3] = MidPercent[k]
+			EndPercent[k + 3] = EndPercent[k]
+		end
+		CrossPoints =
+		{
+			{(EndPoints[1][1] + EndPoints[5][1]) / 2, (EndPoints[1][2] + EndPoints[5][2]) / 2, (EndPoints[1][3] + EndPoints[5][3]) / 2,},
+			{(EndPoints[1][1] + EndPoints[6][1]) / 2, (EndPoints[1][2] + EndPoints[6][2]) / 2, (EndPoints[1][3] + EndPoints[6][3]) / 2,},
+			{(EndPoints[2][1] + EndPoints[4][1]) / 2, (EndPoints[2][2] + EndPoints[4][2]) / 2, (EndPoints[2][3] + EndPoints[4][3]) / 2,},
+			{(EndPoints[2][1] + EndPoints[6][1]) / 2, (EndPoints[2][2] + EndPoints[6][2]) / 2, (EndPoints[2][3] + EndPoints[6][3]) / 2,},
+			{(EndPoints[3][1] + EndPoints[4][1]) / 2, (EndPoints[3][2] + EndPoints[4][2]) / 2, (EndPoints[3][3] + EndPoints[4][3]) / 2,},
+			{(EndPoints[3][1] + EndPoints[5][1]) / 2, (EndPoints[3][2] + EndPoints[5][2]) / 2, (EndPoints[3][3] + EndPoints[5][3]) / 2,},
+		}
+		CrossAvgs =
+		{
+			{(CrossPoints[1][1] + CrossPoints[2][1] + CrossPoints[3][1]) / 3, (CrossPoints[1][2] + CrossPoints[2][2] + CrossPoints[3][2]) / 3, (CrossPoints[1][3] + CrossPoints[2][3] + CrossPoints[3][3]) / 3,},
+			{(CrossPoints[4][1] + CrossPoints[5][1] + CrossPoints[6][1]) / 3, (CrossPoints[4][2] + CrossPoints[5][2] + CrossPoints[6][2]) / 3, (CrossPoints[4][3] + CrossPoints[5][3] + CrossPoints[6][3]) / 3,},
+		}
+		CenterPoint[2] = {}
+		CenterPoint[2][1] = CenterPoint[1][1] * -1
+		CenterPoint[2][2] = CenterPoint[1][2] * -1
+		CenterPoint[2][3] = CenterPoint[1][3] * -1
+	end
+	for k, iCount in Lengths do
+		if (iCount <= fMinDist) then
+			DistPass = 0
+			break
+--		elseif (iCount >= fMaxDist) then
+--			DistPass = 0
+--			break
+		end
+	end
+	if (DistPass == 1) then
+		for k, iCount in EndPoints do
+			addPoint("StartPos" .. startNum, {iCount[1] + tPosition[1] + 4000 * randomSign(), iCount[2] + tPosition[2], iCount[3] + tPosition[3] + 4000 * randomSign(),}, {0, random(360), 0,})
+			startNum = startNum + 1
+			adjustPatch({iCount[1] + tPosition[1], iCount[2] + tPosition[2], iCount[3] + tPosition[3],}, EndPercent[k])
+		end
+		for k, iCount in MidPoints do
+			adjustPatch({iCount[1] + tPosition[1], iCount[2] + tPosition[2], iCount[3] + tPosition[3],}, MidPercent[k])
+		end
+		for k, iCount in CrossPoints do
+			addDustCloud("Nebula5_OLD", "DustCloud_NoRes3_M05", {iCount[1] + tPosition[1], iCount[2] + tPosition[2], iCount[3] + tPosition[3],}, {1,1,1,1,}, 0, 9000)
+		end
+		for k, iCount in CrossAvgs do
+			adjustPatch({iCount[1] + tPosition[1], iCount[2] + tPosition[2], iCount[3] + tPosition[3],}, 100)
+		end
+		for k, iCount in CenterPoint do
+--			addDustCloud("Nebula5_OLD", "DustCloud_NoRes3_M05", {iCount[1] + tPosition[1], iCount[2] + tPosition[2], iCount[3] + tPosition[3],}, {1,1,1,1,}, 0, 9000)
+--			adjustPatch({iCount[1] + tPosition[1], iCount[2] + tPosition[2], iCount[3] + tPosition[3],}, 100)
+--			addSquadron("AsteroidMeg" .. (k), "Meg_AsteroidMP", {iCount[1] + tPosition[1], iCount[2] + tPosition[2], iCount[3] + tPosition[3],}, -1, {random(360),random(360),random(360),}, 0, 0)
+		end
+--		adjustPatch(tPosition, 100)
+	else
+		print("circumAdd: Start positions too close together. Starting over.")
+		circumAdd(tPosition, tOffset, fRadius, fMinDist, fTilt, iNumPlayers, EndPoint1, EndPoint2, EndPoint3)
+	end
+end
+
+function branchAdd(tPosition, tDistribution, iNumDiv, iNumInt, iNumFrq, iNumBeg, iNumEnd, fRadius1, fRadius2, fLength1, fLength2, fAngle1, fAngle2, fTilt, fRotate, iMode)
+	-- function created by Mikail
+	-- Creates a branching tree.
+	-- <tPosition>: the shape's center coordinates.
+	-- <tDistribution>: the distribution table used to populate the shape.
+	-- <iNumDiv>: the tree splits into this many branches each time it splits.
+	-- <iNumInt>: this many intervals pass between instances of branching.
+	-- <iNumFrq>: the number of generations (number of times the tree splits).
+	-- <iNumBeg>: this many non-branching intervals are added to the beginning of the tree.
+	-- <iNumEnd>: this many non-branching intervals are added to the end of the tree. Needs to be greater than zero in order for the last division to be noticable.
+	-- <fRadius1>: the minimum radius of a segment.
+	-- <fRadius2>: the maximum radius of a segment.
+	-- <fLength1>: the minimum length of a segment.
+	-- <fLength2>: the maximum length of a segment.
+	-- <fAngle1>: the minimum deviation angle between segments.
+	-- <fAngle2>: the maximum deviation angle between segments.
+	-- <fTilt>: the entire shape is rotated around the Y axis by this amount (degrees).
+	-- <fRotate>: the entire shape isrotated around the Z axis by this amount (degrees).
+	-- <iMode>: 0 is non-random mode, 1 is random mode, 2 is random mode with decreasing length and radius.
+	local tCoordinates = {}
+	local iNumSeg = 0
+	local rotyX, rotyY, rotyZ, rotzX, rotzY, rotzZ, posX, posY, posZ = 0, 0, 0, 0, 0, 0, tPosition[1], tPosition[3], tPosition[2]
+	local minRad, maxRad = min(fRadius1, fRadius2), max(fRadius1, fRadius2)
+	local minDist, maxDist = min(fLength1, fLength2), max(fLength1, fLength2)
+	local minAng, maxAng = min(fAngle1, fAngle2), max(fAngle1, fAngle2)
+	local sign1, sign2 = 0, 0
+	if (iNumBeg > 0) then
+		iNumSeg = 1
+	elseif (iNumFrq > 0) then
+		iNumSeg = iNumInt
+	elseif (iNumEnd > 0) then
+		iNumSeg = 1
+	end
+	for j = 1, iNumSeg do
+		local rad, len, angY, angZ = 0, 0, 0, 0
+		-- if set to random mode with decreasing length and radius
+		if (iMode == 2) then
+			sign1, sign2 = randomSign(), randomSign()
+			rad, len, angY, angZ = maxRad - (maxRad - minRad) / (iNumFrq + 1), maxDist - (maxDist - minDist) / (iNumFrq + 1), sign1 * random(minAng, maxAng), sign2 * random(minAng, maxAng)
+		-- if set to random mode
+		elseif (iMode == 1) then
+			sign1, sign2 = randomSign(), randomSign()
+			rad, len, angY, angZ = random(minRad, maxRad), random(minDist, maxDist), random(minAng, maxAng), random(minAng, maxAng)
+			angY, angZ = angY * sign1, angZ * sign2
+		-- if set to non-random mode
+		elseif (iMode == 0) then
+			sign1, sign2 = randomSign(), randomSign()
+			rad, len, angY, angZ = maxRad, maxDist, sign1 * maxAng, sign2 * maxAng
+		end
+		fTilt = fTilt + angY
+		fRotate = fRotate + angZ
+		rotyX = sin(fTilt) * len + cos(fTilt) * 0
+		rotyY = 0
+		rotyZ = cos(fTilt) * len - sin(fTilt) * 0
+		rotzX = cos(fRotate) * rotyX - sin(fRotate) * rotyY
+		rotzY = sin(fRotate) * rotyX + cos(fRotate) * rotyY
+		rotzZ = rotyZ
+		for k, iCount in tDistribution do
+			local gradZ = len
+			local iNum = iCount.number
+			for i = 1, iNum do
+				if ((iMode == 0) or (iMode == 3)) then
+					tCoordinates[1] = 0
+					tCoordinates[2] = gradZ
+					tCoordinates[3] = 0
+					gradZ = gradZ - len / iNum
+				else
+					local r = random(0, rad)
+					local v = random(0, 360)
+					local h = random(0, len)
+					tCoordinates[1] = r * cos(v)
+					tCoordinates[2] = h
+					tCoordinates[3] = r * sin(v)
+				end
+				appendShape({posX, posZ, posY,}, iCount, i, tCoordinates, fTilt, fRotate)
+			end
+		end
+		posX = posX + rotzX
+		posZ = posZ + rotzZ
+		posY = posY + rotzY
+--		tPosition[1] = tPosition[1] + rotzX
+--		tPosition[2] = tPosition[2] + rotzZ
+--		tPosition[3] = tPosition[3] + rotzY
+--		tPosition = tPosition + {rotzX, rotzZ, rotzY,}
+	end
+	if (iNumBeg > 0) then
+		branchAdd({posX, posZ, posY,}, tDistribution, iNumDiv, iNumInt, iNumFrq, (iNumBeg - 1), iNumEnd, fRadius1, fRadius2, fLength1, fLength2, fAngle1, fAngle2, fTilt, fRotate, iMode)
+	elseif (iNumFrq > 0) then
+		for j = 1, iNumDiv do
+			branchAdd({posX, posZ, posY,}, tDistribution, iNumDiv, iNumInt, (iNumFrq - 1), 0, iNumEnd, fRadius1, fRadius2, fLength1, fLength2, fAngle1, fAngle2, fTilt, fRotate, iMode)
+		end
+	elseif (iNumEnd > 0) then
+		branchAdd({posX, posZ, posY,}, tDistribution, 0, 0, 0, 0, (iNumEnd - 1), fRadius1, fRadius2, fLength1, fLength2, fAngle1, fAngle2, fTilt, fRotate, iMode)
+	end
+end
+
+function ringAdd(tPosition, tDistribution, fAxis1, fAxis2, fThickness, fHeight, fArc1, fArc2, fTilt, fRotate, iMode)
+	-- function created by Mikail
+	-- Creates an elliptical ring.
+	-- <tPosition>: the shape's center coordinates.
+	-- <tDistribution>: the distribution table used to populate the shape.
+	-- <fAxis1>: the length of axis 1.
+	-- <fAxis2>: the length of axis 2.
+	-- <fThickness>: the distance from the outer radius to the inner radius (varies according to <iMode>).
+	-- <fHeight>: the height of the ring, relative to the plane.
+	-- <fArc1>: the ring begins at this point along its circumference (degrees).
+	-- <fArc2>: the ring ends at this point along its circumference (degrees).
+	-- <fTilt>: the entire shape is rotated around the Y axis by this amount (degrees).
+	-- <fRotate>: the entire shape isrotated around the Z axis by this amount (degrees).
+	-- <iMode>: if 0, then non-random mode. If 1, then random mode w/ gradual width. If 2, then random mode w/ even width.
+	local tCoordinates = {}
+	local minAxis = min(fAxis1, fAxis2)
+	local majAxis = max(fAxis1, fAxis2)
+	local minArc = min(fArc1, fArc2)
+	local maxArc = max(fArc1, fArc2)
+	for k, iCount in tDistribution do
+		local u, w, h, arc = 0, 0, 0, 0
+		local iNum = iCount.number
+		for i = 1, iNum do
+			-- if set to random mode w/ even width
+			if (iMode == 2) then
+				u = random(minArc, maxArc)
+				tCoordinates[1] = cos(u) * majAxis - random(fThickness)
+				tCoordinates[2] = random(fHeight / -2, fHeight / 2)
+				tCoordinates[3] = sin(u) * minAxis - random(fThickness)
+			-- if set to random mode w/ gradual width
+			elseif (iMode == 1) then
+				u = random(minArc, maxArc)
+				tCoordinates[1] = cos(u) * (majAxis - random(fThickness))
+				tCoordinates[2] = random(fHeight / -2, fHeight / 2)
+				tCoordinates[3] = sin(u) * sqrt((majAxis - random(fThickness))^2 - majAxis^2 + minAxis^2)
+			-- if set to non-random mode
+			elseif (iMode == 0) then
+				u = minArc + arc
+				tCoordinates[1] = cos(u) * (majAxis + fThickness / -2 + w)
+				tCoordinates[2] = fHeight / -2 + h
+				tCoordinates[3] = sin(u) * (minAxis + fThickness / -2 + w)
+				arc = arc + (maxArc - minArc) / iNum
+				w = w + fThickness / iNum
+				h = h + fHeight / iNum
+			end
+			appendShape(tPosition, iCount, i, tCoordinates, fTilt, fRotate)
+		end
+	end
+end
+
+function sphereAdd(tPosition, tDistribution, fRadius, iSlices, fThickness, fHeight, fArc1, fArc2, iMode)
+	-- function created by Mikail
+	-- Creates parallel rings inscribed within a sphere.
+	-- <tPosition>: the shape's center coordinates.
+	-- <fRadius>: the radius of the sphere.
+	-- <iSlices>: the number of rings.
+	-- <fThickness>: the distance from the outer radius of each ring to the inner radius (varies according to <iMode>).
+	-- <fHeight>: the height of each ring, relative to the plane.
+	-- <fArc1>: the rings begin at this point along their circumference (degrees).
+	-- <fArc2>: the rings end at this point along their circumference (degrees).
+	-- <iMode>: may be either 0, 1, or 2.
+	local arc, u, formX, formY = 0, 0, 0, 0
+	for i = 1, iSlices do
+		arc = arc + 360 / (iSlices * 2 + 2)
+		u = arc
+		formX = cos(u) * fRadius
+		formY = sin(u) * fRadius
+		-- tPosition, tDistribution, fAxis1, fAxis2, fWidth, fThickness, fArc1, fArc2, fTilt, fRotate, iMode
+		ringAdd({tPosition[1], tPosition[2] + formX, tPosition[3],}, tDistribution, formY, formY, fThickness, fHeight, fArc1, fArc2, 0, 0, iMode)
+	end
+end
+
+function shapeAdd(tPosition, sLayout, tDistribution, a, b, c, d, fTilt, fRotate, iMode)
+	-- function created by Mikail
+	-- Creates one of several available shapes.
+	-- <tPosition>: the shape's center coordinates.
+	-- <sLayout> may be either "Cuboid", "Ellipsoid", "Cylinder", "Cone", "Torus", or "Helix".
+	-- <tDistribution>: the distribution table used to populate the shape.
+	-- 	If "Cylinder", then <a> equals the radius, <c> equals the height, and <d> equals the thickness.
+	-- 	If "Cone", then <a> equals the radius (at the base), <c> equals the height, and <d> equals the thickness.
+	-- 	If "Ellipsoid", then <a> equals the length of axis 1, <b> equals the length of axis 2, <c> equals the length of axis 3, and <d> equals the distance from the outer radius to the inner radius (thickness). If any two axes are equal, a spheroid is generated. If all three axes are equal, a sphere is generated.
+	-- 	If "Cuboid", then <a> equals the length of axis 1, <b> equals the length of axis 2, and <c> equals the length of axis 3. If all three axes are equal, a cube is generated. Needs work. Cuboids should have a thickness, as well.
+	-- 	If "Torus", then <a> equals the radius of the ring, <b> equals the radius of the tube, and <d> equals the thickness.
+	-- 	If "Helix", then <a> is the radius of the helix, <b> is the number of loops, <c> equals the height, and <d> equals the thickness. Needs work. I think the formula is incorrect.
+	-- <fTilt>: the entire shape is rotated around the Y axis by this amount (degrees).
+	-- <fRotate>: the entire shape isrotated around the Z axis by this amount (degrees).
+	-- <iMode>: 0 is non-random, 1 is random.
+	local tCoordinates = {}
+	local r, u, v = 0, 0, 0		-- ellipsoid, cylinder, torus, cone, helix
+	local l, w, h = 0, 0, 0		-- cuboid, cylinder, cone
+	local m, n, o = 0, 0, 0		-- torus
+	local t = 0			-- helix
+	for k, iCount in tDistribution do
+		local rNon, uNon, vNon = (a - d), 0, 0
+		local lNon, wNon, hNon = -0.5 * a, -0.5 * b, -0.5 * c
+		local mNon, nNon, oNon = a, (b - d), 0
+		local sNon, tNon = 0, 0
+		local iNum = iCount.number
+		for i = 1, iNum do
+			-- if set to random mode
+			if (iMode == 1) then
+				r, u, v = random((a - d), a), random(180), random(360)
+				l, w, h = random(-0.5 * a, 0.5 * a), random(-0.5 * b, 0.5 * b), random(-0.5 * c, 0.5 * c)
+				m, n, o = a, random((b - d), b), random(360)
+				s, t = random(0, b - 1), random()
+			-- if set to non-random mode
+			elseif (iMode == 0) then
+				r, u, v = rNon, uNon, vNon
+				l, w, h = lNon, wNon, hNon
+				m, n, o = a, nNon, oNon
+				s, t = sNon, tNon
+				rNon, uNon, vNon = rNon + d / iNum, uNon + 180 / iNum, vNon + 360 / iNum
+				lNon, wNon, hNon = lNon + a / iNum, wNon + b / iNum, hNon + c / iNum
+				mNon, nNon, oNon = a, nNon + d / iNum, oNon + 360 / iNum
+				sNon, tNon = sNon + (b - 1) / iNum, tNon + 1 / iNum
+			end
+			if (sLayout == "Cuboid") then
+				tCoordinates[1] = l
+				tCoordinates[2] = h
+				tCoordinates[3] = w
+			elseif (sLayout == "Ellipsoid") then
+				tCoordinates[1] = l * cos(v) * sin(u)
+				tCoordinates[2] = h * cos(u)
+				tCoordinates[3] = w * sin(v) * sin(u)
+			elseif (sLayout == "Cylinder") then
+				tCoordinates[1] = r * cos(v)
+				tCoordinates[2] = h
+				tCoordinates[3] = r * sin(v)
+			elseif (sLayout == "Cone") then
+				tCoordinates[1] = (c - h) / c * r * cos(v)
+				tCoordinates[2] = h
+				tCoordinates[3] = (c - h) / c * r * sin(v)
+			elseif (sLayout == "Torus") then
+				tCoordinates[1] = (m + n * cos(v)) * cos(o)
+				tCoordinates[2] = n * sin(v)
+				tCoordinates[3] = (m + n * cos(v)) * sin(o)
+			elseif (sLayout == "Helix") then
+				tCoordinates[1] = r * cos(t * b * 360)
+				tCoordinates[2] = c * (t - 1 / 2)
+				tCoordinates[3] = r * sin(t * b *  360)
+			end
+			appendShape(tPosition, iCount, i, tCoordinates, fTilt, fRotate)
+		end
+	end
+end
+
+function spiralAdd(tPosition, sLayout, tDistribution, fRadius, iNumArms, iNumRotations, fAngle, fThickness, fHeight, fTilt, fRotate, iMode)
+	-- function created by Mikail
+	-- Creates a nautilus (equiangular) spiral.
+	-- <tPosition>: the shape's center coordinates.
+	-- <sLayout>: may be either "Nautilus" or "Archimedes".
+	-- <tDistribution>: the distribution table used to populate the shape.
+	-- <fRadius>: depending on <fAngle>, this is either the minimum or maximum radius of the spiral.
+	-- <iNumArms>: the spiral will have this many arms.
+	-- <iNumRotations>: the spiral will rotate around the origin this many times.
+	-- <fAngle>: the angle of deviation from a perfect circle (degrees).
+	-- <fThickness>: the thickness of the spiral.
+	-- <fHeight>: the height of the spiral, relative to the plane.
+	-- <fTilt>: the entire shape is rotated around the Y axis by this amount (degrees).
+	-- <fRotate>: the entire shape isrotated around the Z axis by this amount (degrees).
+	-- <iMode>: 0 is non-random, 1 is random.
+	local tCoordinates = {}
+	local formX, formY, formZ = 0, 0, 0
+	local u, t = 360 * iNumRotations, 0
+	local l, w, h = 0, 0, 0
+	for k, iCount in tDistribution do
+		local tNon = 0
+		local lNon, wNon, hNon = fThickness / -2, fThickness / -2, fHeight / -2
+		local rotArm = 0
+		local iNum = iCount.number
+		for i = 1, iNum do
+			-- if set to random mode w/ even width
+			if (iMode == 1) then
+				u, t = u, random()
+				l, w, h = random(fThickness / -2, fThickness / 2), random(fThickness / -2, fThickness / 2), random(fHeight / -2, fHeight / 2)
+			-- if set to non-random mode
+			elseif (iMode == 0) then
+				u, t = u, tNon
+				l, w, h = lNon, wNon, hNon
+				tNon = tNon + 1 / iNum
+				lNon, wNon, hNon = lNon + fThickness / iNum, wNon + fThickness / iNum, hNon + fHeight / iNum
+			end
+			if (sLayout == "Nautilus") then
+				formX = exp(rad(u * t) / tan(fAngle)) * cos(u * t) * fRadius + l
+				formZ = h
+				formY = exp(rad(u * t) / tan(fAngle)) * sin(u * t) * fRadius + w
+			elseif (sLayout == "Archimedes") then
+				formX = cos(u * t) * t * fRadius + l
+				formZ = h
+				formY = sin(u * t) * t * fRadius + w
+			end
+			for h = 1, iNumArms do
+				tCoordinates[1] = cos(rotArm) * formX - sin(rotArm) * formY
+				tCoordinates[2] = formZ
+				tCoordinates[3] = sin(rotArm) * formX + cos(rotArm) * formY
+				rotArm = rotArm + (360 / iNumArms)
+				appendShape(tPosition, iCount, i, tCoordinates, fTilt, fRotate)
+			end
+		end
+	end
+end
+
+function easyPatch(tPosition)
+	-- function created by Mikail
+	-- Creates a resource patch with minimal effort.
+	-- <tPosition>: the shape's center coordinates.
+	local tCoordinates = {}
+	local easyPatchDist =
+	{
+		-- number of asteroids, inner radius, outer radius
+		Asteroid_4 = {1, 0, 0,},
+		Asteroid_3 = {3, 400, 800,},
+		Asteroid_2 = {5, 800, 1600,},
+	}
+	for k, iCount in easyPatchDist do
+		for j = 1, iCount[1] do
+			local r, v, u = random(iCount[2], iCount[3]), random(0, 180), random(0, 360)
+			tCoordinates[1] = tPosition[1] + sqrt(r^2 - (r * cos(v))^2) * cos(u)
+			tCoordinates[2] = tPosition[2] + r * cos(v)
+			tCoordinates[3] = tPosition[3] + sqrt(r^2 - (r * cos(v))^2) * sin(u)
+			addAsteroid(k, tCoordinates, 100, 0, 0, 0, 0)
+		end
+	end
+end
+
+function adjustPatch(tPosition, fPercentage)
+	-- function created by Mikail
+	-- Like easy patch, but the RU amount has an adjustable percentage.
+	-- <tPosition>: the shape's center coordinates.
+	local tCoordinates = {}
+	local easyPatchDist =
+	{
+		-- number of asteroids, inner radius, outer radius
+		Asteroid_5 = {1, 0, 0,},
+		Asteroid_4 = {1, 400, 800,},
+--		Asteroid_2 = {5, 800, 1600,},
+	}
+	for k, iCount in easyPatchDist do
+		for j = 1, iCount[1] do
+			local r, v, u = random(iCount[2], iCount[3]), random(0, 180), random(0, 360)
+			tCoordinates[1] = tPosition[1] + sqrt(r^2 - (r * cos(v))^2) * cos(u)
+			tCoordinates[2] = tPosition[2] + r * cos(v)
+			tCoordinates[3] = tPosition[3] + sqrt(r^2 - (r * cos(v))^2) * sin(u)
+			addAsteroid(k, tCoordinates, fPercentage, 0, 0, 0, 0)
+		end
+	end
+end
+
+function randomMusic(iMode, tTable, iLength, sDirectory)
+	-- function created by Mikail
+	-- Randomly selects the level music.
+	-- <iMode>: may be 0, 1, 2, 3, 4 or 5.
+	-- 	If 0, then this function is disabled.
+	-- 	If 1, then the level music is selected from only the ambient tracks.
+	-- 	If 2, then the level music is selected from only the battle tracks.
+	-- 	If 3, then the level music is selected from both the ambient and battle tracks.
+	-- 	If 4, then the level music is selected from <tTable>.
+	-- 	If 5, then the level music is selected from all of the above.
+	-- <tTable>: the name of the table to select extra music from. (reference)
+	-- <iLength>: the length of tTable. (number)
+	-- <sDirectory>: the directory where the extra music can be found. Must have a trailing slash(es). (string)
+	local randNum = 0
+	local musicDir = ""
+	local musicTrack = ""
+	local musicTable =
+	{
+		"amb_01", "amb_02", "amb_03", "amb_04", "amb_05", "amb_06", "amb_07", "amb_08", "amb_09", "amb_10", "amb_11", "amb_12", "amb_13", "amb_14",
+		"battle_01", "battle_04", "battle_04_alt", "battle_06", "battle_keeper", "battle_movers", "battle_planetkillers", "battle_sajuuk", "bentus_arrival",
+	}
+	if ((iMode == 4) or (iMode == 5)) then
+		for k = 1, iLength do
+			musicTable[k + 23] = tTable[k]
+		end
+	end
+	if (iMode == 1) then
+		randNum = random(14)
+	elseif (iMode == 2) then
+		randNum = random(14, 23)
+	elseif (iMode == 3) then
+		randNum = random(23)
+	elseif (iMode == 4) then
+		randNum = random(23, 23 + iLength)
+	elseif (iMode == 5) then
+		randNum = random(23 + iLength)
+	end
+	if (randNum <= 14) then
+		musicDir = "Data:sound/music/ambient/"
+	elseif (randNum <= 23) then
+		musicDir = "Data:sound/music/battle/"
+	elseif (randNum <= (23 + iLength)) then
+		musicDir = sDirectory
+	end
+	if (iMode ~= 0) then
+		local musicTrack = musicDir .. musicTable[randNum]
+		setDefaultMusic(musicTrack)
+		print([[Level music: "]] .. musicTrack .. [["]])
+	end
+end
+
+function randomBackground(iMode)
+	-- function created by Mikail
+	-- Randomly selects the level background.
+	-- <iMode>: may be 0, 1, 2, or 3.
+	-- 	If 0, then this function has been disabled.
+	-- 	If 1, then the level background is selected from only the mission backgrounds.
+	-- 	If 2, then the level background is selected from only the other backgrounds.
+	-- 	If 3, then the level background is selected from both the mission and other backgrounds.
+	local randNum = 0
+	local backgroundTable =
+	{
+		"m01", "m02", "m03", "m04", "m05", "m06", "m07", "m08", "m09", "m10", "m11", "m12", "m13", "m14", "m15",
+		"planet", "quick", "singlesun", "tanis", "taniswstars", "black", "white",
+	}
+	if (iMode == 1) then
+		randNum = random(15)
+	elseif (iMode == 2) then
+		randNum = random(15, 22)
+	elseif (iMode == 3) then
+		randNum = random(22)
+	end
+	if (iMode ~= 0) then
+		loadBackground(backgroundTable[randNum])
+		print([[Level background (]] .. randNum .. [[/22): "]] .. backgroundTable[randNum] .. [["]])
+	end
+end
+
+function randomSign()
+	-- Randomly returns either 1 or -1.
+	local randNum = random()
+	if (randNum > 0.5) then
+		return 1
+	else
+		return -1
+	end
+end
+
+function randomBit()
+	-- Randomly returns either 1 or 0.
+	local randNum = random()
+	if (randNum > 0.5) then
+		return 1
+	else
+		return 0
+	end
+end
+
+function mathRound(fNumber)
+	-- Rounds a number to the nearest integer.
+	return floor(fNumber + 0.5)
+end
+
+function NonDetermChunk()
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.136719, 0.228516, 0.427734, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+  setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("bluegalaxy")	
+end

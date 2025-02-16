@@ -1,0 +1,7 @@
+VGR_MOBILE_INHIBITOR_Open_OnSet = function(ship)
+    --stopAnim(ship, "Close")
+    --startAnim(ship, "Open")
+    startEffect(ship, "Open")
+    --setPauseTime(ship, "Open", 1000)
+end
+

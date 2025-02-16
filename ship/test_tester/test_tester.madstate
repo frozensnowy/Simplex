@@ -1,0 +1,6 @@
+TEST_TESTER_Launched_OnSet = function(ship)    
+    startEffect(ship, "launch")
+    startEffect(ship, "amb")
+    startEffect(ship, "constant_glow")
+    --startAnim(ship, "launch")    
+end

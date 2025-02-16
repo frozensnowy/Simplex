@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:50 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "hit_generic"
+bulletfx = "kinetic_plasma_white_combo"   --"kinetic_plasma_white"
+nopenetratefx = "hit_generic"
+deathtype = "deathPlasma"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "weapon/fighter/impact/WEAPON_FIGHTER_Pea_shooter_Hit"
+nopenetrate_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = 
+    { 1, 1, }

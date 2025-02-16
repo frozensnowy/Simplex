@@ -1,0 +1,213 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "MissileTrail", 
+            length = 150, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+    events = 
+    { 
+        smoke1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "fx_scale", "50", }, 
+            }, 
+        smoke2 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "fx_scale", "50", }, 
+            }, 
+        event1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_scale", "0.5", }, 
+            }, 
+        energy = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "dom_torpedo_polaron_bullet", }, 
+                { "fx_scale", "50", }, 
+                 { "fx_sm", "on", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "ca_cloud_spray", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_transform", "None", }, 
+                { "fx_scale", "15", }, 
+            },          
+        event29 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_JUGGERNAUGHT", }, 
+                { "fx_scale", "4", }, 
+                { "fx_sm", "on", }, 
+            },                       
+        event30 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA_JUGGERNAUGHT", }, 
+                { "fx_scale", "1.6", }, 
+                { "fx_sm", "on", },                 
+            },
+            
+        event31 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "", }, --dmg_capital_explosion_combo
+                { "sound", "TUONO", }, 
+                { "fx_scale", "900", }, 
+                { "fx_sm", "on", },                 
+            },
+         
+              
+         smoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.41", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_5", },                 
+                { "fx_scale", "1000", }, 
+            },   
+         smoke2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.42", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_10", },                 
+                { "fx_scale", "1100", }, 
+            },   
+         smoke3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.43", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_15", },                 
+                { "fx_scale", "1200", }, 
+            },         
+         smoke4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.44", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_20", },                 
+                { "fx_scale", "1300", }, 
+            },  
+         smoke5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_35", },                 
+                { "fx_scale", "1400", }, 
+            }, 
+         smoke6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.46", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_70", },                 
+                { "fx_scale", "1500", }, 
+            },            
+            
+         chunk1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "10", }, 
+            },
+         chunk2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.51", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_70", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "15", }, 
+            }, 
+
+        shape = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "super_beam_lensflare", },                 
+                { "fx_scale", "0.6", }, 
+                { "gameEv", "playBgLightAnim,super_beam_background_ring", }, 
+            },     
+        glow = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "vgr_wave_light_solar", },                 
+                { "fx_scale", "1", }, 
+            }, 
+        glow1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "super_beam_flare_spray_long", },                 
+                { "fx_scale", "8", }, 
+                { "fx_nlips", "on", },
+            },
+        glow2 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "super_beam_flare_spray_long", },                 
+                { "fx_scale", "8", }, 
+                { "fx_nlips", "on", },
+            },
+            }, }

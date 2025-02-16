@@ -1,0 +1,8 @@
+HGN_DREADNAUGHT_NIS00_OnSet = function(ship)
+	startAnim(ship, "warp_in")
+end
+
+HGN_DREADNAUGHT_NIS01_OnSet = function(ship)
+	startAnim(ship, "warp_out")
+end
+

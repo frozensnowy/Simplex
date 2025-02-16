@@ -1,0 +1,44 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","dread_bomb_notrail","Normal",3000,12000,0,0,0,0,1,1,1,.2,1.2,1,1,0,100,40,.1,"Normal",1,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"kad_realdestroyerburst_hit")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"kad_realdestroyerburst")
+
+setAngles(NewWeaponType,10,-110,110,-4,60)
+
+setMiscValues(NewWeaponType,5,.1)
+
+setPenetration(NewWeaponType,30,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=.7,},
+{HeavyArmour=.5,},
+{SubSystemArmour=1,},
+{TurretArmour=1,},
+{ResArmour=1,},
+{MoverArmour=.4,},
+{PlanetKillerArmour=1,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,0,
+{Fighter=.001,},
+{Corvette=.01,},
+{Frigate=.05, damage=1,},
+{Utility=1,},
+{munition=1, damage=1,},
+{SmallCapitalShip=.05, damage=1,},
+{BigCapitalShip=.06, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=.05, damage=1,},
+{Resource=1,},
+{ResourceLarge=.05, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1, damage=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+

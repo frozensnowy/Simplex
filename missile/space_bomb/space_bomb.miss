@@ -1,0 +1,73 @@
+--===========================================================================
+--  Purpose : Lua definition file for Homeworld Ship.
+--            Contains loading information and flight dynamics information (among other things?)
+--
+--  Copyright Relic Entertainment, Inc.  All rights reserved.
+--===========================================================================
+NewShipType = StartMissileConfig()
+NewShipType.displayedName="Space Bomb"
+NewShipType.sobDescription="Space Bomb"
+NewShipType.mouseOverMinFadeSize=0.045
+NewShipType.mouseOverMaxFadeSize=0.1
+NewShipType.maxhealth=140
+NewShipType.regentime=0
+NewShipType.sideArmourDamage=1
+NewShipType.rearArmourDamage=1
+NewShipType.maxShield=0
+NewShipType.shieldRechargeTime=0
+NewShipType.nlips=0.0004
+NewShipType.nlipsRange=75000
+NewShipType.nlipsFar=0.0005
+NewShipType.nlipsFarRange=100000
+NewShipType.SMRepresentation="Invisible"
+NewShipType.meshRenderLimit=4000
+NewShipType.dotRenderLimit=4000
+NewShipType.minLOD=0.2
+NewShipType.upLOD=150
+NewShipType.upLOD=400
+NewShipType.downLOD=155
+NewShipType.downLOD=405
+NewShipType.minimumZoomFactor=0.9
+NewShipType.selectionPriority=30
+NewShipType.weaponName="Heavy_Concussion_Missile_Launcher"
+NewShipType.lifeTime=60
+NewShipType.launchTime=2
+NewShipType.detectionDistance=0
+NewShipType.sobDieTime=0.5
+NewShipType.density=1
+NewShipType.proximityDetonationDist=20
+NewShipType.thrusterMaxSpeed=900
+NewShipType.mainEngineMaxSpeed=900
+NewShipType.rotationMaxSpeed=20
+NewShipType.thrusterAccelTime=.5
+NewShipType.thrusterBrakeTime=.2
+NewShipType.mainEngineAccelTime=3
+NewShipType.mainEngineBrakeTime=1
+NewShipType.rotationAccelTime=1
+NewShipType.rotationBrakeTime=0.5
+NewShipType.thrusterUsage=1
+NewShipType.accelerationAngle=30
+NewShipType.mirrorAngle=30
+NewShipType.maxBankingAmount=85
+NewShipType.descendPitch=0
+NewShipType.goalReachEpsilon=5
+NewShipType.controllerType="Missile"
+NewShipType.slowdownFactor=0.1
+NewShipType.tumbleStaticX=0
+NewShipType.tumbleStaticY=0
+NewShipType.tumbleStaticZ=0
+NewShipType.tumbleDynamicX=0
+NewShipType.tumbleDynamicY=0
+NewShipType.tumbleDynamicZ=0
+NewShipType.tumbleSpeed=0
+NewShipType.targetAngle=5
+NewShipType.spiralsPerSecondMin=1
+NewShipType.spiralsPerSecondMax=3
+NewShipType.BuildFamily="NotBuildable"
+NewShipType.AttackFamily="large_missile"
+NewShipType.DockFamily="CantDock"
+NewShipType.AvoidanceFamily="DontAvoid"
+NewShipType.DisplayFamily="Munition"
+NewShipType.AutoFormationFamily="Fighter"
+NewShipType.ArmourFamily="Unarmoured"
+LoadHODFile(NewShipType,1);

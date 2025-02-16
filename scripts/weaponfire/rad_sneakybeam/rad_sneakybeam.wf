@@ -1,0 +1,16 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:15
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_laser_hit"
+bulletfx = "kpr_laser_combo"
+nopenetratefx = "dmg_laser_hit"
+deathtype = "deathBeam"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+firefx = "ion_cannon_steam_spray"
+fire_sfx = "WEAPON/cloning"
+hit_sfx = "WEAPON/plasma_rifle_projectile_hit"
+nopenetrate_sfx = "WEAPON/plasma_rifle_projectile_hit"
+hit_clamp = 
+    { 1, 1, }

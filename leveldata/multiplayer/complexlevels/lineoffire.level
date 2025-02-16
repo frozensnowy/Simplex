@@ -1,0 +1,90 @@
+-- Map Author:  Siber
+levelDesc = "Line of Fire"
+maxPlayers = 6
+
+player = {}
+
+player[0] = {
+  id = 0,
+  name = "StartPos0",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+player[1] = {
+  id = 1,
+  name = "StartPos1",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+player[2] = {
+  id = 0,
+  name = "StartPos2",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+player[3] = {
+  id = 1,
+  name = "StartPos3",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+player[4] = {
+  id = 0,
+  name = "StartPos4",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+player[5] = {
+  id = 1,
+  name = "StartPos5",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+
+function NavLane(startX,startY,startZ,radius,spacing,length,ship)
+	i=0
+	while(i*spacing<length) do
+		addSquadron("Lane", ship, {startX,startY+radius,startZ+i*spacing}, -1, {0,0,0},0,0) --top
+		addSquadron("Lane", ship, {startX+(sin(60)*radius),startY-(cos(60)*radius),startZ+i*spacing}, -1, {0,0,-120},0,0)
+		addSquadron("Lane", ship, {startX-(sin(60)*radius),startY-(cos(60)*radius),startZ+i*spacing}, -1, {0,0,120},0,0)
+		i=i+1
+	end
+end
+
+function DetermChunk()  
+  addPoint("StartPos0", {random(-100,100), random(-100,100), 37500+random(-100,100)}, {0, 180, 0})
+  addPoint("StartPos1", {random(-100,100), random(-100,100), 22500+random(-100,100)}, {0, 180, 0})
+  addPoint("StartPos2", {random(-100,100), random(-100,100), 7500+random(-100,100)}, {0, 180, 0})
+  addPoint("StartPos3", {random(-100,100), random(-100,100), -7500+random(-100,100)}, {0, 0, 0})
+  addPoint("StartPos4", {random(-100,100), random(-100,100), -22500+random(-100,100)}, {0, 0, 0})
+  addPoint("StartPos5", {random(-100,100), random(-100,100), -37500+random(-100,100)}, {0, 0, 0})
+  NavLane(0,0,-125000,1500,1488.09524,250000,"meg_NavBouy")
+  NavLane(0,0,-125000,-1500,1488.09524,250000,"meg_NavBouy")
+  
+  addSquadron("europa", "europa", {random(275000,375000), random(-110000,110000), random(275000,375000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  
+	local argu = 0
+	local r = 0
+	local num = random(80,100)
+	for i = 1, num, 1 do
+		argu = random(-72000,72000)/100
+		r = random(5000,6000)
+		addAsteroid("Asteroid_"..random(3,5), {r*sin(argu), r*cos(argu), argu*60}, random(0,100), 0, 0, 0, 0)
+	end
+
+  setWorldBoundsInner({0, 0, 0}, {15000, 15000, 45000})
+end
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+  loadBackground("ghost")
+  setSensorsManagerCameraDistances(61000, 120000)
+end

@@ -1,0 +1,28 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Octa Class 10 Turbolaser"
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 6500
+NewSubSystemType.regentime = 250
+NewSubSystemType.nlips = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.5
+NewSubSystemType.selectionLimit = 2500
+NewSubSystemType.preciseATILimit = 2500
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "HeavyTurboLaser"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 90
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 0
+NewSubSystemType.timeToBuild = 0
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Vgr"
+NewSubSystemType.AttackFamily = "Emplacement"
+NewSubSystemType.DockFamily = "Fighter"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"TurboLaser_10D","Weapon_T","")

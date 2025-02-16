@@ -1,0 +1,29 @@
+function VGR_MISSILEBATTLECRUISER_Normal_OnSet(ship)
+    startParamAnim(ship, "HorizontalThrustVectoring", "HorizontalRotation")
+end
+
+VGR_MISSILEBATTLECRUISER_Launched_OnSet = function(ship)
+    if(isAnimRunning(ship, "Open") == 0) then
+        startTime = 0
+        if(isAnimRunning(ship, "Close") ~= 0) then
+            startTime = getAnimLength(ship, "Close") - getTime(ship, "Close")
+            stopAnim(ship, "Close")
+        end
+        startAnim(ship, "Open")
+        setTime(ship,"Open",startTime)
+        setPauseTime(ship, "Open", 1000)
+    end
+end
+
+VGR_MISSILEBATTLECRUISER_Docked_OnSet = function(ship)
+    if(isAnimRunning(ship, "Close") == 0) then
+        startTime = 0
+        if(isAnimRunning(ship, "Open") ~= 0) then
+            startTime = getAnimLength(ship, "Open") - getTime(ship, "Open")
+            stopAnim(ship, "Open")
+        end
+        startAnim(ship, "Close")
+        setTime(ship,"Close",startTime)
+        setPauseTime(ship, "Close", 1000)
+    end
+end

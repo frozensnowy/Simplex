@@ -1,0 +1,125 @@
+levelDesc = "Startide Rising <c=0095D9>(Air Combat)</c>"
+maxPlayers = 4
+player = {}
+
+for k = 0, maxPlayers - 1 do
+	player[k] = {id = k, name = "", raceName = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	local my_seed_1 = {seed = -235}
+	local my_seed_2 = {seed = -67890}
+	local my_seed_3 = {seed = -67890}
+
+	local plane_height = 18000
+	local my_coordinates_1 = {}
+	local cloud_color = {srandom(my_seed_1), srandom(my_seed_1), srandom(my_seed_1), 1}
+
+	setWorldBoundsInner({0, 0, 0}, {60000, 60000, 60000})
+	setWorldBoundsOuter({0, 0, 0}, {80000, 80000, 80000})
+
+	addPoint("StartPos0", {0, plane_height,  40000}, {0, 180, 0})
+	addPoint("StartPos1", { 20000, plane_height, 0}, {0, 270, 0})
+	addPoint("StartPos2", {0, plane_height, -40000}, {0,   0, 0})
+	addPoint("StartPos3", {-20000, plane_height, 0}, {0,  90, 0})
+	
+  createSOBGroup("sob_AllBlackholes")
+  addSquadron("sqd_Blackhole1", "zzz_blackhole_blue_huge", {random(20000,100000)*cos(random(0,180)), -100000, random(20000,100000)*sin(random(0,180))}, -1, {0, 0, 0}, 0, 0)
+  createSOBGroup("sob_Blackhole1")
+  addToSOBGroup("sqd_Blackhole1", "sob_Blackhole1")
+  addToSOBGroup("sqd_Blackhole1", "sob_AllBlackholes")
+  addSquadron("sqd_Blackhole2", "zzz_blackhole_blue_huge", {random(20000,100000)*cos(random(180,360)), -100000, random(20000,100000)*sin(random(180,360))}, -1, {0, 0, 180}, 0, 0)
+  createSOBGroup("sob_Blackhole2")
+  addToSOBGroup("sqd_Blackhole2", "sob_Blackhole2")
+  addToSOBGroup("sqd_Blackhole2", "sob_AllBlackholes")
+
+--	addCamera("pieplatetest", {0,0,0,}, {0, 32768,0,})
+--	addCloud("polySurface1", "cloud_text_1", {0, plane_height,  20000}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_2", { 10000, plane_height, 0}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_3", {0, plane_height, -20000}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_4", {-10000, plane_height, 0}, {1, 1, 1, 1}, 0, 4096)
+
+    addSquadron("Aircraft Carrier", "meg_carrier_huge", {13000+random(-1500,1500), -12000+random(-1500,1500), -20000+random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+    addSquadron("Aircraft Carrier", "meg_carrier_huge", {-16000+random(-1500,1500), -12000+random(-1500,1500), 16500+random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+    
+	local pos = {
+	{13636.35, 0+plane_height, -35833.7},
+	{-1658.825,0+plane_height,21295.645},
+	{-39276.125,-544.25+plane_height,10888.01},
+	{-16003.19,-3882.9+plane_height,-27443.955},
+	{-9374.4,-3882.9+plane_height,-24669.4},
+	{36094.17,14792.505+plane_height,34775.265}
+	}
+	for w=1,6,1 do
+		--addPoint("StartPos"..(w-1), {pos[w][1], pos[w][2], pos[w][3]}, {0, random(0,360), 0})
+  	local x = pos[w][1] + random(-9000,9000)
+  	local y = pos[w][2] + random(-9000,9000)
+  	local z = pos[w][3] + random(-9000,9000)
+  	local miningbase = {"meg_gehenna_3ctm", "meg_gehenna_1ctm"}
+	  addSquadron("shelter", miningbase[random(1,2)], {x+random(-100,100), y+random(-100,100), z+random(-100,100)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	  local megalith = {"meg_bentus", "meg_reinforcementpad", "meg_dreadnaughtberth", "meg_chimera_nobuild", "meg_veildebris_chunk_lighthouse_nobuild", "meg_foundry", "meg_titan_cruiser", "meg_hvdreadnaught", "meg_headshotasteroid", "meg_tanis"}
+		addSquadron("megalith", megalith[random(1,getn(megalith))], {x+random(-10000,10000), y+random(-10000,10000), z+random(-10000,10000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	  local gamma = random(0,360)
+	  local small_r = 2000
+	  local large_r = 5000
+	  for i = 1, 29, 1 do
+	  	addSquadron("light", "meg_NavBouy", {x+sin(gamma)*small_r, y+random(-100,100), z+cos(gamma)*small_r}, -1, {0, gamma+180, 0}, 0, 0)
+	  	if random(1,4)==1 then
+		  	addAsteroid("Asteroid_"..random(2,5).."_blue", {x+sin(gamma)*large_r, y+random(-100,100), z+cos(gamma)*large_r}, 100, 0, 0, 0, 0)
+	  	end
+	  	gamma=gamma+12
+	  end
+	end
+
+	local coo_dist =
+	{
+		{16, "Coordinate", my_coordinates_1,},
+	}
+	local dust_dist =
+	{
+		{8, "DustCloud", "polySurface1", "DustCloud_NoRes", {0,0,0,}, cloud_color, 0, 20000,}
+	}
+	--addPebble(<sPebbleType>, <tPosition>, ?, ?, ?)
+	local pebble_grid = {16384, "Pebble", "Pebble_2", {0,0,0,}, 0, 0, 0,}
+
+	--addDustCloud(<sDustCloudName>, <sDustCloudType>, <tPosition>, <tColor>, ?, <fRadius>)
+--	addDustCloud("polySurface1", "DustCloud_NoRes", {0,plane_height,0,}, cloud_color, 0, 20000)
+	--addSquadron(<sSquadronName>, <sSquadronType>, <tPosition>, <iPlayerIndex>, <tRotation>, <iNumberShips>, <bHyperspace>)
+--	addSquadron("centerpos", "meg_gehenna_4", {0,plane_height,0,}, -1, {0,0,0,}, 1, 0)
+
+	--spiralAdd(<tPos>, <tDst>, {<sLay>, <fRad>, <iArm>, <fRot>, <fAng>, <fHgh>, <fWid>, <fThk>, <tTim>, <iMod>,}, <tRot>, <tSeed>)
+	spiralAdd({0,0,0,}, coo_dist, {"Archimedes", 40000, 2, 1, 150, 0, 0, 0, {2/4,3/4,}, 0}, {0,0,0,}, my_seed_1)
+
+	--ringAdd(<tPos>, <tDst>, {<fAx1>, <fAx2>, <fThk>, <fHgh>, <tArc>, <iMod>,}, <tRot>, <tSeed>)
+	ringAdd({0,plane_height,0,}, dust_dist, {40000, 40000, 0, 0, {0,90}, 0,}, {0,0,0,}, my_seed_1)
+	ringAdd({0,plane_height,0,}, dust_dist, {40000, 40000, 0, 0, {0,90}, 0,}, {0,180,0,}, my_seed_1)
+
+	local BlobArea_1 = {}
+	for i = 1, getn(my_coordinates_1) do
+		local tCoo = my_coordinates_1[i]
+		local radius = 10000
+		BlobArea_1[i] = {tCoo, radius,}
+		--globeAdd(<tPos>, <tDst>, {<fRad>, <iLat>, <iLon>, <fThk>, <fHgh>, <tArc>, <iMod>,}, <xNil>, <tSeed>)
+--		globeAdd(tCoo, pebbleRing1, {r, 12, 12, 0, 0, {0, 360,}, 0,}, nil, my_seed_1)
+		--addAsteroid(<sAsteroidType>, <tPosition>, <fRU%>, ?, ?, ?, ?)
+		addAsteroid("Asteroid_5", vaddV(tCoo, {0,plane_height,0,}), 100, 0, 0, 0, 0)
+	end
+
+	--fieldAdd(<tPos>, <tDst>, {<tBlobs>, <fFieldSize>, <fStepHeight>,}, <tRot>, <tSeed>)
+	fieldAdd({0,0,0,}, pebble_grid, {BlobArea_1, 0, 16, 100000, 1000,}, {0,  0,0,}, nil)
+end
+
+function NonDetermChunk()
+  fogSetActive (0)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.136719, 0.228516, 0.427734, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+  setLevelShadowColour(0, 0, 0, 1)
+  loadBackground ("moonrise")
+  setSensorsManagerCameraDistances(61000, 307700)
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

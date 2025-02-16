@@ -1,0 +1,456 @@
+paradeSlot("Vgr_ARC_170",{
+  -1325,
+  -50,
+  1868,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},100)
+paradeSlot("Vgr_NIMBUS",{
+  -1836,
+  170,
+  178,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},100)
+paradeSlot("Vgr_Z95",{
+  -1065,
+  -95,
+  2265,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},100)
+paradeSlot("Vgr_V19_TORRENT",{
+  -1538,
+  0,
+  1480,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},100)
+paradeSlot("Vgr_corellian_gunship",{
+  -1360,
+  0,
+  989,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_corellian_corvette",{
+  -2125,
+  305,
+  -292,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_CR20_transport",{
+  -1572,
+  87,
+  578,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_bayonet_cruiser",{
+  -1572,
+  -87,
+  578,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+
+paradeSlot("Vgr_cloaknav_buoy",{
+  -737,
+  0,
+  -3097,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_nav_buoy",{
+  -837,
+  0,
+  -3097,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_ecm_probe",{
+  -981,
+  0,
+  -2674,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_probe",{
+  -981,
+  200,
+  -2674,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_proximity_sensor",{
+  -580,
+  0,
+  -3518,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_mole_miner",{
+  -1768,
+  350,
+  -1397,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_mining_ship",{
+  -1507,
+  267,
+  -1801,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_actis",{
+  -859,
+  -143,
+  2622,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_aethersprite",{
+  -859,
+  -143,
+  2622,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_grav_well_mine",{
+  -1162,
+  183,
+  -2233,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_carrack_cruiser",{
+  759,
+  -148,
+  2518,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_venator_destroyer",{
+  2078,
+  392,
+  -2041,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1500)
+paradeSlot("Vgr_victory_i_destroyer",{
+  2129,
+  216,
+  -568,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1500)
+paradeSlot("Vgr_nebulon_b_frigate",{
+  1136,
+  -74,
+  1869,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_skipray_blastboat",{
+  1532,
+  -5,
+  1184,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Vgr_enforcer_cruiser",{
+  1121,
+  -1424,
+  -2023,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},700) 
+paradeSlot("Vgr_Acclamator_cruiser",{
+  1121,
+  1424,
+  -2023,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1000) 
+paradeSlot("Vgr_Acclamator_II_cruiser",{
+  1121,
+  1824,
+  -2023,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1000) 
+paradeSlot("Vgr_procurator_cruiser",{
+  1121,
+  -424,
+  4023,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1500)
+paradeSlot("Vgr_victory_ii_destroyer",{
+  200,
+  1111,
+  1434,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1500)
+paradeSlot("Vgr_dreadnaught",{
+  0,
+  -371,
+  2782,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},500)
+paradeSlot("Vgr_ion_platform",{
+  -213,
+  -306,
+  1685,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},0)
+paradeSlot("Vgr_heavy_launcher",{
+  243,
+  -306,
+  1689,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},0)
+paradeSlot("Vgr_Imperator_Destroyer",{
+  8000,
+  700,
+  2000,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1500)
+paradeSlot("Vgr_Imperator_II_Destroyer",{
+  8000,
+  0,
+  2000,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1500)
+paradeSlot("Vgr_Imperator__III_Destroyer",{
+  8000,
+  -700,
+  2000,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1500)
+paradeSlot("misc",{
+  -4000,
+  0,
+  -4000,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)

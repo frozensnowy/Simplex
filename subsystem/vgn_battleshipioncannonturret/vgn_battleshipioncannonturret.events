@@ -1,0 +1,134 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_IonCan1",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation3 = {
+      name = "Dmg1",
+      length = 1,
+      loop = 1,
+      parent = "damage",
+      minimum = 0.9,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+        event1 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon01_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },                 
+                { "fx_scale", "0.7", }, 
+                { "fx_nlips", "on", },
+            },
+				event2 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon01_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },    
+            },
+        event3 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon01Slave_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },                 
+                { "fx_scale", "0.7", }, 
+                { "fx_nlips", "on", },
+            },
+				event4 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon01Slave_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },    
+            },
+        event5 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon01Slave1_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },                 
+                { "fx_scale", "0.7", }, 
+                { "fx_nlips", "on", },
+            },
+				event6 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon01Slave1_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },    
+            },
+        event7 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon01Slave2_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },                 
+                { "fx_scale", "0.7", }, 
+                { "fx_nlips", "on", },
+            },
+				event8 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon01Slave2_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },    
+            },
+        event9 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon01Slave3_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },                 
+                { "fx_scale", "0.7", }, 
+                { "fx_nlips", "on", },
+            },
+				event10 = 
+            { 
+                { "anim", "Weapon_IonCan1", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon01Slave3_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },    
+            },
+  },
+}

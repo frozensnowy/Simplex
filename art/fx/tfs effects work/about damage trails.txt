@@ -1,0 +1,3 @@
+flare_spray_FTR = 1 inherit 
+cloud_steam_spray_FTR = 0 inherit (black smoke)
+  dmg_damage_steam_cloud_spark_ring_FTR (actual smoke puff)

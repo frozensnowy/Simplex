@@ -1,0 +1,51 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Asteroid Belt"
+NewShipType.sobDescription = "Cleavable Asteroid"
+NewShipType.maxhealth = 9000
+NewShipType.regentime = 0
+NewShipType.minRegenTime = 0
+NewShipType.alwaysInRenderList = 1
+NewShipType.sideArmourDamage = 0
+NewShipType.rearArmourDamage = 0
+NewShipType.frontArmourDamage = 0
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 10000
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.AttackFamily = "AsteroidSmasher"
+NewShipType.AvoidanceFamily = "BigRock"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.buildCost = 13000
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.healthBarStyle = 3
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 400000
+NewShipType.dotRenderLimit = 100
+NewShipType.visibleInSecondary = 1
+NewShipType.minimumZoomFactor = 1
+NewShipType.upLOD = 20000
+NewShipType.upLOD = 23000
+NewShipType.downLOD = 20015
+NewShipType.downLOD = 23015
+NewShipType.minimumZoomFactor = 0.95
+NewShipType.preciseATILimit = 7176.37507192516
+NewShipType.selectionPriority = 65
+NewShipType.militaryUnit = 0
+LoadModel(NewShipType, 1)
+SpawnSalvageOnDeath(NewShipType, "asteroid_3_ice", 1, 0.05, 0, 0, 0, 50, 0, 0, 0, 200, 0, 0, 0, 75, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_4_ice", 1, 0.15, 30, -20, 200, 25, 300, 150, 85, 50, 0, 0, 0, 125, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_5_ice", 1, 0.3, 50, 40, -150, 50, 65, 25, 5, 25, 0, 0, 0, 140, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_3_ice", 1, 0.05, 25, 10, -100, 30, 35, 75, 62, 75, 0, 0, 0, 115, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_4_ice", 1, 0.2, 60, 30, 150, 25, 35, 125, 65, 75, 0, 0, 0, 90, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "asteroid_5_ice", 1, 0.25, 80, 125, 60, 75, 125, 80, 65, 75, 0, 0, 0, 80, 0, 0, 0, 50)
+NewShipType.sobDieTime = 1
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 1
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0

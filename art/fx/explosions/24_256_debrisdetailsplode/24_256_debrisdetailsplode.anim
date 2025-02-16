@@ -1,0 +1,31 @@
+fps = 4;
+startFrame = 0;
+loopCount = 1
+;
+texture = 
+{
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00239-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00240-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00241-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00242-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00243-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00244-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00245-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00246-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00247-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00248-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00249-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00250-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00251-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00252-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00253-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00254-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00255-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00256-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00257-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00258-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00259-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00260-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00261-256-stranjsplo.tga",
+"data:ART/FX/explosions/24_256_debrisdetailsplode/00262-256-stranjsplo.tga",
+}

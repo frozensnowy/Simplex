@@ -1,0 +1,1 @@
+StartShipHardPointConfig(NewShipType,"Noseguns","Hardpoint_TRITON1","Weapon","Innate","Indestructible","Vgr_axbh_phasedarraybeamer")

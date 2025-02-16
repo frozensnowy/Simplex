@@ -1,0 +1,80 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "MissileTrail",
+      length = 5,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "",
+      },
+      {
+        "fx",
+        "dmg_cloud_main_exp_combo",
+      },
+      {
+        "fx_scale",
+        "0.5",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "EngineNozzle1",
+      },
+      {
+        "sound",
+        "",
+      },
+      {
+        "fx",
+        "Missile_Flare_Blue_Spray",	--Missile_Flare_Red_Spray
+      },
+      {
+        "fx_scale",
+        "entity",
+      },
+    },
+  },
+}

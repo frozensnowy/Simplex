@@ -1,0 +1,36 @@
+StartWeaponConfig(NewWeaponType,"Fixed","bullet","vgr_rocket_fx","Normal",2000,5000,0,0,0,0,1,1,0,0.5,.5,10,1,0,145,145,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 100, 100, "")
+--AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "Hgn_BurstCannonBurstsm")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType,0,
+{Fighter=0,},
+{Bomber=0,},
+{Corvette=0,},
+{Heavy_Corvette=0.20,},
+{Frigate=0.30,},
+{Heavy_Frigate=0.6,},
+{Destroyer=0.8,},
+{Cruiser=0.9,},
+{SuperCapital=1,},
+{Utility=0.35,},
+{Munition=0,},
+{SmallCapitalShip=0.35,},
+{BigCapitalShip=0.6,},
+{Mothership=1},
+{Emplacement=0,},
+{UnAttackable=0,},
+{SubSystem=0,},
+{Resource=0,},
+{ResourceLarge=0,},
+{Capturer=0,},
+{Chimera=0.75,},
+{Shield=0,},
+{small_missile=0,},
+{large_missile=0,},
+{Hero_small=0,},
+{Hero_Large=0.00001,})
+setAngles(NewWeaponType, 5, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 5)
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

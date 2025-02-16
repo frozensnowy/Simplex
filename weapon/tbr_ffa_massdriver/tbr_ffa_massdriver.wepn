@@ -1,0 +1,50 @@
+StartWeaponConfig(NewWeaponType, -- <sWeaponName> -- ATTENTION REBALANCE!
+"AnimatedTurret", -- <sWeaponType>
+"Bullet", -- <sWeaponFireType>
+"kinetic_large_noevents", -- <sWeaponFireName>
+"Normal", -- <sActivation>
+1500, -- <fWeaponFireSpeed> 
+2000, -- <fWeaponFireRange>
+0, -- <fWeaponFireRadius>
+0, -- <fWeaponFireLifetime>
+0, -- <fWeaponFireMisc1>
+0, -- <iWeaponFireAxis>
+1, -- <iMaxEffectsSpawned>
+1, -- <iUseVelocityPred>
+0, -- <iCheckLineOfFire>
+2.9, -- <fFireTime> -- hope I understood how it works.
+0, -- <fBurstFireTime>
+0, -- <fBurstWaitTime>
+1, -- <iShootAtSecondaries>
+0, -- <iShootAtSurroundings>
+60, -- <fMaxAzimuthSpeed>
+60, -- <fMaxDeclinationSpeed>
+0.1, -- <fSpeedMultiplierWhenPointingAtTarget>
+"Normal", -- <sWeaponShieldPenetration>
+1, -- <iTrackTargetsOutsideRange>
+1, -- <fWaitUntillCodeRedState>
+0) -- <iInstantHitThreshold>
+
+AddWeaponResult(NewWeaponType, 
+	"Hit", 			--Condition: Hit or Miss. Self evident.
+	"DamageHealth", --Effect: DamageHealth, Disable, Push, or SpawnWeaponfire
+	                --DamageHealth damages health, Disable does EMP damage, push moves the target, SpawnWeaponFire calls another weapon at the target point.
+	"Target",       --Target: either Target or Self. Self evident as well
+	580,            --Lower bound of the random range of effect
+	580,            --Upper bound of the random range of effect
+	"")             --Effect to be spawned in the case of SpawnWeaponFire                                                                                   
+                  
+setPenetration(NewWeaponType, 5, 1, 
+{PlanetKillerArmour = 0,})
+
+setAccuracy(NewWeaponType, 1, 
+	{Fighter = 1,},	--Family name, chance out of 1 of hitting that family. Don't know what the damage entries mean.
+	{Corvette = 1,},
+	{Frigate = 1,},
+	{Resource = 1,},
+	{munition = 1,}
+	)
+
+setAngles(NewWeaponType, 0, -65, 65, -1, 60)
+setMiscValues(NewWeaponType, 2.5, 0) -- recoil? 2.5 meters is enough...
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

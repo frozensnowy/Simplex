@@ -1,0 +1,97 @@
+effects = 
+{ 
+    animations = 
+    {                                                                       
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },                         
+                
+                 }, 
+    events = 
+    {
+    
+---smoke
+
+        smoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_5", },                 
+                { "fx_scale", "entity", }, 
+            },        
+            
+---chunks
+
+        chunk1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "6", }, 
+            },
+        chunk2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", },  
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "8", }, 
+            },                 
+        chunk3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.9", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", },  
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "10", }, 
+            },               
+
+                        
+---explosion cloud
+            
+         cloud1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "16", }, 
+            }, 
+         cloud2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "18", }, 
+            }, 
+         
+---death          
+        
+        event1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.925", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_combo", },
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_FIREY", }, 
+                { "fx_scale", "150", }, 
+                { "fx_sm", "on", }, 
+            },              
+                                       
+            
+ }, }

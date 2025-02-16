@@ -1,0 +1,35 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Missile","Hgn_SRDM","Normal",800,3000,0,0,0,0,1,0,0,9.5,0,0,1,0,45,55,0.1,"Normal",1,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",100,100,"")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"mod_smallburst")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"mod_smallburst")
+setPenetration(NewWeaponType,5,1,{
+  PlanetKillerArmour = 0,
+},{
+  LightArmour = 0.4,
+},{
+  ResArmour = 0.25,
+},{
+  Unarmoured = 0.25,
+})
+setAccuracy(NewWeaponType,0,{
+  Fighter = 1,
+},{
+  Corvette = 1,
+},{
+  munition = 1,
+},{
+  Capturer = 1,
+},{
+  Frigate = 0,
+},{
+  SmallCapitalShip = 0,
+},{
+  BigCapitalShip = 0,
+},{
+  Resource = 1,
+},{
+  ResourceLarge = 1,
+})
+setAngles(NewWeaponType,0,-180,180,-5,60)
+setMiscValues(NewWeaponType,0,0.3)
+addAnimTurretSound(NewWeaponType,"Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

@@ -1,0 +1,164 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:27 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Command Post"
+NewShipType.sobDescription = "Capital Production"
+NewShipType.maxhealth = 5000000
+NewShipType.regentime = 1
+NewShipType.minRegenTime = 1
+NewShipType.sideArmourDamage = 1
+NewShipType.rearArmourDamage = 1
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.unitCapsNumber = 1
+NewShipType.paradeData = "command_post_parade"
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 5000
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 0
+NewShipType.mainEngineMaxSpeed = 0
+NewShipType.rotationMaxSpeed = 5
+NewShipType.thrusterAccelTime = 1
+NewShipType.thrusterBrakeTime = 1
+NewShipType.mainEngineAccelTime = 6
+NewShipType.mainEngineBrakeTime = 1
+NewShipType.rotationAccelTime = 0.2
+NewShipType.rotationBrakeTime = 0.2
+NewShipType.thrusterUsage = 0.2
+NewShipType.accelerationAngle = 90
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 30
+NewShipType.descendPitch = 30
+NewShipType.goalReachEpsilon = 25
+NewShipType.slideMoveRange = 100
+NewShipType.controllerType = "None"
+NewShipType.tumbleStaticX = 0
+NewShipType.tumbleStaticY = 0
+NewShipType.tumbleStaticZ = 0
+NewShipType.tumbleDynamicX = 0
+NewShipType.tumbleDynamicY = 0
+NewShipType.tumbleDynamicZ = 0
+NewShipType.tumbleSpecialDynamicX = 0
+NewShipType.tumbleSpecialDynamicY = 0
+NewShipType.tumbleSpecialDynamicZ = 0
+NewShipType.relativeMoveFactor = 1
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.2
+NewShipType.targetRandomPointXMax = 0.4
+NewShipType.targetRandomPointYMin = -0.4
+NewShipType.targetRandomPointYMax = 0.5
+NewShipType.targetRandomPointZMin = -0.8
+NewShipType.targetRandomPointZMax = 0.55
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.MinimalFamilyToFindPathAround = "None"
+NewShipType.BuildFamily = "NotBuildable"
+NewShipType.AttackFamily = "UnAttackable" --BigCapitalShip UnAttackable
+NewShipType.DockFamily = "CantDock"
+NewShipType.AvoidanceFamily = "SuperPriority"
+NewShipType.DisplayFamily = "Capital"
+NewShipType.AutoFormationFamily = "Fighter"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.ArmourFamily = "PlanetKillerArmour"		--"HeavyArmour"
+NewShipType.UnitCapsFamily = "Capital"
+NewShipType.UnitCapsShipType = "Carrier"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 0
+NewShipType.buildCost = 1
+NewShipType.buildTime = 1
+NewShipType.buildPriorityOrder = 300
+NewShipType.retaliationRange = 3500
+NewShipType.retaliationDistanceFromGoal = 800
+NewShipType.visualRange = 4800
+NewShipType.prmSensorRange = 5000
+NewShipType.secSensorRange = 5000
+NewShipType.detectionStrength = 1
+
+--NewShipType.TOScale = 1
+--NewShipType.TODistanceFade0 = 14439.382317879
+--NewShipType.TODistanceDisappear0 = 14266.1179698217
+--NewShipType.TODistanceFade1 = 125
+--NewShipType.TODistanceDisappear1 = 100
+--NewShipType.TODistanceFade2 = 35108.024691358
+--NewShipType.TODistanceDisappear2 = 385802.469135802
+--NewShipType.TOGroupScale = 1
+--NewShipType.TOGroupMergeSize = 0
+
+NewShipType.TOIcon = "Rectangle"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 14000
+NewShipType.TODistanceDisappear0 = 12000
+NewShipType.TODistanceFade1 = 5500
+NewShipType.TODistanceDisappear1 = 5000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 250000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+
+NewShipType.healthBarStyle = 1
+NewShipType.nlips = 0
+NewShipType.nlipsRange = 75000
+NewShipType.nlipsFar = 0
+NewShipType.nlipsFarRange = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.alwaysInRenderList = 1
+NewShipType.meshRenderLimit = 5000000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 1
+NewShipType.goblinsStartFade = 10000
+NewShipType.goblinsOff = 10000
+NewShipType.minimumZoomFactor = 0.85
+NewShipType.selectionLimit = 250000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 0
+NewShipType.ignoreRaceWhenDocking = 1
+--addAbility(NewShipType, "CanAttack", 1, 1, 0, 0, 0.35, 1, "Fighter", "JustShoot")
+addAbility(NewShipType, "CanBeCaptured", 60, 0.5)
+
+
+
+addAbility(NewShipType, "CanBuildShips", 1, "SuperCap_Vgr, Battlecruiser_Vgr, Utility_Vgr, Platform_Vgr, Probe_Vgr", "Utility, Capital, Platform")
+
+
+addAbility(NewShipType, "ShipHold", 1, 0, 0, "rallypoint", "", 0)
+
+
+
+
+addShield(NewShipType,"EMP",2000,50)
+--LoadModel(NewShipType, 1)
+LoadSharedModel(NewShipType, "command_post")
+
+--StartShipWeaponConfig(NewShipType, "Hgn_TanisHullDefenseGun", "Weapon_HullDefense1", "Weapon_HullDefense1")
+--StartShipWeaponConfig(NewShipType, "Hgn_TanisHullDefenseGun", "Weapon_HullDefense2", "Weapon_HullDefense2")
+--StartShipWeaponConfig(NewShipType, "Hgn_TanisHullDefenseGun", "Weapon_HullDefense3", "Weapon_HullDefense3")
+--StartShipWeaponConfig(NewShipType, "Hgn_TanisHullDefenseGun", "Weapon_HullDefense4", "Weapon_HullDefense4")
+
+StartShipHardPointConfig(NewShipType, "Research", "Hardpoint_Research", "System", "Generic", "Damageable", "Vgr_C_Module_Research")
+StartShipHardPointConfig(NewShipType, "Production", "Hardpoint_Production", "System", "Production", "Damageable", "Vgr_MS_Production_CapShip")
+StartShipHardPointConfig(NewShipType, "Platform", "Hardpoint_Platform", "System", "Production", "Damageable", "Vgr_C_Module_PlatformControl")
+
+NewShipType.battleScarMaxTriBase = 1200
+NewShipType.battleScarMaxTriInc = 1600
+NewShipType.sobDieTime = 5
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0
+NewShipType.trailLinger = 3
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/megaliths/", 1, "RandomEmit/HANGAR_EMITTERS", "Root")

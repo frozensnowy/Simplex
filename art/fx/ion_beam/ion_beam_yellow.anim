@@ -1,0 +1,22 @@
+fps = 35
+startFrame = 0
+loopCount = 5
+layout = { 16, 1 } 
+textureLayout =
+	{
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 0, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 1, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 2, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 3, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 4, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 5, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 6, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 7, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 8, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 9, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 10, 0},
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 11, 0}, 
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 12, 0}, 
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 13, 0}, 
+		{"data:/ART/FX/Ion_beam/ION_WARP_TP_YELLOW.tga", 14, 0}
+	}

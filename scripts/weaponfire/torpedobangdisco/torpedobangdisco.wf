@@ -1,0 +1,13 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:49 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+bulletfx = "heavylaser_hit_combo_disco" --rad_flashburst_combo
+nopenetratefx = "rad_flashburst_combo_noloop"   --rad_flashburst_combo
+deathtype = "deathCannon"
+hit_clamp = 
+    { 1, 1, }
+scartype = "Hgn_Torpedo/Torpedo"
+bullet_sfx = "WEAPON/Bfg_expl"
+nopenetrate_sfx = "WEAPON/Bfg_expl"

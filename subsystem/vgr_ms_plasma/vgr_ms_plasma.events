@@ -1,0 +1,134 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Launcher", 
+            length = 1.2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation2 = 
+        { 
+            name = "Weapon_Launcher1", 
+            length = 1.2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation3 = 
+        { 
+            name = "Weapon_Launcher2", 
+            length = 1.2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+
+				}, 
+    events = 
+    { 
+        Weapon_Launcher1_1 = 
+            { 
+                { "anim", "Weapon_Launcher", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Launcher_Position", }, 
+                { "fx", "missile_flare_red_spray_srm9", },                 
+                { "fx_scale", "15", }, 
+                { "fx_nlips", "on", },
+            },
+				Weapon_Launcher1_2 = 
+            { 
+                { "anim", "Weapon_Launcher", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Launcher_Position", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/redpulsefire2", },
+                { "fx_scale", "22", }, 
+                { "fx_nlips", "on", },    
+            },
+				Weapon_Launcher1_3 = 
+            { 
+                { "anim", "Weapon_Launcher", }, 
+                { "animtime", "0.9", }, 
+                { "marker", "Weapon_Launcher_Position", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "fx_scale", "22", }, 
+                { "fx_nlips", "on", },    
+            },
+					
+
+        Weapon_Launcher2_1 = 
+            { 
+                { "anim", "Weapon_Launcher1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Launcher1_Position", }, 
+                { "fx", "missile_flare_red_spray_srm9", },                 
+                { "fx_scale", "15", }, 
+                { "fx_nlips", "on", },
+            },
+				Weapon_Launcher2_2 = 
+            { 
+                { "anim", "Weapon_Launcher1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Launcher1_Position", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/redpulsefire2", },
+                { "fx_scale", "22", }, 
+                { "fx_nlips", "on", },    
+            },
+				Weapon_Launcher2_3 = 
+            { 
+                { "anim", "Weapon_Launcher1", }, 
+                { "animtime", "0.9", }, 
+                { "marker", "Weapon_Launcher1_Position", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "fx_scale", "22", }, 
+                { "fx_nlips", "on", },    
+            },
+
+
+        Weapon_Launcher3_1 = 
+            { 
+                { "anim", "Weapon_Launcher2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Launcher2_Position", }, 
+                { "fx", "missile_flare_red_spray_srm9", },                 
+                { "fx_scale", "15", }, 
+                { "fx_nlips", "on", },
+            },
+				Weapon_Launcher3_2 = 
+            { 
+                { "anim", "Weapon_Launcher2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Launcher2_Position", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/redpulsefire2", },
+                { "fx_scale", "22", }, 
+                { "fx_nlips", "on", },    
+            },
+				Weapon_Launcher3_3 = 
+            { 
+                { "anim", "Weapon_Launcher2", }, 
+                { "animtime", "0.9", }, 
+                { "marker", "Weapon_Launcher2_Position", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "fx_scale", "22", }, 
+                { "fx_nlips", "on", },    
+            },
+					
+
+						}, }

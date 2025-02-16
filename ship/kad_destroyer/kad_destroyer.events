@@ -1,0 +1,1597 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:02 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 15, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Weapon_Heavy1", 
+            length = 0.2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation3 = 
+        { 
+            name = "Damage", 
+            length = 1, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation4 = 
+        { 
+            name = "dmg01", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.25, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation5 = 
+        { 
+            name = "dmg02", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.5, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation6 = 
+        { 
+            name = "dmg03", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.75, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation7 = 
+        { 
+            name = "Weapon_IonCannon", 
+            length = 1, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation8 = 
+        { 
+            name = "Weapon_Heavy2", 
+            length = 0.2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation9 = 
+        { 
+            name = "Weapon_Heavy3", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation10 = 
+        { 
+            name = "Weapon_Heavy4", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, 
+		}, 
+		animation11 = 
+        { 
+            name = "Weapon_IonCannon_Heretic", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, 
+		}, 
+        animation12 = 
+        { 
+            name = "Hangar_Glow", 
+            length = 4, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation13 = 
+        { 
+            name = "Intervention_FX", 
+            length = 2, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation14 = 
+        { 
+            name = "alarm", 
+            length = 2, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.85, 
+            maximum = 0.999, 
+            markers = 
+                { "", }, },
+        animation15 = 
+        { 
+            name = "premorte", 
+            length = 60, 
+            loop = 0, 
+            parent = "Damage", 
+            minimum = 0.8, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation16 = 
+        { 
+            name = "AfterBurn", 
+            length = 3, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+	}, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "death1X", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "death_generic", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_Heavy1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Heavy1_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_dread", }, 
+                { "sound", "WEAPON/MEGASHIP/FIRE/DWEAPON_MOVER_KINETIC_AUTOGUN_SHELL", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Weapon_Heavy2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Heavy2_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_dread", }, 
+                { "sound", "WEAPON/MEGASHIP/FIRE/DWEAPON_MOVER_KINETIC_AUTOGUN_SHELL", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event4 = 
+            { 
+                { "anim", "deathX", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event5 = 
+            { 
+                { "anim", "deathX", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "deathX", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event7 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "marker4", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event8 = 
+            { 
+                { "anim", "deathX", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event9 = 
+            { 
+                { "anim", "DeathX", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_main_explosion_combo", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "15", }, 
+            }, 
+        event10 = 
+            { 
+                { "anim", "dmg01", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker1,maker2", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event11 = 
+            { 
+                { "anim", "dmg02", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker3,maker4", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "7.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event12 = 
+            { 
+                { "anim", "dmg03", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "10", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event13 = 
+            { 
+                { "anim", "Weapon_IonCannon", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_dread", }, 
+                { "sound", "WEAPON/plasmabolt2", }, 
+                { "fx_scale", "6", }, 
+            }, 
+        event13b = 
+            { 
+                { "anim", "Weapon_IonCannon", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "alos_thor_hammer_fire_combo", }, 
+                { "fx_scale", "6", }, 
+            }, 
+        event14 = 
+            { 
+                { "anim", "Weapon_Heavy3", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Heavy3_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_dread", }, 
+                { "sound", "WEAPON/MEGASHIP/FIRE/DWEAPON_MOVER_KINETIC_AUTOGUN_SHELL", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event15 = 
+            { 
+                { "anim", "Weapon_Heavy4", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Heavy4_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital_dread", }, 
+                { "sound", "WEAPON/MEGASHIP/FIRE/DWEAPON_MOVER_KINETIC_AUTOGUN_SHELL", }, 
+                { "fx_scale", "3", }, 
+            },
+        event16 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "EXPLOSION/ACCENTS", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event17 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.025", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event18 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event19 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.08", }, 
+                { "marker", "marker4", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "3.5", }, 
+            }, 
+        event20 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event21 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker6", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "EXPLOSION/STRESSACCENTS", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event22 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.225", }, 
+                { "marker", "marker7", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event23 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "marker8", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event24 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.275", }, 
+                { "marker", "marker9", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        event25 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "marker10", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event26 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker16", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event27 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.425", }, 
+                { "marker", "marker11", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event28 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "marker13", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event29 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.478", }, 
+                { "marker", "marker14", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event30 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "marker15", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        event31 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "marker27", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event32 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.625", }, 
+                { "marker", "marker28", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event33 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.65", }, 
+                { "marker", "marker29", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event34 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.675", }, 
+                { "marker", "marker30", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event35 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker12", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "3.5", }, 
+            }, 
+        event36 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "marker1b", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event37 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker2b", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event38 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "marker3b", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        event39		= 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "marker4b", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "3.5", }, 
+            }, 
+        event40 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker5b", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event41 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_burn_ring", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Plasma", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event42 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.85", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_combo", }, 
+                { "fx_scale", "30", }, 
+                { "fx_sm", "on", }, 
+            }, 
+        event43 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.85", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_RING", }, 
+                { "fx_scale", "1", }, 
+                { "fx_sm", "on", }, 
+            }, 
+        event45 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "ion_beam_kpr_charge_combo_reaver", }, 
+				{ "sound", "WEAPON/MEGASHIP/FIRE/DREADNAUGHT_FIRE_1", }, 
+                { "fx_scale", "4.0", }, 
+            }, 
+        event46 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0.69", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+				{ "sound", "WEAPON/MEGASHIP/FIRE/SAJUUK_HEAVY_ION_CANNON_BEAM", }, 
+            },
+        event47 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },  
+				{ "fx_scale", "0.8", }, 
+            }, 		
+        event48 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },  
+				{ "fx_scale", "0.8", }, 
+            }, 	
+        event49 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },  
+				{ "fx_scale", "0.8", }, 
+            }, 		
+        event50 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },  
+				{ "fx_scale", "0.8", }, 
+            }, 		
+        event51 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },  
+				{ "fx_scale", "0.8", }, 
+            }, 
+        event52 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },  
+				{ "fx_scale", "0.8", }, 
+            }, 
+        event53 = 
+            { 
+                { "anim", "Weapon_IonCannon_Heretic", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "Weapon_IonCannon_Muzzle", }, 
+                { "fx", "super_beam_flare_spray", },  
+				{ "fx_scale", "0.8", }, 
+            },
+        event54 = 
+            { 
+                { "anim", "Hangar_Glow", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "kad_avatar_hangars", }, 
+				{ "fx_scale", "1", }, 
+            },
+        event55 = 
+            { 
+                { "anim", "Intervention_FX", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "kad_phase_avatar", }, 
+				{ "fx_scale", "1", }, 
+            },	
+
+---smoke
+        smokeinstant1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },
+        smokeinstant2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+        smokeinstant3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },  
+        smokeinstant4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },                        
+
+        smoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.31", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_5", },                 
+                { "fx_scale", "entity", }, 
+            },
+        smoke2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.62", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_10", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+        smoke3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.81", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_15", },                 
+                { "fx_scale", "entity", }, 
+            },  
+        smoke4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.87", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_20", },                 
+                { "fx_scale", "entity", }, 
+            },    
+        smoke5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.95", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_35", },                 
+                { "fx_scale", "entity", }, 
+            },          
+
+---rapid smoke       
+        rapidsmoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.795", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_outline_smoke_thick", },                 
+                { "fx_scale", "entity", }, 
+            },         
+        rapidsmoke2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.895", }, 
+                { "marker", "Root", }, 
+                { "fx", "explosionjetinfrequent,dmg_cloud_outline_smoke_thick", },                        
+                { "fx_scale", "entity", }, 
+            },               
+        rapidsmoke3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.910", }, 
+                { "marker", "Root", }, 
+                { "fx", "explosionjet,dmg_cloud_outline_smoke_thick", },                        
+                { "fx_scale", "entity", }, 
+            },            
+            
+---chunks
+
+        chunk1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker25", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_15", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "5", }, 
+            },
+        chunk2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker16", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "7", }, 
+            },                 
+        chunk3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_10", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "11", }, 
+            },   
+        chunkmushroom3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", },                 
+                { "fx_scale", "33", }, 
+            },                                 
+        chunk4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "marker10", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_10", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "11", }, 
+            }, 
+        chunk5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker21", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "13", }, 
+            },                
+        chunk6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_5", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "5", }, 
+            },            
+        chunk7 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.55", }, 
+                { "marker", "marker6", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_5", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "6", }, 
+            },        
+        chunk8 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.65", }, 
+                { "marker", "marker13", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_5", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "4", }, 
+            },          
+        chunk9 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker15", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_5", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "10", }, 
+            },  
+        chunkmushroom9 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker15", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", },                 
+                { "fx_scale", "30", }, 
+            },      
+        chunk10 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_5", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "12", }, 
+            },  
+        chunkmushroom10 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", },                 
+                { "fx_scale", "36", }, 
+            },              
+        chunk11 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.8", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "7", }, 
+            },
+        chunk12 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.825", }, 
+                { "marker", "marker33", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_5", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "9", }, 
+            }, 
+        chunkmushroom12 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.825", }, 
+                { "marker", "marker33", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", },                 
+                { "fx_scale", "30", }, 
+            },                   
+        chunk13 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.875", }, 
+                { "marker", "marker36", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_70", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "14", }, 
+            },  
+        chunk14 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.925", }, 
+                { "marker", "marker24", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "10", }, 
+            }, 
+            
+---explosion cloud
+            
+         cloud1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker8", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "15", }, 
+            }, 
+         cloud2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker12", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "16", }, 
+            }, 
+         cloud3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "marker23", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "17", }, 
+            }, 
+         cloud4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker19", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "18", }, 
+            }, 
+         cloud5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.8", }, 
+                { "marker", "marker37", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "19", }, 
+            },      
+         cloud6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.85", }, 
+                { "marker", "marker40", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "20", }, 
+            }, 
+         cloud7 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.85", }, 
+                { "marker", "marker9", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "21", }, 
+            },     
+    
+        event_s1 = 
+            { 
+                { "anim", "death1", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "death_generic", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Plasma", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        event_s2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker25", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event_s3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "7", }, 
+            }, 
+        event_s4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.21", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "11", }, 
+            }, 
+        event_s5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.23", }, 
+                { "marker", "marker4", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "9", }, 
+            }, 
+        event_s6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.24", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event_s7 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "marker6", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s8 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker7", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event_s9 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.41", }, 
+                { "marker", "marker8", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "7", }, 
+            }, 
+        event_s10 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.42", }, 
+                { "marker", "marker9", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "6", }, 
+            }, 
+        event_s11 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.43", }, 
+                { "marker", "marker10", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event_s12 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.44", }, 
+                { "marker", "marker16", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event_s13 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.025", }, 
+                { "marker", "marker11", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "6", }, 
+            }, 
+        event_s14 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "marker13", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event_s15 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.08", }, 
+                { "marker", "marker14", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event_s16 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker15", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s30ring = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.63", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_RING", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA", }, 
+                { "fx_scale", "0.75", }, 
+                { "fx_sm", "on", }, 
+            },         
+        event_s17 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker27", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "7", }, 
+            }, 
+        event_s18 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.72", }, 
+                { "marker", "marker28", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "8.5", }, 
+            }, 
+        event_s19 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.73", }, 
+                { "marker", "marker29", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "9", }, 
+            }, 
+        event_s20 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.74", }, 
+                { "marker", "marker30", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "10", }, 
+            }, 
+        event_s21 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "marker12", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "9", }, 
+            }, 
+        finalexp0 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.901", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_burn_ring", },                 
+                { "fx_scale", "3", }, 
+            },                 
+        event_s22 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.925", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_combo", }, 
+                { "fx_scale", "200", }, 
+                { "fx_sm", "on", }, 
+            },            
+        event_s23 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.925", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_RING", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA_HIGH", }, 
+                { "fx_scale", "4", }, 
+                { "fx_sm", "on", }, 
+            }, 
+--final            
+        chunkfinal1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.905", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "12", }, 
+            },
+        chunkfinal2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.910", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "13", }, 
+            },  
+        chunkfinal3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.915", }, 
+                { "marker", "marker10", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "14", }, 
+            }, 
+        chunkfinal4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.920", }, 
+                { "marker", "marker15", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "15", }, 
+            }, 
+        chunkfinal5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.925", }, 
+                { "marker", "marker20", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "16", }, 
+            },              
+        event_s24 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.325", }, 
+                { "marker", "marker26", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event_s25 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "marker17", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s26 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.375", }, 
+                { "marker", "marker18", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "6", }, 
+            }, 
+        event_s27 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker19", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event_s28 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.425", }, 
+                { "marker", "marker20", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s29 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "marker21", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "7", }, 
+            }, 
+        event_s30 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.525", }, 
+                { "marker", "marker22", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "11", }, 
+            }, 
+        event_s31 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.55", }, 
+                { "marker", "marker23", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s32 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.575", }, 
+                { "marker", "marker24", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "13", }, 
+            }, 
+        event_s33 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "marker25", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "9", }, 
+            }, 
+        event_s34 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.325", }, 
+                { "marker", "marker31", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s35 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "marker32", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "6", }, 
+            }, 
+        event_s36 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.375", }, 
+                { "marker", "marker33", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event_s37 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker34", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s38 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "marker35", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event_s39 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker36", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event_s40 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.125", }, 
+                { "marker", "marker37", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "3.5", }, 
+            }, 
+        event_s41 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker38", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event_s42 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.175", }, 
+                { "marker", "marker39", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_mothership_noscar", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "5", }, 
+            }, 
+        event_s43 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.86", }, 
+                { "marker", "marker40", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "20", }, 
+            }, 
+        event_s44 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.85", }, 
+                { "marker", "marker36", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "18", }, 
+            }, 
+        event_s45 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.83", }, 
+                { "marker", "marker37", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "8", }, 
+            }, 
+        event_s46 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.82", }, 
+                { "marker", "marker38", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "12", }, 
+            }, 
+        event_s47 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.8", }, 
+                { "marker", "marker39", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "10", }, 
+            }, 
+        event_s48 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker41", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "15", }, 
+            }, 
+        event_s49 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.71", }, 
+                { "marker", "marker42", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "20", }, 
+            }, 
+        event_s50 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.72", }, 
+                { "marker", "marker43", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "10", }, 
+            }, 
+        event_s51 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker44", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "13", }, 
+            }, 
+        event_s52 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.8", }, 
+                { "marker", "marker45", }, 
+                { "fx", "dmg_capital_explosion_large", }, 
+                { "fx_scale", "8", }, 
+            }, 
+---premorte        
+            premorte1 = 
+            { 
+                { "anim", "premorte", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", },                 
+                { "fx", "death_generic_cf_5,death_generic_cf_10,death_generic_cf_15", },                 
+                { "fx_scale", "entity", },                 
+            }, 
+            premorte2 = 
+            { 
+                { "anim", "premorte", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15", },                 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_premorte,dmg_capital_explosion_large_mushroom,dmg_capital_explosion_large_hull_flare_cf_noscar_premorte", },  
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", },                              
+                { "fx_scale", "1.35", },                 
+            },
+            premorte3 = 
+            { 
+                { "anim", "premorte", }, 
+                { "animtime", "0.225", }, 
+                { "marker", "marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", },                 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_premorte,dmg_capital_explosion_large_mushroom,dmg_capital_explosion_large_hull_flare_cf_noscar_premorte", },  
+                { "sound", "Explosion/Small/ETG_Explode_Medium_Firey", },                
+                { "fx_scale", "1.65", },                 
+            },             
+            premorte4 = 
+            { 
+                { "anim", "premorte", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "marker31,marker32,marker33,marker34,marker35,marker36,marker37,marker38,marker39,marker40,marker41,marker42,marker43,marker44,marker45", },                 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_premorte,dmg_capital_explosion_large_mushroom,dmg_capital_explosion_large_hull_flare_cf_noscar_premorte", },    
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", },       
+                { "fx_scale", "1.25", },                 
+            }, 
+            premorte5 = 
+            { 
+                { "anim", "premorte", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", },                 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_premorte,dmg_capital_explosion_large_mushroom,dmg_capital_explosion_large_hull_flare_cf_noscar_premorte", },  
+                { "sound", "Explosion/Small/ETG_Explode_Medium_Plasma", },                              
+                { "fx_scale", "1.75", },                 
+            },
+            premorte6 = 
+            { 
+                { "anim", "premorte", }, 
+                { "animtime", "0.525", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15", },                 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_premorte,dmg_capital_explosion_large_mushroom,dmg_capital_explosion_large_hull_flare_cf_noscar_premorte", },  
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", },                
+                { "fx_scale", "1.35", },                 
+            },             
+            premorte7 = 
+            { 
+                { "anim", "premorte", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "marker31,marker32,marker33,marker34,marker35,marker36,marker37,marker38,marker39,marker40,marker41,marker42,marker43,marker44,marker45", },                 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_premorte,dmg_capital_explosion_large_mushroom,dmg_capital_explosion_large_hull_flare_cf_noscar_premorte", },    
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", },       
+                { "fx_scale", "1.45", },                 
+            },
+---alarm
+            alarm1 = 
+            { 
+                { "anim", "alarm", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", },                 
+                { "sound", "ALARMBIG", },                
+            },
+
+        AfterBurner1 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "ion_cannon_steam_spray_kad", }, 
+		{ "fx_scale", "4", }, 
+            }, 
+        AfterBurner2 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle2", }, 
+                { "fx", "ion_cannon_steam_spray_kad", }, 
+		{ "fx_scale", "4", }, 
+            }, 
+        AfterBurner3 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle3", }, 
+                { "fx", "ion_cannon_steam_spray_kad", }, 
+		{ "fx_scale", "4", }, 
+            }, 
+        AfterBurner4 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle4", }, 
+                { "fx", "ion_cannon_steam_spray_kad", }, 
+		{ "fx_scale", "4", }, 
+            }, 
+				
+}, }

@@ -1,0 +1,47 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Death",
+      length = 2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT",
+      },
+      {
+        "fx",
+        "dmg_nukemine_explode_combo_NOFLARE",
+      },
+      {
+        "fx_transform",
+        "None",
+      },
+      {
+        "fx_scale",
+        "0.85",
+      },
+    },
+  },
+}

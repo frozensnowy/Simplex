@@ -1,0 +1,15 @@
+/////////////////////////////////////////////////////////////////////
+// ANI05-06
+
+filerange 55000 55100
+rangestart 55000 55100
+
+55070	Hyperdrive malfunction!
+55071	Emergency Override not responding!
+55072	The Oracle is interfering with the hyperspace NAV systems. It has taken over our course.
+55073	Standby for Emergency hyperspace exit.
+
+
+
+
+rangeend

@@ -1,0 +1,27 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Container"
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 5000
+NewSubSystemType.regentime = 0
+NewSubSystemType.nlips = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.5
+NewSubSystemType.selectionLimit = 2000
+NewSubSystemType.preciseATILimit = 2000
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "System"
+NewSubSystemType.typeString = "Cargo"
+NewSubSystemType.collateralDamage = 2000
+NewSubSystemType.inactiveTimeAfterDamage = 70
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 0
+NewSubSystemType.timeToBuild = 0
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Vgr"
+NewSubSystemType.AttackFamily = "HULLCM"
+NewSubSystemType.DockFamily = "Fighter"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"

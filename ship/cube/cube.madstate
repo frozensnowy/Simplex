@@ -1,0 +1,8 @@
+CUBE_NIS00_OnSet = function(ship)
+	startAnim(ship, "warp_in")
+end
+
+CUBE_NIS01_OnSet = function(ship)
+	startAnim(ship, "warp_out")
+end
+

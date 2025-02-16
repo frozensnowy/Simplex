@@ -1,0 +1,4 @@
+baseRes = 1600 --800
+
+res800 = "data:ui/newui/ingameicons/lightning_yellow_800.ROT"
+res1600 = "data:ui/newui/ingameicons/lightning_yellow_1600.ROT"

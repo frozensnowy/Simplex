@@ -1,0 +1,70 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:09
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "MissileTrail", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+    events = 
+    { 
+        event_light = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "Missile_Flare_Red_Spray", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_scale", "6", },  --"entity"
+		{ "fx_nlips", "on", }, 
+            }, 
+        event_trail = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_mushroom_engine", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_scale", "0.45", }, 
+            }, 
+        event1 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_transform", "None", }, 
+            }, 
+        event2 = 
+        { 
+          { "anim", "Death", }, 
+          { "animtime", "0.2", }, 
+          { "marker", "Root", }, 
+          { "fx", "dmg_capital_explosion_combo_orangesparks", }, 
+          { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+          { "fx_scale", "10", }, 
+        }, 
+            
+            }, }

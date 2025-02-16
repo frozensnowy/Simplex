@@ -1,0 +1,10 @@
+bulletfx = "flak_explosion_combo"
+hitfx = "nopen_generic"
+nopenetratefx = "nopen_generic"
+deathtype = "deathCannon"
+hit_clamp = {1.0, 1.0}
+scartype = "Bullet/Bullet"
+bullet_sfx = "WEAPON/HWMEDPOP" --WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT
+nopenetrate_sfx = "WEAPON/HWMEDPOP"
+bullet_nlips = 0
+hit_nlips = 0

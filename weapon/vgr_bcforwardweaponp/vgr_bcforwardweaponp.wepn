@@ -1,0 +1,25 @@
+StartWeaponConfig(NewWeaponType,"Gimble","Bullet","Vgr_Laser","Normal Only",4000,10000,0,0,0,0,1,1,1,30,0,0,0,0,260,40,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",55000,55000,"")
+setPenetration(NewWeaponType,100,1,{
+  TurretArmour = 0.5,
+},{
+  PlanetKillerArmour = 0,
+},{ 
+  MediumArmour = 0.3,   
+},{
+  SubSystemArmour = 0.3,
+})
+setAccuracy(NewWeaponType,1,{
+  Resource = 0,
+},{
+  Fighter = 0,
+},{
+  Corvette = 0,
+},{
+  munition = 0,
+},{
+  Frigate = 0.1,
+  damage = 1,
+})
+setAngles(NewWeaponType,6,0,0,0,0)
+setMiscValues(NewWeaponType,4,0.5)

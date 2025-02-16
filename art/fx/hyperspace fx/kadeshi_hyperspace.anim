@@ -1,0 +1,63 @@
+--Freespace: A New Age v0.25
+fps = 30
+startFrame = 0
+loopCount = -1
+texture = 
+    { "data:/art/fx/hyperspace fx/Kadeshi_hyperspace0000.tga", 
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0001.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0002.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0003.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0004.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0005.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0006.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0007.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0008.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0009.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0010.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0011.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0012.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0013.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0014.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0015.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0016.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0017.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0018.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0019.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0020.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0021.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0022.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0023.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0024.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0025.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0026.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0027.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0028.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0029.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0030.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0031.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0032.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0033.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0034.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0035.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0036.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0037.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0038.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0039.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0040.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0041.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0042.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0043.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0044.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0045.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0046.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0047.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0048.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0049.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0050.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0051.tga",
+"data:/art/fx/hyperspace fx/Kadeshi_hyperspace0052.tga",}
+
+
+
+
+

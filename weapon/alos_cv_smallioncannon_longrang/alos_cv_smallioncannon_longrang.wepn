@@ -1,0 +1,17 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","InstantHit","IonBeamfx","Normal",0,8000,0,4,2,0,20,0,1,4,0,0,0,0,40,25,0.1,"Normal",1,0,1000)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",4000,4000,"")
+setPenetration(NewWeaponType,30,1,{
+  PlanetKillerArmour = 0,
+},{
+  SubSystemArmour = 0.3,
+},{
+  ResArmour = 0.2,
+})
+setAccuracy(NewWeaponType,1,{
+  Fighter = 0,
+},{
+  Corvette = 0,
+},{
+  munition = 0,
+})
+setAngles(NewWeaponType,0,-85,85,-45,45)

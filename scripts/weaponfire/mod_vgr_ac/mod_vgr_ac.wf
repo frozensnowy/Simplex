@@ -1,0 +1,14 @@
+hitfx = "dmg_cloud_combo_small"
+bulletfx = "mod_vgr_ac"
+nopenetratefx = "nopen_generic"
+deathtype = "deathCannon"
+scartype = "Kinetic_Small/Kinetic_Small"
+--fire_sfx = "WEAPON/MOD/HW1LARGEGUN"
+fire_sfx = "WEAPON/FGUN14"
+firefx = "muzzle_flash_combo_small_frigate"
+hit_nlips = 0.0005
+bullet_nlips = 0.0001
+hit_clamp = {
+  1,
+  1,
+}

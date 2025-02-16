@@ -1,0 +1,12 @@
+StartWeaponConfig(NewWeaponType,"Fixed","SphereBurst","dummyeffect","Normal",0,0,20,0.01,0,0,1,0,0,0,0,0,0,0,0,0,0,"Normal",0,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",50,50,"")
+AddWeaponResult(NewWeaponType,"Hit","Disable","Target",100,100,"")
+
+setPenetration(NewWeaponType,1,1)
+
+setAccuracy(NewWeaponType,1,
+{Emplacement=0.9999,},
+{SubSystem=0.9999,})
+
+

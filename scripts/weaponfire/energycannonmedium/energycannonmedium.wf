@@ -1,0 +1,14 @@
+hitfx = "superecannon_hit_combo" --energycannonhit
+bulletfx = "energycannonlargecombo"
+nopenetratefx = "dmg_wave_explosion_combo"
+deathtype = "deathBeam"
+firefx = "muzzle_flash_combo_plasma" --sunfire_squirt
+fire_sfx = "WEAPON/ENERGYFAST"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "Explosion/Small/ETG_Explode_Small_Firey"
+nopenetrate_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PLASMA_LANCE_BEAM_HIT"
+bullet_nlips = 0.0003
+hit_clamp = {
+  0.65,
+  0.65,
+}

@@ -1,0 +1,389 @@
+NewShipType = StartShipConfig()
+
+--====================================================================================
+--NAMING AND DESCRIPTION
+--====================================================================================
+
+NewShipType.displayedName = "Star Destroyer"
+NewShipType.sobDescription = "Alien Vessel"
+NewShipType.SquadronSize = 1
+NewShipType.alwaysInRenderList = 1
+
+NewShipType.TOIcon = "Parallelogram"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 14000
+NewShipType.TODistanceDisappear0 = 12000
+NewShipType.TODistanceFade1 = 5500
+NewShipType.TODistanceDisappear1 = 5000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+
+--====================================================================================
+--COST
+--====================================================================================
+
+NewShipType.buildCost = 350000
+NewShipType.buildTime = 583
+NewShipType.buildPriorityOrder = 7
+
+--====================================================================================
+--HEALTH
+--====================================================================================
+
+NewShipType.mass = 2200
+NewShipType.maxhealth = 8485400
+NewShipType.regentime = 500
+NewShipType.minRegenTime = 1
+NewShipType.topArmourDamage = 0.75
+NewShipType.bottomArmourDamage = 0.75
+NewShipType.frontArmourDamage = 0.9
+NewShipType.sideArmourDamage = 1
+NewShipType.rearArmourDamage = 1.6
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+addShield(NewShipType,"EMP",50000,20)
+
+--====================================================================================
+--FORMATION
+--====================================================================================
+
+NewShipType.paradeData = "hgn_carrier_parade"
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.formationSpacing = 1000
+
+--====================================================================================
+--PROPULSION
+--====================================================================================
+NewShipType.thrusterMaxSpeed = 55
+NewShipType.mainEngineMaxSpeed = 220
+NewShipType.rotationMaxSpeed = 4
+
+NewShipType.thrusterAccelTime = 7
+NewShipType.thrusterBrakeTime = 7
+NewShipType.mainEngineAccelTime = 10
+NewShipType.mainEngineBrakeTime = 10
+NewShipType.rotationAccelTime = 9
+NewShipType.rotationBrakeTime = 9
+
+--====================================================================================
+--MOVEMENT
+--====================================================================================
+
+NewShipType.controllerType = "Ship"
+
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 60
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 85
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 1000
+NewShipType.slideMoveRange = 3000
+NewShipType.relativeMoveFactor = 1
+
+NewShipType.collisionMultiplier = 1
+
+--====================================================================================
+--CLASSIFICATION
+--====================================================================================
+
+NewShipType.militaryUnit = 1
+NewShipType.MinimalFamilyToFindPathAround = "MotherShip"
+NewShipType.BuildFamily = "NotBuildable"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "CantDock"
+NewShipType.AvoidanceFamily = "SuperCap"
+NewShipType.DisplayFamily = "Megalith"
+NewShipType.AutoFormationFamily = "Capship"
+NewShipType.CollisionFamily = "Big"
+NewShipType.ArmourFamily = "HeavyArmour"
+NewShipType.UnitCapsFamily = "SinglePlayerMisc"
+
+--====================================================================================
+--SENSORS
+--====================================================================================
+
+NewShipType.visualRange = 25000
+NewShipType.prmSensorRange = 20000
+NewShipType.secSensorRange = 22000
+NewShipType.detectionStrength = 2
+
+--====================================================================================
+--COMBAT
+--====================================================================================
+
+NewShipType.useEngagementRanges = 1 
+NewShipType.retaliationRange = 25000
+NewShipType.retaliationDistanceFromGoal = 15000
+addAbility(NewShipType,"CanAttack",1,1,0,0,0.35,1,"SmallCapitalShip, BigCapitalShip, Mothership, Capturer, Frigate, Resource, Corvette, Fighter, Munition, Utility","Frontal",{
+  Fighter = "Frontal",
+},{
+  Corvette = "Frontal",
+},{
+  Munition = "Frontal",
+},{
+  SubSystem = "FrontalVsSubSystem",
+})
+addAbility(NewShipType,"GuardCommand",1,15000,6000)
+
+--====================================================================================
+--UI VISIBILITY
+--====================================================================================
+
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 1
+
+--====================================================================================
+--VISIBILITY
+--====================================================================================
+
+NewShipType.nlips = 0
+NewShipType.nlipsRange = 75000
+NewShipType.nlipsFar = 0
+NewShipType.nlipsFarRange = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 5000000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 0
+NewShipType.goblinsStartFade = 1500
+NewShipType.goblinsOff = 2000
+--NewShipType.upLOD = 5000
+--NewShipType.upLOD = 15000
+--NewShipType.downLOD = 5015
+--NewShipType.downLOD = 15015
+NewShipType.minimumZoomFactor = 0.25
+NewShipType.selectionLimit = 500000
+NewShipType.preciseSelectionLimit = 50000
+NewShipType.preciseATILimit = 0.001
+NewShipType.selectionPriority = 75
+
+--====================================================================================
+--ABILITIES
+--====================================================================================
+
+addAbility(NewShipType,"MoveCommand",1,0)
+AddShipMultiplier(NewShipType, "MaxShield", "ThisShipOnly", "Linear", 3, 0, 0)
+AddShipMultiplier(NewShipType, "HealthRegenerationRate", "ThisShipOnly", "Linear", 2, 0, 0)
+addAbility(NewShipType,"WaypointMove")
+addAbility(NewShipType,"HyperSpaceCommand",1,1,350,350,0.5,1)
+addAbility(NewShipType,"CanBeCaptured",1133,0.5)
+addAbility(NewShipType,"CanBeRepaired")
+addAbility(NewShipType,"RetireAbility",1,1)
+addAbility(NewShipType,"MinelayerAbility",1,1)
+addAbility(NewShipType,"HyperspaceViaGateCommand",1,3,1,0.3)
+AddShipMultiplier(NewShipType,"HyperSpaceAbortDamage","ThisShipOnly","Linear",1,0,0)
+--addAbility(NewShipType,"SpecialAttack",1,"IONSALVO")
+
+--====================================================================================
+--DOCKING
+--====================================================================================
+
+addAbility(NewShipType,"CanDock",1,1)
+NewShipType.dockTimeBetweenTwoFormations = 0.25
+NewShipType.dockTimeBeforeStart = 0.25
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "dockline"
+NewShipType.queueFormation = "n_delta"
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.ignoreRaceWhenDocking = 1
+addAbility(NewShipType,"CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 0.25
+NewShipType.launchTimeBeforeStart = 0.25
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "n_delta"
+
+addAbility(NewShipType,"ParadeCommand",1)
+
+--====================================================================================
+--CONSTRUCTION
+--====================================================================================
+
+--====================================================================================
+--SUBSYSTEMS
+--====================================================================================
+LoadModel(NewShipType,1)
+--StartShipHardPointConfig(NewShipType,"Shield","Hardpoint_Shield","System","Generic","Damageable","Vgr_Allegiance_Destroyer_Shields")
+StartShipHardPointConfig(NewShipType,"SENSORS","Hardpoint_Sensors","System","Sensors","Damageable","Capital_Sensors")
+StartShipHardPointConfig(NewShipType,"ENGINES","Hardpoint_Engines","System","Generic","Damageable","Vgr_Module_Hyperspace")
+--StartShipHardPointConfig(NewShipType,"STRUCTURE","Hardpoint_Shield","System","Generic","Damageable","Vgr_Allegiance_Destroyer_Bridge")
+--StartShipHardPointConfig(NewShipType,"STRUCTURE","Hardpoint_Shield","System","Generic","Damageable","Vgr_Allegiance_Destroyer_Structure")
+
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BL0","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BL1","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BL2","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BL3","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BL4","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BL5","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BR4","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BR5","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BR0","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BR1","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BR2","Weapon","Generic","Damageable","TURRET_8_TL10D")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_BR3","Weapon","Generic","Damageable","TURRET_8_TL10D")
+
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L0","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L1","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L2","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L3","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L4","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L5","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L6","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L7","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L8","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_L9","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R0","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R1","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R2","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R3","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R4","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R5","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R6","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R7","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R8","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_R9","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T0","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T1","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T2","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T3","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T4","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T5","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T6","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T7","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_T8","Weapon","Generic","Damageable","TURRET_LATERAL_4_TL7D_N")
+
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B0","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B1","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B2","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B3","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B4","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B5","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B6","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B7","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B8","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+StartShipHardPointConfig(NewShipType,"Bridge","Weapon_B9","Weapon","Generic","Damageable","TURRET_LATERAL_4_IC4D_S")
+--====================================================================================
+--WEAPONRY
+--====================================================================================
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS0","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS1","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS2","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS3","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS4","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS5","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS6","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS7","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS8","")
+StartShipWeaponConfig(NewShipType,"Laser_5D_PDS","Weapon_SS9","")
+
+
+--====================================================================================
+--DEATH
+--====================================================================================
+
+NewShipType.battleScarMaxTriBase = 1200
+NewShipType.battleScarMaxTriInc = 1600
+NewShipType.sobDieTime = 21.5
+NewShipType.sobSpecialDieTime = 1.9
+NewShipType.specialDeathSpeed = 0
+NewShipType.chanceOfSpecialDeath = 0.5
+NewShipType.deadSobFadeTime = 0
+NewShipType.chanceOfSpecialDeath = 0.5
+NewShipType.deadSobFadeTime = 0
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_BRIDGE",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_SMALL",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_MID",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_MID2",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_MID3",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_STERN",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_STERN2",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_ISD_BOW",1,0.75,0,0,0,50,0,0,0,1,0,0,0,1,0,0,0,1)
+
+--====================================================================================
+--ENGINES AND SOUND
+--====================================================================================
+
+setEngineBurn(NewShipType,10,0.5,1,300,0,0.7,0.15,380)
+setEngineGlow(NewShipType,20,1,1,25000,25000,50,4,{
+  0.27,
+  0.47,
+  0.69,
+  0.3,
+})
+loadShipPatchList(NewShipType,"data:sound/sfx/ship/imperial/destroyer/",0,"Engines/destroyer","",1,"Ambience/destroyer")
+
+--====================================================================================
+--MISC
+--====================================================================================
+
+NewShipType.isTransferable = 1
+NewShipType.tumbleStaticX = 1
+NewShipType.tumbleStaticY = 1
+NewShipType.tumbleStaticZ = 1
+NewShipType.tumbleDynamicX = 1
+NewShipType.tumbleDynamicY = 1
+NewShipType.tumbleDynamicZ = 1
+NewShipType.tumbleSpecialDynamicX = 1
+NewShipType.tumbleSpecialDynamicY = 1
+NewShipType.tumbleSpecialDynamicZ = 1
+NewShipType.swayUpdateTime = 50
+NewShipType.swayOffsetRandomX = 1
+NewShipType.swayOffsetRandomY = 1
+NewShipType.swayOffsetRandomZ = 1
+NewShipType.swayBobbingFactor = 0.15
+NewShipType.swayRotateFactor = 0
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.2
+NewShipType.targetRandomPointXMax = 0.2
+NewShipType.targetRandomPointYMin = -0.1
+NewShipType.targetRandomPointYMax = 0.1
+NewShipType.targetRandomPointZMin = -0.4
+NewShipType.targetRandomPointZMax = 0.4
+
+--====================================================================================
+--AI WEIGHTING
+--====================================================================================
+
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 25
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 25
+NewShipType.totalValue = 50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

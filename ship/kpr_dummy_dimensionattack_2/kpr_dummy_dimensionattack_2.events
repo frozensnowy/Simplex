@@ -1,0 +1,70 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 15, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "shield_hit_bullet_combo_dimensionattack", }, 
+			{ "sound", "WEAPON/bubbles2", }, 
+			{ "fx_scale", "100", }, 
+			{ "fx_sm", "on", }, 
+		}, 
+		
+       event41 = 
+            { 
+                { "anim", "shield1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Hardpoint_shield1_Position", }, 
+                { "fx", "dmg_wave_ball_ring02", }, 
+                { "sound", "special/special_abilities_phase_on_shield", }, 
+                { "fx_scale", "130", }, 
+                { "fx_nlips", "on", }, 
+                { "fx_sm", "on", }, 
+            },
+       event42 = 
+            { 
+                { "anim", "shield2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Hardpoint_shield2_Position", }, 
+                { "fx", "dmg_wave_ball_ring02", }, 
+                { "sound", "special/special_abilities_phase_on_shield", }, 
+                { "fx_scale", "160", }, 
+                { "fx_nlips", "on", }, 
+                { "fx_sm", "on", }, 
+            }, 
+       event43 = 
+            { 
+                { "anim", "disk", }, 
+                { "animtime", "0", }, 
+                { "marker", "Hardpoint_shield3_Position", }, 
+                { "fx", "dmg_wave_ball_ring_blue", }, 
+                { "sound", "special/special_abilities_phase_on_shield", }, 
+                { "fx_scale", "190", }, 
+                { "fx_nlips", "on", }, 
+                { "fx_sm", "on", }, 
+            },   
+		
+	},
+	
+}

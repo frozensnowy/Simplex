@@ -1,0 +1,146 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Hyperspace Station"
+NewShipType.sobDescription = "Perimeter Station"
+NewShipType.maxhealth = 100000
+NewShipType.regentime = 3000
+NewShipType.minRegenTime = 300
+NewShipType.sideArmourDamage = 1.2
+NewShipType.rearArmourDamage = 1.4
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.unitCapsNumber = 1
+--NewShipType.paradeData = "hgn_shipyard_parade"
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 5000
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 50
+NewShipType.mainEngineMaxSpeed = 50
+NewShipType.rotationMaxSpeed = 40
+NewShipType.thrusterAccelTime = 1
+NewShipType.thrusterBrakeTime = 1
+NewShipType.mainEngineAccelTime = 6
+NewShipType.mainEngineBrakeTime = 1
+NewShipType.rotationAccelTime = 0.2
+NewShipType.rotationBrakeTime = 0.2
+NewShipType.thrusterUsage = 0.2
+NewShipType.accelerationAngle = 90
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 30
+NewShipType.descendPitch = 30
+NewShipType.goalReachEpsilon = 25
+NewShipType.slideMoveRange = 100
+NewShipType.controllerType = "None"
+NewShipType.tumbleStaticX = 0
+NewShipType.tumbleStaticY = 0
+NewShipType.tumbleStaticZ = 0
+NewShipType.tumbleDynamicX = 0
+NewShipType.tumbleDynamicY = 0
+NewShipType.tumbleDynamicZ = 0
+NewShipType.tumbleSpecialDynamicX = 0
+NewShipType.tumbleSpecialDynamicY = 0
+NewShipType.tumbleSpecialDynamicZ = 0
+NewShipType.relativeMoveFactor = 1
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.57
+NewShipType.targetRandomPointXMax = 0.8
+NewShipType.targetRandomPointYMin = -0.12
+NewShipType.targetRandomPointYMax = 0.11
+NewShipType.targetRandomPointZMin = -0.31
+NewShipType.targetRandomPointZMax = 0.88
+NewShipType.dustCloudDamageTime = 100
+NewShipType.nebulaDamageTime = 150
+NewShipType.MinimalFamilyToFindPathAround = "None"
+NewShipType.BuildFamily = "Shipyard_Hgn"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "Shipyard"
+NewShipType.AvoidanceFamily = "MotherShip"
+NewShipType.DisplayFamily = "Capital"
+NewShipType.AutoFormationFamily = "SuperCap"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.ArmourFamily = "HeavyArmour"
+NewShipType.UnitCapsFamily = "Stop"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 10
+NewShipType.neutralValue = 3
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 13
+NewShipType.buildCost = 1500
+NewShipType.buildTime = 70
+NewShipType.buildPriorityOrder = 300
+NewShipType.retaliationRange = 0
+NewShipType.retaliationDistanceFromGoal = 160
+NewShipType.visualRange = 7000
+NewShipType.prmSensorRange = 12000
+NewShipType.secSensorRange = 12000
+NewShipType.detectionStrength = 1
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 14439.382317879
+NewShipType.TODistanceDisappear0 = 14266.1179698217
+NewShipType.TODistanceFade1 = 125
+NewShipType.TODistanceDisappear1 = 100
+NewShipType.TODistanceFade2 = 35108.024691358
+NewShipType.TODistanceDisappear2 = 385802.469135802
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.healthBarStyle = 2
+NewShipType.nlips = 0
+NewShipType.nlipsRange = 75000
+NewShipType.nlipsFar = 0
+NewShipType.nlipsFarRange = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.alwaysInRenderList = 0
+NewShipType.meshRenderLimit = 80000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 1
+--NewShipType.goblinsStartFade = 10000
+NewShipType.goblinsOff = 25000
+--NewShipType.upLOD = 14000
+--NewShipType.downLOD = 14015
+NewShipType.minimumZoomFactor = 0.25
+NewShipType.preciseATILimit = 7176.37507192516
+NewShipType.selectionPriority = 65
+NewShipType.militaryUnit = 0
+NewShipType.ignoreRaceWhenDocking = 0
+--addAbility(NewShipType, "CanLaunch")
+--NewShipType.launchTimeBetweenTwoFormations = 1
+--NewShipType.launchTimeBeforeStart = 1
+--NewShipType.launchNrOfShipsInDockFormation = 1
+--NewShipType.launchFormation = "delta"
+addAbility(NewShipType, "ParadeCommand", 1)
+--addAbility(NewShipType, "ShipHold", 1, 0, 0, "rallypoint", "", 20)
+addAbility(NewShipType,"HyperSpaceCommand",0,0.5,500,5000,0.5,3)
+addAbility(NewShipType, "FormHyperspaceGateCommand", 1, 1000, 1000, 1000, 0)
+addAbility(NewShipType, "CanBeRepaired")
+addAbility(NewShipType,"CanBeCaptured",350,0.5)
+addAbility(NewShipType, "CloakAbility", 0, 3.1, 4500, 4000, 1.5, 100, 1.5, 1000)
+addAbility(NewShipType,"HyperspaceInhibitorAbility",0,12000)
+addShield(NewShipType, "EMP", 10000, 20)
+addAbility(NewShipType, "SensorPing", 0, 1, 30, 2.5)
+LoadSharedModel(NewShipType, "Hgn_HyperspaceStation")
+--StartShipHardPointConfig(NewShipType,"efficency","Hardpoint_support","System","Innate","Damageable","efficency","","","","","","","","")
+--StartShipHardPointConfig(NewShipType,"support","Hardpoint_support","System","Innate","Damageable","comm","","","","","","","","")
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg03", 1, 0.45, 0, 0, 0, 50, 0, 0, 0, 200, 0, 0, 0, 80, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg02", 1, 0.1, 30, -20, 200, 25, 300, 150, 85, 50, 0, 0, 0, 115, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg04", 1, 0.08, 50, 40, -150, 50, 65, 25, 5, 25, 0, 0, 0, 130, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg05", 1, 0.09, 25, 10, -100, 30, 35, 75, 62, 75, 0, 0, 0, 120, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg01", 1, 0.13, 60, 30, 150, 25, 35, 125, 65, 75, 0, 0, 0, 90, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml02", 1, 0.07, 80, 125, 60, 75, 125, 80, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml07", 1, 0.05, 25, 0, -125, 50, 80, 35, 120, 75, 0, 0, 0, 80, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml08", 1, 0.03, 60, 95, 200, 50, 15, 200, 20, 125, 0, 0, 0, 70, 0, 0, 0, 50)
+NewShipType.battleScarMaxTriBase = 317
+NewShipType.battleScarMaxTriInc = 423
+NewShipType.sobDieTime = 8
+NewShipType.sobSpecialDieTime = 4
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0
+NewShipType.trailLinger = 3
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/Megaliths/", 3, "RandomEmit/CommStationRandomEmit", "markerAtop", 1, "Ambience/Chimera_hanger", "", 5, "RandomEmit/HANGAR_EMITTERS", "markerAbot")

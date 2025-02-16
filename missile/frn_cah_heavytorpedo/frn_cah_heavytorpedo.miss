@@ -1,0 +1,86 @@
+--===========================================================================
+--  Purpose : Lua definition file for Homeworld Ship.
+--            Contains loading information and flight dynamics information (among other things?)
+--
+--  Copyright Relic Entertainment, Inc.  All rights reserved.
+--===========================================================================
+NewShipType = StartMissileConfig()
+NewShipType.displayedName="$1579"
+NewShipType.sobDescription="$1580"
+NewShipType.TOIcon="circle"
+NewShipType.TOScale=1
+NewShipType.TODistanceFade0=7000
+NewShipType.TODistanceDisappear0=5000
+NewShipType.TODistanceFade1=350
+NewShipType.TODistanceDisappear1=300
+NewShipType.TODistanceFade2=25000
+NewShipType.TODistanceDisappear2=12000
+NewShipType.TOGroupScale=1
+NewShipType.TOGroupMergeSize=0
+NewShipType.mouseOverMinFadeSize=0.045
+NewShipType.mouseOverMaxFadeSize=0.1
+NewShipType.maxhealth=120
+NewShipType.regentime=0
+NewShipType.sideArmourDamage=1
+NewShipType.rearArmourDamage=1
+NewShipType.maxShield=0
+NewShipType.shieldRechargeTime=0
+NewShipType.nlips=0.0004
+NewShipType.nlipsRange=75000
+NewShipType.nlipsFar=0.0005
+NewShipType.nlipsFarRange=100000
+NewShipType.SMRepresentation="Invisible"
+NewShipType.meshRenderLimit=4000
+NewShipType.dotRenderLimit=4000
+NewShipType.minLOD=0.2
+NewShipType.minimumZoomFactor=0.55
+NewShipType.selectionPriority=30
+NewShipType.weaponName="frn_CAH_HeavyTorpedo"
+NewShipType.lifeTime=100
+NewShipType.launchTime= 2 -- IIRC, this is amount of time missile flies straight forward...
+NewShipType.detectionDistance=5000 --was 9000
+--NewShipType.proximityDetonationDist = 90
+NewShipType.clusterDistance=1500
+NewShipType.numberSubMunitions=8
+NewShipType.subMunitionName="vgr_mine_cluster"		--"vgr_lr_missile_front"
+NewShipType.clusterAngle=40
+NewShipType.sobDieTime=0.5
+NewShipType.density=1
+NewShipType.thrusterMaxSpeed=180 --was 400
+NewShipType.mainEngineMaxSpeed=210 --was 400
+NewShipType.rotationMaxSpeed=50 --was 400
+NewShipType.thrusterAccelTime=1.7 --was .75 across the board
+NewShipType.thrusterBrakeTime=1.7
+NewShipType.mainEngineAccelTime=1.7
+NewShipType.mainEngineBrakeTime=1.7
+NewShipType.rotationAccelTime=0.1 --was 0.2
+NewShipType.rotationBrakeTime=0.1
+NewShipType.thrusterUsage=0 --was 0.5
+NewShipType.accelerationAngle=60 --was 45
+NewShipType.mirrorAngle= 0 --was 30
+NewShipType.maxBankingAmount= 90 --was 85
+NewShipType.descendPitch=0
+NewShipType.goalReachEpsilon=5
+NewShipType.controllerType="Missile"
+NewShipType.slowdownFactor=0.5
+NewShipType.tumbleStaticX=0
+NewShipType.tumbleStaticY=0
+NewShipType.tumbleStaticZ=0
+NewShipType.tumbleDynamicX=0
+NewShipType.tumbleDynamicY=0
+NewShipType.tumbleDynamicZ=0
+NewShipType.tumbleSpeed=0
+NewShipType.targetAngle=2 --was 0
+NewShipType.spiralsPerSecondMin=0 
+NewShipType.spiralsPerSecondMax=0
+NewShipType.BuildFamily="NotBuildable"
+NewShipType.AttackFamily="UnAttackable"
+NewShipType.DockFamily="CantDock"
+NewShipType.AvoidanceFamily="DontAvoid"
+NewShipType.DisplayFamily="Munition"
+NewShipType.AutoFormationFamily="Fighter"
+NewShipType.ArmourFamily="MineArmour"
+LoadHODFile(NewShipType,1);
+setEngineTrail(NewShipType,0,5,"trail_ribbon.tga",0.2,0.5,0.25,16);
+setEngineBurn(NewShipType,15,0.5,1,15,0,0.7,0.1,25);
+loadShipPatchList(NewShipType,"data:sound/sfx/ship/hiigaran/NonMilitary/Engines/",0,"HTorpedoEng");

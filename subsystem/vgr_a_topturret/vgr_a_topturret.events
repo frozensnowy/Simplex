@@ -1,0 +1,31 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:39 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Top", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 =  
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Top_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", },
+                { "sound", "weapon/medgun_atmospherelow", },  
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, }, }

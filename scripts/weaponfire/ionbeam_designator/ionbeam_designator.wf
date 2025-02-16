@@ -1,0 +1,13 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:15
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_flare_red_ring"
+bulletfx = "beam_red_small"
+nopenetratefx = "dmg_flare_red_ring"
+deathtype = "deathBeam"
+firefx = "dmg_flare_red_ring"
+fire_sfx = "WEAPON/targetinglaser_paint"
+hit_clamp = 
+    { 0.5, 1.25, }

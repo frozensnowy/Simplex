@@ -1,0 +1,11 @@
+hitfx = "dmg_cloud_combo_small"
+bulletfx = "smallcannon_ACV7"
+nopenetratefx = "nopen_generic"
+fire_sfx = "WEAPON/FRIGATE/FIRE/VWEAPON_FIRIGATE_FLECHETTE_REPEATER_SHELL"
+firefx = "muzzle_flash_combo_small_frigate"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_clamp = {
+  1,
+  1,
+}

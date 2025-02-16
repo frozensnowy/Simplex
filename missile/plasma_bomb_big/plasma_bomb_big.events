@@ -1,0 +1,126 @@
+effects = 
+{
+	animations = 
+	{
+		animation1 = 
+		{
+			name = "MissileTrail",
+			length = 2,
+			loop = 1,
+			parent = "",
+			minimum = 0,
+			maximum = 0,
+			markers = 
+			{
+				"core",
+			},
+		},
+		animation2 = 
+		{
+			name = "Death",
+			length = 1,
+			loop = 0,
+			parent = "",
+			minimum = 0,
+			maximum = 0,
+			markers = 
+			{
+				"",
+			},
+		},
+	},
+	events = 
+	{
+		event1 = 
+		{
+			{
+				"anim",
+				"MissileTrail",
+			},
+			{
+				"animtime",
+				"0",
+			},
+			{
+				"marker",
+				"core",
+			},
+			{
+				"fx",
+				"fed_torpedo_quantum_bullet",
+			},
+			{
+				"sound",
+				"WEAPON/FED/TNG/FED_QUANTUM_FIRE",
+			},
+			{
+				"fx_scale", 
+				"20",
+			},
+			{
+				"fx_nlips",
+				"on",
+			},
+
+		},
+		event2 = 
+		{
+			{
+				"anim",
+				"Death",
+			},
+			{
+				"animtime",
+				"0",
+			},
+			{
+				"marker",
+				"Root",
+			},
+			{
+				"fx",
+				"xplosion_large",
+			},
+			{
+				"sound",
+				"Explosion/Small/ETG_Explode_Small_Plasma",
+			},
+			{
+				"fx_scale", 
+				"0.2",
+			},
+			{
+				"fx_transform",
+				"None",
+			},
+		},
+		event3 = 
+		{
+			{
+				"anim",
+				"Death",
+			},
+			{
+				"animtime",
+				"0",
+			},
+			{
+				"marker",
+				"Root",
+			},
+			{
+				"fx",
+				"shield_hit_bullet_combo",
+			},
+			{
+				"fx_scale", 
+				"entity",
+			},
+			{
+				"fx_transform",
+				"None",
+			},
+		},
+	},
+}
+

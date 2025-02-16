@@ -1,0 +1,171 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 2, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		disksmall = 
+		{ 
+			name = "disksmall", 
+			length = 2, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		animation1 = 
+		{ 
+			name = "Weapon_Ion1", 
+			length = 8, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+        event1 = 
+            { 
+                { "anim", "disk", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_NUCLEAR", }, 
+                { "fx_scale", "1", }, 
+            },
+        event2 = 
+            { 
+                { "anim", "disk", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "ca_cloud_spray", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_scale", "5", }, 
+            },           
+        event30 = 
+            { 
+                { "anim", "disk", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker1", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA", }, 
+                { "fx_scale", "1", }, 
+                { "fx_sm", "on", },                 
+            },     
+		disk1 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "dmg_capital_explosion_combo", }, 
+			{ "fx_scale", "70", }, 
+		}, 
+		
+        event1s = 
+            { 
+                { "anim", "disksmall", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_NUCLEAR", }, 
+                { "fx_scale", "0.5", }, 
+            },
+        event2s = 
+            { 
+                { "anim", "disksmall", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "ca_cloud_spray", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_scale", "2.5", }, 
+            },           
+        event30s = 
+            { 
+                { "anim", "disksmall", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker1", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA", }, 
+                { "fx_scale", "0.5", }, 
+                { "fx_sm", "on", },                 
+            },     
+		disk1s = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "dmg_capital_explosion_combo", }, 
+			{ "fx_scale", "35", }, 
+		}, 
+		
+        event1i = 
+            { 
+                { "anim", "Weapon_Ion1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Gravity_20000_Muzzle", }, 
+                { "sound", "WEAPON/MEGASHIP/FIRE/SAJUUK_HEAVY_ION_CANNON_BEAM", },   --{ "sound", "WEAPON/MEGASHIP/FIRE/DREADNAUGHT_FIRE_1", }, 
+                { "fx_scale", "1.3", }, 
+            }, 
+        event2i = 
+            { 
+                { "anim", "Weapon_Ion1", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_Gravity_20000_Muzzle", }, 
+                --{ "sound", "WEAPON/MEGASHIP/FIRE/SAJUUK_HEAVY_ION_CANNON_BEAM", }, 
+            }, 
+        event3i = 
+            { 
+                { "anim", "Weapon_Ion1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Gravity_20000_Muzzle", }, 
+                { "fx", "kpr_inverse_bubble_alt", }, 
+            }, 
+     event4i = {
+      {"anim","Weapon_Ion1",},
+      {"animtime","0.15",},
+      {"marker","Weapon_Gravity_20000_Muzzle",},
+      {"fx","fed_phaser_blue_muzzle",},    --dom_beam_muzzle
+      {"fx_scale","200",},  --100
+    },
+     event5i = {
+      {"anim","Weapon_Ion1",},
+      {"animtime","0.3",},
+      {"marker","Weapon_Gravity_20000_Muzzle",},
+      {"fx","fed_phaser_blue_muzzle",},    --dom_beam_muzzle
+      {"fx_scale","175",},  --100
+    },
+     event6i = {
+      {"anim","Weapon_Ion1",},
+      {"animtime","0.45",},
+      {"marker","Weapon_Gravity_20000_Muzzle",},
+      {"fx","fed_phaser_blue_muzzle",},    --dom_beam_muzzle
+      {"fx_scale","150",},  --100
+    },
+     event7i = {
+      {"anim","Weapon_Ion1",},
+      {"animtime","0.6",},
+      {"marker","Weapon_Gravity_20000_Muzzle",},
+      {"fx","fed_phaser_blue_muzzle",},    --dom_beam_muzzle
+      {"fx_scale","125",},  --100
+    },
+			
+	}, 
+}

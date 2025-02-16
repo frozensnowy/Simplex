@@ -1,0 +1,10 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:03:04
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+baseRes = 800
+res800 = "DATA:/UI/NewUI/Taskbar/controlgroups800.tga"
+res1024 = "DATA:/UI/NewUI/Taskbar/controlgroups1024.tga"
+res1280 = "DATA:/UI/NewUI/Taskbar/controlgroups1280.tga"
+res1600 = "DATA:/UI/NewUI/Taskbar/controlgroups1600.tga"

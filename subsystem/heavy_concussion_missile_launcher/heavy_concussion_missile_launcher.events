@@ -1,0 +1,28 @@
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Smoke", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_Smoke", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_T_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "4", }, 
+            },
+    },
+ 
+}

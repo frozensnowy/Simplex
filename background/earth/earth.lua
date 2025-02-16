@@ -1,0 +1,1 @@
+lensflares = {lensflare0 = {name = "SunSolFlare", position = {-750000, -60000, 0}, infinite = 0},}

@@ -1,0 +1,24 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:09 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "Missile", "Vgr_Mine", "Normal", 150, 6000, 0, 0, 0, 0, 1, 0, 0, 0.5, 2, 4, 0, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "vgr_mineburst")
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "vgr_mineburst_EMP")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    MineArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, })
+setAngles(NewWeaponType, 180, 0, 0, 0, 0)

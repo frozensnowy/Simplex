@@ -1,0 +1,13 @@
+hitfx = "mega_burst_explosion"
+bulletfx = "plasma_bolt_combo_yellow"
+nopenetratefx = "mega_burst_explosion"
+deathtype = "deathBeam"
+firefx = "plasma_squirt_combo_yellow"
+fire_sfx = "WEAPON/CARRIER/FIRE/VWEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+hit_clamp = {
+  1,
+  1,
+}

@@ -1,0 +1,6 @@
+-- Pretty-Printed using HW2 Pretty-Printer 1.27 by Mikail.
+mips = 
+{
+	"Data:UI/Pings/Meshes/battle_arrow_bad_32x32.tga",
+	"Data:UI/Pings/Meshes/battle_arrow_bad_16x16.tga",
+}

@@ -1,0 +1,13 @@
+hitfx = "photon_explosion_combo"
+bulletfx = "photon_bullet_spray"
+nopenetratefx = "photon_explosion_combo"
+deathtype = "deathBeam"
+firefx = "plasma_squirt_combo"
+fire_sfx = "WEAPON/CARRIER/FIRE/VWEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY"
+nopenetrate_sfx = "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY"
+hit_clamp = {
+  1,
+  1,
+}

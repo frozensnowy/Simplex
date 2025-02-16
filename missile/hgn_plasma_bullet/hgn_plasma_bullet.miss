@@ -1,0 +1,141 @@
+--===================================================================================
+--=== This Weapon File is Maked/Edited By Story of Wind Miss Editor 0.1.1 version ===
+--===================================================================================
+--=============================== !!!!! Warning !!!!! ===============================
+--===================================================================================
+--=============== Do not try to modify other programs. (Ex : Notepad) ===============
+--=============== If you use other programs to the cause of the error ===============
+--===================================================================================
+
+NewShipType = StartMissileConfig()
+
+--===================================================================================
+--==== General ======================================================================
+--===================================================================================
+
+--===================================================================================
+--==== General - Basic ==============================================================
+--===================================================================================
+NewShipType.displayedName = ""
+NewShipType.sobDescription = ""
+LoadHODFile(NewShipType,1)
+NewShipType.maxhealth = 375
+NewShipType.regentime = 0.00
+NewShipType.maxShield = 0
+NewShipType.shieldRechargeTime = 0.00
+
+--===================================================================================
+--==== General - Family =============================================================
+--===================================================================================
+NewShipType.BuildFamily = "NotBuildable"
+NewShipType.AttackFamily = "UnAttackable"
+NewShipType.DockFamily = "CantDock"
+NewShipType.AvoidanceFamily = "DontAvoid"
+NewShipType.DisplayFamily = "Munition"
+NewShipType.AutoFormationFamily = "Fighter"
+NewShipType.ArmourFamily = "MineArmour"
+NewShipType.controllerType = "Missile"
+
+--===================================================================================
+--==== General - Sound ==============================================================
+--===================================================================================
+
+
+--===================================================================================
+--==== Display ======================================================================
+--===================================================================================
+
+--===================================================================================
+--==== Display - TO Icon ============================================================
+--===================================================================================
+NewShipType.TOIcon = "Circle"
+NewShipType.TOScale = 0.0
+NewShipType.TOGroupScale = 1.0
+NewShipType.TOGroupMergeSize = 0.0
+NewShipType.mouseOverMinFadeSize = 0.100
+NewShipType.mouseOverMaxFadeSize = 0.045
+NewShipType.TODistanceFade0 = 300
+NewShipType.TODistanceFade1 = 1000
+NewShipType.TODistanceFade2 = 3000
+NewShipType.TODistanceDisappear0 = 250
+NewShipType.TODistanceDisappear1 = 950
+NewShipType.TODistanceDisappear2 = 2950
+
+--===================================================================================
+--==== Display - LOD ================================================================
+--===================================================================================
+NewShipType.nlips = 0.0004
+NewShipType.nlipsRange = 0.0004
+NewShipType.nlipsFar = 0.0005
+NewShipType.nlipsFarRange = 100000
+NewShipType.SMRepresentation = "Invisible"
+NewShipType.meshRenderLimit = 4000
+NewShipType.dotRenderLimit = 4000
+NewShipType.minLOD = 0.20
+NewShipType.minimumZoomFactor = 0.55
+NewShipType.selectionPriority = 30
+
+
+--===================================================================================
+--==== Physics ======================================================================
+--===================================================================================
+
+--===================================================================================
+--==== Physics - Movement ===========================================================
+--===================================================================================
+NewShipType.thrusterMaxSpeed = 0
+NewShipType.mainEngineMaxSpeed = 1500
+NewShipType.rotationMaxSpeed = 0
+NewShipType.thrusterAccelTime = 0.00
+NewShipType.mainEngineAccelTime = 0.00
+NewShipType.rotationAccelTime = 0.00
+NewShipType.thrusterBrakeTime = 0.00
+NewShipType.mainEngineBrakeTime = 0.00
+NewShipType.rotationBrakeTime = 0.00
+NewShipType.density = 1
+NewShipType.targetAngle = 2.00
+NewShipType.spiralsPerSecondMin = 0.30
+NewShipType.spiralsPerSecondMax = 0.40
+NewShipType.thrusterUsage = 0.00
+NewShipType.accelerationAngle = 0.00
+NewShipType.mirrorAngle = 0.00
+NewShipType.maxBankingAmount = 0.00
+NewShipType.descendPitch = 0.00
+NewShipType.goalReachEpsilon = 5
+NewShipType.slowdownFactor = 0.50
+
+--===================================================================================
+--==== Physics - Engine =============================================================
+--===================================================================================
+setEngineBurn(NewShipType,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00)
+
+--===================================================================================
+--==== Physics - Death ==============================================================
+--===================================================================================
+NewShipType.tumbleSpeed = 0.00
+NewShipType.tumbleStaticX = 0.00
+NewShipType.tumbleStaticY = 0.00
+NewShipType.tumbleStaticZ = 0.00
+NewShipType.tumbleDynamicX = 0.00
+NewShipType.tumbleDynamicY = 0.00
+NewShipType.tumbleDynamicZ = 0.00
+
+
+--===================================================================================
+--==== Warface ======================================================================
+--===================================================================================
+
+--===================================================================================
+--==== Warface - Basic ==============================================================
+--===================================================================================
+NewShipType.lifeTime = 14	--7.00
+NewShipType.launchTime = 0.00
+NewShipType.detectionDistance = 10
+NewShipType.proximityDetonationDist = 0
+NewShipType.sobDieTime = 0.50
+NewShipType.bottomArmourDamage = 0.00
+NewShipType.frontArmourDamage = 0.00
+NewShipType.rearArmourDamage = 1.00
+NewShipType.sideArmourDamage = 1.00
+NewShipType.topArmourDamage = 0.00
+NewShipType.weaponName = "Hgn_BigTorpedoLauncher"

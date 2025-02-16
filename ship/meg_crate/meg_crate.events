@@ -1,0 +1,311 @@
+effects = {
+  animations = {
+    mesh_default = {
+      name = "Default",
+      length = 10,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    mesh_hw1 = {
+      name = "Crate_HW1",
+      length = 10,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    mesh_hw2 = {
+      name = "Crate_HW2",
+      length = 10,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    mesh_pumpkin = {
+      name = "Pumpkin",
+      length = 10,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    mesh_pumpkin_face = {
+      name = "PumpkinFace",
+      length = 10,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation1 = {
+      name = "Unbox",
+      length = 0.4,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Open",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+		
+	animation3 = 
+        { 
+            name = "launch", 
+            length = 3, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation4 = 
+        { 
+            name = "dmg01", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.25, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation5 = 
+        { 
+            name = "dmg02", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.5, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation6 = 
+        { 
+            name = "dmg03", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.75, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation7 = 
+        { 
+            name = "Damage", 
+            length = 1, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+  events = {
+---mesh
+
+        mesh_default = 
+            { 
+                { "anim", "Default", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "crate_mesh_default_combo", },
+                { "fx_scale", "1", },
+            },
+        mesh_hw1 = 
+            { 
+                { "anim", "Crate_HW1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "crate_mesh_hw1_combo", },
+                { "fx_scale", "1", },
+            },
+        mesh_hw2 = 
+            { 
+                { "anim", "Crate_HW2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "crate_mesh_hw2_combo", },
+                { "fx_scale", "1", },
+            },
+        mesh_pumpkin = 
+            { 
+                { "anim", "Pumpkin", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "crate_mesh_pumpkin_combo", },
+                { "fx_scale", "1", },
+            },
+        mesh_pumpkin_face = 
+            { 
+                { "anim", "PumpkinFace", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "crate_mesh_pumpkin_face_combo", },
+                { "fx_scale", "1", },
+            },
+  
+---smoke
+
+        smokeinstant1 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "xplosion_detonation_combo", },                 --death_generic_cf_instant
+                { "fx_scale", "1", },  --entity
+            },            
+---chunks
+
+        chunk1 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0.08", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_35", },                  
+                { "fx_scale", "1.2", }, 
+            },      
+				event4 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "explosion_wave_combo_crate", },  --dmg_cloud_explosion_large
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "10", },    --1
+            }, 
+        event5 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Root", }, 
+                { "fx", "dora_hit_combo", },  --dmg_cloud_explosion_large
+                { "fx_scale", "2", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_combo_red_crate", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", }, 
+                { "fx_scale", "25", }, 
+            }, 
+        event7 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                --{ "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event8 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                --{ "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event9 = 
+            { 
+                { "anim", "Unbox", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                --{ "fx", "dmg_cloud_main_explosion_combo", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "15", }, 
+            }, 		
+						
+						
+						
+						
+    eventi6 = {
+      {
+        "anim",
+        "Open",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "sound",
+        "SPECIAL/VPROBE_RANDOM_EMIT",
+      },
+    },
+    eventi7 = {
+      {
+        "anim",
+        "Open",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "sound",
+        "SP_ELEMENTS/HGN_PROBE_ECM_OPEN",
+      },
+    },
+        event6s = 
+            { 
+                { "anim", "dmg01", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker1,marker2", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event7s = 
+            { 
+                { "anim", "dmg02", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker3,marker4", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event8s = 
+            { 
+                { "anim", "dmg03", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "5", }, 
+                { "fx_nlips", "on", }, 
+            },     
+  },
+}

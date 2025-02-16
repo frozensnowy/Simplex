@@ -1,0 +1,27 @@
+--=============================================================================
+--    Name    : Hgn_Mothership.madStates
+--    Purpose : Animation state data.
+--
+--Created 260403 by cgladstone
+--Copyright Relic Entertainment, Inc.  All rights reserved.
+--=============================================================================*/
+
+-- DOCK PATHS ---------------------------------------------------------
+RAD_CARRIER_DockPathOpen_OnSet = function(ship)
+	stopAnim(ship, "Close")
+	endEffect(ship, "Close")
+	startAnim(ship, "Open")
+	startEffect(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+
+RAD_CARRIER_DockPathClosed_OnSet = function(ship)
+	stopAnim(ship, "Open")
+	endEffect(ship, "Open")
+	startAnim(ship, "Close")
+	startEffect(ship, "Close")
+    setPauseTime(ship, "Close", 1000)
+end
+
+

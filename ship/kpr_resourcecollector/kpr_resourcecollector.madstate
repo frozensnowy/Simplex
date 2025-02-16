@@ -1,0 +1,51 @@
+-- RESOURCE COLLECITON ---------------------------------------------------------
+KPR_RESOURCECOLLECTOR_ResourceStart_OnSet = function(ship)
+    setState(ship, "ResourceStart", 0)
+    stopAnim(ship, "CLOSE")
+    stopAnim(ship, "ROTATE")
+    endEffect(ship, "RESOURCING")
+    endEffect(ship, "TORCHES")
+    endEffect(ship, "DUSTY")
+    startAnim(ship, "OPEN")
+    setPauseTime(ship, "OPEN", 1000)
+end
+
+KPR_RESOURCECOLLECTOR_ResourceStart_OnPause = function(ship)
+    setState(ship, "ResourceStart", 1)
+end
+
+KPR_RESOURCECOLLECTOR_ResourceDo_OnSet = function(ship)
+    --stopAnim(ship, "OPEN")
+    --stopAnim(ship, "CLOSE")
+    startAnim(ship, "ROTATE")
+    startEffect(ship, "RESOURCING")
+    startEffect(ship, "TORCHES")
+    startEffect(ship, "DUSTY")
+    setLoopCount(ship, "ROTATE", 1000000)
+    setState(ship, "ResourceDo", 1)
+end
+
+KPR_RESOURCECOLLECTOR_ResourceEnd_OnSet = function(ship)
+    stopAnim(ship, "OPEN")
+    stopAnim(ship, "ROTATE")
+    endEffect(ship, "RESOURCING")
+    endEffect(ship, "TORCHES")
+    startAnim(ship, "CLOSE")
+    setState(ship, "ResourceEnd", 1)
+    setPauseTime(ship, "CLOSE", 1000)
+end
+
+KPR_RESOURCECOLLECTOR_Launched_OnSet = function(ship)
+    endEffect(ship, "DUSTY")
+end
+
+-- ******************** REPAIR ****************************
+
+KPR_RESOURCECOLLECTOR_RepairStart_OnSet = function(ship)
+	startEffect(ship, "Repairing")
+end
+
+
+KPR_RESOURCECOLLECTOR_RepairEnd_OnSet = function(ship)
+	endEffect(ship, "Repairing")
+end

@@ -1,0 +1,39 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_BCUberPulse",
+      length = 2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Weapon_BCUberPulse",
+      },
+      {
+        "animtime",
+        "0.1",
+      },
+      {
+        "marker",
+        "Weapon_StbdAft_Muzzle",
+      },
+      {
+        "fx",
+        "ion_cannon_steam_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/ION_BEAM_DISCHARGE",
+      },
+    },    
+},
+}

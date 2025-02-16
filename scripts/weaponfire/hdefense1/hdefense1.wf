@@ -1,0 +1,32 @@
+hitfx = "hit_generic"
+--hitfx = "dmg_cloud_spray_large"
+
+bulletfx = "bullet_tracer_combo"
+--bulletfx = "kinetic_large_bullet"
+
+--nopenetratefx = "hit_generic"
+nopenetratefx = "dmg_cloud_spray_large"
+
+deathtype = "deathCannon"
+
+scartype = "Bullet/Bullet"
+--scartype = "Kinetic_Large/Kinetic_Large"
+
+--fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_CARRIER_KINETIC_AUTOGUN_SHELL"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+
+--hit_sfx = "weapon/fighter/impact/WEAPON_FIGHTER_Pea_shooter_Hit"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+
+--firefx = "muzzle_flash_combo_hd"
+firefx = "muzzle_flash_combo_small_capital2"
+
+--nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+
+hit_clamp = 
+    { 1, 1, }
+    
+       
+
+
+

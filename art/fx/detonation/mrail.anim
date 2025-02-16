@@ -1,0 +1,5 @@
+fps = 30
+startFrame = 0
+loopCount = 10
+texture = 
+    { "data:/ART/FX/Plasma_bomb/mrail00.tga", "data:/ART/FX/Plasma_bomb/mrail01.tga", "data:/ART/FX/Plasma_bomb/mrail02.tga", "data:/ART/FX/Plasma_bomb/mrail03.tga", "data:/ART/FX/Plasma_bomb/mrail04.tga", "data:/ART/FX/Plasma_bomb/mrail05.tga", }

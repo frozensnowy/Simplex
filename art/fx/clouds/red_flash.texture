@@ -1,0 +1,7 @@
+-- see Data:texture.lua.help for help
+
+outputFormat =
+{
+	version = 1,
+	noConvert = 1,
+}

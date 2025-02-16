@@ -1,0 +1,11 @@
+hitfx = "dmg_massive_mesh_sphere_ring"
+bulletfx = "bullet_generic"
+nopenetratefx = "nopen_generic"
+deathtype = "deathCannon"
+scartype = "Hgn_Torpedo/Torpedo"
+hit_sfx = "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA"
+nopentrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+hit_clamp = {
+  1,
+  1,
+}

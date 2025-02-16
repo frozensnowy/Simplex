@@ -1,0 +1,11 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 04-24-2009 Time: 11:58:17
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+baseRes=800;
+res800="DATA:/Ship/Icons/hwat_icon_ships_800.tga";
+res1024="DATA:/Ship/Icons/hwat_icon_ships_1024.tga";
+res1280="DATA:/Ship/Icons/hwat_icon_ships_1280.tga";
+res1600="DATA:/Ship/Icons/hwat_icon_ships_1600.tga";
+

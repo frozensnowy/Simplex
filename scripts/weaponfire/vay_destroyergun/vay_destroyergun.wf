@@ -1,0 +1,15 @@
+hitfx = "flak_hit_combo" --dmg_cloud_spray_large
+bulletfx = "vay_dd_bullet" --kinetic_large_bullet_combo
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+fire_sfx = "WEAPON/MOD/VAYKASHTANGUN" --was vaycannon
+firefx = "destroyerfire_combo" --frigatefire_combo
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+bullet_nlips = 0.0001 --was 0.0002
+hit_nlips = 0.0001
+hit_clamp = {
+  0.8,
+  0.8,
+}

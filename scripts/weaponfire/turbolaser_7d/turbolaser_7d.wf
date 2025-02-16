@@ -1,0 +1,13 @@
+hitfx = "dmg_cloud_comboM"
+bulletfx = "TURBOLASER_7D_EFFECT"
+nopenetratefx = "dmg_cloud_combo"
+deathtype = "deathBeam"
+firefx = "i_laser_large"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+fire_sfx = "turbolaser/tl_med_imp"
+hit_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = {
+  1,
+  1,
+}

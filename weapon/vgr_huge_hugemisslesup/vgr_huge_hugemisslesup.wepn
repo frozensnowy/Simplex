@@ -1,0 +1,24 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Missile","vgr_hugemissle","Normal Only",120,15000,0,0,0,0,1,0,1,30,0,0,1,0,40,25,0.1,"Normal",1,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",150000,150000,"")
+setPenetration(NewWeaponType,5,0.5,{
+  ResArmour = 0.6,
+},
+{
+  PlanetKillerArmour = 0,
+},
+{ 
+    MediumArmour = 0.1, 
+})
+setAccuracy(NewWeaponType,1,{
+  Resource = 0,
+},{
+  Fighter = 0,
+},{
+  Corvette = 0,
+},{
+  munition = 0,
+},{
+  Resource = 0,
+})
+setAngles(NewWeaponType,0,-90,90,-20,90)
+setMiscValues(NewWeaponType,0,1)

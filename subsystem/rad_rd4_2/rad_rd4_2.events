@@ -1,0 +1,14 @@
+effects = {
+animations = {
+	animation1 = {name = "weapon_turret", length = 2, loop = 0, parent = "", minimum = 0, maximum = 0, markers = {""},},
+},
+events = {
+	event1 = {{"anim", "weapon_turret"}, {"animtime", "0"}, {"marker", "Weapon_VHAATurret_Muzzle"}, {"fx", 
+"unsc/cannon_muzzle_combo_medium"}, {"fx_scale", ".3"},},
+	event2 = {{"anim", "weapon_turret"}, {"animtime", "0"}, {"marker", "Weapon_VHAATurret_Slave1_Muzzle"}, {"fx", 
+"unsc/cannon_muzzle_combo_medium"}, {"fx_scale", ".3"},},
+	event3 = {{"anim", "weapon_turret"}, {"animtime", "0"}, {"marker", "Weapon_VHAATurret_Slave2_Muzzle"}, {"fx", 
+"unsc/cannon_muzzle_combo_medium"}, {"fx_scale", ".3"},},
+	event4 = {{"anim", "weapon_turret"}, {"animtime", "0"}, {"marker", "Weapon_VHAATurret_Slave3_Muzzle"}, {"fx", 
+"unsc/cannon_muzzle_combo_medium"}, {"fx_scale", ".3"},},
+},}

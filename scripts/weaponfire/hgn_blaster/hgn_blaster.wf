@@ -1,0 +1,18 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:16
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_plasma_cloud_combo"
+bulletfx = "vgr_wave_beam_combo_blue"
+nopenetratefx = "dmg_plasma_cloud_combo"
+deathtype = "deathBeam"
+firefx = "alos_thor_hammer_fire_combo"	--sunfire_squirt
+fire_sfx = "WEAPON/RandomSample/tachyon_lance_fire"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/RandomSample/tachyon_lance_hit"
+nopenetrate_sfx = "WEAPON/RandomSample/tachyon_lance_hit"
+bullet_nlips = 0.0001
+hit_nlips = 0.0001
+hit_clamp = 
+    { 1, 1, }

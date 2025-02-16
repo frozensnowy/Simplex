@@ -1,0 +1,12 @@
+fps = 30
+startFrame = 0
+loopCount = 1
+texture = 
+{ 
+"data:/ART/FX/ion/xelecimpact1.dds",
+"data:/ART/FX/ion/xelecimpact2.dds",
+"data:/ART/FX/ion/xelecimpact3.dds",
+"data:/ART/FX/ion/xelecimpact4.dds",
+"data:/ART/FX/ion/xelecimpact5.dds",
+"data:/ART/FX/ion/xelecimpact6.dds",
+}

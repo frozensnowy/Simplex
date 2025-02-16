@@ -1,0 +1,9 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:02 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "AnimatedTurret", "Bullet", "Kinetic_Large", "Normal", 400, 840, 0, 0, 0, 1, 0.2, 0.7, 0.5, 80, 40, "Normal")
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 18, 18, "")
+setPenetration(NewWeaponType, 1)
+setAccuracy(NewWeaponType, 1)

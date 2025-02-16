@@ -1,0 +1,14 @@
+--=============================================================================
+--    Name    : VAY_CABATTLE.madStates
+--    Purpose : Animation state data.
+--
+-- Created 110604 by Heresy Heavy Industries.
+-- Copyright Relic Entertainment, Inc.  All rights reserved.
+-- Heresy and Terror! :3
+-- May contain traces of thoughts.
+--=============================================================================*/
+
+MEG_E767_Normal_OnSet = function(ship)
+    startAnim(ship, "DrumRotation")
+    setLoopCount(ship, "DrumRotation", 100000000)   --infinite looping.
+end

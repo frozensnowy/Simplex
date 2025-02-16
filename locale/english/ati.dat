@@ -1,0 +1,14 @@
+filerange 6000 6299
+rangestart 6000 6299
+
+//ATI.lua
+6000	%d RUs
+6001	Total: %d RUs
+6002	To Form Gate: %d RUs
+6003	?? RUs
+6004	Total: ?? RUs
+
+//Blobs.lua
+6050	%d RUs
+
+rangeend

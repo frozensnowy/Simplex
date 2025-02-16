@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:26:52 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+function Hgn_Mine_Open_OnSet(ship)
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+function Hgn_Mine_Close_OnSet(ship)
+    stopAnim(ship, "Open")
+    startAnim(ship, "Close")
+end

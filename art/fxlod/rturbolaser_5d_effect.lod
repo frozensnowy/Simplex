@@ -1,0 +1,18 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "RTURBOLASER_5D_EFFECT",
+		distance = 20000,
+	},
+	lod1 = 
+	{
+		fx = "BASE_RTURBOLASER_5D_LOD",
+		distance = 45000,
+	},
+	lod2 = 
+	{
+		fx = "",
+		distance = 70000,
+	},		
+}

@@ -1,0 +1,12 @@
+hitfx = "dmg_laser_hit_LC"
+bulletfx = "Vgr_laser_combo"
+nopenetratefx = "dmg_laser_hit_LC"
+deathtype = "deathBeam"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+fire_sfx = "TFS_SOUNDS/LIGHT_LANCE_FIREFX"
+hit_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = {
+  1,
+  1,
+}

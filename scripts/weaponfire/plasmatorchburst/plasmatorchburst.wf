@@ -1,0 +1,15 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:52 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "emp_pulse_ring"
+bulletfx = "goo_burst_blue"  --"kad_plasmaturchburst"
+nopenetratefx = "emp_pulse_ring"
+deathtype = "deathPlasma"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+bullet_sfx = "WEAPON/BurnerProj_Hit3"
+hit_sfx = "WEAPON/Burner_Fired1"	--"WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/Burner_Fired1"	--"WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = 
+    { 1, 1, }

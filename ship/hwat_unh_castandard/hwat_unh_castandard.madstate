@@ -1,0 +1,115 @@
+-- Cold Fusion LUA Decompiler v1.0.0
+-- By 4E534B
+-- Date: 02-29-2008 Time: 00:58:58
+-- On error(s), send source (compiled) file to 4E534B@gmail.com
+
+HWAT_UNH_CASTANDARD_NIS00_OnSet = function(ship)
+	startAnim(ship, "open")
+end
+
+HWAT_UNH_CASTANDARD_NIS01_OnSet = function(ship)
+	startAnim(ship, "close")
+end
+
+function HWAT_UNH_CASTANDARD_Normal_OnSet(ship)
+	startParamAnim(ship, "HorizontalThrustVectoring", "HorizontalRotation");
+
+end
+HWAT_UNH_CASTANDARD_Launched_OnSet = function(ship)
+	startTime = 0
+	if(isAnimRunning(ship, "Close") ~= 0) then
+	startTime = getAnimLength(ship, "Close") - getTime(ship, "Close")
+	stopAnim(ship, "Close")
+	endEffect(ship, "Close")
+	end
+	startAnim(ship, "Open")
+	startEffect(ship, "Open")
+	setTime(ship,"Open",startTime)
+	setPauseTime(ship, "Open", 1000)
+end
+
+HWAT_UNH_CASTANDARD_Docked_OnSet = function(ship)
+	startTime = 0
+	if(isAnimRunning(ship, "Open") ~= 0) then
+	startTime = getAnimLength(ship, "Open") - getTime(ship, "Open")
+	stopAnim(ship, "Open")
+	endEffect(ship, "Open")
+	end
+	startAnim(ship, "Close")
+	startEffect(ship, "Close")
+	setTime(ship,"Close",startTime)
+	setPauseTime(ship, "Close", 1000)
+end
+
+HWAT_UNH_CASTANDARD_CodeRed_OnSet = function(ship)
+	setState(ship, "CodeRed", 0)
+	if(isAnimRunning(ship,"CodeRed2") == 0) then
+	startTime = 0
+	if(isAnimRunning(ship,"CodeGreen") ~= 0) then
+	startTime = getAnimLength(ship, "CodeGreen") - getTime(ship, "CodeGreen")
+	stopAnim(ship, "CodeGreen")
+	endEffect(ship, "CodeGreen")
+	end
+	startAnim(ship, "CodeRed2")
+	startEffect(ship, "CodeRed2")
+	setTime(ship,"CodeRed2",startTime)
+	setPauseTime(ship, "CodeRed2", 1000)
+	end
+end
+
+HWAT_UNH_CASTANDARD_CodeRed_OnPause = function(ship)
+	setState(ship, "CodeRed", 1)
+end
+
+HWAT_UNH_CASTANDARD_CodeGreen_OnSet = function(ship)
+	if(isAnimRunning(ship,"CodeGreen") == 0) then
+	startTime = 0
+	if(isAnimRunning(ship,"CodeRed2") ~= 0) then
+	startTime = getAnimLength(ship, "CodeRed2") - getTime(ship, "CodeRed2")
+	stopAnim(ship, "CodeRed2")
+	endEffect(ship, "CodeRed2")
+	end
+	startAnim(ship, "CodeGreen")
+	startEffect(ship, "CodeGreen")
+	setTime(ship,"CodeGreen",startTime)
+	setPauseTime(ship, "CodeGreen", 1000)
+	end
+end
+
+
+
+--===
+--HWAT_UNH_CASTANDARD_CodeRed_OnSet = function(ship)
+--	setState(ship, "CodeRed", 0)
+--	if(isAnimRunning(ship,"CodeRed") == 0) then
+--	startTime = 0
+--	if(isAnimRunning(ship,"CodeGreen") ~= 0) then
+--	startTime = getAnimLength(ship, "CodeGreen") - getTime(ship, "CodeGreen")
+--	stopAnim(ship, "CodeGreen")
+--	endEffect(ship, "CodeGreen")
+--	end
+--	startAnim(ship, "CodeRed")
+--	startEffect(ship, "CodeRed")
+--	setTime(ship,"CodeRed",startTime)
+--	setPauseTime(ship, "CodeRed", 1000)
+--	end
+--end
+
+--HWAT_UNH_CASTANDARD_CodeRed_OnPause = function(ship)
+--	setState(ship, "CodeRed", 1)
+--end
+
+--HWAT_UNH_CASTANDARD_CodeGreen_OnSet = function(ship)
+--	if(isAnimRunning(ship,"CodeGreen") == 0) then
+--	startTime = 0
+--	if(isAnimRunning(ship,"CodeRed") ~= 0) then
+--	startTime = getAnimLength(ship, "CodeRed") - getTime(ship, "CodeRed")
+--	stopAnim(ship, "CodeRed")
+--	endEffect(ship, "CodeRed")
+--	end
+--	startAnim(ship, "CodeGreen")
+--	startEffect(ship, "CodeGreen")
+--	setTime(ship,"CodeGreen",startTime)
+--	setPauseTime(ship, "CodeGreen", 1000)
+--	end
+--end

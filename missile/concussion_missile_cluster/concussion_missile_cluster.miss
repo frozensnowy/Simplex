@@ -1,0 +1,73 @@
+--===========================================================================
+--  Purpose : Lua definition file for Homeworld Ship.
+--            Contains loading information and flight dynamics information (among other things?)
+--
+--  Copyright Relic Entertainment, Inc.  All rights reserved.
+--===========================================================================
+NewShipType = StartMissileConfig()
+NewShipType.displayedName="Concussion Missile"
+NewShipType.sobDescription="Concussion Missile"
+NewShipType.mouseOverMinFadeSize=0.045
+NewShipType.mouseOverMaxFadeSize=0.1
+NewShipType.maxhealth=5
+NewShipType.regentime=0
+NewShipType.sideArmourDamage=1
+NewShipType.rearArmourDamage=1
+NewShipType.maxShield=0
+NewShipType.shieldRechargeTime=0
+NewShipType.nlips=0.0008
+NewShipType.nlipsRange=75000
+NewShipType.nlipsFar=0.0005
+NewShipType.nlipsFarRange=100000
+NewShipType.SMRepresentation="Invisible"
+NewShipType.meshRenderLimit=2000
+NewShipType.dotRenderLimit=4000
+NewShipType.minLOD=0.2
+NewShipType.minimumZoomFactor=1
+NewShipType.selectionPriority=30
+NewShipType.weaponName="Concussion_Missile_Launcher_Spray"
+NewShipType.lifeTime=10
+NewShipType.launchTime=.1
+NewShipType.detectionDistance=2000
+NewShipType.proximityDetonationDist=5
+NewShipType.sobDieTime=0.5
+NewShipType.density=1
+NewShipType.thrusterMaxSpeed=600
+NewShipType.mainEngineMaxSpeed=900
+NewShipType.rotationMaxSpeed=120
+NewShipType.thrusterAccelTime=1
+NewShipType.thrusterBrakeTime=1
+NewShipType.mainEngineAccelTime=1
+NewShipType.mainEngineBrakeTime=1
+NewShipType.rotationAccelTime=0.2
+NewShipType.rotationBrakeTime=0.2
+NewShipType.thrusterUsage=0
+NewShipType.accelerationAngle=90
+NewShipType.mirrorAngle=0
+NewShipType.maxBankingAmount=0
+NewShipType.descendPitch=0
+NewShipType.goalReachEpsilon=1
+NewShipType.controllerType="Missile"
+NewShipType.slowdownFactor=1
+NewShipType.tumbleStaticX=4
+NewShipType.tumbleStaticY=4
+NewShipType.tumbleStaticZ=4
+NewShipType.tumbleDynamicX=10
+NewShipType.tumbleDynamicY=10
+NewShipType.tumbleDynamicZ=10
+NewShipType.tumbleSpeed=1
+NewShipType.targetAngle=5
+NewShipType.spiralsPerSecondMin=4
+NewShipType.spiralsPerSecondMax=5
+NewShipType.BuildFamily="NotBuildable"
+NewShipType.AttackFamily="small_missile"
+NewShipType.DockFamily="CantDock"
+NewShipType.AvoidanceFamily="strikecraft"
+NewShipType.DisplayFamily="Munition"
+NewShipType.AutoFormationFamily="Fighter"
+NewShipType.ArmourFamily="Unarmoured"
+LoadHODFile(NewShipType,1);
+setEngineTrail(NewShipType,1,.5,"trail_ribbon.tga",0.2,0.5,0.025,.1);
+setEngineBurn(NewShipType,3,0.5,1,1,0,0.7,0.1,3);
+loadShipPatchList(NewShipType,"data:sound/sfx/ship/vaygr/NonMilitary/Engines/"
+                             ,0,"VMissleEng");

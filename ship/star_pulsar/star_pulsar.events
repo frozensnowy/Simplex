@@ -1,0 +1,211 @@
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "flare", 
+            length = 19, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        wind = 
+        { 
+            name = "wind", 
+            length = 3, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },    
+        disk = 
+        { 
+          name = "disk", 
+          length = 10, 
+          loop = 1, 
+          parent = "", 
+          minimum = 0, 
+          maximum = 0, 
+          markers = 
+          { "", },
+        },
+        atmosphere = 
+        { 
+          name = "atmosphere", 
+          length = 10, 
+          loop = 1, 
+          parent = "", 
+          minimum = 0, 
+          maximum = 0, 
+          markers = 
+          { "", },
+        },
+    }, 
+    events = 
+    {   
+    		corona = 
+        	{ 
+                { "anim", "atmosphere", }, 
+                { "animtime", "0", }, 
+                { "marker", "disk", }, 
+                { "fx", "corona_pulsar", }, 
+                { "fx_scale", "30000", }, 
+                { "fx_sm", "on", }, 
+            },
+        disk = 
+        { 
+          { "anim", "disk", }, 
+          { "animtime", "-1", }, 
+          { "marker", "disk", }, 
+          { "fx", "blackhole_disk_emitter_pulsar", }, 
+          { "fx_scale", "6", }, 
+          { "fx_sm", "on", }, 
+        }, 
+    		eventball1 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0", }, 
+                { "marker", "fx", }, 
+                { "fx", "car_beam_muzzle_sun_blue", }, 
+                { "fx_scale", "2000.0", }, 
+                { "fx_sm", "on", }, 
+            },
+    		eventball2 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0", }, 
+                { "marker", "disk", }, 
+                { "fx", "shield_hit_bullet_combo_sun_blue", }, 
+                { "fx_scale", "0.1", }, 
+                { "fx_sm", "on", }, 
+            },
+    		eventwind1 = 
+        	{ 
+                { "anim", "wind", }, 
+                { "animtime", "0", }, 
+                { "marker", "fx", }, 
+                { "fx", "misslelike_boost_steam_spray_pulsar", }, 
+                { "fx_scale", "4000", }, 
+                { "fx_sm", "on", }, 
+            },
+        event_jet1_n = 
+            { 
+                { "anim", "flare", }, 
+                { "animtime", "0", }, 
+                { "marker", "North", }, 
+                { "fx", "pro_tech_hyperspace_vacuum_pulsar", }, 
+                { "fx_scale", "100", }, 
+                { "fx_sm", "on", }, 
+            }, 
+        event_jet1_s = 
+            { 
+                { "anim", "flare", }, 
+                { "animtime", "0", }, 
+                { "marker", "South", }, 
+                { "fx", "pro_tech_hyperspace_vacuum_pulsar", }, 
+                { "fx_scale", "100", }, 
+                { "fx_sm", "on", }, 
+            }, 
+    		eventflare1 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },
+        eventflare2 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.075", }, 
+                { "marker", "marker2", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },
+        eventflare3 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker3", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },
+        eventflare4 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.225", }, 
+                { "marker", "marker4", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },
+        eventflare5 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "marker5", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },
+        eventflare6 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.375", }, 
+                { "marker", "marker6", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },                    
+        eventflare7 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "marker7", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },              
+        eventflare8 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.525", }, 
+                { "marker", "marker8", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },
+        eventflare9 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "marker9", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },                         
+        eventflare10 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.675", }, 
+                { "marker", "marker10", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },                         
+        eventflare11 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "marker11", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },                         
+        eventflare12 = 
+        	{ 
+                { "anim", "flare", }, 
+                { "animtime", "0.825", }, 
+                { "marker", "marker12", }, 
+                { "fx", "explosionjetinfrequent", }, 
+                { "fx_scale", "9555.5", }, 
+            },       
+            
+    }, 
+}

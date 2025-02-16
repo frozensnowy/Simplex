@@ -1,0 +1,190 @@
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Torpedo", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Weapon_Torpedo1", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+        animation3 = 
+        { 
+            name = "Weapon_Torpedo2", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+        animation4 = 
+        { 
+            name = "Weapon_Torpedo3", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+        animation5 = 
+        { 
+            name = "Weapon_Torpedo4", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+        animation6 = 
+        { 
+            name = "Weapon_Torpedo5", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, },   
+                                                       
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1.5", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_Torpedo1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo1_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "2.5", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event3 = 
+            { 
+                { "anim", "Weapon_Torpedo2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo2_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "2", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event4 = 
+            { 
+                { "anim", "Weapon_Torpedo3", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo3_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1.4", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event5 = 
+            { 
+                { "anim", "Weapon_Torpedo4", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo4_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "2.4", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event6 = 
+            { 
+                { "anim", "Weapon_Torpedo5", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo5_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1.9", },
+                --{ "fx_nlips", "on", }, 
+            },     
+            
+            event1f = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo_Position", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", }, 
+                --{ "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+        event2f = 
+            { 
+                { "anim", "Weapon_Torpedo1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo1_Position", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", }, 
+                --{ "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event3f = 
+            { 
+                { "anim", "Weapon_Torpedo2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo2_Position", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", }, 
+                --{ "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event4f = 
+            { 
+                { "anim", "Weapon_Torpedo3", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo3_Position", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", }, 
+                --{ "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event5f = 
+            { 
+                { "anim", "Weapon_Torpedo4", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo4_Position", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", }, 
+                --{ "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1", },
+                --{ "fx_nlips", "on", }, 
+            }, 
+            event6f = 
+            { 
+                { "anim", "Weapon_Torpedo5", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Torpedo5_Position", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", }, 
+                --{ "sound", "WEAPON/ROCKET", }, 
+                { "fx_scale", "1", },
+                --{ "fx_nlips", "on", }, 
+            },     
+            
+}, }

@@ -1,0 +1,160 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:16 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Wormhole"
+NewShipType.sobDescription = "Secrets of the Cosmos"
+NewShipType.maxhealth = 920000
+NewShipType.regentime = 3000
+NewShipType.minRegenTime = 750
+NewShipType.sideArmourDamage = 1
+NewShipType.rearArmourDamage = 1
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.unitCapsNumber = 1
+NewShipType.paradeData = "kpr_shipyard_parade_old"
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 5000
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 35
+NewShipType.mainEngineMaxSpeed = 35
+NewShipType.rotationMaxSpeed = 5
+NewShipType.thrusterAccelTime = 15
+NewShipType.thrusterBrakeTime = 5
+NewShipType.mainEngineAccelTime = 30
+NewShipType.mainEngineBrakeTime = 20
+NewShipType.rotationAccelTime = 0.7
+NewShipType.rotationBrakeTime = 0.4
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 30
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 0
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 25
+NewShipType.slideMoveRange = 100
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 0
+NewShipType.tumbleStaticY = 0
+NewShipType.tumbleStaticZ = 0
+NewShipType.tumbleDynamicX = 0
+NewShipType.tumbleDynamicY = 0
+NewShipType.tumbleDynamicZ = 0
+NewShipType.tumbleSpecialDynamicX = 0
+NewShipType.tumbleSpecialDynamicY = 0
+NewShipType.tumbleSpecialDynamicZ = 0
+NewShipType.relativeMoveFactor = 1
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.MinimalFamilyToFindPathAround = "MotherShip"
+NewShipType.BuildFamily = "Shipyard_Kpr"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "Shipyard"
+NewShipType.AvoidanceFamily = "BigRock"
+NewShipType.DisplayFamily = "Capital"
+NewShipType.AutoFormationFamily = "SuperCap"
+NewShipType.CollisionFamily = "Big"
+NewShipType.ArmourFamily = "HeavyArmour"
+NewShipType.UnitCapsFamily = "Stop"    --"Capital"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 40
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 40
+NewShipType.buildCost = 4000
+NewShipType.buildTime = 150
+NewShipType.buildPriorityOrder = 5
+NewShipType.retaliationRange = 0
+NewShipType.retaliationDistanceFromGoal = 0
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 2500
+NewShipType.secSensorRange = 3500
+NewShipType.detectionStrength = 1
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 14439.382317879
+NewShipType.TODistanceDisappear0 = 14266.1179698217
+NewShipType.TODistanceFade1 = 125
+NewShipType.TODistanceDisappear1 = 100
+NewShipType.TODistanceFade2 = 35108.024691358
+NewShipType.TODistanceDisappear2 = 385802.469135802
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.healthBarStyle = 2
+NewShipType.nlips = 0
+NewShipType.nlipsRange = 75000
+NewShipType.nlipsFar = 0
+NewShipType.nlipsFarRange = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.alwaysInRenderList = 0
+NewShipType.meshRenderLimit = 5000000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 1
+NewShipType.goblinsStartFade = 18000
+NewShipType.goblinsOff = 18000
+NewShipType.minimumZoomFactor = 0.25
+NewShipType.preciseSelectionLimit = 40000
+NewShipType.preciseATILimit = 7176.37507192516
+NewShipType.selectionPriority = 65
+NewShipType.militaryUnit = 0
+-- addAbility(NewShipType, "CanDock", 1, 0)
+-- NewShipType.dockTimeBetweenTwoFormations = 1
+-- NewShipType.dockTimeBeforeStart = 2
+-- NewShipType.dockNrOfShipsInDockFormation = 1
+-- NewShipType.dockFormation = "delta"
+-- NewShipType.queueFormation = "dockline"
+-- NewShipType.dontDockWithOtherRaceShips = 1
+-- NewShipType.ignoreRaceWhenDocking = 0
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 2
+NewShipType.launchTimeBeforeStart = 0
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "delta"
+addAbility(NewShipType, "CanBeCaptured", 180, 0.1)
+addAbility(NewShipType, "ParadeCommand", 1)
+addAbility(NewShipType, "CanBeRepaired")
+addAbility(NewShipType, "RetireAbility", 1, 1)
+addAbility(NewShipType, "HyperSpaceCommand", 0, 2, 1000, 3000, 0, 3)
+addAbility(NewShipType, "GuardCommand", 74, 3000, 1400)
+addAbility(NewShipType, "WaypointMove")
+addAbility(NewShipType, "MoveCommand", 1, 0)
+addAbility(NewShipType, "ShipHold", 1, 0, 0, "rallypoint", "", 0)
+addAbility(NewShipType, "CanBuildShips", 1, "Frigate_Kpr, SuperCap_Kpr, Shipyard_Kpr, UltraCap_Kpr, Utility_Kpr, Probe_Kpr", "Utility, Frigate, Platform, Capital")
+addAbility(NewShipType, "HyperspaceInhibitorAbility", 1, 12500)
+AddShipAbility(NewShipType, "HyperspaceInhibitor", 1, "ThisShipOnly", 0)
+addShield(NewShipType, "EMP", 6000, 100)
+LoadSharedModel(NewShipType, "kpr_shipyard_old")
+StartShipHardPointConfig(NewShipType, "Production 3", "Hardpoint_Capital", "System", "Production", "Damageable", "kpr_ms_capital", "", "", "", "", "", "", "", "")
+
+StartShipHardPointConfig(NewShipType,"Weight","Hardpoint_Support","System","Innate","Damageable","weight","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"experience","Hardpoint_Support","System","Innate","Damageable","experience","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"efficency","Hardpoint_Support","System","Innate","Damageable","efficency","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"en","Hardpoint_Support","System","Innate","Damageable","en","","","","","","","","")
+
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg03", 1, 0.75, 2000, 1400, 0, 50, 0, 0, 0, 200, 0, 0, 0, 50, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg02", 1, 0.05, 300, -2000, 200, 25, 300, 150, 85, 50, 0, 0, 0, 85, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg04", 1, 0.05, 2200, 2200, -150, 50, 65, 25, 5, 25, 0, 0, 0, 95, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg05", 1, 0.05, 2500, -2500, -100, 30, 35, 75, 62, 75, 0, 0, 0, 80, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg01", 1, 0.05, 1600, 1300, 150, 25, 35, 125, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg03", 1, 0.01, -1800, -1250, 60, 75, 125, 80, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg02", 1, 0.01, -2500, 2500, -125, 50, 80, 35, 120, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg04", 1, 0.01, 1500, -1500, 200, 50, 15, 200, 20, 125, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg04", 1, 0.01, 1000, 1000, -300, 25, 35, 80, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg01", 1, 0.01, -1200, -1020, 30, 75, 35, 25, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+NewShipType.battleScarMaxTriBase = 960
+NewShipType.battleScarMaxTriInc = 1280
+NewShipType.sobDieTime = 7
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 1
+NewShipType.trailLinger = 3
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/megaliths/", 1, "Ambience/Gates", "")

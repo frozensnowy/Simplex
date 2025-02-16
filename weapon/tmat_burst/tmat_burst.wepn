@@ -1,0 +1,9 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:01 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "SphereBurst", "tmat_burst_fx", "Normal", 0, 0, 700, 2, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 1, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "Disable", "Target", 40, 40, "")
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 128800, 128800, "")
+setPenetration(NewWeaponType, 15, 1)

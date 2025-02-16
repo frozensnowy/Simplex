@@ -1,0 +1,125 @@
+
+
+levelDesc = "Digital Combat Simulator <c=0095D9>(Air Combat)</c>"
+maxPlayers = 6
+player = {}
+
+for k = 0, maxPlayers - 1 do
+	player[k] = {id = k, name = "", raceName = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	local my_seed_1 = {seed = -12345}
+	local n = 20
+	local dim = 20000
+	local dim2 = 18000
+	local dist = {1, "Pebble", "Pebble_1", {0,0,0,}, 100, 0, 0, 0, 0,}
+
+	setWorldBoundsInner({0, 0, 0}, {40000, 40000, 40000})
+	setWorldBoundsOuter({0, 0, 0}, {80000, 80000, 80000})
+
+	addPoint("StartPos0", {1+0.3*dim, -dim, 2-dim}, {0,   0, 0})
+	addPoint("StartPos1", {2-0.3*dim, -dim, 7-dim}, {0,  0, 0})
+	addPoint("StartPos2", {3+0.3*dim, 3, 4}, {0,  90, 0})
+	addPoint("StartPos3", {7-0.3*dim, 5, 5}, {0, -90, 0})
+	addPoint("StartPos4", {3+0.3*dim, dim, 6+dim}, {0, 180, 0})
+	addPoint("StartPos5", {2-0.3*dim, dim, 2+dim}, {0, 180, 0})
+	
+	easyPatch({ 1+0.2*dim, -dim, 2-dim}, 100, my_seed_1)
+	easyPatch({ 2-0.2*dim, -dim, 7-dim}, 100, my_seed_1)
+	easyPatch({ 3+0.2*dim, 3, 4}, 100, my_seed_1)
+	easyPatch({ 7-0.2*dim, 5, 5}, 100, my_seed_1)
+	easyPatch({ 3+0.2*dim, dim, 6+dim}, 100, my_seed_1)
+	easyPatch({ 2-0.2*dim, dim, 2+dim}, 100, my_seed_1)
+		
+	addSquadron("Aircraft Carrier", "meg_carrier_huge", {random(-1500,1500), -dim+random(-1500,1500), -dim+random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  addSquadron("Aircraft Carrier", "meg_carrier_huge", {random(-1500,1500), random(-1500,1500), random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  addSquadron("Aircraft Carrier", "meg_carrier_huge", {random(-1500,1500), dim+random(-1500,1500), dim+random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  
+  addSquadron("MediumBattleship", "meg_titan_cruiser", {-dim, random(-150,150), random(-150,150)}, -1, {0, -90, 0,}, 0, 0)
+	addSquadron("MediumBattleship", "meg_titan_cruiser", {dim, random(-150,150), random(-150,150)}, -1, {0, 90, 0,}, 0, 0)
+  
+  addSquadron("meg_reinforcementpad", "meg_reinforcementpad", {-dim, random(-150,150), random(-150,150)-3000}, -1, {0, -90, 0}, 0, 0)
+  addSquadron("meg_reinforcementpad", "meg_reinforcementpad", {-dim, random(-150,150), random(-150,150)+3000}, -1, {0, -90, 0}, 0, 0)
+  addSquadron("meg_reinforcementpad", "meg_reinforcementpad", {dim, random(-150,150), random(-150,150)+3000}, -1, {0, 90, 0}, 0, 0)
+  addSquadron("meg_reinforcementpad", "meg_reinforcementpad", {dim, random(-150,150), random(-150,150)-3000}, -1, {0, 90, 0}, 0, 0)
+  
+ 	addSquadron("BigProduction", "meg_dreadnaughtberth", {random(-1500,1500), random(-1500,1500), -dim}, -1, {0, 0, 0,}, 0, 0)
+ 	addSquadron("BigProduction", "meg_dreadnaughtberth", {random(-1500,1500), random(-1500,1500), dim}, -1, {0, 180, 0,}, 0, 0)
+
+--	addCamera("pieplatetest", {0,0,0,}, {0, 32768,0,})
+--	addCloud("polySurface1", "cloud_text_1", {0, 0, -dim}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_2", {0, -dim, 0}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_3", {-dim, 0, 0}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_4", {0, 0,  dim}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_5", {0, dim,  0}, {1, 1, 1, 1}, 0, 4096)
+--	addCloud("polySurface1", "cloud_text_6", { dim, 0, 0}, {1, 1, 1, 1}, 0, 4096)
+
+--	addAsteroid("Asteroid_5", {0,0,0,}, 100, 0, 0, 0, 0)
+--	addAsteroid("Asteroid_5", {dim,0,0,}, 100, 0, 0, 0, 0)
+--	addAsteroid("Asteroid_5", {0,dim,0,}, 100, 0, 0, 0, 0)
+--	addAsteroid("Asteroid_5", {0,0,dim,}, 100, 0, 0, 0, 0)
+
+	easyPatch({ 0, dim2, dim2,}, 100, my_seed_1)
+	easyPatch({ 0,-dim2, dim2,}, 100, my_seed_1)
+	easyPatch({ 0,-dim2,-dim2,}, 100, my_seed_1)
+	easyPatch({ 0, dim2,-dim2,}, 100, my_seed_1)
+
+	easyPatch({ dim2, 0, dim2,}, 100, my_seed_1)
+	easyPatch({-dim2, 0, dim2,}, 100, my_seed_1)
+	easyPatch({-dim2, 0,-dim2,}, 100, my_seed_1)
+	easyPatch({ dim2, 0,-dim2,}, 100, my_seed_1)
+
+	easyPatch({ dim2, dim2, 0,}, 100, my_seed_1)
+	easyPatch({-dim2, dim2, 0,}, 100, my_seed_1)
+	easyPatch({-dim2,-dim2, 0,}, 100, my_seed_1)
+	easyPatch({ dim2,-dim2, 0,}, 100, my_seed_1)
+
+
+
+	--stitchAdd(tPos, tRes, {PtA, PtB, PtD, Ndiv}, tRot, xNil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim, dim,}, {-dim,-dim,-dim,}, { dim,-dim,-dim,}, n, 1, 1,}, {  0,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, {-dim,-dim, dim,}, { dim,-dim, dim,}, n, 1, 1,}, {  0,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{ dim,-dim,-dim,}, { dim,-dim, dim,}, {-dim,-dim, dim,}, n, 1, 1,}, {  0,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, { dim,-dim,-dim,}, { dim,-dim, dim,}, n, 1, 1,}, {  0,0,0,}, nil)
+
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim, dim,}, {-dim,-dim,-dim,}, { dim,-dim,-dim,}, n, 1, 1,}, { 90,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, {-dim,-dim, dim,}, { dim,-dim, dim,}, n, 1, 1,}, { 90,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{ dim,-dim,-dim,}, { dim,-dim, dim,}, {-dim,-dim, dim,}, n, 1, 1,}, { 90,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, { dim,-dim,-dim,}, { dim,-dim, dim,}, n, 1, 1,}, { 90,0,0,}, nil)
+
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim, dim,}, {-dim,-dim,-dim,}, { dim,-dim,-dim,}, n, 1, 1,}, {180,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, {-dim,-dim, dim,}, { dim,-dim, dim,}, n, 1, 1,}, {180,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{ dim,-dim,-dim,}, { dim,-dim, dim,}, {-dim,-dim, dim,}, n, 1, 1,}, {180,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, { dim,-dim,-dim,}, { dim,-dim, dim,}, n, 1, 1,}, {180,0,0,}, nil)
+
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim, dim,}, {-dim,-dim,-dim,}, { dim,-dim,-dim,}, n, 1, 1,}, {270,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, {-dim,-dim, dim,}, { dim,-dim, dim,}, n, 1, 1,}, {270,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{ dim,-dim,-dim,}, { dim,-dim, dim,}, {-dim,-dim, dim,}, n, 1, 1,}, {270,0,0,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, { dim,-dim,-dim,}, { dim,-dim, dim,}, n, 1, 1,}, {270,0,0,}, nil)
+
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim, dim,}, {-dim,-dim,-dim,}, { dim,-dim,-dim,}, n, 1, 1,}, {0,0, 90,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, {-dim,-dim, dim,}, { dim,-dim, dim,}, n, 1, 1,}, {0,0, 90,}, nil)
+	stitchAdd({0,0,0,}, dist, {{ dim,-dim,-dim,}, { dim,-dim, dim,}, {-dim,-dim, dim,}, n, 1, 1,}, {0,0, 90,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, { dim,-dim,-dim,}, { dim,-dim, dim,}, n, 1, 1,}, {0,0, 90,}, nil)
+
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim, dim,}, {-dim,-dim,-dim,}, { dim,-dim,-dim,}, n, 1, 1,}, {0,0,270,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, {-dim,-dim, dim,}, { dim,-dim, dim,}, n, 1, 1,}, {0,0,270,}, nil)
+	stitchAdd({0,0,0,}, dist, {{ dim,-dim,-dim,}, { dim,-dim, dim,}, {-dim,-dim, dim,}, n, 1, 1,}, {0,0,270,}, nil)
+	stitchAdd({0,0,0,}, dist, {{-dim,-dim,-dim,}, { dim,-dim,-dim,}, { dim,-dim, dim,}, n, 1, 1,}, {0,0,270,}, nil)
+end
+
+function NonDetermChunk()
+  fogSetActive (0)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.136719, 0.228516, 0.427734, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+  --setLevelShadowColour(0.2, 0.3, 0.5, 1)
+  loadBackground ("nearspace")
+	setSensorsManagerCameraDistances(61000, 100000)
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

@@ -1,0 +1,4 @@
+KPR_DUMMY_KPR_AB_BLACKHOLEUBER_Launched_OnSet = function(ship)
+	startEffect(ship, "disk")
+end
+

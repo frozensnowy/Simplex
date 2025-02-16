@@ -1,0 +1,41 @@
+version = 4
+volume = 2
+envelope = 
+    { 
+    { 
+        distance = 0, 
+        volume = 0.525, 
+        reverb = 0, 
+        duration = 0, 
+        equalizer = 
+            { 1, 1, 1, 1, 1, 1, 1, 1, }, }, 
+    { 
+        distance = 2500, 
+        volume = 0.375, 
+        reverb = 0, 
+        duration = 0, 
+        equalizer = 
+            { 1, 1, 1, 1, 1, 1, 1, 1, }, }, 
+    { 
+        distance = 5660.666687, 
+        volume = 0.295, 
+        reverb = 0, 
+        duration = 0, 
+        equalizer = 
+            { 1, 1, 1, 1, 1, 1, 1, 1, }, }, 
+    { 
+        distance = 9160.666687, 
+        volume = 0.155, 
+        reverb = 0, 
+        duration = 0, 
+        equalizer = 
+            { 1, 1, 1, 1, 1, 1, 1, 1, }, }, 
+    { 
+        distance = 12160.666626, 
+        volume = 0, 
+        reverb = 0, 
+        duration = 0, 
+        equalizer = 
+            { 1, 1, 1, 1, 1, 1, 1, 1, }, }, 
+    }
+randSampContainer = 0

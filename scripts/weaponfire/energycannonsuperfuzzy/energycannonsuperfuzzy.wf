@@ -1,0 +1,10 @@
+hitfx = "superecannon_hit_combo" --was energycannonhit
+bulletfx = "energycannonsuperfuzzycombo"
+deathtype = "deathCannon"
+firefx = "muzzle_flash_combo_plasma" --sunfire_squirt
+fire_sfx = "WEAPON/ENERGYLARGE" --WEAPON/MOD/SKREEPROTO4
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "Explosion/Small/ETG_Explode_Small_Firey" --Explosion/Mod/hwclargeexplosion2
+bullet_nlips = 0.00008
+--bullet_nlips = 0.0003
+hit_clamp = {1.2,1.2,} --was absent, appears to limit hit effect size inheritance from whatever hit effect inherets size from. Presence prevents the stupefiying map filling explosions.

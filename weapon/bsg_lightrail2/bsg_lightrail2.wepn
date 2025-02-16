@@ -1,0 +1,15 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","rehash_Kinetic_Light","Normal",1800,2800,0,0,0,0,1,1,1,0.1,1,2,1,0,360,360,1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"BSG_M_Burst2")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"BSG_M_Burst2")
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",50,50,"")
+
+setPenetration(NewWeaponType,0,1)
+
+setAccuracy(NewWeaponType,0,
+{Munition=1,},
+{small_missile=1,},
+{large_missile=1,}
+)
+
+setAngles(NewWeaponType,5,-180,180,-5,90)
+setMiscValues(NewWeaponType,0.001,0.0001)

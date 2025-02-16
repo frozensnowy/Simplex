@@ -1,0 +1,290 @@
+effects = 
+{ 
+	animations = 
+	{ 
+    animation1 = {
+      name = "Death",
+      length = 0.4,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation3 = 
+        { 
+            name = "launch", 
+            length = 3, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+    animation2 = 
+        { 
+            name = "amb", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },       
+
+        glow1 = 
+        { 
+            name = "glow1", 
+            length = 1, 
+            loop = 1,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+        glow2 = 
+        { 
+            name = "glow2", 
+            length = 2, 
+            loop = 1,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+        glow3 = 
+        { 
+            name = "glow3", 
+            length = 3, 
+            loop = 1,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+        glow4 = 
+        { 
+            name = "glow4", 
+            length = 4, 
+            loop = 1,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },  
+		
+	},
+
+	events = 
+	{ 
+
+        glow1 = 
+            { 
+                { "anim", "glow1", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "super_beam_flare_ring01", },                 
+                { "fx_scale", "0.1", }, 
+                --{ "fx_nlips", "on", },
+            }, 
+        glow2 = 
+            { 
+                { "anim", "glow2", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "super_beam_flare_spray_long", },                 
+                { "fx_scale", "0.1", }, 
+                --{ "fx_nlips", "on", },
+            },
+        glow3 = 
+            { 
+                { "anim", "glow3", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "super_beam_flare_spray_long", },                 
+                { "fx_scale", "0.1", }, 
+                --{ "fx_nlips", "on", },
+            },
+        glow4 = 
+            { 
+                { "anim", "glow4", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "super_beam_flare_spray_long", },                 
+                { "fx_scale", "0.1", }, 
+                --{ "fx_nlips", "on", },
+            },
+
+            
+         chunk1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker1", }, 
+                --{ "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", }, 
+                --{ "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "0.25", }, 
+            },
+         chunk2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker2", }, 
+                --{ "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                --{ "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "0.25", }, 
+            }, 
+         chunk3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "marker3", }, 
+                { "fx", "fiery_trail_spray_small", }, 
+                --{ "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "5", }, 
+            },
+         chunk4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker4", }, 
+                { "fx", "FIERY_TRAIL_SPRAY", }, 
+                --{ "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "5", }, 
+            }, 
+         smokeinstant1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_spark_thrower_shortrange", },                 
+                { "fx_scale", "1", }, 
+            },    
+         e1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "fiery_flash_ring_long", }, 
+                --{ "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "30", }, 
+            }, 
+        e2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_wave_explosion_combo", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        e3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker3", }, 
+                { "fx", "missile_bigger_splosion", }, 
+                --{ "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "1", }, 
+            },    
+        e4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "1", }, 
+                { "marker", "Root", }, 
+                { "fx", "fiery_trail_shockwave_small", }, 
+		{ "sound", "weapon/MachineGunGrenadeExp02", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        e5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "fiery_trail_death_combo", },
+                { "fx_scale", "20", }, 
+            }, 
+        e6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "fiery_trail_lines_spray", }, 
+                --{ "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "entity", }, 
+            },          
+---amb
+            amb1 = 
+            { 
+                { "anim", "amb", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", },            
+		{ "fx", "vgr_wave_light_solar", },         
+                { "sound", "shield_ambient", },                               
+                { "fx_scale", "0.05", }, 
+            },    
+---launch            
+            launch = 
+            { 
+                { "anim", "launch", }, 
+                { "animtime", "0.01", }, 
+                { "sound", "weapon/ArtBarragew5", }, 
+            },  
+            launch1 = 
+            { 
+                { "anim", "launch", }, 
+                { "animtime", "0.5", }, 
+                --{ "sound", "weapon/FlameThrowerAttack", }, 
+            },                                     
+                               
+---Burst   
+        burst1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.08", }, 
+                { "marker", "Root", }, 
+                { "fx", "smokejetspray_viper_combo", },                  
+                { "fx_scale", "0.03", }, 
+            },  
+        burst2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "smokejetspray_viper_combo", },                  
+                { "fx_scale", "0.5", }, 
+            }, 
+        burst3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_spark_thrower_shortrange", },   
+		{ "sound", "WEAPON/explosion_small_4", },                
+                { "fx_scale", "0.5", }, 
+            },    
+
+		disk7 = 
+		{ 
+			{ "anim", "death", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "flak_cloud_combo_emp", }, 
+			{ "fx_scale", "entity", }, 
+		}, 
+		disk8 = 
+		{ 
+			{ "anim", "death", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "artilleryburst_spearemp", }, 
+			{ "fx_scale", "entity", }, 
+		}, 
+
+
+
+		
+	},
+	
+}

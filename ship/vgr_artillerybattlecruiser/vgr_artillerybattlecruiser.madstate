@@ -1,0 +1,13 @@
+-- The Simplex Project
+-- 2011/7/9 22:02:37
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+--VGR_ARTILLERYBATTLECRUISER_Launched_OnSet = function(ship)    
+    --startEffect(ship, "launch")
+--end
+
+function VGR_ARTILLERYBATTLECRUISER_CodeRed_OnSet(ship)
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end

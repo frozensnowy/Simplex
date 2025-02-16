@@ -1,0 +1,35 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "ion_dmg_ring_spray_kpr", }, 
+			{ "sound", "WEAPON/FirePunchImpact", }, 
+			{ "fx_scale", "40", }, 
+		}, 
+		
+	},
+	
+}

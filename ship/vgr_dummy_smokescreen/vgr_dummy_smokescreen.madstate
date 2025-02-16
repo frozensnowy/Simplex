@@ -1,0 +1,3 @@
+VGR_DUMMY_SMOKESCREEN_Launched_OnSet = function(ship)    
+    startEffect(ship, "launch")
+end

@@ -1,0 +1,1161 @@
+local x = 0
+local y = 0
+local z = 0
+paradeSlot("hgn_minelayercorvette",{x-1700,y+60,z+0,},{0,0,1,},{-1,0,0,},0)
+paradeSlot("Hgn_SpaceCarrier",     {x+2000,y-700,z-5400,},{0,0,1,},{1,0,0,},700)
+paradeSlot("hgn_tanker",	  		{x+2000,y+120,z-1000,},{0,0,1,},{1,0,0,},600)
+
+paradeSlot("Hgn_Shipyard_SPG", 
+    { -1503, 0, -3404,} , 
+    { 0, 0, 1,} , 
+    { -1, 0, 0, }, 1000)
+paradeSlot("Hgn_Shipyard_Elohim", 
+    { -1503, 0, -3404,} , 
+    { 0, 0, 1,} , 
+    { -1, 0, 0, }, 1000)
+paradeSlot("Hgn_Dreadnaught", 
+    { -1283, -439, 2540,} , 
+    { 0, 0, 1,} , 
+    { 1, 0, 0, }, 0)
+paradeSlot("Kpr_Mover", 
+    { -925, 111, -547,} , 
+    { 0, 0, 1,} , 
+    { -1, 0, 0, }, 150)
+paradeSlot("hgn_gunshipcoevette",{
+  -800,
+  -250,
+  1100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("hgn_torpedocorvette",{
+  -800,
+  -225,
+  900,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_AssaultCorvette",{
+  -800,
+  -200,
+  700,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_PulsarCorvette",{
+  -800,
+  -175,
+  500,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_bombervette",{
+  -800,
+  -150,
+  300,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_MultigunCorvette",{
+  -800,
+  -125,
+  100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_cth",{
+  -800,
+  -100,
+  -100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_cthion",{
+  -800,
+  -75,
+  -300,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("hgn_gunshipcoevettel",{
+  -800,
+  -50,
+  1100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("hgn_torpedocorvettel",{
+  -800,
+  -25,
+  900,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_AssaultCorvettel",{
+  -800,
+  0,
+  700,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_PulsarCorvettel",{
+  -800,
+  25,
+  500,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_bombervettel",{
+  -800,
+  50,
+  300,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_MultigunCorvettel",{
+  -800,
+  75,
+  100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_cthl",{
+  -800,
+  100,
+  -100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_cthionl",{
+  -800,
+  125,
+  -300,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+--------------------------------------------------------------------
+paradeSlot("Hgn_HSInhibitor",{
+  -923,
+  -110,
+  -345,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+---------------------------------------------------------------------
+paradeSlot("Hgn_MarineFrigate",{
+  940,
+  -100,
+  105,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_AssaultFrigate",{
+  940,
+  -350,
+  1605,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_lrms",{
+  940,
+  -250,
+  1005,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_IonCannonFrigate",{
+  940,
+  -200,
+  705,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_Tulwar",{
+  940,
+  -150,
+  405,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_TorpedoFrigate",{
+  940,
+  -300,
+  1305,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_DefenseFieldFrigate",{
+  940,
+  -50,
+  -200,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+-------------------------------------------------------------------------------
+paradeSlot("hgn_strategicbomber",{
+  -800,
+  -200,
+  700,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_attackbomberheavy",{
+  -800,
+  -225,
+  900,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_hft",{
+  -800,
+  -250,
+  1100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_railgunfighter",{
+  -800,
+  -275,
+  1300,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_defender",{
+  -800,
+  -300,
+  1500,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_lbomber",{
+  -800,
+  -325,
+  1700,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_AttackBomber",{
+  -800,
+  -350,
+  1900,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_Interceptor",{
+  -800,
+  -375,
+  2100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_Scout",{
+  -800,
+  -400,
+  2300,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+-------------
+paradeSlot("hgn_strategicbomberl",{
+  -800,
+  0,
+  700,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_attackbomberheavyl",{
+  -800,
+  -25,
+  900,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_hftl",{
+  -800,
+  -50,
+  1100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_railgunfighterl",{
+  -800,
+  -75,
+  1300,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_defenderl",{
+  -800,
+  -100,
+  1500,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_lbomberl",{
+  -800,
+  -125,
+  1700,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_AttackBomberl",{
+  -800,
+  -150,
+  1900,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+paradeSlot("Hgn_Interceptorl",{
+  -800,
+  -175,
+  2100,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},365)
+-----------------------------------------------------------------------------------
+paradeSlot("Hgn_ResourceCollector",{
+  -927,
+  -86,
+  -739,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},150)
+paradeSlot("Hgn_Minecontainer",{
+  -927,
+  -286,
+  -739,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},150)
+paradeSlot("Hgn_container",{
+  -927,
+  -486,
+  -739,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},150)
+paradeSlot("Hgn_Shipyard",{
+  -1703,
+  0,
+  -3454,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},2050)
+paradeSlot("Hgn_Shipyard_g",{
+  -1703,
+  1500,
+  -3454,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},2050)
+paradeSlot("Hgn_BattleShipyard",{
+  -1703,
+  -1500,
+  -4400,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},2050)
+paradeSlot("Hgn_HyperspaceStation",{
+  -4000,
+  1200,
+  5000,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},8000)
+paradeSlot("Hgn_ResourceController",{
+  -927,
+  -86,
+  -939,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_Scaver",{
+  -927,
+  -86,
+  -1539,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},725)
+paradeSlot("Hgn_Probe",{
+  -922,
+  0,
+  -1236,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_ECMProbe",{
+  -921,
+  0,
+  -1486,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_ProximitySensor",{
+  -922,
+  0,
+  -1686,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("Hgn_Destroyer",{
+  871,
+  -388,
+  2200,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("Hgn_SweeperDestroyer",{
+  871,
+  -448,
+  2750,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("Hgn_MissileDestroyer",{
+  871,
+  -508,
+  3300,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("Hgn_IonDestroyer",{
+  871,
+  -568,
+  3850,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("Hgn_AdvDestroyer",{
+  871,
+  -628,
+  4400,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("Hgn_ArtilleryDestroyer",{
+  871,
+  -688,
+  4950,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("Hgn_Juggernaught",{
+  -871,
+  -448,
+  2306,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},600)
+paradeSlot("Hgn_CruiserA",{
+  -871,
+  -508,
+  3106,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},600)
+paradeSlot("Hgn_CruiserB",{
+  -871,
+  -568,
+  3906,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},600)
+paradeSlot("Hgn_Battlecruiser",{
+  0,
+  -750,
+  2500,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},750)
+paradeSlot("Hgn_BattlecruiserNuke",{
+  0,
+  -750,
+  -2500,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},750)
+paradeSlot("Hgn_LightCarrier",{
+  1809,
+  858,
+  -1823,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},700)
+paradeSlot("Hgn_Carrier",{
+  1809,
+  -858,
+  -1923,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},700)
+paradeSlot("Hgn_BattleCarrier",{
+  -1809,
+  -858,
+  -1900,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},700)
+paradeSlot("Hgn_IonTurret",{
+  -510,
+  -450,
+  302,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},120)
+paradeSlot("Hgn_PulsarTurret",{
+  -490,
+  -450,
+  302,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},110)
+paradeSlot("Hgn_GunTurret",{
+  -370,
+  -450,
+  306,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},110)
+paradeSlot("Hgn_defenderdrone",{
+  -370,
+  -450,
+  106,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},30)
+paradeSlot("Hgn_MissileTurret",{
+  500,
+  -450,
+  302,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},130)
+paradeSlot("Hgn_rts",{
+  750,
+  -450,
+  302,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},240)
+paradeSlot("Hgn_defensefieldturret",{
+  750,
+  -450,
+  0,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},240)
+paradeSlot("Hgn_sentinel",{
+  600,
+  75,
+  1402,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},550)
+paradeSlot("Hgn_ionsentinel",{
+  -600,
+  75,
+  1402,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},550)
+paradeSlot("Hgn_artillerysentinel",{
+  -600,
+  500,
+  1402,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},600)
+paradeSlot("Hgn_hscore",{
+  0,
+  -50,
+  -195,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  0,
+  0,
+},100)
+paradeSlot("hgn_power",{
+  0,
+  800,
+  -900,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("hgn_researchstation",{
+  800,
+  0,
+  -1050,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("hgn_combatbase",{
+  0,
+  0,
+  -2050,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("hgn_crewstation",{
+  -800,
+  0,
+  -975,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("hgn_commandfortress",{
+  4500,
+  700,
+  -5500,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},7500)
+paradeSlot("hgn_battlestation",{
+  -600,
+  -100,
+  -7100,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},9500)
+paradeSlot("hgn_ark",{
+  -5500,
+  1100,
+  -5500,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},4000)
+paradeSlot("hgn_battlecarrierHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_battleshipHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_battlecruiserHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_battlecruiserNUKEHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_combatbaseHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_carrierHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_lightcarrierHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_vortexHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_tankerHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_crewstationHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_powerHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_researchstationHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_scaverHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_artillerysentinelHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("hgn_spacecarrierHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("misc",{
+  1700,
+  600,
+  -650,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},1200)

@@ -1,0 +1,140 @@
+filerange 43000 43499
+rangestart 43000 43499
+
+// objectives
+
+43000	Build Movers to clear the radioactive debris.
+43001	Use Movers to destroy the radioactive debris.
+43002	Investigate the derelict hulks
+43003	Destroy all remaining Vaygr Forces
+
+// location cards
+// location cards
+43005	MISSION FAILED.
+43006	PROGENITOR FOUNDRY
+43007	MISSION FAILED
+
+// pings
+43010	Debris
+43011	Radiation
+43012	Progenitor Derelict
+43013	Vaygr Probe
+43014	Vaygr Production Ship
+
+// IntelEvent: Clear Debris 	
+//  Fleet Command
+43020	Hyperspace jump interrupted.
+//  Fleet Intel
+43021	We are surrounded by Progenitor wreckage.
+// FI Alternate line, in case the map isn't adjusted so as to actually surround the player w/ wreckage
+43026	We have exited Hyperspace in close proximity to a debris field.
+43022	The Oracle confirms this wreckage was once the engineering bay of the Progenitor Ship.
+43023	*** AXED *** This entire region is flooded with radioactive clouds.
+// FI These lines are required to clarify the reason behind destroying the debris.
+43024	 Scans of the surrounding hulks have detected Quantum Wave Form irregularities. They are preventing us from initiating a Hyperspace jump.
+43025	 If we are to reach the Dreadnaught, the debris must be cleared.  Send a probe to investigate the local hulks.
+// This line was axed because it *didnt* explain the reasons for pursuing the mission objectives.
+// *** AXED *** 43024	We must clear a path through the clouds and move the Mothership safely to this location before we can initiate a hyperspace jump.
+
+// IntelEvent: Vaygr Probe Detected 
+//  Fleet Intel
+43030	Priority alert.
+43031	A Vaygr long-range probe has been activated.
+43032	It must be destroyed before it can relay our position to the enemy.
+
+//  SpeechEvent: Probe Away
+//  Fleet Intel
+43035	The probe is transmitting data to the enemy.
+43036	A Vaygr attack is now imminent.
+
+// SpeechEvent: Probe neutralized 
+//  Fleet Intel
+43040	Probe destroyed.
+43041	It is likely the enemy will send patrols to investigate.
+43042	Prepare for possible Vaygr attacks.
+
+// IntelEvent: Vaygr Hyperspacing in 
+//  Fleet Intel
+43045	Alert!
+43046	Hyperspace signature detected.
+43047	Elite Vaygr forces are using shielded carriers to penetrate the radiation.
+
+// SpeechEvent: Radiation Damage 
+//  Fleet Intel
+43049	 Alert. We are detecting dangerous levels of radiation.
+43050	*** AXED *** Our ships cannot withstand this radiation.
+43051	They must be destroyed to allow the Mothership to Hyperspace.
+// FI This line has been added to gel with the tweaked opening
+43052	These hulks appear to be the source.
+// 43052 *** AXED *** The radiation is coming from these hulks.
+43053	Progenitor Movers have been located within the cloud.
+43054	They appear to be able to withstand the radiation.
+// FI This line is of minor concern - it's just better/more consistant than the previous one.  We had to re-record anyhow, as the line read replicate, but the voice acting read duplicate
+43055	Research division has completed analysis of the derelict Mover we discovered.  We can now replicate Mover technology. 
+// *** AXED *** 43055	Research division reports it can replicate Mover technology.
+43056	Build a Mover Construction Facility.
+// Again, line provides a little additional data
+43057	Movers will be able to safely enter the radiation cloud and destroy the contaminated hulks.
+
+
+// IntelEvent : Movers Under Control 
+//  Fleet Command
+43060	Mover Construction Facility online.
+//  Fleet Intel
+// Line changed a little to reflect closer ties to actual objectives.
+43061	Use Movers to destroy the debris.
+
+//  SpeechEvent: Destroy Debris
+//  Fleet Intel
+43065	Debris destroyed.
+43066	The radiation in the area is diminishing.
+
+//  SpeechEvent: Destroy Debris
+//  Fleet Intel
+43070	Radioactive hulk destroyed.
+
+// IntelEvent: Enter the Hangar 
+//  Fleet Intel
+// Lines changed to reflect debris chunks, rather than radiation, is the issue.
+43075	Radiation levels dropping. The Quantum Wave Form is returning to normal tolerance.  
+43076	We are now clear to enter Hyperspace.
+
+// SpeechEvent: Enter the Hangar 
+//  Fleet Command
+43080	Hyperspace Core fully charged.
+43081	Detecting only minor Quantum Waveform fluctuations. We are clear to jump.
+43082	Initiate Hyperspace. 
+
+// NEW DIALOG
+// FI
+43090	We cannot be followed. Eradicate all remaining Vaygr forces.
+
+// Player Names
+43110	Hiigaran Navy
+43111	Vaygr Forward Assault
+43112	Progenitor debris
+43113	Progenitor
+
+//ping description for 43010	
+43120	Radioactive debris.  Destroy it to reduce the Quantum irregularities in this area. 
+//ping description for 43011
+43121	Send a probe to  investigate the debris.
+//ping description for 43013
+43124	Destroy the probe before it can broadcast our location.
+
+// Objective descriptions
+
+// For 43000
+43130	Build a Mover Production Subsystem on the Mothership. It is located in the Corvette Panel.
+// For 43001
+43131	Use Movers to destroy all seven radioactive hulks.
+43135	This will reduce the Quantum Interference, allowing the Mothership to Hyperspace freely.
+// For 43002
+43132	Send a ship to investigate the debris producing the irregularities in this area.
+// For 43003
+43140	We cannot allow the Vaygr to follow us.  Destroy all remaining Vaygr forces.
+
+// savegame title
+43141	SAVING GAME
+
+rangeend

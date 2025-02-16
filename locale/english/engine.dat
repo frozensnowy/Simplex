@@ -1,0 +1,156 @@
+/////////////////////////////////////////////////////////////////////
+// reserved
+filerange 1 1499
+rangestart 1 249
+rangeend
+
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// This is the actual start
+
+rangestart 1000 1249
+
+1000	Verifying...
+1001	There is a new update available.
+1002	You have the current version.
+1003	Please download this update.
+1004	Downloading.
+1005	Downloading update Info.
+1006	Determining update size.
+1007	Failed to start download.
+1008	Download Complete.  Press the Apply button to install the update.
+1009	Cancelled.
+1010	Error: could not start operation.
+1011	Getting Extra Info.
+1012	Unable to download list of file mirrors.
+1013	No mirror locations available.
+//Download Status messages.
+1014	Invalid.
+1015	Looking up host.
+1016	Connecting.
+1017	Sending Request.
+1018	Posting.
+1019	Waiting.
+1020	Receiving status.
+1021	Receiving headers.
+1022	Receiving file.
+//Completion
+1023	Invalid.
+1024	Success.
+1025	Out of memory.
+1026	Buffer overflow.
+1027	Parsing of URL failed.
+1028	Host lookup failed.
+1029	Socket failed.
+1030	Connection failed.
+1031	Bad response.
+1032	Request rejected.
+1033	Unauthorized Access.
+1034	Forbidden Access.
+1035	File not found.
+1036	Server error.
+1037	File write failed.
+1038	File read failed.
+1040	Bad Patch URL.  Do not know how to handle patch of this type
+
+1080    Simplex can not start.  Please switch your desktop color depth to 32bit.
+1090	Simplex has detected your system has OpenGL %i.%i.  Simplex plays best with OpenGL 1.3 or better support.\nPlease download new drivers for your %S %S.
+1091	Simplex has detected obsolete video card drivers.\nPlease download new drivers for your %S %S.
+1092	Simplex is currently running with a %i bit depth buffer because it could not switch to a video mode with a 24bit or better depth buffer.  This will likely cause visual artifacts.  You may be able to solve this by setting your desktop color depth to 32bit.
+1093	Simplex is currently running with a %i bit stencil buffer because it could not find a video mode with a 1bit or better depth buffer.  This will cause problems with Sensors Manager shadows.
+1094	Simplex suspects you have an AGP card running in PCI mode.  If this is the case Simplex will perform better by switching to AGP mode.
+1095	Simplex has detected you are running with video drivers that have known problems and has disabled certain features to prevent crashes.  If you install newer drivers from your video hardware vendor Simplex will look better and run faster.
+// these must appear in order to match the eMinSpec enum in gl/r_defines.h
+1096	Simplex has detected your video hardware does not support enough textures per pass and will not be able to play Simplex.\nPlease upgrade your system.
+1097	Simplex has detected your video hardware does not support per pixel dot products and will not be able to play Simplex.\nPlease upgrade your system.
+1098	Simplex has detected your video hardware does not support cube maps and will not be able to play Simplex.\nPlease upgrade your system.
+1099	Simplex suspects your hardware does not support destination alpha and will not run Simplex correctly.\nPlease try running in a 32bit color mode.
+
+1100	Hiigaran
+1101	Vaygr
+1104	Kushan
+1105	Taiidan
+
+// stringtable.lua
+1110	Are you sure you want to exit?
+1111	You must enter a valid chat name.
+1112	An error occurred while saving.  Could not save game. Please ensure that there is enough disk space.
+1113	Invalid filename.  A filename cannot contain any of the following characters:\n\n / \\ : * ? \" < > |\n
+1114	Are you sure you want to overwrite the existing saved game?
+1115	An error occurred while loading.  Could not load game.
+1116	Invalid filename. File with that name does not exist.
+1117	Are you sure you want to quit your current game?
+1118	File loaded but wasn't closed properly.  Starting to player the recorded game.
+1119	File size error. Could not play recorded game.
+1120	Invalid filename. Could not play recorded game.
+1121	Wrong version.  This recorded game is no longer supported.
+1122	Are you sure you want to delete the selected game?
+1123	Error deleting file.
+1124	You must create a user profile to continue.
+1125	Player profile could not be created. A profile with that name already exists.
+1126	You must enter a valid profile name.
+1127	You are running a different version of Simplex than the host.  To join a game you need to be running exactly the same version as the host.\n\nFor information on where to find different versions of Simplex, you should contact the host of the game or Frozen Snow.
+1128	Are you sure you want to restart? Your current game will be lost.
+1129	There are no tutorials. Do you want to return to the main menu instead?
+1130	Are you sure you want to retire your entire fleet? The current game will be lost.
+
+// this string (1131) has to be generic enough to work for campaign
+1131	Are you sure you want to reset all missions? All mission progress will be lost.
+
+1132	Are you sure you want to delete the selected profile? All saved games and player information for this profile will be lost.
+1133	Are you sure you want to replace your %s subsystem with this one?
+1134	Are you sure you want to restore the default controls?
+1135	<c=FFD800>%s</c> is already assigned to <c=FFD800>%s</c>\n\nDo you want to replace it?
+1136	<c=FFD800>%s</c> is already assigned to <c=FFD800>%s</c> and is not assignable.
+1137	Are you sure you want to reset the selected key?
+1138	Unassigned.
+1139	Press Key...
+1140	Are you sure you want to restore the default player settings?  All team colors will be lost.
+1141	Game passwords do not match, please confirm password.
+1142	Simplex must shut down to install the update.\n\nPress Yes to continue with the installation or press No to return to the Main Menu.
+1143	Your nickname contains characters that are invalid while playing multiplayer through Steam, they will not display correctly.\nValid characters are: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789[]\\`_^{|}-"
+1144	Are you sure you want to restore the default options?
+1145	This command %s can only be assigned to a single key.
+
+1146	Unable to load your saved game. The saved game is either corrupted or from a different version of Simplex.
+
+1147	Simplex must be restarted for your resolution changes to take effect.  Would you like to restart Simplex now?
+
+// Network messages
+1200	Host not found.
+1201	Invalid address.
+1202	Invalid password.
+1203	Network unavailable.
+1204	Game is full.
+1205	Different version/mods.
+1206	Out of sync.
+1207	Unknown level.
+1208	The host has left the game.
+1209	Waiting for other players to finish loading...
+1210	Downloading content...
+1211	You were kicked out of the game.
+
+// ESRB Warning
+1220	Warning: Simplex has not been fully tested in multiplayer, and thus may not be stable!
+
+// Version label
+1221	v%d.%d
+
+// Autosave
+1222	AutoSave
+
+1230	Unable to connect to Steam client.
+
+rangeend
+
+
+
+/////////////////////////////////////////////////////////////////////
+// code -- fe postgame
+
+rangestart 1250 1499
+rangeend
+
+
+

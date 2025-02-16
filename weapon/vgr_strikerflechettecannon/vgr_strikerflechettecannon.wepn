@@ -1,0 +1,47 @@
+-- LuaDC version 0.9.19
+-- 15/11/2004 22.03.13
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "AnimatedTurret", "Bullet", "Kinetic_Rapid", "Normal", 1300, 1420, 0, 0, 0, 0, 1, 1, 1, 1.5, 0, 0, 1, 0, 120, 120, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 30, 30, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    ResArmour = 0.8, 
+}, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    SubSystemArmour = 2, 
+}, 
+{ 
+    resarmour = 0.6, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0.085, 
+}, 
+{ 
+    Corvette = 0.11, 
+}, 
+{ 
+    munition = 0.15, 
+}, 
+{ 
+    Frigate = 0.5, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.5, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.5, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 0.5, 
+    damage = 1, })
+setAngles(NewWeaponType, 0, -180, 180, -2.5, 75)
+setMiscValues(NewWeaponType, 0, 0)
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

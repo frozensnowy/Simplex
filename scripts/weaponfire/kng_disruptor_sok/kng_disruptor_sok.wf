@@ -1,0 +1,12 @@
+hitfx = "shield_explosionhit_large_bullet"
+bulletfx = "kng_disruptor_SOK"
+nopenetratefx = "ion_dmg_ring_spray"
+blowthroughfx = "blowthrough_generic"
+deathtype = "deathBeam"
+scartype = "Beam"
+firefx = ""
+fire_sfx = "WEAPON/KNG/TMP/SUPERDISRUPTOR_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/SHIELD_BEAM_HIT"
+nopentrate_sfx = "WEAPON/ALL/HIT/SHIELD_BEAM_HIT"
+hit_clamp = 
+    { 0.5, 1.25, }

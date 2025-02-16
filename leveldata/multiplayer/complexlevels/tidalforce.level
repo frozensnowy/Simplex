@@ -1,0 +1,201 @@
+-- (6P) ITF-Fog of War
+-- by ITF-TANK0
+-- v1.0
+-- 1/12/03
+
+levelDesc = "Tidal Force";
+maxPlayers = 6;
+--randomseed(0.1);
+
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 5, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+
+
+function DetermChunk()
+
+setWorldBoundsInner({0, 0, 0}, {80000,80000,80000})
+setWorldBoundsOuter({0, 0, 0}, {690000, 360000, 690000})
+
+addPoint(	"StartPos0",	{48000,-10,32000},{0,	-90,	0});
+addPoint(	"StartPos1",	{32000,-20,32000},	{0,	180,	0});
+addPoint(	"StartPos2",	{32000,30,48000},	{0,	90,	0});
+addPoint(	"StartPos3",	{-48000,20,-32000},	{0,	0,	0});
+addPoint(	"StartPos4",	{-32000,10,-32000},	{0,	0,	0});
+addPoint(	"StartPos5",	{-32000,-30,-48000},	{0,	180,	0});
+
+local angle = random(-30,30)
+addSquadron("jupiter_orbit", "jupiter_orbit", {-600000-random(0,600000), 350000+random(0,800000), 500000}, -1, {-90, 0, angle}, 0, 0)
+addSquadron("callisto", "callisto", {random(-1250000,1250000), random(-130000,130000), -random(1900000,2500000)}, -1, {angle, 0, angle}, 0, 0)
+addSquadron("ganymeade", "ganymeade", {random(-1250000,1250000), random(-130000,130000), -random(1100000,1700000)}, -1, {angle, 0, angle}, 0, 0)
+addSquadron("europa", "europa", {random(-1250000,1250000), random(-130000,130000), -random(450000,900000)}, -1, {angle, 0, angle}, 0, 0)
+local limiter = 0
+while limiter == 0 do
+  local randx = random(-1250000,1250000)
+  if abs(randx) > 250000 then
+    addSquadron("io", "io", {randx, random(-130000,130000), -random(50000,250000)}, -1, {angle, 0, angle}, 0, 0)
+    limiter = 1
+  end
+end
+
+    for i=0,random(20,30),1 do
+      local phi = random(0,360)
+    	local r = random(0,15000)
+    	local as = random(1,5)
+    	if as == 1 then
+    		addSquadron("BigProduction", "meg_veildebris_chunk1", {r*sin(12*i), r*sin(12*i)*0.5, r*cos(12*i),}, -1, {phi, phi, phi,}, 0, 0)
+    	elseif as == 2 then
+    		addSquadron("BigProduction", "meg_veildebris_chunk2", {r*sin(12*i), r*sin(12*i)*0.5, r*cos(12*i),}, -1, {phi, phi, phi,}, 0, 0)
+			elseif as == 3 then
+    		addSquadron("BigProduction", "meg_veildebris_chunk3", {r*sin(12*i), r*sin(12*i)*0.5, r*cos(12*i),}, -1, {phi, phi, phi,}, 0, 0)
+    	elseif as == 4 then
+    		addSquadron("BigProduction", "meg_veildebris_chunk4", {r*sin(12*i), r*sin(12*i)*0.5, r*cos(12*i),}, -1, {phi, phi, phi,}, 0, 0)
+    	elseif as == 5 then
+    		addSquadron("BigProduction", "meg_veildebris_chunk5", {r*sin(12*i), r*sin(12*i)*0.5, r*cos(12*i),}, -1, {phi, phi, phi,}, 0, 0)
+    	end
+    end
+
+addAsteroid("Asteroid_5", {50000,0,25000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {25000,0,25000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {25000,0,50000}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_5", {-50000,0,-25000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {-25000,0,-25000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {-25000,0,-50000}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_5", {0,25000,0}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {0,-25000,0}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {-200,25000,187}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {249,25745,-187}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-142,24545,247}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {200,25350,87}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-382,25700,-271}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-342,25450,-187}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {472,25214,279}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {-412,24985,287}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {-200,-25000,187}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {249,-25745,-187}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-142,-24545,247}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {200,-25350,87}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-382,-25700,-271}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-342,-25450,-187}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {472,-25214,279}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {-412,-24985,287}, 300, 1000, 1000, 1000, 1000)
+
+
+addAsteroid("Asteroid_4", {49575,-200,24947}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {48957,500,24239}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {50988,300,25900}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {49455,600,26000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {49743,-500,25954}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {50490,100,25415}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {48798,-250,24459}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {25575,-200,24947}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {24957,500,24239}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {25988,300,25900}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {24455,600,26000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {25974,-500,25954}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {25490,100,25415}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {23798,-250,24459}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {25575,-200,49575}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {24957,500,48957}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {25988,300,50988}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {24455,600,49455}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {25974,-500,49973}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {25490,100,50490}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {23798,-250,48798}, 300, 1000, 1000, 1000, 1000)
+
+
+
+addAsteroid("Asteroid_4", {-49575,-200,-24947}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-48957,500,-24239}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-50988,300,-25900}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-49455,600,-26000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-49743,-500,-25954}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-50490,100,-25415}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {-48798,-250,-24459}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {-25575,-200,-24947}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-24957,500,-24239}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-25988,300,-25900}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-24455,600,-26000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-25974,-500,-25954}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-25490,100,-25415}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {-23798,-250,-24459}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {-25575,-200,-49575}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-24957,500,-48957}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-25988,300,-50988}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-24455,600,-49455}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-25974,-500,-49973}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-25490,100,-50490}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {-23798,-250,-48798}, 300, 1000, 1000, 1000, 1000)
+
+
+addAsteroid("Asteroid_5", {-50000,0,49000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {-49000,0,49000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {-49000,0,50000}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_5", {50000,0,-49000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {49000,0,-49000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_5", {49000,0,-50000}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {-49575,-200,48947}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-48957,500,48239}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {-50988,300,49900}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-49455,600,49000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-49743,-500,49541}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {-50490,100,49415}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {-48798,-250,48459}, 300, 1000, 1000, 1000, 1000)
+
+addAsteroid("Asteroid_4", {49575,-200,-48947}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {48957,500,-48239}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_4", {50988,300,-49900}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {49455,600,-49000}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {49743,-500,-49541}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_3", {50490,100,-49415}, 300, 1000, 1000, 1000, 1000)
+addAsteroid("Asteroid_2", {48798,-250,-48459}, 300, 1000, 1000, 1000, 1000)
+
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 20000, 40000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 15000, 20000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 10000, 15000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 7500, 10000)
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 7500, 10000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 5000, 7500)
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 5000, 7500)  
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 2500, 5000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 2500, 5000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 0, 5000) 
+  addDustCloud("polySurface1", "dustcloud_nores", {0, 0, 0}, {200, 50, 50, 50}, 0, 5000)
+
+
+end
+
+function NonDetermChunk()
+
+
+
+
+fogSetActive(0);
+  fogSetActive(0)
+  setGlareIntensity(0)
+  fogSetColour(0, 0, 0, 1)
+  fogSetStart(1000)
+  fogSetEnd(50000)
+  fogSetType("linear")
+  fogSetDensity(1)
+  setDustCloudAmbient({ 0.5, 0.4, 0.3, 1, })
+  setLevelShadowColour(0, 0, 0, 0)
+	setSensorsManagerCameraDistances(61000, 320000)
+	loadBackground("diamondshoals")	
+end

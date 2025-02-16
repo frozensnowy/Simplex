@@ -1,0 +1,61 @@
+--StartWeaponConfig(NewWeaponType,"AnimatedTurret","InstantHit","","Normal",0,250000000,0,7.5,7.5,0,45,0,0,15,0,0,30,30,120,120,0.1,"Normal",1,0,20000000)
+
+StartWeaponConfig(NewWeaponType, "AnimatedTurret", "InstantHit", "ionbeam_super_laser", "Normal", 0, 2500000, 0, 15, 9, 0, 20, 0, 1, 30, 0, 0, 1, 1, 10, 10, 0.1, "Normal", 1, 0, 20000000)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",30000000,30000000,"")
+--AddWeaponResult(NewWeaponType,"Hit","Push","Target",50000,100000,"")
+setPenetration(NewWeaponType,100,1,
+{Hull_Cap_1D=1,},
+{Hull_Cap_2D=1,},
+{Hull_Cap_3D=1,},
+{Hull_Cap_4D=1,},
+{Hull_Cap_5D=1,},
+{Hull_Cap_6D=1,},
+{Hull_Cap_7D=1,},
+{Hull_Cap_8D=1,},
+{Hull_Cap_9D=1,},
+{Hull_Cap_10D=1,},
+{Hull_Cap_11D=1,},
+{Hull_Cap_12D=1,},
+{Hull_Cap_13D=1,},
+{Hull_Cap_14D=1,},
+{Hull_Cap_15D=1,},
+{Hull_Cap_16D=1,},
+{Hull_SF_1D=1,},
+{Hull_SF_2D=1,},
+{Hull_SF_3D=1,},
+{Hull_SF_4D=1,},
+{Hull_SF_5D=1,},
+{Hull_SF_6D=1,},
+{Shield_SF_1D=1,},
+{Shield_SF_2D=1,},
+{Shield_SF_3D=1,},
+{Shield_SF_4D=1,},
+{Shield_Cap_1D=1,},
+{Shield_Cap_2D=1,},
+{Shield_Cap_3D=1,},
+{Shield_Cap_4D=1,},
+{Shield_Cap_5D=1,},
+{Shield_Cap_6D=1,},
+{Shield_Cap_7D=1,},
+{Shield_Cap_8D=1,},
+{Shield_Cap_9D=1,},
+{Shield_Cap_10D=1,},
+{Shield_Cap_11D=1,},
+{Shield_Cap_12D=1,})
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Bomber = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, })
+setAngles(NewWeaponType, 10, -50, 50, -50, 50)
+setMiscValues(NewWeaponType, 0, 1)
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")
+
+

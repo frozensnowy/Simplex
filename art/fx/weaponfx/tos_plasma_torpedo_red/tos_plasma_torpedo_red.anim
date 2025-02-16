@@ -1,0 +1,44 @@
+fps = 45
+startFrame = 0
+loopCount = 100
+layout = 
+    { 1, 1, }
+textureLayout = 
+    { 
+
+	
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0000.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0001.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0002.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0003.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0004.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0005.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0006.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0007.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0008.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0009.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0010.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0011.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0012.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0013.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0014.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0015.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0016.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0017.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0018.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0019.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0020.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0021.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0022.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0023.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0024.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0025.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0026.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0027.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0028.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0029.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0030.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/TOS_Plasma_Torpedo_Red/Plasma_Torpedo_0031.tga", 0, 0, },
+
+
+    }

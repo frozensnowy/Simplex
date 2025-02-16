@@ -1,0 +1,10 @@
+fps = 30
+startFrame = 0
+loopCount = 10
+texture = 
+        { "data:/ART/FX/laser/laser_white00.tga", 
+"data:/ART/FX/laser/laser_white01.tga",
+"data:/ART/FX/laser/laser_white02.tga", 
+"data:/ART/FX/laser/laser_white03.tga", 
+"data:/ART/FX/laser/laser_white04.tga", 
+"data:/ART/FX/laser/laser_white05.tga", }

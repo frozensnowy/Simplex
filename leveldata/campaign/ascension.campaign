@@ -1,0 +1,29 @@
+-- =============================================================================
+-- Name : Postmortem.campaign -- Purpose : campaign for postmortem tutorial.
+--
+-- Copyright Relic Entertainment, Inc. All rights reserved.
+-- =============================================================================
+
+-- localized display name for the UI. DAT strings can be found in "UI.DAT".
+displayName = "Postmortem"
+
+-- create a mission structure, make sure this has only ONE mission in it, the dummy mission
+Mission = {}
+
+for i = 1, 100000 do
+	Mission[i] =
+	{
+		-- This next function tells the game to play Animatic "A00.lua" before the mission starts.
+--		postload =	function ()	playAnimatic("data:animatics/A00.lua", 1, 1)	end,
+		-- This tells the scrtip what Directory to load the mission from. In this case from "Data/Leveldata/Campiagn/Postmortem/Mission_01".
+		directory = "Mission_00",
+		-- This tells the script what ".lua" file to load.
+		level = "Mission_00.level",
+		-- This tells the game what happens when the mission ends.
+		postlevel =	function (bWin)	postLevelComplete()	end,
+		-- Used in the Campaign Description Menu.
+		displayName = "dummy mission",
+		-- Used in the Campaign Description Menu.
+		description = "dummy description",
+	}
+end

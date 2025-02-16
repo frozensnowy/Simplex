@@ -1,0 +1,17 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","Artilleryburst","Normal",60000,36000,0,0.1,0,0,1,1,0,0.5,0,0,1,0,3600,3600,1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "rehash_Burst_Flak_Large")
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "rehash_Burst_Minesweeper_Large")
+AddWeaponResult(NewWeaponType, "Miss", "SpawnWeaponFire", "Target", 0, 0, "rehash_Burst_Minesweeper_Large")
+AddWeaponResult(NewWeaponType, "Miss", "SpawnWeaponFire", "Target", 0, 0, "rehash_Burst_Flak_Large")
+AddWeaponResult(NewWeaponType,"Hit","Disable","Target",10,10,"")
+
+setPenetration(NewWeaponType,0,1)
+
+setAccuracy(NewWeaponType,.0001,
+{Munition=0.5,},
+{small_missile=0.5,},
+{large_missile=0.5,})
+
+setAngles(NewWeaponType,20,-180,180,-90,90)
+setMiscValues(NewWeaponType,0.001,0.0001)
+

@@ -1,0 +1,20 @@
+--=============================================================================
+--    Name    : Vgr_Probe_ECM.madStates
+--    Purpose : Animation state data.
+--
+--Created 250403 by cgladstone
+--Copyright Relic Entertainment, Inc.  All rights reserved.
+--=============================================================================*/
+
+VGR_CLOAKPLATFORM_DefenseFieldActivate_OnSet = function(ship)
+	stopAnim(ship, "Close")
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+
+VGR_CLOAKPLATFORM_DefenseFieldDeActivate_OnSet = function(ship)
+	stopAnim(ship, "Open")
+    startAnim(ship, "Close")
+    setPauseTime(ship, "Close", 1000)
+end

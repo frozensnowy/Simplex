@@ -1,0 +1,41 @@
+StartWeaponConfig(NewWeaponType,"Gimble","Bullet","plasma_bomb","Normal",1200,5400,0,0,0,0,1,1,0,.5,0,0,0,0,260,40,.1,"Normal",0,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"vgr_plasmaarayburst")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"vgr_plasmaarayburst")
+
+setAngles(NewWeaponType,10,0,0,0,0)
+
+setMiscValues(NewWeaponType,3,.5)
+
+setPenetration(NewWeaponType,35,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=1.2,},
+{HeavyArmour=1,},
+{SubSystemArmour=1,},
+{TurretArmour=1,},
+{ResArmour=1,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=.04,},
+{Corvette=.09,},
+{Frigate=.6, damage=1,},
+{Utility=1,},
+{munition=.05,},
+{SmallCapitalShip=.6, damage=1,},
+{BigCapitalShip=.6, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1,},
+{Resource=1,},
+{ResourceLarge=.6, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,})
+

@@ -1,0 +1,176 @@
+-- LuaDC version 0.9.19
+-- 25/06/2004 19.08.38
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Trade Missionary"
+NewShipType.sobDescription = "Extorts Donation"
+NewShipType.maxhealth = 20000
+NewShipType.regentime = 0
+NewShipType.minRegenTime = 0
+NewShipType.frontArmourDamage = 0.75
+NewShipType.sideArmourDamage = 0.75
+NewShipType.rearArmourDamage = 0.75
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.SquadronSize = 1
+NewShipType.paradeData = "vgr_carrier_parade"
+NewShipType.formationSpacing = 200
+NewShipType.passiveFormation = "dockline"
+NewShipType.defensiveFormation = "dockline"
+NewShipType.aggressiveFormation = "dockline"
+NewShipType.mass = 150
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 130
+NewShipType.mainEngineMaxSpeed = 130 
+NewShipType.rotationMaxSpeed = 30
+NewShipType.thrusterAccelTime = 7
+NewShipType.thrusterBrakeTime = 1.5
+NewShipType.mainEngineAccelTime = 8
+NewShipType.mainEngineBrakeTime = 1.5
+NewShipType.rotationAccelTime = 1.5
+NewShipType.rotationBrakeTime = 1
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 60
+NewShipType.mirrorAngle = 30
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 85	--20
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 10
+NewShipType.slideMoveRange = 0
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 10
+NewShipType.tumbleStaticY = 20
+NewShipType.tumbleStaticZ = 5
+NewShipType.tumbleDynamicX = 2
+NewShipType.tumbleDynamicY = 10
+NewShipType.tumbleDynamicZ = 5
+NewShipType.tumbleSpecialDynamicX = 2
+NewShipType.tumbleSpecialDynamicY = 10
+NewShipType.tumbleSpecialDynamicZ = 5
+NewShipType.relativeMoveFactor = 3
+NewShipType.swayUpdateTime = 5
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.05
+NewShipType.swayRotateFactor = 0
+NewShipType.dustCloudDamageTime = 160
+NewShipType.nebulaDamageTime = 65
+NewShipType.MinimalFamilyToFindPathAround = "MotherShip"
+NewShipType.mirrorAboveManeuver = "ImmelMann"
+NewShipType.mirrorBelowManeuver = "Split_S"
+NewShipType.specialTurnLeftManeuver = "NinetyDegLeftTurn, JinkLeft, OneEightyDegLeftTurn"
+NewShipType.specialTurnRightManeuver = "NinetyDegRightTurn, JinkRight, OneEightyDegRightTurn"
+NewShipType.testManeuver1 = "RollCW"
+NewShipType.testManeuver2 = "RollCCW"
+NewShipType.testManeuver3 = "Loop"
+NewShipType.BuildFamily = "TradeContainer"
+NewShipType.AttackFamily = "Utility"
+NewShipType.DockFamily = "TradeContainer"
+NewShipType.AvoidanceFamily = "Frigate"
+NewShipType.DisplayFamily = "Utility"
+NewShipType.AutoFormationFamily = "Frigate"
+NewShipType.CollisionFamily = "Big"
+NewShipType.ArmourFamily = "MediumArmour"
+NewShipType.UnitCapsFamily = "Utility"
+NewShipType.UnitCapsShipType = "TradeContainer"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 0
+NewShipType.buildCost = 1250
+NewShipType.buildTime = 65
+NewShipType.buildPriorityOrder = 38
+NewShipType.retaliationRange = 0
+NewShipType.retaliationDistanceFromGoal = 0
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 1200
+NewShipType.secSensorRange = 1400
+NewShipType.detectionStrength = 0
+NewShipType.TOIcon = "Diamond"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 10000
+NewShipType.TODistanceDisappear0 = 8000
+NewShipType.TODistanceFade1 = 4500
+NewShipType.TODistanceDisappear1 = 3500
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 1
+NewShipType.nlips = 0.000125
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.0001
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "HardDot"
+NewShipType.meshRenderLimit = 50000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+--NewShipType.minLOD = 0.25
+NewShipType.goblinsStartFade = 4500
+NewShipType.goblinsOff = 4500
+NewShipType.upLOD = 4500
+NewShipType.upLOD = 10000
+NewShipType.downLOD = 4515
+NewShipType.downLOD = 10015
+NewShipType.minimumZoomFactor = 0.5
+NewShipType.selectionLimit = 500000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 0
+NewShipType.dockTimeBetweenTwoFormations = 9
+NewShipType.dockTimeBeforeStart = 1
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "dockline"
+NewShipType.queueFormation = "dockline"
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.ignoreRaceWhenDocking = 1
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 7
+NewShipType.launchTimeBeforeStart = 15
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "dockline"
+addAbility(NewShipType, "RetireAbility", 0, 0)
+addAbility(NewShipType, "CanDock", 1, 1)
+addAbility(NewShipType, "ParadeCommand", 1)
+addAbility(NewShipType,"MoveCommand",1,0)
+addAbility(NewShipType,"WaypointMove")
+--addAbility(NewShipType, "CanBeSalvaged")
+addAbility(NewShipType, "ShipHold", 1, 0, 0, "rallypoint", "TransportCell", 0)
+addAbility(NewShipType, "CanBuildShips", 1, "OrdersEvac_Hgn,Orders_Hgn", "Orders")
+LoadModel(NewShipType, 1)
+addShield(NewShipType, "EMP", 10000, 20)
+AddShipMultiplier(NewShipType, "NebulaSensitivity", "ThisShipOnly", "Linear", 0.3, 0.3, 0)
+AddShipMultiplier(NewShipType, "DustCloudSensitivity", "ThisShipOnly", "Linear", 0.3, 0.3, 0)
+
+StartShipHardPointConfig(NewShipType, "hgn_orders_clear", "Hardpoint_support", "System", "Innate", "Destroyable", "", "hgn_orders_clear")
+StartShipHardPointConfig(NewShipType, "hgn_orders_trade", "Hardpoint_support", "System", "Innate", "Destroyable", "", "hgn_orders_trade")
+StartShipHardPointConfig(NewShipType, "engine_boost_container","Hardpoint_support","System","Innate","Destroyable", "", "engine_boost_container")
+
+StartShipHardPointConfig(NewShipType,"ru","Hardpoint_ru","System","Innate","Damageable","runospeed","","","","","","","","")
+--StartShipHardPointConfig(NewShipType,"bay","Hardpoint_bay","System","Innate","Indestructible","bay","","","","","","","","")
+--StartShipHardPointConfig(NewShipType,"bay1","Hardpoint_bay1","System","Innate","Indestructible","bay","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"en","Hardpoint_support","System","Innate","Damageable","en","","","","","","","","")
+--StartShipHardPointConfig(NewShipType, "hgn_orders_evacuation","Hardpoint_support","System","Innate","Destroyable","","hgn_orders_evacuation","","","","","","","","")
+
+--SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml02",1,0.6,60,60,60,60,15,200,20,125,0,0,0,60,0,0,0,50)
+--SpawnSalvageOnDeath(NewShipType,"Slv_Chunk_Sml03",1,0.4,30,60,0,60,35,80,65,75,0,0,0,60,0,0,0,50)
+NewShipType.battleScarMaxTriBase = 75
+NewShipType.battleScarMaxTriInc = 100
+NewShipType.sobDieTime = 1
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 1
+NewShipType.trailLinger = 2
+setEngineGlow(NewShipType, 1, 1, 1.02, 20, 300, 50, 1.5, 
+    { 0.8, 0.2, 0.2, 0.35, })
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/Hiigaran/NonMilitary/", 0, "Engines/HResourcerEng", "", 1, "Ambience/HResourcerAmb", "")

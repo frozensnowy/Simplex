@@ -1,0 +1,40 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:08 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "Missile", "rad_merc_rak", "Normal", 80, 7000, 0, 0, 0, 0, 1, 0, 0, 10, 0, 0, 1, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "Vgr_HeavyMissileBurst")
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "rad_heavymissileburstempcomponent")
+setPenetration(NewWeaponType, 50, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, }, 
+{ 
+    Frigate = 0.8, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 0.6, 
+    damage = 1, },
+{ 
+    SubSystem = 0.6, 
+    damage = 1, })
+setAngles(NewWeaponType, 180, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 15, 0.4)

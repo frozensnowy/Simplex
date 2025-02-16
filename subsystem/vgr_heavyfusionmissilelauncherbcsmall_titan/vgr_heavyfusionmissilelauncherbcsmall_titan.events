@@ -1,0 +1,66 @@
+effects = {
+  animations = {
+        animation1 = 
+        { 
+            name = "Fire_Missle", 
+            length = 4, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+  },
+  events = {
+        event0 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_BCMissile_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event1 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Weapon_BCMissileSlave_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_BCMissileSlave1_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "Weapon_BCMissileSlave2_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event4 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.8", }, 
+                { "marker", "Weapon_BCMissileSlave3_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+},            
+}

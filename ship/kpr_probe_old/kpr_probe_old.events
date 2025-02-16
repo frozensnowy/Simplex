@@ -1,0 +1,50 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:45 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        FusionEngine = 
+        { 
+            name = "FusionEngine", 
+            length = 2, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+	}, 
+    events = 
+    { 
+	FusionEngine1 = 
+            { 
+                { "anim", "FusionEngine", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "afterburner_combo_kpr", }, 
+		{ "fx_scale", "1", }, 
+            }, 
+        event1 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_fighter", }, 
+                { "sound", "EXPLOSION/SMALL/ETG_EXPLODE_SMALL_PLASMA_FAR", }, 
+            }, 
+	},
+}

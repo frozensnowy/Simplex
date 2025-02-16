@@ -1,0 +1,11 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:53 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "fiery_flash_ring_long" --"dmg_hit_missile_wpburst_combo"
+bulletfx = "fiery_flash_ring_long" --"dmg_hit_missile_wpburst_combo"
+nopenetratefx = "fiery_flash_ring_long" --"dmg_hit_missile_wpburst_combo"
+deathtype = "deathCannon"
+hit_clamp = 
+    { 1, 1, }

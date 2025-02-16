@@ -1,0 +1,80 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "MissileTrail",
+      length = 5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "MissleEngine1",
+      },
+      {
+        "fx",
+        "Missile_Flare_Red_Spray_SRM9",
+      },
+      {
+        "sound",
+        "",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FUSIONMISSILE_HIT",
+      },
+      {
+        "fx",
+        "dmg_missle_explode_combo",
+      },
+      {
+        "fx_scale",
+        "0.25",
+      },
+    },
+  },
+}

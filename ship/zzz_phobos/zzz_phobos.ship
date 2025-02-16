@@ -1,0 +1,44 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Phobos"
+NewShipType.sobDescription = "Moon"
+NewShipType.maxhealth = 10000000
+NewShipType.regentime = 1
+NewShipType.minRegenTime = 1
+NewShipType.paradeData = "dummy_parade"
+NewShipType.alwaysInRenderList = 1
+NewShipType.sideArmourDamage = 0
+NewShipType.rearArmourDamage = 0
+NewShipType.frontArmourDamage = 0
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 10000000
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.AttackFamily = "UnAttackable"
+NewShipType.AvoidanceFamily = "SuperPriority"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.healthBarStyle = 3
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 550000000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.goblinsStartFade = 550000000
+NewShipType.goblinsOff = 550000000
+NewShipType.minimumZoomFactor = 0.1
+NewShipType.selectionLimit = 0
+NewShipType.preciseATILimit = 1000
+NewShipType.selectionPriority = 0
+NewShipType.SMHighlightDistMin = 1e16
+NewShipType.SMHighlightDistMax = 1e16
+NewShipType.militaryUnit = 0
+
+NewShipType.canHaveShadows = 0
+
+addAbility(NewShipType,"MoveCommand",1,0)
+LoadModel(NewShipType, 1)

@@ -1,0 +1,13 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:14
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+bulletfx = "dmg_laser_hit"
+bullet_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetratefx = "dmg_laser_hit"
+deathtype = "deathCannon"
+hit_sfx = "weapon/corvette/impact/WEAPON_CORVETTE_Mine_Detonation"
+nopenetrate_sfx = "weapon/corvette/impact/WEAPON_CORVETTE_Mine_Detonation"
+hit_clamp = 
+    { 1, 1, }

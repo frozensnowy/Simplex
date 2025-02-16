@@ -1,0 +1,12 @@
+hitfx = "dmg_cloud_torpedo_combo"
+bulletfx = "kinetic_large_bullet"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Hgn_Torpedo/Torpedo"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+hit_clamp = {
+  1,
+  1,
+}

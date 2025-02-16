@@ -1,0 +1,225 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:56 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+-- scale = 1
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Sleeper"
+NewShipType.sobDescription = "$1543"
+NewShipType.maxhealth = 500000
+NewShipType.regentime = 1000
+NewShipType.minRegenTime = 400
+NewShipType.sideArmourDamage = 1.1
+NewShipType.rearArmourDamage = 1.2
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 1
+NewShipType.unitCapsNumber = 1
+NewShipType.addedUnitCaps = 101
+NewShipType.paradeData = "kpr_shipyard_parade"
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "x"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 4000
+NewShipType.collisionMultiplier = 1
+NewShipType.thrusterMaxSpeed = 415
+NewShipType.mainEngineMaxSpeed = 550
+NewShipType.rotationMaxSpeed = 25
+NewShipType.thrusterAccelTime = 10
+NewShipType.thrusterBrakeTime = 5
+NewShipType.mainEngineAccelTime = 20
+NewShipType.mainEngineBrakeTime = 10
+NewShipType.rotationAccelTime = 0.7
+NewShipType.rotationBrakeTime = 0.4
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 30
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 10
+NewShipType.descendPitch = 45
+NewShipType.goalReachEpsilon = 25
+NewShipType.slideMoveRange = 350
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 2
+NewShipType.tumbleStaticY = 4
+NewShipType.tumbleStaticZ = 3
+NewShipType.tumbleDynamicX = 1
+NewShipType.tumbleDynamicY = 2
+NewShipType.tumbleDynamicZ = 1
+NewShipType.tumbleSpecialDynamicX = 1
+NewShipType.tumbleSpecialDynamicY = 2
+NewShipType.tumbleSpecialDynamicZ = 1
+NewShipType.relativeMoveFactor = 1
+NewShipType.swayUpdateTime = 10
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0
+NewShipType.swayRotateFactor = 0
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.1
+NewShipType.targetRandomPointXMax = 0.5
+NewShipType.targetRandomPointYMin = -0.3
+NewShipType.targetRandomPointYMax = 0.3
+NewShipType.targetRandomPointZMin = -0.9
+NewShipType.targetRandomPointZMax = 0.82
+NewShipType.dustCloudDamageTime = 200
+NewShipType.nebulaDamageTime = 300
+NewShipType.MinimalFamilyToFindPathAround = "MotherShip"
+NewShipType.BuildFamily = "SuperCap_Kpr"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "SuperCap"
+NewShipType.AvoidanceFamily = "SuperCap"
+NewShipType.DisplayFamily = "Capital"
+NewShipType.AutoFormationFamily = "CapShip"
+NewShipType.CollisionFamily = "Big"
+NewShipType.ArmourFamily = "SuperHeavyArmor"
+NewShipType.UnitCapsFamily = "Stop"    --"Capital"
+--NewShipType.UnitCapsShipType = "Cruiser"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 160
+NewShipType.neutralValue = 60
+NewShipType.antiFighterValue = 5
+NewShipType.antiCorvetteValue = 100
+NewShipType.antiFrigateValue = 250
+NewShipType.totalValue = 15
+NewShipType.buildCost = 9000
+NewShipType.buildTime = 125
+NewShipType.buildPriorityOrder = 10
+NewShipType.retaliationRange = 4800
+NewShipType.retaliationDistanceFromGoal = 160
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 6500
+NewShipType.secSensorRange = 6500
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "Rectangle"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 14000
+NewShipType.TODistanceDisappear0 = 12000
+NewShipType.TODistanceFade1 = 5500
+NewShipType.TODistanceDisappear1 = 5000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000	--35000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.085
+NewShipType.mouseOverMaxFadeSize = 0.15
+NewShipType.healthBarStyle = 2
+NewShipType.nlips = 0
+NewShipType.nlipsRange = 10000
+NewShipType.nlipsFar = 0
+NewShipType.nlipsFarRange = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 19500
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.goblinsStartFade = 3000
+NewShipType.goblinsOff = 3000
+NewShipType.upLOD = 9000
+NewShipType.downLOD = 9015
+NewShipType.minimumZoomFactor = 0.5
+NewShipType.selectionLimit = 500000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 1
+NewShipType.alternativeHyperspaceV = "hyperspace_gate_kpr"
+NewShipType.alternativeHyperspaceA = "etg/special/SPECIAL_ABILITIES_HYPERSPACE_IN"
+NewShipType.SMHighlightDistMin = 20000
+NewShipType.SMHighlightDistMax = 25000
+addAbility(NewShipType, "MoveCommand", 1, 0)
+addAbility(NewShipType, "CanDock", 1, 0)
+NewShipType.dockTimeBetweenTwoFormations = 1
+NewShipType.dockTimeBeforeStart = 2
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "delta"
+NewShipType.queueFormation = "dockline"
+NewShipType.dontDockWithOtherRaceShips = 1
+NewShipType.ignoreRaceWhenDocking = 0
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 1
+NewShipType.launchTimeBeforeStart = 9
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "delta"
+-- technically superfulous as it can not dock anything (imagine if drones could dock x_x they'd be immortal
+addAbility(NewShipType, "ShipHold", 1, 40, 10, "rallypoint", "Fighter, Corvette, Utility, Shifter, Agitator", 235, 
+{ 
+    Fighter = "320", 
+}, 
+{ 
+    Corvette = "475", })
+addAbility(NewShipType, "ParadeCommand", 1)
+addAbility(NewShipType, "WaypointMove")
+addAbility(NewShipType, "HyperSpaceCommand", 0, 1, 100, 500, 0, 3)
+addAbility(NewShipType, "CanAttack", 1, 1, 0, 0, 0.35, 1, "BigCapitalShip, SmallCapitalShip, Frigate, Corvette, Fighter, Mothership", "Frontal", 
+{ 
+    Fighter = "CircleStrafe", 
+}, 
+{ 
+    Corvette = "CircleStrafe", 
+}, 
+{ 
+    Utility = "CircleStrafe", 
+}, 
+{ 
+    Mothership = "Frontal", })
+addAbility(NewShipType, "GuardCommand", 1, 3000, 1000)
+addAbility(NewShipType, "CanBuildShips", 1, "Mover_Kpr, Corvette_Kpr, Frigate_Kpr, Probe_Kpr", "Fighter, Corvette, Frigate, Platform")
+addAbility(NewShipType, "CanBeCaptured", 300, 0.5)
+addAbility(NewShipType, "CanBeRepaired")
+addAbility(NewShipType, "RetireAbility", 1, 1)
+-- for good measure
+addAbility(NewShipType, "HyperspaceInhibitorAbility", 0, 6500)
+addAbility(NewShipType, "SpecialAttack", 0, "EMP")
+-- sleep sphere
+addAbility(NewShipType, "DefenseFieldAbility", 0, 0, 10, 200, 200, 0.5, 0.2, 0, "") -- range was 6500 but changed for... balance I guess
+-- a few other bonuses
+AddShipMultiplier(NewShipType, "WeaponAccuracy", "OwnShipsWithinRadiusExcludingThisShip", "Linear", 1.15, 1.15, 6500)
+AddShipMultiplier(NewShipType, "WeaponDamage", "OwnShipsWithinRadiusExcludingThisShip", "Linear", 1.1, 1.1, 6500)
+addAbility(NewShipType, "HyperspaceInhibitorAbility", 1, 6500)
+AddShipAbility(NewShipType, "HyperspaceInhibitor", 1, "ThisShipOnly", 0)
+LoadSharedModel(NewShipType, "kpr_carrier")
+addShield(NewShipType, "EMP", 85, 10)
+-- weapons large
+StartShipWeaponConfig(NewShipType, "kpr_turretedioncannonSleeper", "Weapon_Ion1", "Weapon_Ion1")
+StartShipWeaponConfig(NewShipType, "kpr_turretedioncannonSleeper", "Weapon_Ion2", "Weapon_Ion2")
+StartShipWeaponConfig(NewShipType, "kpr_turretedioncannonSleeper", "Weapon_Ion3", "Weapon_Ion3")
+StartShipWeaponConfig(NewShipType, "kpr_turretedioncannonSleeper", "Weapon_Ion4", "Weapon_Ion4")
+
+-- weapons small
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar1", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar2", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar3", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar4", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar5", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar6", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar7", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar8", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar9", "")
+StartShipWeaponConfig(NewShipType, "kpr_turretedpulsarcannondriverdread", "Weapon_Pulsar10", "")
+-- odd construct thingy with no weapon point
+StartShipWeaponConfig(NewShipType, "kpr_sleepbeam", "Weapon_Root", "Weapon_IonSleeper")
+
+-- salvage
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg03", 1, 0.75, 0, 0, 0, 50, 0, 0, 0, 200, 0, 0, 0, 50, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg02", 1, 0.05, 30, -20, 200, 25, 300, 150, 85, 50, 0, 0, 0, 85, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg04", 1, 0.05, 50, 40, -150, 50, 65, 25, 5, 25, 0, 0, 0, 95, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg05", 1, 0.05, 25, 10, -100, 30, 35, 75, 62, 75, 0, 0, 0, 80, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Lrg01", 1, 0.05, 60, 30, 150, 25, 35, 125, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml01", 1, 0.01, 80, 125, 60, 75, 125, 80, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml02", 1, 0.01, 25, 0, -125, 50, 80, 35, 120, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml03", 1, 0.01, 60, 95, 200, 50, 15, 200, 20, 125, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml04", 1, 0.01, 10, 60, -300, 25, 35, 80, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+SpawnSalvageOnDeath(NewShipType, "Slv_Chunk_Sml05", 1, 0.01, 60, 10, 30, 75, 35, 25, 65, 75, 0, 0, 0, 60, 0, 0, 0, 50)
+NewShipType.battleScarMaxTriBase = 708
+NewShipType.battleScarMaxTriInc = 944
+NewShipType.sobDieTime = 2
+NewShipType.sobSpecialDieTime = 2
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0
+NewShipType.trailLinger = 6
+setEngineBurn(NewShipType, 9, 0.2, 0.5, 300, 1.02, 0.1, 0.25, 380)
+setEngineGlow(NewShipType, 1, 1, 1.01, 15, 325, 50, 1.75, 
+    { 1, 0.47, 0, 0.2, })
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/misc/", 0, "Engines/KeeperDestroyerEng", "", 1, "Ambience/KeeperDestroyerAmb", "")

@@ -1,0 +1,8 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "flak_hit_combo",
+		distance = 10000,
+	},
+}

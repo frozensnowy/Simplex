@@ -1,0 +1,46 @@
+fps = 35
+startFrame = 0
+loopCount = 1
+layout = 
+    { 1, 1, }
+textureLayout = 
+    { 
+
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0000.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0001.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0002.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0003.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0004.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0005.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0006.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0007.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0008.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0009.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0010.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0011.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0012.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0013.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0014.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0015.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0016.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0017.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0018.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0019.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0020.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0021.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0022.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0023.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0024.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0025.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0026.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0027.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0028.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0029.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0030.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0031.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0032.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0033.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/torpedo_polaron_core/torpedo_polaron_core0034.tga", 0, 0, },
+
+
+    }

@@ -1,0 +1,5 @@
+STAR_SOL_C9_Normal_OnSet = function(ship)
+    startAnim(ship, "SPIN")
+    setLoopCount(ship, "SPIN", 100000)   --infinite looping
+    --startEffect(ship, "AURA")    
+end

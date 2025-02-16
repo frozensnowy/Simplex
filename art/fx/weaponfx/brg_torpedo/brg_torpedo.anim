@@ -1,0 +1,36 @@
+fps = 35
+startFrame = 0
+loopCount = 40
+layout = 
+    { 1, 1, }
+textureLayout = 
+    { 
+
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0000.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0001.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0002.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0003.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0004.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0005.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0006.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0007.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0008.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0009.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0010.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0011.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0012.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0013.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0014.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0015.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0016.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0017.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0018.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0019.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0020.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0021.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0022.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0023.tga", 0, 0, },
+{ "data:/ART/FX/weaponFX/brg_torpedo/brg_torpedo_0024.tga", 0, 0, },
+
+
+    }

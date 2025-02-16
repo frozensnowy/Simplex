@@ -1,0 +1,59 @@
+levelDesc = "Torus Adventure"
+-- This version had been added with more ru patch. So it should be plenty for all 4players to use anystrats neccessary to win a victory against your aponent
+-- Concept by TroublePSA
+-- Players engage on a close quarter combat, mysterious and deadly is what some describes this hostile part of region.
+-- Dedicated to the ppl who loves a good teamsplay scenario <Salute>PaktuSjetArmada 
+maxPlayers = 4
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+
+function DetermChunk()
+  addPoint("StartPos0", {random(-100,100), random(-100,100), -37500+random(-100,100)}, {0, 0, 0})
+  addPoint("StartPos1", {-37500+random(-100,100), random(-100,100), random(-100,100)}, {0, 90, 0})
+  addPoint("StartPos2", {random(-100,100), random(-100,100), 37500+random(-100,100)}, {0, -180, 0})
+  addPoint("StartPos3", {37500+random(-100,100), random(-100,100), random(-100,100)}, {0, -90, 0})
+
+	addSquadron("endor", "moon2", {random(-1700000,1700000), random(-200000,200000), -random(2700000,3700000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	addSquadron("hgn_planet_mars", "hgn_planet_mars", {0, 0, 0}, -1, {0, random(0,360), 0}, 0, 0)
+	
+	local argu = random(0,360)
+	local r = 40000
+	local num = 150
+	local ring_num = random(3,6)
+	for z = 1, ring_num, 1 do
+		r = random(34000,41000)
+		num = random(r/900,r/300)
+		for i = 1, num, 1 do
+			addAsteroid("Asteroid_"..random(1,5), {r*cos(argu), 0, r*sin(argu)}, random(0,100), 0, 0, 0, 0)
+			--if random(0,10) > 8 then
+				--addDustCloud("polySurface1", "dustcloud_nores"..random(2,3), {r*cos(argu), random(-100,100), r*sin(argu)}, {1.0, 1.0, 1.0, 1.0}, 233.16, random(2000,3000))
+			--end
+			argu = random(0,360)
+		end
+	end
+	
+	local u, v , r, d = 0, 0, 8000, 37500
+	for h = 1, random(600,700), 1 do
+		u = random(0,360)
+		v = random(0,360)
+		addNebula("polySurface3", "M11_Bentusi_Radiation", {(d+r*cos(v))*cos(u), r*sin(v), (d+r*cos(v))*sin(u)}, {1, (sin(u)+1)/2, (sin(u)+1)/2, 1}, 100.00, 5000.00)
+	end
+
+
+
+  setWorldBoundsInner({0, 0, 0}, {60000, 35000, 60000})
+end
+
+function NonDetermChunk()
+
+		fogSetActive(0)
+		setGlareIntensity(0)
+		setLevelShadowColour(0, 0, 0, 1)
+		setSensorsManagerCameraDistances(61000, 120000)
+    loadBackground ("supernova")
+end

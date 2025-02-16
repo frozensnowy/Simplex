@@ -1,0 +1,30 @@
+effects = 
+{ 
+	animations = 
+	{ 
+		disk = 
+		{ 
+			name = "disk", 
+			length = 100, 
+			loop = 1, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},		
+	},
+	events = 
+	{ 
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "root", }, 
+			{ "fx", "spc_moonground_emitter", }, 
+			{ "sound", "", }, 
+			{ "fx_scale", "1650", }, 
+      { "fx_sm", "on", }, 
+		}, 		
+	},	
+}

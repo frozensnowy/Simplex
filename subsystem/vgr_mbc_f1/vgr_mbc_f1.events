@@ -1,0 +1,167 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_BCMissile",
+      length = 8,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+        event0 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_BCMissile_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event1 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.07", }, 
+                { "marker", "Weapon_BCMissileSlave_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.14", }, 
+                { "marker", "Weapon_BCMissileSlave1_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.21", }, 
+                { "marker", "Weapon_BCMissileSlave2_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event4 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.28", }, 
+                { "marker", "Weapon_BCMissileSlave3_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event5 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "Weapon_BCMissileSlave4_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.42", }, 
+                { "marker", "Weapon_BCMissileSlave5_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event7 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.49", }, 
+                { "marker", "Weapon_BCMissileSlave6_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+				event8 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.56", }, 
+                { "marker", "Weapon_BCMissileSlave7_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event9 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.63", }, 
+                { "marker", "Weapon_BCMissileSlave8_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event10 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "Weapon_BCMissileSlave9_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event11 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.77", }, 
+                { "marker", "Weapon_BCMissileSlave10_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event12 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.84", }, 
+                { "marker", "Weapon_BCMissileSlave11_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event13 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.91", }, 
+                { "marker", "Weapon_BCMissileSlave12_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event14 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.98", }, 
+                { "marker", "Weapon_BCMissileSlave13_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "1.5", }, 
+                { "fx_nlips", "on", }, 
+            },         
+},            
+}

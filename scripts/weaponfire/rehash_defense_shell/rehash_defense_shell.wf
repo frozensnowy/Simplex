@@ -1,0 +1,14 @@
+hitfx = "xflak_cloud_combo"
+bulletfx = "kinetic_huge_bullet"
+nopenetratefx = "xflak_cloud_combo"
+deathtype = "deathCannon"
+firefx = "muzzle_flash_combo_small_capital"
+scartype = "Kinetic_Large/Kinetic_Large"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_CANNON_SHELL"
+bullet_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"
+hit_clamp = {
+  1,
+  1,
+}
+

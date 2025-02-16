@@ -1,0 +1,110 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+        nuke = 
+            { 
+                { "anim", "disk", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_NUCLEAR", }, 
+                { "fx_scale", "6", }, 
+                { "fx_sm", "on", },                 
+            },       
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_phase_repulsor_oneshot", }, 
+			{ "sound", "WEAPON/XPLOSTORM", }, 
+			{ "fx_scale", "80", }, 
+		}, 
+		disk1 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "88", }, 
+		}, 
+		disk2 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.2", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "96", }, 
+		}, 
+		disk3 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.3", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "104", }, 
+		}, 
+		disk4 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.4", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "112", }, 
+		}, 
+		disk5 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.5", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "120", }, 
+		}, 
+		disk6 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "80", }, 
+		}, 
+		disk7 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+			{ "fx_scale", "1.12", }, 
+		}, 
+		disk8 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+			{ "fx_scale", "0.4", }, 
+		}, 
+		
+	},
+	
+}

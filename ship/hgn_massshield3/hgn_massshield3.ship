@@ -1,0 +1,125 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Heavy Mass Shield"
+NewShipType.sobDescription = "Mass Shield Emitter"
+NewShipType.maxhealth = 3500000
+--NewShipType.regentime = 1000
+--NewShipType.minRegenTime = 100
+NewShipType.frontArmourDamage = 0.06
+NewShipType.sideArmourDamage = 0.06
+NewShipType.rearArmourDamage = 1
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.unitCapsNumber = 0
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "x"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 20000
+NewShipType.collisionMultiplier = 0.4
+NewShipType.thrusterMaxSpeed = 0
+NewShipType.mainEngineMaxSpeed = 0
+NewShipType.rotationMaxSpeed = 0
+NewShipType.thrusterAccelTime = 2
+NewShipType.thrusterBrakeTime = 1
+NewShipType.mainEngineAccelTime = 2
+NewShipType.mainEngineBrakeTime = 1
+NewShipType.rotationAccelTime = 2
+NewShipType.rotationBrakeTime = 1
+NewShipType.thrusterUsage = 0
+NewShipType.accelerationAngle = 0
+NewShipType.mirrorAngle = 0
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 0
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 0
+NewShipType.slideMoveRange = 0
+NewShipType.controllerType = "None"
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.6
+NewShipType.targetRandomPointXMax = 0.6
+NewShipType.targetRandomPointYMin = -0.6
+NewShipType.targetRandomPointYMax = 0.6
+NewShipType.targetRandomPointZMin = -0.1
+NewShipType.targetRandomPointZMax = 0.1
+NewShipType.dustCloudDamageTime = 500
+NewShipType.nebulaDamageTime = 1000
+NewShipType.MinimalFamilyToFindPathAround = "MotherShip"
+NewShipType.BuildFamily = "Shipyard_Hgn"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "massshield3"
+NewShipType.AvoidanceFamily = "MotherShip"
+--NewShipType.DisplayFamily = "Munition"
+NewShipType.AutoFormationFamily = "Fighter"
+NewShipType.CollisionFamily = "Big"
+NewShipType.ArmourFamily = "HeavyArmour"
+NewShipType.UnitCapsFamily = "Fighter"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 0
+NewShipType.buildCost = 1
+NewShipType.buildTime = 1
+NewShipType.buildPriorityOrder = 25
+NewShipType.retaliationRange = 0
+NewShipType.retaliationDistanceFromGoal = 0
+
+NewShipType.TOIcon = "Hexagon"
+NewShipType.TOScale = 0
+NewShipType.TODistanceFade0 = 0
+NewShipType.TODistanceDisappear0 = 0
+NewShipType.TODistanceFade1 = 0
+NewShipType.TODistanceDisappear1 = 0
+NewShipType.TODistanceFade2 = 0
+NewShipType.TODistanceDisappear2 = 0
+NewShipType.TOGroupScale = 0
+NewShipType.TOGroupMergeSize = 0
+NewShipType.healthBarStyle = 3
+
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+--NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 0
+NewShipType.visibleInSecondary = 0
+NewShipType.selectionLimit = 30000
+NewShipType.preciseSelectionLimit = 5000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 1
+NewShipType.minimumZoomFactor = 2
+NewShipType.militaryUnit = 0
+addAbility(NewShipType, "MoveCommand", 0, 0)
+addAbility(NewShipType, "CanDock", 1, 0)
+NewShipType.dockTimeBetweenTwoFormations = 0
+NewShipType.dockTimeBeforeStart = 0
+NewShipType.dockNrOfShipsInDockFormation = 0
+NewShipType.dockFormation = "delta"
+NewShipType.queueFormation = "dockline"
+NewShipType.dontDockWithOtherRaceShips = 1
+NewShipType.ignoreRaceWhenDocking = 0
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 0
+NewShipType.launchTimeBeforeStart = 0
+NewShipType.launchNrOfShipsInDockFormation = 0
+NewShipType.launchFormation = "delta"
+addAbility(NewShipType, "ParadeCommand", 1)
+
+addAbility(NewShipType, "CanBeRepaired")
+
+LoadModel(NewShipType, 1)
+
+addShield(NewShipType, "EMP", 100000, 100)
+NewShipType.battleScarMaxTriBase = 0
+NewShipType.battleScarMaxTriInc = 0
+NewShipType.sobDieTime = 0
+NewShipType.sobSpecialDieTime = 0
+NewShipType.specialDeathSpeed = 0
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0
+NewShipType.trailLinger = 0
+

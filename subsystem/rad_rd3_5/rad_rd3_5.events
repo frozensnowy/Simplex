@@ -1,0 +1,333 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "weapon_turret",
+      length = 3,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation3 = {
+      name = "Dmg1",
+      length = 1,
+      loop = 1,
+      parent = "damage",
+      minimum = 0.9,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = { 
+    event1 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurret_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    
+    },
+    event2 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.17",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      }, 
+      {
+        "fx_scale",
+        "2",
+      },
+  
+    },
+    event3 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.33",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave1_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    
+    },
+    event4 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.5",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave2_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      }, 
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+    event5 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.67",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave3_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+    event6 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.83",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave4_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      }, 
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+
+    events1 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.1",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurret_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    
+    },
+    events2 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.27",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      }, 
+      {
+        "fx_scale",
+        "1",
+      },
+  
+    },
+    events3 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.43",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave1_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    
+    },
+    events4 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.6",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave2_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      }, 
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+    events5 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.77",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave3_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+    events6 = {
+      {
+        "anim",
+        "weapon_turret",
+      },
+      {
+        "animtime",
+        "0.93",
+      },
+      {
+        "marker",
+        "Weapon_TorpedoTurretSlave4_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      }, 
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+   
+    eventdeath = {
+      {
+        "anim",
+        "Dmg1",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "fx",
+        "dmg_damage_subsystem_spray",
+      },
+      {
+        "fx_scale",
+        "entity",
+      },
+    },
+  },
+}

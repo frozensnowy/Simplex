@@ -1,0 +1,135 @@
+-- The Simplex Project
+-- 2011/7/9 22:02:08
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+levelDesc = "Sunshine"
+maxPlayers = 6
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 5, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+function DetermChunk()
+    addPoint("StartPos0", 
+    { 12002, 3, -100006} , 
+    { 0, 0, 0, })
+    addPoint("StartPos1", 
+    { -12001, 2, -100003} , 
+    { 0, 0, 0, })
+    addPoint("StartPos2", 
+    { -26003, 1, 100005} , 
+    { 0, 90, 0, })
+    addPoint("StartPos3", 
+    { -12004, 5, 100001} , 
+    { 0, 180, 0, })
+    addPoint("StartPos4", 
+    { 26005, -4, 100002} , 
+    { 0, -90, 0, })
+    addPoint("StartPos5", 
+    { 12006, -2, 100000} , 
+    { 0, 180, 0, })
+
+	addSquadron("moon_orbit", "sunlight", {random(-300000,300000), random(-300000,300000), -600000}, -1, {-90, 0, 0}, 0, 0)
+
+	for u = 0, 1, 1 do
+		local j = -10000
+		if u == 0 then
+			j = -100400
+		else
+			j = 100400
+		end
+		
+		addSquadron("Balcora1", "anc_hyperspace_bridge", {0, 3000, j,}, -1, {90, j, 0,}, 0, 0)
+		addSquadron("Balcora1", "anc_hyperspace_bridge", {0, -3000, j,}, -1, {-90, -j, 0,}, 0, 0)
+		
+		local p = 40000
+		if j < 0 then
+			for alpha = 0, 180, 60 do
+				addSquadron("Balcora1", "anc_hyperspace_bridge", {p*cos(alpha), 0, j+p*sin(alpha),}, -1, {90, alpha, 0,}, 0, 0)
+				local r = 5000
+				for phi = 15, 345, 30 do
+					addSquadron("asteroid_4_grey_nosalvage_big", "asteroid_"..random(3,5).."_grey_nosalvage", {p*cos(alpha)+r*cos(phi), 5000*sin(phi+alpha+90), j+p*sin(alpha)+r*sin(phi)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+					addDustCloud("polySurface1", "dustcloud_nores", {p*cos(alpha), random(-100,100), j+p*sin(alpha)}, {1.0, 1.0, 1.0, 1.0}, 233.16, 10000.0)
+				  addDustCloud("polySurface1", "dustcloud_nores", {p*cos(alpha), random(-100,100), j+p*sin(alpha)}, {1.0, 1.0, 1.0, 1.0}, 256.41, 10000.0)
+				  addDustCloud("polySurface1", "dustcloud_nores2", {p*cos(alpha), random(-100,100), j+p*sin(alpha)}, {1.0, 1.0, 1.0, 1.0}, 146.67, 10000.0)
+				end
+			end
+		else
+			for alpha = 180, 360, 60 do
+				addSquadron("Balcora1", "anc_hyperspace_bridge", {p*cos(alpha), 0, j+p*sin(alpha),}, -1, {90, alpha, 0,}, 0, 0)
+				local r = 5000
+				for phi = 15, 345, 30 do
+					addSquadron("asteroid_4_grey_nosalvage_big", "asteroid_"..random(3,5).."_grey_nosalvage", {p*cos(alpha)+r*cos(phi), 5000*sin(phi+alpha+90), j+p*sin(alpha)+r*sin(phi)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+					addDustCloud("polySurface1", "dustcloud_nores", {p*cos(alpha), random(-100,100), j+p*sin(alpha)}, {1.0, 1.0, 1.0, 1.0}, 233.16, 10000.0)
+				  addDustCloud("polySurface1", "dustcloud_nores", {p*cos(alpha), random(-100,100), j+p*sin(alpha)}, {1.0, 1.0, 1.0, 1.0}, 256.41, 10000.0)
+				  addDustCloud("polySurface1", "dustcloud_nores2", {p*cos(alpha), random(-100,100), j+p*sin(alpha)}, {1.0, 1.0, 1.0, 1.0}, 146.67, 10000.0)
+				end
+			end
+		end
+		
+		local r = 1000
+		local phi = 90
+		for i = 1, 5, 1 do
+			r = r+1000
+			local q = i*10
+			local delta = 360/q
+			for a = 1, q, 1 do
+				addAsteroid("Asteroid_"..i, {r*cos(phi), 0, j+r*sin(phi)}, 100, 0, 0, 0, 0)
+				phi = phi+delta
+			end
+		end
+	end
+	
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {0, 3000, 0,}, -1, {90, random(0,360), 0,}, 0, 0)
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {0, -3000, 0,}, -1, {-90, random(0,360), 0,}, 0, 0)
+	addNebula("polySurface5", "nebula_0", {-0, -0, 0}, {1.0, 1.0, 1.0, 1.0}, 214.41, 10000.0)
+  addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation", {-0, -0, 0}, {255,255,255, 1.0}, 261.6, 10000.0)
+	local r = 8000
+	for argu = 0, 300, 60 do
+		if random(1,2) == 2 then
+					addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", {r*cos(argu), 0, r*sin(argu)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+		else
+					addSquadron("Meg_Gehenna_1", "meg_gehenna_3ctm", {r*cos(argu), 0, r*sin(argu)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+		end
+	end
+	
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {90000, 3000, 0,}, -1, {90, random(0,360), 0,}, 0, 0)
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {90000, -3000, 0,}, -1, {-90, random(0,360), 0,}, 0, 0)
+	addSquadron("Balcora1", "meg_dreadnaughtberth", {90000, -0, 0,}, -1, {0, 90, 0,}, 0, 0)
+	
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {-90000, 3000, 0,}, -1, {90, random(0,360), 0,}, 0, 0)
+	addSquadron("Balcora1", "anc_hyperspace_bridge", {-90000, -3000, 0,}, -1, {-90, random(0,360), 0,}, 0, 0)
+	addSquadron("Balcora1", "meg_dreadnaughtberth", {-90000, -0, 0,}, -1, {0, -90, 0,}, 0, 0)
+
+	for i = 0, 10, 1 do
+		addSquadron("BentusMain", "meg_veildebris_chunk"..random(1,5), {10000*sin(i*36), 0, 55000-i*4000}, -1, {0, i*36, 0}, 0, 0)
+  	addSquadron("BentusMain", "meg_veildebris_chunk"..random(1,5), {-10000*sin(i*36), 0, -55000+i*4000}, -1, {0, 180+i*36, 0}, 0, 0)
+  end
+
+    setWorldBoundsInner(
+    { 0, 0, 0} , 
+    { 130000, 36978.29, 130000, })
+    setWorldBoundsOuter({0, 0, 0}, {690000, 360000, 690000})
+end
+
+function NonDetermChunk()
+	for z = 0, 6, 1 do
+		local r = 10000 + z*10000
+		local phi = 120
+		for i = 0, 120, 1 do
+			phi = phi+1
+			addPebble("Pebble_1", { r*cos(phi)+90000, 0, r*sin(phi)}, 0, 0, 0)
+			addPebble("Pebble_1", { r*cos(phi+180)-90000, 0, r*sin(phi+180)}, 0, 0, 0)
+		end
+	end
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("red_sky")	
+end

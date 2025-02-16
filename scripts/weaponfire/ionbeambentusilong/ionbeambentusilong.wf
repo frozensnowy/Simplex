@@ -1,0 +1,14 @@
+hitfx = "ion_dmg_ring_spray"
+firefx = "ion_beam_bent_short_firing"
+bulletfx = "ion_beam_bent_combo"
+nopenetratefx = "ion_dmg_ring_spray"
+blowthroughfx = "blowthrough_generic"
+deathtype = "deathBeam"
+scartype = "iontrail"
+fire_sfx = "WEAPON/MOD/allegrettobeammedium"
+hit_sfx = "WEAPON/MOD/IONHIT3"
+nopentrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_ION_CANNON_BEAM_HIT"
+hit_clamp = {
+  0.5,
+  1.25,
+}

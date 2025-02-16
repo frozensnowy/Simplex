@@ -1,0 +1,41 @@
+StartWeaponConfig(NewWeaponType,"Gimble","Bullet","Plasma_Bomb","Normal Only",1200,3890,0,0,0,0,1,1,0,2.1,0,0,0,0,260,40,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 145, 145, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    ResArmour = 0.2, 
+}, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    SubSystemArmour = 2.5, 
+}, 
+{ 
+    TurretArmour = 0.45, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0.06, 
+}, 
+{ 
+    Corvette = 0.12, 
+}, 
+{ 
+    munition = 0.1, 
+}, 
+{ 
+    Frigate = 0.8, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 0.6, 
+    damage = 1, })
+setAngles(NewWeaponType, 20, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 0)

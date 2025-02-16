@@ -1,0 +1,18 @@
+-- LuaDC version 0.9.20
+-- 2006/10/20 ¤U¤È 09:12:56
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_wave_explosion_combo"
+bulletfx = "ion_beam_red_enhanced_combo"
+nopenetratefx = "dmg_wave_explosion_combo"
+blowthroughfx = "dmg_wave_explosion_combo"
+deathtype = "deathBeam"
+scartype = "iontrail"
+firefx = "ion_beam_red_charge_enhanced"
+fire_sfx = "WEAPON/FRIGATE/FIRE/KWEAPON_FRIGATE_ION_CANNON_BEAM"
+scartype = "iontrail"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_ION_CANNON_BEAM_HIT"
+nopentrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_ION_CANNON_BEAM_HIT"
+hit_clamp = 
+    { 0.5, 1.25, }

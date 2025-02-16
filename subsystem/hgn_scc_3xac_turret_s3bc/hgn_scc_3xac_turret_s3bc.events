@@ -1,0 +1,48 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_Torpedo",
+      length = 1.3,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },    
+  },
+  events = { 
+    
+    event40 = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_SCT_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "weapon/medgun_atmosphereLow", }, 
+                { "fx_scale", "3",},
+                { "fx_nlips", "on", }, 
+            },            
+    event41 = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "weapon/medgun_atmosphereLow", }, 
+                { "fx_scale", "3",},
+                { "fx_nlips", "on", }, 
+            },            
+    event42 = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "Weapon_SCTSlave1_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "weapon/medgun_atmosphereLow", }, 
+                { "fx_scale", "3",},
+                { "fx_nlips", "on", }, 
+            },      
+  },
+}

@@ -1,0 +1,28 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:09 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "SphereBurst", "Hgn_Minesweep", "Normal", 0, 0, 200, 2, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 1, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 100, 100, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    LightArmour = 0, 
+}, 
+{ 
+    MediumArmour = 0.4, 
+}, 
+{ 
+    HeavyArmour = 0.4, 
+}, 
+{ 
+    ResArmour = 0.15, 
+}, 
+{ 
+    TurretArmour = 0.3, 
+}, 
+{ 
+    SubSystemArmour = 0, 
+}, 
+{ 
+    PlanetKillerArmour = 0, })

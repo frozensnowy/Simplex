@@ -1,0 +1,4 @@
+ONI_PLANETB02_Normal_OnSet = function(ship)
+    startAnim(ship, "rotation")
+    setLoopCount(ship, "rotation", 100000)   --infinite looping
+end

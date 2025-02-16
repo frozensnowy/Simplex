@@ -1,0 +1,1002 @@
+startNum = 0
+function ringAdd(fPosX, fPosY, fPosZ, rDistTable, fAxis1, fAxis2, fWidth, fThickness, fRotY, fRotZ, fArc1, fArc2, iMode)
+	local width, thick, arc, theta, thetaX, thetaY, thetaZ, rotyX, rotyY, rotyZ, rotzX, rotzY, rotzZ, cooX, cooY, cooZ = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	local minAxis = min(fAxis1, fAxis2)
+	local majAxis = max(fAxis1, fAxis2)
+	local minArc = min(fArc1, fArc2)
+	local maxArc = max(fArc1, fArc2)
+	for k, iCount in rDistTable do
+		for i = 1, iCount.number do
+			if (iMode == 1) then		--if set to random mode
+				theta = random(minArc, maxArc)
+				thetaX = cos(theta)*(majAxis + random(fWidth/-2, fWidth/2))
+				thetaY = sin(theta)*sqrt((majAxis + random(fWidth/-2, fWidth/2))^2 - majAxis^2 + minAxis^2)
+				thetaZ = random(fThickness/-2, fThickness/2)
+			elseif (iMode == 0) then		--if set to non-random mode
+				theta = minArc + arc
+				thetaX = cos(theta)*majAxis		--(majAxis + fWidth/-2 + width)
+				thetaY = sin(theta)*minAxis		--sqrt((majAxis + fWidth/-2 + width)^2 - majAxis^2 + minAxis^2)
+				thetaZ = 0		--(fThickness/-2 + thick)
+			end
+			arc = arc + (maxArc-minArc)/iCount.number
+			width = width + fWidth/iCount.number
+			thick = thick + fThickness/iCount.number
+			rotyX = sin(fRotY)*thetaZ + cos(fRotY)*thetaX
+			rotyY = thetaY
+			rotyZ = cos(fRotY)*thetaZ - sin(fRotY)*thetaX
+			rotzX = cos(fRotZ)*rotyX - sin(fRotZ)*rotyY
+			rotzY = sin(fRotZ)*rotyX + cos(fRotZ)*rotyY
+			rotzZ = rotyZ
+			cooX = rotzX
+			cooY = rotzY
+			cooZ = rotzZ
+			if (iCount.class == "Point") then
+				if (iCount.name == "StartPos") then
+					if startNum == 0 then
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 45, 0})
+					elseif startNum == 1 then
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, -45, 0})
+					elseif startNum == 2 then 
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, -135, 0}) 
+					else
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 135, 0})
+					end  
+					startNum = startNum + 1					
+				else
+					addPoint(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+				end
+			elseif (iCount.class == "Sphere") then
+				addSphere(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.size)
+			elseif (iCount.class == "Camera") then
+				addCamera(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+			elseif (iCount.class == "Squadron") then
+				addSquadron(iCount.name .. (i-1), iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.player, iCount.rotation, 0, 0)
+			elseif (iCount.class == "Asteroid") then
+				addAsteroid(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Salvage") then
+				addSalvage(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Pebble") then
+				addPebble(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 0, 0, 0)
+			elseif (iCount.class == "Cloud") then
+				addCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "DustCloud") then
+				addDustCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "Nebula") then
+				addNebula(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "EasyPatch") then
+				easyPatch(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)			
+			end
+		end
+	end
+end
+-----------------------------------------------------------------------------------------------------------
+function asteroidAdd(fPosX, fPosY, fPosZ, sLayout, rDistTable, a, b, c, fRotY, fRotZ)	
+	local rel, cooX, cooY, cooZ = 0, 0, 0, 0
+	for k, iCount in rDistTable do
+		rel = rel + iCount.number
+	end
+	for k, iCount in rDistTable do
+		local minAB, maxAB = min(a, b), max(a, b)
+		for i = 1, iCount.number do		--for i = 1, num*iCount.number do
+			local r, u, v, l, w, h = random(minAB, maxAB), random(0, 180), random(0, 360), random(-0.5*a, 0.5*a), random(-0.5*b, 0.5*b), random(-0.5*c, 0.5*c)
+			if sLayout == "Cylinder" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) - sin(fRotZ)*r*sin(v)
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) + cos(fRotZ)*r*sin(v)
+				cooZ = cos(rotY)*h - sin(rotY)*r*cos(v)
+			elseif sLayout == "Sphere" then
+				cooX = sqrt(r^2-(r*cos(u))^2)*cos(v)
+				cooY = sqrt(r^2-(r*cos(u))^2)*sin(v)
+				cooZ = r*cos(u);
+			elseif sLayout == "Box" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) - sin(fRotZ)*w
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) + cos(fRotZ)*w
+				cooZ = cos(fRotY)*h - sin(fRotY)*l
+			end
+			if (iCount.class == "Point") then
+				if (iCount.name == "StartPos") then
+					addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+					startNum = startNum + 1					
+				else
+					addPoint(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+				end
+			elseif (iCount.class == "Sphere") then
+				addSphere(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.size)
+			elseif (iCount.class == "Camera") then
+				addCamera(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+			elseif (iCount.class == "Squadron") then
+				addSquadron(iCount.name .. (i-1), iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.player, iCount.rotation, 0, 0)
+			elseif (iCount.class == "Asteroid") then
+				addAsteroid(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Salvage") then
+				addSalvage(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Pebble") then
+				addPebble(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 0, 0, 0)
+			elseif (iCount.class == "Cloud") then
+				addCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "DustCloud") then
+				addDustCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "Nebula") then
+				addNebula(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "EasyPatch") then
+				easyPatch(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)
+			end
+		end
+	end
+end
+--------------------------------------------------------------------------------------------------------------------------
+function easyPatch(epX, epZ, epY)	
+	local easyPatchDist =
+	{
+	  Asteroid_5 = {1, 0, 0,},   --450 spazio
+		Asteroid_4 = {1, 450, 750,},   --300 
+		Asteroid_3 = {3, 800, 1050,},   --250 
+		Asteroid_2 = {2, 1075, 1100,},   --150
+		Asteroid_1 = {2, 1125, 1150,},   --100
+	}
+	for k, iCount in easyPatchDist do
+		for j = 1, iCount[1] do
+			local r, phi, theta = random(iCount[2], iCount[3]), random(0, 360), random(0, 360)
+			addAsteroid(k, {epX + sqrt(r^2-(r*cos(phi))^2)*cos(theta), epZ + r*cos(phi), epY + sqrt(r^2-(r*cos(phi))^2)*sin(theta),}, 100, 0, 0, 0, 0)
+		end
+	end
+end
+---------------------------------------------------------------------------------------------------------------------------------------
+levelDesc = "Debris Synchrony"
+maxPlayers = 4
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+function DetermChunk()
+	setWorldBoundsInner({0, 0, 0}, {34000, 34000, 34000})		
+	setWorldBoundsOuter({0, 0, 0}, {35000, 35000, 35000})
+	addSquadron("pluto", "pluto", {-435000, 110000, 375000}, -1, {0, 0, 0}, 0, 0)
+	local playerPositionRing =
+	{
+		Point0 =
+		{
+			class = "Point",
+			name = "StartPos",		-- special case
+			rotation = "toCenter",		-- needs work
+			teams = 0,		-- needs work
+			bias = 0,		-- needs work
+			number = 4,	-- if StartPos, total should always equal maxPlayers
+		},              
+	}
+	local playerPatchRing =
+	{
+		EasyPatch0 =
+		{
+			class = "EasyPatch",
+			number = 4,
+		},
+	}
+	local easyPatchRing =
+	{
+		EasyPatch1 =
+		{
+			class = "EasyPatch",
+			number = 2,
+		},                
+	}
+	local centerSphereint =
+	{		
+	  Cloud0 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 5000,
+			number = 3,
+		},
+		Pebble0 =
+		{
+			class = "Pebble",
+			type = "Pebble_0",
+			number = 40,
+		},		
+		Salvage0 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg01",
+			number = 7,
+		},
+		Salvage1 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg02",
+			number = 7,
+		},
+		Salvage2 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg03",
+			number = 7,
+		},
+		Salvage3 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg04",
+			number = 7,
+		},
+		Salvage4 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg05",
+			number = 7,
+		},				
+		debris1 =
+		{
+			class = "Squadron",
+			name = "debris1",
+			type = "meg_veildebris_bit1",
+			rotation = {162, -31, 13,},
+			player = -1,
+			number = 1,
+		},
+		debris2 =
+		{
+			class = "Squadron",
+			name = "debris2",
+			type = "meg_veildebris_bit2",
+			rotation = {62, -131, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris3 =
+		{
+			class = "Squadron",
+			name = "debris3",
+			type = "meg_veildebris_bit3",
+			rotation = {32, -11, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris4 =
+		{
+			class = "Squadron",
+			name = "debris4",
+			type = "meg_veildebris_bit4",
+			rotation = {66, -31, 13,},
+			player = -1,
+			number = 1,
+		},			
+		debris5 =
+		{
+			class = "Squadron",
+			name = "debris5",
+			type = "meg_veildebris_bit5",
+			rotation = {62, -39, 31,},
+			player = -1,
+			number = 1,
+		},
+		debris6 =
+		{
+			class = "Squadron",
+			name = "debris6",
+			type = "meg_veildebris_bit6",
+			rotation = {14, 60, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris7 =
+		{
+			class = "Squadron",
+			name = "debris7",
+			type = "meg_veildebris_bit7",
+			rotation = {-16, 77, 60,},
+			player = -1,
+			number = 1,
+		},		
+		debris8 =
+		{
+			class = "Squadron",
+			name = "debris8",
+			type = "meg_veildebris_bit8",
+			rotation = {-60, 26, 12,},
+			player = -1,
+			number = 1,
+		},
+		debris9 =
+		{
+			class = "Squadron",
+			name = "debris9",
+			type = "meg_veildebris_bit9",
+			rotation = {23, -60, 88,},
+			player = -1,
+			number = 1,
+		},		
+    debris10 =
+		{
+			class = "Squadron",
+			name = "debris10",
+			type = "meg_veildebris_bit10",
+			rotation = {-19, 15, 30,},
+			player = -1,
+			number = 1,
+		},
+		debris11 =
+		{
+			class = "Squadron",
+			name = "debris11",
+			type = "meg_veildebris_bit11",
+			rotation = {-61, 25, 12,},
+			player = -1,
+			number = 1,
+		},	
+		debris12 =
+		{
+			class = "Squadron",
+			name = "debris12",
+			type = "meg_veildebris_bit12",
+			rotation = {-21, 22, 12,},
+			player = -1,
+			number = 1,
+		},			
+		debris13 =
+		{
+			class = "Squadron",
+			name = "debris13",
+			type = "meg_veildebris_bit13",
+			rotation = {-31, 25, 32,},
+			player = -1,
+			number = 1,
+		},	
+		debris14 =
+		{
+			class = "Squadron",
+			name = "debris14",
+			type = "meg_veildebris_bit14",
+			rotation = {-61, 24, 42,},
+			player = -1,
+			number = 1,
+		},			
+		debris15 =
+		{
+			class = "Squadron",
+			name = "debris15",
+			type = "meg_veildebris_bit15",
+			rotation = {-51, 25, 52,},
+			player = -1,
+			number = 1,
+		},		
+		debris16 =
+		{
+			class = "Squadron",
+			name = "debris16",
+			type = "meg_veildebris_flake1",
+			rotation = {162, -31, 13,},
+			player = -1,
+			number = 1,
+		},
+		debris17 =
+		{
+			class = "Squadron",
+			name = "debris17",
+			type = "meg_veildebris_flake2",
+			rotation = {62, -131, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris18 =
+		{
+			class = "Squadron",
+			name = "debris18",
+			type = "meg_veildebris_flake3",
+			rotation = {32, -11, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris19 =
+		{
+			class = "Squadron",
+			name = "debris19",
+			type = "meg_veildebris_flake4",
+			rotation = {66, -31, 13,},
+			player = -1,
+			number = 1,
+		},			
+		debris20 =
+		{
+			class = "Squadron",
+			name = "debris20",
+			type = "meg_veildebris_flake5",
+			rotation = {62, -39, 31,},
+			player = -1,
+			number = 1,
+		},
+		debris21 =
+		{
+			class = "Squadron",
+			name = "debris21",
+			type = "meg_veildebris_flake6",
+			rotation = {14, 60, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris22 =
+		{
+			class = "Squadron",
+			name = "debris22",
+			type = "meg_veildebris_flake7",
+			rotation = {-16, 77, 60,},
+			player = -1,
+			number = 1,
+		},		
+		debris23 =
+		{
+			class = "Squadron",
+			name = "debris23",
+			type = "meg_veildebris_flake8",
+			rotation = {-60, 26, 12,},
+			player = -1,
+			number = 1,
+		},	
+		debris24 =
+		{
+			class = "Squadron",
+			name = "debris24",
+			type = "meg_veildebris_flake9",
+			rotation = {-60, 26, 92,},
+			player = -1,
+			number = 1,
+		},	
+		debris25 =
+		{
+			class = "Squadron",
+			name = "debris25",
+			type = "meg_veildebris_flake10",
+			rotation = {-60, 36, 32,},
+			player = -1,
+			number = 1,
+		},										
+		debris26 =
+		{
+			class = "Squadron",
+			name = "debris26",
+			type = "meg_veildebris_chunk5",
+			rotation = {4, 16, -72,},
+			player = -1,
+			number = 1,
+		},
+	}		
+	local centerSphereext =
+	{		
+	  Cloud0 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 4000,
+			number = 2,
+		},  
+		Pebble0 =
+		{
+			class = "Pebble",
+			type = "Pebble_0",
+			number = 50,
+		},		
+		Salvage0 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg01",
+			number = 8,
+		},
+		Salvage1 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg02",
+			number = 8,
+		},
+		Salvage2 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg03",
+			number = 8,
+		},
+		Salvage3 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg04",
+			number = 8,
+		},
+		Salvage4 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg05",
+			number = 8,
+		},				
+		debris1 =
+		{
+			class = "Squadron",
+			name = "debris1",
+			type = "meg_veildebris_bit1",
+			rotation = {162, -31, 13,},
+			player = -1,
+			number = 1,
+		},
+		debris2 =
+		{
+			class = "Squadron",
+			name = "debris2",
+			type = "meg_veildebris_bit2",
+			rotation = {62, -131, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris3 =
+		{
+			class = "Squadron",
+			name = "debris3",
+			type = "meg_veildebris_bit3",
+			rotation = {32, -11, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris4 =
+		{
+			class = "Squadron",
+			name = "debris4",
+			type = "meg_veildebris_bit4",
+			rotation = {66, -31, 13,},
+			player = -1,
+			number = 1,
+		},			
+		debris5 =
+		{
+			class = "Squadron",
+			name = "debris5",
+			type = "meg_veildebris_bit5",
+			rotation = {62, -39, 31,},
+			player = -1,
+			number = 1,
+		},
+		debris6 =
+		{
+			class = "Squadron",
+			name = "debris6",
+			type = "meg_veildebris_bit6",
+			rotation = {14, 60, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris7 =
+		{
+			class = "Squadron",
+			name = "debris7",
+			type = "meg_veildebris_bit7",
+			rotation = {-16, 77, 60,},
+			player = -1,
+			number = 1,
+		},		
+		debris8 =
+		{
+			class = "Squadron",
+			name = "debris8",
+			type = "meg_veildebris_bit8",
+			rotation = {-60, 26, 12,},
+			player = -1,
+			number = 1,
+		},
+		debris9 =
+		{
+			class = "Squadron",
+			name = "debris9",
+			type = "meg_veildebris_bit9",
+			rotation = {23, -60, 88,},
+			player = -1,
+			number = 1,
+		},		
+    debris10 =
+		{
+			class = "Squadron",
+			name = "debris10",
+			type = "meg_veildebris_bit10",
+			rotation = {-19, 15, 30,},
+			player = -1,
+			number = 1,
+		},
+		debris11 =
+		{
+			class = "Squadron",
+			name = "debris11",
+			type = "meg_veildebris_bit11",
+			rotation = {-61, 25, 12,},
+			player = -1,
+			number = 1,
+		},	
+		debris12 =
+		{
+			class = "Squadron",
+			name = "debris12",
+			type = "meg_veildebris_bit12",
+			rotation = {-21, 22, 12,},
+			player = -1,
+			number = 1,
+		},			
+		debris13 =
+		{
+			class = "Squadron",
+			name = "debris13",
+			type = "meg_veildebris_bit13",
+			rotation = {-31, 25, 32,},
+			player = -1,
+			number = 1,
+		},	
+		debris14 =
+		{
+			class = "Squadron",
+			name = "debris14",
+			type = "meg_veildebris_bit14",
+			rotation = {-61, 24, 42,},
+			player = -1,
+			number = 1,
+		},			
+		debris15 =
+		{
+			class = "Squadron",
+			name = "debris15",
+			type = "meg_veildebris_bit15",
+			rotation = {-51, 25, 52,},
+			player = -1,
+			number = 1,
+		},		
+		debris16 =
+		{
+			class = "Squadron",
+			name = "debris16",
+			type = "meg_veildebris_flake1",
+			rotation = {162, -31, 13,},
+			player = -1,
+			number = 1,
+		},
+		debris17 =
+		{
+			class = "Squadron",
+			name = "debris17",
+			type = "meg_veildebris_flake2",
+			rotation = {62, -131, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris18 =
+		{
+			class = "Squadron",
+			name = "debris18",
+			type = "meg_veildebris_flake3",
+			rotation = {32, -11, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris19 =
+		{
+			class = "Squadron",
+			name = "debris19",
+			type = "meg_veildebris_flake4",
+			rotation = {66, -31, 13,},
+			player = -1,
+			number = 1,
+		},			
+		debris20 =
+		{
+			class = "Squadron",
+			name = "debris20",
+			type = "meg_veildebris_flake5",
+			rotation = {62, -39, 31,},
+			player = -1,
+			number = 1,
+		},
+		debris21 =
+		{
+			class = "Squadron",
+			name = "debris21",
+			type = "meg_veildebris_flake6",
+			rotation = {14, 60, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris22 =
+		{
+			class = "Squadron",
+			name = "debris22",
+			type = "meg_veildebris_flake7",
+			rotation = {-16, 77, 60,},
+			player = -1,
+			number = 1,
+		},		
+		debris23 =
+		{
+			class = "Squadron",
+			name = "debris23",
+			type = "meg_veildebris_flake8",
+			rotation = {-60, 26, 12,},
+			player = -1,
+			number = 1,
+		},	
+		debris24 =
+		{
+			class = "Squadron",
+			name = "debris24",
+			type = "meg_veildebris_flake9",
+			rotation = {-60, 26, 92,},
+			player = -1,
+			number = 1,
+		},	
+		debris25 =
+		{
+			class = "Squadron",
+			name = "debris25",
+			type = "meg_veildebris_flake10",
+			rotation = {-60, 36, 32,},
+			player = -1,
+			number = 1,
+		},										
+		debris26 =
+		{
+			class = "Squadron",
+			name = "debris26",
+			type = "meg_veildebris_chunk4",
+			rotation = {4, 16, -72,},
+			player = -1,
+			number = 1,
+		},		
+		debris27 =
+		{
+			class = "Squadron",
+			name = "debris27",
+			type = "meg_veildebris_chunk2",
+			rotation = {-23, -44, -12,},
+			player = -1,
+			number = 1,
+		},
+		debris28 =
+		{
+			class = "Squadron",
+			name = "debris28",
+			type = "meg_veildebris_chunk1",
+			rotation = {211, 35, -15,},
+			player = -1,
+			number = 1,
+		},				
+	}		
+	local threeRings =
+	{
+	  Cloud0 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 4500,
+			number = 2,
+		},
+		Pebble0 =
+		{
+			class = "Pebble",
+			type = "Pebble_0",
+			number = 25,
+		},		
+		Salvage0 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg01",
+			number = 6,
+		},
+		Salvage1 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg02",
+			number = 6,
+		},
+		Salvage2 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg03",
+			number = 6,
+		},
+		Salvage3 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg04",
+			number = 6,
+		},
+		Salvage4 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg05",
+			number = 6,
+		},	
+		debris6 =
+		{
+			class = "Squadron",
+			name = "debris6",
+			type = "meg_veildebris_bit6",
+			rotation = {14, 60, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris7 =
+		{
+			class = "Squadron",
+			name = "debris7",
+			type = "meg_veildebris_bit7",
+			rotation = {-16, 77, 60,},
+			player = -1,
+			number = 1,
+		},		
+		debris8 =
+		{
+			class = "Squadron",
+			name = "debris8",
+			type = "meg_veildebris_bit8",
+			rotation = {-60, 26, 12,},
+			player = -1,
+			number = 1,
+		},
+		debris9 =
+		{
+			class = "Squadron",
+			name = "debris9",
+			type = "meg_veildebris_bit9",
+			rotation = {23, -60, 88,},
+			player = -1,
+			number = 1,
+		},		
+    debris10 =
+		{
+			class = "Squadron",
+			name = "debris10",
+			type = "meg_veildebris_bit10",
+			rotation = {-19, 15, 30,},
+			player = -1,
+			number = 1,
+		},
+		debris11 =
+		{
+			class = "Squadron",
+			name = "debris11",
+			type = "meg_veildebris_bit11",
+			rotation = {-61, 25, 12,},
+			player = -1,
+			number = 1,
+		},
+		debris12 =
+		{
+			class = "Squadron",
+			name = "debris12",
+			type = "meg_veildebris_bit12",
+			rotation = {25, -64, 88,},
+			player = -1,
+			number = 1,
+		},		
+    debris13 =
+		{
+			class = "Squadron",
+			name = "debris13",
+			type = "meg_veildebris_bit13",
+			rotation = {-19, 15, 30,},
+			player = -1,
+			number = 1,
+		},			
+		debris19 =
+		{
+			class = "Squadron",
+			name = "debris19",
+			type = "meg_veildebris_flake4",
+			rotation = {66, -41, 33,},
+			player = -1,
+			number = 1,
+		},			
+		debris20 =
+		{
+			class = "Squadron",
+			name = "debris20",
+			type = "meg_veildebris_flake5",
+			rotation = {62, -59, 31,},
+			player = -1,
+			number = 1,
+		},
+		debris21 =
+		{
+			class = "Squadron",
+			name = "debris21",
+			type = "meg_veildebris_flake6",
+			rotation = {14, 66, 3,},
+			player = -1,
+			number = 1,
+		},
+		debris22 =
+		{
+			class = "Squadron",
+			name = "debris22",
+			type = "meg_veildebris_flake7",
+			rotation = {-16, 77, 60,},
+			player = -1,
+			number = 1,
+		},		
+		debris23 =
+		{
+			class = "Squadron",
+			name = "debris23",
+			type = "meg_veildebris_flake8",
+			rotation = {-60, 46, 62,},
+			player = -1,
+			number = 1,
+		},				
+	}	
+	local PatchSalvageDebris =
+	{			
+		debris1 =
+		{
+			class = "Squadron",
+			name = "debris1",
+			type = "meg_veildebris_chunk2",
+			rotation = {-25, -15, -226,},
+			player = -1,
+			number = 1,
+		},	
+		Cloud0 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 5500,
+			number = 2,
+		},	
+	}		
+	local PatchSalvageDebris1 =
+	{			
+		debris1 =
+		{
+			class = "Squadron",
+			name = "debris1",
+			type = "meg_veildebris_chunk3",
+			rotation = {-25, 15, 226,},
+			player = -1,
+			number = 1,
+		},	
+		Cloud0 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 5500,
+			number = 2,
+		},	
+	}				
+	local playerPatchRing1 =
+	{
+	  EasyPatch0 =
+		{
+			class = "EasyPatch",
+			number = 4,
+		}, 			
+	}
+	
+	ringAdd(1000, 1000, 0, threeRings,		11000,		11000,		random(1000, 2000),	random(100, 1000),	12,	  135,		300,	330,	1)
+	ringAdd(1000, 1000, 0, threeRings,		14000,		14000,		random(1000, 2000),	random(100, 1000),	12,		135,		120,	150,	1)
+	ringAdd(1000, 1000, 0, PatchSalvageDebris,		13000,		13000,		random(100, 750),	random(100, 750),	12,	  135,		300,	330,	1)
+	ringAdd(1000, 1000, 0, PatchSalvageDebris1,		16000,		16000,		random(100, 750),	random(100, 750),	12,		135,		120,	150,	1)
+	
+  ringAdd(1000, 1000, 0, playerPositionRing,	17000,		17000,		0,			0,			-3,		135,		85,	435,	0)
+	ringAdd(1000, 1000, 0, playerPatchRing,		17000,		17000,		0,			0,			-3,		135,		95,	455,	0)	
+	ringAdd(1000, 1000, 0, playerPatchRing1,		22000,		22000,		0,			0,			3,		0,		95,	455,	0)	
+	asteroidAdd(0, 0, 0, "Sphere", centerSphereint, random(0, 4250), random(0, 4250), random(0, 3250), random(0, 360), random(0, 360))
+	asteroidAdd(0, 0, 0, "Sphere", centerSphereext, random(4250, 7250), random(4250, 7250), random(3250, 5500), random(0, 360), random(0, 360))
+end
+-------------------------------------------------------------------------------------------------------------------------------
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("m12")	
+end

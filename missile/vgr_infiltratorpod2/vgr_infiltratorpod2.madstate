@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+function Vgr_InfiltratorPod2_Open_OnSet(ship)
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+function Vgr_InfiltratorPod2_Docked_OnSet(ship)
+    startAnim(ship, "Latch")
+    setPauseTime(ship, "Latch", 1000)
+end

@@ -1,0 +1,29 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Main Cannon"
+NewSubSystemType.sobDescription = "Artillery Barrage"
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 5000
+NewSubSystemType.regentime = 50
+NewSubSystemType.nlips = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.6800000000000001
+NewSubSystemType.selectionLimit = 5000
+NewSubSystemType.preciseATILimit = 5000
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "TURRET"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 60
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 0
+NewSubSystemType.timeToBuild = 0
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Hgn"
+NewSubSystemType.AttackFamily = "Emplacement"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"TurboLaser_7D_lateral","Weapon_T","")

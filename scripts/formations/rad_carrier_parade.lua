@@ -1,0 +1,732 @@
+paradeSlot("rad_merc_bomber",{
+  -250,
+  -300,
+  3822,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_merc_scout",{
+  -450,
+  -250,
+  3422,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_merc_interceptor",{
+  -650,
+  -200,
+  3022,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_merc_fighter",{
+  -850,
+  -150,
+  2622,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_bomber",{
+  -1050,
+  -100,
+  2222,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},400)
+paradeSlot("rad_elitefighter",{
+  -1325,
+  -50,
+  1822,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},400)
+paradeSlot("rad_fencer",{
+  -1538,
+  0,
+  1422,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},400)
+paradeSlot("rad_interceptor",{
+  -1740,
+  50,
+  1022,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},400)
+paradeSlot("rad_interceptor_black",{
+  -1940,
+  100,
+  622,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},400)
+
+----------------------------------------------------
+
+
+paradeSlot("rad_merc_corvette",{
+  -1400,
+  0,
+  200,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_scoutcorvette",{
+  -1600,
+  100,
+  -200,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_guncorvette",{
+  -1800,
+  200,
+  -600,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_empcorvette",{
+  -2000,
+  300,
+  -1000,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_missilecorvette",{
+  -2200,
+  400,
+  -1400,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_jackal",{
+  -2400,
+  500,
+  -1800,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+
+---------------------------------------------------------
+
+paradeSlot("rad_resourcecollector",{
+  -1768,
+  0,
+  -1397,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_Minecontainer",{
+  -1768,
+  550,
+  -1397,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_container",{
+  -1768,
+  750,
+  -1397,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+paradeSlot("rad_resourcecontroller",{
+  -1507,
+  267,
+  -1801,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},0)
+
+-----------------------------------------------------------------------
+
+paradeSlot("rad_merc_ioncannonfrigate",{
+  550,
+  -250,
+  3100,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("rad_merc_frigateadv",{
+  650,
+  -200,
+  2800,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("rad_merc_frigate",{
+  750,
+  -150,
+  2500,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("rad_missilefrigate",{
+  850,
+  -100,
+  2200,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("rad_gunfrigate_morgan",{
+  950,
+  -50,
+  1900,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("rad_gunfrigate",{
+  1050,
+  0,
+  1600,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("rad_gattlingfrigate",{
+  1150,
+  50,
+  1300,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+paradeSlot("rad_beamfrigate",{
+  1250,
+  100,
+  1000,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},0)
+
+--------------------------------------------------------
+
+paradeSlot("rad_merc_cruiser",{
+  2078,
+  392,
+  -2551,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},550)
+paradeSlot("rad_merc_battlecruiser",{
+  -2078,
+  392,
+  -2551,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},550)
+paradeSlot("rad_refurbisheddestroyer",{
+  2078,
+  -392,
+  -2551,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},550)
+paradeSlot("rad_blackmarket",{
+  600,
+  0,
+  -2591,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},1000)
+paradeSlot("rad_powerstation",{
+  0,
+  800,
+  -3091,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},500)
+paradeSlot("rad_mothership",{
+  -600,
+  1200,
+  2591,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},1000)
+paradeSlot("rad_carrier",{
+  -600,
+  800,
+  -1591,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},600)
+paradeSlot("rad_scaffolda",{
+  -600,
+  800,
+  -1591,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},600)
+paradeSlot("rad_carrier_black",{
+  600,
+  800,
+  -1591,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},600)
+paradeSlot("rad_scaffoldB",{
+  600,
+  800,
+  -1591,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},600)
+paradeSlot("rad_cruiser",{
+  2129,
+  216,
+  -668,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},400)
+paradeSlot("rad_cruiserscaffolda",{
+  2129,
+  -216,
+  -668,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},450)
+paradeSlot("rad_cruiser_queen",{
+  2129,
+  648,
+  -668,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},450)
+paradeSlot("rad_cruiser_queenscaffolda",{
+  2129,
+  1048,
+  -668,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},450)
+paradeSlot("rad_helios",{
+  1129,
+  -648,
+  668,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},450)
+paradeSlot("rad_armsdealer",{
+  -529,
+  -648,
+  1068,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},1050)
+paradeSlot("rad_destroyer",{
+  2129,
+  -216,
+  -1400,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("rad_destroyerscaffolda",{
+  2129,
+  216,
+  -1400,
+},{
+  0,
+  0,
+  1,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("rad_scud",{
+  -1129,
+  -516,
+  400,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},300)
+paradeSlot("rad_scudscaffolda",{
+  -1629,
+  -516,
+  400,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},300)
+paradeSlot("rad_qwaarjetii",{
+  -629,
+  -916,
+  1668,
+},{
+  0,
+  1,
+  0,
+},{
+  1,
+  0,
+  0,
+},500)
+paradeSlot("rad_vanaarjet",{
+  629,
+  -916,
+  1668,
+},{
+  0,
+  1,
+  0,
+},{
+  1,
+  0,
+  0,
+},500)
+
+
+paradeSlot("rad_explotrap",{
+ -300,
+  -200,
+  400,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},0)
+paradeSlot("rad_gravwel",{
+ -600,
+  -200,
+  400,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},150)
+paradeSlot("rad_hsbouey",{
+  300,
+  -200,
+  400,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},0)
+paradeSlot("rad_guntrap",{
+  600,
+  -200,
+  400,
+},{
+  0,
+  0,
+  1,
+},{
+  0,
+  1,
+  0,
+},0)
+
+paradeSlot("rad_armsdealerHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_carrierHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_carrier_blackHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_cruiserHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_cruiser_queenHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_blackmarketHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_mothershipHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_scudHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_merc_battlecruiserHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_merc_cruiserHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_vanaarjetHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_qwaarjetiiHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+paradeSlot("rad_destroyerHULK", {0, 0, 0}, {0, 0, 1}, {1, 0, 0}, 0)
+
+paradeSlot("misc",{
+  5208,
+  0,
+  -4878,
+},{
+  0,
+  0,
+  1,
+},{
+  -1,
+  0,
+  0,
+},1200)

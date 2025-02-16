@@ -1,0 +1,18 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:14
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "energycannonhit" --"dmg_cloud_spray_large"
+bulletfx = "bullet_flak_combo"
+nopenetratefx = "nopen_generic"
+deathtype = "deathCannon"
+scartype = "default"
+--bullet_nlips = 0.0005
+--hit_nlips = 0.0005
+firefx = "muzzle_flash_combo_small_frigate"
+fire_sfx = "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM"
+bullet_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"
+hit_clamp = 
+    { 1, 1, }

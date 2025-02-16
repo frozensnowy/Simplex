@@ -1,0 +1,41 @@
+StartWeaponConfig(NewWeaponType,"Gimble","InstantHit","Laser","Normal",0,4850,0,0.4,0,0,1,1,1,0.9,2,0.7,0,0,120,120,0.1,"Normal",1,0,300)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",97,97,"")
+
+setAngles(NewWeaponType,12,0,0,0,0)
+
+setPenetration(NewWeaponType,5,1,
+{Unarmoured=0.95,},
+{LightArmour=1.25,},
+{MediumArmour=1.15,},
+{HeavyArmour=1,},
+{SubSystemArmour=0.5,},
+{TurretArmour=1.15,},
+{ResArmour=0.6,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=5,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=0.95,},
+{Corvette=1.45,},
+{Frigate=1.25, damage=1,},
+{Utility=1,},
+{munition=0.45,},
+{SmallCapitalShip=0.9, damage=1,},
+{BigCapitalShip=0.8, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1,},
+{Resource=1,},
+{ResourceLarge=0.95, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+

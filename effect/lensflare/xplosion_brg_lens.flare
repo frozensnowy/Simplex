@@ -1,0 +1,34 @@
+-- created by Stargazer
+--
+
+local flarecolour = { 0.071, 0.125, 0.000 }
+local flareintensity = 0.3
+local flarescale = 0.25
+
+fadetimes= { 0.1, 0.1, 0.1, 1.0 }
+washoutColour = { 0.4, 0.7, 0.0, 1, }
+washoutStrength = 0.06
+
+hotspots= {
+
+  -- main
+  {
+    texture = "data:Effect/LensFlare/xplosion_brg_lens.tga",
+    offset = 1.0, 
+    scale = 2.0,
+    rotation = 0,
+    colour = { 1, 1, 1, 1, },
+  },
+  {
+    texture = "data:Effect/LensFlare/xplosion_brg_lens.tga",
+    offset = 1.0,
+    scale = 1.5,
+    rotation = 0,
+    colour = { 1, 1, 1, 0.75, },
+  },
+  
+  
+}
+  
+  
+  

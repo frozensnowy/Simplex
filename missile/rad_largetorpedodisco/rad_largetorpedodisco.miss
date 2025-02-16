@@ -1,0 +1,83 @@
+--===========================================================================
+--  Purpose : Lua definition file for Homeworld Ship.
+--            Contains loading information and flight dynamics information (among other things?)
+--
+--  Copyright Relic Entertainment, Inc.  All rights reserved.
+--===========================================================================
+NewShipType = StartMissileConfig()
+NewShipType.displayedName="$1579"
+NewShipType.sobDescription="$1580"
+NewShipType.TOIcon="circle"		--"InvertedY"
+NewShipType.TOScale=1
+NewShipType.TODistanceFade0=50
+NewShipType.TODistanceDisappear0=100
+NewShipType.TODistanceFade1=50
+NewShipType.TODistanceDisappear1=100
+NewShipType.TODistanceFade2=25000
+NewShipType.TODistanceDisappear2=26000
+NewShipType.TOGroupScale=1
+NewShipType.TOGroupMergeSize=0
+NewShipType.mouseOverMinFadeSize=0.045
+NewShipType.mouseOverMaxFadeSize=0.1
+NewShipType.maxhealth=400
+NewShipType.regentime=0
+NewShipType.sideArmourDamage=1
+NewShipType.rearArmourDamage=1
+NewShipType.maxShield=0
+NewShipType.shieldRechargeTime=0
+NewShipType.nlips=0.0004
+NewShipType.nlipsRange=75000
+NewShipType.nlipsFar=0.0005
+NewShipType.nlipsFarRange=100000
+NewShipType.SMRepresentation="Invisible"
+NewShipType.meshRenderLimit=4000
+NewShipType.dotRenderLimit=4000
+NewShipType.minLOD=0.2
+NewShipType.minimumZoomFactor=0.75
+NewShipType.selectionPriority=30
+NewShipType.weaponName="rad_cruisertorpedoburstdisco"
+NewShipType.lifeTime=38
+NewShipType.launchTime=0.5
+NewShipType.detectionDistance=3000
+NewShipType.sobDieTime=0.5
+NewShipType.density=1
+NewShipType.proximityDetonationDist=1100
+NewShipType.thrusterMaxSpeed=980
+NewShipType.mainEngineMaxSpeed=980
+NewShipType.rotationMaxSpeed=910	--400
+NewShipType.thrusterAccelTime=3
+NewShipType.thrusterBrakeTime=1
+NewShipType.mainEngineAccelTime=6
+NewShipType.mainEngineBrakeTime=4
+NewShipType.rotationAccelTime=0.7
+NewShipType.rotationBrakeTime=0.6
+NewShipType.thrusterUsage=0.5
+NewShipType.accelerationAngle=59		--60
+NewShipType.mirrorAngle=30
+NewShipType.maxBankingAmount=85
+NewShipType.descendPitch=0
+NewShipType.goalReachEpsilon=5
+NewShipType.controllerType="Missile"
+NewShipType.slowdownFactor=0.5
+NewShipType.tumbleStaticX=0
+NewShipType.tumbleStaticY=0
+NewShipType.tumbleStaticZ=0
+NewShipType.tumbleDynamicX=0
+NewShipType.tumbleDynamicY=0
+NewShipType.tumbleDynamicZ=0
+NewShipType.tumbleSpeed=0
+NewShipType.targetAngle=2
+NewShipType.spiralsPerSecondMin=0
+NewShipType.spiralsPerSecondMax=0
+NewShipType.BuildFamily="NotBuildable"
+NewShipType.AttackFamily="UnAttackable"
+NewShipType.DockFamily="CantDock"
+NewShipType.AvoidanceFamily="DontAvoid"
+NewShipType.DisplayFamily="Munition"
+NewShipType.AutoFormationFamily="Fighter"
+NewShipType.ArmourFamily="MineArmour"
+LoadHODFile(NewShipType,1);
+setEngineTrail(NewShipType,0,5,"trail_ribbon.tga",0.2,0.5,0.025,8);
+setEngineBurn(NewShipType,4,0.5,1,15,0,0.7,0.1,25);
+loadShipPatchList(NewShipType,"data:sound/sfx/ship/hiigaran/NonMilitary/Engines/"
+                             ,0,"HTorpedoEng");

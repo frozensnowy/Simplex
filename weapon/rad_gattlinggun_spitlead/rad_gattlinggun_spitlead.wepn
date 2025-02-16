@@ -1,0 +1,43 @@
+StartWeaponConfig(NewWeaponType,"Gimble","Bullet","kinetic_small_fx_small_splithead","Normal",2800,5000,0,0,0,0,1,1,1,.1,0,0,1,0,60,60,.1,"Normal",1,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",640,640,"")
+
+setAngles(NewWeaponType,12,0,0,0,0)
+
+setMiscValues(NewWeaponType,1.5,.05)
+
+setPenetration(NewWeaponType,5,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=.3,},
+{HeavyArmour=.5,},
+{SubSystemArmour=1,},
+{TurretArmour=1,},
+{ResArmour=.8,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=.1, damage=1,},
+{Corvette=.15, damage=1,},
+{Frigate=.3, damage=1,},
+{Utility=1,},
+{munition=.2,},
+{SmallCapitalShip=.4, damage=1,},
+{BigCapitalShip=.5, damage=1,},
+{Mothership=.6, damage=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=.2, damage=1,},
+{Resource=1,},
+{ResourceLarge=.3, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+

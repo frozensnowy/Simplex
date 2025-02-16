@@ -1,0 +1,36 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:03 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "AnimatedTurret", "Bullet", "Kinetic_Rapid", "Normal", 1200, 2500, 0, 0, 0, 0, 1, 1, 0, 1.8, 0, 0, 0, 0, 100, 100, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 30, 30, "")
+setPenetration(NewWeaponType, 15, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0.1, 
+}, 
+{ 
+    Corvette = 0.2, 
+}, 
+{ 
+    munition = 0.2, 
+}, 
+{ 
+    Frigate = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 0.6, 
+    damage = 1, })
+setAngles(NewWeaponType, 5, -140, 140, -5, 80)

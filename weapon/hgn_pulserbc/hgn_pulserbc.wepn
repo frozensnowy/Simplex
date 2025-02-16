@@ -1,0 +1,27 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","dread_bomb_light","Normal",4750,7350,0,0,0,0,1,1,1,0.4,0,0,1,0,110,110,0.1,"Normal",0,0,0.1)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 150, 150, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    Unarmoured = 2, 
+}, 
+{ 
+    LightArmour = 3, 
+}, 
+{ 
+    MediumArmour = 1, 
+}, 
+{ 
+    MineArmour = 5, })
+setAccuracy(NewWeaponType, 0, 
+{ 
+    Fighter = 0.14, 
+}, 
+{ 
+    Corvette = 0.245, 
+}, 
+{ 
+    munition = 0.8, 
+})    
+setAngles(NewWeaponType, 0, -180, 180, 2, 60)
+setMiscValues(NewWeaponType, 3, 0.2)
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

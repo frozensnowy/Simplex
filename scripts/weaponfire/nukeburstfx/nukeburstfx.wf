@@ -1,0 +1,13 @@
+-- LuaDC version 0.9.19
+-- 2011-4-2 18:29:51
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+bulletfx = "dmg_massive_mesh_sphere_ring"
+nopenetratefx = "dmg_massive_mesh_sphere_ring"
+deathtype = "dmg_massive_mesh_sphere_ring"
+hit_clamp = 
+    { 1, 1, }
+scartype = "Bullet/Bullet"
+bullet_sfx = "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA"
+nopenetrate_sfx = "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA"

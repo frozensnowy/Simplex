@@ -1,0 +1,14 @@
+hitfx = "energycannonhit"
+bulletfx = "bullet_generic"
+nopenetratefx = "dmg_wave_explosion_combo"
+deathtype = "deathBeam"
+firefx = "muzzle_flash_combo_plasma" --sunfire_squirt
+fire_sfx = "WEAPON/MOD/UNHENERGYLARGE"
+scartype = "Hgn_Torpedo/Torpedo"
+hit_sfx = "Explosion/Small/ETG_Explode_Small_Firey"
+nopenetrate_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PLASMA_LANCE_BEAM_HIT"
+bullet_nlips = 0.00008
+hit_clamp = {
+  1,
+  1,
+}

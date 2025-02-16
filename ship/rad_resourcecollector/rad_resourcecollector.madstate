@@ -1,0 +1,71 @@
+--=============================================================================
+--    Name    : RAD_ResourceCollector.madStates
+--    Purpose : Animation state data.
+--
+--Created 250403 by cgladstone
+--Copyright Relic Entertainment, Inc.  All rights reserved.
+--=============================================================================*/
+
+-- RESOURCE COLLECITON ---------------------------------------------------------
+
+RAD_RESOURCECOLLECTOR_ResourceStart_OnSet = function(ship)
+	stopAnim(ship, "Close")
+	setState(ship, "ResourceStart", 0)
+	startAnim(ship, "Rotate")
+	setPauseTime(ship, "Rotate", 1000)
+end
+
+RAD_RESOURCECOLLECTOR_ResourceStart_OnPause = function(ship)
+	setState(ship, "ResourceStart", 1)
+end
+
+RAD_RESOURCECOLLECTOR_ResourceDo_OnSet = function(ship)
+	stopAnim(ship, "Rotate")
+	stopAnim(ship, "Close")
+	startAnim(ship, "Work")
+	startEffect(ship, "Resourcing")
+	setLoopCount(ship, "Work", 1000000)
+	setState(ship, "ResourceDo", 1)
+end
+
+RAD_RESOURCECOLLECTOR_ResourceEnd_OnSet = function(ship)
+	stopAnim(ship, "Work")
+	stopAnim(ship, "Rotate")
+	endEffect(ship, "Resourcing")
+	startAnim(ship, "Close")
+	startEffect(ship, "Close")
+	setState(ship, "ResourceEnd", 1)
+	setPauseTime(ship, "Close", 1000)
+end
+
+-- ******************** REPAIR ****************************
+
+RAD_RESOURCECOLLECTOR_RepairStart_OnSet = function(ship)
+	setState(ship, "RepairStart", 0)
+	stopAnim(ship, "Close")
+	startAnim(ship, "Rotate")
+	setPauseTime(ship, "Rotate", 1000)
+end
+
+RAD_RESOURCECOLLECTOR_RepairStart_OnPause = function(ship)
+	setState(ship, "RepairStart", 1)
+end
+
+RAD_RESOURCECOLLECTOR_RepairDo_OnSet = function(ship)
+	stopAnim(ship, "Rotate")
+	stopAnim(ship, "Close")
+	startAnim(ship, "Work")
+	startEffect(ship, "Repairing")
+	setLoopCount(ship, "Work", 1000000)
+	setState(ship, "RepairDo", 1)
+end
+
+RAD_RESOURCECOLLECTOR_RepairEnd_OnSet = function(ship)
+	stopAnim(ship, "Rotate")
+	stopAnim(ship, "Work")
+	endEffect(ship, "Repairing")
+	startAnim(ship, "Close")
+	startEffect(ship, "Close")
+	setState(ship, "RepairEnd", 1)
+	setPauseTime(ship, "Close", 1000)
+end

@@ -1,0 +1,80 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "MissileTrail",
+      length = 5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION",
+      },
+      {
+        "fx",
+        "dmg_missle_explode_combo",
+      },
+      {
+        "fx_scale",
+        "0.25",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "EngineNozzle1",
+      },
+      {
+        "fx",
+        "missle_ignite_combo_sml_flare2_SRM9",
+      },
+      {
+        "sound",
+        "TFS_SOUNDS/TFS_MISSILE_MED_0.25",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+  },
+}

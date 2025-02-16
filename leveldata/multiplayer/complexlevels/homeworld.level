@@ -1,0 +1,189 @@
+levelDesc = "Homeworld"
+maxPlayers = 5
+
+player = {}
+
+player[0] = {
+  id = 0,
+  name = "StartPos0",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+player[1] = {
+  id = 1,
+  name = "StartPos1",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+player[2] = {
+  id = 0,
+  name = "StartPos2",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+player[3] = {
+  id = 1,
+  name = "StartPos3",
+  resources = 1500,
+  raceID = 0,
+  startPos = 1,
+}
+player[4] = {
+  id = 0,
+  name = "StartPos4",
+  resources = 1500,
+  raceID = 1,
+  startPos = 1,
+}
+
+function circle_circle_intersection_cord_length(R,r,d)
+--http://mathworld.wolfram.com/Circle-CircleIntersection.html
+	return 1/d*sqrt(4*d^2*R^2-(d^2-r^2+R^2)^2)
+end
+
+function circle_circle_intersection_angle(R, r, d)	--half angle from the second circle facing the origin
+	return asin(circle_circle_intersection_cord_length(R,r,d)/2/r)
+end
+
+function euclidean_distance(vec1, vec2)
+	if vec2==nil then	--calculate distance to the origin
+		return sqrt(vec1[1]^2+vec1[2]^2+vec1[3]^2)
+	else
+		return sqrt((vec1[1]-vec2[1])^2+(vec1[2]-vec2[2])^2+(vec1[3]-vec2[3])^2)
+	end
+end
+
+function generate_orbit_positions(R,r,vec,num,skip,rnd)	--generate a list of 3d coordinates
+	local list = {}
+	local d = euclidean_distance(vec)
+	local a = circle_circle_intersection_angle(R,r,d)
+	local angle1, angle2 = -90-(asin(vec[1]/d)-a), -90-(asin(vec[1]/d)+a)
+	local delta = 2*a/(num+2*skip)
+	local i=1
+	for phi=angle1,angle2,-delta do
+		list[i] = {random(-rnd,rnd)+vec[1]+r*cos(phi), random(-rnd,rnd)+vec[2], random(-rnd,rnd)+vec[3]+r*sin(phi)}
+		i=i+1
+	end
+	if skip>0 then
+		local newt = {}
+		local z=1
+	  for i=skip+1,num+skip+1 do
+	    newt[z] = list[i]
+	    z=z+1
+	  end
+	  return newt
+	else
+		return list
+	end
+end
+
+function relative_orientation(vec1, vec2, ybias, zrot) --let vec1 face outward from vec2
+	local x=vec1[1]-vec2[2]
+	local z=vec1[3]-vec2[3]
+	local rotz=0
+	if zrot~=nil then
+		rotz = zrot
+	end
+	return {0, ybias+atan(x/z)+atan(vec2[1]/vec2[3]), rotz}
+end
+
+function DetermChunk()
+  
+  local map_radius = 70000
+  local planet_distance = 58000
+  local phi=random(-45,45)
+  local planet_position = {planet_distance*sin(phi)+random(-1000,1000), 0+random(-1000,1000), planet_distance*cos(phi)+random(-1000,1000)}
+  addSquadron("planet_earth", "hgn_planet_hiigara", planet_position, -1, {0, 120, 0}, 0, 0)
+  
+  local player_orbits = generate_orbit_positions(map_radius,45000,planet_position,2,1,100)
+  for z, iCount in player_orbits do
+  	addPoint("StartPos"..z-1, {iCount[1], iCount[2], iCount[3]}, relative_orientation(iCount, planet_position, -90))
+  end
+  
+  local orbits = generate_orbit_positions(map_radius,1.2*euclidean_distance(planet_position),planet_position,0,1,10000)
+  for z, iCount in orbits do
+  	addPoint("StartPos3", {iCount[1], iCount[2], iCount[3]}, relative_orientation(iCount, planet_position, -90))
+  	local large_r = 2000
+  	for gamma=0,360-30,30 do
+		  addAsteroid("Asteroid_10", {iCount[1]+sin(gamma)*large_r, iCount[2]+random(-100,100), iCount[3]+cos(gamma)*large_r}, random(50,100), 0, 0, 0, 0)
+	  end
+  end
+  
+  local orbits = generate_orbit_positions(map_radius,1.5*euclidean_distance(planet_position),planet_position,0,1,10000)
+  for z, iCount in orbits do
+  	addPoint("StartPos4", {iCount[1], iCount[2], iCount[3]}, relative_orientation(iCount, planet_position, -90))
+  	local large_r = 2000
+  	for gamma=0,360-30,30 do
+		  addAsteroid("Asteroid_10", {iCount[1]+sin(gamma)*large_r, iCount[2]+random(-100,100), iCount[3]+cos(gamma)*large_r}, random(50,100), 0, 0, 0, 0)
+	  end
+  end
+  
+	local asteroid_orbits = generate_orbit_positions(map_radius,40000,planet_position,40,8,100)
+	for z, iCount in asteroid_orbits do
+		addAsteroid("Asteroid_3", {iCount[1], iCount[2], iCount[3]}, random(0,100), 0, 0, 0, 0)
+	end
+  
+  local light_orbits = generate_orbit_positions(map_radius,35000,planet_position,194,0,100)
+  for z, iCount in light_orbits do
+  	addSquadron("light", "meg_NavBouy_simple", {iCount[1], iCount[2], iCount[3]}, -1, {0, 0, 0}, 0, 0)
+  end
+  local light_orbits = generate_orbit_positions(map_radius,50000,planet_position,277,0,100)
+  for z, iCount in light_orbits do
+  	addSquadron("light", "meg_NavBouy_simple", {iCount[1], iCount[2], iCount[3]}, -1, {0, 0, 0}, 0, 0)
+  end
+  local light_orbits = generate_orbit_positions(map_radius,65000,planet_position,360,0,100)
+  for z, iCount in light_orbits do
+  	addSquadron("light", "meg_NavBouy_simple", {iCount[1], iCount[2], iCount[3]}, -1, {0, 0, 0}, 0, 0)
+  end
+  	
+	local pos = generate_orbit_positions(map_radius,60000,planet_position,4,1,5000)
+  for w=1,5,1 do
+  	local x = pos[w][1] + random(-9000,9000)
+  	local y = pos[w][2] + random(-9000,9000)
+  	local z = pos[w][3] + random(-9000,9000)
+	  addSquadron("shelter", "meg_asteroidmp", {x+random(-100,100), y+random(-100,100), z+random(-100,100)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	  local megalith = {"meg_bentus", "meg_foundry", "meg_veildebris_chunk_lighthouse_nobuild", "meg_dreadnaughtberth", "meg_headshotasteroid", "meg_tanis", "meg_chimera_nobuild"}
+		addSquadron("megalith", megalith[random(1,getn(megalith))], {x+random(-10000,10000), y+random(-10000,10000), z+random(-10000,10000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	  local gamma = random(0,360)
+	  local small_r = 2000
+	  local large_r = 5000
+	  for i = 1, 29, 1 do
+	  	addSquadron("light", "meg_NavBouy_Blue", {x+sin(gamma)*small_r, y+random(-100,100), z+cos(gamma)*small_r}, -1, {0, gamma+180, 0}, 0, 0)
+	  	if random(1,4)==1 then
+		  	addAsteroid("Asteroid_"..random(2,5).."_blue", {x+sin(gamma)*large_r, y+random(-100,100), z+cos(gamma)*large_r}, 100, 0, 0, 0, 0)
+	  	end
+	  	gamma=gamma+12
+	  end
+	end
+	
+	local orbits = generate_orbit_positions(map_radius,80000,planet_position,6,1,100)
+  for z, iCount in orbits do
+  	addSquadron("megalith", "meg_reinforcementpad", {iCount[1], iCount[2], iCount[3]}, -1, relative_orientation(iCount, planet_position, 0), 0, 0)
+  end
+  
+  local orbits = generate_orbit_positions(map_radius,2*euclidean_distance(planet_position),planet_position,0,1,10000)
+  for z, iCount in orbits do
+  	addSquadron("megalith", "hgn_planet_angelmoon", {iCount[1], iCount[2], iCount[3]}, -1, relative_orientation(iCount, planet_position, -90), 0, 0)
+  end
+  
+  local orbits = generate_orbit_positions(map_radius,1.7*euclidean_distance(planet_position),planet_position,1,2,10000)
+  for z, iCount in orbits do
+  	addSquadron("megalith", "meg_titan_cruiser", {iCount[1], iCount[2], iCount[3]}, -1, relative_orientation(iCount, planet_position, -90), 0, 0)
+  end
+
+  setWorldBoundsInner({0, 0, 0}, {map_radius, map_radius, map_radius})
+  setWorldBoundsOuter({0, 0, 0}, {1.1*map_radius, 1.1*map_radius, 1.1*map_radius})
+end
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+  loadBackground("m15_HWR")
+  setSensorsManagerCameraDistances(61000, 120000)
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

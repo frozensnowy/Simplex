@@ -1,0 +1,16 @@
+-- LuaDC version 0.9.19
+-- 2011-3-10 13:07:40
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "photon_explosion_combo_dread"
+bulletfx = "kinetic_large_bullet_blue_combo"
+nopenetratefx = "photon_explosion_combo_dread"
+deathtype = "deathBeam"
+firefx = "muzzle_flash_combo_small_capital_dread"
+fire_sfx = "Weapon/RandomSample/tachyon_lance_fire"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "Weapon/RandomSample/tachyon_lance_hit"
+nopenetrate_sfx = "Weapon/RandomSample/tachyon_lance_hit"
+hit_clamp = 
+    { 1, 1, }

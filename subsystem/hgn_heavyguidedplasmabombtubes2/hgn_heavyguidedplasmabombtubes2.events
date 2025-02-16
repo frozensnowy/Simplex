@@ -1,0 +1,127 @@
+effects = { 
+  animations = {
+    animation1 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = 
+        { 
+            name = "Weapon_Torpedo1", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },   
+        animation3 = 
+        { 
+            name = "Weapon_Torpedo2", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },   
+       animation4 = 
+        { 
+            name = "Weapon_Torpedo3", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },   
+       animation5 = 
+        { 
+            name = "Weapon_Torpedo4", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },    
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "root",
+      },
+      {
+        "fx",
+        "death_generic_fighter",
+      },
+    },
+    
+    event2 = 
+            { 
+                { "anim", "Weapon_Torpedo1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_ib_Position", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "2",},
+                { "fx_nlips", "on", }, 
+            },                     
+        
+            
+            event3 = 
+            { 
+                { "anim", "Weapon_Torpedo2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_ib1_Position", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "2",},
+                { "fx_nlips", "on", }, 
+            }, 
+                    
+        
+            
+            event5 = 
+            { 
+                { "anim", "Weapon_Torpedo3", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_ib2_Position", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "2",},
+                { "fx_nlips", "on", }, 
+            }, 
+                    
+        
+            
+            event7 = 
+            { 
+                { "anim", "Weapon_Torpedo4", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_ib3_Position", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "weapon/redpulsefire2", }, 
+                { "fx_scale", "2",},
+                { "fx_nlips", "on", }, 
+            }, 
+                    
+        
+    
+  },
+}

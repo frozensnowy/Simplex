@@ -1,0 +1,8 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "dmg_battlescar_explosion_combo",
+		distance = 2000,
+	},
+}

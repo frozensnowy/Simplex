@@ -1,0 +1,145 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Miner Missile (Tube 1)"
+NewShipType.sobDescription = "Asteroid Smasher"
+NewShipType.maxhealth = 12000
+NewShipType.regentime = 0
+NewShipType.minRegenTime = 0
+NewShipType.frontArmourDamage = 1.6
+NewShipType.sideArmourDamage = 0.7
+NewShipType.rearArmourDamage = 0.4
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.useTargetRandom = 0
+NewShipType.unitCapsNumber = 0
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "x"
+NewShipType.defensiveFormation = "x"
+NewShipType.aggressiveFormation = "x"
+
+NewShipType.mass = 400
+NewShipType.collisionMultiplier = 3
+NewShipType.trackingSpeedMultiplier = 3
+NewShipType.normalCollisionDamageMultiplier = 3
+
+NewShipType.thrusterMaxSpeed=330
+NewShipType.mainEngineMaxSpeed=330
+NewShipType.rotationMaxSpeed=320
+NewShipType.thrusterAccelTime=0.51
+NewShipType.thrusterBrakeTime=0.5
+NewShipType.mainEngineAccelTime=0.41
+NewShipType.mainEngineBrakeTime=0.4
+NewShipType.rotationAccelTime=0.1
+NewShipType.rotationBrakeTime=0.1
+NewShipType.thrusterUsage=0.5
+NewShipType.accelerationAngle=120
+NewShipType.mirrorAngle=30
+NewShipType.maxBankingAmount=85
+NewShipType.descendPitch=0
+NewShipType.goalReachEpsilon=5
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX=0
+NewShipType.tumbleStaticY=0
+NewShipType.tumbleStaticZ=0
+NewShipType.tumbleDynamicX=0
+NewShipType.tumbleDynamicY=0
+NewShipType.tumbleDynamicZ=0
+NewShipType.tumbleSpeed=0
+NewShipType.targetAngle=180
+NewShipType.relativeMoveFactor = 0
+NewShipType.swayUpdateTime = 2
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.25
+NewShipType.swayRotateFactor = 0
+NewShipType.dustCloudDamageTime = 200
+NewShipType.nebulaDamageTime = 150
+NewShipType.MinimalFamilyToFindPathAround = "SuperPriority"
+NewShipType.BuildFamily = "MinerMissile"
+NewShipType.AttackFamily = "Munition"
+NewShipType.DockFamily = "minermissile"
+NewShipType.AvoidanceFamily = "BattleCruiser"
+NewShipType.DisplayFamily = "Weapon"
+NewShipType.AutoFormationFamily = "Frigate"
+NewShipType.CollisionFamily = "Small"
+NewShipType.ArmourFamily = "MineArmour"		--"Unarmoured"
+NewShipType.UnitCapsFamily = "Complex"
+--NewShipType.UnitCapsShipType = "ViperMissile"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 3
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 7
+NewShipType.totalValue = 3
+NewShipType.buildCost = 499
+NewShipType.buildTime = 7
+NewShipType.buildPriorityOrder = 10
+NewShipType.retaliationRange = 0
+NewShipType.retaliationDistanceFromGoal = 0
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 1200
+NewShipType.secSensorRange = 1400
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "circle"
+
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 7000
+NewShipType.TODistanceDisappear0 = 5000
+NewShipType.TODistanceFade1 = 2500
+NewShipType.TODistanceDisappear1 = 2000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 3	--0
+NewShipType.nlips = 0.00015
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.0002
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "HardDot"
+NewShipType.meshRenderLimit = 40000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 0.25
+NewShipType.goblinsStartFade = 1500
+NewShipType.goblinsOff = 1500
+NewShipType.minimumZoomFactor = 0.8
+NewShipType.selectionLimit = 250000
+NewShipType.preciseATILimit = 0
+
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 0
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.ignoreRaceWhenDocking = 0
+NewShipType.queueFormation = "dockline"
+
+NewShipType.formationSpacing = 15
+NewShipType.launchFormation = "dockline"
+
+addAbility(NewShipType,"CanLaunch")
+addAbility(NewShipType, "MoveCommand", 0, 0)
+addAbility(NewShipType, "CanDock", 1, 0)
+--addAbility(NewShipType,"RetireAbility",0, 0)
+addAbility(NewShipType, "CloakAbility", 0, 3.1, 25, 4000, 20, 100, 5, 1000)
+NewShipType.launchTimeBetweenTwoFormations = 0
+NewShipType.launchTimeBeforeStart = 2.5
+NewShipType.launchNrOfShipsInDockFormation = 1
+--addAbility(NewShipType,"ParadeCommand",1)
+addAbility(NewShipType,"CanAttack",1,1,1,0,0.35,1,"SmallCapitalShip, BigCapitalShip, Mothership, Capturer, Frigate, ResourceLarge, Resource, Corvette, Fighter, Utility","justshoot",
+{
+  AsteroidSmasher = "kamikaze",
+})
+addShield(NewShipType, "EMP", 375, 20)
+LoadModel(NewShipType, 1)
+NewShipType.sobDieTime = 0.1
+NewShipType.sobSpecialDieTime = 0.1
+NewShipType.specialDeathSpeed = 0.1
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0.1
+setEngineTrail(NewShipType,0,15,"trail_ribbon.tga",0.05,0.5,0.025,1.5)
+setEngineBurn(NewShipType,20,0.5,0.6,5,1,0.1,0,40)
+loadShipPatchList(NewShipType,"data:sound/sfx/ship/Vaygr/NonMilitary/",0,"Engines/VProbeEng","")

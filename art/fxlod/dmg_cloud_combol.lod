@@ -1,0 +1,14 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "dmg_clouD_comboL",
+		distance = 7500,
+	},
+	lod1 = 
+	{
+		--fx = "dmg_clouD_combo_LOD",
+		fx = "dmg_clouD_combo2",
+		distance = 100000,
+	},	
+}

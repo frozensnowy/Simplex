@@ -1,0 +1,15 @@
+StartWeaponConfig(NewWeaponType,"Gimble","Bullet","Improved_Plasma_Bomb","Special Attack",1100,3150,0,0,0,0,1,0,0,2.7,0,0,0,0,0,0,0.1,"Normal",1,0,0)
+AddWeaponResult(NewWeaponType,"Hit","Disable","Target",12,12,"")
+setPenetration(NewWeaponType,0,1,{
+  HeavyArmour = 2,
+},{
+  PlanetKillerArmour = 0,
+})
+setAccuracy(NewWeaponType,1,{
+  Fighter = 0,
+},{
+  Corvette = 0,
+},{
+  munition = 0,
+})
+setAngles(NewWeaponType,15,0,0,0,0)

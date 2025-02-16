@@ -1,0 +1,41 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","InstantHit","Plasma_Bomb_Heavy","Normal",8500,8925,0,0,0,0,1,1,1,12,0,0,1,0,30,15,0.1,"Normal",1,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",1000,1000,"")
+AddWeaponResult(NewWeaponType,"Hit","Push","Target",300,300,"");
+setPenetration(NewWeaponType,50,1,{ 
+    ResArmour = 0.2, 
+}, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    SubSystemArmour = 2.5, 
+}, 
+{ 
+    TurretArmour = 0.45, })
+setAccuracy(NewWeaponType,1,{ 
+    Fighter = 0.06, 
+}, 
+{ 
+    Corvette = 0.12, 
+}, 
+{ 
+    munition = 0.1, 
+}, 
+{ 
+    Frigate = 0.8, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 0.6, 
+    damage = 1, })
+setAngles(NewWeaponType,0,-180,180,-2,65)
+setMiscValues(NewWeaponType,16,0.75)
+addAnimTurretSound(NewWeaponType,"Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

@@ -1,0 +1,33 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:05 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Gimble", "InstantHit", "ionbeam_heretic", "Normal", 0, 6000, 0, 4, 1.95, 0, 20, 0, 1, 3, 0, 0, 1, 1, 20, 20, 0.1, "Normal", 1, 0, 1000)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 2500, 2500, "")
+setPenetration(NewWeaponType, 70, 1, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    SubSystemArmour = 0.3, 
+}, 
+{ 
+    ResArmour = 0.2, },
+{
+	HeavyArmour = 0.9,
+},
+{
+	SuperHeavyArmor = 0.9,
+})
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0.15, 
+}, 
+{ 
+    Corvette = 0.25, 
+}, 
+{ 
+    munition = 0.5, })
+setAngles(NewWeaponType, 10, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 0.5)

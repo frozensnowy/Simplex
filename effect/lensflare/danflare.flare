@@ -1,0 +1,76 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:11:27 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+fadetimes = 
+    { .1, 2, 1, .1, }
+washoutColour = 
+    { 1, 0.9, 0.8, 1, }
+washoutStrength = 0.2
+hotspots = 
+    { 
+    { 
+        texture = "data:Effect/LensFlare/danflare0.tga", 
+        offset = 1, 
+        scale = 0.75, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 1, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare6.tga", 
+        offset = 0.8, 
+        scale = 1.8, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 0.5, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare3.tga", 
+        offset = 0.4, 
+        scale = 0.4, 
+        rotation = 0, 
+        colour = 
+            { 0.8, 0.77, 0.95, 0.5, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare3.tga", 
+        offset = 0.3, 
+        scale = 0.6, 
+        rotation = 0, 
+        colour = 
+            { 0.67, 0.13, 0.09, 0.7, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare3.tga", 
+        offset = 0.25, 
+        scale = 0.4, 
+        rotation = 0, 
+        colour = 
+            { 0.67, 0.13, 0.09, 0.4, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare3.tga", 
+        offset = 0.2, 
+        scale = 0.5, 
+        rotation = 0, 
+        colour = 
+            { 0.67, 0.13, 0.09, 0.5, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare2.tga", 
+        offset = -0.3, 
+        scale = 0.8, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 0.5, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare5.tga", 
+        offset = -0.5, 
+        scale = 0.5, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 0.5, }, }, 
+    { 
+        texture = "data:Effect/LensFlare/danflare6.tga", 
+        offset = 1.4, 
+        scale = 0.7, 
+        rotation = 0, 
+        colour = 
+            { 1, 1, 1, 0.5, }, }, 
+    }

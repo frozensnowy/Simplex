@@ -1,0 +1,15 @@
+fps = 12;
+startFrame = 0;
+loopCount = 1
+;
+texture = 
+{
+    "data:ART/FX/explosions/7_256_flame/001.tga",
+    "data:ART/FX/explosions/7_256_flame/002.tga",
+    "data:ART/FX/explosions/7_256_flame/003.tga",
+    "data:ART/FX/explosions/7_256_flame/004.tga",
+    "data:ART/FX/explosions/7_256_flame/005.tga",
+    "data:ART/FX/explosions/7_256_flame/006.tga",
+    "data:ART/FX/explosions/7_256_flame/007.tga",
+    "data:ART/FX/explosions/7_256_flame/008.tga",
+}

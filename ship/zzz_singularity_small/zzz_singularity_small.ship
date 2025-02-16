@@ -1,0 +1,223 @@
+--------------------------------------------------
+--- This file was created for the Simplex Project
+--------------------------------------------------
+
+NewShipType = StartShipConfig()
+
+--------------------------------------------------
+--- Shipinfo
+--------------------------------------------------
+
+NewShipType.displayedName = "Black Hole"
+NewShipType.sobDescription = "Singularity"
+
+--------------------------------------------------
+--- Main Ship data
+--------------------------------------------------
+
+NewShipType.militaryUnit = 1
+NewShipType.isTransferable = 0
+NewShipType.mass = 10000000
+
+--------------------------------------------------
+--- Families
+--------------------------------------------------
+
+NewShipType.BuildFamily = "NotBuildable"
+NewShipType.AttackFamily = "UnAttackable"
+NewShipType.DockFamily = "CantDock"
+NewShipType.AvoidanceFamily = "None"	--"SuperPriority"
+NewShipType.DisplayFamily = "Megalith"
+NewShipType.AutoFormationFamily = "SuperCap"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.ArmourFamily = "Unarmoured"
+NewShipType.UnitCapsFamily = "SinglePlayerMisc"
+
+--------------------------------------------------
+--- Construction
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Health and Armour
+--------------------------------------------------
+
+NewShipType.maxhealth = 100000000000000
+NewShipType.regentime = 1
+NewShipType.minRegenTime = 1
+NewShipType.frontArmourDamage = 0
+NewShipType.sideArmourDamage = 0
+NewShipType.rearArmourDamage = 0
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+
+--------------------------------------------------
+--- Sensors
+--------------------------------------------------
+
+NewShipType.retaliationRange = 30000
+NewShipType.retaliationDistanceFromGoal = 30000
+NewShipType.visualRange = 1000000
+NewShipType.prmSensorRange = 1000000
+NewShipType.secSensorRange = 1000000
+NewShipType.detectionStrength = 10000
+NewShipType.visibleInSecondary = 1
+
+--------------------------------------------------
+--- Movement
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- advanced Movement
+--------------------------------------------------
+
+NewShipType.MinimalFamilyToFindPathAround = "None"
+NewShipType.useEngagementRanges = 0
+
+--------------------------------------------------
+--- Special Flight Manouvers
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Swaying
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Formations
+--------------------------------------------------
+
+NewShipType.paradeData = "dummy_parade"
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+
+--------------------------------------------------
+--- Launching
+--------------------------------------------------
+
+NewShipType.launchFormation = "2x2_Wall"
+
+--------------------------------------------------
+--- Docking
+--------------------------------------------------
+
+NewShipType.ignoreRaceWhenDocking = 0
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.queueFormation = "2x2_Wall"
+NewShipType.dockFormation = "2x2_Wall"
+
+--------------------------------------------------
+--- Ship Counter Raiting
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Damage & Death
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Random Targets
+--------------------------------------------------
+
+NewShipType.useTargetRandom = 0
+
+--------------------------------------------------
+--- Death Tumble
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Selection
+--------------------------------------------------
+
+NewShipType.selectionLimit = 0
+NewShipType.preciseATILimit = 1
+NewShipType.selectionPriority = 0
+
+--------------------------------------------------
+--- Tactical Icon
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Overlays
+--------------------------------------------------
+
+NewShipType.healthBarStyle = 3
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.SMHighlightDistMin = 1e16
+NewShipType.SMHighlightDistMax = 1e16
+
+--------------------------------------------------
+--- Rendering
+--------------------------------------------------
+
+NewShipType.meshRenderLimit = 550000000
+NewShipType.dotRenderLimit = 10
+NewShipType.goblinsStartFade = 550000000
+NewShipType.goblinsOff = 550000000
+NewShipType.minimumZoomFactor = 0.1
+
+--------------------------------------------------
+--- Non linear Scaling
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Level of Detail
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- alternative Hyperspace Gate
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Abilities
+--------------------------------------------------
+
+addAbility(NewShipType,"CanAttack",1,1,0,1,0,1,"","JustShoot")
+addAbility(NewShipType,"HyperspaceInhibitorAbility",1,12000)
+
+--------------------------------------------------
+LoadModel(NewShipType, 1)
+addShield(NewShipType, "EMP", 40000000, 40000000)
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Weapons
+--------------------------------------------------
+
+StartShipWeaponConfig(NewShipType,"zzz_blackhole_gravity_12000","Weapon_Gravity_32000","")
+--StartShipWeaponConfig(NewShipType,"zzz_blackhole_gravity_20000","Weapon_Gravity_20000","")
+StartShipWeaponConfig(NewShipType,"zzz_blackhole_gravity_5000","Weapon_Gravity_15000","")
+StartShipWeaponConfig(NewShipType,"zzz_blackhole_ejection","Weapon_Gravity_15000","")  --eject everything periodically to avoid 0000000c crash
+
+--------------------------------------------------
+--- HardPoints
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Salvages
+--------------------------------------------------
+
+
+--------------------------------------------------
+--- Multiplier
+--------------------------------------------------
+AddShipMultiplier(NewShipType, "Speed", "EnemyShipsWithinRadius", "Linear", 20, 20, 12000)
+
+--------------------------------------------------
+--- Addendum
+--------------------------------------------------
+NewShipType.alwaysInRenderList = 1
+NewShipType.canHaveShadows = 0

@@ -1,0 +1,160 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Jihadi Swarmer"
+NewShipType.sobDescription = "Anti-Capital Suicide Bomber"
+NewShipType.maxhealth = 3300
+NewShipType.regentime = 0
+NewShipType.minRegenTime = 0
+NewShipType.sideArmourDamage = 3
+NewShipType.rearArmourDamage = 10
+NewShipType.isTransferable = 0
+NewShipType.useEngagementRanges = 0
+NewShipType.useTargetRandom = 0
+NewShipType.unitCapsNumber = 0
+NewShipType.SquadronSize = 5
+NewShipType.passiveFormation = "x"
+NewShipType.defensiveFormation = "x"
+NewShipType.aggressiveFormation = "x"
+
+NewShipType.mass = 550
+NewShipType.collisionMultiplier = 3
+NewShipType.trackingSpeedMultiplier = 3
+NewShipType.normalCollisionDamageMultiplier = 3
+
+NewShipType.thrusterMaxSpeed=630
+NewShipType.mainEngineMaxSpeed=630
+NewShipType.rotationMaxSpeed=340
+NewShipType.thrusterAccelTime=10
+NewShipType.thrusterBrakeTime=5
+NewShipType.mainEngineAccelTime=8
+NewShipType.mainEngineBrakeTime=4
+NewShipType.rotationAccelTime = 0.1
+NewShipType.rotationBrakeTime = 0.1
+NewShipType.thrusterUsage=0.5
+NewShipType.accelerationAngle=120
+NewShipType.mirrorAngle=30
+NewShipType.maxBankingAmount=85
+NewShipType.descendPitch=0
+NewShipType.goalReachEpsilon=5
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX=0
+NewShipType.tumbleStaticY=0
+NewShipType.tumbleStaticZ=0
+NewShipType.tumbleDynamicX=0
+NewShipType.tumbleDynamicY=0
+NewShipType.tumbleDynamicZ=0
+NewShipType.tumbleSpeed=0
+NewShipType.targetAngle=180
+NewShipType.relativeMoveFactor = 0
+NewShipType.swayUpdateTime = 2
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.25
+NewShipType.swayRotateFactor = 0
+NewShipType.dustCloudDamageTime = 200
+NewShipType.nebulaDamageTime = 150
+NewShipType.MinimalFamilyToFindPathAround = "SuperPriority"
+NewShipType.BuildFamily = "TangoMinem"
+NewShipType.AttackFamily = "Munition"
+NewShipType.DockFamily = "Viper"
+NewShipType.AvoidanceFamily = "BattleCruiser"
+NewShipType.DisplayFamily = "Weapon"
+NewShipType.AutoFormationFamily = "Frigate"
+NewShipType.CollisionFamily = "Small"
+NewShipType.ArmourFamily = "MineArmour"		--"LightArmour"
+NewShipType.UnitCapsFamily = "Complex"
+NewShipType.UnitCapsShipType = "ViperMissile"
+NewShipType.fighterValue = 10
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 30
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 70
+NewShipType.totalValue = 40
+NewShipType.buildCost = 2999
+NewShipType.buildTime = 7
+NewShipType.buildPriorityOrder = 10
+NewShipType.retaliationRange = 0
+NewShipType.retaliationDistanceFromGoal = 0
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 1200
+NewShipType.secSensorRange = 1400
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "Triangle"		--"circle"
+
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 7000
+NewShipType.TODistanceDisappear0 = 5000
+NewShipType.TODistanceFade1 = 2500
+NewShipType.TODistanceDisappear1 = 2000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 3	--0
+NewShipType.nlips = 0.00015
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.0002
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "HardDot"
+NewShipType.meshRenderLimit = 40000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 0.25
+NewShipType.goblinsStartFade = 1500
+NewShipType.goblinsOff = 1500
+NewShipType.minimumZoomFactor = 0.8
+NewShipType.selectionLimit = 250000
+NewShipType.preciseATILimit = 0
+
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 0
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.ignoreRaceWhenDocking = 0
+NewShipType.queueFormation = "dockline"
+
+NewShipType.formationSpacing = 150
+NewShipType.launchFormation = "dockline"
+
+addAbility(NewShipType,"CanLaunch")
+addAbility(NewShipType, "MoveCommand", 0, 0)
+addAbility(NewShipType, "CanDock", 1, 0)
+--addAbility(NewShipType,"RetireAbility",0, 0)
+addAbility(NewShipType, "CloakAbility", 0, 3.1, 25, 4000, 20, 100, 5, 1000)
+NewShipType.launchTimeBetweenTwoFormations = 0
+NewShipType.launchTimeBeforeStart = 2.5
+NewShipType.launchNrOfShipsInDockFormation = 1
+--addAbility(NewShipType,"ParadeCommand",1)
+addAbility(NewShipType,"CanAttack",1,1,1,0,0.35,1,"SmallCapitalShip, BigCapitalShip, Mothership, Capturer, Frigate, ResourceLarge, Resource, Corvette, Fighter, Utility","kamikaze",
+{
+  Frigate = "justshoot",
+},{
+  ResourceLarge = "justshoot",
+},{
+  Munition = "justshoot",
+},{
+  Capturer = "justshoot",
+},{
+  Resource = "justshoot",
+},{
+  Utility = "justshoot",
+},{
+  Fighter = "justshoot",
+},{
+  Corvette = "justshoot",
+})
+addShield(NewShipType, "EMP", 375, 20)
+LoadModel(NewShipType, 1)
+StartShipWeaponConfig(NewShipType, "kad_swarmergun_jihadi", "Weapon_Furygun", "Weapon_SwarmergunFury")
+StartShipWeaponConfig(NewShipType, "kad_suicideburst_jihadi", "Weapon_Furygun", "")
+NewShipType.sobDieTime = 0.1
+NewShipType.sobSpecialDieTime = 0.1
+NewShipType.specialDeathSpeed = 0.1
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 0.1
+setEngineTrail(NewShipType, 0, 2, "trail_ribbon.tga", 0.05, 0.5, 0.025, 2.0)
+setEngineBurn(NewShipType, 12, 0.5, 1, 12, 0, 0.7, 0.1, 25)
+loadShipPatchList(NewShipType,"data:sound/sfx/ship/Vaygr/NonMilitary/",0,"Engines/VProbeEng","")

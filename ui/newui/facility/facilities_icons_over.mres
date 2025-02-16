@@ -1,0 +1,7 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:03:02
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+baseRes = 800
+res1600 = "DATA:/UI/NewUI/Facility/facilities_icons_over.dds"

@@ -1,0 +1,37 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Mass Shield"
+NewSubSystemType.sobDescription = "Heavy Mass Shield"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0.0035
+NewSubSystemType.tacticalIconMinFadeSize = 0.0045
+NewSubSystemType.tacticalIconMaxFadeSize = 0.008
+NewSubSystemType.groupMergeSize = 0.001
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 1200000
+NewSubSystemType.regentime = 1000
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.68
+NewSubSystemType.selectionLimit = 30000
+NewSubSystemType.preciseATILimit = 5000
+NewSubSystemType.selectionPriority = 1
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "massshield"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 0
+NewSubSystemType.activateHealthPercentage = 0
+NewSubSystemType.costToBuild = 1
+NewSubSystemType.timeToBuild = 1
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 0
+LoadSharedModel(NewSubSystemType, "3000ru")
+NewSubSystemType.BuildFamily = "SubSystem_Hgn"
+NewSubSystemType.AttackFamily = "SmallCapitalShip"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "Munition"
+NewSubSystemType.ArmourFamily = "HeavyArmour"
+--loadShipPatchList(NewSubSystemType, "data:sound/sfx/ship/Hiigaran/Subsystems/", 1, "HASubsystemFireControlTowerAmb")

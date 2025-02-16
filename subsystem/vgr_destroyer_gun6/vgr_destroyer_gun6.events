@@ -1,0 +1,45 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_FlechetteTop", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", },
+		}, 
+	},  
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_FlechetteTop_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/vweapon_carrier_kinetic_burst_cannon_shell_HWR", }, 
+                { "fx_scale", "3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon_FlechetteTopSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/vweapon_carrier_kinetic_burst_cannon_shell_HWR", }, 
+                { "fx_scale", "3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+	}, 
+}

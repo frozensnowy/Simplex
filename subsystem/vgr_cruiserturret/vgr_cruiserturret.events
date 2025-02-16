@@ -1,0 +1,120 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_FlechetteTop", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", },
+		},
+        animation2 = 
+        { 
+            name = "Weapon_FlechetteBottom", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", },
+		}, 
+	},  
+    events = 
+    { 
+		
+---ion cannon-------------------
+
+    ion1 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_f1_Position", }, 
+                { "fx", "super_beam_flare_spray", },
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "0.35", }, 
+                { "fx_nlips", "on", },
+            },       
+    ion2 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Weapon_f1Slave_Position", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "0.35", }, 
+                { "fx_nlips", "on", },    
+            },
+						
+		ion3 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_f1Slave1_Position", }, 
+                { "fx", "super_beam_flare_spray", },
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "0.35", }, 
+                { "fx_nlips", "on", },
+            },       
+    ion4 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "Weapon_f1Slave2_Position", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+                { "fx_scale", "0.35", }, 
+                { "fx_nlips", "on", },    
+            },
+
+		ion5 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Weapon_f1_Position", }, 
+                { "fx", "super_beam_flare_spray", },                 
+                { "fx_scale", "0.5", }, 
+                { "fx_nlips", "on", },
+            },       
+    ion6 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "Weapon_f1Slave_Position", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "fx_scale", "0.5", }, 
+                { "fx_nlips", "on", },    
+            },
+
+		ion7 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "Weapon_f1Slave1_Position", }, 
+                { "fx", "super_beam_flare_spray", },                 
+                { "fx_scale", "0.5", }, 
+                { "fx_nlips", "on", },
+            },       
+    ion8 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.95", }, 
+                { "marker", "Weapon_f1Slave2_Position", }, 
+                { "fx", "super_beam_flare_spray", }, 
+                { "fx_scale", "0.5", }, 
+                { "fx_nlips", "on", },    
+            },				
+		
+        
+	},
+}

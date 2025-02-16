@@ -1,0 +1,23 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:09 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Gimble", "Mine", "Vgr_Mine_Heavy", "Dropped", 250, 1575, 0, 0, 0, 0, 1, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 15000, 15000, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    MineArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, })
+setAngles(NewWeaponType, 179, 0, 0, 0, 0)

@@ -1,0 +1,171 @@
+filerange 47000 47499
+rangestart 47000 47499
+
+//Objectives
+47000	Use Sajuuk to destroy the three Planetary Bombardment Platforms.
+47001	Destroy the Vaygr Blockade forces.
+47002	Protect Hiigara from destruction by destroying any missiles that are launched.
+
+// Location
+47003	Population of Hiigara: %1MINUTES% million
+47004	HIIGARA - UNDER SIEGE
+47005	MISSION FAILED
+
+// Player Names
+47006	Hiigaran Navy
+47007	Vaygr Blockade
+47008	Planetary Bombardment Platform
+
+// Extra location card for when it becomes a million
+47009	Population of Hiigara: %1MINUTES%
+
+// intelevent_enemyfleetsdetected
+// FC
+47010	Sajuuk is operational.
+47011	All systems online.
+47012	Weapon systems fully charged.
+// FI
+47013	Sensors indicate large Vaygr forces massing at these locations.
+47015	The last of the Hiigaran Defence Fleet is engaging the Vaygr. They are greatly outnumbered.
+47014	The Vaygr must be eliminated to lift the siege of Hiigara.
+
+
+// intelevent_planetkillers
+// FI
+//47020	Unknown Vaygr vessels have exited Hyperspace in position to attack Hiigara.
+47020	These Mothership-class vessels do not resemble any known Vaygr design. However, sensors indicate similarities to Bentusi technology. They are not responding to hails.  Stand by for combat!
+47021	They must be stopped!
+47022	Multiple Mothership-class signals detected.
+//47023	*** AXED *** These vessels do not resemble any known Vaygr design. However, sensors indicate similarities to Bentusi technology. They are not responding to hails.
+//47024	*** AXED *** They are attacking with weapons of mass destruction.
+//47025	*** AXED *** Stand by for combat.
+
+// intelevent_pkillerpoweringup
+// FI
+47030	Enemy missile launch sequence confirmed.
+47031	Estimated time of launch is 1 minute.
+47032	Estimated time of launch is 2 minutes.
+47033	Estimated time of launch is 3 minutes.
+47034	Estimated time of launch is 4 minutes.
+47035	Estimated time of launch is 5 minutes.
+47036	Estimated time of launch is 6 minutes.
+47037	Estimated time of launch is 7 minutes.
+47038	Estimated time of launch is 8 minutes.
+47039	Estimated time of launch is 9 minutes.
+
+// intelevent_missilelaunched
+// NEEDED to change these lines to give player a way to prepare to stop the missiles
+// FI
+47040	Analysis indicates the unknown vessels are Surface Bombardment Platforms and are preparing to attack.
+47041	Dispatch Interceptors to target any missiles before they can enter Hiigara's atmosphere.
+47042	Missiles must be destroyed before they reach this debris field.
+
+// speechevent_firstimpact
+// FI
+47050	Hiigara reports missile impact.
+47051	Catastrophic damage reports coming in.
+
+// speechevent_secondimpact
+// FI
+47060	Second impact detected...
+47061	Geothermal activity reported.
+
+// speechevent_thirdimpactdetected
+// FI
+47070	Third Impact confirmed.
+
+// speechevent_fourthimpact
+// FI
+47080	Fourth Impact confirmed!
+47081	Hiigara cannot take any more of this!
+
+// speechevent_fifthimpact
+// FI
+47090	We have lost all communications with Hiigara. 
+47091	The planet is nearly destroyed.
+
+// speechevent_hiigaradestroyed
+// FC
+47100	Nothing remains... 
+
+// speechevent_firstplanetkillerdestroyed
+// FI
+47110	One Surface Bombardment Platform destroyed.
+
+// speechevent_secondplanetkillerdestroyed
+// FI
+47120	Two Surface Bombardment Platforms destroyed.
+
+// speechevent_victoryisours
+// FI
+47130	Scans confirm the final Surface Bombardment Platform has been destroyed.
+47131	Sensors indicate several Vaygr ships are fleeing to hyperspace.
+47132	Victory is ours!
+// FC
+47133	Hiigara is safe.  Victory is ours!
+47134	Sajuuk has returned.
+
+// additionals
+// FI
+47140	*** AXED *** The Planetary Bombardment Platform has shields that even Sajuuk cannot penetrate.  
+47141	*** AXED *** Destroy the shield generator subsystems.
+// FI
+47150	*** AXED *** First missile system destroyed.
+// FI
+47160	*** AXED *** The Planetary Bombardment Platform is showing a drop in its shield levels.
+// FI
+47170	*** AXED *** Second missile system destroyed.
+// FI
+47180	*** AXED *** The Planetary Bombardment Platform is again showing a drop in its shield build-up.
+// FI
+47190	*** AXED *** Final missile system destroyed.
+// FI
+47200	*** AXED *** The Planetary Bombardment Platform shield is powering down.  
+47201	Scans of the hull indicate that it is immune to conventional weapons.  
+47202	Bring Sajuuk to bear.
+
+// in case we need lines for the hiigaran sheild going down
+// FI
+47210	These weapons have succeeded in taking down Hiigara's planetary shields.
+47211	We are Hiigara's only remaining defense.
+
+// speechevent_missilelaunched
+// FI
+47220	Enemy missile launch sequence confirmed.
+47221	Surface bombardment missile launched.
+47222	Confirmed launch of missile.
+47223	Missile launched and on trajectory for Hiigara.
+47224	All Interceptors, red alert, we have detected missile launch.
+47225	Missile launched, repeat, missile has been launched.
+
+// speechevent_defensefleetstatus
+// ALLSHIPS
+47230	This isn't looking good Fleet.
+47231	Hold your positions!
+
+// Pings
+47340	Planetary Bombardment Platform
+47341	Planetary Bombardment Missile
+47342	Vaygr Blockade
+
+// Ping Descriptions
+// For 47140	
+47343	These Platforms must be destroyed before they can destroy Hiigara. 
+// For 47141	
+47344	Destroy this Missile before it can reach Hiigara
+// For 47142
+47345	Vaygr Blockade forces, destroy them.
+
+// Objective Descriptions
+// For 47000 
+47350	Destroy all three Planetary Bombardment Platforms.  
+47354	Only Sajuuk'ss Main Cannon will be able to penetrate their armour.
+// For 47001
+47351	Destroy the Vaygr Blockade Fleet
+// For 47002
+47352	Protect Hiigara from destruction.
+47353	Do not allow more than 6 missiles to make it past the debris field.
+
+47360	MISSION SUCCESSFUL
+
+rangeend

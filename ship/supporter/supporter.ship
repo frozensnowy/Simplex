@@ -1,0 +1,123 @@
+NewShipType = StartShipConfig()
+NewShipType.maxhealth = 1000000
+NewShipType.regentime = 1
+NewShipType.minRegenTime = 1
+NewShipType.paradeData = "dummy_parade"
+NewShipType.sideArmourDamage = 0
+NewShipType.rearArmourDamage = 0
+NewShipType.frontArmourDamage = 0
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 0
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.AttackFamily = "UnAttackable"
+NewShipType.AvoidanceFamily = "None"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.DisplayFamily = "Capital"
+NewShipType.ArmourFamily = "PlanetKillerArmour"
+
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 0
+NewShipType.visibleInSecondary = 0
+NewShipType.selectionLimit = 0
+NewShipType.preciseSelectionLimit = 0
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 0
+NewShipType.militaryUnit = 0
+
+NewShipType.alternativeHyperspaceV = ""
+NewShipType.alternativeHyperspaceA = "etg/special/SilentHyperspace"
+NewShipType.alternativeHyperspaceTime = 0
+
+--addAbility(NewShipType, "HyperSpaceCommand", 1, 0, 0, 0, 0, 15)
+
+addAbility(NewShipType, "CanBuildShips", 1, "SubSystem_Hgn", "SubSystemModule")
+--addAbility(NewShipType,"DefenseFieldShieldAbility",0,10000,1,0.1)
+
+AddShipMultiplier(NewShipType, "NebulaSensitivity", "ThisShipOnly", "Linear", 0, 0, 0)
+AddShipMultiplier(NewShipType, "DustCloudSensitivity", "ThisShipOnly", "Linear", 0, 0, 0)
+
+addAbility(NewShipType, "CloakAbility", 1, 3.1, 0, 0, 0, 100, 2, 200)
+
+LoadModel(NewShipType, 1)
+
+StartShipHardPointConfig(NewShipType,"SP_isHonorInherited","Hardpoint_support","System","Generic","Destroyable","","SP_isHonorInherited")
+StartShipHardPointConfig(NewShipType,"isLieutenant","Hardpoint_support","System","Generic","Destroyable","","isLieutenant")
+StartShipHardPointConfig(NewShipType,"isCommander","Hardpoint_support","System","Generic","Destroyable","","isCommander")
+StartShipHardPointConfig(NewShipType,"isCaptain","Hardpoint_support","System","Generic","Destroyable","","isCaptain")
+StartShipHardPointConfig(NewShipType,"isCommodore","Hardpoint_support","System","Generic","Destroyable","","isCommodore")
+StartShipHardPointConfig(NewShipType,"isAdmiral","Hardpoint_support","System","Generic","Destroyable","","isAdmiral")
+StartShipHardPointConfig(NewShipType,"isFleetAdmiral","Hardpoint_support","System","Generic","Destroyable","","isFleetAdmiral")
+
+StartShipHardPointConfig(NewShipType,"resistence","Hardpoint_support","System","Innate","Damageable","","resistence","","","","","","","")
+StartShipHardPointConfig(NewShipType,"buildspeed","Hardpoint_support","System","Innate","Damageable","","buildspeed","","","","","","","")
+StartShipHardPointConfig(NewShipType,"resource","Hardpoint_support","System","Innate","Damageable","","resource","","","","","","","")
+StartShipHardPointConfig(NewShipType,"hyperspace","Hardpoint_support","System","Innate","Damageable","","hyperspace","","","","","","","")
+StartShipHardPointConfig(NewShipType,"unitbehavior","Hardpoint_support","System","Innate","Destroyable","","unitbehavior","","","","","","","")
+StartShipHardPointConfig(NewShipType,"unitbehavior_downgrade","Hardpoint_support","System","Innate","Destroyable","","unitbehavior_downgrade","","","","","","","")
+
+StartShipHardPointConfig(NewShipType,"nebula","Hardpoint_support","System","Innate","Damageable","","nebula","","","","","","","","")
+StartShipHardPointConfig(NewShipType,"hasallied","Hardpoint_support","System","Generic","Destroyable","","hasallied")
+StartShipHardPointConfig(NewShipType,"br","Hardpoint_support","System","Generic","Destroyable","","br","br1")
+StartShipHardPointConfig(NewShipType,"ba","Hardpoint_support","System","Innate","Damageable","ba","","","","","","","","")
+
+StartShipHardPointConfig(NewShipType,"hasallied_hgn","Hardpoint_support","System","Generic","Destroyable","","hasallied_hgn")
+StartShipHardPointConfig(NewShipType,"hasallied_vgr","Hardpoint_support","System","Generic","Destroyable","","hasallied_vgr")
+StartShipHardPointConfig(NewShipType,"hasallied_kad","Hardpoint_support","System","Generic","Destroyable","","hasallied_kad")
+StartShipHardPointConfig(NewShipType,"hasallied_rad","Hardpoint_support","System","Generic","Destroyable","","hasallied_rad")
+StartShipHardPointConfig(NewShipType,"hasallied_kpr","Hardpoint_support","System","Generic","Destroyable","","hasallied_kpr")
+
+StartShipHardPointConfig(NewShipType,"solesurvivor_firepower","Hardpoint_support","System","Generic","Damageable","","solesurvivor_firepower")
+StartShipHardPointConfig(NewShipType,"solesurvivor_accuracy","Hardpoint_support","System","Generic","Damageable","","solesurvivor_accuracy")
+StartShipHardPointConfig(NewShipType,"solesurvivor_health","Hardpoint_support","System","Generic","Damageable","","solesurvivor_health")
+StartShipHardPointConfig(NewShipType,"solesurvivor_repair","Hardpoint_support","System","Generic","Damageable","","solesurvivor_repair")
+StartShipHardPointConfig(NewShipType,"solesurvivor_sensor","Hardpoint_support","System","Generic","Damageable","","solesurvivor_sensor")
+StartShipHardPointConfig(NewShipType,"solesurvivor_radiation","Hardpoint_support","System","Generic","Damageable","","solesurvivor_radiation")
+StartShipHardPointConfig(NewShipType,"solesurvivor_speed","Hardpoint_support","System","Generic","Damageable","","solesurvivor_speed")
+
+StartShipHardPointConfig(NewShipType,"fake_research","Hardpoint_support","System","Generic","Destroyable","","fake_research")
+StartShipHardPointConfig(NewShipType,"fake_advresearch1","Hardpoint_support","System","Generic","Destroyable","","fake_advresearch1")
+
+StartShipHardPointConfig(NewShipType,"hax_build1","Hardpoint_support","System","Innate","Damageable","hax_build1","","","","","","","","")
+--StartShipHardPointConfig(NewShipType,"hax_ru","Hardpoint_support","System","Innate","Damageable","hax_ru","","","","","","","","")
+--StartShipHardPointConfig(NewShipType,"hax_en","Hardpoint_support","System","Innate","Damageable","hax_en","","","","","","","","")
+
+StartShipHardPointConfig(NewShipType,"ai_unitcap","Hardpoint_support","System","Innate","Destroyable","","ai_unitcap","","","","","","","")
+StartShipHardPointConfig(NewShipType,"ai_antirape","Hardpoint_support","System","Innate","Destroyable","","ai_antirape","","","","","","","")
+StartShipHardPointConfig(NewShipType,"sp_invincible","Hardpoint_support","System","Innate","Destroyable","","sp_invincible","","","","","","","")
+
+StartShipHardPointConfig(NewShipType,"military0","Hardpoint_support","System","Generic","Destroyable","","military0")
+StartShipHardPointConfig(NewShipType,"military","Hardpoint_support","System","Generic","Destroyable","","military")
+StartShipHardPointConfig(NewShipType,"military1","Hardpoint_support","System","Generic","Destroyable","","military1")
+StartShipHardPointConfig(NewShipType,"military2","Hardpoint_support","System","Generic","Destroyable","","military2")
+StartShipHardPointConfig(NewShipType,"unitcapsrank1","Hardpoint_support","System","Generic","Destroyable","","unitcapsrank1")
+StartShipHardPointConfig(NewShipType,"unitcapsrank2","Hardpoint_support","System","Generic","Destroyable","","unitcapsrank2")
+StartShipHardPointConfig(NewShipType,"unitcapsrank3","Hardpoint_support","System","Generic","Destroyable","","unitcapsrank3")
+StartShipHardPointConfig(NewShipType,"unitcapsrank4","Hardpoint_support","System","Generic","Destroyable","","unitcapsrank4")
+
+StartShipHardPointConfig(NewShipType,"1000ru","Hardpoint_support","System","Generic","Destroyable","","1000ru")
+StartShipHardPointConfig(NewShipType,"2000ru","Hardpoint_support","System","Generic","Destroyable","","2000ru")
+StartShipHardPointConfig(NewShipType,"3000ru","Hardpoint_support","System","Generic","Destroyable","","3000ru")
+StartShipHardPointConfig(NewShipType,"4000ru","Hardpoint_support","System","Generic","Destroyable","","4000ru")
+--StartShipHardPointConfig(NewShipType,"5000ru","Hardpoint_support","System","Generic","Destroyable","","5000ru")
+StartShipHardPointConfig(NewShipType,"6000ru","Hardpoint_support","System","Generic","Destroyable","","6000ru")
+--StartShipHardPointConfig(NewShipType,"7000ru","Hardpoint_support","System","Generic","Destroyable","","7000ru")
+StartShipHardPointConfig(NewShipType,"8000ru","Hardpoint_support","System","Generic","Destroyable","","8000ru")
+--StartShipHardPointConfig(NewShipType,"9000ru","Hardpoint_support","System","Generic","Destroyable","","9000ru")
+StartShipHardPointConfig(NewShipType,"10000ru","Hardpoint_support","System","Generic","Destroyable","","10000ru")
+StartShipHardPointConfig(NewShipType,"12000ru","Hardpoint_support","System","Generic","Destroyable","","12000ru")
+StartShipHardPointConfig(NewShipType,"20000ru","Hardpoint_support","System","Generic","Destroyable","","20000ru")
+StartShipHardPointConfig(NewShipType,"100000ru","Hardpoint_support","System","Generic","Destroyable","","100000ru")
+
+StartShipHardPointConfig(NewShipType,"energy","Hardpoint_support","System","Innate","Damageable","energy")
+
+StartShipHardPointConfig(NewShipType,"revealer1","Hardpoint_support","System","Generic","Destroyable","","revealer1")
+StartShipHardPointConfig(NewShipType,"revealer2","Hardpoint_support","System","Generic","Destroyable","","revealer2")
+StartShipHardPointConfig(NewShipType,"revealer3","Hardpoint_support","System","Generic","Destroyable","","revealer3")

@@ -1,0 +1,37 @@
+fps = 35; --40 looked good
+startFrame = 0;
+loopCount = 1; --was 1
+texture = {
+	"data:/ART/FX/detfilms/fireburst01_1.dds",
+	"data:/ART/FX/detfilms/fireburst01_2.dds",
+	"data:/ART/FX/detfilms/fireburst01_3.dds",
+	"data:/ART/FX/detfilms/fireburst01_4.dds",
+	"data:/ART/FX/detfilms/fireburst01_5.dds",
+	"data:/ART/FX/detfilms/fireburst01_6.dds",
+	"data:/ART/FX/detfilms/fireburst01_7.dds",
+	"data:/ART/FX/detfilms/fireburst01_8.dds",
+	"data:/ART/FX/detfilms/fireburst01_9.dds",
+	"data:/ART/FX/detfilms/fireburst01_10.dds",
+	"data:/ART/FX/detfilms/fireburst01_11.dds",
+	"data:/ART/FX/detfilms/fireburst01_12.dds",
+	"data:/ART/FX/detfilms/fireburst01_13.dds",
+	"data:/ART/FX/detfilms/fireburst01_14.dds",
+	"data:/ART/FX/detfilms/fireburst01_15.dds",
+	"data:/ART/FX/detfilms/fireburst01_16.dds",
+	"data:/ART/FX/detfilms/fireburst01_17.dds",
+	"data:/ART/FX/detfilms/fireburst01_18.dds",
+	"data:/ART/FX/detfilms/fireburst01_19.dds",
+	"data:/ART/FX/detfilms/fireburst01_20.dds",
+	"data:/ART/FX/detfilms/fireburst01_21.dds",
+	"data:/ART/FX/detfilms/fireburst01_22.dds",
+	"data:/ART/FX/detfilms/fireburst01_23.dds",
+	"data:/ART/FX/detfilms/fireburst01_24.dds",
+	"data:/ART/FX/detfilms/fireburst01_25.dds",
+	"data:/ART/FX/detfilms/fireburst01_26.dds",
+	"data:/ART/FX/detfilms/fireburst01_27.dds",
+	"data:/ART/FX/detfilms/fireburst01_28.dds",
+	"data:/ART/FX/detfilms/fireburst01_29.dds",
+	"data:/ART/FX/detfilms/fireburst01_30.dds",
+	"data:/ART/FX/detfilms/fireburst01_31.dds",
+	"data:/ART/FX/detfilms/fireburst01_32.dds"}
+

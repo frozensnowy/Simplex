@@ -1,0 +1,35 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Bottom", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, 
+		}, 
+	}, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_Bottom", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Bottom_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_PULASAR_CANNON_BEAM", },   --WEAPON/bolter1
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+	}, 
+}

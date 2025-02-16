@@ -1,0 +1,4 @@
+ZZZ_SINGULARITY_SMALL_Launched_OnSet = function(ship)
+	startEffect(ship, "disk")
+end
+

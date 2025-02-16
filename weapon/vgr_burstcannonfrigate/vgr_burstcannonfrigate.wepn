@@ -1,0 +1,28 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:10 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+-- was 3000 dmg  was 50 aoe
+-- was 10 on maxeffectsspawn
+StartWeaponConfig(NewWeaponType, "Fixed", "SphereBurst", "hgn_destroyerguns", "Normal", 0, 0, 45, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 1, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 225, 225, "")
+setPenetration(NewWeaponType, 30, 1, 
+{ 
+    unarmoured = 0.6, 
+}, 
+{ 
+    lightarmour = 0.8, 
+}, 
+{ 
+    TurretArmour = 1.9, 
+}, 
+{ 
+    MediumArmour = 1.5, 
+}, 
+{ 
+    PlanetKillerArmour = 0, 
+},
+{ 
+    SubSystemArmour = 0.5, 
+})
+setAngles(NewWeaponType, 180, 0, 0, 0, 0)

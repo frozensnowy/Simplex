@@ -1,0 +1,10 @@
+hitfx = "dmg_massive_mesh_sphere_ring"
+bulletfx = "dmg_sml_missle_combo"
+nopenetratefx = "dmg_torpedo_ball_ring_mesh_bentusi"
+deathtype = "deathCannon"
+hit_sfx = "Explosion/Large/ETG_Explode_Large_Plasma"
+nopenetrate_sfx = "Explosion/Large/ETG_Explode_Large_Plasma"
+hit_clamp = {
+  1,
+  1,
+}

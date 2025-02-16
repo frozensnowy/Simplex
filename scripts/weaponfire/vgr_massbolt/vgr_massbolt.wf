@@ -1,0 +1,11 @@
+hitfx = "dmg_wave_explosion_combo"
+bulletfx = "vgr_wave_massbolt_combo"
+nopenetratefx = "dmg_wave_explosion_combo"
+deathtype = "deathBeam"
+firefx = "sunfire_squirt"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PLASMA_LANCE_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PLASMA_LANCE_BEAM_HIT"
+hit_clamp = 
+    { 1, 1, }

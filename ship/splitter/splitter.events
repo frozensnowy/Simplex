@@ -1,0 +1,48 @@
+effects = {
+  animations = {
+        nyan_cat = 
+        { 
+            name = "nyan_cat", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        firework = 
+        { 
+            name = "firework", 
+            length = 100, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+  events = {
+---map special fx
+
+        nyan_cat = 
+            { 
+                { "anim", "nyan_cat", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "nyan_cat_spray", },
+                { "fx_scale", "1", },
+                { "fx_nlips", "on", }, 
+                { "fx_sm", "on", }, 
+            },
+        firework = 
+            { 
+                { "anim", "firework", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "firework_spray_gold,firework_spray_blue,firework_spray_green,firework_spray_red,firework_spray_white,firework_spray_white_blue,firework_spray_white_red", }, --"firework_spray_combo"
+                { "fx_scale", "1", },
+                { "fx_nlips", "on", }, 
+                { "fx_sm", "on", }, 
+            },
+  },
+}

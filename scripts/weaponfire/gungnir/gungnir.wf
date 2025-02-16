@@ -1,0 +1,13 @@
+hitfx = "gungnir_hit_combo"
+bulletfx = "gungnir_beam_combo"
+nopenetratefx = "gungnir_hit_combo"
+blowthroughfx = "blowthrough_generic"
+deathtype = "deathBeam"
+firefx = "gungnir_fire_combo"
+scartype = "iontrail"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_ION_CANNON_BEAM_HIT"
+nopentrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_ION_CANNON_BEAM_HIT"
+hit_clamp = {
+  0.5,
+  1.25,
+}

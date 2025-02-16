@@ -1,0 +1,129 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "MissileTrail", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "missilelike_boost_yellow", }, 
+                { "sound", "weapon/RandomSample/gshescr", }, 
+                { "fx_scale", "entity", }, 
+                { "fx_nlips", "on", }, 
+                { "fx_sm", "on", }, 
+            }, 
+       event1fire = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Head", }, 
+                { "fx", "plasma_engine_burn_yellow_combo", }, 
+                { "sound", "", },  --weapon/cannon_105mm
+                { "fx_scale", "entity", }, 
+            }, 
+        event1smoke = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "ion_cannon_steam_spray_loop", }, 
+                { "fx_scale", "entity", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event1electro = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "alos_thor_hammer_fire_noise_spray_gold_loop", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        event1flare = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "fed_torpedo_photon2_bullet", }, 
+                { "fx_scale", "4", }, 
+                { "fx_nlips", "on", }, 
+                { "fx_sm", "on", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+				{ "fx", "plasma_hit_spray_dread", },
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+				{ "fx", "death_generic_fighter", },
+            }, 
+        event5 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "fiery_trail_spray_inherit", }, 
+                { "fx_scale", "10", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "fiery_trail_spray_small_inherit", }, 
+                { "fx_scale", "10", }, 
+            }, 
+        event7 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "fiery_flash_ring_long_spray", },   --fiery_flash_ring_long
+                { "fx_scale", "30", }, 
+            }, 
+        event30 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_nukemissile_explode_combo_NOFLARE", }, 
+                { "sound", "weapon/RandomSample/gexpneu", }, 
+                { "fx_scale", "1", }, 
+                --{ "fx_sm", "on", },                 
+            },       
+            
+            }, }

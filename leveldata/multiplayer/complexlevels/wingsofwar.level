@@ -1,0 +1,1310 @@
+
+levelDesc = "Wings of War <c=0095D9>(Air Combat)</c>"
+maxPlayers = 6
+player = {}
+
+for k = 0, (maxPlayers - 1) do
+	player[k] = {id = k, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	local RRad = 30000
+	setWorldBoundsInner({0, 0, 0}, {RRad*3/2, RRad*3/2, RRad*3/2})
+	
+	local alpha = random(0,360)
+	local r = 40000
+	for beta=1,6,1 do
+  	addSquadron("Aircraft Carrier", "meg_carrier_huge", {r*cos(beta*60+alpha), random(-150,150), r*sin(beta*60+alpha)}, -1, {0, 180-(beta*60+alpha), 0}, 0, 0)
+  end
+	--addSquadron("Aircraft Carrier", "meg_carrier_huge", {random(-1500,1500), -30000+random(-150,150), random(-1500,1500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	
+	local startRing =
+	{
+		Point = {1, "StartPos", {0, 0, 0,}, {0, 0, 0,},},
+	}
+	local patchRing =
+	{
+		EasyPatch = {6, {0, 0, 0,}, 100,},
+	}
+	local patchRing2 =
+	{
+		EasyPatch = {4, {0, 0, 0,}, 10,},
+	}
+	local pebbleRing =
+	{
+		Pebble = {20000, "Pebble_0", {0, 0, 0,}, 0, 0, 0,},
+	}
+	local dustcloudRing =
+	{
+		DustCloud = {16, "polySurface1", "DustCloud_NoRes", {0, 0, 0,}, {1, 1, 1, 1}, 0, 10000,},
+	}
+	local deadroidRing =
+	{
+--		Asteroid = {0, "Asteroid_3", {0, 0, 0,}, 0, 0, 0, 0, 0,},
+		Asteroid = {8000, "Asteroid_2", {0, 0, 0,}, 0, 0, 0, 0, 0,},
+	}
+
+--	addSquadron("Squadron1", "Hgn_Carrier", {0, 100, 0,}, 0, {0, 0, 0,}, 0, 0)
+
+	--   shapeAdd(<tPos>, <tDst>, {<sLay>, <fA>, <fB>, <fC>, <fD>, <fE>,}, <tRot>, <iMod>)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {0, 0, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {0, 60, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {0, -60, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {90, 0, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {-90, 0, 0,}, 1)
+--	shapeAdd2D({0, 0, 0,}, deadroidRing, {"Ellipse", RRad/2, RRad/2, 0, RRad/2, 0,}, {0, +000, 0,}, 1)
+--	shapeAdd2D({0, 0, 0,}, deadroidRing, {"Ellipse", RRad/2, RRad/2, 0, RRad/2, 0,}, {0, +060, 0,}, 1)
+--	shapeAdd2D({0, 0, 0,}, deadroidRing, {"Ellipse", RRad/2, RRad/2, 0, RRad/2, 0,}, {0, -060, 0,}, 1)
+
+--	shapeAdd2D({0, 0, 0,}, dustcloudRing, {"Ellipse", RRad, RRad, RRad/4, RRad/4, 0,}, {0, 0, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, dustcloudRing, {"Ellipsoid", RRad, RRad, RRad/4, RRad/4, 0,}, {0, 0, 0,}, 0)
+
+	easyPatch({0, 0, 0,})
+	easyPatch({0, RRad, 0,})
+	easyPatch({0, -RRad, 0,})
+
+	--   globeAdd(<tPos>, <tDst>, {<fRad>, <fLat>, <fLon>, <fThk>, <fHgh>,}, <tArc>, <iMod>)
+	globeAdd({0,0,0,}, pebbleRing, {RRad, 1, 0, 3000, 3000,}, {0, 360,}, 2)
+	globeAdd({0,0,0,}, patchRing, {RRad, 2, 0, 0, 0,}, {30, 390,}, 0)
+
+	local PSgn = 1
+	local YDeg = 30
+	for i = 1, maxPlayers do
+		--   ringAdd(<tPos>, <tDst>, {<fAx1>, <fAx2>, <fThk>, <fHgh>,}, <tArc>, <tRot>, <iMod>)
+		ringAdd({0,0,0,}, startRing, {RRad, RRad, 0, 0,}, {5 + 30 * PSgn, 365 + 30 * PSgn,}, {90, YDeg, 0,}, 0)
+		PSgn = PSgn * -1
+		YDeg = YDeg + 60
+	end
+end
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("berg")	
+end
+
+--------------------------------------------------------------------------------
+-- Global variables.
+--
+
+-- Player position counter. May be what is causing the game to crash.
+startNum = 0
+-- Used to store coordinates. Need to find a better way of doing this.
+coordNum = 1
+coordTable = {}
+
+
+--------------------------------------------------------------------------------
+-- General shape-adding function that all the other functions call.
+-- Function created by Mikail.
+
+function appendShape(tPos, i, tTab, j, tCoo, tRot)
+	tCoo = vaddV(vrotate(tCoo, tRot), tPos)
+	if (i == "Point") then
+		-- special case utilizing global counter
+		if (tTab[2] == "StartPos") then
+			addPoint(tTab[2] .. startNum, vaddV(tCoo, tTab[3]), tTab[4])
+			startNum = startNum + 1					
+		else
+			addPoint(tTab[2] .. (j - 1), vaddV(tCoo, tTab[3]), tTab[4])
+		end
+	elseif (i == "Sphere") then
+		addSphere(tTab[2] .. (j - 1), vaddV(tCoo, tTab[3]), tTab[4])
+	elseif (i == "Squadron") then
+		addSquadron(tTab[2] .. (j - 1), tTab[3], vaddV(tCoo, tTab[4]), tTab[5], tTab[6], tTab[7], tTab[8])
+	elseif (i == "Asteroid") then
+		addAsteroid(tTab[2], vaddV(tCoo, tTab[3]), tTab[4], tTab[5], tTab[6], tTab[7], tTab[8])
+	elseif (i == "Salvage") then
+		addSalvage(tTab[2], vaddV(tCoo, tTab[3]), tTab[4], tTab[5], tTab[6], tTab[7], tTab[8])
+	elseif (i == "Pebble") then
+		addPebble(tTab[2], vaddV(tCoo, tTab[3]), tTab[4], tTab[5], tTab[6])
+	elseif (i == "Cloud") then
+		addCloud(tTab[2], tTab[3], vaddV(tCoo, tTab[4]), tTab[5], tTab[6], tTab[7])
+	elseif (i == "DustCloud") then
+		addDustCloud(tTab[2], tTab[3], vaddV(tCoo, tTab[4]), tTab[5], tTab[6], tTab[7])
+	elseif (i == "Nebula") then
+		addNebula(tTab[2], tTab[3], vaddV(tCoo, tTab[4]), tTab[5], tTab[6], tTab[7])
+	elseif (i == "EasyPatch") then
+		easyPatch(tCoo)
+	elseif (i == "Coordinate") then
+		coordTable[coordNum] = tCoo
+		coordNum = coordNum + 1
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Adds a team-symmetric, keleidoscopic pattern. Only available for 3 and 6 players.
+-- Syntax:
+--   circumAdd(<tPos>, <tOff>, {<fRad>, <fMin>, <fTilt>, <iPly>,}, <tEndPt1>, <tEndPt2>, <tEndPt3>)
+-- Arguments:
+--   <tPos>: the center of the shape.
+--   <tOff>: the shape is offset from <tPos> by this amount.
+--   <tPar>: a table containing the following four parameters:
+--      <fRad>: the outer radius of the shape.
+--      <fMin>: the minimum distance that starting positions may be near each other. May not always apply to 6-player maps.
+--      <fTilt>: the maximum amount that a starting position will tilt above the elliptic.
+--      <iPly>: may be 3 or 6, only.
+--   <tEndPt1>: (optional) specify a location to use as starting point 1.
+--   <tEndPt2>: (optional) specify a location to use as starting point 2.
+--   <tEndPt3>: (optional) specify a location to use as starting point 3.
+
+function circumAdd(tPos, tOff, tPar, tEndPt1, tEndPt2, tEndPt3)
+	-- Recommended positions:
+	-- 	EndPt[1] = {31517.1953125, -6945.9267578125, 31517.1953125,}
+	-- 	EndPt[2] = {-19169.44140625, -2790.259033203125, -19169.44140625,}
+	-- 	EndPt[3] = {-11043.232421875, -2093.438232421875, -11043.232421875,}
+	local fRad, fMin, fTilt, iPly = tPar[1], tPar[2], tPar[3], tPar[4]
+	local DistPass = 1
+	local tCoo, EndPts, CrossPts, CrossAvgs = {}, {}, {}, {}
+
+	if ((tEndPt1 ~= nil) and (tEndPt1 ~= nil) and (tEndPt1 ~= nil)) then
+		EndPts = {tEndPt1, tEndPt2, tEndPt3,}
+	else
+		for k = 1, 3 do
+			local u, v = random2(fTilt), random3(360)
+			EndPts[k] = vaddV(vrotate({fRad, 0, 0,}, {0, v, u,}), tOff)
+--			print("EndPt[" .. k .. "] = {" .. EndPts[k][1] .. ", " .. EndPts[k][2] .. ", " .. EndPts[k][1] .. ",}")
+		end
+	end
+
+	local MidPts =
+	{
+		vdivide(vaddV(EndPts[1], EndPts[2]), 2),
+		vdivide(vaddV(EndPts[1], EndPts[3]), 2),
+		vdivide(vaddV(EndPts[3], EndPts[2]), 2),
+	}
+	local CenterPoint =
+	{
+		vdivide(vaddV(vaddV(EndPts[1], EndPts[2]), EndPts[3]), 3),
+	}
+	local Lengths =
+	{
+		sqrt(vsum(vpower(vsubtractV(EndPts[1], EndPts[2]), 2))),
+		sqrt(vsum(vpower(vsubtractV(EndPts[1], EndPts[3]), 2))),
+		sqrt(vsum(vpower(vsubtractV(EndPts[3], EndPts[2]), 2))),
+	}
+	
+	local Diamtr = 2 * sqrt(vsum(vpower(vsubtractV(EndPts[1], tPos), 2)))
+	local MidPercnt =
+	{
+		
+		100 * Lengths[1] / Diamtr,
+		100 * Lengths[2] / Diamtr,
+		100 * Lengths[3] / Diamtr,
+	}
+	MidPercnt = vdivide(vmultiply(Lengths, 100), Diamtr)
+	local EndPercent =
+	{
+		(MidPercnt[1] + MidPercnt[2]) / 2,
+		(MidPercnt[1] + MidPercnt[3]) / 2,
+		(MidPercnt[3] + MidPercnt[2]) / 2,
+	}
+	if (iPly == 6) then
+		for k = 1, 3 do
+			EndPts[k + 3] = vmultiply(EndPts[k], -1)
+			MidPts[k + 3] = vmultiply(MidPts[k], -1)
+			Lengths[k + 3] = Lengths[k]
+			MidPercnt[k + 3] = MidPercnt[k]
+			EndPercent[k + 3] = EndPercent[k]
+		end
+		CrossPts =
+		{
+			vdivide(vaddV(EndPts[1], EndPts[5]), 2),
+			vdivide(vaddV(EndPts[1], EndPts[6]), 2),
+			vdivide(vaddV(EndPts[2], EndPts[4]), 2),
+			vdivide(vaddV(EndPts[2], EndPts[6]), 2),
+			vdivide(vaddV(EndPts[3], EndPts[4]), 2),
+			vdivide(vaddV(EndPts[3], EndPts[5]), 2),
+		}
+		CrossAvgs =
+		{
+			vdivide(vaddV(vaddV(CrossPts[1], CrossPts[2]), CrossPts[3]), 3),
+			vdivide(vaddV(vaddV(CrossPts[4], CrossPts[5]), CrossPts[6]), 3),
+		}
+		CenterPoint[2] = vmultiply(CenterPoint[1], -1)
+	end
+	for k, tTab in Lengths do
+		if (tTab <= fMin) then
+			DistPass = 0
+			break
+--		elseif (tTab >= fMaxDist) then
+--			DistPass = 0
+--			break
+		end
+	end
+	if (DistPass == 1) then
+		for k, tTab in EndPts do
+			addPoint("StartPos" .. startNum, vaddV(vaddV(tTab, tPos), {4000 * randomSign(), 0, 4000 * randomSign(),}), {0, random3(360), 0,})
+			startNum = startNum + 1
+			tCoo = vaddV(tPos, tTab)
+			easyPatch(tCoo)
+		end
+		for k, tTab in MidPts do
+			tCoo = vaddV(tPos, tTab)
+			easyPatch(tCoo)
+		end
+		for k, tTab in CrossPts do
+			tCoo = vaddV(tPos, tTab)
+			addDustCloud("Nebula5_OLD", "DustCloud_NoRes3_M05", tCoo, {1, 1, 1, 1,}, 0, 9000)
+		end
+		for k, tTab in CrossAvgs do
+			tCoo = vaddV(tPos, tTab)
+			easyPatch(tCoo)
+		end
+		for k, tTab in CenterPoint do
+--			tCoo = vaddV(tPos, tTab)
+--			addDustCloud("Nebula5_OLD", "DustCloud_NoRes3_M05", tCoo, {1, 1, 1, 1,}, 0, 9000)
+--			easyPatch(tCoo)
+--			addSquadron("AsteroidMeg" .. (k), "Meg_Asteroid", tCoo, (k * iPly), {random3(360), random3(360), random3(360),}, 0, 0)
+		end
+--		easyPatch(tPos)
+	else
+		print("circumAdd: Start positions too close together. Starting over.")
+		circumAdd(tPos, tOff, tPar, tEndPt1, tEndPt2, tEndPt3)
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates a branching tree.
+-- Syntax:
+--   branchAdd(<tPos>, <tDst>, <tDiv>, <tInt>, <tFrq>, <tBeg>, <tEnd>, <tRad>, <tLen>, <tThk>, <tAng>, <tRot>, <iMod>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <tDst>: the distribution table used to populate the shape.
+--   <tDiv>: a table containing the minimum and maximum number of new shoots that are generated each time the tree divides.
+--   <tInt>: a table containing the minimum and maximum number of segments between instances of division.
+--   <tFrq>: a table containing the minimum and maximum number of times the tree divides.
+--   <tBeg>: a table containing the minimum and maximum number of segments added to the beginning of the tree.
+--   <tEnd>: a table containing the minimum and maximum number of segments added to the end of the tree (at the end of each branch). [Note: needs to be greater than zero for the last division to be noticable.]
+--   <tRad>: a table containing the the minimum and maximum radius of a segment.
+--   <tLen>: a table containing the minimum and maximum length of a segment.
+--   <tThk>: a table containing the minimum and maximum thckness of a segment.
+--   <tAng>: a table containing the minimum and maximum angle of deviation between segments.
+--   <fRotation>: a table containing the X, Y and Z rotation angles (degrees) for the entire object.
+--   <iMod>: 0 is non-random mode, 1 is random placement with steadily decreasing length and radius, 2 is random placement with random length and radius, 3 is a bug-ridden method using splines.
+
+function branchAdd(tPos, tDst, tDiv, tInt, tFrq, tBeg, tEnd, tRad, tLen, tThk, tAng, tRot, iMod, lastRad, countDiv, countFrq, lastPos)
+	local tCoo = {}
+	local thisPos = {}
+	local nextPos = tPos
+	local tiltDeg, spinDeg = tRot[3], tRot[2]
+	local minRad, maxRad = tRad[1], tRad[2]
+	local minDist, maxDist = tLen[1], tLen[2]
+	local minThck, maxThck = tThk[1], tThk[2]
+	local minAng, maxAng = tAng[1], tAng[2]
+	local minBeg, maxBeg = tBeg[1], tBeg[2]
+	local minEnd, maxEnd = tEnd[1], tEnd[2]
+	local minDiv, maxDiv = tDiv[1], tDiv[2]
+	local minInt, maxInt = tInt[1], tInt[2]
+	local minFrq, maxFrq = tFrq[1], tFrq[2]
+	local numSeg, numInt, numDiv, numBeg, numEnd, numFrq = 0, 0, 0, 0, 0, 0
+	if (lastRad == nil) then
+		lastRad = maxRad
+	end
+	if (countDiv == nil) then
+		countDiv = 1
+	end
+	if (countFrq == nil) then
+		countFrq = maxFrq
+	else
+		countFrq = countFrq - 1
+	end
+	if (lastPos == nil) then
+		lastPos = tPos
+	end
+	local thisRad = sqrt(lastRad^2 / countDiv)
+	-- if set to random mode, or random mode with decreasing length and radius
+	if ((iMod == 3) or (iMod == 2) or (iMod == 1)) then
+		numInt = random2(minInt, maxInt)
+		numDiv = random2(minDiv, maxDiv)
+		numBeg = random2(minBeg, maxBeg)
+		numEnd = random2(minEnd, maxEnd)
+		numFrq = random2(minFrq, maxFrq)
+	-- if set to non-random mode
+	elseif (iMod == 0) then
+		numInt = maxInt
+		numDiv = minDiv
+		numBeg = maxBeg
+		numEnd = maxEnd
+		numFrq = maxFrq
+	end
+	if (numBeg > 0) then
+		numSeg = numBeg
+	elseif (numFrq > 0) then
+		numSeg = numInt
+	elseif (numEnd > 0) then
+		numSeg = numEnd
+	end
+	for k = 1, numSeg do
+		local rad, len, thk, angY, angZ = 0, 0, 0, 0, 0
+		-- if set to non-random mode
+		if (iMod == 0) then
+			local sign1, sign2 = randomSign(), randomSign()
+			rad, len, angY, angZ = maxRad, maxDist, sign1 * maxAng, sign2 * maxAng
+		-- if set to random mode with decreasing length and radius
+		elseif (iMod == 1) then
+			local sign1, sign2 = randomSign(), randomSign()
+			local narrw = random3(0.9, 1)
+			thisRad = thisRad * narrw
+			thk, rad, len, angY, angZ = random3(minThck, maxThck) * narrw, thisRad, maxDist - (maxDist - minDist) / (numFrq + 1), random3(minAng, maxAng) * sign1, random3(minAng, maxAng) * sign2
+		-- if set to random mode
+		elseif (iMod == 2) then
+			local sign1, sign2 = randomSign(), randomSign()
+			thk, rad, len, angY, angZ = random3(minThck, maxThck), random3(minRad, maxRad), random3(minDist, maxDist), random3(minAng, maxAng) * sign1, random3(minAng, maxAng) * sign2
+		end
+		tiltDeg = tiltDeg + angZ
+		spinDeg = spinDeg + angY
+		thisPos = nextPos
+		nextPos = vaddV(thisPos, vrotate({len, 0, 0,}, {0, spinDeg, tiltDeg,}))
+		for i, tTab in tDst do
+			local gradX = len
+			local Volume1, Volume2 = PI * maxRad^2 * maxDist, PI * len * (rad^2 - (rad - thk)^2)
+			local Density = Volume2 / Volume1
+			local iNum = floor(tTab[1] * Density + 0.5)
+			for j = 1, iNum do
+				if (iMod == 0) then
+					tCoo = {gradX, 0, 0,}
+					appendShape(thisPos, i, tTab, j, tCoo, {tRot[1], spinDeg, tiltDeg,})
+				-- random method using splines. doesn't work because you need to know four points
+				elseif (iMod == 3) then
+					local t = random()
+					local thisCtl = vaddV(thisPos, vsubtractV(thisPos, lastPos))
+					local nextCtl = vsubtractV(nextPos, vsubtractV(nextPos, thisPos))
+					local A1_x, A1_y, A1_z = thisPos[1], thisPos[2], thisPos[3]
+					local A2_x, A2_y, A2_z = thisCtl[1], thisCtl[2], thisCtl[3]
+					local B1_x, B1_y, B1_z = nextPos[1], nextPos[2], nextPos[3]
+					local B2_x, B2_y, B2_z = nextCtl[1], nextCtl[2], nextCtl[3]
+					tCoo[1] = (B1_x + 3 * A2_x - 3 * B2_x - A1_x) * t^3 + (3 * B2_x - 6 * A2_x + 3 * A1_x) * t^2 + (3 * A2_x - 3 * A1_x) * t + A1_x 
+					tCoo[2] = (B1_y + 3 * A2_y - 3 * B2_y - A1_y) * t^3 + (3 * B2_y - 6 * A2_y + 3 * A1_y) * t^2 + (3 * A2_y - 3 * A1_y) * t + A1_y 
+					tCoo[3] = (B1_z + 3 * A2_z - 3 * B2_z - A1_z) * t^3 + (3 * B2_z - 6 * A2_z + 3 * A1_z) * t^2 + (3 * A2_z - 3 * A1_z) * t + A1_z 
+					appendShape(thisPos, i, tTab, j, tCoo, tRot)
+				elseif (iMod == 2) then
+					local r, v, h = random3(rad - thk, rad), random3(360), random3(len)
+					tCoo = {h, r * cos(v), r * sin(v),}
+					appendShape(thisPos, i, tTab, j, tCoo, {tRot[1], spinDeg, tiltDeg,})
+				elseif (iMod == 1) then
+					local r, v, h = random3(rad - thk, rad), random3(360), random3(len)
+					tCoo = {h, r * cos(v), r * sin(v),}
+					appendShape(thisPos, i, tTab, j, tCoo, {tRot[1], spinDeg, tiltDeg,})
+				end
+				gradX = gradX - len / iNum
+			end
+		end
+		lastPos = thisPos
+	end
+	if (numBeg > 0) then
+		tBeg = {0, 0,}
+		branchAdd(nextPos, tDst, tDiv, tInt, tFrq, tBeg, tEnd, tRad, tLen, tThk, tAng, tRot, iMod, nil, nil, nil, thisPos)
+	elseif (numFrq > 0) then
+		if (minFrq >= numFrq) then
+			minFrq = numFrq - 1
+		end
+		tFrq = {minFrq, numFrq - 1,}
+		for j = 1, numDiv do
+			branchAdd(nextPos, tDst, tDiv, tInt, tFrq, tBeg, tEnd, tRad, tLen, tThk, tAng, tRot, iMod, thisRad, numDiv, countFrq, thisPos)
+		end
+	elseif (numEnd > 0) then
+		tDiv, tInt, tFrq, tEnd = {0, 0,}, {0, 0,}, {0, 0,}, {0, 0,}
+		branchAdd(nextPos, tDst, tDiv, tInt, tFrq, tBeg, tEnd, tRad, tLen, tThk, tAng, tRot, iMod, thisRad, numDiv, countFrq, thisPos)
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates an spline connecting two points.
+-- Syntax:
+--   splineAdd(<tPos>, <tDst>, <tP1A>, <tP1B>, <tP2A>, <tP2B>, <tRad>, <tRot>, <iMod>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <tDst>: the distribution table used to populate the shape.
+--   <tP1A>: the starting point for the spline.
+--   <tP1B>: the first control point's coordinates.
+--   <tP2A>: the ending point for the spline.
+--   <tP2B>: the second control point's coordinates.
+--   <tRad>: a table containing the minimum and maximum radius of the spline's cross-section. [Note: not done yet.]
+--   <tRot>: a table containing the X, Y and Z rotation angles (degrees) for the entire object.
+--   <iMod>: if 0, then non-random mode. If 1, then random mode. [Note: not done yet.]
+
+function splineAdd(tPos, tDst, tP1A, tP1B, tP2A, tP2B, tRad, tRot, iMod)
+	local tCoo = {}
+	local tDerivatives = {}
+	local X, Y, Z = 0, 0, 0
+	local minRad, maxRad = tRad[1], tRad[2]
+	local A1_x, A1_y, A1_z = tP1A[1], tP1A[2], tP1A[3]
+	local A2_x, A2_y, A2_z = tP1B[1], tP1B[2], tP1B[3]
+	local B1_x, B1_y, B1_z = tP2A[1], tP2A[2], tP2A[3]
+	local B2_x, B2_y, B2_z = tP2B[1], tP2B[2], tP2B[3]
+	for i, tTab in tDst do
+		local iNum = tTab[1]
+		for j = 1, iNum do
+			local phi, r, t = 0, 0, 0
+			if (iMod == 0) then
+			-- nothing here yet
+			elseif (iMod == 1) then
+				t = random()
+				phi = random(360)
+				r = random3(minRad, maxRad)
+				X = r * cos(phi)
+				Y = r * sin(phi)
+				Z = 0
+			end
+			tCoo[1] = (B1_x + 3 * A2_x - 3 * B2_x - A1_x) * t^3 + (3 * B2_x - 6 * A2_x + 3 * A1_x) * t^2 + (3 * A2_x - 3 * A1_x) * t + A1_x
+			tCoo[2] = (B1_y + 3 * A2_y - 3 * B2_y - A1_y) * t^3 + (3 * B2_y - 6 * A2_y + 3 * A1_y) * t^2 + (3 * A2_y - 3 * A1_y) * t + A1_y
+			tCoo[3] = (B1_z + 3 * A2_z - 3 * B2_z - A1_z) * t^3 + (3 * B2_z - 6 * A2_z + 3 * A1_z) * t^2 + (3 * A2_z - 3 * A1_z) * t + A1_z
+			tDerivatives[1] = (B1_x + 3 * A2_x - 3 * B2_x - A1_x) * 3 * t^2 + (3 * B2_x - 6 * A2_x + 3 * A1_x) * 2 * t + (3 * A2_x - 3 * A1_x)
+			tDerivatives[2] = (B1_y + 3 * A2_y - 3 * B2_y - A1_y) * 3 * t^2 + (3 * B2_y - 6 * A2_y + 3 * A1_y) * 2 * t + (3 * A2_y - 3 * A1_y)
+			tDerivatives[3] = (B1_z + 3 * A2_z - 3 * B2_z - A1_z) * 3 * t^2 + (3 * B2_z - 6 * A2_z + 3 * A1_z) * 2 * t + (3 * A2_z - 3 * A1_z)
+			local tRotAng = vanglesXY(tDerivatives)
+			local tNormedPos = vrotate({X, Y, Z,}, vmultiply(tRotAng, -1))
+--			addAsteroid("Asteroid_1", vTangent, 100, 0, 0, 0, 0)
+			tCoo = vaddV(tCoo, tNormedPos)
+			appendShape(tPos, i, tTab, j, tCoo, tRot)
+		end
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates an elliptical ring.
+-- Syntax:
+--   ringAdd(<tPos>, <tDst>, {<fAx1>, <fAx2>, <fThk>, <fHgh>,}, <tArc>, <tRot>, <iMod>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <tDst>: the distribution table used to populate the shape.
+--   <tPar>: a table containing the following four parameters:
+--      <fAx1>: a table containing the lengths of axis 1 and axis 2.
+--      <fAx2>: a table containing the lengths of axis 1 and axis 2.
+--      <fThk>: the distance from the outer radius to the inner radius (varies according to <iMod>).
+--      <fHgh>: the height of the ring, relative to the plane.
+--   <tArc>: a table containing the beginning and ending degrees of the arc.
+--   <tRot>: a table containing the X, Y and Z rotation angles (degrees) for the entire object.
+--   <iMod>: if 0, then non-random mode. If 1, then random mode w/ gradual width. If 2, then random mode w/ even width.
+
+function ringAdd(tPos, tDst, tPar, tArc, tRot, iMod)
+	local tCoo = {}
+	local X, Y, Z = 0, 0, 0
+	local fAx1, fAx2, fThk, fHgh = tPar[1], tPar[2], tPar[3], tPar[4]
+	local minArc, maxArc = tArc[1], tArc[2]
+	for i, tTab in tDst do
+		local u, w, h, arc = 0, 0, 0, 0
+		local iNum = tTab[1]
+		for j = 1, iNum do
+			-- if set to random mode w/ even width
+			if (iMod == 2) then
+				u = random3(minArc, maxArc)
+				X = cos(u) * fAx2 - random3(fThk)
+				Y = random3(fHgh) - fHgh / 2
+				Z = sin(u) * fAx1 - random3(fThk)
+			-- if set to random mode w/ gradual width
+			elseif (iMod == 1) then
+				u = random3(minArc, maxArc)
+				X = cos(u) * (fAx2 - random3(fThk))
+				Y = random3(fHgh) - fHgh / 2
+				Z = sin(u) * sqrt((fAx2 - random3(fThk))^2 - fAx2^2 + fAx1^2)
+			-- if set to non-random mode
+			elseif (iMod == 0) then
+				u = minArc + arc
+				X = cos(u) * (fAx2 + fThk / -2 + w)
+				Y = fHgh / -2 + h
+				Z = sin(u) * (fAx1 + fThk / -2 + w)
+				arc = arc + (maxArc - minArc) / iNum
+				w = w + fThk / iNum
+				h = h + fHgh / iNum
+			end
+			tCoo = {X, Y, Z,}
+			appendShape(tPos, i, tTab, j, tCoo, tRot)
+		end
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates a series of rings in the shape of a sphere, like the latitudinal and longitudinal lines of a globe.
+-- Syntax:
+--   globeAdd(<tPos>, <tDst>, {<fRad>, <fLat>, <fLon>, <fThk>, <fHgh>,}, <tArc>, <iMod>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <tPar>: a table containing the following five parameters:
+--      <fRad>: the radius of the sphere.
+--      <fLat>: the number of latitudinal rings.
+--      <fLon>: the number of longitudinal rings.
+--      <fThk>: see the description for the "ringAdd" function.
+--      <fHgh>: see the description for the "ringAdd" function.
+--   <tArc>: see the description for the "ringAdd" function.
+--   <iMod>: see the description for the "ringAdd" function.
+
+function globeAdd(tPos, tDst, tPar, tArc, iMod)
+	local lat, lon, u, X, Y = 0, 0, 0, 0, 0
+	local fRad, fLat, fLon, fThk, fHgh = tPar[1], tPar[2], tPar[3], tPar[4], tPar[5]
+	for i = 1, fLat do
+		lat = lat + 360 / (fLat * 2 + 2)
+		u = lat
+		X = cos(u) * fRad
+		Y = sin(u) * fRad
+		-- ringAdd:	tPos, tDst, tAxi, fThk, fHgh, tArc, tRot, iMod
+		ringAdd(vaddV(tPos, {0, X, 0,}), tDst, {Y, Y, fThk, fHgh,}, tArc, {0, 0, 0,}, iMod)
+	end
+	for i = 1, fLon do
+		lon = lon + 360 / fLon
+		ringAdd(tPos, tDst, {fRad, fRad, fThk, fHgh,}, tArc, {0, lon, 90,}, iMod)
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates one of several available shapes.
+-- Syntax:
+--   shapeAdd(<tPos>, <tDst>, {<sLay>, <fA>, <fB>, <fC>, <fD>, <fE>,}, <tRot>, <iMod>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <tDst>: the distribution table used to populate the shape.
+--   <tPar>: a table containing the following six parameters:
+--      <sLay> may be either "Cuboid", "Ellipsoid", "Cylinder", "Cone", "Torus", "Helix", "Paraboloid", "Hyperboloid", or "Astroid".
+--      If <sLay> is "Cylinder", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+--      If <sLay> is "Cone", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+--      If <sLay> is "Ellipsoid", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+--      If <sLay> is "Cuboid", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+--      If <sLay> is "Toroid", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the width of the tube, <fD> equals the thickness, and <fE> equals the height of the tube.
+--      If <sLay> is "Helicoid", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, and <fD> equals the width (thickness is not supported), <fE> is the number of revolutions.
+--      If <sLay> is "Paraboloid", then <fA> equals the length of axis 1 at a height of 1000 units, <fB> equals the length of axis 2 at a height of 1000 units, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+--      If <sLay> is "Hyperboloid", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+--      If <sLay> is "Astroid", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+--      If <sLay> is "Funnel", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals roughly the inverse of the length of axis 3 for large numbers of objects, <fD> equals the thickness, and <fE> is zero.
+--   <fRotation>: a table containing the X, Y and Z Euler rotation angles, in degrees, for the entire object.
+--   <iMod>: 0 is non-random, 1 is random.
+
+function shapeAdd(tPos, tDst, tPar, tRot, iMod)
+	local tCoo = {}
+	local X, Y, Z = 0, 0, 0
+	local sLay, a, b, c, d, e = tPar[1], tPar[2], tPar[3], tPar[4], tPar[5], tPar[6]
+	local s, t, p = 0, 0, 1		-- ellipsoid, cuboid, torus, helix
+	local l, w, h = 0, 0, 0		-- ellipsoid, cuboid, cylinder, cone
+	local L, W, H = 0, 0, 0		-- ellipsoid, cuboid
+	local r, u, v = 0, 0, 0		-- ellipsoid, cylinder, cone, torus, helix
+	local m, n, o = 0, 0, 0		-- torus
+	for i, tTab in tDst do
+		local iNum = tTab[1]
+		local s_X, t_X, p_X = nil,	0,	1
+		local l_X, w_X, h_X = -a,	-b,	-c
+		local L_X, W_X, H_X = a - d,	b - d,	c - d
+		local r_X, u_X, v_X = nil,	0,	0
+		local m_X, n_X, o_X = e - d,	nil,	0
+		for j = 1, iNum do
+			-- if set to random mode
+			if (iMod == 1) then
+				s, t, p = nil,				random(),		randomSign()
+				l, w, h = random3(-a, a),		random3(-b, b),		random3(-c, c)
+				L, W, H = random3(a - d, a),		random3(b - d, b),	random3(c - d, c)
+				r, u, v = nil,				random3(180),		random3(360)
+				m, n, o = random3(e - d, e),		nil,			random3(360)
+			-- if set to non-random mode
+			elseif (iMod == 0) then
+				s, t, p = s_X, t_X, p_X
+				l, w, h = l_X, w_X, h_X
+				L, W, H = L_X, W_X, H_X
+				r, u, v = r_X, u_X, v_X
+				m, n, o = m_X, n_X, o_X
+				s_X, t_X, p_X = nil,			t_X + 1 / iNum,		p_X * -1
+				l_X, w_X, h_X = l_X + 2 * a / iNum,	w_X + 2 * b / iNum,	h_X + 2 * c / iNum
+				L_X, W_X, H_X = L_X + d / iNum,		W_X + d / iNum,		H_X + d / iNum
+				r_X, u_X, v_X = nil,			u_X + 180 / iNum,	v_X + 360 / iNum
+				m_X, n_X, o_X = m_X + d / iNum,		nil,			o_X + 360 / iNum
+			end
+			if (sLay == "Cuboid") then
+				if (t < 1/3) then
+					l = L * p
+				elseif (t < 2/3) then
+					w = W * p
+				elseif (t <= 1) then
+					h = H * p
+				end
+				X = l
+				Y = h
+				Z = w
+			elseif (sLay == "Ellipsoid") then
+				X = L * cos(v) * sin(u)
+				Y = H * sin(v) * sin(u)
+				Z = W * cos(u)
+			elseif (sLay == "Cylinder") then
+				X = L * cos(v)
+				Y = h
+				Z = W * sin(v)
+			elseif (sLay == "Cone") then
+				X = (1 - h / c) * L * cos(v) / 2
+				Y = h
+				Z = (1 - h / c) * W * sin(v) / 2
+			elseif (sLay == "Toroid") then
+				X = (a + m * cos(v)) * cos(o)
+				Y = H * sin(v)
+				Z = (b + m * cos(v)) * sin(o)
+			elseif (sLay == "Helicoid") then
+				X = L * cos(t * e * 360)
+				Y = c * (2 * t - 1)
+				Z = W * sin(t * e *  360)
+			elseif (sLay == "Paraboloid") then
+				X = L * sqrt(h / 1000) * cos(v)
+				Y = h
+				Z = W * sqrt(h / 1000) * sin(v)
+			elseif (sLay == "Hyperboloid") then
+				X = L * sqrt(1 + (t * p)^2) * cos(v)
+				Y = H * (t * p)
+				Z = W * sqrt(1 + (t * p)^2) * sin(v)
+			elseif (sLay == "Astroid") then
+				X = L * (cos(o) * cos(v))^3
+				Y = H * (sin(v))^3
+				Z = W * (sin(o) * cos(v))^3
+			elseif (sLay == "Funnel") then
+				X = t * cos(v) * L
+				Y = log(t) * H / 10
+				Z = t * sin(v) * W
+			-- doesn't work yet
+			elseif (sLay == "Corkscrew") then
+				X = L * cos(v) * cos(u)
+				Y = H * sin(u) * p + H * v * PI / 180
+				Z = W * sin(v) * cos(u)
+			-- doesn't work yet
+			elseif (sLay == "Dini") then
+				local a = 1
+				local b = 0.2
+				local u = 2 * o
+				v = v/PI
+				X = a * cos(u) * sin(v)
+				Y = a * sin(u) * sin(v)
+				Z = a * (cos(v) + log(tan(0.5 * v))) + b * u
+				X = X * 10
+				Y = Y * 10
+				Z = Z * 10
+			-- doesn't work yet
+			elseif (sLay == "Seashell") then
+--				local a = 0.2
+--				local b = 1
+--				local c = 0.1
+--				X = (c + (1 - t) * (1 + cos(o))) * cos(n * t * 360)
+--				Y = b * t + a * sin(o) * (1 - t)
+--				Z = (c + (1 - t) * (1 + cos(o))) * sin(n * t * 360)
+				local a = 1	-- axis 1 of the tube
+				local b = 1	-- axis 2 of the tube
+				local c = 1	-- radius of the inner gap
+				local n = 2	-- number of revolutions
+				X = (c / n + (1 - t) * (1 + cos(o))) * cos(n * t * 360)
+				Y = b * t^(1/2) * (2 * n - 1) + a * sin(o) * (1 - t)
+				Z = (c / n + (1 - t) * (1 + cos(o))) * sin(n * t * 360)
+				X = X * 1000
+				Y = Y * 1000
+				Z = Z * 1000
+			end
+			tCoo = {X, Y, Z,}
+			appendShape(tPos, i, tTab, j, tCoo, tRot)
+		end
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates one of several available 2D shapes.
+-- Syntax:
+--   shapeAdd2D(<tPos>, <tDst>, {<sLay>, <fA>, <fB>, <fC>, <fD>, <fE>,}, <tRot>, <iMod>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <tDst>: the distribution table used to populate the shape.
+--   <tPar>: a table containing the following six parameters:
+--      <sLay> may be either "Rectangle", "Ellipse", "Parabola", or "Hyperbola".
+--      If <sLay> is "Rectangle", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, and <fD> equals the thickness.
+--      If <sLay> is "Ellipse", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, and <fD> equals the thickness.
+--      If <sLay> is "Triangle", [...to do.]
+--      If <sLay> is "Parabola", then <fA> equals the distance between the vertex and the focus, <fB> equals the length, <fC> equals the height, and <fD> equals the thickness.
+--      If <sLay> is "Hyperbola", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the distance from the origin to one of the foci, <fD> equals the thickness.
+--      If <sLay> is "Catenary", [...to do.]
+--      Currently, <fE> should always equal zero.
+--   <fRotation>: a table containing the X, Y and Z rotation angles (degrees) for the entire object.
+--   <iMod>: 0 is non-random, 1 is random.
+
+function shapeAdd2D(tPos, tDst, tPar, tRot, iMod)
+	local tCoo = {}
+	local X, Y, Z = 0, 0, 0
+	local sLay, a, b, c, d, e = tPar[1], tPar[2], tPar[3], tPar[4], tPar[5], tPar[6]
+	local s, t, p = 0, 0, 1		-- ellipsoid, cuboid, torus, helix
+	local l, w, h = 0, 0, 0		-- ellipsoid, cuboid, cylinder, cone
+	local L, W, H = 0, 0, 0		-- ellipsoid, cuboid
+	local r, u, v = 0, 0, 0		-- ellipsoid, cylinder, cone, torus, helix
+	local m, n, o = 0, 0, 0		-- torus
+	for i, tTab in tDst do
+		local iNum = tTab[1]
+		local s_X, t_X, p_X = nil,	0,	1
+		local l_X, w_X, h_X = -a,	-b,	-c
+		local L_X, W_X, H_X = a - d,	b - d,	c - d
+		local r_X, u_X, v_X = nil,	0,	0
+		local m_X, n_X, o_X = e - d,	nil,	0
+		for j = 1, iNum do
+			-- if set to random mode
+			if (iMod == 1) then
+				s, t, p = nil,				random(),		randomSign()
+				l, w, h = random3(-a, a),		random3(-b, b),		random3(-c, c)
+				L, W, H = random3(a - d, a),		random3(b - d, b),	random3(c - d, c)
+				r, u, v = nil,				random3(180),		random3(360)
+				m, n, o = random3(e - d, e),		nil,			random3(360)
+			-- if set to non-random mode
+			elseif (iMod == 0) then
+				s, t, p = s_X, t_X, p_X
+				l, w, h = l_X, w_X, h_X
+				L, W, H = L_X, W_X, H_X
+				r, u, v = r_X, u_X, v_X
+				m, n, o = m_X, n_X, o_X
+				s_X, t_X, p_X = nil,			t_X + 1 / iNum,		p_X * -1
+				l_X, w_X, h_X = l_X + 2 * a / iNum,	w_X + 2 * b / iNum,	h_X + 2 * c / iNum
+				L_X, W_X, H_X = L_X + d / iNum,		W_X + d / iNum,		H_X + d / iNum
+				r_X, u_X, v_X = nil,			u_X + 180 / iNum,	v_X + 360 / iNum
+				m_X, n_X, o_X = m_X + d / iNum,		nil,			o_X + 360 / iNum
+			end
+			if (sLay == "Rectangle") then
+				if (t <= 1/2) then
+					l = L * p
+				elseif (t <= 1) then
+					w = W * p
+				end
+				X = l
+				Y = h
+				Z = w
+			elseif (sLay == "Ellipse") then
+				X = L * cos(v)
+				Y = h
+				Z = W * sin(v)
+			elseif (sLay == "Triangle") then
+				-- to do
+			elseif (sLay == "Parabola") then
+				X = sqrt(4 * w * a) * p + random3(-d/2, d/2)
+				Y = h
+				Z = w + random3(-d/2, d/2)
+			elseif (sLay == "Hyperbola") then
+				X = a / cos(v) + random3(-d/2, d/2)
+				Y = h
+				Z = b * tan(v) + random3(-d/2, d/2)
+			elseif (sLay == "Catenary") then
+				-- to do
+			end
+			tCoo = {X, Y, Z,}
+			appendShape(tPos, i, tTab, j, tCoo, tRot)
+		end
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates a spiral.
+-- Suntax:
+--   spiralAdd(<tPos>, <tDst>, {<sLay>, <nRad>, <nArm>, <nRot>, <nAng>, <nHgh>, <nWid>, <nThk>,}, <tTim>, <tRot>, <iMod>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <tDst>: the distribution table used to populate the shape.
+--   <tPar>: a table containing the following eight parameters:
+--      <sLay>: may be either "Nautilus" or "Archimedes".
+--      <nRad>: depending on <fAng>, this is either the minimum or maximum radius of the spiral.
+--      <nArm>: the spiral will have this many arms.
+--      <nRot>: the spiral will rotate around the origin this many times.
+--      <nAng>: the angle (degrees) of deviation (90' and 270' makes a circle).
+--      <nHgh>: the height of the spiral above the plane.
+--      <nWid>: the width of the spiral arms.
+--      <nThk>: the thickness of the spiral arms.
+--   <tTim>: a table containing the minimum and maximum values for "t" (time, percent) at which the curve is sampled. (must be between 0 and 1)
+--   <tRot>: a table containing the X, Y and Z rotation angles (degrees) for the entire object.
+--   <iMod>: 0 is non-random, 1 is random, 2 is random-mode with tapering width.
+
+function spiralAdd(tPos, tDst, tPar, tTim, tRot, iMod)
+	local tCoo = {}
+	local sLay, nRad, nArm, nRot, nAng, nHgh, nWid, nThk = tPar[1], tPar[2], tPar[3], tPar[4], tPar[5], tPar[6], tPar[7], tPar[8]
+	local minTim, maxTim = tTim[1], tTim[2]
+	local X, Y, Z = 0, 0, 0
+	local v, t, s = 360 * nRot, 0, 0
+	local l, w, h = 0, 0, 0
+	for i, tTab in tDst do
+		local t_X = minTim
+		local l_X, w_X, h_X = nWid / -2, nWid / -2, nThk / -2
+		local rotArm = 0
+		local iNum = tTab[1]
+		for j = 1, iNum do
+			-- if set to random mode w/ even width
+			if (iMod == 1) then
+				v, t, s = v, random3(minTim, maxTim), t
+				if (sLay == "Archimedes") then
+				--	s = 1 - t
+				end
+				l, w, h = random3(nWid) - nWid / 2, random3(nWid) - nWid / 2, random3(nThk) - nThk / 2
+			-- if set to random mode tapering width
+			elseif (iMod == 2) then
+				v, t, s = v, random3(minTim, maxTim), t
+				if (sLay == "Archimedes") then
+				--	s = 1 - t
+				end
+				l, w, h = random3(0, nWid * s), random3(0, nWid * s), random3(nThk) - nThk / 2
+			-- if set to non-random mode
+			elseif (iMod == 0) then
+				v, t = v, t_X
+				l, w, h = l_X, w_X, h_X
+				t_X = t_X + (maxTim - minTim) / iNum
+				l_X, w_X, h_X = l_X + nWid / iNum, w_X + nWid / iNum, h_X + nThk / iNum
+			end
+			if (sLay == "Nautilus") then
+				-- exp(rad(v * t) / tan(nAng)) is the starter value
+				X = exp(rad(v * t) / tan(nAng)) * cos(v * t) * nRad + l
+				Y = h - nHgh * t + nHgh / 2
+				Z = exp(rad(v * t) / tan(nAng)) * sin(v * t) * nRad + w
+			elseif (sLay == "Archimedes") then
+				X = cos(v * t) * t * nRad + l
+				Y = h + nHgh * t - nHgh / 2
+				Z = sin(v * t) * t * nRad + w
+			end
+			for h = 1, nArm do
+				tCoo = vrotate({X, Y, Z,}, {0, rotArm, 0,})
+				appendShape(tPos, i, tTab, j, tCoo, tRot)
+				rotArm = rotArm + (360 / nArm)
+			end
+		end
+	end
+end
+
+
+---------- literalAdd ---------------------------------------------------------- by Mikail
+-- Description:
+--   Adds the contents of a distribution table to the map without changing any values.
+-- Syntax:
+--   literalAdd(<tDst>)
+-- Arguments:
+--   <tDst>: the distribution table used to populate the shape.
+function literalAdd(tPos, tDst, tRot)
+	for i, tTab in tDst do
+		local iNum = tTab[1]
+		for j = 1, iNum do
+			appendShape({0, 0, 0,}, i, tTab, j, {0, 0, 0,}, {0, 0, 0,})
+		end
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Creates a resource patch with minimal effort.
+-- Syntax:
+--   easyPatch(<tPos>, <fRUs>)
+-- Arguments:
+--   <tPos>: the shape's center coordinates.
+--   <fRUs>: (optional) the percent of the default RU to retain.
+
+function easyPatch(tPos, fRUs)
+	local tCoo = {}
+	local easyPatchDist =
+	{
+		-- number of asteroids, inner radius, outer radius
+		Asteroid_4 = {1, 0, 0,},
+		Asteroid_3 = {3, 400, 800,},
+		Asteroid_2 = {5, 800, 1600,},
+	}
+	local AstVal = 100
+	if (fRUs) then
+		AstVal = fRUs
+	end
+	for k, tTab in easyPatchDist do
+		for j = 1, tTab[1] do
+			local r, v, u = random3(tTab[2], tTab[3]), random3(180), random3(360)
+			tCoo[1] = tPos[1] + sqrt(r^2 - (r * cos(v))^2) * cos(u)
+			tCoo[2] = tPos[2] + r * cos(v)
+			tCoo[3] = tPos[3] + sqrt(r^2 - (r * cos(v))^2) * sin(u)
+			addAsteroid(k, tCoo, AstVal, 0, 0, 0, 0)
+		end
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Randomly selects the level music.
+-- Syntax:
+--   randomMusic(<iMod>, <tTab>, <iLen>, <sDir>)
+-- Arguments:
+--   <iMod>: may be 0, 1, 2, 3, 4 or 5.
+--     If 0, then this function is disabled.
+--     If 1, then the level music is selected from only the ambient tracks.
+--     If 2, then the level music is selected from only the battle tracks.
+--     If 3, then the level music is selected from both the ambient and battle tracks.
+--     If 4, then the level music is selected from only <tTab>.
+--     If 5, then the level music is selected from all of the above.
+--   <tTab>: (optional) a table containing the names of the custom audio tracks. (table)
+--   <iLen>: (optional) the length of <tTab>. (number)
+--   <sDir>: (optional) the directory where the extra files can be found. Must have a trailing slash. (string)
+
+function randomMusic(iMod, tTab, iLen, sDir)
+	local ranNum = 0
+	local musDir = ""
+	local musTrk = ""
+	local musTab =
+	{
+		"amb_01", "amb_02", "amb_03", "amb_04", "amb_05", "amb_06", "amb_07", "amb_08", "amb_09", "amb_10", "amb_11", "amb_12", "amb_13", "amb_14",
+		"battle_01", "battle_04", "battle_04_alt", "battle_06", "battle_keeper", "battle_movers", "battle_planetkillers", "battle_sajuuk", "bentus_arrival",
+	}
+	if ((iMod == 4) or (iMod == 5)) then
+		for k = 1, iLen do
+			musTab[k + 23] = tTab[k]
+		end
+	end
+	if (iMod == 1) then
+		ranNum = random(14)
+	elseif (iMod == 2) then
+		ranNum = random(14, 23)
+	elseif (iMod == 3) then
+		ranNum = random(23)
+	elseif (iMod == 4) then
+		ranNum = random(23, 23 + iLen)
+	elseif (iMod == 5) then
+		ranNum = random(23 + iLen)
+	end
+	if (ranNum <= 14) then
+		musDir = "data:sound\\music\\ambient\\"
+	elseif (ranNum <= 23) then
+		musDir = "data:sound\\music\\battle\\"
+	elseif (ranNum <= (23 + iLen)) then
+		musDir = sDir
+	end
+	if (iMod ~= 0) then
+		local musTrk = musDir .. musTab[ranNum]
+		setDefaultMusic(musTrk)
+		print("Level music: \"" .. musTrk .. "\"")
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Function created by Mikail.
+-- Description:
+--   Randomly selects the level background.
+-- Syntax:
+--   randomBackground(<iMod>, <tTab>, <iLen>)
+-- Arguments:
+--   <iMod>: may be 0, 1, 2, 3, 4 or 5.
+--     If 0, then this function has been disabled.
+--     If 1, then the level background is selected from only the mission backgrounds.
+--     If 2, then the level background is selected from only the other backgrounds.
+--     If 3, then the level background is selected from both the mission and other backgrounds.
+--     If 4, then the level background is selected from only <tTab>.
+--     If 5, then the level background is selected from all of the above.
+--   <tTab>: (optional) a table containing the names of the custom backgrounds.
+--   <iLen>: (optional) the length of <tTab>.
+
+function randomBackground(iMod, tTab, iLen)
+	local ranNum = 0
+	local backgroundTable =
+	{
+		"m01", "m02", "m03", "m04", "m05", "m06", "m07", "m08", "m09", "m10", "m11", "m12", "m13", "m14", "m15",
+		"planet", "quick", "singlesun", "tanis", "taniswstars", "black", "white",
+	}
+	if ((iMod == 4) or (iMod == 5)) then
+		for k = 1, iLen do
+			backgroundTable[k + 22] = tTab[k]
+		end
+	end
+	if (iMod == 1) then
+		ranNum = random(15)
+	elseif (iMod == 2) then
+		ranNum = random(15, 22)
+	elseif (iMod == 3) then
+		ranNum = random(22)
+	elseif (iMod == 4) then
+		ranNum = random(22, 22 + iLen)
+	elseif (iMod == 5) then
+		ranNum = random(22 + iLen)
+	end
+	if (iMod ~= 0) then
+		loadBackground(backgroundTable[ranNum])
+		print("Level background (" .. ranNum .. "/22): \"" .. backgroundTable[ranNum] .. "\"")
+	end
+end
+
+
+
+--------------------------------------------------------------------------------
+-- Some random number functions.
+--
+
+-- Randomly returns either 1 or -1.
+function randomSign()
+	local ranNum = random()
+	if (ranNum > 0.5) then
+		return 1
+	else
+		return -1
+	end
+end
+
+
+-- Randomly returns either 1 or 0.
+function randomBit()
+	local ranNum = random()
+	if (ranNum > 0.5) then
+		return 1
+	else
+		return 0
+	end
+end
+
+
+-- Rounds a number to the nearest integer.
+function round(fVal)
+	return floor(fVal + 0.5)
+end
+
+
+-- Works just like random(), but can accept zero as an argument.
+function random2(fVal1, fVal2)
+	if (fVal2) then
+		if ((fVal2 - fVal1) == 0) then
+			return fVal2
+		else
+			return random(fVal1, fVal2)
+		end
+	elseif (fVal1) then
+		if (fVal1 == 0) then
+			return 0
+		else
+			return random(fVal1)
+		end
+	else
+		return random()
+	end
+end
+
+
+-- Works just like random(), but can accept zero as an argument and always returns a float value, not an integer.
+function random3(fVal1, fVal2)
+	if (fVal2) then
+		local tmpVal = random() * (fVal2 - fVal1)
+		return fVal1 + tmpVal
+	elseif (fVal1) then
+		return random() * fVal1
+	else
+		return random()
+	end
+end
+
+
+--------------------------------------------------------------------------------
+-- Some vector functions.
+--
+
+-- returns the normalized form of a vector
+function vnormalize(tVec)
+	local tmpVal = vlength(tVec)
+	local tmpVec = vdivide(tVec, tmpVal)
+	return tmpVec
+end
+
+-- returns the length of a vector
+function vlength(tVec)
+	local tmpVal = sqrt(vsum(vpower(tVec, 2)))
+	return tmpVal
+end
+
+-- returns the distance between two vectors
+function vdistance(tVec1, tVec2)
+	local tmpVal = vlength(vsubtractV(tVec2, tVec1))
+	return tmpVal
+end
+
+-- returns the dot product of two vectors
+function vdot(tVec1, tVec2)
+	local tmpVal = vsum(vmultiplyV(tVec1, tVec2))
+	return tmpVal
+end
+
+-- returns the angle between two vectors
+function vangle(tVec1, tVec2)
+	local tmpVal = acos(vdot(vnormalize(tVec1), vnormalize(tVec2)))
+	return tmpVal
+end
+
+-- returns the cross product of two vectors as a new vector
+function vcross(tVec1, tVec2)
+	local tmpVec =
+	{
+		tVec1[2] * tVec2[3] - tVec1[3] * tVec2[2],
+		tVec1[3] * tVec2[1] - tVec1[1] * tVec2[3],
+		tVec1[1] * tVec2[2] - tVec1[2] * tVec2[1],
+	}
+	return tmpVec
+end
+
+-- adds "fVal" to each vector component, then returns the resulting vector.
+function vadd(tVec, fVal)
+	local tmpVec = {}
+	for i, tTab in tVec do
+		tmpVec[i] = tVec[i] + fVal
+	end
+	return tmpVec
+end
+
+-- adds the components of vector 2 to the components of vector 1, then returns the resulting vector.
+function vaddV(tVec1, tVec2)
+	local tmpVec = {}
+	for i, tTab in tVec2 do
+		tmpVec[i] = tVec1[i] + tTab
+	end
+	return tmpVec
+end
+
+-- subtracts "fVal" from each vector component, then returns the resulting vector.
+function vsubtract(tVec, fVal)
+	local tmpVec = {}
+	for i, tTab in tVec do
+		tmpVec[i] = tVec[i] - fVal
+	end
+	return tmpVec
+end
+
+-- subtracts the components of vector 2 from the components of vector 1, then returns the resulting vector.
+function vsubtractV(tVec1, tVec2)
+	local tmpVec = {}
+	for i, tTab in tVec2 do
+		tmpVec[i] = tVec1[i] + tTab
+	end
+	return tmpVec
+end
+
+-- multiplies each vector component by "fVal", then returns the resulting vector.
+function vmultiply(tVec, fVal)
+	local tmpVec = {}
+	for i, tTab in tVec do
+		tmpVec[i] = tTab * fVal
+	end
+	return tmpVec
+end
+
+-- multiplies the components of vector 1 by the components of vector 2, then returns the resulting vector.
+function vmultiplyV(tVec1, tVec2)
+	local tmpVec = {}
+	for i, tTab in tVec2 do
+		tmpVec[i] = tVec1[i] * tTab
+	end
+	return tmpVec
+end
+
+-- divides each vector component by "fVal", then returns the resulting vector.
+function vdivide(tVec, fVal)
+	local tmpVec = {}
+	for i, tTab in tVec do
+		tmpVec[i] = tTab / fVal
+	end
+	return tmpVec
+end
+
+-- divides the components of vector 1 by the components of vector 2, then returns the resulting vector.
+function vdivideV(tVec1, tVec2)
+	local tmpVec = {}
+	for i, tTab in tVec2 do
+		tmpVec[i] = tVec1[i] / tTab
+	end
+	return tmpVec
+end
+
+-- raises each vector component to the power "fVal", then returns the new vector.
+function vpower(tVec, fVal)
+	local tmpVec = {}
+	for i, tTab in tVec do
+		tmpVec[i] = tTab^fVal
+	end
+	return tmpVec
+end
+
+-- raises the components of vector 1 to the power specified using the components vector 2, then returns the new vector.
+function vpowerV(tVec1, tVec2)
+	local tmpVec = {}
+	for i, tTab in tVec2 do
+		tmpVec[i] = tVec1[i]^tTab
+	end
+	return tmpVec
+end
+
+-- returns the sum of all components of a vector
+function vsum(tVec1)
+	local tmpVal = 0
+	for i, tTab in tVec1 do
+		tmpVal = tmpVal + tTab
+	end
+	return tmpVal
+end
+
+-- rotates a vector around the coordinate axes by the Euler angles specified in the array "tAng", then returns the new vector.
+-- rotates around the Z-axis first, then the X-axis, and then the Y-axis.
+function vrotate(tVec, tAng)
+	local phi, PosX, PosY, PosZ = 0, tVec[1], tVec[2], tVec[3]
+	phi = tAng[3]
+	local zPosX = PosX * cos(phi) - PosY * sin(phi)
+	local zPosY = PosX * sin(phi) + PosY * cos(phi)
+	local zPosZ = PosZ * 1
+	phi = tAng[1]
+	local xPosX = zPosX
+	local xPosY = zPosY * cos(phi) - zPosZ * sin(phi)
+	local xPosZ = zPosY * sin(phi) + zPosZ * cos(phi)
+	phi = tAng[2]
+	local yPosX = xPosX * cos(phi) + xPosZ * sin(phi)
+	local yPosY = xPosY
+	local yPosZ = xPosX * -1 * sin(phi) + xPosZ * cos(phi)
+	local tmpVec = {yPosX, yPosY, yPosZ,}
+	return tmpVec
+end
+
+-- returns a vector converted into a string
+function vstr(tVec)
+	local tmpStr = "{"
+	for i, tTab in tVec do
+		tmpStr = tmpStr .. tTab .. ", "
+	end
+	tmpStr = tmpStr .. "}\n"
+	return tmpStr
+end
+
+-- returns an array containing the vector's Euler angles, relative to the Z-axis.
+-- to reproduce the original vector, rotate a point on the Z-axis by these angles.
+function vanglesXY(tVec2)
+	local fSgnX, fSgnY = 1, 1
+	local tPrjB1 = vnormalize({tVec2[1], 0, tVec2[3],})
+	if (tPrjB1[1] ~= 0) then
+		fSgnX = tPrjB1[1] / abs(tPrjB1[1]) * -1
+	end
+	local fAngY = acos(tPrjB1[3]) * fSgnX
+	local tRotB1 = vrotate(tVec2, {0,fAngY,  0,})
+	local tPrjB2 = vnormalize(tRotB1)
+	if (tPrjB2[2] ~= 0) then
+		fSgnY = tPrjB2[2] / abs(tPrjB2[2])
+	end
+	local fAngX = acos(tPrjB2[3]) * fSgnY
+	return {fAngX, fAngY, 0,}
+end
+
+-- rotates vector 1 around vector 2 by the specified amount, then returns the new vector.
+function vaxis_rotate(tVec1, tVec2, fAngZ)
+	local tAng = vanglesXY(tVec2)
+	local tRotA1 = vrotate(tVec1, {0, tAng[2], 0,})
+	local tRotA2 = vrotate(tRotA1, {tAng[1], 0, 0,})
+	local tRotC1 = vrotate(tRotA2, {0, 0, fAngZ,})
+	local tRotC2 = vrotate(tRotC1, vmultiply(tAng, -1))
+	return tRotC2
+end

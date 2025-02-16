@@ -1,0 +1,106 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "MissileTrail",
+      length = 15,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "EngineNozzle1",
+      },
+      {
+        "fx",
+        "torpedo_ignite_combo",
+      },
+      {
+        "sound",
+        "",
+      },
+      {
+        "fx_scale",
+        "0.7",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "EngineNozzle1",
+      },
+      {
+        "fx",
+        "missile_trail",
+      },
+      {
+        "sound",
+        "",
+      },
+      {
+        "fx_scale",
+        "1.5",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT",
+      },
+      {
+        "fx",
+        "dmg_missle_explode_combo",
+      },
+      {
+        "fx_scale",
+        "0.25",
+      },
+    },
+  },
+}

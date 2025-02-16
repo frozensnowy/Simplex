@@ -1,0 +1,26 @@
+--Freespace: A New Age v0.25
+fps = 24
+startFrame = 0
+loopCount = 1
+texture = 
+    { 
+"DATA:/UI/NewUI/accolades/whitefx01.tga",
+"DATA:/UI/NewUI/accolades/whitefx02.tga",
+"DATA:/UI/NewUI/accolades/whitefx03.tga",
+"DATA:/UI/NewUI/accolades/whitefx04.tga",
+"DATA:/UI/NewUI/accolades/whitefx05.tga",
+"DATA:/UI/NewUI/accolades/whitefx06.tga",
+"DATA:/UI/NewUI/accolades/whitefx07.tga",
+"DATA:/UI/NewUI/accolades/whitefx08.tga",
+"DATA:/UI/NewUI/accolades/whitefx09.tga",
+"DATA:/UI/NewUI/accolades/whitefx10.tga",
+"DATA:/UI/NewUI/accolades/whitefx11.tga",
+"DATA:/UI/NewUI/accolades/whitefx12.tga",
+"DATA:/UI/NewUI/accolades/whitefx13.tga",
+"DATA:/UI/NewUI/accolades/whitefx14.tga",
+
+}
+
+
+
+

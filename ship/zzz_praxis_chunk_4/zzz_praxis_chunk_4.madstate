@@ -1,0 +1,4 @@
+ZZZ_PRAXIS_CHUNK_4_Normal_OnSet = function(ship)
+    startAnim(ship, "SPIN")
+    setLoopCount(ship, "SPIN", 100000)   --infinite looping
+end

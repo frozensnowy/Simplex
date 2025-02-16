@@ -1,0 +1,107 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_phase_repulsor_am", }, 
+			{ "sound", "WEAPON/ECMShell05", }, 
+			{ "fx_scale", "100", }, 
+		}, 
+		disk1 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "repair_spark_combo", }, 
+			{ "fx_scale", "60", }, 
+		}, 
+		disk2 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.2", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "repair_spark_combo", }, 
+			{ "fx_scale", "70", }, 
+		}, 
+		disk3 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.3", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "repair_spark_combo", }, 
+			{ "fx_scale", "80", }, 
+		}, 
+		disk4 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.4", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "repair_spark_combo", }, 
+			{ "fx_scale", "90", }, 
+		}, 
+		disk5 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.5", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "repair_spark_combo", }, 
+			{ "fx_scale", "100", }, 
+		}, 
+		disk6 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "repair_spark_combo", }, 
+			{ "fx_scale", "50", }, 
+		}, 
+		disk7 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+			{ "fx_scale", "1.4", }, 
+		}, 
+		disk8 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+			{ "fx_scale", "0.5", }, 
+		}, 
+		disk9 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "dmg_capital_explosion_combo", }, 
+			{ "fx_scale", "250", }, 
+		}, 
+		
+	},
+	
+}

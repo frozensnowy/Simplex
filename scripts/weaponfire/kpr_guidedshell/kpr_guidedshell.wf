@@ -1,0 +1,10 @@
+hitfx = "dmg_pulsar_laser_hit"
+bulletfx = "pulsar_laser_combo"
+nopenetratefx = "dmg_pulsar_laser_hit"
+deathtype = "deathCannon"
+hit_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = {
+  1,
+  1,
+}

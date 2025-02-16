@@ -1,0 +1,46 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","Kinetic_Large","Normal",4500,8000,0,0,0,0,1,1,1,6.5,0,0,1,0,80,60,.1,"Normal",1,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",1500,1500,"")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"hgn_destroyershockwave")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"hgn_destroyershockwave")
+
+setAngles(NewWeaponType,0,-120,120,-2.5,60)
+
+setMiscValues(NewWeaponType,2.5,.3)
+
+setPenetration(NewWeaponType,30,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=2,},
+{HeavyArmour=3,},
+{SubSystemArmour=.8,},
+{TurretArmour=1,},
+{ResArmour=1,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=.05,},
+{Corvette=.1,},
+{Frigate=.2, damage=1,},
+{Utility=1,},
+{munition=.8,},
+{SmallCapitalShip=.85, damage=1,},
+{BigCapitalShip=.9, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=.25, damage=1,},
+{Resource=1,},
+{ResourceLarge=.2, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/TremorTurretLoopEnd")

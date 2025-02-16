@@ -1,0 +1,126 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:10 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "smoke1", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation2 = 
+        { 
+            name = "smoke2", 
+            length = 9, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation3 = 
+        { 
+            name = "smoke3", 
+            length = 8, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation4 = 
+        { 
+            name = "smoke4", 
+            length = 7, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+}, 
+    events = 
+    { 
+        smoke1a = 
+            { 
+                { "anim", "smoke1", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+        smoke1c = 
+            { 
+                { "anim", "smoke1", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+        smoke2a = 
+            { 
+                { "anim", "smoke2", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+        smoke2c = 
+            { 
+                { "anim", "smoke2", }, 
+                { "animtime", "0.55", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+        smoke3a = 
+            { 
+                { "anim", "smoke3", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+        smoke3c = 
+            { 
+                { "anim", "smoke3", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+        smoke4a = 
+            { 
+                { "anim", "smoke4", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+        smoke4c = 
+            { 
+                { "anim", "smoke4", }, 
+                { "animtime", "0.85", }, 
+                { "marker", "root", }, 
+                { "fx", "rad_flashburst_combo", }, 
+                { "sound", "CameraFlash", },
+                { "fx_scale", "31", }, 
+            }, 
+
+}, }

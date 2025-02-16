@@ -1,0 +1,21 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:53 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_destroyer_hit_spray"
+bulletfx = "kinetic_large_gattling_combo"	--kinetic_large_gattling
+nopenetratefx = "dmg_destroyer_hit_spray"  -- dmg_cloud_spray_large
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+fire_sfx = "weapon/tank_chaingun"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+hit_clamp = 
+    { 1, 1, }
+
+	
+
+
+
+

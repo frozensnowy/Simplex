@@ -1,0 +1,213 @@
+filerange 43500 43999
+rangestart 43500 43999
+// objectives
+43500	Confirm location of Dreadnaught.
+43501	Use Movers to retrieve the Dreadnaught.
+43502	Protect the Fleet.
+43503	Use Movers to collect Progenitor devices.
+43504	Send probes to scan for trigger devices.
+
+
+// ping & objective descriptions
+// description for 43500
+43810	Send a Scout to confirm the Dreadnaught's location.
+// description for 43501
+43811	Dock six Movers with the Dreadnaught
+43812	Dock six Movers with the Dreadnaught to transport it to the Mothership
+
+// description for 43502
+43813	Use Capital Ships and Frigates to combat the Keeper.
+
+
+// description for 43503
+43814	Dock a Mover with the device to collect it.
+
+// description for 43503
+43815	Dock a Mover with a device to collect it.  The Mover will automatically install it on a Progenitor Power Module.
+
+// description for 43907
+43816	Send a probe to each scan area.
+
+
+// player names
+43803	Hiigaran Navy
+43804	Progenitor
+
+
+
+
+
+
+// location card
+43520	DREADNAUGHT BERTH
+43521	NIS 08 - Meet the Keeper
+43522	Estimated time to Keeper Self-Destruct:  %1MINUTES%:%2SECONDS%
+
+
+// intelevent_intro
+// FC
+43530	Hyperspace successful.
+43531	We are alone.
+// FI
+43532	Telemetry data confirms this is the Engineering section of the wreckage.
+// FI
+43536	The Dreadnaught is located here.
+43537	We're detecting intense power fluctuations in the surrounding progenitor derelicts.
+43534	Send in scouts to confirm the location of the Dreadnaught.
+
+
+
+// intelevent_hyperspaceDisabled
+// FC
+43600	*** AXED *** The local derelicts are interfering with the Hyperdrive system.
+43602	*** AXED *** Hyperspace offline.
+43605	The Progenitor ship has created a massive Hyperspace inhibitor field.
+43606	We are unable to charge the Hyperspace Core.  We are trapped!
+
+
+
+// intelevent_retrieveTheDreadnaught
+// FI
+43610	The Progenitor Dreadnaught has been located.
+43611	Use Movers to retrieve it.
+43612	At least SIX Movers will be required to transport the Dreadnaught.
+
+
+// intelevent_droidAnalysis
+// FI
+43615	Progenitor Drones are attacking the Movers.
+43616	Scans indicate they are vulnerable to anti-corvette weaponry.
+43617	Recommend using Torpedo Frigates and Pulsar Gunships to protect the Movers.
+
+
+// intelevent_raisingTheDreadnaught
+// FI
+43620	Movers locked on.
+43621	Dreadnaught retrieval underway.
+
+
+// intelevent_dreadnaughtMoverLost
+// FI
+43630	Mover lost. Dreadnaught retrieval halted.
+43631	Assign additional Movers to retrieve the Dreadnaught.
+
+
+// intelevent_dreadnaughtDocked
+// FI
+43640	Dreadnaught docked.
+43641	Science teams and crew transferring to Dreadnaught.
+43642	Crew transfer complete.
+
+
+// intelevent_dreadnaughtAnalysis
+// FI
+43650	Science teams have completed the initial analysis of the Dreadnaught.
+43651	Scans indicate that the engines and hyperspace drives are operational.
+43652	Science teams are now working to bring the Dreadnaught's other systems online.
+
+
+// intelevent_keeperAttacking
+// FI
+43590	The Progenitor ship is attacking.
+// FC
+43591	The Oracle refers to these ships as "Keepers."
+43592	They are ancient machines dedicated to the protection of the Progenitor Empire.
+43593	It will stop at nothing to destroy us.
+// FI
+43594	Defend the fleet.
+
+
+
+// intelevent_cannotDefeatKeeper
+// FI
+43700	Combat data indicates we cannot defeat the Keeper with conventional weapons...
+43701	...but we believe we have found a weakness.
+43702	We have identified Progenitor Power Modules in the local area.
+43703	Science Division speculates that these modules could be activated and cause the Keeper to overload.
+43704	Each Power Module is activated by a trigger device.
+43705	Send probes to these locations to scan for trigger devices.
+43709	The Oracle indicates that these modules could be activated and cause the Keeper to overload.
+
+
+// intelevent_installInhibitors
+43706	We have confirmed that the power modules can be activated using these devices...
+43707	*** AXED *** Use Movers to collect these devices and install them on the power modules.
+43708	Use Movers to collect them and install them on the power modules.
+
+
+// intelevent_probeInPosition
+43720	Probe in position.
+43725	Scans negative.
+43726	No devices found.
+43727	Scan results negative.
+
+
+
+// intelevent_devicesLocated
+43721	Trigger devices located.
+
+// intelevent_inhibitorEnRoute
+// FI
+43710	Device en route.
+
+
+// intelevent_inhibitor1Installed
+// FI
+43740	Device One installed.
+43741	*** AXED *** Power siphon on-line.
+43742	Power Module activated.
+
+
+// intelevent_inhibitor2Installed
+// FI
+43745	Device Two installed.
+
+
+// intelevent_inhibitor3Installed
+// FI
+43750	Device Three installed.
+
+
+// intelevent_distortionFieldActive
+// FI
+43755	*** AXED *** Distortion field activated.
+43756	The distortion field is building.
+
+
+// intelevent_keeperSelfDestruct
+// FI
+43578	The Keeper is trapped!
+// FC
+43579	The Hyperspace Core is back on-line.
+// FI
+43580	Sensors detect a large power cascade building up inside the Keeper.
+43582	We must escape before the Keeper self-destructs.
+43583	Less than one minute to Keeper self-destruct.
+43584	Less than thirty seconds to Keeper self-destruct.
+
+
+
+// intelevent_letsGo
+// FC
+43770	Hyperspace module fully charged.
+43771	Initiating hyperspace.
+
+
+
+
+// intelevent_mothershipDestroyed
+43880	MISSION FAILED
+43881	MISSION SUCCESSFUL
+
+
+// pings
+43900	Power Signature
+43901	Dreadnaught
+43902	Keeper
+43903	Progenitor Power Module
+43904	Progenitor Power Module
+43905	Progenitor Power Module
+43906	Device
+43907	Scan area
+
+rangeend

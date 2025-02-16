@@ -1,0 +1,210 @@
+levelDesc = "Tactical Counterattack"
+-- This version had been added with more ru patch. So it should be plenty for all 4players to use anystrats neccessary to win a victory against your aponent
+-- Concept by TroublePSA
+-- Players engage on a close quarter combat, mysterious and deadly is what some describes this hostile part of region.
+-- Dedicated to the ppl who loves a good teamsplay scenario <Salute>PaktuSjetArmada 
+maxPlayers = 5
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+}
+
+function DetermChunk()
+  addPoint("StartPos0", {0, random(1500,3000), 0}, {0, random(0,360), 0})
+  addPoint("StartPos1", {-37500+random(-100,100), random(-100,100), random(-100,100)}, {0, 90, 0})
+  addPoint("StartPos2", {random(-100,100), random(-100,100), 37500+random(-100,100)}, {0, -180, 0})
+  addPoint("StartPos3", {37500+random(-100,100), random(-100,100), random(-100,100)}, {0, -90, 0})
+  addPoint("StartPos4", {random(-100,100), random(-100,100), -37500+random(-100,100)}, {0, 0, 0})
+
+	addSquadron("endor", "moon2", {random(-1700000,1700000), random(-200000,200000), -random(2700000,3700000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  addSquadron("meg_sajhulkturret", "meg_sajhulkturret", {-5000, -3000, -9000}, -1, {120, -35, 85}, 0, 0)    
+  addSquadron("meg_sajhulkturret", "meg_sajhulkturret", {500, -2500, 6000}, -1, {10, -115, 55}, 0, 0)
+
+	local argu = random(0,360)
+	local r = 40000
+	local num = 150
+	local ring_num = random(3,6)
+	for z = 1, ring_num, 1 do
+		r = random(20000,60000)
+		num = random(r/900,r/300)
+		for i = 1, num, 1 do
+			addAsteroid("Asteroid_"..random(1,5), {r*cos(argu), 0, r*sin(argu)}, random(0,100), 0, 0, 0, 0)
+			if random(0,10) > 8 then
+				addDustCloud("polySurface1", "dustcloud_nores"..random(2,3), {r*cos(argu), random(-100,100), r*sin(argu)}, {1.0, 1.0, 1.0, 1.0}, 233.16, random(2000,3000))
+			end
+			argu = random(0,360)
+		end
+	end
+
+-- 4sidepockets of ru batch from 'Totalisk'
+  addAsteroid("Asteroid_3", {3534, 0, 3696}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {4588, 0, 3334}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {5668, 0, 2730}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {3696, 0, 3534}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {3334, 0, 4588}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {2730, 0, 5668}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {3696, 0, -3534}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {3334, 0, -4588}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {2730, 0, -5668}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {3534, 0, -3696}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {4588, 0, -3334}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {5668, 0, -2730}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {-3534, 0, -3696}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-4588, 0, -3334}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-5668, 0, -2730}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {-3696, 0, -3534}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-3334, 0, -4588}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-2730, 0, -5668}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {-3696, 0, 3534}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-3334, 0, 4588}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-2730, 0, 5668}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {-3534, 0, 3696}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-4588, 0, 3334}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-5668, 0, 2730}, 100, 0, 0, 0, 0)
+      
+  addDustCloud(	"polySurface1",	"DustCloud_NoRes",	{0,	0,	0},	{1,	1,	1,	1},	0,    2500)
+
+  addAsteroid("Asteroid_3", {9800, 0, 9450}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {9800, 0, -9450}, 100, 0, 0, 0, 0)
+  
+  addAsteroid("Asteroid_3", {-9800, 0, -9450}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-9800, 0, 9450}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {-9450, 0, -9800}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-9450, 0, 9800}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_3", {9450, 0, 9800}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {9450, 0, -9800}, 100, 0, 0, 0, 0)
+
+addSquadron("meg_gehenna_1", "meg_gehenna_1ctm",{1500, 6850, -200}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+addSquadron("meg_gehenna_1", "meg_gehenna_3ctm",{5500, -2500, 2000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+addSquadron("meg_gehenna_1", "meg_gehenna_1ctm",{-5500, 1500, -2000}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+  
+  addAsteroid("Asteroid_2", {-2700, 0, 1600}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-1200, 0, 1100}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-1500, 0, 1000}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-2400, 0, 1300}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-1700, 0, 1400}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-2500, 0, 1700}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-1000, 0, 400}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-200, 0, 1600}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_2", {2700, 0, -1600}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {1200, 0, -1100}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {1500, 0, -1000}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {2400, 0, -1300}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {1700, 0, -1400}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {2500, 0, -1700}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {1000, 0, -400}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {200, 0, -1600}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {0, 0, 0}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_2", {-1600, 0, 2700}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-1100, 0, 1200}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-1000, 0, 1500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-1300, 0, 2400}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-1400, 0, 1700}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-1700, 0, 2500}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-400, 0, 1000}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-1600, 0, 200}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_2", {1600, 0, -2700}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {1100, 0, -1200}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {1000, 0, -1500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {1300, 0, -2400}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {1400, 0, -1700}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {1700, 0, -2500}, 0, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {400, 0, -1000}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {1600, 0, -200}, 100, 0, 0, 0, 0)
+
+  setWorldBoundsInner({0, 0, 0}, {60000, 35000, 60000})
+end
+
+function NonDetermChunk()
+  addPebble("Pebble_0", {-6000, 300, -100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6100, -400, -1900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-5900, 2900, -2600}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6000, -1300, -6000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6100, 1300, -8100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-5900, -3300, -6200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-5800, 1800, -7000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6100, -2100, -5100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6400, 1400, -5500}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6500, -600, -3200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6200, 100, 0}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6000, -900, -2000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6600, 200, -2500}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6100, 000, -3000}, 10000, 10000, 10000)
+
+  addPebble("Pebble_0", {-6100, -3500, 100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6300, 1200, 1900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6100, -100, 2100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6000, 4000, 4100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6400, -1200, 3100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6500, 1300, 1800}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6600, -1900, 5600}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6300, 2100, 7200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6900, -800, 6100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6700, 1700, 2100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6800, -100, 1100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {-6000, 300, 3100}, 10000, 10000, 10000)
+
+  addPebble("Pebble_0", {6000, 300, -100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6100, -400, -1900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {5900, 2900, -2600}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6000, -1300, -6000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6100, 1300, -8100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {5900, -3300, -6200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {5800, 1800, -7000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6100, -2100, -5100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6400, 1400, -5500}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6500, -600, -3200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6200, 100, 0}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6000, -900, -2000}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6600, 200, -2500}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6100, 000, -3000}, 10000, 10000, 10000)
+
+  addPebble("Pebble_0", {6100, -3500, 100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6300, 1200, 1900}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6100, -100, 2100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6000, 4000, 4100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6400, -1200, 3100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6500, 1300, 1800}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6600, -1900, 5600}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6300, 2100, 7200}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6900, -800, 6100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6700, 1700, 2100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6800, -100, 1100}, 10000, 10000, 10000)
+  addPebble("Pebble_0", {6000, 300, 3100}, 10000, 10000, 10000)
+
+  addAsteroid("Asteroid_3", {15000, 0, 500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {15500, 0, 0}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {15000, 0, -500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-15000, 0, 500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-15500, 0, 0}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-15000, 0, -500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {500, 0, 15000}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {0, 0, 15500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-500, 0, 15000}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {500, 0, -15000}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {0, 0, -15500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-500, 0, -15000}, 100, 0, 0, 0, 0)
+
+		fogSetActive(0)
+		setGlareIntensity(0)
+		setLevelShadowColour(0, 0, 0, 1)
+		setSensorsManagerCameraDistances(61000, 120000)
+    loadBackground ("higaara_outskirts")
+end

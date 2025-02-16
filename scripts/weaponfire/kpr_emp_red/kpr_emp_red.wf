@@ -1,0 +1,12 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:14
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+bulletfx = "emp_pulse_combo_red"
+nopenetratefx = "nopen_generic"
+deathtype = "deathCannon"
+hit_sfx = "weapon/corvette/impact/WEAPON_CORVETTE_Mine_Detonation"
+nopenetrate_sfx = "weapon/corvette/impact/WEAPON_CORVETTE_Mine_Detonation"
+hit_clamp = 
+    { 1, 1, }

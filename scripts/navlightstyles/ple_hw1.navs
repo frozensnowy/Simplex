@@ -1,0 +1,9 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:47 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+climbTime = 0
+topWaitTime = 0.5
+decayTime = 0.05
+bottomWaitTime = 0.45

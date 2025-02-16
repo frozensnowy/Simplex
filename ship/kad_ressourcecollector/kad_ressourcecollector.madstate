@@ -1,0 +1,42 @@
+--=============================================================================
+--    Name    : Hgn_ResourceCollector.madStates
+--    Purpose : Animation state data.
+--
+--Created 250403 by cgladstone
+--Copyright Relic Entertainment, Inc.  All rights reserved.
+--=============================================================================*/
+
+-- RESOURCE COLLECITON ---------------------------------------------------------
+
+KAD_RESSOURCECOLLECTOR_ResourceDo_OnSet = function(ship)
+    stopAnim(ship, "Close")
+    startAnim(ship, "Open")
+	startEffect(ship, "Repairing")
+    setPauseTime(ship, "Open", 1000) 
+end
+
+
+KAD_RESSOURCECOLLECTOR_ResourceEnd_OnSet = function(ship)
+    endEffect(ship, "Repairing")
+	stopAnim(ship, "Open")
+    startAnim(ship, "Close")
+    setPauseTime(ship, "Close", 1000) 
+end
+
+
+-- ******************** REPAIR ****************************
+
+KAD_RESSOURCECOLLECTOR_RepairStart_OnSet = function(ship)
+    stopAnim(ship, "Close")
+    startAnim(ship, "Open")
+	startEffect(ship, "Repairing")
+    setPauseTime(ship, "Open", 1000) 
+end
+
+
+KAD_RESSOURCECOLLECTOR_RepairEnd_OnSet = function(ship)
+	endEffect(ship, "Repairing")
+    stopAnim(ship, "Open")
+    startAnim(ship, "Close")
+    setPauseTime(ship, "Close", 1000) 
+end

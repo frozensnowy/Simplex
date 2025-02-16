@@ -1,0 +1,44 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","InstantHit","IonBeam","Normal Only",0,3500,0,4,2,0,20,0,1,4,0,0,1,0,60,60,.1,"Normal",0,0,1000)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",600,600,"")
+AddWeaponResult(NewWeaponType,"","","",0,0,"")
+
+setAngles(NewWeaponType,5,-5,5,-5,5)
+
+setMiscValues(NewWeaponType,-2,0)
+
+setPenetration(NewWeaponType,70,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=1.35,},
+{HeavyArmour=1.8,},
+{SubSystemArmour=.3,},
+{TurretArmour=1,},
+{ResArmour=.2,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=2,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=1,},
+{Corvette=1,},
+{Frigate=1, damage=1,},
+{Utility=1,},
+{munition=1,},
+{SmallCapitalShip=1, damage=1,},
+{BigCapitalShip=1, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1, damage=1,},
+{Resource=1,},
+{ResourceLarge=1, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+

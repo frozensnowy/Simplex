@@ -1,0 +1,17 @@
+-- =============================================================================
+-- Homeworld 2 Clean Data Resource Project
+-- By S110
+-- Version 1.0
+-- 02/06/2010
+-- Tools used: EditPad Lite, LuaDC version 0.9.19, and Cold Fusion LUA Decompiler v1.0.0
+-- =============================================================================
+
+KPR_SENTINEL_CodeRed_OnSet = function(ship)
+	setState(ship, "CodeRed", 1)
+	startAnim(ship, "Spin")
+	setLoopCount(ship, "Spin", 1000000)
+end
+
+KPR_SENTINEL_CodeGreen_OnSet = function(ship)
+	stopAnim(ship, "Spin")
+end

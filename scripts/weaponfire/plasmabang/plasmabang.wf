@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:49 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+-- until I figure out how to fix:
+bulletfx = "dmg_sml_missle_combo"
+nopenetratefx = "dmg_sml_missle_combo"
+deathtype = "deathPlasma"
+hit_clamp = 
+    { 1, 1, }
+scartype = "Hgn_Torpedo/Torpedo"
+bullet_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"

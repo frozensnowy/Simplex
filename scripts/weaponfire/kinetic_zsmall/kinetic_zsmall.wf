@@ -1,0 +1,13 @@
+hitfx = "dmg_cloud_spray_large"
+bulletfx = "kinetic_small_bullet"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+firefx = "steamed_muzzle_combo_small"
+fire_sfx = "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_FLECHETTE_CANNON_SHELL"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+hit_clamp = {
+  1,
+  1,
+}

@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "i_laser_small",
+		distance = 4000,
+	},
+	lod1 = 
+	{
+		fx = "",
+		distance = 8000,
+	},	
+}

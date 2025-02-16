@@ -1,0 +1,719 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Fire",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation3 = {
+      name = "Deathtrail",
+      length = 3,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation_damage = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation4 = {
+      name = "dmg01",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.25,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation5 = {
+      name = "dmg02",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.5,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation6 = {
+      name = "dmg03",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.75,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation7 = {
+      name = "Fire1",
+      length = 2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+        animation8 = 
+        { 
+            name = "AfterBurn", 
+            length = 2, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+    animation9 = {
+      name = "FireM1",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation10 = {
+      name = "FireM2",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation11 = {
+      name = "FireM3",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation12 = {
+      name = "FireM1Cluster",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation13 = {
+      name = "FireM2Cluster",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation14 = {
+      name = "FireM3Cluster",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Deathtrail",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "marker_death",
+      },
+      {
+        "fx",
+        "FIERY_EXPLOSION_WAVE",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "0.5",
+      },
+    },
+ Fire1 = {
+      {
+        "anim",
+        "Fire",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_KineticCan_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo",
+      },
+      {
+        "sound",
+        "weapon/fighter/fire/WEAPON_FIGHTER_KINETIC_AUTOGUN_SHELL",
+      },
+      { "fx_scale", "0.35", }, 
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+ Fire1a = {
+      {
+        "anim",
+        "Fire",
+      },
+      {
+        "animtime",
+        "0.05",
+      },
+      {
+        "marker",
+        "Weapon_KineticCanSlave_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo",
+      },
+      { "fx_scale", "0.35", }, 
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+ Fire1b = {
+      {
+        "anim",
+        "Fire",
+      },
+      {
+        "animtime",
+        "0.1",
+      },
+      {
+        "marker",
+        "Weapon_KineticCanSlave1_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo",
+      },
+      { "fx_scale", "0.35", }, 
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+ Fire2 = {
+      {
+        "anim",
+        "Fire1",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_KineticCan1_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/AATrooperMissileFire", 
+      },
+      --{ "fx_scale", "0.35", }, 
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+ Fire2a = {
+      {
+        "anim",
+        "Fire1",
+      },
+      {
+        "animtime",
+        "0.1",
+      },
+      {
+        "marker",
+        "Weapon_KineticCan1Slave_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/AATrooperMissileFire", 
+      },
+      --{ "fx_scale", "0.35", }, 
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+ Fire2b = {
+      {
+        "anim",
+        "Fire1",
+      },
+      {
+        "animtime",
+        "0.15",
+      },
+      {
+        "marker",
+        "Weapon_KineticCan1Slave1_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/AATrooperMissileFire", 
+      },
+      --{ "fx_scale", "0.35", }, 
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Deathtrail",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "marker_death",
+      },
+      {
+        "fx",
+        "FIERY_TRAIL_SPRAY",
+      },
+      {
+        "sound",
+        "EXPLOSION/DEATHTRAIL",
+      },
+      {
+        "fx_scale",
+        "5",
+      },
+    },
+    event4 = {
+      {
+        "anim",
+        "Deathtrail",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "marker_death",
+      },
+      {
+        "fx",
+        "fiery_trail_spray_small",
+      },
+      {
+        "fx_scale",
+        "5",
+      },
+    },
+    event5 = {
+      {
+        "anim",
+        "Deathtrail",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "marker_death",
+      },
+      {
+        "fx",
+        "fiery_flash_ring_long",
+      },
+      {
+        "fx_scale",
+        "30",
+      },
+    },
+    event6 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "root",
+      },
+      {
+        "fx",
+        "death_generic_fighter",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+    event7 = {
+      {
+        "anim",
+        "Deathtrail",
+      },
+      {
+        "animtime",
+        "0.5",
+      },
+      {
+        "marker",
+        "root",
+      },
+      {
+        "fx",
+        "fiery_trail_lines_spray",
+      },
+      {
+        "fx_scale",
+        "entity",
+      },
+    },
+    event8 = {
+      {
+        "anim",
+        "Deathtrail",
+      },
+      {
+        "animtime",
+        "0.5",
+      },
+      {
+        "marker",
+        "root",
+      },
+      {
+        "fx",
+        "fiery_trail_death_combo",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "20",
+      },
+    },
+    event9 = {
+      {
+        "anim",
+        "Deathtrail",
+      },
+      {
+        "animtime",
+        "1",
+      },
+      {
+        "marker",
+        "root",
+      },
+      {
+        "fx",
+        "fiery_trail_shockwave_small",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/etg_explode_medium_firey", --"EXPLOSION/MEDIUM/etg_explode_small_firey"
+      },
+      {
+        "fx_scale",
+        "entity",
+      },
+    },
+    event10 = {
+      {
+        "anim",
+        "dmg01",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker1,marker2,Weapon_KineticCan_Position,Weapon_RocketPod_Position,Weapon_RocketPodSlave_Position,Weapon_RocketPodSlave1_Position,EngineNozzle1,EngineNozzle2",
+      },
+      { "fx", "dmg_damage_cloud_puff_spray_FiCoDMG,dmg_damage_flash_ring_FiCoDMG,dmg_damage_smoke_spray_FiCoDMG,dmg_damage_spark_spray_FiCoDMG,fiery_trail_spray_FiCoDMG,fiery_trail_spray_small_FiCoDMG,dmg_damage_cloud_steam_spray_FiCoDMG,dmg_damage_flare_spray_FiCoDMG,dmg_lines_spray_missle_lod_FiCoDMG,dmg_capital_mushroom_spray_FiCoDMG,dmg_damage_glow_ring_FiCoDMG", },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event11 = {
+      {
+        "anim",
+        "dmg02",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker3,marker4,Weapon_KineticCan_Position,Weapon_RocketPod_Position,Weapon_RocketPodSlave_Position,Weapon_RocketPodSlave1_Position,EngineNozzle1,EngineNozzle2",
+      },
+      { "fx", "dmg_damage_cloud_puff_spray_FiCoDMG,dmg_damage_flash_ring_FiCoDMG,dmg_damage_smoke_spray_FiCoDMG,dmg_damage_spark_spray_FiCoDMG,fiery_trail_spray_FiCoDMG,fiery_trail_spray_small_FiCoDMG,dmg_damage_cloud_steam_spray_FiCoDMG,dmg_damage_flare_spray_FiCoDMG,dmg_lines_spray_missle_lod_FiCoDMG,dmg_capital_mushroom_spray_FiCoDMG,dmg_damage_glow_ring_FiCoDMG", },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event12 = {
+      {
+        "anim",
+        "dmg03",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker5,Weapon_KineticCan_Position,Weapon_RocketPod_Position,Weapon_RocketPodSlave_Position,Weapon_RocketPodSlave1_Position,EngineNozzle1,EngineNozzle2",
+      },
+      { "fx", "dmg_damage_cloud_puff_spray_FiCoDMG,dmg_damage_flash_ring_FiCoDMG,dmg_damage_smoke_spray_FiCoDMG,dmg_damage_spark_spray_FiCoDMG,fiery_trail_spray_FiCoDMG,fiery_trail_spray_small_FiCoDMG,dmg_damage_cloud_steam_spray_FiCoDMG,dmg_damage_flare_spray_FiCoDMG,dmg_lines_spray_missle_lod_FiCoDMG,dmg_capital_mushroom_spray_FiCoDMG,dmg_damage_glow_ring_FiCoDMG", },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "5",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+	FireMissile1 = 
+            { 
+                { "anim", "FireM1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_RocketPod_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/irpgweae",}, 
+		{ "fx_scale", "0.3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+	FireMissile2 = 
+            { 
+                { "anim", "FireM2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_RocketPod2_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ADATSMissileFire", }, 
+		{ "fx_scale", "0.3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+	FireMissile3 = 
+            { 
+                { "anim", "FireM3", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_RocketPod3_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/ADATSMissileFire", }, 
+		{ "fx_scale", "0.3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+	FireCluster1 = 
+            { 
+                { "anim", "FireM1Cluster", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_RocketPod_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/BRDM_Missile_Reverb", }, 
+		{ "fx_scale", "0.4", }, 
+            }, 
+	FireCluster1a = 
+            { 
+                { "anim", "FireM1Cluster", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_RocketPod_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+		{ "fx_scale", "0.3", }, 
+            }, 
+	FireCluster2 = 
+            { 
+                { "anim", "FireM2Cluster", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_RocketPod2_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/BRDM_Missile_Reverb", }, 
+		{ "fx_scale", "0.4", }, 
+            }, 
+	FireCluster2a = 
+            { 
+                { "anim", "FireM2Cluster", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_RocketPod2_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+		{ "fx_scale", "0.3", }, 
+            }, 
+	FireCluster3 = 
+            { 
+                { "anim", "FireM3Cluster", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_RocketPod3_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/BRDM_Missile_Reverb", }, 
+		{ "fx_scale", "0.4", }, 
+            }, 
+	FireCluster3a = 
+            { 
+                { "anim", "FireM3Cluster", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_RocketPod3_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+		{ "fx_scale", "0.3", }, 
+            }, 
+        event14 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "missilelike_boost_blue", }, 
+		{ "fx_scale", "0.8", }, 
+            }, 
+        event15 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle2", }, 
+                { "fx", "missilelike_boost_blue", }, 
+		{ "fx_scale", "0.8", }, 
+            }, 
+
+        event1s = 
+            { 
+                { "anim", "FireION", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Pulsar_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+		{ "fx_scale", "0.3", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event2s = 
+            { 
+                { "anim", "FireION", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_Pulsar_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+		{ "fx_scale", "0.3", }, 
+                { "sound", "DAMAGE/SMOKE/ION_BEAM_DISCHARGE", }, 
+            }, 
+
+  },
+}

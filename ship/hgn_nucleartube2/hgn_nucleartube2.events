@@ -1,0 +1,203 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  animation2 = 
+        { 
+            name = "amb", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+  animation3 = 
+        { 
+            name = "launch", 
+            length = 3, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },    
+        animation4 = 
+        { 
+            name = "AfterBurn", 
+            length = 2, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },              
+  },
+  events = {
+        event1 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "missilelike_boost_blue", }, 
+		{ "fx_scale", "2.5", }, 
+            }, 
+        event1a = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle2", }, 
+                { "fx", "missilelike_boost_blue", }, 
+		{ "fx_scale", "2.5", }, 
+            }, 
+        event1b = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle3", }, 
+                { "fx", "missilelike_boost_blue", }, 
+		{ "fx_scale", "2.5", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "ca_cloud_spray", }, 
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+                { "fx_transform", "None", }, 
+                { "fx_scale", "5", }, 
+            },          
+        event29 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_JUGGERNAUGHTLOW", }, 
+                { "fx_scale", "1.4", }, 
+                { "fx_sm", "on", }, 
+            },                       
+        event30 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA_JUGGERNAUGHTLOW", }, 
+                { "fx_scale", "0.54", }, 
+                { "fx_sm", "on", },                 
+            },
+            
+        event31 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_combo", }, 
+                { "sound", "TUONOLOW", }, 
+                { "fx_scale", "300", }, 
+                { "fx_sm", "on", },                 
+            },
+         
+              
+         smoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.41", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_5", },                 
+                { "fx_scale", "335", }, 
+            },   
+         smoke2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.42", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_10", },                 
+                { "fx_scale", "380", }, 
+            },   
+         smoke3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.43", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_15", },                 
+                { "fx_scale", "400", }, 
+            },         
+         smoke4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.44", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_20", },                 
+                { "fx_scale", "435", }, 
+            },  
+         smoke5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_35", },                 
+                { "fx_scale", "470", }, 
+            }, 
+         smoke6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.46", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_70", },                 
+                { "fx_scale", "500", }, 
+            },            
+            
+         chunk1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "4", }, 
+            },
+         chunk2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.51", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_70", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "5", }, 
+            }, 
+---amb
+            amb1 = 
+            { 
+                { "anim", "amb", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", },                 
+                { "sound", "NUCLEARALARMLOW", },                
+            },    
+---launch            
+            launch = 
+            { 
+                { "anim", "launch", }, 
+                { "animtime", "0", }, 
+                { "sound", "NUCLEARTUBE1", }, 
+            },     
+            launch1 = 
+            { 
+                { "anim", "launch", }, 
+                { "animtime", "0.5", }, 
+                { "sound", "STATUS_MISSILE_1", }, 
+            },                                                                            
+                                                          
+  },
+}

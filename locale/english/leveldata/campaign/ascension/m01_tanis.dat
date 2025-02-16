@@ -1,0 +1,270 @@
+filerange 40000 42999
+rangestart 40000 42999
+
+// Original m01_tanis strings
+// objectives
+40500	Begin Harvesting. Collect 700 RU's.
+40501	Build a Resource Collector and order it to start collecting resources.
+40502	Build a Fighter Facility
+40503	Build a Squadron of Interceptors.
+40504	Research Plasma Bomb technology
+40505	Build a Squadron of Bombers.
+40506	Defeat Vaygr forces at Chimera.
+40507	Use the Interceptors to destroy the target drones.
+40508	Eliminate Vaygr Frigate at Station Xanhus using Strike groups
+40509	Eliminate the Vaygr Hyperspace Gates and the Vaygr Fighters.
+40510	Protect the Mothership
+40511	Enter Hyperspace.
+
+// More Description Stuff
+40512	Click on the Power Station and then on the build menu to build a Torodial
+40513	Warning: The Power Station will continue to take damage until power levels have stabilized!
+
+// location card
+40520	TANIS BASE - GREAT WASTELANDS
+40521	Estimated Time to Vaygr Reinforcements:  %1MINUTES%:%2SECONDS%
+40522	MISSION FAILED
+40523	MISSION $40966
+
+
+// text
+// intelevent_initialization
+42000    Tanis Engineering to Mothership... Good to have you online.
+42001    Communication uplink Confirmed. Beginning telemetry synchronization.
+42002    Initiating telemetry data stream...
+42003    Wait. Something's wrong. Power readings are well below expected parameters.
+42004    Confirmed. Main Reactor barely maintaining 10% output. Most systems are dropping into emergency power mode.
+42005    Attempting to reroute and compensate for power inefficiency.
+42006    Compensation failed. Core power draw exceeding available capacity.
+42007    Power Station's arrival is overdue. They should have been here before core transfer...
+42008    Hyperspace signature detected. Power Station emergence confirmed.
+42009    Power feed integration complete. Minimum acceptable power levels reached. We are ready to begin launch trials.
+
+
+// intelevent_buildpowermodule
+41901 Power allocation failure. Unable to proceed with combat trials.
+41902 The Power Station is overloaded and is unable to maintain sufficient power for the fleet.
+41903 Engineering believes it can enhance the output of the power station through the construction of Torodial Magnets.
+41904 The Station will continue to take damage until power levels have stabilized. Build a Torodial Magnet on the Power Station immediately.
+
+
+// intelevent_beginharvesting
+// FI
+40530	This is Fleet Intelligence.
+40531	Our task is to analyze sensor data and generate mission objectives.
+40532	Before launching the Mothership we must conduct a series of trials to ensure all critical systems are operational.
+40533	Throughout these trials the Mothership will be running with a minimal crew, and will remain docked with Tanis.
+40534	Once these trials are complete, we will launch the Mothership and test the Hyperspace Core.
+40535	The first trial will test the Resourcing System.
+40536	A Resource Collector is standing by.
+40537	Begin retrieval of resource containers at this location.
+
+// intelevent_subsystemconstruction
+// FC
+40540	Resourcing Systems fully operational.
+40541	Trial successful.
+// FI
+40542	We will now test the Mothership's production capabilities.
+40543	Begin construction of a Fighter Facility subsystem.
+
+// intelevent_constructinterceptors
+// FC
+40550	Fighter Facility Subsystem complete.
+40551	Engineering is online and ready for fighter production.
+// FI
+40552	To test basic combat capabilities, construct two Interceptor Squadrons.
+
+// speechevent_firstgatedestroyed
+// FI
+40560	Gate destroyed.
+40561	Destroy all the remaining hyperspace gates.
+
+// intelevent_movetochimera
+// FI
+// 40570	Stand by to begin combat trials.
+40570    Torodial Magnet construction completed. Fleet power issues have been resolved. Stand by to begin combat trials.
+40571	Perimeter Station Chimera will assist by providing target drones.
+40572	The drones are located here.
+40573	Use the Interceptors to destroy the Target Drones.
+40574	The drones will fire EMP missiles, to simulate dog fights in an attempt to simulate fighter combat.
+
+// intelevent_perimiterbreached
+// FI
+40580	Tanis is under attack!
+40581	All forces to combat alert. This is not a test.
+40582	Interceptors have been launched from Chimera. The enemy must be eliminated.
+40583	Order all Interceptors to destroy the Vaygr bombers.
+
+// intelevent_chimeraissafe
+// FI
+40590	Multiple enemy reinforcements detected.
+40612	Begin construction of Bombers immediately to deal with this new threat.
+40613	Bombers will be required to defend the Mothership.
+40591	*** AXED *** Estimated time before contact, 3 minutes.
+40592	*** AXED *** We must begin research of Plasma Bomb technology immediately.
+
+// intelevent_moreincoming
+// FI
+40600	Priority alert!
+40601	The Vaygr are using Hyperspace Gates.
+40602	If they are not destroyed, the enemy can deploy reinforcements through them.
+40603	These gates must be destroyed.
+
+// speechevent_buildattackbombers
+// FI
+// 40610	***AXED *** Plasma Bomb research complete.  Attack Bombers ready for construction.
+// 40611	***AXED *** These fighters are effective against heavily armored targets.
+
+
+
+// speechevent_attackbombersdestroyed
+// FI
+40620	We need more bombers to destroy the Vaygr Gates.
+40621	Construct more Bomber Squadrons.
+
+// intelevent_mothershipjumps
+// FI
+40630	Long range sensors have detected multiple enemy signals converging on Tanis.
+40631	All ships initiate docking procedures and stand by for Hyperspace.
+// FC
+40632	The Vaygr have arrived.
+40633	Emergency Hyperspace procedures initiated. Course set for the Homeworld.
+40634	The Mothership must survive.
+40635	*** AXED *** Enemy Hyperspace Gate destroyed.
+
+
+// speechevent_chimerareporting
+// CHIMERA
+40640	Attention Tanis Control. This is Chimera Station.
+40641	We have multiple targets closing on vector three-fourteen.
+
+// autofocus_mothershiplaunches
+// FI
+40650	Chimera Station is offline.
+// LINE BELOW IS OUT OF NUMERICAL ORDER BUT IS CORRECT CHRONOLOGICALLY
+40666	The Vaygr have breached the Tanis perimeter.
+// FC
+40667	The Mothership is under attack.
+// DONT ADD NEW LINES HERE.  THESE LINES HAVE BEEN SEPERATED OUT TO autofocus_premothershiplaunches
+40657	We cannot stay here any longer. Emergency Launch underway.
+// TANIS CONTROL
+40658	Release crews stand by for emergency launch.
+// MISC CHATTER
+40659	Roger that Tanis.
+40660	Primary Couplings released...
+40661	She's looking good...
+40662	...greenline confirmed...
+// FC
+40663	The Mothership has cleared Tanis.
+40664	We are away.
+40665	Damage control teams stand by.
+
+// autofocus_premothershiplaunches -- when the 1st gate is destroyed
+// FI
+40651	We are receiving a coded transmission from Hiigara:
+// HIIGARA
+40652	Tanis control, this is Angel Moon Station Jericho.
+40653	A massive Vaygr invasion fleet is approaching the Homeworld system. Heavy casualties are expected.
+40654	The crew of the Mothership has begun evacuation and a rally point has been established.
+40655	We have initiated defense procedures and are standing by for contact.
+// FC
+40656	The Homeworld is under attack.
+
+// speechevent_taniscompromised
+// FC
+40670	The Vaygr know we are here... the Mothership must be protected.
+
+// speechevent_movemothership
+// FC
+40680	Negative.
+40681	The Mothership must move clear of Tanis before it can safely enter hyperspace.
+
+// alternate lines for minute based content
+// FI
+40690	Estimated time before contact, 1 minute.
+40691	Estimated time before contact, 2 minutes.
+40692	Estimated time before contact, 3 minutes.
+40694	Estimated time before contact, 4 minutes.
+40695	Estimated time before contact, 5 minutes.
+40696	Estimated time before contact, 6 minutes.
+40697	Estimated time before contact, 7 minutes.
+40698	Estimated time before contact, 8 minutes.
+40699	Estimated time before contact, 9 minutes.
+40700	Estimated time before contact, 10 minutes.
+
+// speechevent_icdeadpeople
+// FC
+40710	The Critters are under attack.
+
+// speechevent_newbuildoptionsavailable
+// FC
+40720	New build options available.
+
+// player names
+40790
+40791	Tanis Defence Force
+40792	Vaygr Assault Force
+40793	Hiigaran Navy
+
+// pings
+40800	Resource Operation.
+40801	Target Drones
+40802	Vaygr Bombers
+40803	Vaygr Frigate Strike Force
+40804	Vaygr Hyperspace Gate
+
+// ping details
+// details used for 40800
+40900	To Harvest, select a RESOURCE COLLECTOR and RIGHT-CLICK on the Resource Containers.
+
+// details used for 40801
+40905	Use the INTERCEPTORS to destroy the Target Drones
+40906	To attack, select the ships you want to attack with, then RIGHT-CLICK on the target.
+40907	To attack multiple targets, use BAND-BOX attack.
+
+// details used for 40802
+40910	Destroy the Vaygr Bombers using  Interceptors.
+
+// details used for 40803
+40915	These Vaygr are formed in a Strike Group.
+40916	The Vaygr Interceptors will eliminate your Bombers easily
+40917	Form the Interceptors and Bombers into a Strike Group to ensure your Interceptors protect the Bombers
+
+// objective descriptions
+// description used for 40500
+40950	To collect Resources, select your Resource Collectors and then RIGHT-CLICK on Resource Containers.
+
+// description used for 40501
+40955
+
+// description used for 40502
+40960	The FIGHTER FACILITY is a SUBSYSTEM.  You can find it in the Build Manager under the Fighters section.
+
+// description used for 40503
+40965	Interceptors can be found in the Build Manager under the Fighter section.
+40966	You can queue up multiple units by clicking on their icon multiple times.
+
+// description used for 40504
+40970
+
+// description used for 40505
+40975	Bombers can be found in the Build Menu under the Fighter section.
+
+// description used for 40506
+40980	Destroy the Vaygr Bombers by selecting the Interceptors, then issuing an Attack Order.
+40981	To issue an Attack Order RIGHT-CLICK on the target you wish to attack.
+
+// description used for 40507
+40985	Attack and Destroy the Target drones with the Interceptors.
+40986	To attack, select the Interceptors, then RIGHT-CLICK on the enemy ships you wish to attack.
+40987	To attack multiple targets, use BAND-BOX attack.
+
+// description used for 40508
+40990
+
+// description used for 40509
+40995	Use Bombers to destroy the Hyperspace Gates.
+
+// description used for 40510
+40998	Protect the Mothership.  It must NOT be destroyed.
+rangeend

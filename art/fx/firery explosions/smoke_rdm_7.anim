@@ -1,0 +1,16 @@
+
+fps = 30
+startFrame = 0
+loopCount = 0
+
+texture = 
+{
+	"data:/art/fx/Firery Explosions/nukeexplosioncloud1.tga",
+	"data:/art/fx/Firery Explosions/nukeexplosioncloud2.tga",
+	"data:/art/fx/Firery Explosions/nukeexplosioncloud3.tga",
+	"data:/art/fx/Firery Explosions/nukeexplosioncloud4.tga",
+	"data:/art/fx/Firery Explosions/nukeexplosioncloud5.tga",
+	"data:/art/fx/Firery Explosions/nukeexplosioncloud6.tga",
+
+}
+

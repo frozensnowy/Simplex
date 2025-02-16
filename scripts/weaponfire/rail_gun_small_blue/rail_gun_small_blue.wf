@@ -1,0 +1,13 @@
+hitfx = "dmg_plasma_explosion_simple_combo"
+bulletfx = "rail_gun_bullet_blue"
+nopenetratefx = "dmg_plasma_explosion_simple_combo"
+deathtype = "deathPlasma"
+firefx = "muzzle_flash_combo_small_capital_dread"
+fire_sfx = "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_FLECHETTE_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+hit_clamp = {
+  1,
+  1,
+}

@@ -1,0 +1,10 @@
+hitfx = ""
+bulletfx = "flakhack"
+nopenetratefx = ""
+deathtype = "deathCannon"
+scartype = ""
+hit_sfx = ""
+hit_clamp = {
+  1,
+  1,
+}

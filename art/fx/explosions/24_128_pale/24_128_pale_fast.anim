@@ -1,0 +1,32 @@
+fps = 24;
+startFrame = 0;
+loopCount = 1
+;
+texture = 
+{
+    "data:ART/FX/explosions/24_128_pale/spr000.tga",
+    "data:ART/FX/explosions/24_128_pale/spr001.tga",
+    "data:ART/FX/explosions/24_128_pale/spr002.tga",
+    "data:ART/FX/explosions/24_128_pale/spr003.tga",
+    "data:ART/FX/explosions/24_128_pale/spr004.tga",
+    "data:ART/FX/explosions/24_128_pale/spr005.tga",
+    "data:ART/FX/explosions/24_128_pale/spr006.tga",
+    "data:ART/FX/explosions/24_128_pale/spr007.tga",
+    "data:ART/FX/explosions/24_128_pale/spr008.tga",
+    "data:ART/FX/explosions/24_128_pale/spr009.tga",
+    "data:ART/FX/explosions/24_128_pale/spr010.tga",
+    "data:ART/FX/explosions/24_128_pale/spr011.tga",
+    "data:ART/FX/explosions/24_128_pale/spr012.tga",
+    "data:ART/FX/explosions/24_128_pale/spr013.tga",
+    "data:ART/FX/explosions/24_128_pale/spr014.tga",
+    "data:ART/FX/explosions/24_128_pale/spr015.tga",
+    "data:ART/FX/explosions/24_128_pale/spr016.tga",
+    "data:ART/FX/explosions/24_128_pale/spr017.tga",
+    "data:ART/FX/explosions/24_128_pale/spr018.tga",
+    "data:ART/FX/explosions/24_128_pale/spr019.tga",
+    "data:ART/FX/explosions/24_128_pale/spr020.tga",
+    "data:ART/FX/explosions/24_128_pale/spr021.tga",
+    "data:ART/FX/explosions/24_128_pale/spr022.tga",
+    "data:ART/FX/explosions/24_128_pale/spr023.tga",
+    "data:ART/FX/explosions/24_128_pale/spr024.tga",
+}

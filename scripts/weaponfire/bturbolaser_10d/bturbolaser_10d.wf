@@ -1,0 +1,13 @@
+hitfx = "DMG_CLOUD_COMBO"
+bulletfx = "BTURBOLASER_10D_EFFECT"
+nopenetratefx = "DMG_LASER_HIT"
+deathtype = "deathBeam"
+firefx = "ion_laser_Xlarge"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+fire_sfx = "turbolaser/tl_heavy_imp"
+hit_sfx = "WEAPON/ALL/HIT/SHIELD_PULSE_HIT"
+nopentrate_sfx = "WEAPON/ALL/HIT/SHIELD_PULSE_HIT"
+hit_clamp = {
+  1,
+  1,
+}

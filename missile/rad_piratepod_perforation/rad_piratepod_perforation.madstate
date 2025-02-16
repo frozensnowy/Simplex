@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+function rad_piratepod_perforation_Open_OnSet(ship)
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+function rad_piratepod_perforation_Docked_OnSet(ship)
+    startAnim(ship, "Latch")
+    setPauseTime(ship, "Latch", 1000)
+end

@@ -1,0 +1,12 @@
+hitfx = "emp_lightning_combo"
+bulletfx = "emp_wave_combo"
+nopenetratefx = "ion_dmg_ring_spray"
+blowthroughfx = "blowthrough_generic"
+deathtype = "deathBeam"
+scartype = "EMP"
+firefx = ""
+fire_sfx = "WEAPON/ALL/FIRE/EMP_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/EMP_HIT"
+nopentrate_sfx = "WEAPON/ALL/HIT/EMP_HIT"
+hit_clamp = 
+    { 0.5, 1.25, }

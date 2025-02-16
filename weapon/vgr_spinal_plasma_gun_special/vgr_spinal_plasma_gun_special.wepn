@@ -1,0 +1,44 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:06 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+-- was normal plasma but will cause FX problem due to burst :(
+StartWeaponConfig(NewWeaponType, "Gimble", "Bullet", "vgr_plasmaartillery_white", "Special Attack", 3200, 8000, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 0, 0, 260, 40, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 9500, 9500, "")
+AddWeaponResult(NewWeaponType, "Hit", "Disable", "Target", 14, 14, "")
+
+setPenetration(NewWeaponType, 35, 1, {
+    MediumArmour = 1.2, 
+},  
+{ 
+    PlanetKillerArmour = 0,
+}
+)
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0.05, 
+}, 
+{ 
+    Frigate = 0.7, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.8, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.9, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 0.6, 
+    damage = 1, })
+setAngles(NewWeaponType, 6, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 0.5)

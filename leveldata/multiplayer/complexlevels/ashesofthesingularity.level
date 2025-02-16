@@ -1,0 +1,117 @@
+
+levelDesc = "Ashes of the Singularity"
+maxPlayers = 6
+player = {}
+
+for k = 0, maxPlayers - 1 do
+	player[k] = {id = k, name = "", raceName = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	local my_seed_1 = {seed = -12345}
+
+	setWorldBoundsInner({0, 0, 0}, {60000, 60000, 60000})
+	setWorldBoundsOuter({0, 0, 0}, {70000, 70000, 70000})
+
+--	addCamera("pieplatetest", {0,0,0,}, {0, 32768,0,})
+
+	-- iNx = the number of "horizontal" lines per charge, not taking into account iXmin
+	-- iNy = the number of "vertical" lines per charge
+	-- iXmin = size of the empty hole for each charge, measured in "horizontal" lines
+	-- iSx = the number of extra items spaced between lines
+	-- iSy = the number of extra items spaced between lines
+	-- iSym = number of charges arranged around the origin
+	-- fEcc = need to get rid of this
+	-- bInside = are the curved lines inside or outside of the reference shape? or, are the charges inside or outside the reference shape?
+	-- fScale = scale the whole shape by this amount in all directions
+
+	--flokalAdd(<tPos>, <tRes>, {<iNx>, <iNy>, <iXmin>, <iSx>, <iSy>, <iSym>, <fEcc>, <bInside>, <fScale>}, <tRot>, <xNull>)
+	flokalAdd({0,    0,0,}, {1, "Pebble", "Pebble_1", {0,0,0,}, 100, 0, 0, 0, 0,}, {16, 16, 12, 3, 3, maxPlayers-1, 256, 0, 20000 * 4/4,}, {0,0,0,}, nil)
+	flokalAdd({0,-4000,0,}, {1, "Pebble", "Pebble_1", {0,0,0,}, 100, 0, 0, 0, 0,}, {16, 16, 12, 3, 3, maxPlayers-1, 256, 1, 20000 * 3/4,}, {0,36,0,}, nil)
+	flokalAdd({0,-8000,0,}, {1, "Pebble", "Pebble_1", {0,0,0,}, 100, 0, 0, 0, 0,}, {16, 16, 12, 3, 3, maxPlayers-1, 256, 0, 20000 * 1/4,}, {0,0,0,}, nil)
+--	flokalAdd({0,0,0,}, {1, "Asteroid", "Asteroid_4", {0,0,0,}, 100, 0, 0, 0, 0,}, {3, 3, 2, 1, 1, maxPlayers, 256, 0, 20000 * 4/4,}, {0,0,0,}, nil)
+--	flokalAdd({0,0,0,}, {1, "Asteroid", "Asteroid_4", {0,0,0,}, 100, 0, 0, 0, 0,}, {3, 3, 2, 1, 1, maxPlayers, 256, 1, 20000 * 3/4,}, {0,36,0,}, nil)
+
+	for i = 0, 4 do
+		addPoint("StartPos" .. i, vrotate({0, 0, 20000 * 5/4,}, {0, i * 72 + 18, 0,}), {0, i * 72 + 18, 0,})
+--		addCloud("polySurface1", "cloud_text_" .. (i+1), vrotate({0, 0, 20000 * 5/4,}, {0, i * 72 + 18, 0,}), {1, 1, 1, 1}, 0, 4096)
+		easyPatch(vrotate({0,      0, 20000 * 4/4,}, {0, i * 72 + 18, 0,}), 100, my_seed_1)
+		easyPatch(vrotate({0, -4000, 20000 * 3/4,}, {0, i * 72 - 18, 0,}), 100, my_seed_1)
+		addAsteroid("Asteroid_5", vrotate({0, -8000, 20000 * 1/4,}, {0, i * 72 + 18, 0,}), 100, 0, 0, 0, 0)
+	end
+	local i=0
+	addPoint("StartPos5", vrotate({0, -20000, 2 * 5/4,}, {0, i * 72 + 18, 0,}), {0, i * 72 + 18, 0,})
+	easyPatch(vrotate({0,      -16000, 2 * 4/4,}, {0, i * 72 + 18, 0,}), 100, my_seed_1)
+	easyPatch(vrotate({0, -24000, 2 * 3/4,}, {0, i * 72 - 18, 0,}), 100, my_seed_1)
+	local argu = 0
+	local r = 4000
+	local num = 3
+	local delt = 360/num
+	local x, y, z = 0, 0 , 0
+	local dist = 200
+	local height = -16000
+	for t = 0, random(2,5) do
+		dist = random(2000,3000)
+		x = random (-15000,15000)
+		z = random (-15000,15000)
+		y = random (-20000, -15000)
+		r = random (1000,4000)
+		while y > -45000 do
+			dist = random(200,5000)
+			for i = 1, random(0,3), 1 do
+				argu = random(0,360)
+				addAsteroid("Asteroid_"..random(3,5), {x+r*cos(argu), height+y, z+r*sin(argu)}, 100, 0, 0, 0, 0)
+			end
+			y = y - dist
+		end
+	end
+
+	local argu = 0
+	local r = 13000
+	local num = 5
+	local delt = 360/num
+	for i = 1, num, 1 do
+		addSquadron("BigProduction", "meg_chimera_nobuild", {r*cos(argu), -15000, r*sin(argu)}, -1, {0, 180-argu, 0,}, 0, 0)
+		argu = argu + delt
+	end
+	
+	addSquadron("dread", "meg_dreadnaughtberth_huge", {random(-100,100), -60000, random(-100,100)}, -1, {0, random(0,360), 0,}, 0, 0)
+
+	local centerSphere =
+	{
+--		addSquadron(<sSquadronName>, <sSquadronType>, <tPosition>, <iPlayerIndex>, <tRotation>, <iNumberShips>, <bHyperspace>)
+		{1, "Squadron",  "Bentus1",  "meg_bentus_ruin_1", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus2",  "meg_bentus_ruin_2", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus3",  "meg_bentus_ruin_3", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus4",  "meg_bentus_ruin_4", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus5",  "meg_bentus_ruin_5", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus6",  "meg_bentus_ruin_6", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus7",  "meg_bentus_ruin_7", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus8",  "meg_bentus_ruin_8", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron",  "Bentus9",  "meg_bentus_ruin_9", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron", "Bentus10", "meg_bentus_ruin_10", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+		{1, "Squadron", "Bentus11", "meg_bentus_ruin_11", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360),}, 1, 0, 1},
+	}
+
+	-- center sphere
+--	shapeAdd(<tPos>, <tDst>, {<sLay>, <fA>, <fB>, ...}, <tRot>, <tSeed>)
+--	If <sLay> is "Ellipsoid", then <fA> equals the length of axis 1, <fB> equals the length of axis 2, <fC> equals the length of axis 3, <fD> equals the thickness, and <fE> is zero.
+	shapeAdd({0,0,0,}, centerSphere, {"Ellipsoid", 2000, 2000, 2000, 4000, 0,}, {0,0,0,}, my_seed_1)
+	addNebula("Nebula4_OLD1", "MP_Bentusi_Radiation", {0,0,0,}, {0.40, 0.68, 0.72, 1,}, 0.0, 20000 * 1/4)
+	addSquadron("BentusMain", "meg_engineeringbay", {0,0,0,}, -1, {srandom(my_seed_1, 360), srandom(my_seed_1, 360), srandom(my_seed_1, 360)}, 0, 0)
+end
+
+function NonDetermChunk()
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (20000)
+  fogSetColour(0.136719, 0.228516, 0.427734, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+  setLevelShadowColour(0, 0, 0, 1)
+	loadBackground("ashesofsingularity")
+	setSensorsManagerCameraDistances(61000, 120000)
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

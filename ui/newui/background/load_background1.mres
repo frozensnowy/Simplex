@@ -1,0 +1,2 @@
+baseRes = 1600
+res1600 = "DATA:/UI/NewUI/Background/load_fx_1600_rock"..tostring(random(6))..".dds"

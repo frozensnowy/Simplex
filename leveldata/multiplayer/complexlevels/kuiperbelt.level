@@ -1,0 +1,234 @@
+--  Map by Hopalong. Feel free to distribute this map so long as you credit it's creator.
+--  v1.2, 10/17/2003
+
+--  Version History:
+--  v1.0 Initial Release
+--  v1.1 Fixed collector pathing issues due to crowded resource patches
+--  v1.2 Replaced planetoid with asteroid megalith.
+
+levelDesc = "Kuiper Belt"
+maxPlayers = 6
+
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 5, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+
+
+function DetermChunk()
+
+  --  First add the start points and the initial resource patches.
+
+  addPoint("StartPos0", { 43300,  25000,  00000}, {0,270,0})
+  addPoint("StartPos1", { 21650, -25000,  37500}, {0,210,0})
+  addPoint("StartPos2", {-21650,  25000,  37500}, {0,150,0})
+  addPoint("StartPos3", {-43300, -25000,  00000}, {0,90,0})
+  addPoint("StartPos4", {-21650,  25000, -37500}, {0,30,0})
+  addPoint("StartPos5", { 21650, -25000, -37500}, {0,-30,0})
+  
+  addSquadron("Balcora", "meg_balcoragate", {random(-3500,3500), random(-3500,3500), random(-3500,3500)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	addSquadron("pluto", "pluto", {random(-375000,375000), random(-110000,110000), -375000}, -1, {0, 45, 0}, 0, 0)
+	
+	addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", { random(-35000,35000), random(-35000,35000), random(-35000,35000), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+	addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", { random(-25000,25000), random(-25000,25000), random(-25000,25000), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+	addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", { random(-15000,15000), random(-15000,15000), random(-15000,15000), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+	addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", { random(-35000,35000), random(-35000,35000), random(-35000,35000), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+	addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", { random(-25000,25000), random(-25000,25000), random(-25000,25000), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+	addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", { random(-15000,15000), random(-15000,15000), random(-15000,15000), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+
+	local r = 80000
+	local n = 0
+	while n<random(600,800) do
+		local randx = random(-r,r)
+		local randz = random(-r,r)
+		local randy = random(-100,100)
+		if (randx)^2+(randz)^2<r^2 then
+		  addAsteroid("Asteroid_10", {randx,randy,randz}, random(50,100), 0, 0, 0, 0)
+		  n=n+1
+		else
+			addDustCloud("polySurface1", "DustCloud_NoRes", {random(-r,r)+random(-1000,1000), randy+random(-100,100), random(-r,r)+random(-1000,1000)}, {random(150,200), random(40,60), random(40,60), random(40,60)}, random(10000,20000), random(5000,40000)) 
+		end
+	end
+
+  addAsteroid("Asteroid_5", {43301.65027,25000,-1500}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {43786.1348,25530.3178,-1284.273865}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {43369.08409,25522.25758,-1400.021477}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {43386.61573,25725.77412,-1340.197648}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {43360.80024,24608.6881,-1873.245596}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {42834.63068,24719.44152,-1208.274709}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {43234.87013,24364.5034,-1502.341237}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {42994.05845,25164.73281,-1133.548946}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {43321.37956,24507.94762,-1388.106253}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {42841.61161,25481.47941,-1734.473891}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {20351.82086,-25000,36750.3192}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {20555.47559,-25442.69746,36968.72185}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {20565.01833,-25000,36053.19092}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {20374.42255,-24410.80996,36771.39663}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {20564.55343,-25528.48732,36731.718}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {20323.60035,-25665.08571,36729.8106}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {20525.63306,-25522.79791,36850.67688}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {20405.7439,-24509.3781,36549.14402}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {21007.73143,-24975.11739,37028.76342}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {20745.16642,-25512.43657,36541.20431}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {-22949.79823,25000,38250.3755}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-23409.71438,25512.01539,38218.15175}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-22972.40436,24341.40249,38254.7663}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-22979.46021,25595.01449,38418.41991}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-23428.5511,25224.10567,38405.85328}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-23250.27161,24685.32009,38679.34322}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-23007.58737,24481.70494,38167.82461}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-22632.35507,24988.91805,38800.22279}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-22851.30187,24321.59785,38521.0007}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-23129.2993,25265.66852,37805.96173}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {-43301.65425,-25000,1500.114905}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-42958.90478,-25479.7572,1212.553036}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-42889.8007,-24756.97202,1897.856097}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-43053.19867,-24449.52976,1776.06478}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-42975.1527,-25073.60692,2002.901897}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-43466.93799,-25457.50458,2040.392466}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-43093.52245,-25047.08423,859.7328076}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-42703.3005,-25012.05926,1154.704482}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-43227.35675,-24762.47239,971.8001156}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-43524.21975,-25669.36804,1628.567334}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {-20351.92236,25000,-36750.2583}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-20209.54791,25393.46987,-37102.56495}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-20159.68646,25182.62384,-36222.07757}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-20413.1202,24390.38011,-36938.6712}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-20454.88453,25644.95334,-36482.17252}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-19858.40882,24867.74728,-36741.62137}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-20581.65617,24549.15815,-36750.29023}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-20301.67742,24425.19786,-36747.62282}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-20737.87829,25000,-37301.59034}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-20045.37771,24366.94672,-36551.17309}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {22949.70071,-25000,-38250.42951}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {22693.38671,-25235.83721,-37840.39543}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {22949.70431,-24362,-38250.45885}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {22972.3783,-25734.5511,-38238.37069}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {22626.62052,-25665.99569,-38216.51882}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {22645.27307,-24947.68419,-37566.99197}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {23484.60232,-24880.45425,-38076.60752}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {22658.54998,-25410.93603,-37834.77119}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {23116.83484,-24577.70166,-38507.75088}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {22413.71929,-25047.14987,-38306.83707}, 100, 0, 0, 0, 0)
+
+  --  Next, add the expansion resources. 
+
+  addAsteroid("Asteroid_4", {49789.04863,553.6056447,25.8710399}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {49645.07407,367.5742328,6.145729692}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {49797.68394,507.190749,-73.6665104}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {49816.61474,576.0059147,-293.5490325}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {50045.60583,-485.8065716,324.512069}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {50274.53842,-486.2093942,222.3287645}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {49923.0509,503.7721828,-268.4556268}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {50160.55957,-312.1047846,-494.0113649}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {49981.99515,-654.8330449,-102.1690198}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_4", {24449.03609,-192.0797552,43387.68712}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {25075.00817,684.6974766,43425.27339}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {24925.99774,-535.9046888,43097.00811}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {25250.15663,-400.2715474,43791.39979}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {24879.6748,376.3242643,43749.38187}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {25413.66533,387.4173187,43181.91684}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {24975.04786,322.6459335,42822.79095}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {25025.74433,515.29163,43292.14724}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {24968.42559,-261.9929923,42847.79914}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_4", {-24985.43751,-499.6946226,43293.04483}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-25392.5727,-289.3282912,43057.39293}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-24792.15785,-165.937394,42836.2661}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-24960.24761,-353.9487474,43680.31548}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-25114.29029,-571.9499939,43236.76573}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-24923.98118,725.0031662,43309.46176}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-25012.49831,589.1900421,43331.04492}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-25025.54208,-51.06023529,44032.58179}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-24604.63262,-184.188902,42848.15001}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_4", {-49995.70391,707.5675856,28.99772642}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-49516.01994,-364.6906865,4.655100728}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-49982.21844,-606.1667043,-21.72529289}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-49700.09015,471.6831454,-274.9993916}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-49557.16148,-568.8587503,-122.3230752}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-49887.95592,-9.406569666,531.7746347}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-49509.03838,231.1468241,462.4840029}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-49992.82083,560.9141079,11.32768779}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-50076.60776,679.8067804,127.1846779}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_4", {-24450.62242,30.45862903,-43108.94032}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-25366.56504,640.8473712,-43349.72762}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-24916.66035,-333.3104308,-43825.03442}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-25214.75926,-361.2138807,-42991.80129}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-25050.2775,617.638348,-43318.44038}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-24561.75481,334.2508337,-43640.64926}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-25045.76086,-681.8756286,-43368.42789}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-24552.00946,0,-43701.63671}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-25163.23168,-548.3011506,-43056.49512}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_4", {24926.27327,394.6619079,-43769.7059}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {24972.84923,642.3340294,-43135.11497}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {24449.78098,29.9876193,-43462.92592}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {24838.05636,473.0434789,-43749.68295}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {24640.79299,466.4466449,-43703.94899}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {25036.60492,-527.4894399,-42778.90128}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {25258.28015,-258.0272229,-43648.08119}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {24999.80849,265.482553,-42880.25377}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {24991.57536,-537.9176293,-43309.69528}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {0,30000,0}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-633.8639298,29943.08897,146.2417644}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {39.08237021,29441.36586,0.6839763}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-439.1618794,29443.09772,159.7676157}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-335.1983384,30135.71426,428.8877632}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {467.7213498,29513.01809,-49.13612702}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {-56.90427629,30655.07702,56.88582593}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {98.61705523,30499.89994,-322.4650836}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {44.89648507,30535.97211,48.14772233}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-110.9969024,29507.81006,-445.3737236}, 100, 0, 0, 0, 0)
+
+  addAsteroid("Asteroid_5", {0,-30000,0}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_4", {-56.64906363,-29282.3929,-67.52725357}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {210.3032092,-29804.85436,647.2671306}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_3", {-63.83203928,-30710.65932,-59.53828551}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {0,-29831.59054,518.3273618}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {60.31481057,-30132.51153,-490.8633388}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_2", {225.1832739,-30081.34354,-461.6012579}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {-250.5351449,-29346.50261,-13.16451799}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {300.8713388,-30379.27457,252.4742254}, 100, 0, 0, 0, 0)
+  addAsteroid("Asteroid_1", {0.029117052,-30502.88314,-314.2571361}, 100, 0, 0, 0, 0)
+
+  --  This is for the protoplanet in the center of the map
+
+  --  The central dust cloud. Note the occasional use of double clouding to produce denser clouds.
+
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 20000, 40000) 
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 15000, 20000) 
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 10000, 15000) 
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 7500, 10000)
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 7500, 10000) 
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 5000, 7500)
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 5000, 7500)  
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 2500, 5000) 
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 2500, 5000) 
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 0, 5000) 
+  addCloud("polySurface1", "Cloud_NoRes", {0, 0, 0}, {200, 50, 50, 50}, 0, 5000)
+
+  setWorldBoundsInner({0, 0, 0}, {90000, 50000, 90000})
+
+end
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("m29")
+end

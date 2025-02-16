@@ -1,0 +1,7 @@
+vgr_wave_beam_small files = 20 legnth
+smallcannontracer = 54 legnth
+Laser_heavy = 20 legnth
+bullet_tracer = 100 legnth, bullet_tracer02 = 60 legnth
+
+muzzle_flash_glow_flash_fighter = duration - 1
+muzzle_flash_glow_tip_fighter = duration - 1

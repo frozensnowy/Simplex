@@ -1,0 +1,137 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_Flechette",
+      length = 2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Weapon_Flechette",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_StbdAft_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "Weapon_Flechette",
+      },
+      {
+        "animtime",
+        "0.3",
+      },
+      {
+        "marker",
+        "Weapon_StbdAftSlave_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Weapon_Flechette",
+      },
+      {
+        "animtime",
+        "0.6",
+      },
+      {
+        "marker",
+        "Weapon_StbdAftSlave1_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event4 = {
+      {
+        "anim",
+        "Weapon_Flechette",
+      },
+      {
+        "animtime",
+        "0.9",
+      },
+      {
+        "marker",
+        "Weapon_StbdAftSlave2_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+  },
+},
+}

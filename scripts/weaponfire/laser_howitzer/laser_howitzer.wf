@@ -1,0 +1,13 @@
+hitfx = "laser_howitzer_explosion_combo"
+bulletfx = "laser_howitzer_bullet_spray"
+nopenetratefx = "laser_howitzer_explosion_combo"
+deathtype = "deathCannon"
+firefx = "sunfire_squirt"
+fire_sfx = "WEAPON/CARRIER/FIRE/VWEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY"
+nopenetrate_sfx = "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY"
+hit_clamp = {
+  1,
+  1,
+}

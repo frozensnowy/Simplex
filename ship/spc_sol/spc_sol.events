@@ -1,0 +1,38 @@
+effects = 
+{ 
+	animations = 
+	{ 
+		disk = 
+		{ 
+			name = "disk", 
+			length = 1, 
+			loop = 1, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},		
+	},
+	events = 
+	{ 
+		disk1 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "root", }, 
+			{ "fx", "spc_sol_emitter", }, 
+			{ "sound", "", }, 
+			{ "fx_scale", "60", }, 
+      { "fx_sm", "on", }, 
+		}, 		
+		disk2 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "Root", }, 
+			{ "fx", "spc_sol_flash", },								
+			{ "fx_scale", "1000", }, 			
+		},		
+	},	
+}

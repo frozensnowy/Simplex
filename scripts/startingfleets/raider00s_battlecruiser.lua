@@ -1,0 +1,59 @@
+Survivor = {}
+Survivor[1] = { 
+            type = "rad_helios", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[2] = { 
+            type = "rad_merc_battlecruiser", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[3] = { 
+            type = "rad_cruiser", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[4] = { 
+            type = "rad_cruiser_queen", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[5] = { 
+            type = "rad_vanaarjet", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[6] = { 
+            type = "rad_qwaarjetii", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[7] = { 
+            type = "rad_armsdealer", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[8] = { 
+            type = "rad_scud", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+SurvivorNum = 8
+PersistantData = 
+{ 
+    StrikeGroups = {}, 
+    Squadrons = 
+        { 
+        Survivor[random(SurvivorNum)],
+        }, 
+        
+    Research = {}, }

@@ -1,0 +1,66 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:16:26 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "MissileTrail", 
+            length = 10, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "missilelike_boost_blue", }, 
+                { "sound", "SPECIAL/special_abilities_missle_steam_whoosh", }, 
+                { "fx_scale", "entity", }, 
+		{ "fx_nlips", "on", }, 
+            }, 
+       event1fire = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "0", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                --{ "sound", "weapon/RPG", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        event1smoke = 
+            { 
+                { "anim", "MissileTrail", }, 
+                { "animtime", "-1", }, 
+                { "marker", "MissleEngine1", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+				{ "fx", "death_generic_fighter", },
+                { "sound", "SPECIAL/SPECIAL_ABILITIES_MISSLE_STEAM", }, 
+            }, }, }

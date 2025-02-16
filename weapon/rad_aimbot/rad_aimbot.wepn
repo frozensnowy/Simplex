@@ -1,0 +1,46 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","alos_supergun_aimbot","Normal",7000,45000,0,0,0,0,3,1,1,10.5,0,0,1,0,25,25,.1,"Normal",1,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",10000,10000,"")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"rad_broadsideburst")
+AddWeaponResult(NewWeaponType,"Hit","Push","Target",60,60,"")
+
+setAngles(NewWeaponType,0,-180,180,-10,75)
+
+setMiscValues(NewWeaponType,60,0)
+
+setPenetration(NewWeaponType,50,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=1,},
+{HeavyArmour=.5,},
+{SubSystemArmour=.3,},
+{TurretArmour=1,},
+{ResArmour=1,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=.5,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=1,},
+{Corvette=1,},
+{Frigate=1, damage=1,},
+{Utility=1,},
+{munition=1,},
+{SmallCapitalShip=1, damage=1,},
+{BigCapitalShip=1, damage=1,},
+{Mothership=1, damage=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1,},
+{Resource=1,},
+{ResourceLarge=1, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+
+addAnimTurretSound(NewWeaponType,"Data:Sound/SFX/ETG/sp_elements/AnniSel")

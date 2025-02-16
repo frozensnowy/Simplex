@@ -1,0 +1,13 @@
+hitfx = "dmg_plasma_cloud_combo"
+bulletfx = "mediumplasmabullet_combo"
+nopenetratefx = "dmg_plasma_cloud_combo"
+deathtype = "deathPlasma"
+firefx = "mediumplasma_combo"
+fire_sfx = "WEAPON/MEGASHIP/FIRE/DWEAPON_MOVER_KINETIC_AUTOGUN_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+nopenetrate_sfx = "WEAPON/CORVETTE/IMPACT/WEAPON_CORVETTE_PULASAR_CANNON_BEAM_HIT"
+hit_clamp = {
+  1,
+  1,
+}

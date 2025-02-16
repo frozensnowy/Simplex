@@ -1,0 +1,56 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:59 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "ECM Emitter"
+NewSubSystemType.sobDescription = "Electronic Warfare Module"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0.0035
+NewSubSystemType.tacticalIconMinFadeSize = 0.0045
+NewSubSystemType.tacticalIconMaxFadeSize = 0.008
+NewSubSystemType.groupMergeSize = 0.001
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 130000
+NewSubSystemType.regentime = 250
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.68
+NewSubSystemType.selectionLimit = 1000
+NewSubSystemType.preciseATILimit = 1000
+NewSubSystemType.selectionPriority = 37.5
+--NewSubSystemType.battleScarMaxTriBase = 240
+--NewSubSystemType.battleScarMaxTriInc = 400
+NewSubSystemType.type = "System"
+NewSubSystemType.typeString = "destroyer_ecm_dummy"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 60
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 1
+NewSubSystemType.timeToBuild = 1
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType, 1)
+NewSubSystemType.BuildFamily = "SubSystem_Hgn"
+NewSubSystemType.AttackFamily = "SubSystem"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "Munition"    --"SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+--AddSubSystemAbility(NewSubSystemType,"DefenseField",1,"ThisShipOnly",0)
+--AddSubSystemAbility(NewSubSystemType,"DefenseFieldShield",1,"ThisShipOnly",0)
+--AddSubSystemMultiplier(NewSubSystemType, "HealthRegenerationRate", "ThisShipOnly", "Linear", 1.7, 1.7, 0)
+--AddSubSystemMultiplier(NewSubSystemType, "MAXHEALTH", "ThisShipOnly", "None", 1.5, 1.5, 0)
+
+--AddSubSystemMultiplier(NewSubSystemType, "Speed", "EnemyShipsWithinRadius", "Linear", 0.92, 0.98, 4000)
+--AddSubSystemMultiplier(NewSubSystemType, "MaxSpeed", "EnemyShipsWithinRadius", "Linear", 0.8, 0.95, 4000)
+AddSubSystemMultiplier(NewSubSystemType, "WeaponDamage", "EnemyShipsWithinRadius", "Linear", 0.8, 0.8, 4000)
+AddSubSystemMultiplier(NewSubSystemType, "WeaponAccuracy", "EnemyShipsWithinRadius", "Linear", 0.5, 0.5, 4000)
+AddSubSystemMultiplier(NewSubSystemType, "VisualRange", "EnemyShipsWithinRadius", "Linear", 0.7, 0.7, 4000)
+AddSubSystemMultiplier(NewSubSystemType, "PrimarySensorsRange", "EnemyShipsWithinRadius", "Linear", 0.7, 0.7, 4000)
+AddSubSystemMultiplier(NewSubSystemType, "SecondarySensorsRange", "EnemyShipsWithinRadius", "Linear", 0.7, 0.7, 4000)
+

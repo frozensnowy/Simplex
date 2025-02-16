@@ -1,0 +1,377 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_TurretTop",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation3 = {
+      name = "Dmg1",
+      length = 1,
+      loop = 1,
+      parent = "damage",
+      minimum = 0.9,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation4 = {
+      name = "Death",
+      length = 5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation5 = {
+      name = "Weapon_Torpedo1",
+      length = 3,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation6 = {
+      name = "Weapon_Torpedo2",
+      length = 3,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation7 = {
+      name = "Weapon_TorpedoBig",
+      length = 13,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {    
+    
+    event9 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_MS_MISSLE_LAUNCH",
+      },
+      {
+        "fx_scale",
+        "3.5",
+      },
+    },
+    event9bis = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.05",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },      
+      {
+        "fx_scale",
+        "4.5",
+      },
+    },
+    event10 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.15",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_MS_MISSLE_LAUNCH",
+      },
+      {
+        "fx_scale",
+        "3.5",
+      },
+    },
+    event10bis = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.2",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },      
+      {
+        "fx_scale",
+        "4.5",
+      },
+    },
+    
+    event101 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.3",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave1_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_MS_MISSLE_LAUNCH",
+      },
+      {
+        "fx_scale",
+        "3.5",
+      },
+    },
+    event10bis1 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.35",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave1_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },      
+      {
+        "fx_scale",
+        "4.5",
+      },
+    },
+    
+    event102 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.45",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave2_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_MS_MISSLE_LAUNCH",
+      },
+      {
+        "fx_scale",
+        "3.5",
+      },
+    },
+    event10bis2 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.5",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave2_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },      
+      {
+        "fx_scale",
+        "4.5",
+      },
+    },
+    
+    event103 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.6",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave3_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_MS_MISSLE_LAUNCH",
+      },
+      {
+        "fx_scale",
+        "3.5",
+      },
+    },
+    event10bis3 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.65",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave3_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },      
+      {
+        "fx_scale",
+        "4.5",
+      },
+    },
+    
+    event104 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.75",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave4_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_MS_MISSLE_LAUNCH",
+      },
+      {
+        "fx_scale",
+        "3.5",
+      },
+    },
+    event10bis4 = {
+      {
+        "anim",
+        "Weapon_TorpedoBig",
+      },
+      {
+        "animtime",
+        "0.8",
+      },
+      {
+        "marker",
+        "Weapon_Torpedo1Slave4_Muzzle",
+      },
+      {
+        "fx",
+        "torpedo_steam_spray",
+      },      
+      {
+        "fx_scale",
+        "4.5",
+      },
+    },
+    
+  },
+}

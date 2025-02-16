@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "detonation_smoke_particle",
+		distance = 22000,
+	},
+	lod1 = 
+	{
+		fx = "",
+		distance = 25000,
+	},		
+}

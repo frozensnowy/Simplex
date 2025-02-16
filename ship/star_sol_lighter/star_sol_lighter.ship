@@ -1,0 +1,138 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = ""
+NewShipType.sobDescription = ""
+NewShipType.maxhealth = 1000000
+NewShipType.regentime = 1
+NewShipType.minRegenTime = 1
+NewShipType.alwaysInRenderList = 1
+NewShipType.sideArmourDamage = 0
+NewShipType.rearArmourDamage = 0
+NewShipType.frontArmourDamage = 0
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 1000000
+NewShipType.collisionMultiplier = 3
+NewShipType.thrusterMaxSpeed = 1500
+NewShipType.mainEngineMaxSpeed = 1500
+NewShipType.rotationMaxSpeed = 300
+NewShipType.thrusterAccelTime = 1.5
+NewShipType.thrusterBrakeTime = 0.75
+NewShipType.mainEngineAccelTime = 1.5
+NewShipType.mainEngineBrakeTime = 0.75
+NewShipType.rotationAccelTime = 0.1
+NewShipType.rotationBrakeTime = 0.1
+NewShipType.thrusterUsage = 0.25
+NewShipType.accelerationAngle = 170
+NewShipType.mirrorAngle = 30
+NewShipType.secondaryTurnAngle = 90
+NewShipType.maxBankingAmount = 85
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 5
+NewShipType.slideMoveRange = 0
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 10
+NewShipType.tumbleStaticY = 20
+NewShipType.tumbleStaticZ = 5
+NewShipType.tumbleDynamicX = 2
+NewShipType.tumbleDynamicY = 10
+NewShipType.tumbleDynamicZ = 5
+NewShipType.tumbleSpecialDynamicX = 800
+NewShipType.tumbleSpecialDynamicY = 1000
+NewShipType.tumbleSpecialDynamicZ = 700
+NewShipType.relativeMoveFactor = 6
+NewShipType.swayUpdateTime = 2
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.05
+NewShipType.swayRotateFactor = 0.1
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.MinimalFamilyToFindPathAround = "SuperCap"
+NewShipType.mirrorAboveManeuver = "ImmelMann_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn, ImmelMann_speedy, ImmelMann_speedy, ImmelMann_speedy"
+NewShipType.mirrorBelowManeuver = "Split_S_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn, Split_S_speedy, Split_S_speedy, Split_S_speedy"
+NewShipType.specialTurnLeftManeuver = "NinetyDegLeftTurn, None, None"
+NewShipType.specialTurnRightManeuver = "NinetyDegRightTurn, None, None"
+NewShipType.BuildFamily = "Fighter_Vgr"
+NewShipType.AttackFamily = "Fighter"
+NewShipType.DockFamily = "Fighter"
+NewShipType.AvoidanceFamily = "Strikecraft"
+NewShipType.DisplayFamily = "Fighter"
+NewShipType.AutoFormationFamily = "Fighter"
+NewShipType.CollisionFamily = "Small"
+NewShipType.ArmourFamily = "LightArmour"
+NewShipType.UnitCapsFamily = "SinglePlayerMisc"		--"Fighter"
+NewShipType.UnitCapsShipType = "Drone"
+NewShipType.fighterValue = 20
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 20
+NewShipType.antiCorvetteValue = 20
+NewShipType.antiFrigateValue = 20
+NewShipType.totalValue = 20
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.healthBarStyle = 3
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 10000000
+NewShipType.dotRenderLimit = 100
+NewShipType.visibleInSecondary = 1
+NewShipType.goblinsStartFade = 24000
+NewShipType.goblinsOff = 24000
+NewShipType.upLOD = 24000
+NewShipType.upLOD = 30000
+NewShipType.downLOD = 24015
+NewShipType.downLOD = 30015
+NewShipType.minimumZoomFactor = 1
+NewShipType.selectionLimit = 10000000
+NewShipType.preciseSelectionLimit = 5000000
+NewShipType.preciseATILimit = 10000000
+NewShipType.selectionPriority = 55
+NewShipType.militaryUnit = 0
+NewShipType.canHaveFog = 0
+NewShipType.canHaveShadows = 0
+NewShipType.canBlink = 0
+NewShipType.SMHighlightDistMin = 10000000
+NewShipType.SMHighlightDistMax = 10000000
+addAbility(NewShipType, "MoveCommand", 1, 0)
+addAbility(NewShipType, "CanDock", 1, 1)
+NewShipType.dockTimeBetweenTwoFormations = 0.5
+NewShipType.dockTimeBeforeStart = 0.5
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "dockline"
+NewShipType.queueFormation = "n_delta"
+NewShipType.ignoreRaceWhenDocking = 1
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 0.5
+NewShipType.launchTimeBeforeStart = 0.5
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "n_delta"
+addAbility(NewShipType, "ParadeCommand", 1)
+addAbility(NewShipType, "WaypointMove")
+addAbility(NewShipType,"CanAttack",1,1,1,0,0.35,1,"SubSystem, Capturer, Frigate, SmallCapitalShip, BigCapitalShip, ResourceLarge, Mothership, Resource, Corvette, Fighter, Utility","flyround_sunflare",
+{ 
+    Fighter = "flyround_sunflare", 
+}, 
+{ 
+    Corvette = "flyround_sunflare", 
+}, 
+{ 
+    SubSystem = "flyround_sunflare", 
+}, 
+{ 
+    Frigate = "flyround_sunflare", 
+}, 
+{ 
+    Utility = "flyround_sunflare", })
+
+LoadModel(NewShipType, 1)
+
+StartShipWeaponConfig(NewShipType, "aircombat_dummyweapon_solarflare", "Weapon_Launcher0", "")
+
+NewShipType.sobDieTime = 2
+NewShipType.deadSobFadeTime = 1

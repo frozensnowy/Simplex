@@ -1,0 +1,60 @@
+-- =============================================================================
+-- Homeworld 2 Clean Data Resource Project
+-- By S110
+-- Version 1.0
+-- 02/06/2010
+-- Tools used: EditPad Lite, LuaDC version 0.9.19, and Cold Fusion LUA Decompiler v1.0.0
+-- =============================================================================
+
+RAD_BEAMFRIGATE_Launched_OnSet = function(ship)
+	stopAnim(ship, "Close")
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+
+RAD_BEAMFRIGATE_Docked_OnSet = function(ship)
+	stopAnim(ship, "Open")
+    startAnim(ship, "Close")
+    setPauseTime(ship, "Close", 1000)
+end
+
+RAD_BEAMFRIGATE_CodeRed_OnSet = function(ship)
+    setState(ship, "CodeRed", 0)
+    -- don't do this twice!
+    startTime = 0
+    if(isAnimRunning(ship,"ArrayOpen") == 0) then
+        -- close already running? need to offset in to the open animation
+        if(isAnimRunning(ship,"ArrayClose") ~= 0) then
+            startTime = getAnimLength(ship, "ArrayClose") - getTime(ship, "ArrayClose")
+            stopAnim(ship, "ArrayClose")
+            endEffect(ship, "ArrayClose")
+        end
+    end
+    startAnim(ship, "ArrayOpen")
+    startEffect(ship, "ArrayOpen")
+    setTime(ship,"ArrayOpen",startTime)
+    setPauseTime(ship, "ArrayOpen", 1000)
+end
+
+RAD_BEAMFRIGATE_CodeRed_OnPause = function(ship)
+    setState(ship, "CodeRed", 1)
+end
+
+RAD_BEAMFRIGATE_CodeGreen_OnSet = function(ship)
+	endEffect(ship, "Opened")
+    -- already closing?
+    startTime = 0
+    if(isAnimRunning(ship,"ArrayClose") == 0) then
+        -- open already running? need to offset in to the close animation
+        if(isAnimRunning(ship,"ArrayOpen") ~= 0) then
+            startTime = getAnimLength(ship, "ArrayOpen") - getTime(ship, "ArrayOpen")
+            stopAnim(ship, "ArrayOpen")
+            endEffect(ship, "ArrayOpen")
+        end
+    end
+	startAnim(ship, "ArrayClose")
+    startEffect(ship, "ArrayClose")
+    setTime(ship,"ArrayClose",startTime)
+    setPauseTime(ship, "ArrayClose", 1000)
+end

@@ -1,0 +1,22 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:01 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "SphereBurst", "kpr_areaburst", "Normal", 0, 0, 400, 2, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 1, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 15, 15, "")
+setPenetration(NewWeaponType, 15, 1, 
+{ 
+    unarmoured = 0.5, 
+}, 
+{ 
+    lightarmour = 1.5, 
+}, 
+{ 
+    mediumarmour = 3, 
+}, 
+{ 
+    heavyarmour = 5, 
+}, 
+{ 
+    PlanetKillerArmour = 0, })

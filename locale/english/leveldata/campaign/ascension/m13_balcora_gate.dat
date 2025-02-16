@@ -1,0 +1,177 @@
+filerange 46000 46499
+rangestart 46000 46499
+// objectives
+46000	Destroy the Vaygr forces attacking the Gate's power generators.
+46001	Destroy Vaygr Shipyard.
+46002	Investigate power signature
+46003	Use Dreadnaught to activate Balcora Gate
+46004	Protect the Dreadnaught
+
+// player names
+46010	Hiigaran Navy
+46011	Vaygr
+46012	Progenitor
+
+
+// location cards
+46020	BALCORA GATE
+46021	SHOW NIS13
+46022	MISSION SUCCESSFUL
+46023	MISSION FAILED
+46024	INSERT NIS13B - PLAYER'S MOTHERSHIP GOES THROUGH GATE
+
+
+// intelevent_stopthem
+// FC
+46029	Makaan has used a Progenitor Dreadnaught to open Balcora Gate.
+46025	Beyond lies Sajuuk, the Great Maker.
+
+
+// FI
+46030	The Vaygr are concentrating fire on three power subsystems located here.
+// FI
+46031	We must stop them before they disable the Gate.
+
+
+// speechevent_generatorLowHealthNoGeneratorsSaved
+// FI
+46038	Sensors indicate heavy damage to the Gate's power generators.
+// FI
+46039	The Bentusi Archive, indicates that at least one generator must remain intact for the Gate to function.
+46037	According to the data provided by the Oracle, at least one generator must remain intact for the Gate to function.
+
+
+// speechevent_lost1GeneratorNoneSaved
+// FI
+46040	The Vaygr have destroyed one power generator.
+// FI
+46041	We need at least one operational generator for the Gate to function.
+// FI
+46042	Prevent the Vaygr from destroying the remaining generators at all costs.
+
+
+// speechevent_saved1Generator
+// FI
+46045	Vaygr forces destroyed.
+// FI
+46046	One generator is safe.
+
+
+// speechevent_lost1GeneratorSavedOne
+// FI
+46050	Gate power generator lost.
+
+
+// speechevent_saved3Generators
+// FI
+46051	Vaygr forces eliminated.  Balcora Gate is now under our control.
+
+
+// speechevent_lost2GeneratorsNoneSaved
+// FI
+46055	The gate has lost a second generator.
+// FI
+46056	The last power subsystem must survive.
+
+
+// speechevent_saved2Generators
+// FI
+46060	Vaygr forces destroyed.
+// FI
+46061	Two of the generators are safe.
+
+
+// speechevent_lost2GeneratorsSavedOne
+// FI
+46065	Vaygr forces have destroyed two power generators.
+
+
+// speechevent_lost3Generators
+// FC
+46070	All three generators are destroyed.
+// FC
+46071	The Gate is lost.
+
+
+
+// intelevent_shipyardDetected
+// FI
+46100	Vaygr Shipyard detected.
+// FI
+46101	It must be destroyed to prevent the Vaygr from launching further attacks on the Gate.
+
+
+// speechevent_shipyardDestroyed
+// FI
+46105	The Vaygr Shipyard has been destroyed.
+
+
+// speechevent_sendScoutToInvestigate
+// FI
+46106	Sensors are detecting a large power signature in this area.
+// FI
+46107	Send a Scout to investigate.
+
+
+
+// speechevent_gateReadyForUse
+// FI
+46110	The Dreadnaught is communicating with the Gate. The initialization sequence has begun. 
+// FI
+46111	Bring the Dreadnaught within firing range of the gate and engage it.
+
+
+// speechevent_gateOpen
+// FC
+46115	The gate is open...
+46116	...stand by...
+
+
+//  speechevent_dreadnaughtDamaged
+//  Fleet Command
+46120	Dreadnaught hull integrity at 20 percent and falling.
+//  Fleet Intel
+46121	We cannot lose the Dreadnaught.
+46122	Allocate combat vessels to protect it.
+
+//  speechevent_playerlosesDreadnaught
+//  Fleet Intel
+46125	The Dreadnaught has been destroyed.
+
+
+
+// pings
+46400	Gate attack force 1
+46401	Gate attack force 2
+46402	Gate attack force 3
+46403	Vaygr Shipyard
+46404	Power signature
+
+// ping descriptions
+// description for 46400
+46420	Destroy the Vaygr forces.
+
+// description for 46403
+46425	Destroy the Vaygr Shipyard
+
+// description for 46404
+46430	Investigate the power signature.
+
+// objective descriptions
+// description for 46000
+46450	Destroy the Vaygr before they are able to destroy the Gate.
+
+// description for 46001
+46455	Destroy the Vaygr Shipyard.
+
+// description for 46002
+46460	Investigate the Power Signature.
+
+// description for 46003
+46465	Use the Dreadnaught's special attack to open the Gate.
+46466	Select the DREADNAUGHT, then hold down CTRL and SHIFT and leftclick on the Gate to use the special attack.
+
+// description for 46004
+46467	Do not allow the Dreadnaught to be destroyed.
+
+rangeend

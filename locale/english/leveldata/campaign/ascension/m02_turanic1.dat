@@ -1,0 +1,118 @@
+filerange 60000 61099
+rangestart 60000 61099
+
+60000	UNKNOWN LOCATION - NEBULA OUTSKIRTS
+
+// intelevent_initialization
+//FC
+60100   Hyperspace Jump failed. We have misjumped.
+//FI
+60101	The Hyperspace Core and critical systems survived the emergency jump, but we have exited far off-course in an uncharted nebula.
+60102	Long-range scanners are offline and the surrounding nebula and background radiation are crippling mobility. 
+60103   Fleet operations will remain at minimum capacity until we rendezvous with the crew transports at Hiigara.
+// Fleet Command
+60104	Unable to initiate hyperspace. The jump has drained all available power from the core.
+
+// Fleet Intelligence
+60105	The hyperspace core is critically low on power, and it will take some time to recharge. Until then, regaining situational awareness is our main priority.
+60106	Deploy scout squadrons to these coordinates to establish a sensor perimeter around the mothership.
+60107	Caution: The fleet is operating on emergency reserves and we have no reliable data on potential hostiles. All units remain on high alert.
+
+// intelevent_turanicraidersspotted
+//ScoutSquadron (Actor_AllShips)
+60200	Command, picking up multiple contacts bearing 420. Configuration and intent unknown.
+60201	Wait, they're powering weapons!
+//FI
+60202	All Squadrons, return to the mothership immediately. Unknown hostiles on approach vector.
+60203	We must defend the mothership at all costs.
+
+// Return control to the player now. Wait 5 seconds and play:
+//Pirate Raiders1
+60230	Well well well... what do we have here boys? Hiigaran Navy, lost in our little corner?
+//Pirate Raiders2
+60231	Look at their mothership! I bet it'll fetch a nice price on the black market!
+
+// analysis_turanicraiders - During this the waves at wave 2, we don't remove control from the player continue for a bit longer.
+//FI
+60250	Analysis of enemy craft complete. Configuration matches turanic raider design patterns. This is... Unexpected. The raiders haven't been seen in Hiigaran space in decades.
+//FC
+60251	They're using the nebula for cover. Standard pirate hit and run tactics.
+
+// heavy_interceptors_unlock
+60555	Engineering has adapted Raider missile technology. Heavy Interceptors are now available for construction.
+
+// Heavy Interceptor Secondary Objective
+60560	Build a Heavy Interceptor Squadron
+60561	Construct a Heavy Interceptor squadron to test the newly adapted missile technology against the attacking pirates.
+
+// intelevent_capitalclassincoming
+//FI
+60300	Priority alert!
+60301	Capital class signature detected.
+//FC
+60302	Stay calm, configuration and sensor watermarks matches Hiigaran patterns. It's a Battle Carrier.
+//BattleCarrierGroup
+60303	Pride of Hiigara, this is battlegroup Selum. We have been searching for you since the attack on Tanis. Your misjump may have been fortunate, we have discovered something you need to see. 
+
+
+// They send aid to us, and we wait until they reached us. The carrier remains far away but the aid is welcome. Then we play this.
+//FC
+60304	Battlegroup Selum, you were meant to randevous with us at Tanis.
+//BattleCarrierGroup
+60305	Affirmative. We were delayed by Vaygr patrols in the outer sectors.
+60306	When we received word of the attack, we diverted, hoping to intercept your exit signature.
+
+
+// We stop the wave sending, and wait for all enemies to be destroyed. Then proceed.
+// intelevent_establishtrade
+//FI
+60350	With resourcing operations limited, and the core still recharging, trading resources may be in our best interest.
+60351	Build a trade convoy and establish a trade route with the Battle Carrier.
+
+// sensor_found_beacons
+60400	Caution. We are detecting the presence of turanic raider beacons in the vicinity.
+60401	If the Raiders detect our combined presence, they are bound to call in reinforcements.
+60402	The carrier is transfering two spy squadrons to us. They are equiped with cloaking generators.
+60403	Use the spy squadrons to destroy the raider beacons.
+
+// Scout Point Pings
+60450	Scout Point Alpha
+60451	Scout Point Beta  
+60452	Scout Point Gamma
+60453	Scout Point Delta
+
+// Scout Point Descriptions
+60460	Deploy scouts to establish sensor perimeter - Point Alpha
+60461	Deploy scouts to establish sensor perimeter - Point Beta
+60462	Deploy scouts to establish sensor perimeter - Point Gamma
+60463	Deploy scouts to establish sensor perimeter - Point Delta
+
+// Scout Point Reached Messages
+60471	Alpha sector integrated into sensor network.
+60472	Beta position secured. Updating sensor grid. 
+60473	Gamma point established. Expanding coverage.
+60474	Delta sector online. Sensor perimeter complete.
+
+// Scout Objectives
+60480	Deploy Scout Perimeter
+60481	Send scouts to the marked locations to establish a sensor network around the mothership.
+60482	Construct four scouts by clicking on the build menu, selecting the fighters tab and clicking on the scout icon four times.
+
+// Defend the Mothership Objective and descriptions
+60483	Defend the Mothership.
+60484	The Pride of Hiigara is under attack. Construct Interceptor squadrons to defend against incoming hostiles.
+
+// HeavyInterceptorUnlocked
+60555	We have reverse engineered the missile launch systems found on some of the Pirate crafts. Heavy Interceptors are now available for construction.
+
+// Low Pilot Warning Event
+60570	All available pilots have been deployed... Unable to maintain combat effectiveness.
+60571	Mayday. This is the Pride of Hiigara broadcasting on all open frequencies. We are under attack and unable to fight back! I repeat, mayday, mayday!
+60572	The signal is being degraded by nebula interference. Transmission range compromised.
+
+// Pirate Raider Mocking
+60573	Aww, poor Hiigara. Guess you're gonna find out what it's like to lose your homeworld after all!
+60574	Yar, I call dibs on the bald chick in the core!! Bet she's got some fine Hiigaran ass!!
+60575	Mmmh Hah, as if I'd let you anywhere near that booty!
+
+rangeend 

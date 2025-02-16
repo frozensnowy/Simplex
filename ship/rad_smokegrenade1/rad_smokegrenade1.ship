@@ -1,0 +1,170 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:10 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Smoke Grenade"
+NewShipType.sobDescription = "Smoke Screen Generator"
+NewShipType.maxhealth = 400000
+NewShipType.regentime = 350
+NewShipType.minRegenTime = 35
+NewShipType.frontArmourDamage = 0.6
+NewShipType.sideArmourDamage = 0.6
+NewShipType.rearArmourDamage = 0.6
+NewShipType.isTransferable = 1
+NewShipType.useEngagementRanges = 0
+NewShipType.unitCapsNumber = 1
+NewShipType.SquadronSize = 1
+NewShipType.passiveFormation = "Spear"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 1
+NewShipType.collisionMultiplier = 0.01
+NewShipType.thrusterMaxSpeed = 200	--675
+NewShipType.mainEngineMaxSpeed = 200	--675
+NewShipType.rotationMaxSpeed = 71
+NewShipType.thrusterAccelTime = 3
+NewShipType.thrusterBrakeTime = 2
+NewShipType.mainEngineAccelTime = 3
+NewShipType.mainEngineBrakeTime = 2
+NewShipType.rotationAccelTime = 0.6
+NewShipType.rotationBrakeTime = 0.6
+NewShipType.thrusterUsage = 1
+NewShipType.accelerationAngle = 180
+NewShipType.mirrorAngle = 180
+NewShipType.secondaryTurnAngle = 0
+NewShipType.maxBankingAmount = 85
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 0
+NewShipType.slideMoveRange = 0
+NewShipType.controllerType = "Missile"	--"Ship"
+NewShipType.tumbleStaticX = 0
+NewShipType.tumbleStaticY = 0
+NewShipType.tumbleStaticZ = 0
+NewShipType.tumbleDynamicX = 0
+NewShipType.tumbleDynamicY = 0
+NewShipType.tumbleDynamicZ = 0
+NewShipType.tumbleSpecialDynamicX = 0
+NewShipType.tumbleSpecialDynamicY = 0
+NewShipType.tumbleSpecialDynamicZ = 0
+NewShipType.relativeMoveFactor = 6
+NewShipType.swayUpdateTime = 2
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.05
+NewShipType.swayRotateFactor = 0
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.MinimalFamilyToFindPathAround = "SuperCap"
+NewShipType.mirrorAboveManeuver = "ImmelMann_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn"
+NewShipType.mirrorBelowManeuver = "Split_S_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn"
+NewShipType.specialTurnLeftManeuver = "NinetyDegLeftTurn, None, None"
+NewShipType.specialTurnRightManeuver = "NinetyDegRightTurn, None, None"
+NewShipType.BuildFamily = "NotBuildable"
+NewShipType.AttackFamily = "Frigate"
+NewShipType.DockFamily = "CantDock"
+NewShipType.AvoidanceFamily = "DontAvoid"
+NewShipType.DisplayFamily = "Munition"
+NewShipType.AutoFormationFamily = "Frigate"
+NewShipType.CollisionFamily = "Small"
+NewShipType.ArmourFamily = "MediumArmour"
+--NewShipType.UnitCapsFamily = "Utility"
+--NewShipType.UnitCapsShipType = "Probe"
+NewShipType.fighterValue = 1
+NewShipType.corvetteValue = 1
+NewShipType.frigateValue = 12
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 0
+NewShipType.buildCost = 1
+NewShipType.buildTime = 1
+NewShipType.buildPriorityOrder = 40
+NewShipType.retaliationRange = 12000
+NewShipType.retaliationDistanceFromGoal = 160
+NewShipType.visualRange = 0
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "circle"
+NewShipType.TOScale=1
+NewShipType.TODistanceFade0=7000
+NewShipType.TODistanceDisappear0=5000
+NewShipType.TODistanceFade1=350
+NewShipType.TODistanceDisappear1=300
+NewShipType.TODistanceFade2=25000
+NewShipType.TODistanceDisappear2=12000
+NewShipType.TOGroupScale=1
+NewShipType.TOGroupMergeSize=0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 3
+NewShipType.nlips = 0.0003
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.0002
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "Invisible"
+NewShipType.meshRenderLimit = 4000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 1
+NewShipType.goblinsStartFade = 150
+NewShipType.goblinsOff = 150
+NewShipType.upLOD = 400
+NewShipType.upLOD = 1000
+NewShipType.upLOD = 1700
+NewShipType.downLOD = 405
+NewShipType.downLOD = 1005
+NewShipType.downLOD = 1705
+NewShipType.minimumZoomFactor = 0.7
+NewShipType.selectionLimit = 0
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 0
+NewShipType.militaryUnit = 0
+NewShipType.alternativeHyperspaceV = ""
+NewShipType.alternativeHyperspaceA = "etg/special/SilentHyperspace"
+NewShipType.alternativeHyperspaceTime = 0
+--addAbility(NewShipType, "MoveCommand", 1, 0)
+--addAbility(NewShipType, "CanDock", 1, 0)
+NewShipType.dockTimeBetweenTwoFormations = 0
+NewShipType.dockTimeBeforeStart = 0
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "delta"
+NewShipType.queueFormation = "dockline"
+NewShipType.dontDockWithOtherRaceShips = 0
+NewShipType.ignoreRaceWhenDocking = 1
+addAbility(NewShipType, "CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 0
+NewShipType.launchTimeBeforeStart = 7
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "delta"
+--addAbility(NewShipType, "ParadeCommand", 1)
+--addAbility(NewShipType, "WaypointMove")
+addAbility(NewShipType, "HyperSpaceCommand", 1, 1, 0, 0, 0, 15)
+addAbility(NewShipType, "CanAttack", 1, 1, 1, 0, 0.35, 1, "Fighter, Corvette, Capturer, Frigate, SmallCapitalShip, BigCapitalShip, Mothership", "FlyBy", 
+{ 
+    Fighter = "DogFight", 
+}, 
+{ 
+    Corvette = "FlyBy", 
+}, 
+{ 
+    SubSystem = "TopAttack", 
+}, 
+{ 
+    Frigate = "FlyBy", 
+}, 
+{ 
+    Utility = "FlyBy", })
+addAbility(NewShipType, "GuardCommand", 1, 6200, 500)
+--addAbility(NewShipType, "CloakAbility", 1, 3.1, 500, 4000, 0, 100, 1, 1000)
+LoadModel(NewShipType, 1)
+addShield(NewShipType, "EMP", 500, 20)
+NewShipType.sobDieTime = 0.1
+NewShipType.sobSpecialDieTime = 1
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0
+NewShipType.deadSobFadeTime = 1

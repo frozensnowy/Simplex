@@ -1,0 +1,18 @@
+16_64_fire     fire good sprite texture, too bright maybe
+22_64_bright   excellent sprite texture 
+24_128_pale     a little too repetative, excellent good for big detonations
+6_64_fireball  very nice body, good for small detonations and bulk, red
+7_256_yellow excellent yellow fire sprite
+7_512_huge good for background 
+
+
+7_64_green
+7_64_red
+
+
+9_64_continous great for bulky explosions
+7_256_flame   good sprite
+
+
+44_64_vertical very good and detail ideal for primary detonations
+47_64_additive very colored

@@ -1,0 +1,36 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 15, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "blackhole_disk_emitter", }, 
+			{ "sound", "", }, 
+			{ "fx_scale", "3", }, 
+      { "fx_sm", "on", }, 
+		}, 
+		
+	},
+	
+}

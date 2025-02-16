@@ -1,0 +1,45 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Missile","rad_largetorpedolr","Normal",820,50000,0,0,0,0,1,0,1,40,0,0,1,0,60,60,0.1,"Normal",0,0,0)
+
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 5000, 5000, "")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"rad_broadsideburst_ghost")
+AddWeaponResult(NewWeaponType,"Miss","SpawnWeaponFire","Target",0,0,"rad_broadsideburst_ghost")
+
+setAngles(NewWeaponType,60,-12,12,-12,12)
+
+setMiscValues(NewWeaponType,60,.7)
+
+setPenetration(NewWeaponType,50,.5,
+{Unarmoured=.5,},
+{LightArmour=.5,},
+{MediumArmour=.5,},
+{HeavyArmour=.5,},
+{SubSystemArmour=.5,},
+{TurretArmour=.5,},
+{ResArmour=.6,},
+{MoverArmour=.5,},
+{PlanetKillerArmour=0,},
+{MineArmour=.5,},
+{ChunkArmour=.5,},
+{CruiseMissileArmour=.5,},
+{SuperHeavyArmor=.5,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=0,},
+{Corvette=0,},
+{Frigate=.4, damage=1,},
+{Utility=1,},
+{munition=0,},
+{SmallCapitalShip=.6, damage=1,},
+{BigCapitalShip=.6, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=1,},
+{Resource=1,},
+{ResourceLarge=.6, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+

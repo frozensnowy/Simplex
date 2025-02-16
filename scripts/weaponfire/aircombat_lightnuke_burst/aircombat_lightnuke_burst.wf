@@ -1,0 +1,11 @@
+hitfx = "dmg_nukemissile_explode_combo_sml"	--"dmg_nukemissile_explode_combo_NOFLARE"
+bulletfx = "dmg_nukemissile_explode_combo_sml"	
+nopenetratefx = "dmg_missle_explode_combo"
+deathtype = "deathCannon"
+scartype = "Hgn_Torpedo/Torpedo"
+bullet_sfx = "WEAPON/RandomSample/CometMissileExplosion"
+nopenetrate_sfx = "WEAPON/RandomSample/CometMissileExplosion"
+hit_clamp = {
+  1,
+  1,
+}

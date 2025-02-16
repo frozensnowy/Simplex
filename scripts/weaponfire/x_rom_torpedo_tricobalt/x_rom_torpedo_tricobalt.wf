@@ -1,0 +1,12 @@
+
+hitfx = "xplosion_hit_Xlarge_emitter"
+bulletfx = "bullet_generic"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Tricobalt/Tricobalt"
+firefx = ""
+fire_sfx = "WEAPON/ROM/TNG/ROM_TRICOBALT_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HEAVY_HIT"
+nopenetrate_sfx = "WEAPON/ALL/HIT/HULL_TORPEDO_HEAVY_HIT"
+hit_clamp = 
+    { 1, 1, }

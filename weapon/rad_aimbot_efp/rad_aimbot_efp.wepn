@@ -1,0 +1,45 @@
+StartWeaponConfig(NewWeaponType,"Gimble","Bullet","alos_supergun","Special Attack",7000,10000,0,0,0,0,3,1,1,30,0,0,1,0,500,500,.1,"Normal",1,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",240000,240000,"")
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"rad_broadsideburst")
+AddWeaponResult(NewWeaponType,"Hit","Push","Target",600,600,"")
+
+setAngles(NewWeaponType,60,0,0,0,0)
+
+setMiscValues(NewWeaponType,0,0)
+
+setPenetration(NewWeaponType,50,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=1,},
+{HeavyArmour=1,},
+{SubSystemArmour=1,},
+{TurretArmour=1,},
+{ResArmour=1,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=0,},
+{Corvette=0,},
+{Frigate=1, damage=1,},
+{Utility=1,},
+{munition=0,},
+{SmallCapitalShip=1, damage=1,},
+{BigCapitalShip=1, damage=1,},
+{Mothership=1, damage=1,},
+{Emplacement=1,},
+{UnAttackable=0,},
+{SubSystem=1,},
+{Resource=0,},
+{ResourceLarge=1, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=0,},
+{AsteroidSmasher=0,},
+{Location=1,})
+

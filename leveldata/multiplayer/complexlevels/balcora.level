@@ -1,0 +1,699 @@
+startNum = 0
+function ringAdd(fPosX, fPosY, fPosZ, rDistTable, fAxis1, fAxis2, fWidth, fThickness, fRotY, fRotZ, fArc1, fArc2, iMode)
+	local width, thick, arc, theta, thetaX, thetaY, thetaZ, rotyX, rotyY, rotyZ, rotzX, rotzY, rotzZ, cooX, cooY, cooZ = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	local minAxis = min(fAxis1, fAxis2)
+	local majAxis = max(fAxis1, fAxis2)
+	local minArc = min(fArc1, fArc2)
+	local maxArc = max(fArc1, fArc2)
+	for k, iCount in rDistTable do
+		for i = 1, iCount.number do
+			if (iMode == 1) then		--if set to random mode
+				theta = random(minArc, maxArc)
+				thetaX = cos(theta)*(majAxis + random(fWidth/-2, fWidth/2))
+				thetaY = sin(theta)*sqrt((majAxis + random(fWidth/-2, fWidth/2))^2 - majAxis^2 + minAxis^2)
+				thetaZ = random(fThickness/-2, fThickness/2)
+			elseif (iMode == 0) then		--if set to non-random mode
+				theta = minArc + arc
+				thetaX = cos(theta)*majAxis		--(majAxis + fWidth/-2 + width)
+				thetaY = sin(theta)*minAxis		--sqrt((majAxis + fWidth/-2 + width)^2 - majAxis^2 + minAxis^2)
+				thetaZ = 0		--(fThickness/-2 + thick)
+			end
+			arc = arc + (maxArc-minArc)/iCount.number
+			width = width + fWidth/iCount.number
+			thick = thick + fThickness/iCount.number
+			rotyX = sin(fRotY)*thetaZ + cos(fRotY)*thetaX
+			rotyY = thetaY
+			rotyZ = cos(fRotY)*thetaZ - sin(fRotY)*thetaX
+			rotzX = cos(fRotZ)*rotyX - sin(fRotZ)*rotyY
+			rotzY = sin(fRotZ)*rotyX + cos(fRotZ)*rotyY
+			rotzZ = rotyZ
+			cooX = rotzX
+			cooY = rotzY
+			cooZ = rotzZ
+			if (iCount.class == "Point") then
+				if (iCount.name == "StartPos") then
+					if startNum == 0 then
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 50, 0})
+					elseif startNum == 1 then
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, -135, 0})
+					elseif startNum == 2 then 
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 125, 0}) 
+					elseif startNum == 3 then 
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, -50, 0}) 
+					elseif startNum == 4 then 
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, -180, 0})   
+					else
+					  addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})    					
+					end  
+					startNum = startNum + 1					
+				else
+					addPoint(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+				end
+			elseif (iCount.class == "Sphere") then
+				addSphere(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.size)
+			elseif (iCount.class == "Camera") then
+				addCamera(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+			elseif (iCount.class == "Squadron") then
+				addSquadron(iCount.name .. (i-1), iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.player, iCount.rotation, 0, 0)
+			elseif (iCount.class == "Asteroid") then
+				addAsteroid(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Salvage") then
+				addSalvage(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Pebble") then
+				addPebble(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 0, 0, 0)
+			elseif (iCount.class == "Cloud") then
+				addCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "DustCloud") then
+				addDustCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "Nebula") then
+				addNebula(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "EasyPatch") then
+				easyPatch(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)
+			elseif (iCount.class == "EasyPatch1") then
+				easyPatch1(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)
+			end
+		end
+	end
+end
+-----------------------------------------------------------------------------------------------------------
+function asteroidAdd(fPosX, fPosY, fPosZ, sLayout, rDistTable, a, b, c, fRotY, fRotZ)	
+	local rel, cooX, cooY, cooZ = 0, 0, 0, 0
+	for k, iCount in rDistTable do
+		rel = rel + iCount.number
+	end
+	for k, iCount in rDistTable do
+		local minAB, maxAB = min(a, b), max(a, b)
+		for i = 1, iCount.number do		--for i = 1, num*iCount.number do
+			local r, u, v, l, w, h = random(minAB, maxAB), random(0, 180), random(0, 360), random(-0.5*a, 0.5*a), random(-0.5*b, 0.5*b), random(-0.5*c, 0.5*c)
+			if sLayout == "Cylinder" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) - sin(fRotZ)*r*sin(v)
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*r*cos(v)) + cos(fRotZ)*r*sin(v)
+				cooZ = cos(rotY)*h - sin(rotY)*r*cos(v)
+			elseif sLayout == "Sphere" then
+				cooX = sqrt(r^2-(r*cos(u))^2)*cos(v)
+				cooY = sqrt(r^2-(r*cos(u))^2)*sin(v)
+				cooZ = r*cos(u);
+			elseif sLayout == "Box" then
+				cooX = cos(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) - sin(fRotZ)*w
+				cooY = sin(fRotZ)*(sin(fRotY)*h + cos(fRotY)*l) + cos(fRotZ)*w
+				cooZ = cos(fRotY)*h - sin(fRotY)*l
+			end
+			if (iCount.class == "Point") then
+				if (iCount.name == "StartPos") then
+					addPoint(iCount.name .. startNum, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+					startNum = startNum + 1					
+				else
+					addPoint(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+				end
+			elseif (iCount.class == "Sphere") then
+				addSphere(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.size)
+			elseif (iCount.class == "Camera") then
+				addCamera(iCount.name .. (i-1), {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, {0, 0, 0})
+			elseif (iCount.class == "Squadron") then
+				addSquadron(iCount.name .. (i-1), iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.player, iCount.rotation, 0, 0)
+			elseif (iCount.class == "Asteroid") then
+				addAsteroid(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Salvage") then
+				addSalvage(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 100, 0, 0, 0, 0)
+			elseif (iCount.class == "Pebble") then
+				addPebble(iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, 0, 0, 0)
+			elseif (iCount.class == "Cloud") then
+				addCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "DustCloud") then
+				addDustCloud(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "Nebula") then
+				addNebula(iCount.kind, iCount.type, {fPosX + cooX, fPosZ + cooZ, fPosY + cooY,}, iCount.color, 0.0, iCount.size)
+			elseif (iCount.class == "EasyPatch") then
+				easyPatch(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)
+			elseif (iCount.class == "EasyPatch1") then
+				easyPatch1(fPosX + cooX, fPosZ + cooZ, fPosY + cooY)	
+			end
+		end
+	end
+end
+--------------------------------------------------------------------------------------------------------------------------
+function easyPatch(epX, epZ, epY)	
+	local easyPatchDist =
+	{
+	  Asteroid_5 = {1, 0, 0,},   --450 spazio
+		Asteroid_4 = {1, 450, 750,},   --300 
+		Asteroid_3 = {3, 800, 1050,},   --250 
+		Asteroid_2 = {1, 1075, 1100,},   --150
+		Asteroid_1 = {2, 1125, 1150,},   --100
+	}
+	for k, iCount in easyPatchDist do
+		for j = 1, iCount[1] do
+			local r, phi, theta = random(iCount[2], iCount[3]), random(0, 360), random(0, 360)
+			addAsteroid(k, {epX + sqrt(r^2-(r*cos(phi))^2)*cos(theta), epZ + r*cos(phi), epY + sqrt(r^2-(r*cos(phi))^2)*sin(theta),}, 100, 0, 0, 0, 0)
+		end
+	end
+end
+------------------------------------------------------------------------------------------------------------------------------------
+function easyPatch1(epX, epZ, epY)
+	local easyPatchDist =
+	{
+	  Asteroid_5 = {1, 0, 0,},   --450 spazio
+		Asteroid_4 = {2, 450, 750,},   --300 
+		Asteroid_3 = {3, 800, 1050,},   --250 
+		Asteroid_2 = {2, 1075, 1100,},   --150
+		Asteroid_1 = {2, 1125, 1150,},   --100
+	}
+	for k, iCount in easyPatchDist do
+		for j = 1, iCount[1] do
+			local r, phi, theta = random(iCount[2], iCount[3]), random(0, 360), random(0, 360)
+			addAsteroid(k, {epX + sqrt(r^2-(r*cos(phi))^2)*cos(theta), epZ + r*cos(phi), epY + sqrt(r^2-(r*cos(phi))^2)*sin(theta),}, 100, 0, 0, 0, 0)
+		end
+	end
+end
+---------------------------------------------------------------------------------------------------------------------------------------
+levelDesc = "Balcora"
+maxPlayers = 6
+player =
+{
+	{id = 0, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 1, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 2, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 3, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+	{id = 4, name = "Vaygr", resources = 1500, raceID = 2, startPos = 1,},
+	{id = 5, name = "Hiigaran", resources = 1500, raceID = 1, startPos = 1,},
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+function DetermChunk()
+	setWorldBoundsInner({0, 0, 0}, {62000, 62000, 62000})
+	setWorldBoundsOuter({0, 0, 0}, {63000, 63000, 63000})
+	addSquadron("io", "io", {350000, -150000, -70000}, -1, {0, 45, 0}, 0, 0)			
+	addSquadron("BentusMain", "meg_balcoragate", {0, 0, 0}, -1, {-5, 7, -9}, 0, 0)
+	local playerPositionRing =
+	{
+		Point0 =
+		{
+			class = "Point",
+			name = "StartPos",		-- special case
+			rotation = "toCenter",		-- needs work
+			teams = 0,		-- needs work
+			bias = 0,		-- needs work
+			number = 2,	-- if StartPos, total should always equal maxPlayers
+		},              
+	}
+	local playerPatchRing =
+	{
+		EasyPatch0 =
+		{
+			class = "EasyPatch",
+			number = 2,
+		},
+	}
+	local easyPatchRing =
+	{
+		EasyPatch1 =
+		{
+			class = "EasyPatch",
+			number = 2,
+		},                
+	}
+	local centerSphere =
+	{
+		Cloud0 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 8500,
+			number = 4,
+		},
+		Cloud1 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 6500,
+			number = 6,
+		},
+		Salvage0 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg01",
+			number = 1,
+		},
+		Salvage1 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg02",
+			number = 1,
+		},
+		Salvage2 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg03",
+			number = 1,
+		},
+		Salvage3 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg04",
+			number = 1,
+		},
+		Salvage4 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg05",
+			number = 1,
+		},
+		Bentus1 =
+		{
+			class = "Squadron",
+			name = "Bentus1",
+			type = "meg_veildebris_bit1",
+			rotation = {60, -45, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus2 =
+		{
+			class = "Squadron",
+			name = "Bentus2",
+			type = "meg_veildebris_bit2",
+			rotation = {0, 50, 23,},
+			player = -1,
+			number = 1,
+		},
+		Bentus3 =
+		{
+			class = "Squadron",
+			name = "Bentus3",
+			type = "meg_veildebris_bit3",
+			rotation = {-70, 0, 101,},
+			player = -1,
+			number = 1,
+		},
+		Bentus4 =
+		{
+			class = "Squadron",
+			name = "Bentus4",
+			type = "meg_veildebris_bit4",
+			rotation = {124, 0, -220,},
+			player = -1,
+			number = 1,
+		},
+		Bentus5 =
+		{
+			class = "Squadron",
+			name = "Bentus5",
+			type = "meg_veildebris_bit5",
+			rotation = {70, 0, -56,},
+			player = -1,
+			number = 1,
+		},
+		Bentus6 =
+		{
+			class = "Squadron",
+			name = "Bentus6",
+			type = "meg_veildebris_bit6",
+			rotation = {-60, 90, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus7 =
+		{
+			class = "Squadron",
+			name = "Bentus7",
+			type = "meg_veildebris_bit7",
+			rotation = {0, -50, 5,},
+			player = -1,
+			number = 1,
+		},
+		Bentus8 =
+		{
+			class = "Squadron",
+			name = "Bentus8",
+			type = "meg_veildebris_bit8",
+			rotation = {60, 34, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus9 =
+		{
+			class = "Squadron",
+			name = "Bentus9",
+			type = "meg_veildebris_bit9",
+			rotation = {0, 0, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus10 =
+		{
+			class = "Squadron",
+			name = "Bentus10",
+			type = "meg_veildebris_bit10",
+			rotation = {20, 70, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus11 =
+		{
+			class = "Squadron",
+			name = "Bentus11",
+			type = "meg_veildebris_bit11",
+			rotation = {0, 0, 30,},
+			player = -1,
+			number = 1,
+		},
+                Bentus12 =
+		{
+			class = "Squadron",
+			name = "Bentus12",
+			type = "meg_veildebris_bit12",
+			rotation = {-80, 50, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus13 =
+		{
+			class = "Squadron",
+			name = "Bentus13",
+			type = "meg_veildebris_bit13",
+			rotation = {245, -16, 20,},
+			player = -1,
+			number = 1,
+		},
+		Bentus14 =
+		{
+			class = "Squadron",
+			name = "Bentus14",
+			type = "meg_veildebris_bit14",
+			rotation = {213, -50, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus15 =
+		{
+			class = "Squadron",
+			name = "Bentus15",
+			type = "meg_veildebris_bit15",
+			rotation = {60, 0, 145,},
+			player = -1,
+			number = 1,
+		},
+		Bentus16 =
+		{
+			class = "Squadron",
+			name = "Bentus16",
+			type = "meg_veildebris_chunk1",
+			rotation = {25, 0, 30,},
+			player = -1,
+			number = 1,
+		},
+		Bentus17 =
+		{
+			class = "Squadron",
+			name = "Bentus17",
+			type = "meg_veildebris_chunk2",
+			rotation = {12, -120, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus18 =
+		{
+			class = "Squadron",
+			name = "Bentus18",
+			type = "meg_veildebris_chunk3",
+			rotation = {20, -7, -50,},
+			player = -1,
+			number = 1,
+		},
+		Bentus19 =
+		{
+			class = "Squadron",
+			name = "Bentus19",
+			type = "meg_veildebris_chunk4",
+			rotation = {-270, 0, 56,},
+			player = -1,
+			number = 1,
+		},
+		Bentus20 =
+		{
+			class = "Squadron",
+			name = "Bentus20",
+			type = "meg_veildebris_chunk5",
+			rotation = {0, 50, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus21 =
+		{
+			class = "Squadron",
+			name = "Bentus21",
+			type = "meg_veildebris_flake1",
+			rotation = {45, 0, -200,},
+			player = -1,
+			number = 1,
+		},
+		Bentus22 =
+		{
+			class = "Squadron",
+			name = "Bentus22",
+			type = "meg_veildebris_flake2",
+			rotation = {30, 0, 67,},
+			player = -1,
+			number = 1,
+		},
+		Bentus23 =
+		{
+			class = "Squadron",
+			name = "Bentus23",
+			type = "meg_veildebris_flake3",
+			rotation = {26, 50, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus24 =
+		{
+			class = "Squadron",
+			name = "Bentus24",
+			type = "meg_veildebris_flake4",
+			rotation = {-9, 0, 70,},
+			player = -1,
+			number = 1,
+		},
+		Bentus25 =
+		{
+			class = "Squadron",
+			name = "Bentus25",
+			type = "meg_veildebris_flake5",
+			rotation = {40, 0, -34,},
+			player = -1,
+			number = 1,
+		},
+		Bentus26 =
+		{
+			class = "Squadron",
+			name = "Bentus26",
+			type = "meg_veildebris_flake6",
+			rotation = {23, -20, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus27 =
+		{
+			class = "Squadron",
+			name = "Bentus27",
+			type = "meg_veildebris_flake7",
+			rotation = {0, 6, 0,},
+			player = -1,
+			number = 1,
+		},
+		Bentus28 =
+		{
+			class = "Squadron",
+			name = "Bentus28",
+			type = "meg_veildebris_flake8",
+			rotation = {30, 5, -4,},
+			player = -1,
+			number = 1,
+		},
+		Bentus29 =
+		{
+			class = "Squadron",
+			name = "Bentus29",
+			type = "meg_veildebris_flake9",
+			rotation = {8, 8, -50,},
+			player = -1,
+			number = 1,
+		},	
+		Bentus30 =
+		{
+			class = "Squadron",
+			name = "Bentus30",
+			type = "meg_veildebris_flake10",
+			rotation = {0, 8, -50,},
+			player = -1,
+			number = 1,
+		},			
+	}			
+	local dustRing =
+	{
+		EasyPatch2 =
+		{
+			class = "EasyPatch1",
+			number = 1,
+		},      
+		Cloud1 =
+		{
+			class = "DustCloud",
+			kind = "polySurface1",
+			type = "DustCloud_0",
+			color = {1, 1, 1, 1},
+			size = 5000,
+			number = 3,
+		},
+		Salvage0 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg01",
+			number = 1,
+		},
+		Salvage1 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg02",
+			number = 1,
+		},
+		Salvage2 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg03",
+			number = 1,
+		},
+		Salvage3 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg04",
+			number = 1,
+		},
+		Salvage4 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg05",
+			number = 1,
+		},        
+	} 		
+	local dustRingn =
+	{
+		EasyPatch2 =
+		{
+			class = "EasyPatch1",
+			number = 1,
+		},      
+		Nebula1 =
+		{
+			class = "Nebula",
+			kind = "Nebula4_OLD1",
+			type = "Mp_Bentusi_Radiation",
+			color = {1, 1, 1, 1},
+			size = 7000,
+			number = 2,
+		},	
+		Salvage0 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg01",
+			number = 1,
+		},
+		Salvage1 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg02",
+			number = 1,
+		},
+		Salvage2 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg03",
+			number = 1,
+		},
+		Salvage3 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg04",
+			number = 1,
+		},
+		Salvage4 =
+		{
+			class = "Salvage",
+			type = "Slv_Chunk_Lrg05",
+			number = 1,
+		},        
+	} 	
+	local dustCloud =
+	{			
+		Pebble0 =
+		{
+			class = "Pebble",
+			type = "Pebble_0",
+			number = 50,
+		}, 		
+	}
+	local dustRingMeg =
+	{
+		Meg =
+		{
+			class = "Squadron",
+			name = "Meg",
+			type = "meg_gehenna_1ctm",
+			rotation = {10, 9, -15,},
+			player = -1,
+			number = 1,
+		},			
+		Nebula1 =
+		{
+			class = "Nebula",
+			kind = "Nebula4_OLD1",
+			type = "Mp_Bentusi_Radiation",
+			color = {1, 1, 1, 1},
+			size = 10000,
+			number = 2,
+		},	
+	} 	
+	
+	ringAdd(-4000, 4000, 0, dustCloud,		26000,		30000,		random(1000, 2000),	random(100, 600),	-3,		135,	90,	  450,	  1)	
+	ringAdd(-4000, -4000,0, dustCloud,		40000,		38000,		random(1000, 2000),	random(100, 600), -5,		135,	30,	  390,  	1)
+	ringAdd(4000,  4000, 0, dustCloud,		46000,		42000,		random(1000, 2000),	random(100, 600),	-7,		0,		100,	460,	  1)		
+	
+	asteroidAdd(15000, -15000, 100, "Sphere", dustRing, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(-15000, 15000, 100, "Sphere", dustRing, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(26000,  1500, 0, "Sphere", dustRing, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(-26000, -1500,  0, "Sphere", dustRing, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+  asteroidAdd(4000, 38000, -100, "Sphere", dustRing, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(-4000, -38000, -100, "Sphere", dustRing, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))		
+	asteroidAdd(35000,  35000,  200,  "Sphere", dustRingn, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(-35000, 35000,  -200, "Sphere", dustRingn, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))
+	asteroidAdd(35000,  -35000, 300,  "Sphere", dustRingn, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(-35000, -35000, -300, "Sphere", dustRingn, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))
+	
+	asteroidAdd(38000,  31000,  200,  "Sphere", dustRingMeg, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(-38000, 31000,  -200, "Sphere", dustRingMeg, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))
+	asteroidAdd(38000,  -31000, 300,  "Sphere", dustRingMeg, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))	
+	asteroidAdd(-38000, -31000, -300, "Sphere", dustRingMeg, random(150, 1800), random(150, 1800), random(150, 1800), random(0, 360), random(0, 360))
+
+  ringAdd(-3000, 3000, 0, playerPositionRing,  	26000,		30000,		0,			0,			-3,		135,		85,	435,	0)
+	ringAdd(-3000, 3000, 0, playerPatchRing,		  26000,		30000,		0,			0,			-3,		135,		95,	455,	0)
+	ringAdd(-3000, -3000,0, playerPositionRing,	  40000,		38000,		0,			0,			-5,		135,		25,	375,	0)
+	ringAdd(-3000, -3000,0, playerPatchRing,	    40000,		38000,		0,			0,			-5,		135,		35,	395,	0)
+	ringAdd(3000,  3000, 0, playerPositionRing,  	46000,		42000,		0,			0,			-7,		0,	  	95,	445,	0)
+	ringAdd(3000,  3000, 0, playerPatchRing,		  46000,		42000,		0,			0,			-7,		0,	  	105,	465,	0)
+	--ringAdd(0, 0, 0, playerMegRing,		55000,		55000,		0,			0,			-3,		0,		-65,	360,	0)
+
+	asteroidAdd(0, 0, 0, "Sphere", centerSphere, random(5000, 8500), random(5000, 8500), random(5000, 8500), random(0, 360), random(0, 360))
+end
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+function NonDetermChunk()
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("m09")
+end

@@ -1,0 +1,98 @@
+-- LuaDC version 0.9.19
+-- 25/07/2005 21.25.25
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_IC", 
+            length = 13.5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = { "", }, },                      
+    }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_IC_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo_bc", },                  
+                { "fx_scale", "9.5", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_ICSlave_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo_bc", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_MS_ION_CANNON_BEAM", }, 
+                { "fx_scale", "9.5", }, 
+            }, 
+        event2bis = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Weapon_ICSlave1_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo_bc", }, 
+                --{ "sound", "WEAPON/CARRIER/FIRE/WEAPON_MS_ION_CANNON_BEAM", }, 
+                { "fx_scale", "9.5", }, 
+            },     
+        event3 = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0.16", }, 
+                { "marker", "Weapon_IC_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", },                
+                { "fx_scale", "7.5", },   
+            },
+        event4 = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0.26", }, 
+                { "marker", "Weapon_ICSlave_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", },                
+                { "fx_scale", "7.5", },   
+            },  
+        event4bis = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0.36", }, 
+                { "marker", "Weapon_ICSlave1_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray", },                
+                { "fx_scale", "7.5", },   
+            },                            
+        event5 = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_IC_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray2", },                 
+                { "fx_scale", "7.5", },   
+            },
+        event6 = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_ICSlave_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray2", },
+                { "sound", "DAMAGE/SMOKE/ION_BEAM_DISCHARGE", }, 
+                { "fx_scale", "7.5", },   
+            },
+        event6bis = 
+            { 
+                { "anim", "Weapon_IC", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Weapon_ICSlave1_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray2", },
+                --{ "sound", "DAMAGE/SMOKE/ION_BEAM_DISCHARGE", }, 
+                { "fx_scale", "7.5", },   
+            },                            
+}, }

@@ -1,0 +1,60 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Sun (Star)"
+NewShipType.sobDescription = "Planet"
+NewShipType.maxhealth = 10000000
+NewShipType.regentime = 1
+NewShipType.minRegenTime = 1
+NewShipType.alwaysInRenderList = 1
+NewShipType.sideArmourDamage = 0
+NewShipType.rearArmourDamage = 0
+NewShipType.frontArmourDamage = 0
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 10000000
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.AttackFamily = "BigCapitalShip"   --"UnAttackable"
+NewShipType.AvoidanceFamily = "SuperPriority"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.visualRange = 53000
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.healthBarStyle = 3
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 10000000
+NewShipType.dotRenderLimit = 100
+NewShipType.visibleInSecondary = 1
+NewShipType.goblinsStartFade = 24000
+NewShipType.goblinsOff = 24000
+--NewShipType.upLOD = 24000
+--NewShipType.upLOD = 30000
+--NewShipType.downLOD = 24015
+--NewShipType.downLOD = 30015
+NewShipType.minimumZoomFactor = 1
+NewShipType.selectionLimit = 10000000
+NewShipType.preciseSelectionLimit = 5000000
+NewShipType.preciseATILimit = 10000000
+NewShipType.selectionPriority = 55
+NewShipType.militaryUnit = 0
+--NewShipType.canHaveFog = 0
+--NewShipType.canHaveShadows = 0
+--NewShipType.canBlink = 0
+NewShipType.SMHighlightDistMin = 10000000
+NewShipType.SMHighlightDistMax = 10000000
+--addAbility(NewShipType,"DefenseFieldAbility",1,1,50000,1000,750,1,10,0,"defensefield_sphere_spray_vaygr")
+--addAbility(NewShipType,"MoveCommand",1,0)
+
+--AddShipMultiplier(NewShipType, "NebulaSensitivity", "ThisShipOnly", "Linear", 0, 0, 0)
+--AddShipMultiplier(NewShipType, "DustCloudSensitivity", "ThisShipOnly", "Linear", 0, 0, 0)
+--AddShipMultiplier(NewShipType, "BuildSpeed", "OwnShipsWithinRadius", "Linear", 1.5, 1.5, 53000)
+--addAbility(NewShipType,"HyperspaceInhibitorAbility",1,53000)
+
+LoadModel(NewShipType, 1)
+
+--StartShipHardPointConfig(NewShipType,"star_sol_sub","Hardpoint_GW","System","Innate","Damageable","star_sol_sub","","","","","","","","")
+
+NewShipType.sobDieTime = 2
+NewShipType.deadSobFadeTime = 1

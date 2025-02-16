@@ -1,0 +1,44 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","kinetic_small_fx_small_rad","Normal",1800,5000,0,0,0,0,1,1,1,.75,0,0,1,0,80,80,.1,"Normal",1,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",380,380,"")
+
+setAngles(NewWeaponType,10,-85,85,-3,50)
+
+setMiscValues(NewWeaponType,.5,.5)
+
+setPenetration(NewWeaponType,25,1,
+{Unarmoured=1,},
+{LightArmour=1,},
+{MediumArmour=1,},
+{HeavyArmour=1,},
+{SubSystemArmour=1,},
+{TurretArmour=1,},
+{ResArmour=.8,},
+{MoverArmour=1,},
+{PlanetKillerArmour=0,},
+{MineArmour=1,},
+{ChunkArmour=1,},
+{CruiseMissileArmour=1,},
+{SuperHeavyArmor=1,})
+
+setAccuracy(NewWeaponType,1,
+{Fighter=.09,},
+{Corvette=.18,},
+{Frigate=.4, damage=1,},
+{Utility=1,},
+{munition=.2,},
+{SmallCapitalShip=.6, damage=1,},
+{BigCapitalShip=.6, damage=1,},
+{Mothership=1,},
+{Emplacement=1,},
+{UnAttackable=1,},
+{SubSystem=.6, damage=1,},
+{Resource=1,},
+{ResourceLarge=.5, damage=1,},
+{Capturer=1,},
+{Chimera=1,},
+{Missile=1,},
+{AsteroidSmasher=1,},
+{Location=1,})
+
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

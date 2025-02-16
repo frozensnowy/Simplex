@@ -1,0 +1,374 @@
+levelDesc = "Sky Watcher"
+
+maxPlayers = 5
+player = {}
+
+player[0] = {
+  id = 0,
+  name = "",
+  resources = 2500,
+  raceID = 2,
+  startPos = 1,
+}
+
+player[1] = {
+  id = 1,
+  name = "",
+  resources = 2500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[2] = {
+  id = 2,
+  name = "",
+  resources = 2500,
+  raceID = 2,
+  startPos = 1,
+}
+
+player[3] = {
+  id = 3,
+  name = "",
+  resources = 2500,
+  raceID = 1,
+  startPos = 1,
+}
+
+player[4] = {
+  id = 4,
+  name = "",
+  resources = 2500,
+  raceID = 2,
+  startPos = 1,
+}
+
+function AddAsteroidRingRandom(Radius, Tolerance, Count, AsteroidType)
+  local ArcStep 		= 360 / Count
+  local RndArcMax 	= ArcStep/3
+  local RndHightArcMax 	= 45
+  local RndHightArc	= 0
+  local CurrentArc 	= 0
+  local RndRandius 	= Radius
+  local RndArc		= 0
+  local AstArc		= {0,0,0}
+  local AstID		= 0
+  local AstName 		= {}
+
+  if AsteroidType == "Rocky" then
+	AstName[1] = "asteroid_12"
+	AstName[2] = "asteroid_13"
+	AstName[3] = "asteroid_14"
+	AstName[4] = "asteroid_15"
+  end
+
+  for i = 0, Count-1 do
+ 	AstArc		= {random(0,360),random(0,360),random(0,360)}
+	RndArc 		= ArcStep * i + random(-RndArcMax, RndArcMax)
+	RndRadius 	= Radius + random(-Tolerance, Tolerance)
+	RndHightArc	= random(-RndHightArcMax, RndHightArcMax)
+	AstID		= random(1,4)
+
+	AddObject(RndRadius, RndArc, RndHightArc, AstArc, "Harvestable", AstName[AstID])
+  end
+
+end
+
+Map_SectorCount 	= 0
+Map_CurrentSector 	= 0
+Map_CurrentStartpoint	= 0
+SPos 			= {}
+Rot 			= {}
+Map_SectorPosition	= {}
+Map_SectorRotation	= {}
+Map_SectorType		= {}
+Map_SectorObjectCount	= {}
+Map_SectorBuildpoints	= {}
+
+--Converts the Input Values into cartesian coordinates and returns them
+function ConvertToCartesian(Radius, Phi, Psi)
+	local	xPosOut = Radius * cos(Phi) * cos(Psi)
+	local	yPosOut = Radius * sin(Psi)
+	local	zPosOut = Radius * sin(Phi) * cos(Psi)
+
+	return 	{xPosOut, yPosOut, zPosOut,}
+end
+
+--Converts the Input Values into cartesian cooradinates and adds them to the Base coordinates
+--Xi will rotate the slavecoordinates additionally around the y-axis as possible compensation
+function ConvertToCartesianSlave(SlaveRadius, Phi, Psi, Xi, CartesianBase)
+	local xPosOut = CartesianBase[1] + SlaveRadius * cos(Phi+Xi) * cos(Psi)
+	local yPosOut = CartesianBase[2] + SlaveRadius * sin(Psi)
+	local zPosOut = CartesianBase[3] + SlaveRadius * sin(Phi+Xi) * cos(Psi)
+
+	return 	{xPosOut, yPosOut, zPosOut,}
+end
+
+function AddSector(Radius, Phi, Psi, Size)
+	Map_SectorCount 				= 	Map_SectorCount + 1
+	Map_CurrentSector				=	Map_SectorCount
+	Map_SectorObjectCount[Map_CurrentSector] 	= 	0
+	Map_SectorBuildpoints[Map_CurrentSector]	= 	0
+	Map_SectorPosition[Map_CurrentSector] 		= 	ConvertToCartesian(Radius, Phi, Psi)
+	Map_SectorRotation[Map_CurrentSector] 		= 	Phi
+
+	--CreateSector(Size, 8, Map_CurrentSector)
+
+	--createSOBGroup("Sector_"..Map_SectorCount+1)
+	--createSOBGroup("SectorObject_"..Map_SectorCount+1)
+	--createSOBGroup("SectorBuildpoints_"..Map_SectorCount+1)
+end
+
+function AddObject(Radius, Phi, Psi, ObjArc, Type, Name)
+
+	local ObjPosition = ConvertToCartesianSlave(Radius, Phi, Psi, Map_SectorRotation[Map_CurrentSector], Map_SectorPosition[Map_CurrentSector])
+	ObjArc[2] = ObjArc[2] + Map_SectorRotation[Map_CurrentSector]
+	if Type == "Marker" then
+			Map_SectorObjectCount[Map_CurrentSector] = Map_SectorObjectCount[Map_CurrentSector] + 1
+			addSquadron("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], Name, ObjPosition, -1, ObjArc, 0, 0)
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "Sector_"..Map_CurrentSector)
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "SectorObject_"..Map_CurrentSector)
+
+	elseif Type == "Startpoint" then
+  			addPoint("StartPos"..Map_CurrentStartpoint, ObjPosition, ObjArc)
+			Map_CurrentStartpoint = Map_CurrentStartpoint + 1
+
+	elseif Type == "Border" then
+			Map_SectorObjectCount[Map_CurrentSector] = Map_SectorObjectCount[Map_CurrentSector] + 1
+			addSquadron("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], BorderObject, ObjPosition, -1, ObjArc, 0, 0)
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "Sector_"..Map_CurrentSector)
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "SectorObject_"..Map_CurrentSector)
+
+	elseif Type == "SectorObject" then
+			Map_SectorObjectCount[Map_CurrentSector] = Map_SectorObjectCount[Map_CurrentSector] + 1
+			addSquadron("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], Name, ObjPosition, -1, ObjArc, 0, 0)
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "SectorObject_"..Map_CurrentSector)
+
+	elseif Type == "Buildpoint" then
+
+			Map_SectorBuildpoints[Map_CurrentSector] = Map_SectorBuildpoints[Map_CurrentSector] + 1
+			Map_SectorObjectCount[Map_CurrentSector] = Map_SectorObjectCount[Map_CurrentSector] + 1
+			addSquadron("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], Name, ObjPosition, -1, ObjArc, 0, 0)
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "SectorObject_"..Map_CurrentSector)
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "SectorBuildpoints_"..Map_CurrentSector)
+
+			createSOBGroup("SectorBuildpoint_"..Map_CurrentSector.."_"..Map_SectorBuildpoints[Map_CurrentSector])
+			addToSOBGroup("SectorObj_"..Map_CurrentSector.."_"..Map_SectorObjectCount[Map_CurrentSector], "SectorBuildpoint_"..Map_CurrentSector.."_"..Map_SectorBuildpoints[Map_CurrentSector])
+
+			addSphere("SectorBuildarea_"..Map_CurrentSector.."_"..Map_SectorBuildpoints[Map_CurrentSector], ObjPosition, Map_BuildPointSize)
+
+	elseif Type == "Harvestable" then
+
+
+			addAsteroid(Name, ObjPosition, 100, ObjArc[1], ObjArc[2], ObjArc[3], 0)
+
+
+	elseif Type == "Object" then
+			--May get Activated later
+
+	elseif Type == "DustCloud" then
+			--May get Activated later
+
+	elseif Type == "Nebulae" then
+			--May get Activated later
+
+	elseif Type == "Salvager" then
+			--May get Activated later
+
+	end
+	
+end
+
+function DetermChunk()
+
+	addSquadron("skybox_starfield_left", "skybox_starfield_left", {10000000, 0, 0}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_bottom", "skybox_starfield_bottom", {0, -10000000, 0}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_Mars_back", "skybox_Mars_back", {0, 0, -10000000}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_front", "skybox_starfield_front", {0, 0, 10000000}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_top", "skybox_starfield_top", {0, 10000000, 0}, -1, {0, 0, 0}, 0, 0)
+	addSquadron("skybox_starfield_right", "skybox_starfield_right", {-10000000, 0, 0}, -1, {0, 0, 0}, 0, 0)
+
+	local r = 30000
+	for i=0,35,1 do
+		addSquadron("asteroid_5_ice_nosalvage", "asteroid_5_ice_nosalvage", { r*cos(random(0,360)), random(-3500,3500), r*sin(random(0,360)), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+		addSquadron("asteroid_4_ice_nosalvage", "asteroid_4_ice_nosalvage", { r*cos(random(0,360)), random(-3500,3500), r*sin(random(0,360)), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+		addSquadron("asteroid_3_ice_nosalvage", "asteroid_3_ice_nosalvage", { r*cos(random(0,360)), random(-3500,3500), r*sin(random(0,360)), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+	end
+	for i=0,16,1 do
+		addSquadron("asteroid_5_ice_nosalvage_big", "asteroid_5_ice_nosalvage_big", { r*cos(random(0,360)), random(-3500,3500), r*sin(random(0,360)), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+		addSquadron("asteroid_4_ice_nosalvage_big", "asteroid_4_ice_nosalvage_big", { r*cos(random(0,360)), random(-3500,3500), r*sin(random(0,360)), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+		addSquadron("asteroid_3_ice_nosalvage_big", "asteroid_3_ice_nosalvage_big", { r*cos(random(0,360)), random(-3500,3500), r*sin(random(0,360)), }, -1, { random(0,360), random(0,360), random(0,360), }, 0, 0)
+  end
+	
+	for i=0,35,1 do
+		addNebula("nebula_damage4", "nebula_damage4", { random(-3500,3500), random(-1500,1500), r*sin(random(0,360)), }, { 1, 0, 0, 1}, 0, random(6000,8000))
+	end
+	
+	local megalith = {"meg_bentus", "meg_sajhulknose_ui", "meg_reinforcementpad", "meg_veildebris_chunk_lighthouse_nobuild"}
+	for i=1,5,1 do
+		addSquadron("megalith", megalith[random(1,getn(megalith))], {random(-3500,3500), random(-3500,3500), r*sin(random(0,360))}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	end
+	for i=1,random(80,100),1 do
+		addSquadron("light", "meg_NavBouy", {random(-3500,3500), random(-3500,3500), r*sin(random(0,360))}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	end
+
+
+	--initSectorMode()
+
+	--==================================================================================================
+	--Startpoint Sectors outer Rim
+	--==================================================================================================
+	AddSector(0+random(-1000,1000), 0, 0, 2)
+	AddObject(6000, 0, 	0, {0,-90,0}, 	"Startpoint", "")
+	AddAsteroidRingRandom(4000, 3000, 64, "Rocky")
+
+	AddSector(35000+random(-1000,1000), 0, 0, 1)
+	AddObject(1500, 0, 	0, {0,-90,0}, 	"Startpoint", "")
+	--AddObject(2000, 45, 	0, {0,45/2,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	--AddObject(0, 0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+	AddSector(35000+random(-1000,1000), 90, 0, 1)
+	AddObject(1500, 0, 	0, {0,-90,0}, 	"Startpoint", "")
+	--AddObject(2000, 45, 	0, {0,45/2,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	--AddObject(0, 0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+	AddSector(35000+random(-1000,1000), 180, 0, 1)
+	AddObject(1500, 0, 	0, {0,-90,0}, 	"Startpoint", "")
+	--AddObject(2000, 45, 	0, {0,45/2,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	--AddObject(0, 0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+
+	AddSector(35000+random(-1000,1000), 270, 0, 1)
+	AddObject(1500, 0, 	0, {0,-90,0}, 	"Startpoint", "")
+	--AddObject(2000, 45, 	0, {0,45/2,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	--AddObject(0, 0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+	--==================================================================================================
+	--Central Sector
+	--==================================================================================================
+
+
+
+	--==================================================================================================
+	--Sectors outer Rim Capital Gates
+	--==================================================================================================
+	AddSector(35000, 45, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE_CAPITAL")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+	AddSector(35000, 135, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE_CAPITAL")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+	AddSector(35000, 225, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE_CAPITAL")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+	AddSector(35000, 315, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE_CAPITAL")
+	AddAsteroidRingRandom(1000, 500, 4, "Rocky")
+
+
+
+	--==================================================================================================
+	--Sectors inner Rim Gates
+	--==================================================================================================
+	AddSector(15000, 45, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	AddAsteroidRingRandom(2500/2, 1000, 4, "Rocky")
+
+	AddSector(15000, 135, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	AddAsteroidRingRandom(2500/2, 1000, 4, "Rocky")
+
+	AddSector(15000, 225, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	AddAsteroidRingRandom(2500/2, 1000, 4, "Rocky")
+
+	AddSector(15000, 315, 0, 1)
+	--AddObject(2000,  0, 	0, {0,-90,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_GATE")
+	AddAsteroidRingRandom(2500/2, 1000, 4, "Rocky")
+
+
+
+	--==================================================================================================
+	--Sectors inner Rim Industrial Station
+	--==================================================================================================
+	AddSector(20000, 0, 0, 1)
+	--AddObject(0,  0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(2500/2, 1000, 6, "Rocky")
+
+	AddSector(20000, 90, 0, 1)
+	--AddObject(0,  0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(2500/2, 1000, 6, "Rocky")
+
+	AddSector(20000, 180, 0, 1)
+	--AddObject(0,  0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(2500/2, 1000, 6, "Rocky")
+
+	AddSector(20000, 270, 0, 1)
+	--AddObject(0,  0, 	0, {0,0,0}, 	"SectorObject", "MOD_SECTORMODE_SECTOROBJECT_INDUSTRIALPLATFORM")
+	AddAsteroidRingRandom(2500/2, 1000, 6, "Rocky")
+
+	--==================================================================================================
+	--Sectors Asteroids middle rim
+	--==================================================================================================
+	AddSector(25000, 360*1/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	AddSector(25000, 360*2/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	AddSector(25000, 360*3/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	AddSector(25000, 360*4/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	AddSector(25000, 360*5/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	AddSector(25000, 360*6/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	AddSector(25000, 360*7/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	AddSector(25000, 360*8/8+45/2, 0, 1)
+	--AddObject(0,  0, 	0, {0,-90,0}, 	"Harvestable", "Station_1")
+	AddAsteroidRingRandom(2500/2, 1000, 16, "Rocky")
+
+	--CreateAIPath()
+	
+	setWorldBoundsInner({0, 0, 0}, {45000, 10000, 45000})
+	setWorldBoundsOuter({0, 0, 0}, {690000, 360000, 690000})
+end
+
+function NonDetermChunk()
+
+	fogSetActive(0)
+	setGlareIntensity(0)
+	fogSetColour(0.5, 0.5, 0.6, 1)
+	fogSetStart(1000)
+	fogSetEnd(20000)
+	fogSetType("linear")
+	fogSetDensity(10)
+	setDustCloudAmbient({ 0.5, 0.5, 0.5, 1, })
+	setLevelShadowColour(0, 0, 0, 0)
+	loadBackground("Mars")
+	setSensorsManagerCameraDistances(61000, 120000)
+  	--setDefaultMusic("Data:sound/music/staging/staging_01")
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

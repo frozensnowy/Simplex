@@ -1,0 +1,67 @@
+displayName = "$5501"
+Mission = {}
+
+Mission[1] = 
+{ 
+    directory = "Tutorial01", 
+    level = "Tutorial01.level",
+    postlevel = function () postLevelComplete() end,
+    displayName = "Tutorial 1", 
+    description = "Tutorial 01", }
+Mission[2] = 
+{ 
+    directory = "Tutorial02", 
+    level = "Tutorial02.level",
+    postlevel = function () postLevelComplete() end,
+    displayName = "Tutorial 2", 
+    description = "Tutorial 02", }	
+Mission[3] = 
+{ 
+    directory = "Tutorial03", 
+    level = "Tutorial03.level",
+    postlevel = function () postLevelComplete() end,
+    displayName = "Tutorial 3", 
+    description = "Tutorial 03", }		
+Mission[4] = 
+{ 
+    directory = "M01", 
+    level = "M01.level",
+    postlevel = function () postLevelComplete() end,
+    displayName = "M01 - HGN - OFFENSIVE COUNTER ", 
+    description = "<c=8CC0DC>Location:</c> Low orbit over Hiigara\n<c=8CC0DC>Date:</c> Mid phase of the Vagyr Siege\n<c=8CC0DC>Forces:</c> 1/225th LCD detachment and rallying forces of 1/15th Fleet\n<c=8CC0DC>Objectives:</c> Locate and destroy all Vaygr carriers and support ships\n\n<c=8CC0DC>Background:</c> Heavy enemy strikecraft activity in low orbit prevents the operation of heavy lifter shuttles, cutting Home Defense Fleet from its supply lines. A detachment of the 225th Line Combat Division supported by elements of the 15th Fleet has been assigned a search and destroy operation within a low orbital junkyard after the global defense network pinpointed the origin of a large fraction of Vagyr fighter sorties to that location.", }
+--Mission[5] = 
+--{ 
+--    directory = "M02", 
+--    level = "M02.level",
+--    postlevel = function () postLevelComplete() end,
+--    displayName = "M02 - TDN - RISE OF A NATION",
+--    description = "<c=8CC0DC>Location:</c> Borders of the Itaar space, Federation of Cush\n<c=8CC0DC>Date:</c> Post-Invasion +4 years\n<c=8CC0DC>Forces:</c> Taiidani strike group with a squadron of Vaygr 34th Recon Cavalry\n<c=8CC0DC>Objectives:</c> Destroy the Hiigaran freighters\n\n<c=8CC0DC>Background:</c> The Vaygr 34th Recon Cavalry spotted a convoy of three mineral freighters heading to Itaar, escorted by Hiigaran military units. Your strike force of two 'Al'Mouakar' QJE's with assault corvettes has been immediately dispatched to intercept it.", }
+--Mission[6] = 
+--{ 
+--    directory = "M03", 
+--    level = "M03.level",
+--    postlevel = function () postLevelComplete() end,
+--    displayName = "M03 - HGN - OPERATION: SLEDGEHAMMER", 
+--    description = "<c=8CC0DC>Location:</c> Vagyr-occupied former Hiigaran Control Zone\n<c=8CC0DC>Date:</c> Post Invasion, early Hiigaran counterattacks\n<c=8CC0DC>Forces:</c> 15th Fleet Task Force 32 and relief convoy\n<c=8CC0DC>Objectives:</c> Secure FSS Theta, then clear the asteroid belt off of any enemy presence\n\n<c=8CC0DC>Background:</c> Fleet Support Station Theta has been cut from the main forces of Task Force 32 after locating the logistical heart of the Vagyr detachments operating within the former HCZ. Vaygr forces around FSS Theta are now massing for an all-out assault. A relief convoy dispatched by 15th Fleet and the core TF32 are rushing to support the station and neutralize enemy forces.", }
+--Mission[7] = 
+--{ 
+--    directory = "M04", 
+--    level = "M04.level",
+--    postlevel = function () postLevelComplete() end,
+--    displayName = "HGN - REACTION FORCE", 
+--    description = "<c=8CC0DC>Location:</c> Border of the Hiigara control zone\n<c=8CC0DC>Date:</c> Post Invasion\n<c=8CC0DC>Forces:</c> 12th Fleet light strike force\n<c=8CC0DC>Objectives:</c> Secure the 12th Fleet mobile shipyard and eliminate all Vaygr aggressors\n\n<c=8CC0DC>Background:</c> Vagyr forces are marauding around a mining operation carried out by a 12th Fleet mobile shipyard. A quick reaction flotilla has been called in to assist and eliminate any enemy presence within the area of operations.</c>", }
+--Mission[8] = 
+--{ 
+--    directory = "M05", 
+--    level = "M05.level",
+--    postlevel = function () postLevelComplete() end,
+--    displayName = "M05 - HGN - CAVALRY", 
+--    description = "<c=8CC0DC>Location:</c> Hiigaran Industrial Sector, Federation of Cush\n<c=8CC0DC>Date:</c> Post-Invasion\n<c=8CC0DC>Forces:</c> Joint Task Force 106 with a LiirHra cruisers Direct Action Group\n<c=8CC0DC>Objectives:</c> Destroy the Vaygr commerce raiding groups; MS35 has been deemed irrecoverable\n\n<c=8CC0DC>Background:</c> We have lost contact with Mobile Shipyard No.35, which was deployed on a mining mission in the Federation of Cush. Recon by the Cushan Navy revealed that a Vaygr commerce raiding group had successfully assaulted the mining site and was in the process of boarding MS35. You will lead Joint Task Force 106 to conduct a strike operation on the mining site and neutralise all enemy forces.", }
+--Mission[9] =
+--{
+--    directory = "M06", 
+--    level = "M06.level",
+--    postlevel = function () postLevelComplete() end,
+--    displayName = "M06 - HGN - Operation Crossbow", 
+--    description = "<c=8CC0DC>Location:</c> Former HCZ\n<c=8CC0DC>Date:</c> Post-Invasion\n<c=8CC0DC>Forces:</c> 41th TSOG\n<c=8CC0DC>Objectives:</c> Escort and support the cruisers until mission completion\n\n<c=8CC0DC>Background:</c> The Vaygr have set up a forward repair operation in a Nebula which was once the location of a, very secret, R&D base of ours. The area is still riddled with our probes and is very well known to us. The probes will shortly go fully active mimicking a fleet operation drawing the Vaygr patrols away. You will provide cover for two cruisers with orders to elimate the carrier overseeing the repair. Speed is of the essence and the cruisers will not stop.", }
+

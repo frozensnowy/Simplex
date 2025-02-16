@@ -1,0 +1,9 @@
+hitfx = "xplosion_hit_large_emitter"
+bulletfx = ""
+nopenetratefx = "xplosion_hit_large_emitter"
+deathtype = "deathCannon"
+scartype = "Tricobalt/Tricobalt"
+hit_sfx = "weapon/corvette/impact/WEAPON_CORVETTE_Mine_Detonation"
+
+hit_clamp = 
+    { 1, 1, }

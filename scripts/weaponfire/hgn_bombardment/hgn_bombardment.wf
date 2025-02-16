@@ -1,0 +1,15 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:53 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+-- temporary flak effect placeholder till I get something better. 
+-- hitfx = "dmg_sml_missle_combo"
+bulletfx = "flak_bombard_combo"
+bullet_sfx = "WEAPON/RandomSample/TwinfangFlakExpl"
+-- nopenetratefx = "dmg_sml_missle_combo"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLAK_CANNON_HIT"
+hit_clamp = 
+    { 1, 1, }

@@ -1,0 +1,55 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:31:00 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Bubble", 
+            length = 1, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+    events = 
+    { 
+        Bubble1 = 
+            { 
+                { "anim", "Bubble", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "kpr_phase_bubble_red", }, 
+				{ "fx_scale", "24", },	--90
+            }, 		
+        Ball1 = 
+            { 
+                { "anim", "Bubble", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "kpr_phase_ball_red", }, 
+				{ "fx_scale", "24", },	--85
+            }, 
+        event1 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "death_generic_fighter", }, 
+            }, }, }

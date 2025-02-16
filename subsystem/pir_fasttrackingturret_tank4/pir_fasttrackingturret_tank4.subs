@@ -1,0 +1,30 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Fast Tracking Turret"
+NewSubSystemType.sobDescription = "Adv. Anti-Tragedy"
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 20000
+NewSubSystemType.regentime = 250
+NewSubSystemType.nlips = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.6800000000000001
+NewSubSystemType.selectionLimit = 5000
+NewSubSystemType.preciseATILimit = 5000
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "pir_fasttrackingturret_tank4"
+NewSubSystemType.collateralDamage = 100
+NewSubSystemType.inactiveTimeAfterDamage = 80
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 900
+NewSubSystemType.timeToBuild = 35
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Vgr"
+NewSubSystemType.AttackFamily = "Subsystem"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "SubSystemSensors4z"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"ftam_rts_tank","Weapon_T","Weapon_Fire1")
+

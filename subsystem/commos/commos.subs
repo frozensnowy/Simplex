@@ -1,0 +1,45 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = ""
+NewSubSystemType.sobDescription = ""
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0
+NewSubSystemType.tacticalIconMinFadeSize = 0
+NewSubSystemType.tacticalIconMaxFadeSize = 0
+NewSubSystemType.groupMergeSize = 0
+NewSubSystemType.mouseOverMinFadeSize = 0
+NewSubSystemType.mouseOverMaxFadeSize = 0
+NewSubSystemType.maxhealth = 10000000
+NewSubSystemType.regentime = 0
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0
+NewSubSystemType.minimumZoomFactor = 0
+NewSubSystemType.selectionLimit = 0
+NewSubSystemType.preciseATILimit = 0
+NewSubSystemType.selectionPriority = 0
+NewSubSystemType.type = "System"
+NewSubSystemType.typeString = "commos"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 0
+NewSubSystemType.activateHealthPercentage = 0
+NewSubSystemType.costToBuild = 1
+NewSubSystemType.timeToBuild = 1
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 0
+LoadSharedModel(NewSubSystemType, "3000ru")
+NewSubSystemType.BuildFamily = "SubSystem_Hgn"
+NewSubSystemType.AttackFamily = "UnAttackable"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "Munition"
+NewSubSystemType.ArmourFamily = "Unarmoured"
+--AddSubSystemAbility(NewSubSystemType, "Cloak", 1, "ThisShipOnly", 0)
+--AddSubSystemAbility(NewSubSystemType, "Hyperspace", 1, "OwnShipsWithinRadius", 5000)
+--AddSubSystemAbility(NewSubSystemType,"SensorPing",1,"ThisShipOnly",0)
+AddSubSystemAbility(NewSubSystemType, "HyperspaceInhibitor", 1, "ThisShipOnly", 0)
+--AddSubSystemMultiplier(NewSubSystemType, "SensorDistortion", "OwnShipsWithinRadius", "Linear", 0.6, 0.6, 6000)
+--AddSubSystemMultiplier(NewSubSystemType, "CloakDetection", "ThisShipOnly", "None", 4, 4, 0)
+--AddSubSystemAbility(NewSubSystemType, "HealthRegenerationRate", "OwnShipsWithinRadius", "Linear", 2, 2, 24000)
+AddSubSystemAbility(NewSubSystemType, "NebulaSensitivity", "OwnShipsWithinRadius", "Linear", 0, 0, 24000)
+AddSubSystemAbility(NewSubSystemType, "DustCloudSensitivity", "OwnShipsWithinRadius", "Linear", 0, 0, 24000)

@@ -1,0 +1,278 @@
+local flareintensity = 0.4
+local flarescale = 0.25
+
+fadetimes= { 0.1, 0.1, 0.1, 1.0 }
+washoutColour = { 0.2, 0.1, 0.7, 1, }
+washoutStrength = 0.06
+
+hotspots= {
+
+  -- GLOWS
+  {
+    texture = "data:Effect/LensFlare/glow_Blue01.tga",
+    offset = 1.0, 
+    scale = 2.0,
+    rotation = 0,
+    colour = { 1, 1, 1, 1, },
+  },
+  {
+    texture = "data:Effect/LensFlare/glow_Blue01.tga",
+    offset = 1.0,
+    scale = 1.5,
+    rotation = 0,
+    colour = { 1, 1, 1, 0.75, },
+  },
+  
+  -- REFLEXES
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 1.2,
+    scale =  5* flarescale,
+    rotation = 0,
+    colour = {
+      0 * flareintensity/255,
+      6 * flareintensity/255,
+      31 * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 1.14,
+    scale = 5 * flarescale,
+    rotation = 0,
+    colour = {
+      2 * flareintensity/255,
+      0 * flareintensity/255,
+      31 * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.84,
+    scale = 5 * flarescale,
+    rotation = 0,
+    colour = {
+      3 * flareintensity/255,
+      0 * flareintensity/255,
+      35 * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.78,
+    scale = 2 * flarescale,
+    rotation = 0,
+    colour = {
+      3 * flareintensity/255,
+      0 * flareintensity/255,
+      35 * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.74,
+    scale = 3 * flarescale,
+    rotation = 0,
+    colour = {
+      8 * flareintensity/255,
+      8 * flareintensity/255,
+      35 * flareintensity/255,
+      1
+    }
+  },
+
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.64,
+    scale = 1 * flarescale,
+    rotation = 0,
+    colour = {
+      31 * flareintensity/255,
+      82 * flareintensity/255,
+      146 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.6,
+    scale = 1 * flarescale,
+    rotation = 0,
+    colour = {
+      31 * flareintensity/255,
+      82 * flareintensity/255,
+      146 * flareintensity/255,
+      1
+    }
+  },
+	
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = 0.5,
+    scale = 3 * flarescale,
+    rotation = 0,
+    colour = {
+      6 * flareintensity/255,
+      0 * flareintensity/255,
+      73 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_Disc01.tga",
+    offset = 0.4,
+    scale = 40 * flarescale,
+    rotation = 0,
+    colour = {
+      16 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_Disc03.tga",
+    offset = 0.1,
+    scale = 3 * flarescale,
+    rotation = 0,
+    colour = {
+      28 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_Disc03.tga",
+    offset = 0,
+    scale = 3 * flarescale,
+    rotation = 0,
+    colour = {
+      33 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = -0.4,
+    scale = 4 * flarescale,
+    rotation = 0,
+    colour = {
+      30 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = -0.46,
+    scale = 5 * flarescale,
+    rotation = 0,
+    colour = {
+      30 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = -0.58,
+    scale = 7 * flarescale,
+    rotation = 0,
+    colour = {
+      30 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },		
+	
+  {
+    texture="data:Effect/LensFlare/reflex_Disc02.tga",
+    offset = -0.66,
+    scale = 4.2 * flarescale,
+    rotation = 0,
+    colour = {
+      15 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },		
+	
+  {
+    texture="data:Effect/LensFlare/reflex_Disc02.tga",
+    offset = -0.68,
+    scale = 4.5 * flarescale,
+    rotation = 0,
+    colour = {
+      15 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_Disc02.tga",
+    offset = -0.72,
+    scale = 15 * flarescale,
+    rotation = 0,
+    colour = {
+      21 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_PointOfLight01.tga",
+    offset = -0.76,
+    scale = 10 * flarescale,
+    rotation = 0,
+    colour = {
+      30 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+  {
+    texture="data:Effect/LensFlare/reflex_Disc02.tga",
+    offset = -0.84,
+    scale = 5 * flarescale,
+    rotation = 0,
+    colour = {
+      15 * flareintensity/255,
+      0 * flareintensity/255,
+      0 * flareintensity/255,
+      1
+    }
+  },	
+	
+	
+}
+  
+  
+  

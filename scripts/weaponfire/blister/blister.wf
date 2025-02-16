@@ -1,0 +1,10 @@
+hitfx = "flak_anime_ring"
+bulletfx = ""
+nopenetratefx = "flak_anime_ring"
+deathtype = "deathCannon"
+hit_sfx = "Explosion/Large/ETG_Explode_Large_Plasma"
+nopenetrate_sfx = "Explosion/Large/ETG_Explode_Large_Plasma"
+hit_clamp = {
+  1,
+  1,
+}

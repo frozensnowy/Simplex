@@ -1,0 +1,315 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:54 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Fire_Top", 
+            length = 4, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation3 = 
+        { 
+            name = "Fire_Bottom", 
+            length = 4, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation4 = 
+        { 
+            name = "Damage", 
+            length = 1, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation5 = 
+        { 
+            name = "dmg01", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.25, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation6 = 
+        { 
+            name = "dmg02", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.5, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation7 = 
+        { 
+            name = "dmg03", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.75, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation8 = 
+        { 
+            name = "AfterBurn", 
+            length = 3, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation9 = 
+        { 
+            name = "Fire_Top_Adv", 
+            length = 0.4, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation10 = 
+        { 
+            name = "Fire_Bottom_Adv", 
+            length = 0.4, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+}, 
+    events = 
+    { 
+---smoke
+
+        smokeinstant1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },    
+    
+---chunks
+
+        chunk1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.08", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_nofx_35", },                  
+                { "fx_scale", "1.2", }, 
+            },      
+    
+        event1 = 
+            { 
+                { "anim", "death2", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "death_generic", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Fire_Top", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Top_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_frigate", }, 
+                { "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Fire_Bottom", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Bottom_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_frigate", }, 
+                { "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event4 = 
+            { 
+                { "anim", "Fire_Top", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_TopSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_frigate", }, 
+                { "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event5 = 
+            { 
+                { "anim", "Fire_Bottom", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_BottomSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_frigate", }, 
+                { "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event2adv = 
+            { 
+                { "anim", "Fire_Top", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Top_Muzzle", }, 
+                --{ "fx", "muzzle_flash_combo_small_frigate", }, 
+                --{ "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event3adv = 
+            { 
+                { "anim", "Fire_Bottom", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Bottom_Muzzle", }, 
+                --{ "fx", "muzzle_flash_combo_small_frigate", }, 
+                --{ "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event4adv = 
+            { 
+                { "anim", "Fire_Top", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_TopSlave_Muzzle", }, 
+                --{ "fx", "muzzle_flash_combo_small_frigate", }, 
+                --{ "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event5adv = 
+            { 
+                { "anim", "Fire_Bottom", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_BottomSlave_Muzzle", }, 
+                --{ "fx", "muzzle_flash_combo_small_frigate", }, 
+                --{ "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker1", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event7 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event8 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "marker4", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", }, 
+                { "fx_scale", "3", }, 
+            }, 
+        event9 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "4", }, 
+            }, 
+        event10 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_main_explosion_combo", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "15", }, 
+            }, 
+        event11 = 
+            { 
+                { "anim", "dmg01", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker1,marker2", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event12 = 
+            { 
+                { "anim", "dmg02", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker3,marker4", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "7.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event13 = 
+            { 
+                { "anim", "dmg03", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "10", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event14 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event15 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "ion_cannon_steam_spray_blue", }, 
+		{ "fx_scale", "2", }, 
+            }, 
+
+}, }

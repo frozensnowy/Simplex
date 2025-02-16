@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "dmg_capital_explosion_largey",
+		distance = 15000,
+	},
+	lod1 = 
+	{
+		fx = "dmg_capital_explosion_largey_LOD",
+		distance = 105000,
+	},		
+}

@@ -1,0 +1,15 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:52 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_superlaser_hit"
+bulletfx = "vgr_superlaser_combo_small"
+nopenetratefx = "dmg_superlaser_hit"
+deathtype = "deathBeam"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+fire_sfx = "WEAPON/FIGHTER/FIRE/VWEAPON_LANCE_FLECHETTE_REPEATER_SHELL"
+hit_sfx = "WEAPON/FIGHTER/FIRE/VWEAPON_LANCE_KINETIC_AUTOGUN_SHELL"
+nopenetrate_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PLASMA_LANCE_BEAM_HIT"
+hit_clamp = 
+    { 1, 1, }

@@ -1,0 +1,13 @@
+hitfx = "dmg_wave_explosion_combo"
+bulletfx = "vgr_wave_beam_combo_medium_Trail"
+nopenetratefx = "dmg_wave_explosion_combo"
+deathtype = "deathBeam"
+firefx = "sunfire_squirt_medium"
+fire_sfx = "TFS_SOUNDS/VAYGR_TRINITY_LASERFIRE"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_HEAVY_FUSION_MISSILE_DETONATION"
+hit_clamp = {
+  1,
+  1,
+}

@@ -1,0 +1,69 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_IonCan1",
+      length = 6,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Weapon_IonCan1",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_IonCan1_Muzzle",
+      },
+      {
+        "fx",
+        "lance_charged_particle",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_VULCAN_KINETIC_TURRET_SHELL",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "Weapon_IonCan1",
+      },
+      {
+        "animtime",
+        "0.25",
+      },
+      {
+        "marker",
+        "Weapon_IonCan1Slave_Muzzle",
+      },
+      {
+        "fx",
+        "lance_charged_particle",
+      },
+      {
+        "sound",
+        "WEAPON/CORVETTE/FIRE/WEAPON_CORVETTE_VULCAN_KINETIC_TURRET_SHELL",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+  },
+}

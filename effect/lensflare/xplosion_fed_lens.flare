@@ -1,0 +1,36 @@
+-- created by Stargazer
+--
+-- orange sun lensflare
+--
+
+local flarecolour = { 0.125, 0.071, 0.059 }
+local flareintensity = 0.3
+local flarescale = 0.25
+
+fadetimes= { 0.1, 0.1, 0.1, 1.0 }
+washoutColour = { 0.7, 0.2, 0.1, 1, }
+washoutStrength = 0.06
+
+hotspots= {
+
+  -- main
+  {
+    texture = "data:Effect/LensFlare/glow_OrangeSun01.tga",
+    offset = 1.0, 
+    scale = 2.0,
+    rotation = 0,
+    colour = { 1, 1, 1, 1, },
+  },
+  {
+    texture = "data:Effect/LensFlare/glow_OrangeSun01.tga",
+    offset = 1.0,
+    scale = 1.5,
+    rotation = 0,
+    colour = { 1, 1, 1, 0.75, },
+  },
+  
+  
+}
+  
+  
+  

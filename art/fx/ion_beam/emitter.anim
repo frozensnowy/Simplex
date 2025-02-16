@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 11:11:15 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+fps = 10;
+startFrame = 0;
+loopCount =50 
+textureLayout = 
+    { 
+        { "data:/ART/FX/Ion_beam/emp_ball.tga", 0, 0, }, 
+        { "data:/ART/FX/Ion_beam/emp_ball2.tga", 1, 0, }, 
+        { "data:/ART/FX/Ion_beam/emp_ball3.tga", 2, 0, }, 
+    }

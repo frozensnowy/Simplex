@@ -1,0 +1,9 @@
+HIER_Add("Weapon_nuclear1_Position", "Root", 0, -165, 1660, 0, 0, 180, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear1_Rest", "Weapon_nuclear1_Position", 0, 0, 10, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear1_Direction", "Weapon_nuclear1_Position", 0, 10, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear2_Position", "Root", 1439, -165, -831, 0, 237, -180, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear2_Rest", "Weapon_nuclear2_Position", 0, 0, 10, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear2_Direction", "Weapon_nuclear2_Position", 0, 10, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear3_Position", "Root", -1442, -165, -833, 0, -244, 180, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear3_Rest", "Weapon_nuclear3_Position", 0, 0, 10, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1);
+HIER_Add("Weapon_nuclear3_Direction", "Weapon_nuclear3_Position", 0, 10, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1);

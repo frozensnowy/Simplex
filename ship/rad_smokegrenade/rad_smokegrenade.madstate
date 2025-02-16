@@ -1,0 +1,8 @@
+--RAD_SMOKEGRENADE_Normal_OnSet = function(ship)
+	--startEffect(ship, "MissileTrail")
+    --startEffect(ship, "smoke")
+    --setLoopCount(ship, "MissileTrail", 100000)   --infinite looping
+--end
+RAD_SMOKEGRENADE_Launched_OnSet = function(ship)    
+    startEffect(ship, "launch")
+end

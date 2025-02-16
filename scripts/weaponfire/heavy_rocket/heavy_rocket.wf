@@ -1,0 +1,12 @@
+hitfx = "heavy_rocket"
+bulletfx = ""
+nopenetratefx = "heavy_rocket"
+deathtype = "deathCannon"
+scartype = "Hgn_Torpedo/Torpedo"
+fire_sfx = "generic/ROCKETFIRE"
+hit_sfx = "Explosion/Small/ETG_Explode_Small_Plasma"
+nopenetrate_sfx = "Explosion/Small/ETG_Explode_Small_Plasma"
+hit_clamp = {
+  1,
+  1,
+}

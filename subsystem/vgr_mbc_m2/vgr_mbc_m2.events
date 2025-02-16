@@ -1,0 +1,52 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_BCMissile", 
+            length = 3, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event30 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_BCMissile_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event31 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.33", }, 
+                { "marker", "Weapon_BCMissileSlave_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event32 = 
+            { 
+                { "anim", "Weapon_BCMissile", }, 
+                { "animtime", "0.66", }, 
+                { "marker", "Weapon_BCMissileSlave1_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH", }, 
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 					
+}, }

@@ -1,0 +1,10 @@
+hitfx = "vgr_quadflechette_hit_combo" --"dmg_massive_sphere_spark_spray"
+bulletfx = "kinetic_large_bullet_combo"	--"kinetic_large_bullet"
+nopenetratefx = "vgr_quadflechette_hit_combo" --"dmg_massive_sphere_spark_spray"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_clamp = {
+  1,
+  1,
+}

@@ -1,0 +1,34 @@
+--=============================================================================
+--    Name    : UNH_FFAASSAULTFRIGATE.madStates
+--    Purpose : Animation state data.
+--
+--Created 26/10/2008 by Adhira
+--=============================================================================*/
+
+function HWAT_UNH_FFASSAULT_Normal_OnSet(ship)
+    startParamAnim(ship, "HorizontalThrustVectoring", "HorizontalRotation")
+end
+
+function HWAT_UNH_FFASSAULT_Launched_OnSet(ship)
+    if(isAnimRunning(ship,"OpenAntenna") == 0) then
+     startTime = 0
+     if(isAnimRunning(ship,"CloseAntenna") ~= 0) then
+      stopAnim(ship, "CloseAntenna")
+     end
+     startAnim(ship, "OpenAntenna")
+     setTime(ship,"OpenAntenna",startTime) 
+     setPauseTime(ship, "OpenAntenna", 1000)
+    end
+end
+
+function HWAT_UNH_FFASSAULT_Docked_OnSet(ship)
+    if(isAnimRunning(ship,"CloseAntenna") == 0) then
+     --startTime = 12
+     if(isAnimRunning(ship,"OpenAntenna") ~= 0) then
+      stopAnim(ship, "OpenAntenna")
+      startAnim(ship, "CloseAntenna")
+      --setTime(ship, "CloseAntenna", startTime)
+     setPauseTime(ship, "CloseAntenna", 1000)
+     end
+    end
+end

@@ -1,0 +1,33 @@
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_SUPERLASER", 
+            length = 15, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_SUPERLASER", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_T_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo_huge", }, 
+                { "sound", "WEAPON/CARRIER/FIRE/WEAPON_BATTLECRUISER_ION_CANNON_BEAM", }, 
+                { "fx_scale", "1", }, 
+            },  
+        event2 = 
+            { 
+                { "anim", "Weapon_SUPERLASER", }, 
+                { "animtime", "4", }, 
+                { "marker", "Weapon_T_Muzzle", }, 
+                { "fx", "ion_cannon_steam_spray_huge", }, 
+		{ "fx_scale", "50", }, 
+            }, }, }

@@ -1,0 +1,16 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","Laser_5D","Normal",15000,8000,0,0,0,0,1,1,0,1,0,0,1,0,3600,3600,1,"Normal",0,0,0)
+
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",50,50,"")
+
+setPenetration(NewWeaponType,0,1)
+
+setAccuracy(NewWeaponType,0,
+{Bomber=0.075,},
+{Fighter=0.05,},
+{Corvette=0.1,})
+
+setAngles(NewWeaponType,90,-180,180,-10,90)
+
+setMiscValues(NewWeaponType,0.25,0.25)
+
+

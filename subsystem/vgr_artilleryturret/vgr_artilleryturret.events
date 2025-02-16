@@ -1,0 +1,86 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_Torpedo",
+      length = 5,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },    
+  },
+  events = { 
+    
+    event1 = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_DT_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "weapon/medgun_atmosphere_artillery_low", }, 
+                { "fx_scale", "4",},
+                { "fx_nlips", "on", }, 
+            }, 
+    event1puff = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.025", }, 
+                { "marker", "Weapon_DT_Muzzle", }, 
+                { "fx", "resourcing_dust_spray_full", },                 
+                { "fx_scale", "0.5", }, 
+                { "fx_nlips", "on", },
+            },                  
+    event1smoke = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "Weapon_DT_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "2.75", }, 
+                { "fx_nlips", "on", },
+            },    
+    event1RetroFire = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.1", }, 
+                { "sound", "SP_ELEMENTS/ARTILLERY", }, 
+            },                                                      
+    event2 = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_DTSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "weapon/medgun_atmosphere_artillery_low", }, 
+                { "fx_scale", "4",},
+                { "fx_nlips", "on", }, 
+            }, 
+    event2puff = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.125", }, 
+                { "marker", "Weapon_DTSlave_Muzzle", }, 
+                { "fx", "resourcing_dust_spray_full", },                 
+                { "fx_scale", "0.5", }, 
+                { "fx_nlips", "on", },
+            },             
+    event2smoke = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "Weapon_DTSlave_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "2.75", }, 
+                { "fx_nlips", "on", },
+            },                         
+    event2RetroFire = 
+            { 
+                { "anim", "Weapon_Torpedo", }, 
+                { "animtime", "0.2", }, 
+                { "sound", "SP_ELEMENTS/ARTILLERY", }, 
+            },    
+  },
+}

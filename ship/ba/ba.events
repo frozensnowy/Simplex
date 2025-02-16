@@ -1,0 +1,24 @@
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "ba", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "ba", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "defensefield_sphere_spray", },                 
+                { "fx_scale", "22", }, 
+            }, }, }

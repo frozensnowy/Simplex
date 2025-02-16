@@ -1,0 +1,206 @@
+-- (6P) ITF-Killing fields
+-- by ITF-TANK0
+-- v1.0
+-- 1/12/03
+
+levelDesc = "Earth Flight";
+maxPlayers = 6;
+
+player = {}
+player[0] = {id = 0, name = "Vaygr", resources = 1500, raceID = 1, startPos = 1,};
+player[1] = {id = 1, name = "Hiigaran", resources = 1500, raceID = 0, startPos = 1,};
+player[2] = {id = 2, name = "Vaygr", resources = 1500, raceID = 1, startPos = 1,};
+player[3] = {id = 3, name = "Hiigaran", resources = 1500, raceID = 0, startPos = 1,};
+player[4] = {id = 4, name = "vaygr", resources = 1500, raceID = 0, startPos = 1,};
+player[5] = {id = 5, name = "Hiigaran", resources = 1500, raceID = 0, startPos = 1,};
+
+
+function DetermChunk()
+
+setWorldBoundsInner({0, 0, 0}, {75000.53, 75000.09, 75000.53})
+
+addPoint(	"StartPos0",	{-65000,	random(-100,100),	0},	{0,	-90,	0});
+addPoint(	"StartPos1",	{0,	random(-100,100),	65000},	{0,	180,	0});
+addPoint(	"StartPos2",	{65000,	random(-100,100),	0},	{0,	90,	0});
+addPoint(	"StartPos3",	{0,	random(-100,100),	-65000},	{0,	0,	0});
+addPoint(	"StartPos4",	{32500,	random(-100,100),	32500},	{0,	0,	0});
+addPoint(	"StartPos5",	{-32500,	random(-100,100),	-32500},	{0,	180,	0});
+
+	local r = 8000
+	for argu = 0, 300, 60 do
+		if random(1,2) == 2 then
+					addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", {r*cos(argu), 0, r*sin(argu)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+		else
+					addSquadron("Meg_Gehenna_1", "meg_gehenna_3ctm", {r*cos(argu), 0, r*sin(argu)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+		end
+	end
+	
+	for i = 0, 5, 1 do
+		addSquadron("BentusMain", "meg_veildebris_chunk"..random(1,5), {10000*sin(i*72), 0, 55000-i*8000}, -1, {0, i*72, 0}, 0, 0)
+  	addSquadron("BentusMain", "meg_veildebris_chunk"..random(1,5), {-10000*sin(i*72), 0, -55000+i*8000}, -1, {0, 180+i*72, 0}, 0, 0)
+  	addSquadron("BentusMain", "meg_veildebris_chunk"..random(1,5), {55000-i*8000, 0, 10000*sin(i*72)}, -1, {0, -90+i*72, 0}, 0, 0)
+  	addSquadron("BentusMain", "meg_veildebris_chunk"..random(1,5), {-55000+i*8000, 0, -10000*sin(i*72)}, -1, {0, 90+i*72, 0}, 0, 0)
+  end
+  
+  addSquadron("SmallBattleship", "meg_hvdreadnaught", {-32500, 0, 32500}, -1, {0, 135, 0,}, 0, 0)
+  addSquadron("SmallBattleship", "meg_hvdreadnaught", {32500, 0, -32500}, -1, {0, -45, 0,}, 0, 0)
+
+addSalvage("slv_chunk_lrg01", {100, 100, 100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {120, 120, 120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {140, 140, 140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {160, 160, 160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {180, 180, 180}, 100, 100, 100, 100, 100)
+
+addSalvage("slv_chunk_lrg01", {-100, 100, 100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {-120, 120, 120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {-140, 140, 140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {-160, 160, 160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {-180, 180, 180}, 100, 100, 100, 100, 100)
+
+addSalvage("slv_chunk_lrg01", {100, -100, 100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {120, -120, 120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {140, -140, 140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {160, -160, 160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {180, -180, 180}, 100, 100, 100, 100, 100)
+
+addSalvage("slv_chunk_lrg01", {100, 100, -100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {120, 120, -120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {140, 140, -140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {160, 160, -160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {180, 180, -180}, 100, 100, 100, 100, 100)
+
+addSalvage("slv_chunk_lrg01", {-100,-100,-100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {-120,-120,-120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {-140,-140,-140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {-160,-160,-160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {-180,-180,-180}, 100, 100, 100, 100, 100)
+
+addSalvage("slv_chunk_lrg01", {100,-100,-100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {120,-120,-120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {140,-140,-140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {160,-160,-160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {180,-180,-180}, 100, 100, 100, 100, 100)
+
+addSalvage("slv_chunk_lrg01", {-100,100,-100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {-120,120,-120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {-140,140,-140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {-160,160,-160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {-180,180,-180}, 100, 100, 100, 100, 100)
+
+addSalvage("slv_chunk_lrg01", {-100,-100,100}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg02", {-120,-120,120}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg03", {-140,-140,140}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg04", {-160,-160,160}, 100, 100, 100, 100, 100)
+addSalvage("slv_chunk_lrg05", {-180,-180,180}, 100, 100, 100, 100, 100)
+
+
+
+
+addAsteroid("Asteroid_3", {64650,-280,3000}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_4", {65300,370,2950}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_5", {65000,10,3100}, 500, 10000, 10000, 10000, 10000)
+
+addAsteroid("Asteroid_3", {-64650,-280,4000}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_4", {-65300,370,3950}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_5", {-65000,10,4100}, 500, 10000, 10000, 10000, 10000)
+
+addAsteroid("Asteroid_3", {1000,-1280,64595}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_4", {950,1370,65300}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_5", {1100,1000,65000}, 500, 10000, 10000, 10000, 10000)  
+
+addAsteroid("Asteroid_3", {2000,-280,-64500}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_4", {1950,370,-65300}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_5", {2100,10,-65000}, 500, 10000, 10000, 10000, 10000) 
+
+addAsteroid("Asteroid_3", {34650,-280,33700}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_4", {35300,370,32950}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_5", {35000,10,33100}, 500, 10000, 10000, 10000, 10000)
+
+addAsteroid("Asteroid_3", {-34650,-280,-33700}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_4", {-35300,370,-32950}, 100, 100, 100, 100, 100)
+addAsteroid("Asteroid_5", {-35000,10,-33100}, 500, 10000, 10000, 10000, 10000)
+
+
+
+
+
+
+addAsteroid("Asteroid_5", {15200,19545,25350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {-20000,15450,18350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {-17892,-15450,5350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {-19000,-15450,-5350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {14000,-18480,2350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {17500,-14450,-15350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {-14000,19445,-25350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {12000,-15450,24150}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {11000,14450,-19350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {-17000,17450,17350}, 2000, 100, 100, 100, 100) 
+addAsteroid("Asteroid_5", {-10000,12450,15350}, 2000, 100, 100, 100, 100) 
+
+
+
+
+
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{0,	0,	0},	{1,	1,	1,	1},	1,	10000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{0,	30000,	0},	{1,	1,	1,	1},	1,	3000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{0,	-30000,	0},	{1,	1,	1,	1},	1,	3000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{30000,	0,	0},	{1,	1,	1,	1},	1,	3000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{0,	0,	30000},	{1,	1,	1,	1},	1,	3000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{-30000,	0,	0},	{1,	1,	1,	1},	1,	3000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{0,	0,	-30000},	{1,	1,	1,	1},	1,	3000);
+
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{12450,	23500,	-25120},	{1,	1,	1,	1},	1,	4000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{-9750,	-22000,	23561},	{1,	1,	1,	1},	1,	7000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{-11300,	-21330,	14523},	{1,	1,	1,	1},	1,	2000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{19453,	17840,	-28403},	{1,	1,	1,	1},	1,	1000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{-27130,	-24440,	12004},	{1,	1,	1,	1},	1,	6000);
+addNebula("Nebula4_OLD1", "M11_Bentusi_Radiation",{28745,	5123,	-25633},	{1,	1,	1,	1},	1,	5000);
+
+
+
+addNebula("polySurface5", "nebula_hiding", {20000,0,-40000}, {1, 1, 1, 1}, 3000, 4000)
+addNebula("polySurface5", "nebula_hiding", {33490,0,-40112}, {1, 1, 1, 1}, 3000, 4000)
+addNebula("polySurface5", "nebula_hiding", {28570,0,-41235}, {1, 1, 1, 1}, 3000, 4000)
+addNebula("polySurface3", "m05_nebualdustcloud_nores", {24650,0,-43010}, {1, 1, 1, 1}, 10000, 10000)
+addNebula("polySurface5", "nebula01_cream", {31240,0,-33458}, {1, 1, 1, 1}, 1000, 9500)
+
+addNebula("polySurface5", "nebula_hiding", {-35400,0,12000}, {1, 1, 1, 1}, 3000, 4000)
+addNebula("polySurface5", "nebula_hiding", {-43490,0,34112}, {1, 1, 1, 1}, 3000, 4000)
+addNebula("polySurface5", "nebula_hiding", {-28457,0,24135}, {1, 1, 1, 1}, 3000, 4000)
+addNebula("polySurface3", "m05_nebualdustcloud_nores", {-24460,0,13010}, {1, 1, 1, 1}, 10000, 10000)
+addNebula("polySurface5", "nebula01_cream", {-41240,0,23458}, {1, 1, 1, 1}, 1000, 9500)
+
+
+
+
+addNebula("polySurface5", "nebula_hiding", {0,30000,0}, {1, 0.98, 0.973, 1}, 2192.497, 3999.717)
+
+addNebula("polySurface5", "nebula01_cream", {0,20000,0}, {1, 0.98, 0.973, 1}, 1192.497, 8499.717)
+
+addNebula("polySurface3", "m05_nebualdustcloud_nores", {0,10000,0}, {1, 0.98, 0.973, 1}, 13592.497, 12999.717)
+
+addNebula("polySurface4", "m11_bentusi_debris", {0,5000,0}, {1, 0.98, 0.973, 1}, 13592.497, 20999.717)
+
+
+addNebula("polySurface5", "nebula_hiding", {0,-30000,0}, {1, 0.98, 0.973, 1}, 2192.497, 3999.717)
+
+addNebula("polySurface5", "nebula01_cream", {0,-20000,0}, {1, 0.98, 0.973, 1}, 1192.497, 8499.717)
+
+addNebula("polySurface3", "m05_nebualdustcloud_nores", {0,-10000,0}, {1, 0.98, 0.973, 1}, 13592.497, 12999.717)
+
+addNebula("polySurface4", "m11_bentusi_debris", {0,-5000,0}, {1, 0.98, 0.973, 1}, 13592.497, 20999.717)
+
+end
+
+function NonDetermChunk()
+
+addPebble("Pebble_0", {-24800, -10200, -6650}, 10000, 10000, 10000)
+
+
+fogSetActive(0);
+	fogSetActive(0)
+	setGlareIntensity(0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("earthnight")
+end

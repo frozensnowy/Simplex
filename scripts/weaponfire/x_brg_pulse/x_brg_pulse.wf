@@ -1,0 +1,11 @@
+hitfx = "dmg_cloud_spray_large"
+bulletfx = "brg_pulse_bullet"
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Pulse/Pulse"
+firefx = "brg_pulse_muzzle"
+fire_sfx = "WEAPON/MISC/TNG/BRG/BRG_PULSE_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/HULL_PULSE_HIT"
+nopenetrate_sfx = "WEAPON/ALL/HIT/HULL_PULSE_HIT"
+hit_clamp = 
+    { 1, 1, }

@@ -1,0 +1,109 @@
+filerange 46500 46999
+rangestart 46500 46999
+// objectives
+46500	Destroy Makaan.
+46501	Destroy the Vaygr Shipyard.
+46502	Protect the Mothership.
+
+// ping & objective descriptions
+46600	Destroy Makaan to prevent him from uniting the cores and claiming Sajuuk.
+46601	Destroy the Vaygr Shipyard to prevent it from providing reinforcements.
+46602	Protect the Mothership against the incoming Vaygr attack.
+
+
+
+
+
+// player names
+46801	Hiigaran Navy
+46802	Vaygr
+46803	Progenitor
+
+
+
+// location cards
+46520	BALCORA
+46521	MISSION FAILED
+46522	MISSION SUCCESFFUL
+
+// text
+
+
+
+// intelevent_ambush
+// FC
+46525	Makaan cannot be allowed to unite the cores.
+46526	The Prophecy must not end this way.
+// FI
+46527	Multiple incoming Vaygr units detected.
+46528	Protect the Mothership.
+
+
+
+// intelevent_eliminateMakaan
+// FI
+46530	The Vaygr are regrouping around Makaan's Flagship.
+// FI
+46531	He must be destroyed.
+
+
+// intelevent_makaanDamaged
+// FI
+46533	Makaan's Flagship is heavily damaged.
+
+
+// intelevent_makaanCriticallyDamaged
+// FI
+46535	Makaan's Flagship is critically damaged.
+46536	Concentrate all fire on Makaan!
+
+
+// intelevent_makaanRepairing
+// FI
+46540	Makaan is repairing his Flagship.
+46541	Target the Vaygr Resource Collectors to prevent repairs.
+
+
+// intelevent_shipyardDiscovered
+// FI
+46545	The Vaygr are using a shipyard to provide reinforcements.
+46546	It must be destroyed.
+46547	The Vaygr shipyard has been destroyed.
+
+
+// intelevent_carrierDiscovered
+// FI
+46550	Vaygr Carrier detected.
+
+
+// intelevent_kamikazeAttack
+// FI
+46555	The Vaygr have become desperate.
+46556	Their Fighters are making suicide attacks.
+46557	*** AXED *** Recommend using Assault Frigates to protect against these attacks.
+46558	Recommend using Flak Frigates to counter these attacks.
+
+
+
+// intelevent_makaansLastWords
+// Makaan
+46570	At this moment a dark cloud gathers above the skies of Hiigara...
+// Makaan
+46571	The Warriors of the Fringe will never be defeated. 
+// FC
+46572	Makaan has been defeated.
+46573	Begin recovery of the Vaygr Core.
+46574	The Trinity will be united.
+
+
+
+// intelevent_mothershipDestroyed
+46999	MISSION FAILED
+
+
+// pings
+46900	Makaan
+46901	Vaygr Shipyard
+
+
+rangeend

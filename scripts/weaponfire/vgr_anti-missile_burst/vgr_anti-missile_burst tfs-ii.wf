@@ -1,0 +1,9 @@
+hitfx = "hit_generic"
+bulletfx = "dmg_cloud_main_exp_combo"
+fx_scale = 0.25
+nopenetratefx = "nopen_generic"
+deathtype = "deathBeam"
+hit_clamp = {
+  1,
+  1,
+}

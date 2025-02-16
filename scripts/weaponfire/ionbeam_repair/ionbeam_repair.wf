@@ -1,0 +1,13 @@
+-- LuaDC version 0.9.20
+-- 2011/7/9 22:02:15
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "kng_disruptor_green_muzzle"
+bulletfx = "small_laser_designator_combo_green"
+nopenetratefx = "kng_disruptor_green_muzzle"
+--deathtype = "deathBeam"
+firefx = "kng_disruptor_green_muzzle"
+fire_sfx = "WEAPON/sensor_hum"
+hit_clamp = 
+    { 0.5, 1.25, }

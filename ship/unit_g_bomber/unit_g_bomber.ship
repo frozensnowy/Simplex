@@ -1,0 +1,168 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Exotic Precision Bomber (x4)"
+NewShipType.sobDescription = "Anti-Frigate/Capital Ship"
+NewShipType.maxhealth = 1000
+NewShipType.regentime = 0
+NewShipType.minRegenTime = 0
+NewShipType.sideArmourDamage = 0.9
+NewShipType.rearArmourDamage = 0.9
+NewShipType.isTransferable = 1
+NewShipType.useEngagementRanges = 1
+NewShipType.unitCapsNumber = 3
+NewShipType.SquadronSize = 4
+NewShipType.formationSpacing = 140
+NewShipType.passiveFormation = "ScatterWide"
+NewShipType.defensiveFormation = "ScatterDelta_Long"
+NewShipType.aggressiveFormation = "ScatterNarrow"
+NewShipType.mass = 15
+NewShipType.collisionMultiplier = 14
+NewShipType.thrusterMaxSpeed = 270
+NewShipType.mainEngineMaxSpeed = 300
+NewShipType.rotationMaxSpeed = 85
+NewShipType.thrusterAccelTime = 4	--2
+NewShipType.thrusterBrakeTime = 2	--1
+NewShipType.mainEngineAccelTime = 8	--2
+NewShipType.mainEngineBrakeTime = 4	--1
+NewShipType.rotationAccelTime = 0.9
+NewShipType.rotationBrakeTime = 0.45
+NewShipType.thrusterUsage = 1		--0.25
+NewShipType.accelerationAngle = 170
+NewShipType.mirrorAngle = 30
+NewShipType.secondaryTurnAngle = 0	--90
+NewShipType.maxBankingAmount = 85
+NewShipType.descendPitch = 0
+NewShipType.goalReachEpsilon = 5
+NewShipType.slideMoveRange = 0
+NewShipType.controllerType = "Ship"
+NewShipType.tumbleStaticX = 10
+NewShipType.tumbleStaticY = 20
+NewShipType.tumbleStaticZ = 5
+NewShipType.tumbleDynamicX = 2
+NewShipType.tumbleDynamicY = 10
+NewShipType.tumbleDynamicZ = 5
+NewShipType.tumbleSpecialDynamicX = 2
+NewShipType.tumbleSpecialDynamicY = 5
+NewShipType.tumbleSpecialDynamicZ = 1
+NewShipType.relativeMoveFactor = 6
+NewShipType.swayUpdateTime = 2
+NewShipType.swayOffsetRandomX = 10
+NewShipType.swayOffsetRandomY = 10
+NewShipType.swayOffsetRandomZ = 10
+NewShipType.swayBobbingFactor = 0.05
+NewShipType.swayRotateFactor = 0.1
+NewShipType.dustCloudDamageTime = 160
+NewShipType.nebulaDamageTime = 35
+NewShipType.MinimalFamilyToFindPathAround = "SuperCap"
+NewShipType.mirrorAboveManeuver = "ImmelMann_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn, ImmelMann_speedy, ImmelMann_speedy, ImmelMann_speedy"
+NewShipType.mirrorBelowManeuver = "Split_S_speedy, OneEightyDegRightTurn, OneEightyDegLeftTurn, Split_S_speedy, Split_S_speedy, Split_S_speedy"
+NewShipType.specialTurnLeftManeuver = "NinetyDegLeftTurn, None, None"
+NewShipType.specialTurnRightManeuver = "NinetyDegRightTurn, None, None"
+NewShipType.testManeuver1 = "RollCW"
+NewShipType.testManeuver2 = "RollCCW"
+NewShipType.testManeuver3 = "Loop"
+NewShipType.BuildFamily = "NotBuildable"	--"Corvette_Hgn"
+NewShipType.AttackFamily = "Corvette"
+NewShipType.DockFamily = "Corvette"
+NewShipType.AvoidanceFamily = "Strikecraft"
+NewShipType.DisplayFamily = "Corvette"
+NewShipType.AutoFormationFamily = "Corvette"
+NewShipType.CollisionFamily = "Small"
+NewShipType.ArmourFamily = "LightArmour"
+NewShipType.UnitCapsFamily = "Corvette"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 12
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 0
+NewShipType.antiFighterValue = 7
+NewShipType.antiCorvetteValue = 7
+NewShipType.antiFrigateValue = 8
+NewShipType.totalValue = 10
+NewShipType.buildCost = 980
+NewShipType.buildTime = 55
+NewShipType.buildPriorityOrder = 20
+NewShipType.retaliationRange = 4500
+NewShipType.retaliationDistanceFromGoal = 160
+NewShipType.visualRange = 1000
+NewShipType.prmSensorRange = 3000
+NewShipType.secSensorRange = 4000
+NewShipType.detectionStrength = 1
+NewShipType.TOIcon = "Square"
+NewShipType.TOScale = 1
+NewShipType.TODistanceFade0 = 7000
+NewShipType.TODistanceDisappear0 = 5000
+NewShipType.TODistanceFade1 = 2500
+NewShipType.TODistanceDisappear1 = 2000
+NewShipType.TODistanceFade2 = 12000
+NewShipType.TODistanceDisappear2 = 76000
+NewShipType.TOGroupScale = 1
+NewShipType.TOGroupMergeSize = 0
+NewShipType.mouseOverMinFadeSize = 0.045
+NewShipType.mouseOverMaxFadeSize = 0.1
+NewShipType.healthBarStyle = 0
+NewShipType.nlips = 0.000325
+NewShipType.nlipsRange = 6000
+NewShipType.nlipsFar = 0.0002
+NewShipType.nlipsFarRange = 10000
+NewShipType.SMRepresentation = "HardDot"
+NewShipType.meshRenderLimit = 50000
+NewShipType.dotRenderLimit = 10
+NewShipType.visibleInSecondary = 1
+NewShipType.minLOD = 0.25
+NewShipType.goblinsStartFade = 200
+NewShipType.goblinsOff = 200
+--NewShipType.upLOD = 500
+NewShipType.upLOD = 750
+NewShipType.upLOD = 2500
+--NewShipType.downLOD = 515
+NewShipType.downLOD = 765
+NewShipType.downLOD = 2515
+NewShipType.minimumZoomFactor = 0.75
+NewShipType.selectionLimit = 500000
+NewShipType.preciseATILimit = 0
+NewShipType.selectionPriority = 75
+NewShipType.militaryUnit = 1
+addAbility(NewShipType,"MoveCommand",1,0)
+addAbility(NewShipType,"CanDock",1,1)
+NewShipType.dockTimeBetweenTwoFormations = 0.5
+NewShipType.dockTimeBeforeStart = 0.5
+NewShipType.dockNrOfShipsInDockFormation = 1
+NewShipType.dockFormation = "dockline"
+NewShipType.queueFormation = "n_delta"
+NewShipType.ignoreRaceWhenDocking = 1
+addAbility(NewShipType,"CanLaunch")
+NewShipType.launchTimeBetweenTwoFormations = 0.5
+NewShipType.launchTimeBeforeStart = 0.5
+NewShipType.launchNrOfShipsInDockFormation = 1
+NewShipType.launchFormation = "n_delta"
+addAbility(NewShipType,"ParadeCommand",1)
+addAbility(NewShipType,"WaypointMove")
+addAbility(NewShipType,"CanAttack",1,1,1,0,0.35,1,"Corvette, Capturer, Frigate, Fighter, SmallCapitalShip, BigCapitalShip, Mothership, Resource, ResourceLarge, Utility","FlyBy_Interceptor_vs_Frigate",{
+  Fighter = "Flyby_Interceptor_vs_Fighter",
+},{
+  SubSystem = "TopAttack_Interceptor_vs_Subsystem",
+},{
+  SmallCapitalShip = "Flyby_Interceptor_vs_CapShip",
+},{
+  BigCapitalShip = "Flyby_Interceptor_vs_CapShip",
+},{
+  Mothership = "Flyby_Interceptor_vs_Mothership",
+},{
+  ResourceLarge = "Flyby_Interceptor_vs_ResourceLarge",
+})
+addAbility(NewShipType,"GuardCommand",1,3000,500)
+addAbility(NewShipType,"HyperspaceViaGateCommand",1,3,1,0.3)
+addAbility(NewShipType, "DefenseFieldAbility", 0, 0, 0, 400, 0, 5, 1.4, 400, "defensefield_sphere_spray_vaygr")
+addAbility(NewShipType,"RetireAbility",0,0)
+LoadModel(NewShipType,1)
+StartShipWeaponConfig(NewShipType,"aircombat_tu160_missile","Weapon_RocketPod2","FireM2")
+StartShipWeaponConfig(NewShipType,"aircombat_tu160_missile","Weapon_RocketPod3","FireM3")
+addShield(NewShipType,"EMP",150,40)
+NewShipType.sobDieTime = 0.1
+NewShipType.sobSpecialDieTime = 2
+NewShipType.specialDeathSpeed = 40
+NewShipType.chanceOfSpecialDeath = 0.25
+NewShipType.deadSobFadeTime = 0
+setEngineTrail(NewShipType, 0, 4, "trail_ribbon.tga", 0.1, 0.2, 0.025, 3)
+setEngineTrail(NewShipType, 1, 4, "trail_ribbon.tga", 0.1, 0.2, 0.025, 3)
+setEngineBurn(NewShipType, 10, 0.5, 1, 15, 0, 0.7, 0.15, 30)
+loadShipPatchList(NewShipType, "data:sound/sfx/ship/Hiigaran/Corvette/", 0, "Engines/HCorvetteEng", "", 1, "Ambience/HCorvetteAmb", "")

@@ -1,0 +1,38 @@
+-- LuaDC version 0.9.19
+-- 15/05/2005 20.44.39
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Gimble", "Missile", "Hgn_MGMine", "Special Attack", 150, 1050, 0, 0, 0, 0, 1, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 750, 750, "")
+AddWeaponResult(NewWeaponType, "Hit", "SpawnWeaponFire", "Target", 0, 0, "Hgn_MBurstCannonBurst")
+AddWeaponResult(NewWeaponType, "Miss", "SpawnWeaponFire", "Target", 0, 0, "Hgn_MBurstCannonBurst")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    PlanetKillerArmour = 0, 
+})
+setAccuracy(NewWeaponType, 1, 
+{ 
+    SmallCapitalShip = 0, 
+}, 
+{ 
+    BigCapitalShip = 0, 
+}, 
+{ 
+    Mothership = 0, 
+}, 
+{ 
+    Frigate = 0, 
+}, 
+{ 
+    ResourceLarge = 0, 
+}, 
+{ 
+    Resource = 0, 
+}, 
+{ 
+    Capturer = 0, 
+}, 
+{ 
+    munition = 0, })
+setAngles(NewWeaponType, 90, 0, 0, 0, 0)

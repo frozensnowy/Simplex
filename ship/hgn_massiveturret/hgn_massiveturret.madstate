@@ -1,0 +1,14 @@
+HGN_MASSIVETURRET_Open_OnSet = function(ship)
+  if(isAnimRunning(ship,"Open") == 0) then
+	  setState(ship, "Open", 0)
+    startTime = 0
+    startAnim(ship, "Open")
+    startEffect(ship, "Open")
+    setTime(ship,"open",startTime)
+    setPauseTime(ship, "Open", 1000)
+  end
+end
+
+HGN_MASSIVETURRET_Open_OnPause = function(ship)
+  setState(ship, "Open", 1)
+end

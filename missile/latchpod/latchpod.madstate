@@ -1,0 +1,9 @@
+function LatchPod_Open_OnSet(ship)
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+function LatchPod_Docked_OnSet(ship)
+    startAnim(ship, "Latch")
+    setPauseTime(ship, "Latch", 1000)
+end

@@ -1,0 +1,95 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_TurretTop",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Weapon_TurretTop",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_TurretTop_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_CANNON_SHELL",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "Weapon_TurretTop",
+      },
+      {
+        "animtime",
+        "0.25",
+      },
+      {
+        "marker",
+        "Weapon_TurretTopSlave1_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_CANNON_SHELL",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Weapon_TurretTop",
+      },
+      {
+        "animtime",
+        "0.5",
+      },
+      {
+        "marker",
+        "Weapon_TurretTopSlave2_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_frigate",
+      },
+      {
+        "sound",
+        "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_CANNON_SHELL",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+  },
+}

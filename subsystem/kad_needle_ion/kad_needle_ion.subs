@@ -1,0 +1,42 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Chapel"
+NewSubSystemType.sobDescription = "Heavy Ion Cannon"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0.0035
+NewSubSystemType.tacticalIconMinFadeSize = 0.0045
+NewSubSystemType.tacticalIconMaxFadeSize = 0.008
+NewSubSystemType.groupMergeSize = 0.001
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 10000000
+NewSubSystemType.regentime = 0
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.68
+NewSubSystemType.selectionLimit = 0
+NewSubSystemType.preciseATILimit = 0
+NewSubSystemType.selectionPriority = 0
+NewSubSystemType.type = "System"
+NewSubSystemType.typeString = "kad_needle_ion"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 90
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 12000
+NewSubSystemType.timeToBuild = 235
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadSharedModel(NewSubSystemType, "3000ru")
+NewSubSystemType.BuildFamily = "Subsystem_Kad"
+NewSubSystemType.AttackFamily = "UnAttackable"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "PlanetKillerArmour"		--"SubSystemArmour"
+--StartSubSystemWeaponConfig(NewSubSystemType, "kad_needle_ioncannon", "Weapon_IonCan1", "Weapon_IonCan1")

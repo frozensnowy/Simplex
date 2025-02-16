@@ -1,0 +1,18 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "BTURBOLASER_4D_EFFECT",
+		distance = 20000,
+	},
+	lod1 = 
+	{
+		fx = "BASE_BTURBOLASER_4D_LOD",
+		distance = 45000,
+	},
+	lod2 = 
+	{
+		fx = "",
+		distance = 70000,
+	},		
+}

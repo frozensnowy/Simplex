@@ -1,0 +1,103 @@
+filerange 6300 6499
+
+// deathmatch level description
+rangestart 6300 6399
+
+6300	Kharam Wreck
+6301	Kharam Wreck
+6302	Rings of Hraal
+6303	Silumin Training Grounds
+6304	Dante's Requiem
+6305	Sarum Dust Clouds
+6306	Hostilities End
+6307	Jadeth
+6308	Shield
+6309	Crimson Bond
+6310	Terah
+6311	Imposed Cosmos
+
+rangeend
+
+// other type of level description
+rangestart 6400 6499
+// Mission 01
+6400	M01 %d Mission Start
+6401	M01 %d Vaygr Attack
+6402	M01 %d Protect the Mothership
+// Mission 02
+6403	M02 %d Mission Start
+6404	M02 %d Destroy Fighter Facility
+6405	M02 %d Captain Soban Arrives
+6406	M02 %d Destroy Vaygr Carrier
+6407	M02 %d Coordinates set for Sarum
+// Mission 03
+6408	M03 %d Mission Start
+6409	M03 %d Shipyard Repaired
+6410	M03 %d Shipyard Under Attack
+6411	M03 %d Vaygr Inflitrators Defeated
+6412	M03 %d Shipyard Boarded
+6413	M03 %d Shipyard Safe
+// Mission 04
+6414	M04 %d Mission Start
+6415	M04 %d Inhibitors Destroyed
+6416	M04 %d Destroy Command Station
+// Mission 05
+6417	M05 %d Mission Start
+6418	M05 %d Vaygr Garrisons Destroyed
+6419	M05 %d Destroy Vaygr Shipyard
+6420	M05 %d Vaygr Shipyard Destroyed
+6421	M05 %d Oracle Retrieval
+// Mission 06
+6422	M06 %d Mission Start
+6423	M06 %d Movers Attack
+6424	M06 %d Mothership Returned
+6425	M06 %d Mover Salvaged
+6426	M06 %d Mover Reengineered
+6427	M06 %d AntiMover Research Complete
+6428	M06 %d Mothership Returned Again
+// Mission 07
+6429	M07 %d Mission Start
+6430	M07 %d Mover Construction Online
+// Mission 08
+6431	M08 %d Mission Start
+6432	M08 %d Retrieve Dreadnaught
+6433	M08 %d Dreadnaught Retrieved
+6434	M08 %d Collect Devices
+6435	M08 %d Distortion Field Activated
+// Mission 09
+6436	M09 %d Mission Start
+6437	M09 %d Shipyard Nabaal Arrived
+6438	M09 %d Repairs Begun
+6439	M09 %d Repairs Complete
+// Mission 10
+6440	M10 %d Mission Start
+6441	M10 %d Bentusi Arrival
+6442	M10 %d Dreadnaught Repaired
+// Mission 11
+6443	M11 %d Mission Start
+6444	M11 %d Incoming Vaygr
+6445	M11 %d All Cores Retrieved
+// Mission 12
+6446	M12 %d Mission Start
+6447	M12 %d Makaan Arrives
+6448	M12 %d Marines Required
+6449	M12 %d Escort Soban
+6450	M12 %d Soban is Safe
+// Mission 13
+6451	M13 %d Mission Start
+6452	M13 %d Balcora Gate Safe
+6453	M13 %d Destroy Vaygr Shipyard
+6454	M13 %d Vaygr Shipyard Destroyed
+// Mission 14
+6455	M14 %d Mission Start
+6456	M14 %d Destroy Makaan
+6457	M14 %d Makaan Damaged
+6458	M14 %d Destroy Vaygr Shipyard
+6459	M14 %d Vaygr Shipyard Destroyed
+// Mission 15
+6460	M15 %d Mission Start
+6461	M15 %d Planet Killers Arrive
+6462	M15 %d First Platform Destroyed
+6463	M15 %d Second Platform Destroyed
+
+rangeend

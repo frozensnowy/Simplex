@@ -1,0 +1,90 @@
+local flarecolour = { 1, 1, 1 }
+local flareintensity = 2.0
+local flarescale = 2
+
+fadetimes= { 0.1, 0.1, 0.1, 1.0 }
+washoutColour = { 0.2, 0.21, 0.26, 1, }
+washoutStrength = 0.1
+
+hotspots= {
+-- ------------------------------------------------------------------------------ main
+{ 
+texture = "data:Effect/LensFlare/oni_blue_flare2.tga", 
+offset = 1, 
+scale = flarescale * 1, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 1, },
+}, 
+-- ------------------------------------------------------------------------------ main
+{ 
+texture = "data:Effect/LensFlare/oni_blue_flare1.tga", 
+offset = 1, 
+scale = flarescale * 1, 
+rotation = 1, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 1, },
+}, 
+-- ------------------------------------------------------------------------------ main
+{ 
+texture = "data:Effect/LensFlare/oni_blue_flare5.tga", 
+offset = 1, 
+scale = flarescale * 1.0, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 1, },
+}, 
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/oni_blue_flare3.tga", 
+offset = 1.2, 
+scale = flarescale * 0.5, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+},
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/oni_blue_flare4.tga", 
+offset = 0.64, 
+scale = flarescale * 0.1, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+}, 
+-- ------------------------------------------------------------------------------ element
+
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/oni_blue_flare4.tga", 
+offset = 0.84, 
+scale = flarescale * 0.08, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+}, 
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/oni_blue_flare3.tga", 
+offset = -0.85, 
+scale = flarescale * 0.3, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+}, 
+---------------------------------------------------------- EXTRA
+
+{
+texture = "data:Effect/LensFlare/oni_blue_flare8.tga",
+offset = 1.0,
+scale = flarescale * 1.7,
+rotation = 0,
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3},
+},
+{
+texture = "data:Effect/LensFlare/oni_blue_flare7.tga",
+offset = 1.1,
+scale = flarescale * 2.3,
+rotation = 0,
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.4},
+},
+
+---------------------------------------------------------- EXTRA
+ 
+}
+	
+	
+	

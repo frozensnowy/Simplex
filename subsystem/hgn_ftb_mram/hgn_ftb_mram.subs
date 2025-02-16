@@ -1,0 +1,38 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Modular External Payload"
+NewSubSystemType.sobDescription = "Secondary Hull\nModular External Payload\nMRAM2s, 2x PC40"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 0.0035
+NewSubSystemType.tacticalIconMinFadeSize = 0.0045
+NewSubSystemType.tacticalIconMaxFadeSize = 0.008
+NewSubSystemType.groupMergeSize = 0.001
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 70
+NewSubSystemType.regentime = 180
+NewSubSystemType.nlips = 0
+NewSubSystemType.nlipsRange = 0
+NewSubSystemType.nlipsFar = 0
+NewSubSystemType.nlipsFarRange = 0
+NewSubSystemType.meshRenderLimit = 0.004
+NewSubSystemType.minimumZoomFactor = 0.68
+NewSubSystemType.selectionLimit = 10
+NewSubSystemType.preciseATILimit = 5000
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "MEP"
+NewSubSystemType.collateralDamage = 0
+NewSubSystemType.inactiveTimeAfterDamage = 150
+NewSubSystemType.activateHealthPercentage = 0.7
+NewSubSystemType.costToBuild = 0
+NewSubSystemType.timeToBuild = 150
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType, 1)
+NewSubSystemType.BuildFamily = "SubSystem_Hgn"
+NewSubSystemType.AttackFamily = "Fighter"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+--StartSubSystemWeaponConfig(NewSubSystemType,"hgnnws_120hvm","Missile","")
+--StartSubSystemWeaponConfig(NewSubSystemType,"hgnnws_pc40x2","Nose","")

@@ -1,0 +1,127 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:10 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "smoke1", 
+            length = 10, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation2 = 
+        { 
+            name = "smoke2", 
+            length = 9, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation3 = 
+        { 
+            name = "smoke3", 
+            length = 8, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation4 = 
+        { 
+            name = "smoke4", 
+            length = 7, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+        animation5 = 
+        { 
+            name = "start", 
+            length = 10, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, },
+}, 
+    events = 
+    { 
+        startFX0 = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_restored_flash_red", },
+                { "fx_scale", "1", }, 
+            }, 
+        startFX = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_restored_flash_red", },   --red expanding circle
+                { "fx_scale", "2", }, 
+            }, 
+        startFX1 = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_restored_flash_red", },
+                { "fx_scale", "3", }, 
+            }, 
+        startFX2 = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_restored_flash_red", },
+                { "fx_scale", "4", }, 
+            }, 
+        startFX3 = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_restored_flash_red", },
+                { "fx_scale", "5", }, 
+            }, 
+        startFX4 = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_restored_flash_red", },
+                { "fx_scale", "6", }, 
+            }, 
+        startFX5 = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0.08", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_red", },  --white outward rotating circle
+                { "fx_scale", "2", }, 
+            }, 
+        startFX6 = 
+            { 
+                { "anim", "start", }, 
+                { "animtime", "0.08", }, 
+                { "marker", "root", }, 
+                { "fx", "shield_cloak_detected_red", },   --red inward rotating flashing circle
+                { "fx_scale", "2", }, 
+            }, 
+}, }

@@ -1,0 +1,13 @@
+hitfx = "spacebombboom"
+bulletfx = "Space_Bomb_EFFECT"
+nopenetratefx = "spacebombboom"
+firefx = "torpedo_steam_spray"
+deathtype = "deathCannon"
+scartype = "Vgr_HeavyMissile/Vgr_HeavyMissile"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH"
+hit_sfx = "Explosion/large/etg_explode_large_firey"
+nopenetrate_sfx = "Explosion/large/etg_explode_large_firey"
+hit_clamp = {
+  1,
+  1,
+}

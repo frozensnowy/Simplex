@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "tendrilfx",
+		distance = 30000,
+	},
+	lod1 = 
+	{
+		fx = "",
+		distance = 35000,
+	},	
+}

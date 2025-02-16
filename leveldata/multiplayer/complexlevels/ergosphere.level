@@ -1,0 +1,155 @@
+
+levelDesc = "Ergosphere</c>"
+maxPlayers = 6
+player = {}
+
+for k = 0, maxPlayers - 1 do
+	player[k] = {id = k, name = "", raceName = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	-- seed value for random functions
+	local my_seed_1 = {seed = -12345}
+	local RRad = 30000
+
+	setWorldBoundsInner({0, 0, 0}, {60000, 60000, 60000})	
+	setWorldBoundsOuter({0, 0, 0}, {73500, 73500, 73500})
+
+
+  local x=0
+  local y=0
+  local z=0
+  local r = 31000	--sqrt(x^2+y^2+z^2)
+  local h = 500	--tolerance
+	local n = 0
+	while n<random(180,200) do
+		local randx = random(-42000,42000)
+		local randy = random(-12000,12000)
+		local randz = random(-42000,42000)
+		if (randx-x)^2+(randz-z)^2+(randy-y)^2<(r+h)^2 and (randx-x)^2+(randz-z)^2+(randy-y)^2>(r-h)^2 then
+			local ran=random(0,120)
+		  if ran>100 then
+		  	addSquadron("zzz_praxis_chunk_1", "asteroid_3_grey_nosalvage", {randx,randy,randz}, -1, {atan(-randy/randz), atan(-randz/randx), random(0,360)}, 0, 0)
+		  	n=n+1
+		  elseif ran>80 then
+  			addSquadron("zzz_praxis_chunk_2", "asteroid_4_grey_nosalvage", {randx,randy,randz}, -1, {atan(-randy/randz), atan(-randz/randx), random(0,360)}, 0, 0)
+  			n=n+1
+		  elseif ran>60 then
+  			addSquadron("zzz_praxis_chunk_3", "asteroid_5_grey_nosalvage", {randx,randy,randz}, -1, {atan(-randy/randz), atan(-randz/randx), random(0,360)}, 0, 0)
+  			n=n+1
+		  elseif ran>40 then
+  			addSquadron("zzz_praxis_chunk_4", "asteroid_3_grey_nosalvage_big", {randx,randy,randz}, -1, {atan(-randy/randz), atan(-randz/randx), random(0,360)}, 0, 0)
+  			n=n+1
+		  elseif ran>20 then
+  			addSquadron("zzz_praxis_chunk_5", "asteroid_4_grey_nosalvage_big", {randx,randy,randz}, -1, {atan(-randy/randz), atan(-randz/randx), random(0,360)}, 0, 0)
+  			n=n+1
+		  elseif ran>=0 then
+  			addSquadron("zzz_praxis_chunk_6", "asteroid_5_grey_nosalvage_big", {randx,randy,randz}, -1, {atan(-randy/randz), atan(-randz/randx), random(0,360)}, 0, 0)
+  			n=n+1
+		  end
+		elseif (randx-x)^2+(randz-z)^2+(randy-y)^2>(r+h)^2 and (randx-x)^2+(randz-z)^2+(randy-y)^2<42000^2 and randy^2 < 2000 then
+			local ast=random(0,100)
+			if ast>80 then
+		  	addAsteroid("Asteroid_5", {randx,randy,randz}, random(70,100), 0, 0, 0, 0)
+		  	addNebula("polysurface5", "m05_dustcloud_nebula", {randx,randy,randz}, {1.00, 0.50, 0.00, 1.00}, 0.0, 10000)
+			elseif ast>60 then
+		  	addAsteroid("Asteroid_4", {randx,randy,randz}, random(70,100), 0, 0, 0, 0)
+		  	addNebula("polysurface5", "m05_dustcloud_nebula", {randx,randy,randz}, {1.00, 1.00, 0.00, 1.00}, 0.0, 10000)
+		  elseif ast>40 then
+		  	addAsteroid("Asteroid_3", {randx,randy,randz}, random(70,100), 0, 0, 0, 0)
+		  	addNebula("polysurface5", "m05_dustcloud_nebula", {randx,randy,randz}, {1.00, 0.50, 0.50, 1.00}, 0.0, 10000)
+		  elseif ast>20 then
+		  	addAsteroid("Asteroid_2", {randx,randy,randz}, random(70,100), 0, 0, 0, 0)
+		  	addNebula("polysurface5", "m07_foundry_radiation", {randx,randy,randz}, {1.00, 1.00, 0.00, 1.00}, 0.0, 10000)
+		  else
+		  	addAsteroid("Asteroid_1", {randx,randy,randz}, random(70,100), 0, 0, 0, 0)
+		  	addNebula("polysurface5", "m07_foundry_radiation", {randx,randy,randz}, {1.00, 0.50, 0.50, 1.00}, 0.0, 10000)
+		  end
+		end
+	end
+	
+  local beta=random(0,360)
+  local r=4000
+  local n=4*random(1,4)
+  local delta=360/n
+  for i=0,n-1,1 do
+  	addSquadron("meg_progenitorpowermodule", "meg_progenitorpowermodule", {r*sin(i*delta+beta), 0, r*cos(i*delta+beta)}, -1, {beta+90+i*delta,0,90}, 0, 0)
+  	--addSquadron("meg_progenitorpowermodule", "meg_progenitorpowermodule", {r*sin(i*delta+beta), -1500, r*cos(i*delta+beta)}, -1, {180,(i*delta+beta+90),0}, 0, 0)
+  end
+
+--	addCamera("pieplatetest", {0,0,0,}, {0, 32768,0,})
+
+	local startRing =
+	{
+		{1, "StartPoint", "StartPos", {0,0,0,}, {0,0,0,}, 1,},
+--		{1, "CloudText", "CloudText", {0,0,0,}, {1,1,1,1}, 0, 4096,},
+	}
+	local patchRing =
+	{
+		{6, "Function", easyPatch, {0,0,0,}, 100,},
+	}
+	local patchRing2 =
+	{
+		{4, "Function", easyPatch, {0,0,0,}, 10,},
+	}
+	local pebbleRing =
+	{
+		{512,     "Pebble",   "Pebble_0", {0,0,0,}, 0, 0, 0,},
+	}
+	local dustcloudRing =
+	{
+		{36, "DustCloud", "polySurface1", "DustCloud_NoRes", {0,0,0,}, {1, 1, 1, 1}, 0, 10000,}
+	}
+	local deadroidRing =
+	{
+--		{0,   "Asteroid",   "Asteroid_3", {0,0,0,}, 0, 0, 0, 0, 0,},
+		{128,   "Asteroid",   "Asteroid_2", {0,0,0,}, 0, 0, 0, 0, 0,},
+	}
+
+--	addSquadron("Squadron1", "Hgn_Carrier", {0, 100, 0,}, 0, {0, 0, 0,}, 0, 0)
+
+--	shapeAdd(<tPos>, <tDst>, {<sLay>, <fA>, <fB>, ...}, <tRot>, <tSeed>)
+	-- these need to be updated to current syntax
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {0, 0, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {0, 60, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {0, -60, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {90, 0, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipsoid", RRad/10, RRad/10, RRad/10, random(0, RRad/10), 0,}, {-90, 0, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipse", RRad/2, RRad/2, 0, RRad/2, 0,}, {0, +000, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipse", RRad/2, RRad/2, 0, RRad/2, 0,}, {0, +060, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, deadroidRing, {"Ellipse", RRad/2, RRad/2, 0, RRad/2, 0,}, {0, -060, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, dustcloudRing, {"Ellipse", RRad, RRad, RRad/4, RRad/4, 0,}, {0, 0, 0,}, 1)
+--	shapeAdd({0, 0, 0,}, dustcloudRing, {"Ellipsoid", RRad, RRad, RRad/4, RRad/4, 0,}, {0, 0, 0,}, 0)
+
+	easyPatch({0,    0,0,}, 100, my_seed_1)
+	easyPatch({0, RRad,0,}, 100, my_seed_1)
+	easyPatch({0,-RRad,0,}, 100, my_seed_1)
+
+--	globeAdd(<tPos>, <tDst>, {<fRad>, <fLat>, <fLon>, <fThk>, <fHgh>, <tArc>, <iMod>,}, <xNull>, <tSeed>)
+	globeAdd({0,0,0,}, pebbleRing, {RRad, 5, 3, 1000, 0, { 0, 360,}, 2,}, nil, my_seed_1)
+	globeAdd({0,0,0,},  patchRing, {RRad, 2, 0,    0, 0, {30, 390,}, 0,}, nil, my_seed_1)
+
+	local PSgn = 1
+	local YDeg = 30
+	for i = 1, maxPlayers do
+--		ringAdd(<tPos>, <tDst>, {<fAx1>, <fAx2>, <fThk>, <fHgh>, <tArc>, <iMod>,}, <tRot>, <tSeed>)
+		ringAdd({0,0,0,}, startRing, {RRad, RRad, 0, 0, {5 + 30 * PSgn, 365 + 30 * PSgn,}, 0,}, {90, YDeg, 0,}, my_seed_1)
+		PSgn = PSgn * -1
+		YDeg = YDeg + 60
+	end
+end
+
+function NonDetermChunk()
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (40000)
+  fogSetColour(0.03, 0.01, 0.075, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.15)
+  setGlareIntensity (0)
+	setLevelShadowColour(0, 0, 0, 1)
+	setSensorsManagerCameraDistances(61000, 120000)
+	loadBackground("burningember")	
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

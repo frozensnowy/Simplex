@@ -1,0 +1,214 @@
+
+levelDesc = "Hellfire";
+maxPlayers = 5;
+
+player = {}
+player[0] = {id = 0, name = "Vaygr", resources = 1500, raceID = 1, startPos = 1,};
+player[1] = {id = 1, name = "Hiigaran", resources = 1500, raceID = 0, startPos = 1,};
+player[2] = {id = 2, name = "Vaygr", resources = 1500, raceID = 1, startPos = 1,};
+player[3] = {id = 3, name = "Hiigaran", resources = 1500, raceID = 0, startPos = 1,};
+player[4] = {id = 4, name = "Hiigaran", resources = 1500, raceID = 0, startPos = 1,};
+
+function DetermChunk()
+setWorldBoundsInner({0, 0, 0}, {60000, 30000, 60000});
+setWorldBoundsOuter({0, 0, 0}, {70000, 40000, 70000});
+
+addPoint(	"StartPos0",	{0+random(-100,100),	3000+random(-100,100),	0+random(-100,100)},	{0,	random(0,360),	0});
+addPoint(	"StartPos1",	{33333+random(-100,100),	0+random(-100,100),	0+random(-100,100)},	{0,	-90,	0});
+addPoint(	"StartPos2",	{0+random(-100,100),	0+random(-100,100),	53333+random(-100,100)},	{0,	180,	0});
+addPoint(	"StartPos3",	{-33333+random(-100,100),	0+random(-100,100),	0+random(-100,100)},	{0,	90,	0});
+addPoint(	"StartPos4",	{0+random(-100,100),	0+random(-100,100),	-53333+random(-100,100)},	{0,	0,	0});
+
+local battleship = {"meg_titan_cruiser","meg_carrier_huge"}
+addSquadron("MediumBattleship", battleship[random(1,2)], {random(-100,100), random(-100,100), random(-100,100),}, -1, {random(0,360), random(0,360), random(0,360),}, 0, 0)
+	local r = 8000
+	for argu = 0, 300, 60 do
+		if random(1,2) == 2 then
+					addSquadron("Meg_Gehenna_1", "meg_gehenna_1ctm", {r*cos(argu), -3000, r*sin(argu)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+		else
+					addSquadron("Meg_Gehenna_1", "meg_gehenna_3ctm", {r*cos(argu), -3000, r*sin(argu)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+		end
+	end
+
+local battleship = {"meg_reinforcementpad","meg_carrier_huge"}
+addSquadron("MediumBattleship", battleship[random(1,2)], {0+random(-100,100), -10000+random(-100,100), 53333+random(-100,100),}, -1, {random(0,360), random(0,360), random(0,360),}, 0, 0)
+addSquadron("MediumBattleship", battleship[random(1,2)], {0+random(-100,100), -10000+random(-100,100), -53333+random(-100,100),}, -1, {random(0,360), random(0,360), random(0,360),}, 0, 0)
+
+kind = "polySurface1";
+type = "DustCloud_NoRes";
+addDustCloud(	kind,	type,	{-1329,	0,	0},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-1450,	0,	263},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-1531,	0,	575},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-1557,	0,	930},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-1515,	0,	1324},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-1391,	0,	1745},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-1173,	0,	2180},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-848,	0,	2611},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-409,	0,	3018},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{152,	0,	3374},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{834,	0,	3653},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1633,	0,	3821},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{2539,	0,	3847},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{3534,	0,	3696},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{4588,	0,	3334},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{5668,	0,	2730},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{6726,	0,	1856},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{7709,	0,	694},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{8551,	0,	-770},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{9180,	0,	-2533},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{9517,	0,	-4583},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{9479,	0,	-6887},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{8981,	0,	-9393},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{7941,	0,	-12030},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{6284,	0,	-14703},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{3947,	0,	-17291},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{883,	0,	-19652},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-2929,	0,	-21623},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-7479,	0,	-23019},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-12722,	0,	-23641},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-18567,	0,	-23282},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-24875,	0,	-21732},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-31452,	0,	-18792},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-38048,	0,	-14280},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-44353,	0,	-8049},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-50000,	0,	0},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1329,	0,	0},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1450,	0,	-263},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1531,	0,	-575},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1557,	0,	-930},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1515,	0,	-1324},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1391,	0,	-1745},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{1173,	0,	-2180},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{848,	0,	-2611},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{409,	0,	-3018},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-152,	0,	-3374},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-834,	0,	-3653},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-1633,	0,	-3821},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-2539,	0,	-3847},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-3534,	0,	-3696},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-4588,	0,	-3334},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-5668,	0,	-2730},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-6726,	0,	-1856},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-7709,	0,	-694},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-8551,	0,	770},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-9180,	0,	2533},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-9517,	0,	4583},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-9479,	0,	6887},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-8981,	0,	9393},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-7941,	0,	12030},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-6284,	0,	14703},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-3947,	0,	17291},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{-883,	0,	19652},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{2929,	0,	21623},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{7479,	0,	23019},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{12722,	0,	23641},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{18567,	0,	23282},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{24875,	0,	21732},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{31452,	0,	18792},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{38048,	0,	14280},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{44353,	0,	8049},	{1,	1,	1,	1},	0,	5000);
+addDustCloud(	kind,	type,	{50000,	0,	0},	{1,	1,	1,	1},	0,	5000);
+
+--kind = "Nebula4_OLD1";
+--type = "M11_Bentusi_Radiation";
+--addNebula(	kind, 	type,	{0,	0,	0},	{1,	1,	1,	1},	0,	5000);
+
+type = "Asteroid_4";
+
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-5036 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	2608 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{1910 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	11560 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{23930 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	3628 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{22404 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-44700 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{5036 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-2608 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-1910 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-11560 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-23930 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-3628 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-22404 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	44700 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{33333 + random(-500,500),	0 + random(-500,500),	3000 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{-3000 + random(-500,500),	0 + random(-500,500),	33333 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{-33333 + random(-500,500),	0 + random(-500,500),	-3000 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(0,25); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{3000 + random(-500,500),	0 + random(-500,500),	-33333 + random(-500,500)},	100,	0,	0,	0,	0);
+
+for i = 0, 2, 1 do
+type = "Asteroid_3";
+
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-5036 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	2608 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{1910 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	11560 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{23930 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	3628 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{22404 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-44700 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{5036 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-2608 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-1910 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-11560 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-23930 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-3628 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-22404 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	44700 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{33333 + random(-500,500),	0 + random(-500,500),	3000 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{-3000 + random(-500,500),	0 + random(-500,500),	33333 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{-33333 + random(-500,500),	0 + random(-500,500),	-3000 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(500,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{3000 + random(-500,500),	0 + random(-500,500),	-33333 + random(-500,500)},	100,	0,	0,	0,	0);
+end
+
+for i = 0, 4, 1 do
+type = "Asteroid_2";
+
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-5036 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	2608 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{1910 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	11560 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{23930 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	3628 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{22404 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-44700 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{5036 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-2608 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-1910 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-11560 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-23930 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	-3628 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+addAsteroid(	type,	{-22404 + sqrt(r^2-(r*cos(phi))^2)*cos(theta),	0 + r*cos(phi),	44700 + sqrt(r^2-(r*cos(phi))^2)*sin(theta)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{33333 + random(-500,500),	0 + random(-500,500),	3000 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{-3000 + random(-500,500),	0 + random(-500,500),	33333 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{-33333 + random(-500,500),	0 + random(-500,500),	-3000 + random(-500,500)},	100,	0,	0,	0,	0);
+r = random(250,2000); phi = random(0,180); theta = random(0,360);
+--addAsteroid(	type,	{3000 + random(-500,500),	0 + random(-500,500),	-33333 + random(-500,500)},	100,	0,	0,	0,	0);
+end
+
+end
+
+function NonDetermChunk()
+  fogSetActive (1)
+  fogSetStart (10)
+  fogSetEnd (50000)
+  fogSetColour(0.2196, 0.2314, 0.3803, 1)
+  fogSetType ("linear")
+  fogSetDensity (0.3)
+  setGlareIntensity (0)
+  setLevelShadowColour(0, 0, 0, 1)
+loadBackground ("lavaflow")
+setSensorsManagerCameraDistances(61000, 120000)
+end

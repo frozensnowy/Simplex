@@ -1,0 +1,150 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_TurretTop",
+      length = 8,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation3 = {
+      name = "Dmg1",
+      length = 1,
+      loop = 1,
+      parent = "damage",
+      minimum = 0.9,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation4 = {
+      name = "Weapon_TurretTopE",
+      length = 2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Dmg1",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "fx",
+        "dmg_damage_subsystem_spray",
+      },
+      {
+        "fx_scale",
+        "entity",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "Weapon_TurretTop",
+      },
+      {
+        "animtime",
+        "0.43",
+      },
+      {
+        "marker",
+        "weapon01_Muzzle",
+      },
+      {
+        "sound",
+        "WEAPON/MEGASHIP/FIRE/SAJUUK_HEAVY_ION_CANNON_BEAM",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Weapon_TurretTop",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "weapon01_Muzzle",
+      },
+      {
+        "fx",
+        "mega_burst_fire_combo",
+      },
+      {
+        "sound",
+        "WEAPON/MEGASHIP/FIRE/DREADNAUGHT_FIRE_1",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event3E = {
+      {
+        "anim",
+        "Weapon_TurretTopE",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "weapon01_Muzzle",
+      },
+      {
+        "fx",
+        "sunfire_squirt_small",
+      },
+      {
+        "sound",
+        "WEAPON/Lenergy",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+      {
+        "fx_scale",
+        "entity",
+      },
+    },
+  },
+}

@@ -1,0 +1,50 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:44 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+function VGR_TMATSHIP_Launched_OnSet(ship)
+    startAnim(ship, "Open")
+    setPauseTime(ship, "Open", 1000)
+end
+
+VGR_TMATSHIP_Docked_OnSet = function(ship)
+    stopAnim(ship, "Open")
+end
+
+
+VGR_TMATSHIP_CodeRed_OnSet = function(ship)
+	stopAnim(ship, "Open")
+	setState(ship, "CodeRed", 0)
+	if(isAnimRunning(ship,"Deploy") == 0) then
+	startTime = 0
+	if(isAnimRunning(ship,"Undeploy") ~= 0) then
+	startTime = getAnimLength(ship, "Undeploy") - getTime(ship, "Undeploy")
+	stopAnim(ship, "Undeploy")
+	endEffect(ship, "Undeploy")
+	end
+	startAnim(ship, "Deploy")
+	startEffect(ship, "Deploy")
+	setTime(ship,"Deploy",startTime)
+	setPauseTime(ship, "Deploy", 1000)
+	end
+end
+
+VGR_TMATSHIP_CodeRed_OnPause = function(ship)
+	setState(ship, "CodeRed", 1)
+end
+
+VGR_TMATSHIP_CodeGreen_OnSet = function(ship)
+	if(isAnimRunning(ship,"Undeploy") == 0) then
+	startTime = 0
+	if(isAnimRunning(ship,"Deploy") ~= 0) then
+	startTime = getAnimLength(ship, "Deploy") - getTime(ship, "Deploy")
+	stopAnim(ship, "Deploy")
+	endEffect(ship, "Deploy")
+	end
+	startAnim(ship, "Undeploy")
+	startEffect(ship, "Undeploy")
+	setTime(ship,"Undeploy",startTime)
+	setPauseTime(ship, "Undeploy", 1000)
+	end
+end

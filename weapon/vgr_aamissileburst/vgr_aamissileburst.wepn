@@ -1,0 +1,10 @@
+StartWeaponConfig(NewWeaponType,"Fixed","SphereBurst","AAmissleburst","Normal",0,0,92,2,0,0,10,0,0,0,0,0,0,0,0,0,0.1,"Normal",1,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",1000,1000,"")
+setPenetration(NewWeaponType,5,1,{
+  unarmoured = 0.05,
+},{
+  lightarmour = 0.38,
+},{
+  PlanetKillerArmour = 0,
+})
+setAngles(NewWeaponType,180,0,0,0,0)

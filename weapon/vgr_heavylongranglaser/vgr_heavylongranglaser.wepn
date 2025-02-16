@@ -1,0 +1,30 @@
+StartWeaponConfig(NewWeaponType,"AnimatedTurret","Bullet","Vgr_Laser","Normal",4000,12000,0,0,0,0,1,1,1,0.5,2,5,1,0,40,40,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType,"Hit","DamageHealth","Target",5500,5500,"")
+setPenetration(NewWeaponType,30,1,{
+  MediumArmour = 0.7,
+},{
+  HeavyArmour = 0.5,
+},{
+  MoverArmour = 0.4,
+})
+setAccuracy(NewWeaponType,1,{
+  Fighter = 0,
+},{
+  Corvette = 0,
+},{
+  munition = 0.05,
+},{
+  Frigate = 1,
+  damage = 1,
+},{
+  SmallCapitalShip = 0.6,
+  damage = 1,
+},{
+  BigCapitalShip = 0.6,
+  damage = 1,
+},{
+  ResourceLarge = 0.6,
+  damage = 1,
+})
+setAngles(NewWeaponType,0,-160,160,0,60)
+setMiscValues(NewWeaponType,4,0.1)

@@ -1,0 +1,103 @@
+local flarecolour = { 0.639216,0.388235,0.384314 }
+local flareintensity = 4.0
+local flarescale = 5
+
+fadetimes= { 0.1, 0.1, 0.1, 1.0 }
+washoutColour = { 1, 0.8, 0.25, 1, }
+washoutStrength = 0.03
+
+hotspots= {
+-- ------------------------------------------------------------------------------ main
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare2.tga", 
+offset = 1, 
+scale = 1, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 1, },
+}, 
+-- ------------------------------------------------------------------------------ main
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare1.tga", 
+offset = 1, 
+scale = 1, 
+rotation = 1, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 1, },
+}, 
+-- ------------------------------------------------------------------------------ main
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare1.tga", 
+offset = 1, 
+scale = 1.0, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 1, },
+}, 
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare3.tga", 
+offset = 1.2, 
+scale = 0.5, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+},
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare4.tga", 
+offset = 0.64, 
+scale = 0.1, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+}, 
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare4.tga", 
+offset = -0.3, 
+scale = 0.1, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+},  
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare4.tga", 
+offset = -0.54, 
+scale = 0.1, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+},  
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare4.tga", 
+offset = -0.8, 
+scale = 0.05, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+},  
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare4.tga", 
+offset = -0.76, 
+scale = 0.08, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+}, 
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare4.tga", 
+offset = 0.84, 
+scale = 0.08, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+}, 
+-- ------------------------------------------------------------------------------ element
+{ 
+texture = "data:Effect/LensFlare/moni03_org_flare3.tga", 
+offset = -0.85, 
+scale = 0.3, 
+rotation = 0, 
+colour = { flarecolour[1], flarecolour[2], flarecolour[3], 0.3, },
+}, 
+
+ 
+}
+	
+	
+	

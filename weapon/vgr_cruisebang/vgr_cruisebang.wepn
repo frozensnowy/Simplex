@@ -1,0 +1,21 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:10 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "SphereBurst", "Vgr_SmallMissile", "Normal", 0, 0, 164, 2, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 1, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 18500, 18500, "")
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Owner", 18500, 18500, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    unarmoured = 0.4, 
+}, 
+{ 
+    lightarmour = 0.38, 
+}, 
+{ 
+    TurretArmour = 1.9, 
+}, 
+{ 
+    PlanetKillerArmour = 0, })
+setAngles(NewWeaponType, 90, 0, 0, 0, 0)

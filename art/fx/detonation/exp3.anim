@@ -1,0 +1,15 @@
+fps = 8
+startFrame = 0
+loopCount = 1
+layout = { 8, 1 } 
+textureLayout =
+	{
+		{"data:/ART/FX/detonation/exp3.dds", 0, 0},
+		{"data:/ART/FX/detonation/exp3.dds", 1, 0},
+		{"data:/ART/FX/detonation/exp3.dds", 2, 0},
+		{"data:/ART/FX/detonation/exp3.dds", 3, 0},
+		{"data:/ART/FX/detonation/exp3.dds", 4, 0},
+		{"data:/ART/FX/detonation/exp3.dds", 5, 0},
+		{"data:/ART/FX/detonation/exp3.dds", 6, 0},
+		{"data:/ART/FX/detonation/exp3.dds", 7, 0}
+	}

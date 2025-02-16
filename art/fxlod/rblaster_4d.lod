@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "RBlaster_4D",
+		distance = 10000,
+	},
+	lod1 = 
+	{
+		fx = "",
+		distance = 15000,
+	},	
+}

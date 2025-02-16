@@ -1,0 +1,12 @@
+hitfx = "shield_hit_bullet_small_combo"
+bulletfx = "rom_pulse_bullet"
+nopenetratefx = "ion_dmg_ring_spray"
+blowthroughfx = "blowthrough_generic"
+deathtype = "deathBeam"
+scartype = "Pulse/Pulse"
+firefx = "rom_pulse_muzzle"
+fire_sfx = "WEAPON/ROM/TNG/ROM_PULSE_FIRE"
+hit_sfx = "WEAPON/ALL/HIT/SHIELD_PULSE_HIT"
+nopentrate_sfx = "WEAPON/ALL/HIT/SHIELD_PULSE_HIT"
+hit_clamp = 
+    { 0.5, 1.25, }

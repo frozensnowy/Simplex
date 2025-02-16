@@ -1,0 +1,8 @@
+StartWeaponConfig(NewWeaponType,"Fixed","Missile","Heavy_Rocket","Normal",200,200,0,0,0,2,1,0,0,180,0,0,0,0,0,0,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType,"Hit","SpawnWeaponFire","Target",0,0,"Sabotage_Burst")
+setPenetration(NewWeaponType,5,1,{
+  PlanetKillerArmour = 0,
+})
+setAccuracy(NewWeaponType,1)
+setAngles(NewWeaponType,180,0,0,0,0)
+setMiscValues(NewWeaponType,0,3)

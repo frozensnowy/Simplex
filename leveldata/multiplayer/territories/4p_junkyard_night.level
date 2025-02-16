@@ -1,0 +1,4686 @@
+
+
+--*********** LEVEL INTERFACE ***********
+levelDesc = "Junkyard (Night)" --display name for the map (built-in variable)
+levelName = "4p_junkyard_night" --name of level file
+levelSize = {1000000, 1000000, 1000018}
+levelBackground = "m01" --POSSIBLE VALUES: m01 to m15, black, white
+defaultMusic = "Data:sound/music/AMBIENT/amb_07" --POSSIBLE MUSIC: amb_01, amb_03, amb_05, amb_07, amb_08
+cameraMaxZoom = 130000
+
+
+function AddTerritoryPebbles()
+	local idx = 0
+	local territory = 0
+	for idx,territory in Territories do
+		if idx ~= "n" then
+			
+			--*********** ADD TERRITORY PEBBLES HERE ***********
+			--Pebbles can be added for any or all territories
+			--("idx" refers to the territory ID)
+			--("territory" refers to the Territories table entry)
+			
+			--POSSIBLE "if" STATEMENTS TO USE:
+			--if idx == 5 then
+			--if idx == 10 or idx == 20 then
+			--if territory[PARENTID] == PARENT then
+			
+			--PEBBLE FUNCTIONS:
+			--MakePebbleRing({tCentreLocation}, "sAxis", iRadius, iNumberOfPebbles, iDegreeToStartOn, iMaxVariance, tDegreeRanges, sPebbleType)
+			--MakePebbleSphere(tCentreLocation, iRadius, iOuterThickness, iNumberOfPebbles, sPebbleType)
+			--MakePebbleLine({tStartPoint}, {tEndPoint}, iDistanceBetweenPebbles, iMaxVariance, tDistanceRanges, sPebbleType)
+			--PEBBLE TYPES: pebble_0, pebble_1, pebble_2
+			
+			--MakePebbleRing(territory[LOCATION], "Z", GetTerritorySize(idx), 100, 0, 200)
+			--MakePebbleSphere(territory[LOCATION], GetTerritorySize(idx), 50, 150)
+			
+			
+			if territory[PARENTID] == PARENT then
+				if idx == 3 or idx == 9 or idx == 12 or idx == 6 then
+					MakePebbleSphere(territory[LOCATION], GetTerritorySize(idx), 50, 200)
+				elseif idx == 13 or idx == 14 then
+					MakePebbleSphere(territory[LOCATION], GetTerritorySize(idx), 50, 150)
+				else
+					MakePebbleRing(territory[LOCATION], "Z", GetTerritorySize(idx), 40, 0, 0, nil, "pebble_2")
+				end
+			end
+			
+			
+			
+			
+			
+		end
+	end
+	
+	
+	
+	--*********** MISCELLANEOUS PEBBLES ***********
+	--add any other pebbles here
+	
+	--mission 6 pebbles
+    addPebble2("Pebble_0", 
+    { -20302, -2344, -11683, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17533, -3548, -10638, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -650, -1717, 16276, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22022, -1097, -22549, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4722, -510, 6272, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6785, -7240, 22536, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9535, -318, 1793, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4990, -3274, 23179, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19170, 621, -19443, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5516, -372, 6569, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17941, -3594, -11454, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21855, -1152, -19853, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20727, -1421, -21306, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21816, -1826, -13466, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22525, 153, -15512, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 531, -2448, 20855, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22428, 1731, -16659, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -659, -1842, 22020, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22009, -396, -20201, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10397, -517, 2955, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14413, -1669, -8779, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15730, -3297, -7956, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7847, -6511, 28332, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7590, -7184, 22615, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9626, -1519, 2753, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20867, -1303, -21368, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22007, 239, -21947, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4, -2114, 20224, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2207, -3634, 22459, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10417, -347, 610, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22261, 413, -17360, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 136, -1814, 16765, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1473, -391, 16524, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21226, 488, -22150, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1693, -817, 9928, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5437, -1834, 6464, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11643, 74, -1040, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22599, 1047, -15679, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21759, -1308, -22119, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7708, -562, 21857, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7152, -1086, 23560, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2719, -2124, 19813, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 82, -1584, 15739, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2707, -1726, 10001, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15882, -2756, -10644, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22242, 1486, -15977, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -86, -1150, 18312, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9725, -188, 2959, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 644, -1471, 18013, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11956, -5102, 10824, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5468, -1264, 8196, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16607, -2644, -10931, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22165, -396, -21785, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6569, -7301, 22598, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5597, -1117, 7876, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2836, -4090, 22842, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19235, -184, -19718, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22283, 232, -13636, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4660, -555, 9542, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1594, -504, 13240, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5844, -6069, 28568, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -77, -2041, 17307, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5204, -914, 8597, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22613, 315, -14457, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22130, 331, -20992, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8775, -1725, 2854, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 148, -608, 15332, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1580, -3076, 22311, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -23159, 1054, -17158, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3900, -4032, 23035, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19376, 277, -19578, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6007, -2916, 23570, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -733, -1811, 16366, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1222, -1263, 13785, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21269, 341, -22714, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12088, 917, -3894, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22748, 930, -14699, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -170, -1577, 14559, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1701, -1222, 13231, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13047, 383, -6773, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4414, -4237, 22465, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -391, -1737, 20110, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10524, 642, 1060, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -995, -2215, 21940, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12390, -4913, 13925, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1261, -859, 12439, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6023, -6712, 22881, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22736, -636, -14852, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21454, 209, -20166, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4695, -4351, 22993, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2844, -1794, 19359, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12835, 960, -5276, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1362, -1528, 14412, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21387, -2317, -12206, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3241, -1703, 19621, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21817, -33, -22759, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 778, -2109, 20449, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5992, -7730, 23062, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7886, -6469, 28188, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 754, -1965, 20103, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5548, -5793, 28331, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11194, 892, 920, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5979, -1122, 6538, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17651, -681, -6112, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -89, -2312, 20241, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -771, -1610, 15486, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20248, -1885, -11516, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10544, 69, 1838, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20601, -2342, -13093, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21773, -372, -24057, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11025, -1417, 1289, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10047, -6680, 22933, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2250, -250, 10175, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 759, -2253, 20366, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5745, -361, 5915, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -18662, -3049, -12225, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -35, -168, 14157, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3459, -1713, 19040, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15780, -2341, -7727, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9664, 151, 2522, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6121, -1508, 7002, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3309, -1070, 18764, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22791, 1228, -16052, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16953, -3098, -10007, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7081, -1566, 5012, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 746, -1399, 20142, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4928, -91, 6640, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12922, -5538, 12482, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1150, -1637, 15882, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21779, -1123, -22221, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7193, -6412, 22409, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12377, -575, -6418, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19769, -3232, -15955, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4309, -1040, 9319, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1496, -3266, 22070, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19544, -2213, -15435, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -532, -1290, 18423, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -680, -111, 16379, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11378, -6362, 12595, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2791, -1278, 19789, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 662, -940, 18455, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 387, -1563, 20156, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7485, -1239, 4246, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16883, -2708, -10248, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22539, 1177, -16501, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5134, 84, 7842, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2450, -3731, 22861, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3209, -537, 17684, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 748, -2209, 21090, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4874, -1780, 7712, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15429, -2495, -7526, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13007, -6388, 11459, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7898, -767, 3556, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -716, -1326, 17389, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20341, -2418, -12150, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22486, 297, -17745, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5998, -1651, 5645, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9435, -511, 2147, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1511, -1087, 12178, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6285, -1525, 6985, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1550, -3580, 22214, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10697, -524, 2935, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1139, -1727, 13546, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1750, -1302, 13613, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20860, 535, -19946, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -968, -942, 18277, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 39, -403, 17599, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2348, -796, 14343, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10257, -5340, 22493, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5175, 8, 6941, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16178, -2548, -9747, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11064, 99, 2079, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19258, 55, -20049, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21030, 578, -20471, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5053, -1419, 8400, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10247, -179, 2877, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13343, -6064, 11562, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6445, -7061, 22836, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22702, 677, -16008, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7741, -6156, 28295, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7824, -1388, 5671, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19273, -2282, -15273, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19022, -489, -14542, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21278, 200, -21638, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22382, 537, -14117, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6777, -901, 5498, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21825, -1230, -21556, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7529, -6524, 22858, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -165, -1417, 20337, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12547, -5218, 14135, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21887, -1045, -21359, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8282, -1580, 3085, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 82, -1526, 15667, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20491, -1358, -12478, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17739, -3907, -11156, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7073, -1525, 5123, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -610, -923, 15406, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22956, -543, -14524, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 593, -2536, 21075, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14972, -2356, -10060, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -18988, -2995, -10618, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2258, -1570, 12258, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5976, -6651, 28901, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -980, -2513, 21568, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13324, -484, -7880, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10913, -6203, 14198, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7123, -1678, 6035, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11960, -208, 69, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1789, -3459, 22529, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -985, -746, 15851, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21921, 1539, -16905, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6902, -1680, 4495, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8258, -1433, 3652, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7385, -1478, 23332, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7385, -983, 4571, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12388, 293, -4384, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11680, 949, -1416, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21557, 236, -20638, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -23279, 1156, -16245, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22773, 1352, -15899, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5223, -232, 6301, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19094, -2989, -10596, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3505, -1573, 19310, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -772, -2003, 16229, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14384, -1726, -9677, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 564, -2913, 20744, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -973, -1551, 15530, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11639, 670, -2459, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11645, 1051, -2704, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21450, -680, -12752, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7531, -588, 5028, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16569, -3335, -11180, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9896, -175, 7944, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 548, -1383, 18490, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1281, -907, 13840, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20674, -988, -21241, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20461, -192, -21797, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11796, -4785, 10585, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20431, -1094, -12406, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10507, -1265, 5859, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4525, -1069, 8574, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19790, -324, -14358, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19872, 698, -20401, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11361, 11, 1969, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14704, -2354, -6836, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3540, -4243, 22102, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20864, 811, -20829, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21357, 279, -22570, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6226, -802, 5226, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22272, 1030, -16563, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10537, -1350, 2716, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2797, -1626, 19856, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4573, -163, 6793, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15248, -3050, -8002, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -927, -1572, 17623, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4649, -1413, 7849, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1789, -421, 14259, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -215, -229, 13824, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21914, 72, -18630, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7961, -1561, 5061, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11348, -795, 1660, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -23419, 321, -25503, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12377, -6329, 10438, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20695, -959, -20108, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13973, -1284, -8824, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -984, -671, 11518, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1323, -1585, 14206, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -18953, -3306, -11521, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5822, -282, 6694, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22652, 851, -17110, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22119, 65, -24294, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2137, -3516, 22015, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17416, -2870, -11002, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21657, -283, -19090, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20166, -1958, -13368, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5221, -888, 8221, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1486, -1398, 13172, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6662, -1368, 4798, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -685, 309, 13378, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10997, 771, -245, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5416, -1490, 6837, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1383, -1171, 11304, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2195, 155, 11920, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2385, -2068, 20047, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -982, -839, 18199, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22567, 543, -14337, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1201, -929, 17378, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -18102, -3702, -10872, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9900, -5475, 22610, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20547, 175, -22128, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2504, 1303, -7353, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11004, 267, -2960, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 61, 292, -12699, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 36653, 4760, 234, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9774, -186, -1924, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22149, 37, -23994, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16447, 33, -20135, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -592, -1728, -13811, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22029, -2086, 4181, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 35505, 4235, 726, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10623, -604, -19332, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22372, -1182, 3980, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19477, -757, 4010, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9781, -1712, -18457, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1569, 619, -9904, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 29993, 2117, 3695, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8125, 604, -2831, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1423, 388, -10679, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10288, 464, -8794, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 734, 1574, -10346, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4275, 1571, -5051, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8387, -1369, -18504, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19716, 214, -20234, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16398, -420, -19754, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18451, -2196, 5801, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 35378, 3688, 6105, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 33092, 3472, 2233, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 34393, 3730, 240, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11971, -752, -19547, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9707, -809, -19146, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19559, -191, -21537, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2706, 1432, -6418, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 32192, 3433, 2411, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2561, 1751, -6611, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10352, -661, -9682, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14684, -791, -18936, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -976, -1881, -13770, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7075, 367, -2985, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7649, -2214, -18219, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21185, -2078, 4771, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 25177, -882, 4401, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12223, -1522, -19203, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2613, -1500, -15196, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1955, 1189, -10437, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16838, -265, -20237, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2154, 753, -9742, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6400, -1280, -15933, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13357, -535, 852, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10525, -1802, -18857, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14916, -145, -19901, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13832, -1080, -19083, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2184, 778, -10103, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19082, 229, -21305, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22618, -1344, 3807, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 14878, 142, 1311, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13631, -1112, -19292, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19972, 342, -20622, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13126, -1041, -18593, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2574, 1199, -9212, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11786, -1180, -18878, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 25361, -609, 4921, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21737, -64, -23407, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8825, -1801, -18281, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4341, 1741, -5629, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10277, -30, -906, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 36034, 5372, 8625, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19033, -1755, 3485, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 30973, 2511, 3361, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21784, 130, -23438, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22175, 54, -23774, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 29757, 1377, 3842, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -449, -1855, -15255, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11706, -18, -307, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19358, 197, -19779, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10633, 1035, -8932, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12851, -774, -19139, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 619, 1202, -11284, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12109, 630, -8201, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5180, 1221, -4732, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 34510, 3871, 3513, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8808, -2088, -19623, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10894, -1568, -18829, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3914, 2115, -6380, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9809, -1824, -19091, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12732, -20, -19142, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 23006, -2018, 6408, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8442, 45, -2995, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10386, -1129, -19484, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19494, -160, -21274, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22318, 32, -24052, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9803, -1758, -18448, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9653, 63, -2504, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1324, 584, -10752, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21110, -1569, 3923, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21872, -2190, 3936, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2246, 1663, -8684, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 29109, -954, 5793, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20968, -74, -22350, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8342, -1851, -19108, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -18807, -321, -20911, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4343, 925, -5763, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21984, 94, -23764, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19338, -1155, 3659, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7846, -1414, -18437, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13915, -412, -19787, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3554, 1074, -6291, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 30125, 1871, 3640, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26697, -7, 4256, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 974, 418, -11775, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3622, 1393, -5507, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19547, -571, 3539, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 989, 72, -12094, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18650, -1535, 3973, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 25678, -639, 7747, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7332, -2064, -16272, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16498, -1076, -19327, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6900, 770, -3128, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22945, -1719, 4064, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14711, -828, -19343, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21861, -832, 4042, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20999, -117, -22473, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 16709, -460, 1872, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21247, -2078, 3549, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15695, 174, -19937, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8114, -2068, -18437, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20853, -1379, 7590, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19381, 135, -19860, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20525, -32, -22183, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16327, 204, -19477, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20353, -56, -21965, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2174, 1385, -6738, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26307, -652, 7954, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 24668, -1425, 4336, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19693, 4, -21502, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17049, -379, -20331, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2947, 989, -6538, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21124, -1498, 4235, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20017, 350, -20679, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1812, -1013, -15233, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 32116, 3202, 2583, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17460, -1591, 2894, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19100, 97, -19529, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15477, 236, -19626, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 12569, 72, 304, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1011, -2066, -16041, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 31577, 3026, 3099, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 31189, 2830, 3101, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22961, -1017, 4608, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3267, 1832, -6958, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19858, -19, -21562, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26595, 24, 4062, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19745, 244, -20315, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18629, -1054, 6845, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26815, -237, 4758, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19722, -1491, 3866, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17238, -1387, 3178, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 34566, 4153, 215, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21, -1767, -14991, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26887, -348, 4063, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 811, 1745, -9562, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19731, -782, 4228, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17811, -1574, 2932, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8578, -1642, -18802, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13547, -392, 655, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 35401, 3417, 5609, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2083, 1279, -6981, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 30593, 1861, 2981, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20127, 124, -21835, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10821, -377, -18917, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 23878, -1938, 4997, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8157, 863, -3209, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11692, -324, -19184, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17680, -347, -20241, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 271, 566, -11234, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18539, -1839, 3463, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12658, -542, -19647, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14755, 59, -19288, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12087, -1062, -19092, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 23367, -1231, 6688, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19042, -1708, 8726, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3136, 1603, -7304, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8332, 1053, -3024, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21951, -746, 4312, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16781, 35, -19685, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22307, -820, 4512, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22155, -1385, 5243, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17951, -992, 2640, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7086, 1127, -3512, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -586, -1511, -14538, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11284, -865, -19609, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18739, -1397, 3796, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1276, -168, -11058, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19610, -982, 4429, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 27571, -1051, 5562, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 25192, -1380, 4801, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2115, 988, -8709, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9642, -953, -18688, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9216, 808, -2022, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 25529, 336, 5016, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19657, -1942, 2995, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21568, -20, -23068, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6171, 824, -4841, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19547, 237, -21468, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21141, -786, 4046, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6186, -2101, -16343, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18012, -445, 2855, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8713, 268, -2326, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5566, 1512, -5235, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6457, -2347, -17993, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20417, -1285, 3599, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 37261, 4065, 359, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6, 1085, -10755, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21441, -31, -23179, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9161, -939, -18798, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19940, -2071, 4395, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11947, -487, -18467, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 29575, 361, 6405, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21842, -62, -23507, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17980, -946, 2402, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 23052, -1429, 6556, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9137, 604, -1905, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13627, -628, -19501, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20702, -1242, 7883, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12397, -799, -18433, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22864, -1519, 4013, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9954, -2059, -18588, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7532, 1238, -3387, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 25814, 364, 4487, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3393, 1982, -6470, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7758, -1840, -18272, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1044, 310, -10384, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 14908, -116, 794, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7276, -2101, -16711, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1472, -2081, -15951, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -357, -1402, -14074, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9771, -157, -1345, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19591, 166, -20047, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10119, -1710, -19543, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3082, 1649, -7444, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1447, 331, -11349, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 210, 1427, -11107, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13178, -76, 762, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 39077, 5284, 8024, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17518, -281, -20674, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4987, 1201, -5138, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19614, -217, -21448, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13975, 36, 1100, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 38379, 4735, 8009, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13441, -551, -19345, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9525, -1357, -18374, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8927, 371, -2216, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 36608, 4215, 92, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10919, -728, -10717, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1529, 996, -10522, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9331, 578, -2629, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21457, -1120, 4795, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 508, -656, -11700, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3619, 2239, -6635, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1377, 936, -10222, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18973, -798, 3175, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8724, -2024, -19650, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 16292, -670, 1130, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17061, -1465, 2730, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9409, -2051, -18358, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8376, -1801, -19080, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12154, -362, -8925, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2221, 645, -9110, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1167, 1383, -9653, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8869, -2428, -18563, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1787, 313, -10591, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1651, 1526, -7454, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19952, -215, -21693, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20307, -1267, 3548, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 24844, -264, 4225, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21892, -2046, 3893, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 24777, -575, 5400, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9488, -2000, -18589, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8156, 151, -3174, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4212, 2011, -6124, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7377, -2631, -18445, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13623, -533, 212, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -318, -753, -12990, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5801, 1426, -4545, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2113, 1091, -10512, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 24677, -460, 4415, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -21972, 32, -23481, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14528, -776, -18860, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20671, -1735, 3535, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19464, 127, -19909, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18583, -1066, 3486, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -18435, -11, -20449, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26875, 301, 5223, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12557, -713, -18525, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19745, 252, -20266, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11503, -437, -19390, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7576, -1173, -16144, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10588, 259, -3029, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19530, -18, -21221, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 24599, -1330, 4950, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10098, 1353, -7599, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 16471, -646, 2833, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16367, -844, -19065, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 32948, 3865, 2320, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1975, 2072, -6909, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1999, 1169, -9767, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2456, 1275, -7085, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 25603, -263, 7718, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 18157, -1195, 3712, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 19373, -860, 2824, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 14679, -50, 871, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13046, 24, -18717, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7891, -108, 22221, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8263, 156, 22055, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9239, 1701, 23248, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8682, 1177, 23560, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7615, -618, 21871, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8160, 242, 23803, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7537, -653, 23570, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8916, 786, 23332, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10037, 3831, -25844, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 304, 6292, -22542, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3697, 6712, -23119, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4143, 7555, -23802, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7718, 5961, -23057, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7506, 6538, -21561, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -472, 7530, -24402, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -303, 6524, -24033, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13731, 3159, -24792, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7047, 5003, -22703, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13380, 3005, -24591, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7994, 5093, -24164, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1238, 6430, -25253, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4443, 6931, -24292, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3734, 7587, -23494, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10008, 3775, -24572, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3694, 7309, -24538, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3700, 7690, -24782, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10329, 3146, -23902, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13198, 2450, -25067, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -626, 7147, -23662, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9598, 4216, -22938, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -275, 7409, -23397, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4959, 7346, -24628, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5022, 6220, -23796, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5304, 6613, -23046, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6780, 6207, -22315, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5590, 4850, -24831, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6824, 5215, -23039, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4769, 6931, -24214, }, 0, 0, 0)	
+	
+	
+	
+	
+	
+	
+	--mission 7 pebbles
+    addPebble_mission7("Pebble_0", 
+    { 17421, 1282, -20076, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16858, 2993, -7537, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 56821, 11274, -7374, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 40275, 10567, -4808, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20941, 5759, -8461, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 38325, 9404, -5422, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16874, 685, -19183, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19971, 6224, -2995, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16553, 1340, -19922, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13305, 1928, -13408, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 49354, 11027, -6365, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 39864, 8124, -4274, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 37577, 9833, -5688, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20125, 579, -6375, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21043, 7901, -10668, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 58701, 12517, -5463, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 32788, 3142, -7094, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21046, 1305, -5907, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18537, 4569, -9873, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 23323, 9224, -8289, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17134, 1676, -20420, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 57753, 12590, -3433, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16359, 629, -17633, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16647, 1427, -15509, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 56664, 11949, -6069, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 23574, 7034, -3969, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16557, 4702, -8215, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 60790, 11793, -6351, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17740, 1455, -20635, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 35079, 11153, -7135, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15152, 1811, -18296, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19493, 2730, -8480, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 55367, 11465, -7140, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 37876, 5935, -4988, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 38281, 10305, -4959, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16261, 2331, -9886, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 44650, 12197, -8932, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 32028, 3505, -7678, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15792, 1358, -15178, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16928, 1352, -20192, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 53559, 11881, -6145, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17799, 133, -8270, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15528, 2274, -17174, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20979, 5998, -3584, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17817, 1375, -12010, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 32385, 9351, -8872, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 37733, 9541, -4995, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17741, 4495, -8977, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14908, -73, -15194, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 34658, 6751, -6324, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 29509, 5695, -3801, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19352, 7429, -6320, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 39312, 6189, -8448, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 23177, 3238, -3092, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 31250, 8929, -6880, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 37196, 7200, -4099, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 43989, 10711, -7523, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 54842, 11374, -7262, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 37082, 7610, -8732, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16410, 746, -16520, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 45325, 11391, -6076, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 42853, 9057, -4949, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13571, 2090, -13054, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 44958, 11703, -6047, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 42198, 8220, -5646, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15827, 2803, -8898, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17030, 1062, -20421, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 47410, 12160, -9070, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20802, 34, 17431, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16090, 5300, 1176, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17708, 146, 12905, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14921, 3062, 9074, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20089, 1633, 17143, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 22543, 918, 18805, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21550, 1018, 18903, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17308, -307, 12673, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13475, 2857, 8661, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15736, 4286, -2271, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16602, 5109, 869, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16411, 914, 9438, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13700, 362, 5176, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19426, 5191, -4857, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18497, 4787, -7206, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14172, 722, 3642, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19874, 6794, -6786, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20492, 1255, 18108, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16109, 1167, 12412, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20044, 2085, 16661, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16028, 3641, 2696, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 22139, 1047, 17940, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19343, 3337, -3992, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17469, 1338, 11156, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19165, 305, 14241, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15301, 3621, 2917, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21995, 6577, -7005, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20973, 6259, -4100, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21278, 6182, -2232, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21411, 6085, -3448, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12952, 302, 5790, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13276, 3305, 1716, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20942, 3036, -2164, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12956, -400, 5872, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12496, 1575, 8479, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17109, 3156, -6297, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21403, 4854, -6681, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15787, 1085, 11780, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15983, 1720, 10150, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15286, 2870, 8851, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16786, -736, 3998, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14308, 2447, 8497, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16090, 659, 10321, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15937, 2496, 3663, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15813, 5033, 13340, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15049, 3668, 14279, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13744, 1595, 11396, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16441, 1524, 6331, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13263, 17, 6815, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17064, -603, 8269, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16592, 1897, 2888, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18382, 2354, 5487, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14764, 2235, 8912, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14742, 2706, 12741, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21715, -2054, 24, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16184, 2844, 12548, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16516, 49, 5959, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15156, 2722, 13638, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18136, 2784, 4708, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20337, -3542, -453, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15166, 2863, 11641, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15588, 2821, 10289, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16735, -667, 8525, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16309, 788, 4730, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18138, 508, 5210, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14483, 2146, 6312, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15417, -698, 9031, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14403, -347, 7039, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17642, -1448, 6464, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20185, 37, 5909, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13553, 2037, 6532, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15556, 2816, 5339, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14878, -661, 9755, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13382, 796, 7171, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14885, 244, 6992, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19071, 635, 4919, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13638, 1149, 11037, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19138, 1463, 6251, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17305, -3316, 4829, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14533, 3343, 9948, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14688, 1652, 10568, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16767, 2116, 6936, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15081, 2451, 6138, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16188, -26, 7394, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13938, 3120, 9870, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13115, 715, 6324, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14935, -1971, 6558, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15151, 2685, 13791, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18544, -1947, 4733, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19457, -4432, 5909, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18231, -2312, 1289, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21926, 599, 4591, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14364, 3001, 10201, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15944, -2464, 5293, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16368, 2683, 5648, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15331, 2307, 12740, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13632, 2807, 9388, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16520, -856, 3964, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13870, 1580, 7216, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16393, 1622, 5415, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16362, 1428, 8493, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13270, -1036, 6738, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19726, -3617, 5285, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15191, 4823, 13196, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15052, 1760, 12719, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17944, -2586, 2922, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15149, 4972, 13620, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18077, 197, 2697, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14208, 3341, 13123, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -23225, 1108, 3221, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14260, 1943, 12138, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16389, 4129, 13760, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14392, 3432, 10808, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14622, 2322, 7303, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15329, -1396, 4586, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21893, -4731, 1991, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15200, 3221, 13780, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14549, 3605, 13197, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20424, -1008, 1673, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13550, 165, 5388, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16100, -1902, 1668, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16718, -738, 3421, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14434, 2681, 11092, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14794, 3561, 10644, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21585, -5720, 6014, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13800, -336, 9837, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13348, -1097, 5330, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13668, 277, 8696, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14029, 3, 6522, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16020, -1036, 6636, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21496, -879, 4179, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17078, -656, 1046, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14121, 1874, 8474, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19215, -955, 6766, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16182, 1809, 7906, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16371, -2515, 4545, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13021, 1312, 7333, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18112, 1711, 4920, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13544, 2873, 11909, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17313, 1165, -3552, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -41185, -9329, 4891, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -28109, -3919, 4815, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14715, -1960, -1817, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18522, 859, -3178, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14712, 244, -4470, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -26818, -4256, 4224, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -12540, -1691, -5218, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16771, 879, -3689, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -47477, -9077, 6242, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29641, -5458, 6114, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17815, -3029, -1186, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -41729, -9003, 5010, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -40321, -8039, 2593, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -44126, -8995, 5789, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13169, 0, -2846, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -40135, -8979, 5220, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13230, 2409, -3783, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14298, -1898, -5762, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -11473, 3697, -7460, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -34393, -7301, 3952, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14352, 1769, -11533, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -39904, -9036, 4826, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15184, 7964, -11449, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16411, 415, -7855, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -11563, 4437, -14935, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -22042, -2879, 3468, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20060, -2758, -371, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15548, 994, -5293, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -31056, -5385, 3758, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -35799, -7501, 4559, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29194, -6067, 5742, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -39181, -8674, 5091, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -25192, -4990, 3226, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21858, -1301, 3385, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29907, -6699, 2866, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -28809, -4205, 3590, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14529, 2449, -9869, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15112, 785, -14180, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -23663, -3758, 3682, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14142, 7538, -12232, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13909, -1908, -8197, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16007, 288, -11174, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13208, 7551, -10621, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14165, 1062, -2287, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13216, 1437, -17215, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -35973, -7880, 3655, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15340, 3472, -17022, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13911, 4134, -15503, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13220, 3859, -15781, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -35551, -7267, 4384, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14343, 2145, -5976, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -39899, -8950, 4976, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21936, -2597, 3404, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -12222, 2065, -4723, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14706, 413, -14156, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -30076, -4735, 4234, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15757, 8532, -12324, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -26320, -4761, 2212, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29428, -5674, 4131, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14480, 3248, -12789, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15671, -521, -9881, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -12515, 225, -2622, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -24157, -1285, 1715, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -23169, -3301, 3238, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -46220, -9139, 6399, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -28266, -5132, 4387, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15469, 1839, -17639, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -33472, -6835, 4317, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -26836, -5216, 2583, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -24322, -3214, 1346, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -43737, -9050, 5374, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21237, -1705, 1037, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16042, 3390, -13450, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -11883, 4323, -15706, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17408, 1414, -742, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16921, 8142, -13379, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18745, 1551, -1044, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16916, 1191, -5421, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -37650, -8557, 4843, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -44752, -9399, 5602, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13581, -2579, -6179, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -30118, -6540, 2758, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19565, 415, 711, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15682, 2158, -14198, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20790, 418, 1318, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -11006, 4763, -13846, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -42991, -9131, 5428, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15716, 5437, -9452, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -12649, 129, -13249, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19587, -3004, -851, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14574, 2410, -10548, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -51106, -8791, 6667, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -32663, -5976, 4578, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29140, -4982, 3737, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19293, -932, 22, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -27862, -3863, 3830, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13853, -762, -2155, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29179, -5022, 4000, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -41738, -9001, 4922, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16174, -110, -6818, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -35896, -6519, 6156, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18073, -2070, -1091, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19801, -2197, -581, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -11865, 4126, -6453, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -32991, -7264, 4472, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -24621, -4327, 1798, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -27177, -5529, 4263, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -45842, -9031, 6853, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -31523, -6784, 4156, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15609, -773, -7725, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -25313, -3008, 1412, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -30382, -6318, 2822, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14763, 4884, -16563, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -26088, -4523, 2092, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5255, 1141, -35550, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -3977, 11, -42413, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5085, -2403, -24332, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5828, 1730, -57093, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -8865, -225, -47600, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5344, 729, -62613, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4757, 1004, -65280, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7362, 736, -67807, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -6262, 1356, -70297, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -6834, -376, -72503, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4781, 1267, -74788, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5433, -699, -76796, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7034, 94, -79095, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -6222, -666, -80941, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5664, 1644, -82972, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4271, 60, -84427, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -2429, -1973, -87232, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -3753, -715, -89250, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5304, -2435, -91166, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4181, -2782, -92332, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -213, -3652, -119167, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 831, 458, -104893, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -446, -1235, -97687, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 135, -4412, -98406, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 102, -925, -100031, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2374, -4623, -99163, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 621, -3300, -102312, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1540, -1854, -127181, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 192, -606, -118123, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5733, 3518, -148393, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -3388, 249, -98232, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7080, -1509, -99452, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7478, -3762, -102590, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1802, -1087, -110273, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 8849, 170, -104166, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10433, -1792, -102996, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2306, 3936, -131946, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 1610, 1315, -123660, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11226, -1261, -106632, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11119, -1976, -108037, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12510, -1208, -107831, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11944, -3220, -109253, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14616, -3993, -107503, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7091, -603, -132075, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13520, -6068, -110254, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15544, -6360, -109792, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16122, -6889, -110439, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -200, 1112, -138904, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15074, -5680, -113478, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14722, -5327, -114754, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15865, -4158, -115806, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 1548, 4741, -165715, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19010, -3444, -117678, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18008, -3695, -119095, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16582, -5293, -120188, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18622, -4077, -121572, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20314, -5999, -122342, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16756, -5397, -134314, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16498, -5968, -125455, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18378, -8394, -132702, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18217, -9332, -127648, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17711, -6573, -140314, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 22564, -5334, -146569, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21852, -4326, -156249, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20344, -6332, -151430, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19547, -5841, -154913, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19320, -8733, -137274, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18422, -8444, -151183, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20027, -7768, -158012, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20717, -6381, -162764, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18622, -5218, -171675, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 21030, -7011, -162713, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7631, 336, 62334, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5755, 823, 52126, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -9606, -1139, 65177, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7079, 1133, 42922, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7942, 465, 31138, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -12714, 5067, 19118, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13903, 2064, 16642, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16329, 3692, 12821, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19545, 2746, 1616, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20090, 4995, 177, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18632, 1581, -1984, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17676, 6783, -3270, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17066, 1233, -5133, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19164, 8540, -5997, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20885, 6365, -7620, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17955, 7893, -8787, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15066, 4092, -9833, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13455, 4184, -11865, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14413, 9297, -16057, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17750, 2842, -17991, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16104, 8666, -20770, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15625, 8875, -22248, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17295, 5744, -25339, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15722, 7718, -27213, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15503, 3769, -28734, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15823, 3627, -30728, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14556, 7008, -33409, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14867, 6852, -35696, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16203, 5722, -37808, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13816, 2037, -40299, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16284, 5818, -42880, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15477, 3328, -45346, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17279, 755, -47387, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16520, 2871, -50352, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17414, 3804, -52902, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19505, 2984, -55099, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18909, 3423, -57709, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18891, -343, -59751, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19651, 1563, -62239, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18480, 2223, -64508, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19977, 1519, -66670, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17464, 51, -68279, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16847, 687, -70090, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17487, -134, -72053, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -17127, 24, -73816, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16668, 240, -75512, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16427, 539, -77290, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14448, 647, -80024, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13002, 247, -81029, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7992, 129, -88264, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2036, -1848, -141653, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18921, 4457, 78483, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9762, 3208, 92931, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7210, -115, 112260, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14458, 3678, 69192, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15217, 2925, 62592, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15412, 3706, 58581, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14335, 4686, 48382, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14940, 1687, 52338, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16083, 2462, 48215, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17340, 772, 45899, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16914, 682, 43734, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14910, 671, 41676, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17622, 1540, 39408, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16423, 3418, 37451, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17532, 1584, 35212, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16286, 3503, 33281, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18154, -326, 30925, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14932, 709, 24514, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17793, 6255, 21413, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19270, 4035, 19318, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 19055, 3326, 17097, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17348, 2129, 14558, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17203, 6518, -14395, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15305, 7052, -17254, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17409, 3612, -27710, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18244, 5559, -31634, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11705, 5199, -33734, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12914, 7483, -37877, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17407, 2438, -42419, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15690, 4583, -45869, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14153, 354, -48859, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9561, 4207, -51591, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 8107, 262, -54486, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6433, 2598, -57737, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 8001, 5306, -61754, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6024, 913, -64163, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5613, 12, -67104, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5754, 577, -70116, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4494, 4628, -72920, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3870, 1760, -75129, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4438, 3753, -77693, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6300, 728, -79787, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5151, 2557, -81710, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5904, 634, -83349, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4296, 1213, -84986, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3516, -1621, -86397, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3960, 1138, -87946, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5833, -1496, -88835, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5273, 301, -90226, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2248, -165, -92189, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2327, 2186, -110989, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5142, 3335, -93170, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6968, 1317, -96213, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9870, -426, 90647, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12757, -843, 84615, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 8624, -3470, 105283, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 8711, 428, 79534, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 8972, -773, 85505, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10302, -18, 76867, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4102, -1588, 93921, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 8620, 637, 71351, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 874, 433, 79985, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 265, -3896, 104127, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5998, 726, 67954, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7829, 142, 64895, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9427, -303, 60868, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5463, 1486, 61019, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7314, 1309, 59098, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7243, 387, 57704, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5677, 276, 51504, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4543, 1492, 54717, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5452, 723, 47996, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3967, 1148, 46146, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4492, 1306, 44838, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6570, 1236, 49125, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2900, 965, 42009, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 1698, 949, 48927, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3203, 1489, 39635, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2510, 3526, 39047, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2364, 3683, 38000, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -162, 2830, 38174, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 719, 4113, 36707, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -908, 776, 36172, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 1405, 953, 33637, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -993, 3610, 34354, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -801, 3198, 33066, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -3429, 3755, 30579, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4205, 5576, 30295, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4917, 5949, 29804, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7317, 2239, 29076, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5388, 3815, 21487, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7325, 5433, 21238, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -6928, 5625, 20230, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -10788, 3823, 19447, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -11728, 3275, 19208, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -10577, 2941, 17987, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13914, 3466, 18750, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -10263, 1536, 16662, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -8843, 2308, 15509, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13580, 3145, 16506, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15954, 2161, 14442, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15048, -11636, 12515, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7910, -2393, -4553, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 188, 2960, 1073, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -20944, -256, 11078, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -27504, -2130, 4301, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -10371, 9639, -1889, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18209, -15537, -303, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -30783, 1356, 10464, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -9188, -2027, 9067, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14012, 17142, 6887, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -31024, -8188, 369, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -18197, 17698, -2617, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -22062, 15693, 1871, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14558, 11235, -1085, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29878, -70, 2885, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29421, 1219, 6766, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -24295, -3286, -11800, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -25592, 13927, 8821, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -33065, -4275, 3456, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19782, -7634, 469, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19444, -8484, 11896, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -13094, 9427, 12134, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -30441, 7661, 1509, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -27111, 14650, -488, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -23554, -7883, 9304, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -713, -1700, 796, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -21828, 12653, -8009, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -30441, 1102, 4619, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -16551, 12832, 11605, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -15143, 6680, -9271, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -24803, -3778, 13307, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -26299, 12671, 844, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -33639, 1661, 4385, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -12109, -4540, -10695, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -24626, -2587, 8008, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7505, -3574, -6271, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -7011, -10924, -1813, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -31102, -219, 10325, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -19376, 181, 65, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -31187, 8518, 5671, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -10412, -9558, 6339, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -29229, 12238, 4253, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -14231, -2263, -428, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 27010, 8962, -6573, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 28725, 3037, -16136, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 28343, -13772, -7719, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 20862, 10230, -9442, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 31533, 3715, -7903, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3286, -10704, -13790, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 32413, -8636, -7906, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 31484, -2187, -6119, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 24369, -16293, -5867, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5372, 605, -106, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 28045, 11335, -6976, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4158, -7470, -18863, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 33118, -4984, -9088, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18500, -11585, -2406, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 34305, -594, -11547, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14382, 972, -817, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 16165, -12917, -18926, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5593, -13948, -12170, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10148, 11187, -259, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 32483, 3146, -4382, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2697, -6741, -15502, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4584, -11428, -15226, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 765, -4155, -14363, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5822, 2686, -53753, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5473, 2854, -52376, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -5563, 2977, -50936, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4780, 2851, -49612, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4857, 3437, -48165, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4115, 2910, -46851, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4640, 3346, -45306, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4513, 3484, -43862, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -3670, 2272, -42655, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4812, 3363, -40889, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -3065, 1353, -39977, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -2101, 1907, -38619, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4288, 2778, -36621, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -4523, 2416, -35150, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1636, 2539, -34172, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -2696, 1098, -32756, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1554, 1645, -31377, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1189, 353, -30220, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -561, 1014, -28713, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1379, -975, -27497, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -2020, 1312, -25392, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -2306, -2451, -24681, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 312, 960, -18564, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 1293, -142, -17532, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 637, 211, -15916, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -462, -1505, -14643, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 954, -6290, -14342, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1117, -5949, -12495, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -1660, -4300, -10732, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 250, -1404, -9248, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -2265, -4885, -7975, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 710, -8005, -7388, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 2906, -157, -5592, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 338, 391, -3935, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7051, -5763, -3892, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6392, -4951, -2399, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4262, -3375, -748, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { -832, -985, 1178, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6839, 731, 11319, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 1217, 656, 13232, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9672, -2350, 14375, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 724, -5815, 20098, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3583, -902, 21211, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5539, -6866, 23321, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6399, 902, 28150, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11488, -4924, 30261, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 3229, -334, 34418, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9373, -6853, 36643, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7621, -2299, 38596, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7444, 3105, 40509, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11794, -2999, 42940, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5387, -6350, 45832, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9719, 4430, 47492, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12270, 1614, 50011, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 400, -1840, 53408, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5708, 1032, 55655, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11004, -4276, 58259, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11979, 2435, 60769, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 1633, 864, 64254, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10843, 4118, 66553, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7760, 4548, 69691, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12507, 1635, 72505, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 5824, 521, 75984, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12902, -748, 78718, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 4646, 2048, 82320, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 7530, 3735, 85348, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 6065, 846, 88733, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10015, -2481, 91841, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10854, 1836, 95088, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9292, -3786, 98606, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11373, 3910, 101838, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13975, -310, 105162, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10959, 3903, 108794, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9306, -3657, 112435, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 9495, 644, 115938, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14070, -46, 119228, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14448, 103, 122785, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12409, 1737, 126501, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12496, -2650, 130120, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14329, -758, 133641, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 10902, -1240, 137490, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 11210, -1379, 141128, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14478, 651, 144600, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14739, 640, 148257, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 12377, 0, 152074, }, 0, 0, 0)
+    addPebble_mission7("Pebble_0", 
+    { 18013, -13201, -20697, }, 0, 155.126, 0)
+    addPebble_mission7("Pebble_0", 
+    { 13797, -2102, -24645, }, 0, 155.126, 0)
+    addPebble_mission7("Pebble_0", 
+    { 17131, 5040, -21034, }, 0, 155.126, 0)
+    addPebble_mission7("Pebble_0", 
+    { 15971, -9602, -21751, }, 0, 155.126, 0)
+    addPebble_mission7("Pebble_0", 
+    { 14103, -4926, -23308, }, 0, 155.126, 0)	
+	
+	
+	
+	
+	
+	--mission 11 pebbles
+    addPebble2("Pebble_1", 
+    { 5095, -533, 14565, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 5065, -323, 14986, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3676, 849, 14554, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 4585, -124, 15666, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 4492, 1, 15097, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3805, 642, 14697, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 4382, 450, 14771, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 2966, -215, 15599, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3255, -121, 14999, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 2666, 630, 15502, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 5082, -153, 15069, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 4478, -367, 15065, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3970, 81, 15824, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3052, -697, 14917, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3771, 752, 14350, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 4455, -66, 15201, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 4619, -242, 14372, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 4467, 214, 15610, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 4170, -352, 16033, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 3154, -505, 15426, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4285, -167, 14030, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4321, 78, 14176, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4081, 391, 14692, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4036, 786, 14133, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 2845, -555, 15627, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 3681, 424, 14002, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4529, -309, 16479, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4178, 285, 16179, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 3170, -615, 15449, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4561, -681, 14419, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4495, 97, 15975, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4237, 401, 14957, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 5107, -45, 14894, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3278, -890, 15934, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3018, -718, 16317, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3889, -788, 16852, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3824, -765, 16884, }, 0, -24.216, 0)
+    addPebble2("Pebble_1", 
+    { 3156, 305, 16427, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 2404, -245, 16127, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 4179, 92, 16649, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 3922, 660, 16535, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 3912, 453, 15570, }, 0, -24.216, 0)
+    addPebble2("Pebble_2", 
+    { 3435, 628, 16793, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 3479, 623, 16467, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 2868, 283, 15755, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 4127, 785, 16327, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 3039, -606, 16683, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 3512, 383, 16858, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 3059, 42, 15776, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 2912, 345, 15768, }, 0, -24.216, 0)
+    addPebble2("Pebble_0", 
+    { 42131, 5048, -2542, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15066, 10931, -16198, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 84368, -11394, 19870, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9928, 10397, -10703, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -59337, 9329, -26414, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -72742, 8792, -23161, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -91682, 15979, -29821, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26730, 4272, -7801, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 59162, -1095, 2883, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -24837, 9233, -13997, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -44475, 8199, -19124, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -90225, 10559, -32393, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -50661, 9407, -24678, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -72518, 11195, -23384, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13905, 12272, -7858, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 54353, 533, 2045, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 55875, -2465, 1719, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 33069, 2666, -4415, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 90039, -13489, 22427, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 50175, 246, -1577, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3840, 11690, -15457, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 84927, -10901, 18561, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2619, -1888, 16325, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -52984, 6401, -17920, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20091, -11253, 35335, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5109, 9832, -8239, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -42451, 10084, -21552, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12970, 8360, -12741, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6774, 13767, -13962, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 96140, -12037, 36278, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 88250, -10868, 22101, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 86753, -12256, 21618, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -87957, 14754, -34378, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 14926, -11196, 18861, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 63366, -3252, 5496, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 80366, -12048, 19277, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3857, -1888, 18733, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -64358, 13671, -23288, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14692, -5164, 28125, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13769, 11877, -16345, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 46833, 2658, -569, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 97170, -13334, 34176, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -86260, 7337, -29800, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -44408, 9000, -19111, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 96402, -10399, 32043, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 35376, 7130, -4192, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 46678, 2156, -2214, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1002, 13506, -9421, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 21359, -8491, 37588, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26872, 8395, -3444, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -97368, 22565, -34264, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 66674, -5689, 6967, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -74199, 11946, -24162, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -85807, 9448, -33346, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 91426, -15121, 25512, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -28363, -19742, 11485, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15243, -5388, 28700, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -68014, 3653, -27341, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 43106, 3130, -3212, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 28808, 6022, -7617, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 67296, -7130, 7644, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -69275, 7469, -30050, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -85575, 11722, -34496, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -56830, 5060, -18231, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -54369, 10523, -14873, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 84706, -13173, 21052, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -177, 12184, -14483, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -90287, 14821, -32732, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 66406, -4452, 6407, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -29756, 11133, -15797, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 34327, -15239, 15745, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 65013, -5098, 7209, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 97361, -14460, 34227, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -62351, 7700, -19614, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -30049, 13504, -16932, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -28425, -20636, 6131, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -84345, 9611, -28295, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 16245, 10960, -5795, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 28645, 5472, -7977, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -82081, 11420, -32511, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 64307, -5673, 7295, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -84308, 10142, -28399, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 15298, 6958, -11115, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 38364, 5527, -1749, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -85996, 9808, -27351, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -56459, 5425, -21398, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20728, 10508, -5166, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -96793, 18729, -35178, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -88651, 9963, -29025, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22400, -8161, 37155, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 69410, -6103, 9440, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16834, 10141, -17425, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -91420, 12294, -29584, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 16874, 10239, -5530, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2190, 8347, -9662, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13445, 5687, -9051, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -85584, 15429, -35582, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 61348, -1607, 4508, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 24310, 9193, -5804, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3485, 11955, -11491, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10803, -6717, -407, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11182, 3868, -3465, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1026, 9223, 5523, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11901, 2803, -409, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7972, 3193, -8045, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9531, 8355, 1210, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9009, -2258, -4281, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -155, -8226, -1423, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5278, 9150, -172, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7663, -7131, -4549, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2065, -5234, 6441, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7906, 3713, -6976, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4210, -1659, -9653, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1611, 6062, -7160, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9950, -5648, -2025, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 829, -3771, 11417, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3562, 11111, -5079, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9714, 2302, 3290, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8483, -230, 4368, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10268, 4295, 3842, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10382, -5006, -4519, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1047, -9935, 2593, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7872, 9936, 866, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10222, -1544, 7201, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10770, -3248, 5180, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8467, 7816, 4391, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5492, -6167, 5283, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7135, -3354, 8699, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11805, -4874, 959, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3855, -10883, -3519, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9438, -4802, 3132, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11437, 4009, -3197, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12680, -1638, 722, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9874, 4517, 5523, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1166, -7131, -7272, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7449, 9062, -1543, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5262, -446, -10782, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5669, 11337, 881, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1575, 1365, -9871, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11003, -1088, -4654, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4083, -3473, 3660, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6859, 1567, -2756, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3590, -8475, -1261, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5681, 4932, -7430, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8081, 7657, 1164, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11959, -308, -3604, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 193, 1038, -4639, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 250, -5726, 365, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11391, -2600, -5273, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2805, -5980, -2312, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7679, -6726, -5958, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8570, 2770, 5688, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2654, 11255, -866, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 780, 2329, 8734, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3552, 882, -11405, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8865, -8533, -20, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -11459, -5340, -1140, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -64, 1691, 1632, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7192, -4163, -9482, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6358, 5167, -6966, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9584, 6637, 1290, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10976, 3657, -4595, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1357, 63, -2707, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6723, 7398, 4897, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10486, -3472, 2858, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4748, 1223, -10358, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9961, 2473, 5000, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3257, 6889, 2923, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1861, -5489, 6965, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9771, -4916, 2172, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1236, 8363, -9595, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -567, 10338, -904, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9390, 2536, 6880, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6470, -248, 10382, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4608, -10022, -2213, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1043, 838, 4647, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8555, -6626, 3695, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1650, 12623, -421, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2906, 548, 1899, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11119, 1038, 5126, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 12643, 1814, -870, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1727, 5521, 4807, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8182, 2673, 1514, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7736, 6143, -853, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6041, 7135, -788, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10111, 4482, 5975, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4548, 165, -7892, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5902, -6109, 1954, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2371, -3456, 375, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5551, -7330, -4906, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5100, -2434, 1885, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -768, -825, -9552, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1110, -9076, 4563, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -374, -6753, 271, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -850, 6611, -7742, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7920, -2347, -3993, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12113, -3525, -1757, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 39939, -36241, -138469, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 89995, -17568, -132574, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 43076, -44727, -151391, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 39634, -37913, -149414, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 138338, -414, -82516, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 71276, -21371, -132545, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 117215, 3772, -133346, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 47900, -44257, -145406, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 39758, -48611, -145094, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 134491, 4303, -108929, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 136869, -251, -102999, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 123050, 3927, -130951, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 121394, 2699, -123655, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 46295, -40298, -137563, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 128190, 7306, -121890, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 125508, 3343, -116397, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 49890, -46875, -139996, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 132012, 4274, -107912, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 43538, -35202, -147367, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 84098, -11896, -129239, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 111439, -1509, -128402, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 36803, -37845, -140770, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 111639, 10408, -134005, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 42611, -37020, -136567, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 103429, -6260, -133109, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 39912, -39621, -135641, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 82493, -12129, -135220, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 136654, 100, -102546, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 41783, -40665, -147154, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 106478, -4315, -135414, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 90856, -3880, -136272, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 134211, 2979, -96006, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 47158, -38841, -134723, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 43868, -46125, -142980, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 98246, -966, -132809, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 92198, -14634, -132138, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 124349, 3814, -116990, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 58614, -40206, -139022, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 54418, -31481, -135148, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 133120, 511, -96081, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 133323, 5300, -107530, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 68955, -35167, -135567, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 76926, -27177, -132032, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 96756, -12497, -135684, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 93267, -5990, -138633, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 124797, 6267, -123616, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 138606, 1688, -98040, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 41941, -42763, -153970, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 36219, -46949, -146282, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 47287, -36253, -134016, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 40296, -36394, -139264, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 60216, -39860, -137969, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 36012, -39990, -137883, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 38974, -43519, -147403, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 67561, -31366, -139387, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 114473, 2372, -134570, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 37426, -42529, -146788, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 125675, 9238, -122279, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 53551, -37922, -136104, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 87079, -16795, -129238, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 56396, -41837, -138318, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 62430, -29314, -132000, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 70425, -24272, -138454, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 50548, -39440, -139782, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 115347, 44, -131508, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 135742, 3494, -97691, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 39680, -36288, -138857, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 49696, -34454, -139477, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 71186, -24066, -137762, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 42665, -47522, -144082, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 107834, 8432, -134956, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 141693, -17, -83114, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 128034, 2130, -121613, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 124309, 10157, -127528, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 33838, -47491, -140920, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -100124, 21169, -71117, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -116711, 15066, -41562, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -68705, 25945, -104254, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -97523, 16470, -77131, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -79856, 19727, -95752, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -89321, 20615, -78719, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -99645, 19209, -68480, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -64271, 22646, -109902, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -111147, 16894, -4903, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -105703, -5656, 17077, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -109933, 22297, -63942, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -93794, 11712, -78781, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -72942, 23269, -94310, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -104108, 13128, 4057, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -69769, 28623, -108498, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -99597, -11577, 35428, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -112219, 20901, -29306, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -63348, 32463, -115763, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -91412, 20321, -77756, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -109689, 20263, -51602, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -94307, 16451, -75091, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -96796, -5222, 27674, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -115007, 13706, -49132, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -100944, -3005, 35401, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -113209, 17910, -2428, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -77852, 26250, -101492, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -91497, 13824, -74517, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -95076, 17348, -74518, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -109301, 23436, -43148, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -108420, 23628, -53576, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -67284, 21429, -111201, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -84488, 11126, -87859, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -99324, 13449, -71105, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -109213, 12314, -57401, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -79230, 13925, -88987, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -71242, 26110, -99723, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -101308, 21012, -77969, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -96631, 13460, -75079, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -115934, 15271, -29733, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -111315, 7998, 529, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -78090, 21976, -107584, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -103056, 15470, -7255, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -104471, 1611, 16148, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -63512, 26035, -109529, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -90267, 14497, -89020, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -113514, 23845, -46775, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -93365, 18805, -75145, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -114380, 20658, -13107, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -87208, 20099, -86917, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -102282, -7325, 28335, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -85577, 21607, -91978, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -69255, 17649, -106002, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -82191, 14132, -98343, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -112043, 23666, -53422, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -86968, 22063, -90439, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -83082, 23705, -96841, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -112561, 12757, -57446, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -65676, 22777, -118536, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -104105, 16108, -67898, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -106598, 21548, -37503, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -85724, 11741, -91734, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -92139, 18480, -76509, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -116182, 13050, -16699, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -110136, 14436, -59159, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -107074, 17063, -14797, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -113139, 12419, 6499, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -103020, -2946, 38223, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -109810, 23324, -59553, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -73400, 15190, -94525, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -101414, 13380, -75296, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -86827, 20437, -93436, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -103729, 21927, -67944, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -106207, 16704, -20594, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -88212, 16045, -86394, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -96477, 10169, -79038, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 180404, 21749, 477, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 115919, 18076, -16563, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 180491, 18579, 830, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 163819, 24215, -11273, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 96824, 7496, -11924, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 129711, 12601, -14974, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 140535, 19978, -17008, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 183831, 15203, 1038, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 163188, 27827, -11897, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 77563, -1816, -10622, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 96336, 1424, -9402, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 134520, 22485, -16040, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 167109, 24527, -11448, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 69530, 2332, -3009, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 139108, 26852, -11763, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 148375, 24904, -9563, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 119772, 8378, -15619, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 156833, 23466, -11978, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 181417, 19810, 1709, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 63116, -4815, -999, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 172534, 21722, -4002, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 108965, 5324, -11702, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 86446, 4466, -19195, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 145555, 22350, -12275, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 174678, 24841, -6399, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 87321, 3281, -11420, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 160634, 26116, -8230, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 156470, 28421, -9044, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 149948, 22981, -12159, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 120552, 16060, -21139, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 163136, 30329, -9478, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 165087, 29441, -8586, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 162545, 28715, -12241, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 166850, 26082, -9858, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 181038, 16842, -1361, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 74849, -5390, -9330, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 132560, 21905, -13292, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 94839, 5874, -10800, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 180068, 20749, 972, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 76805, 53, -8321, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 141219, 25305, -10270, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 121227, 8203, -16266, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 59462, 1588, -10371, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 177786, 22566, -6484, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 158582, 27168, -7899, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 170414, 25123, -8409, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 143169, 20838, -17150, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 98108, 5402, -11865, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 147847, 22429, -12037, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 131229, 19947, -10503, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 165543, 28788, -9695, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 158909, 24931, -10145, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 87634, 1317, -12269, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 72038, 6114, -10185, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 136445, 24890, -16211, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 128020, 16338, -12615, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 118539, 15918, -15506, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 151954, 25143, -15153, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 140461, 19493, -17318, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 175527, 25427, -5882, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 127724, 16634, -21345, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 154359, 23619, -15112, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 153462, 23771, -12645, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 65734, 2414, -13219, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 159493, 26220, -6777, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 159305, 29404, -9665, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 153197, 23982, -9158, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 171773, 25301, -9770, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 116075, 15701, -16120, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 139602, 25618, -10779, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 112673, 11238, -20392, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 96711, 5947, -10063, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 126315, 14594, -20338, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 55803, -4488, -4960, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 180739, 18167, -56, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3604, 301, 7081, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2868, 559, 6025, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2261, 614, 5082, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1237, 346, 4605, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1303, 580, 3612, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 370, 388, 3382, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 899, 994, 2415, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -120, 109, 2451, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -572, 796, 2128, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -230, 298, 1625, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 487, 139, 932, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -885, 985, 1125, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1356, 166, 1238, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -924, 1401, 425, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1468, 458, 544, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -735, -177, -658, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2139, 235, 135, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1929, 346, -754, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2084, 1285, -1127, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2483, -387, -2046, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3312, 146, -1807, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3872, 140, -2484, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3774, 762, -3280, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3963, 1674, -3734, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5948, 1026, -2819, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5822, 2744, -2975, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6725, 2315, -3966, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7817, 2875, -3545, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -8666, 3120, -4087, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9139, 3707, -4907, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9246, 4680, -5897, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -9976, 4956, -6792, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10423, 6396, -6551, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12153, 5679, -6798, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12216, 7523, -6894, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12881, 7510, -8091, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -13986, 7183, -8482, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -14915, 7334, -8555, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -15887, 8047, -8212, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16607, 8233, -8667, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -16920, 8571, -9826, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17736, 8658, -10147, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17916, 8241, -11578, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -18987, 7914, -11108, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20520, 7642, -11244, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19864, 7185, -12730, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19716, 7106, -13121, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -22062, 7199, -14327, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -20774, 6573, -15228, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -19777, 6420, -17281, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -226, -274, -788, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -721, 275, -769, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -453, 262, -1051, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -602, 169, -1167, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -861, -59, -1233, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1061, 36, -1269, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1177, -268, -1507, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1090, 506, -1628, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1268, 419, -1775, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1444, 152, -2023, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1702, 422, -1941, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1906, 521, -2008, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1836, 805, -2367, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2134, 423, -2594, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3239, -28, -1012, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3068, 1165, -1977, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2892, 506, -4679, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3328, 681, -2871, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3213, 823, -4395, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3441, 704, -3310, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3321, 1289, -3520, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3718, 1295, -3399, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3946, 1419, -3429, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3982, 1177, -3988, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4091, 1509, -3984, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4388, 1870, -3720, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4563, 1589, -4105, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5956, 2945, -3894, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5456, 2127, -4421, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4931, 2283, -5003, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5601, 2338, -5102, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5546, 1449, -4109, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4658, 2269, -5775, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5054, 1995, -6205, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6078, 2909, -6429, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6068, 2713, -6780, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6341, 2780, -7017, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6534, 2696, -8164, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6936, 2731, -8473, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -6839, 2581, -9014, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -7402, 2589, -9926, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -5448, 2043, -3535, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4831, 1880, -3501, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4578, 1484, -3843, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4138, 1463, -3551, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4460, 934, -3266, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -4464, 557, -3167, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3700, 825, -3673, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3571, 920, -3042, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3217, 1200, -3220, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3403, 555, -3456, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3297, 724, -4003, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3683, 51, -2310, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3409, 163, -2504, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2883, 668, -3262, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2870, 1403, -3461, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2020, -121, -2930, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1952, -1302, -3448, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3167, -541, -4613, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1131, -208, -3559, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1500, -598, -4222, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1750, 1586, -4573, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -788, 650, -4672, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1089, 715, -5250, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1059, -116, -5705, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1003, 233, -6172, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1796, 963, -6896, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -992, 795, -7247, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -828, 574, -7752, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1334, 442, -8368, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -710, 424, -8913, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -857, -255, -9384, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -197, -803, -9862, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -827, -1109, -10439, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -602, -1268, -11110, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -479, -1063, -12006, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1142, -1727, -12453, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1005, -1814, -13300, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1026, -2339, -13917, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1388, -3076, -15286, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2685, -4751, -16317, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2918, -4800, -17057, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3877, -6196, -20191, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2329, -338, -12298, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1807, -226, -11465, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1150, -114, -10810, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 838, -164, -9953, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 235, 221, -9451, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5, 81, -8649, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -547, 512, -8242, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -592, 361, -7448, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -821, 618, -6931, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1307, 1034, -6615, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1226, 1338, -6095, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1433, 1418, -5632, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1514, 1698, -5237, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1441, 1237, -4625, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1400, 1950, -4405, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1668, 1598, -3951, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1381, 1928, -3653, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1170, 1631, -3331, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1235, 1975, -3029, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1234, 2250, -2697, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2070, 1579, -1743, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1461, 1417, -2151, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1641, 1462, -1724, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -500, 1925, -1871, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -685, 1495, -1638, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -707, 1866, -986, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -855, 1236, -833, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -349, 579, -1668, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -330, 1031, -642, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -97, 343, -1545, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 635, 1381, -812, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -48, -93, -901, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 286, -53, -1226, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 870, 449, -177, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 624, -479, -245, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1561, 530, -264, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1531, -15, -535, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1739, -301, -39, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2058, -299, -199, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1802, -1232, -868, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2900, -20, -788, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2847, -742, -689, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3408, -571, -1379, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3400, -1041, -114, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3870, -1122, -615, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4385, -1268, -1039, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4491, -2000, -1101, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4781, -1742, 62, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5535, -1896, -564, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5071, -2841, 518, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5606, -3174, 342, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6551, -2479, 508, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7186, -2633, 365, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7327, -2842, 1152, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7838, -2961, 1310, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7880, -3753, 1994, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 8400, -4963, 1662, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9244, -3723, 1931, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 9678, -5202, 1985, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10217, -4675, 2552, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10939, -3922, 2492, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11809, -5001, 2099, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 11957, -3604, 3512, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 12995, -3753, 2691, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13649, -4051, 3198, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 14140, -3627, 4197, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 15158, -3804, 4013, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 15776, -4350, 4780, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 16921, -4796, 4598, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17575, -4942, 5749, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 17459, -5757, 7511, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 20062, -5512, 6900, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22128, -6698, 7519, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 22315, -7761, 8489, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 23576, -9131, 10519, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 822, -241, -350, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 873, -663, -579, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 197, 440, -1019, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 601, -433, -1170, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1331, -359, -1047, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 358, -96, -1690, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 541, 223, -1747, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1002, 769, -1571, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1390, 682, -1622, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1062, -282, -2379, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1641, -42, -2225, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1628, 886, -2098, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1373, -50, -2874, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1021, 826, -2969, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1593, 574, -2980, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1787, 173, -3273, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1536, 1417, -3181, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1792, 402, -3670, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2258, 303, -3605, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2552, 1496, -3195, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2370, 1655, -3555, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2880, 880, -3592, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2765, 1563, -3780, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2636, 1304, -4227, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2859, 772, -4321, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2522, 763, -4944, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3580, 1211, -5325, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3935, 1523, -5432, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 3899, 1175, -5687, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4014, 317, -5411, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4595, 359, -5207, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4245, 415, -6032, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4909, 798, -6118, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4763, -341, -7475, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 5255, -335, -7712, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6344, -906, -8382, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6382, -1389, -9540, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 7360, -2763, -10519, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -175, -1642, -420, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -586, -862, -1834, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1490, -354, -548, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1002, -216, 1055, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1112, -663, 573, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 13, 995, -508, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 219, -1370, 444, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 252, 1757, 690, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1278, 573, -730, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1666, -340, -583, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -596, 149, -477, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1988, -236, -520, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1822, -474, -728, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 377, 1773, -716, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2067, -231, -229, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1284, -1589, 31, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1671, 348, 898, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1055, -340, 82, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1896, 140, -220, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1718, -784, 520, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 468, -1203, -568, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1237, 78, 608, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1545, -564, -223, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1128, -1502, 289, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 214, -1712, -1029, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1158, -198, 1148, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2080, 218, 273, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -917, -1056, -1523, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1549, -803, 628, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2100, 217, 91, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -643, 1927, -117, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2022, -204, 503, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 933, 725, -862, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 648, -1905, 148, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2055, 271, -436, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 123, -1815, 651, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 2086, 155, -44, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -803, 318, 1690, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1983, -520, -44, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -94, -1320, 656, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1345, 1096, -840, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 824, 1567, -729, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -140, -1945, 76, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 792, 475, -152, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -887, 1734, -339, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1463, -976, -835, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1599, 191, -924, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1198, 1134, -104, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -942, 1539, -120, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 1054, -870, 792, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 63928, 4762, 125397, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 60087, 7289, 119897, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 50850, 1641, 124215, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 51664, -3747, 117440, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -29768, 19551, 48133, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 40718, 3249, 117259, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 26367, 17060, 59490, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 30514, -1612, 112068, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 36487, 21028, 67775, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 33769, 19075, 67304, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 15469, 8415, 75368, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 10654, 7559, 93678, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 4159, -17788, 109404, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -2064, 2934, 70115, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -3201, -16979, 121336, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -1924, -3641, 92323, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -12883, -9204, 120031, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -10148, 3265, 87987, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { 6519, 24264, 39894, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -17593, 22165, 42964, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -25372, 18650, 39058, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -25997, 19042, 20818, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -29047, 26337, 16420, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -30558, 15378, 12658, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -59784, -21347, 77680, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -59836, -18300, 72454, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -65079, -24447, 69497, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -71443, -26979, 66729, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -73338, -21389, 62367, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -71732, -22439, 55701, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -77130, 5374, 54384, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -75332, 4760, 47270, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -82642, -23776, 42841, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -83564, -19777, 37422, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -93052, -18294, 39136, }, 0, 0, 0)
+    addPebble2("Pebble_0", 
+    { -90672, -11511, 31119, }, 0, 0, 0)	
+	
+	
+	
+	
+	
+end
+
+
+function AddMegaliths()
+	
+	--*********** ADD ANY MEGALITHS OR OTHER DETERMINISTIC THINGS HERE ***********
+	
+	--fx points
+	addPoint("fx_point1", {-2140, 3250, -15553}, {0,0,0})
+	addPoint("fx_point2", {-2200, 2950, -15753}, {0,0,0})
+	
+	
+	addPoint("fx_point3", {39117, 8090, -7877}, {0,0,0})
+	
+	
+	
+	
+
+    --turrets
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { -8944-200, 1273, 35088+700, }, 
+    { 1, 1, 1, 1, }, 249.441, 1400.942)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { -8944, 1273, 35088, }, 
+    { 1, 1, 1, 1, }, 153.561, 2360.219)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { -8944+400, 1273, 35088-400, }, 
+    { 1, 1, 1, 1, }, 347.981, 2360.219)
+    
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 16349+400, 3869, 30731+700, }, 
+    { 1, 1, 1, 1, }, 249.441, 1400.942)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    {16349, 3869, 30731, }, 
+    { 1, 1, 1, 1, }, 153.561, 2360.219)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 16349-800, 3869, 30731-400, }, 
+    { 1, 1, 1, 1, }, 347.981, 2360.219)
+    
+    
+    
+    
+    
+    --behind foundry
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { -37410+600, 203, 1664+700, }, 
+    { 1, 1, 1, 1, }, 249.441, 2400.942)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { -37410, 203, 1664, }, 
+    { 1, 1, 1, 1, }, 153.561, 3360.219)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { -37410-200, 203, 1664-400, }, 
+    { 1, 1, 1, 1, }, 347.981, 3360.219)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { -37410-600, -1000, 1664-700, }, 
+    { 1, 1, 1, 1, }, 249.441, 2400.942)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { -37410,  -1500, 1664, }, 
+    { 1, 1, 1, 1, }, 153.561, 3360.219)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { -37410+200,  -1000, 1664+400, }, 
+    { 1, 1, 1, 1, }, 347.981, 3360.219)    
+    
+    
+    
+    --around the big ship
+    local yTrans = 6600
+    local zTrans = 5400
+    
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 27622, -2135+zTrans, -8957+yTrans, }, 
+    { 1, 1, 1, 1, }, 249.441, 2400.942)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { 27517, -2630+zTrans, -7432+yTrans, }, 
+    { 1, 1, 1, 1, }, 153.561, 3360.219)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 25884, -734+zTrans, -9674+yTrans, }, 
+    { 1, 1, 1, 1, }, 347.981, 3360.219)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { 25678, -415+zTrans, -10908+yTrans, }, 
+    { 1, 1, 1, 1, }, 55.164, 1290.196)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes2", 
+    { 25955, -490+zTrans, -11842+yTrans, }, 
+    { 1, 1, 1, 1, }, 295.805, 977.851)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 25730, -297+zTrans, -12382+yTrans, }, 
+    { 1, 1, 1, 1, }, 68.886, 875.341)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 25030, -72+zTrans, -12858+yTrans, }, 
+    { 1, 1, 1, 1, }, 294.19, 919.316)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 24201, -347+zTrans, -13144+yTrans, }, 
+    { 1, 1, 1, 1, }, 55.999, 919.316)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 23348, -386+zTrans, -13255+yTrans, }, 
+    { 1, 1, 1, 1, }, 263.526, 1284.582)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 22124, -775+zTrans, -13251+yTrans, }, 
+    { 1, 1, 1, 1, }, 100.649, 1284.582)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { 21007, -384+zTrans, -13337+yTrans, }, 
+    { 1, 1, 1, 1, }, 245.607, 1186.412)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes2", 
+    { 20572, -544+zTrans, -13913+yTrans, }, 
+    { 1, 1, 1, 1, }, 259.89, 3206.127)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes2", 
+    { 18073, -167+zTrans, -15885+yTrans, }, 
+    { 1, 1, 1, 1, }, 44.287, 3206.127)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes2", 
+    { 17720, 348+zTrans, -16362+yTrans, }, 
+    { 1, 1, 1, 1, }, 300.485, 1600.19)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes2", 
+    { 17075, 416+zTrans, -17825+yTrans, }, 
+    { 1, 1, 1, 1, }, 186.125, 1600.19)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes2", 
+    { 18119, 424+zTrans, -16980+yTrans, }, 
+    { 1, 1, 1, 1, }, 153.44, 2610.66)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { 19199, -1923+zTrans, -16607+yTrans, }, 
+    { 1, 1, 1, 1, }, 341.762, 2610.66)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 20775, -850+zTrans, -16214+yTrans, }, 
+    { 1, 1, 1, 1, }, 197.837, 2695.56)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { 22608, -370+zTrans, -14296+yTrans, }, 
+    { 1, 1, 1, 1, }, 169.821, 2695.56)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 24070, -301+zTrans, -13849+yTrans, }, 
+    { 1, 1, 1, 1, }, 304.913, 1991.989)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { 25836, -1171+zTrans, -13543+yTrans, }, 
+    { 1, 1, 1, 1, }, 164.196, 1991.989)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes3", 
+    { 26978, -208+zTrans, -12392+yTrans, }, 
+    { 1, 1, 1, 1, }, 353.869, 1944.298)
+    AddDustCloudOrNebula("polySurface10", "DustCloud_NoRes", 
+    { 27488, -317+zTrans, -10519+yTrans, }, 
+    { 1, 1, 1, 1, }, 266.108, 2400.942)
+    
+    
+    
+    --by the ship with sparks
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { -2774, 1089, -11146, }, 
+    { 1, 1, 1, 1, }, 199.847, 3233.893)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { -766, 160, -12366, }, 
+    { 1, 1, 1, 1, }, 87.432, 2526.657)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes2", 
+    { -2083, -317, -13385, }, 
+    { 1, 1, 1, 1, }, 217.701, 2238.004)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 63, 45, -13907, }, 
+    { 1, 1, 1, 1, }, 210.461, 2746.556)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 235, -1732, -15995, }, 
+    { 1, 1, 1, 1, }, 178.006, 2746.556)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 1201, -1250, -16662, }, 
+    { 1, 1, 1, 1, }, 266.668, 1846.907)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { 2411, -2036, -15509, }, 
+    { 1, 1, 1, 1, }, 223.337, 1939.999)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { 2557, -231, -14812, }, 
+    { 1, 1, 1, 1, }, 289.63, 1939.999)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { 2041, -377, -14129, }, 
+    { 1, 1, 1, 1, }, 207.373, 1164.141)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 2413, -32, -13081, }, 
+    { 1, 1, 1, 1, }, 328.161, 2544.018)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 4472, 1458, -12961, }, 
+    { 1, 1, 1, 1, }, 261.966, 3445.515)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 6337, -1379, -12381, }, 
+    { 1, 1, 1, 1, }, 240.399, 3445.515)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 7338, -152, -12581, }, 
+    { 1, 1, 1, 1, }, 113.404, 2803.72)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { 8886, 260, -14882, }, 
+    { 1, 1, 1, 1, }, 110.097, 2803.72)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 9879, 1068, -13058, }, 
+    { 1, 1, 1, 1, }, 39.08, 2228.71)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { 8578, 889, -11653, }, 
+    { 1, 1, 1, 1, }, 306.44, 3191.561)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { 9129, -1614, -9750, }, 
+    { 1, 1, 1, 1, }, 55.757, 3191.561)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { 8713, -597, -8612, }, 
+    { 1, 1, 1, 1, }, 28.565, 1705.026)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes2", 
+    { 7484, -1488, -9388, }, 
+    { 1, 1, 1, 1, }, 230.753, 2106.919)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 5992, -649, -10618, }, 
+    { 1, 1, 1, 1, }, 196.233, 2802.601)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { 4484, 1395, -11802, }, 
+    { 1, 1, 1, 1, }, 147.232, 3018.974)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes2", 
+    { 1746, 131, -11935, }, 
+    { 1, 1, 1, 1, }, 167.602, 3018.974)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes2", 
+    { -218, 252, -11759, }, 
+    { 1, 1, 1, 1, }, 54.955, 2227.836)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes2", 
+    { -2039, 488, -10498, }, 
+    { 1, 1, 1, 1, }, 265.68, 3998.852)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes2", 
+    { -4602, 3271, -9203, }, 
+    { 1, 1, 1, 1, }, 297.607, 3998.852)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { -5793, 1707, -7505, }, 
+    { 1, 1, 1, 1, }, 314.405, 2597.187)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { -6584, 3082, -8258, }, 
+    { 1, 1, 1, 1, }, 108.021, 1755.787)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes", 
+    { -7125, 3364, -9546, }, 
+    { 1, 1, 1, 1, }, 45.803, 2211.542)
+    AddDustCloudOrNebula("polySurface13", "DustCloud_NoRes3", 
+    { -5224, 3142, -10654, }, 
+    { 1, 1, 1, 1, }, 282.588, 3233.893)	
+	
+	
+	
+	
+	
+	
+	
+	
+    addSquadron("Meg_Bentus_Ruined", "Meg_Bentus_Ruined", 
+    { 9355, 0, -1445 }, -1, 
+    { 26.752, 80.108, 7.287, }, 0, 0)
+	
+end
+
+
+
+newMultiplier = 1.55
+
+
+--CUSTOM FOR THIS LEVEL:
+function addPebble2(sPebbleType, tCoord)
+	if random(1,10) < 5 then
+		addPebble(sPebbleType, {tCoord[1]*newMultiplier, tCoord[2]*newMultiplier, tCoord[3]*newMultiplier}, 0, 0, 0)
+		gPebbleCounter = gPebbleCounter + 1
+	end
+end
+
+
+function addPebble_mission7(sPebbleType, tCoord)
+	if random(1,10) < 4 then
+		addPebble(sPebbleType, AlterMission7Coord(tCoord), 0, 0, 0)
+		gPebbleCounter = gPebbleCounter + 1
+	end
+end
+
+
+function addSquadron2(s1, s2, t1, i1, t2, i2, i3)
+	addSquadron(s1, s2, { t1[1]*newMultiplier, t1[2]*newMultiplier, t1[3]*newMultiplier }, i1, t2, i2, i3)
+end
+
+
+function AddDustCloudOrNebula(s1,s2,t1,t2,i1,i2)
+	addNebula("polySurface2", "M11_Bentusi_Radiation", { t1[1]*newMultiplier, t1[2]*newMultiplier, t1[3]*newMultiplier }, {0, 1, 0, 1}, i1, i2)
+end
+
+
+function AlterMission7Coord(tCoord)
+	return { tCoord[1]*2*newMultiplier, tCoord[2]*1.5*newMultiplier, tCoord[3]*newMultiplier }
+end
+
+
+
+
+
+
+
+
+
+
+
+--*********** CODE (NO NEED TO MODIFY) ***********
+dofilepath("Data:leveldata/multiplayer/territories/level_common.lua")
+dofilepath("Data:leveldata/multiplayer/territories/" .. levelName .. "_config.lua")
+
+
+function DetermChunk()
+    setWorldBoundsInner({0, 0, 0}, levelSize)
+    SetupTerritories()
+    SetupTerritoryConnections()
+    AddMegaliths()
+end
+
+
+function NonDetermChunk()
+    SetupTerritoryTables()
+    AddConnectionPebbles()
+    AddTerritoryPebbles()
+    PrintPebbleCount()
+    
+    --add fog and lighting details here, if needed
+    
+    fogSetActive(0)
+    setGlareIntensity(0)
+    setLevelShadowColour(0, 0, 0, 1)
+    loadBackground(levelBackground)
+    setSensorsManagerCameraDistances(14000, cameraMaxZoom)
+    setDefaultMusic(defaultMusic)
+end
+

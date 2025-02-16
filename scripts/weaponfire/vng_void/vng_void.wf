@@ -1,0 +1,12 @@
+hitfx = "vng_void"
+missfx = "Vng_void"
+bulletfx = ""
+nopenetratefx = "Vng_void"
+deathtype = "deathCannon"
+scartype = ""
+hit_sfx = ""
+nopenetrate_sfx = ""
+hit_clamp = {
+  1,
+  1,
+}

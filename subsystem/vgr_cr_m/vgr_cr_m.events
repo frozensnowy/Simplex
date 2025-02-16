@@ -1,0 +1,73 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Fire_Missle", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event30 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Launcher_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/missle_launcher_fire_2", },		--WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event31 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Weapon_LauncherSlave_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/missle_launcher_fire_2", },		--WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event32 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_LauncherSlave1_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/missle_launcher_fire_2", },		--WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event33 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "Weapon_LauncherSlave2_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/missle_launcher_fire_2", },		--WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+				event44 = 
+            { 
+                { "anim", "Fire_Missle", }, 
+                { "animtime", "0.8", }, 
+                { "marker", "Weapon_LauncherSlave3_Muzzle", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "sound", "WEAPON/missle_launcher_fire_2", },		--WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH
+                { "fx_scale", "2", }, 
+                { "fx_nlips", "on", }, 
+            }, 		
+						
+}, }

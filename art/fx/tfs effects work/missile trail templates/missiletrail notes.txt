@@ -1,0 +1,22 @@
+==Primary File (style_spray)==
+Emiter Rate = Amount of particles dispersed per second. Over 100 causes significant slowdown.
+Emiter Duration = The amount of time in seconds the effect lasts for before turning off
+Emiter LOD = Controls LOD at certain distances?
+
+==Particle FX Slave File==
+Duration = Length of particle emiter (determines how long the trail is)
+	High duration uses more system resources!
+
+=Types Notes=
+Missile_Fusion_Trail (slave: Missile_Fusion_Trail_Slave): 
+	For Vaygr Fusions, low emiter, long duration
+Missile_Heavy_Trail (Slave: Missile_Heavy_Trail_Slave): 
+	For Battleship Missiles/Torpedoes Only (for weapons with low RoF!) - long bushy trail
+
+v1.1 missle_ignite_combo stats (default fusion missile):
+	Duration = 10, Emitter Duration = 4 (10 in TFSv2.8), Emitter Rate = Up to 107
+
+Modify Ignite Combo (reduce FX) to increase performance with Missile_Trail?
+
+-----New Ignites---
+missle_ignite_combo_short: Emitter Duration is 5

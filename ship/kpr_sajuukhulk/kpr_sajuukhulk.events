@@ -1,0 +1,476 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:22 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "ammo_explosion", 
+            length = 100, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+     }, 
+    events = 
+    { 
+        ammo_explosion_1 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.004", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_2 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.005", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_3 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.006", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_4 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.008", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_5 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.01", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_6 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.011", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_7 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.015", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_8 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.017", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_9 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.025", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_10 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.027", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_11 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.032", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_12 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.038", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_13 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.041", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_14 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_15 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.063", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_16 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.076", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_17 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.084", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_18 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.088", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_19 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.097", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_20 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.114", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_21 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.13", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_22 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.139", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_23 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.146", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_24 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.156", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_25 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.157", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_26 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.165", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_27 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.212", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_28 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.263", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_29 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.298", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_30 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.318", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_31 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.345", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_32 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.385", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_33 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.467", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_34 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.54", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_35 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.548", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_36 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.637", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_37 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.685", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_38 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.759", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_39 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.884", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        ammo_explosion_40 = 
+            { 
+                { "anim", "ammo_explosion", }, 
+                { "animtime", "0.996", }, 
+                { "marker", "marker1,marker2,marker3,marker4,marker5,marker6,marker7,marker8,marker9,marker10,marker11,marker12,marker13,marker14,marker15,marker16,marker17,marker18,marker19,marker20,marker21,marker22,marker23,marker24,marker25,marker26,marker27,marker28,marker29,marker30", }, 
+                { "fx", "wreck_explosion_ammo_smoky_combo,wreck_explosion_ammo_combo,death_generic_fighter,death_generic", },
+                { "sound", "Explosion/Medium/ETG_Explode_Medium_Firey", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        death1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "shockwavehulk_combo", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker1", }, 
+                { "fx", "debris_aeolus1_combo,debris_aeolus2_combo,debris_aeolus3_combo,debris_aeolus4_combo,debris_arcadia1_combo,debris_arcadia2_combo,debris_arcadia3_combo,debris_arcadia4_combo,debris_arcadia5_combo,debris_arcadia6_combo,debris_aten1_combo,debris_aten2_combo,debris_aten3_combo,debris_cain1_combo,debris_cain2_combo,debris_cain3_combo", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "marker2", }, 
+                { "fx", "debris_colossus10_combo,debris_colossus1_combo,debris_colossus2_combo,debris_colossus3_combo,debris_colossus4_combo,debris_colossus5_combo,debris_colossus6_combo,debris_colossus7_combo,debris_colossus8_combo,debris_colossus9_combo,debris_deimos1_combo,debris_deimos2_combo,debris_deimos3_combo,debris_deimos4_combo,debris_deimos5_combo,debris_demon1_combo", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Firey", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "marker3", }, 
+                { "fx", "debris_demon2_combo,debris_demon3_combo,debris_demon4_combo,debris_demon5_combo,debris_demon6_combo,debris_demon7_combo,debris_fenris1_combo,debris_fenris2_combo,debris_fenris3_combo,debris_hades1_combo,debris_hades2_combo,debris_hades3_combo,debris_hades4_combo,debris_hades5_combo,debris_hades6_combo,debris_hades7_combo,debris_hatshepsut1_combo", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker4", }, 
+                { "fx", "debris_hatshepsut2_combo,debris_hatshepsut3_combo,debris_hatshepsut4_combo,debris_hatshepsut5_combo,debris_hatshepsut6_combo,debris_hatshepsut7_combo,debris_hecate1_combo,debris_hecate2_combo,debris_hecate3_combo,debris_hecate4_combo,debris_hecate5_combo,debris_hecate6_combo,debris_hecate7_combo,debris_hecate8_combo,debris_iceni1_combo,debris_iceni2_combo", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "mark5", }, 
+                { "fx", "debris_iceni3_combo,debris_iceni4_combo,debris_iceni5_combo,debris_lilith1_combo,debris_lilith2_combo,debris_lilith3_combo,debris_lucifer1_combo", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.35", }, 
+                { "marker", "mark6", }, 
+                { "fx", "debris_lucifer2_combo,debris_lucifer3_combo,debris_lucifer4_combo,debris_lucifer5_combo,debris_lucifer6_combo,debris_lucifer7_combo,debris_lucifer8_combo,debris_mentu1_combo,debris_mentu2_combo,debris_mentu3_combo,debris_mentu4_combo,debris_moloch1_combo,debris_moloch2_combo,debris_moloch3_combo,debris_moloch4_combo,debris_moloch5_combo", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris7 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "mark7", }, 
+                { "fx", "debris_orion1_combo,debris_orion2_combo,debris_orion3_combo,debris_orion4_combo,debris_orion5_combo,debris_orion6_combo,debris_orion7_combo,debris_rakshasa1_combo,debris_rakshasa2_combo,debris_rakshasa3_combo,debris_rakshasa4_combo,debris_ravana1_combo,debris_ravana2_combo,debris_ravana3_combo,debris_ravana4_combo,debris_ravana5_combo,debris_ravana6_combo", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris8 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.45", }, 
+                { "marker", "mark8", }, 
+                { "fx", "debris_ravana7_combo,debris_ravana8_combo,debris_sathanas10_combo,debris_sathanas1_combo,debris_sathanas2_combo,debris_sathanas3_combo,debris_sathanas4_combo,debris_sathanas5_combo,debris_sathanas6_combo,debris_sathanas7_combo,debris_sathanas8_combo,debris_sathanas9_combo,debris_sobek1_combo,debris_sobek2_combo,debris_sobek3_combo,debris_sobek4_combo", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+        debris9 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "mark9", }, 
+                { "fx", "debris_sobek5_combo,debris_typhon10_combo,debris_typhon11_combo,debris_typhon12_combo,debris_typhon13_combo,debris_typhon14_combo,debris_typhon15_combo,debris_typhon16_combo,debris_typhon1_combo,debris_typhon2_combo,debris_typhon3_combo,debris_typhon4_combo,debris_typhon5_combo,debris_typhon6_combo,debris_typhon7_combo,debris_typhon8_combo,debris_typhon9_combo", }, 
+                { "fx_scale", "entity", }, 
+            }, 
+            }, }

@@ -1,0 +1,11 @@
+hitfx = "torpexplodex_lod"
+bulletfx = "proton_torpedo_EFFECT"
+nopenetratefx = "torpexplodex_lod"
+deathtype = "deathCannon"
+fire_sfx = "generic/TorpFire"
+hit_sfx = "explosion/medium/etg_explode_medium_plasma"
+nopenetrate_sfx = "explosion/medium/etg_explode_medium_plasma"
+hit_clamp = {
+  1,
+  1,
+}

@@ -1,0 +1,106 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "MissileTrail",
+      length = 20,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "MissleEngine1",
+      },
+      {
+        "fx",
+        "ASM73_ignite_combo",
+      },
+      {
+        "sound",
+        "TFS_SOUNDS/MISSILE_ENGINE1",
+      },
+      {
+        "fx_scale",
+        "5",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "MissileTrail",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "MissleEngine1",
+      },
+      {
+        "fx",
+        "missile_heavy_trail",
+      },
+      {
+        "sound",
+        "",
+      },
+     {
+        "fx_scale",
+        "2.2",
+      }, 
+    },
+    event3 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "sound",
+        "WEAPON/FRIGATE/FIRE/WEAPON_CLUSTER_MISSLE_LAUNCH",
+      },
+      {
+        "fx",
+        "ca_LRCM_combo",
+      },
+      {
+        "fx_transform",
+        "None",
+      },
+    },
+  },
+}

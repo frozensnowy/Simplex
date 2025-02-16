@@ -1,0 +1,3 @@
+ANC_HYPERSPACE_BRIDGE_Normal_OnSet = function(ship)    
+    --startEffect(ship, "shield3")  
+end

@@ -1,0 +1,15 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:08 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "Missile", "Vgr_WarfarePod", "Normal", 60, 3675, 0, 0, 0, 2, 1, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0.1, "Normal", 0, 1, 0)
+AddWeaponResult(NewWeaponType, "Hit", "LatchWithTarget", "Target", 0, 0, "")
+AddWeaponResult(NewWeaponType, "Miss", "LatchWithTarget", "Target", 0, 0, "")
+--AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 500, 500, "")
+setPenetration(NewWeaponType, 5, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1)
+setAngles(NewWeaponType, 180, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 0.3)

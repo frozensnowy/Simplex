@@ -1,0 +1,65 @@
+Survivor = {}
+Survivor[1] = { 
+            type = "vgr_interceptor", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[2] = { 
+            type = "vgr_bomber", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[3] = { 
+            type = "vgr_defender", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[4] = { 
+            type = "vgr_lancefighter", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[5] = { 
+            type = "vgr_heavyfighter", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[6] = { 
+            type = "vgr_missilebomber", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[7] = { 
+            type = "vgr_elitefighter", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[8] = { 
+            type = "Vgr_Bioship", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+Survivor[9] = { 
+            type = "vgr_scout", 
+            subsystems = {}, 
+            shiphold = {}, 
+            name = "", 
+            size = 1, }
+SurvivorNum = 9
+PersistantData = 
+{ 
+    StrikeGroups = {}, 
+    Squadrons = 
+        { 
+        Survivor[random(SurvivorNum)],
+        }, 
+        
+    Research = {}, }

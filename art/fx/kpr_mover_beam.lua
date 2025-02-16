@@ -1,0 +1,201 @@
+fx = {
+style = "STYLE_BEAM",
+properties = {
+property_16 = {
+name = "LineDistance",
+type = "VARTYPE_FLOAT",
+value = -1,
+},
+property_15 = {
+name = "WidthEpsilon",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+property_09 = {
+name = "Texture_U_Offset",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+0,
+1,
+0,
+},
+},
+property_04 = {
+name = "SelfIlluminated",
+type = "VARTYPE_BOOL",
+value = 1,
+},
+property_03 = {
+name = "Texture",
+type = "VARTYPE_STRING",
+value = "DATA:ART/FX/BOARDING_BEAM/BOARDING_BEAM_GLOW_KPR.TGA",
+},
+property_06 = {
+name = "Length",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+40,
+0.20625,
+30,
+0.44375,
+50,
+0.71750,
+30,
+1,
+40,
+},
+},
+property_05 = {
+name = "Offset",
+type = "VARTYPE_ARRAY_TIMEVECTOR3",
+value = {
+entry_00 = {
+0,
+0,
+0,
+-1,
+},
+entry_01 = {
+1,
+0,
+0,
+-1,
+},
+},
+},
+property_08 = {
+name = "Segments",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+1,
+1,
+1,
+},
+},
+property_07 = {
+name = "Noise",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+0,
+1,
+0.50000,
+},
+},
+property_02 = {
+name = "Blending",
+type = "VARTYPE_INT",
+value = 2,
+},
+property_01 = {
+name = "Loop",
+type = "VARTYPE_BOOL",
+value = 1,
+},
+property_13 = {
+name = "Arc",
+type = "VARTYPE_ARRAY_TIMEVECTOR3",
+value = {
+entry_00 = {
+0,
+0,
+0,
+0,
+},
+entry_01 = {
+1,
+0,
+0,
+0,
+},
+},
+},
+property_14 = {
+name = "LengthEpsilon",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+property_11 = {
+name = "Width",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+20,
+0.14875,
+24.26667,
+0.42375,
+16.26667,
+0.64250,
+25.60000,
+1,
+20,
+},
+},
+property_12 = {
+name = "Colour",
+type = "VARTYPE_ARRAY_TIMECOLOUR",
+value = {
+entry_00 = {
+0,
+0.47170,
+0.47170,
+0.47170,
+1,
+},
+entry_01 = {
+0.00746,
+0.60377,
+0.60377,
+0.60377,
+1,
+},
+entry_02 = {
+0.28657,
+1,
+1,
+1,
+1,
+},
+entry_03 = {
+0.48955,
+0.66981,
+0.66981,
+0.66981,
+1,
+},
+entry_04 = {
+0.74627,
+1,
+1,
+1,
+1,
+},
+entry_05 = {
+1,
+0.60377,
+0.60377,
+0.60377,
+1,
+},
+},
+},
+property_00 = {
+name = "Duration",
+type = "VARTYPE_FLOAT",
+value = 5,
+},
+property_10 = {
+name = "Texture_U_Repeat",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+1,
+1,
+1,
+},
+},
+},
+}

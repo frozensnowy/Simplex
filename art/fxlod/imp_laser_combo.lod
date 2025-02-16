@@ -1,0 +1,13 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "Imp_laser_Combo",
+		distance = 20000,
+	},
+	lod1 = 
+	{
+		fx = "",
+		distance = 25000,
+	},	
+}

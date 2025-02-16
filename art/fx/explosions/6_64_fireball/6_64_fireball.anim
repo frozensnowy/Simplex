@@ -1,0 +1,14 @@
+fps = 20;
+startFrame = 0;
+loopCount = 1
+;
+texture = 
+{
+	"data:ART/FX/explosions/6_64_fireball/001.tga",
+	"data:ART/FX/explosions/6_64_fireball/002.tga",
+	"data:ART/FX/explosions/6_64_fireball/003.tga",
+	"data:ART/FX/explosions/6_64_fireball/004.tga",
+	"data:ART/FX/explosions/6_64_fireball/005.tga",
+	"data:ART/FX/explosions/6_64_fireball/006.tga",
+	"data:ART/FX/explosions/6_64_fireball/007.tga",
+}

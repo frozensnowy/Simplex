@@ -1,0 +1,15 @@
+hitfx = "frigatehit_combo" --flak_hit_combo is probably best for DD class guns
+bulletfx = "mod_vgr_ac" --kinetic_large_combo_noevents
+nopenetratefx = "dmg_cloud_spray_large"
+deathtype = "deathCannon"
+scartype = "Kinetic_Large/Kinetic_Large"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+fire_sfx = "WEAPON/MOD/VAYCANNON" --was vaykashtangun
+firefx = "frigatefire_combo" --frigatefire_combo
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_FLECHETTE_CANNON_HIT"
+bullet_nlips = 0.0003
+hit_nlips = 0
+hit_clamp = {
+  0.5,
+  0.5,
+}

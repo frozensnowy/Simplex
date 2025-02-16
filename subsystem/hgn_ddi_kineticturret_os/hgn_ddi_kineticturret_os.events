@@ -1,0 +1,442 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Weapon_Turret",
+      length = 0.7,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+
+    animation3 = {
+      name = "dmg01",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.25,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation4 = {
+      name = "dmg02",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.5,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation5 = {
+      name = "dmg03",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.75,
+      maximum = 1,
+      markers = {
+        "",
+      },
+    },
+    animation6 = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Weapon_Turret",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere_artillery",
+      },
+      { 
+	"fx_scale", "7",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event1puff = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.455", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "resourcing_dust_spray_full", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },             
+    event1smoke = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.46", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "5.5", }, 
+                { "fx_nlips", "on", },
+            },                         
+    event1RetroFire = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.61", }, 
+                { "sound", "SP_ELEMENTS/ARTILLERY", }, 
+            },    
+    event2 = {
+      {
+        "anim",
+        "Weapon_Turret",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere_artillery",
+      },
+      { 
+	"fx_scale", "7",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event2puff = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.455", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "resourcing_dust_spray_full", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },             
+    event2smoke = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.46", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "5.5", }, 
+                { "fx_nlips", "on", },
+            },                         
+    event2RetroFire = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.61", }, 
+                { "sound", "SP_ELEMENTS/ARTILLERY", }, 
+            },
+    event3 = {
+      {
+        "anim",
+        "Weapon_Turret",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere_artillery",
+      },
+      { 
+	"fx_scale", "7",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event3puff = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.455", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "resourcing_dust_spray_full", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },             
+    event3smoke = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.46", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "5.5", }, 
+                { "fx_nlips", "on", },
+            },                         
+    event3RetroFire = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.61", }, 
+                { "sound", "SP_ELEMENTS/ARTILLERY", }, 
+            },
+    event4 = {
+      {
+        "anim",
+        "Weapon_Turret",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere_artillery",
+      },
+      { 
+	"fx_scale", "7",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event4puff = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.455", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "resourcing_dust_spray_full", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },             
+    event4smoke = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.46", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "5.5", }, 
+                { "fx_nlips", "on", },
+            },                         
+    event4RetroFire = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.61", }, 
+                { "sound", "SP_ELEMENTS/ARTILLERY", }, 
+            },
+    event5 = {
+      {
+        "anim",
+        "Weapon_Turret",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "Weapon_Turret_Muzzle",
+      },
+      {
+        "fx",
+        "muzzle_flash_combo_small_capital",
+      },
+      {
+        "sound",
+        "weapon/medgun_atmosphere_artillery",
+      },
+      { 
+	"fx_scale", "7",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event5puff = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.455", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "resourcing_dust_spray_full", },                 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", },
+            },             
+    event5smoke = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.46", }, 
+                { "marker", "Weapon_SCTSlave_Muzzle", }, 
+                { "fx", "dmg_damage_puff_combo_frigate", },                 
+                { "fx_scale", "5.5", }, 
+                { "fx_nlips", "on", },
+            },                         
+    event5RetroFire = 
+            { 
+                { "anim", "Weapon_Turret", }, 
+                { "animtime", "0.61", }, 
+                { "sound", "SP_ELEMENTS/ARTILLERY", }, 
+            },    
+    event6 = {
+      {
+        "anim",
+        "dmg02",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker3,maker4",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_LIGHT",
+      },
+      {
+        "fx_scale",
+        "7.5",
+      },
+    },
+    event7 = {
+      {
+        "anim",
+        "dmg03",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker5",
+      },
+      {
+        "fx",
+        "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_LIGHT",
+      },
+      {
+        "fx_scale",
+        "10",
+      },
+    },
+    event8 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0.4",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "fx",
+        "dmg_cloud_main_explosion_combo",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "7",
+      },
+    },
+    event9 = {
+      {
+        "anim",
+        "death",
+      },
+      {
+        "animtime",
+        "0.15",
+      },
+      {
+        "marker",
+        "marker3",
+      },
+      {
+        "fx",
+        "dmg_cloud_explosion_large",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+  },
+}

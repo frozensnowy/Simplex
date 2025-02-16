@@ -1,0 +1,16 @@
+fps = 15;
+startFrame = 0;
+loopCount = 1
+;
+texture = 
+{
+    "data:ART/FX/explosions/9_64_continous/001.tga",
+    "data:ART/FX/explosions/9_64_continous/002.tga",
+    "data:ART/FX/explosions/9_64_continous/003.tga",
+    "data:ART/FX/explosions/9_64_continous/004.tga",
+    "data:ART/FX/explosions/9_64_continous/005.tga",
+    "data:ART/FX/explosions/9_64_continous/006.tga",
+    "data:ART/FX/explosions/9_64_continous/007.tga",
+    "data:ART/FX/explosions/9_64_continous/008.tga",
+    "data:ART/FX/explosions/9_64_continous/009.tga",
+}

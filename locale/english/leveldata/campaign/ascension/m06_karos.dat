@@ -1,0 +1,144 @@
+filerange 42500 42999
+rangestart 42500 42999
+// objectives
+42500	Begin Resourcing operations.
+42501	Investigate the nearby hulks.
+42502	Defend the Fleet.
+42503	Salvage the derelict ship.
+42504	Begin Anti-Mover Weapon Enhancements Research
+
+
+// location cards
+42520	KAROS GRAVEYARD
+42521	NIS 06A
+42522	MISSION FAILED
+42523	Hyperspace Core charged in:  %1MINUTES%:%2SECONDS%
+42524	MISSION SUCCESSFUL
+
+// text
+// intelevent_oracleinincontrol
+// FC
+42530	The Oracle has taken us to the Karos Graveyard.
+42531	It is still in control of the Hyperspace Core and is recharging it to jump again.
+// FI
+42532	*** AXED *** We are detecting anomalous signals from the surrounding hulks. The Oracle is interfering with our sensors.
+42533	Until we have regained control of the Hyperspace Core, we will remain at high alert.
+42534	Be prepared for enemy contact.
+42535	*** AXED *** Recommend scouting the local hulks.
+
+// intelevent_debrishulks
+// FI
+42540	We are detecting anomalous signals from the surrounding hulks. The Oracle is interfering with our sensors.
+42541	*** AXED *** Send a ship to investigate the Hulk.
+
+// intelevent_moversattack
+// FI
+42550	Unidentified units approaching.
+42551	No life signs detected. 
+42552	Prepare to engage.
+
+// speechevent_mscorestatus
+// FC
+42560	The Hyperspace Core is at 25% and charging. The Oracle is still in control.
+42561	The Hyperspace Core is at 50%. Jump routines have been initiated by the Oracle.
+42562	The Hyperspace Core is at 75%. Hyperspace Jump is imminent.
+
+// intelevent_mothershipisjumping
+// FC
+42570	The Oracle is initiating a Short Jump.
+// FI
+42571	The Mothership is entering Hyperspace.
+42572	Her exit coordinates are unknown.
+
+// intelevent_mothershiphasreturned
+// FC
+42580	The Mothership has exited hyperspace. Auxiliary systems back online.
+42581	The Oracle is still in control of the Core. I am attempting to reroute all control systems and power down the core.
+// FI
+42582	The Mothership has arrived here.
+42583	Additional hostiles detected among the surrounding hulks.
+42584	Defend the Mothership from further attacks.
+
+// intelevent_derelictmoverdetected
+// FI
+42590	Our weapons appear ineffective against this enemy.
+42591	Sensors have detected an alien ship at this location. It appears to be disabled.
+42592	We must retrieve it to determine a weakness in their design.
+42593	Dispatch a Resource Collector to salvage the target ship.
+
+// intelevent_researchcomplete
+// FI
+42600	Anti-Mover weaponry upgrade complete.
+42601	Destroy the Movers.
+
+// speechevent_derelictsalvaged
+// FI
+42610	We have secured the alien ship.
+42611	Research division has started its analysis.
+
+// intelevent_derelictengineered
+// FC
+42620	Analysis complete.
+42621	Using data from the Oracle, we have reverse engineered the alien ship.
+42622	These ships appear to be armed utility vessels. The Oracle refers to them as "Movers".
+// FI
+42623	Research division believes it can enhance our existing weapons to deal with the Movers.
+42624	Begin research immediately.
+
+// intelevent_mothershipjumpsagain
+// FC
+42630	The Mothership is preparing to enter Hyperspace once more.
+
+// intelevent_mothershipreenters
+// FC
+42640	Hyperspace successful.
+42641	The Oracle is moving into proximity with one of the hulks. 
+// FI
+42642	The Mothership is moving to this derelict.
+42643	We must defend the Mothership at all costs.
+
+// intelevent_mothershipreacheslighthouse
+// FC
+42650	The Oracle has activated this derelict. It appears to be partially online. 
+42651	It is transmitting orders to all the Movers.
+// FI
+42652	The Movers are powering down. They are now offline. 
+// FC
+42653	The Oracle has received telemetry data from the derelict.
+42655	It has transmitted the location of a Progenitor relic within the Karos Graveyard. Coordinates locked in. 
+42654	Control of the Hyperspace Core has been released.
+// FI
+42656	Assembling the Fleet for Hyperspace.
+
+// objective descriptions
+// descriptions for 42500
+42800	Begin collecting resources, and reinforce the fleet.
+
+// description for 42501
+42805	Send a ship to investigate the indicated Debris Hulk
+
+// descriptions for 42502
+42810	Defend the Fleet from the alien attackers
+
+// descriptions for 42503
+42815	Salvage the alien craft so as we can investigate any potential weaknesses.
+
+// descriptions for 42504
+42820	Perform Anti-Mover Weapon Enhancements research from the Mothership
+
+// player names
+42890	Hiigaran Navy
+42891	Derelict Hulk
+42892	
+
+// pings
+42900	Debris Hulk
+42901	Alien craft
+
+// Ping details
+// details for ping 42900
+42920	Send ships to investigate
+
+// details for ping 42901
+42930	Salvage the alien craft at this location
+rangeend

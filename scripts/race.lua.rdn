@@ -1,0 +1,69 @@
+-- Pretty-Printed using HW2 Pretty-Printer 1.27 by Mikail.
+--																
+-- File to define all the races in the game and some
+-- associated data (folder name and localization data)
+--
+-- Note: indices start at 1
+-- Parameters:
+--  Name:
+--  Localized Display Name:
+--  Name of the hyperspace effect
+--  Name of the hyperspace sound effect, relative to data/sound/sfx
+--  Hyperspace effect time
+-- Is this race playable in skirmish/MP games
+-- The prefix for ships of this type
+-- NOTE: when adding races, only add them to the end of this list, please do not
+-- add races before these since these are needed for hw2 in the given order.
+-- Also, do NOT delete the invalid race, (first slot)
+NotPlayable = 0
+Playable = 1
+
+races = 
+{
+	{
+		"Invalid",
+		"Invalid",
+		"",
+		"",
+		0,
+		NotPlayable,
+		"",
+	},
+	{
+		"Hiigaran",
+		"$1100",
+		"hyperspace_gate",
+		"etg/special/SPECIAL_ABILITIES_HYPERSPACE_IN",
+		9.5,
+		Playable,
+		"HGN_",
+	},
+	{
+		"Vaygr",
+		"$1101",
+		"hyperspace_gate_vgr",
+		"etg/special/SPECIAL_ABILITIES_HYPERSPACE_IN",
+		9.5,
+		Playable,
+		"VGR_",
+	},
+	{
+		"Keeper",
+		"$1102",
+		"hyperspace_gate_kpr",
+		"etg/special/SPECIAL_ABILITIES_HYPERSPACE_IN",
+		12.5,
+		NotPlayable,
+		"KPR_",
+	},
+	{
+		"Bentusi",
+		"$1103",
+		"hyperspace_gate_bentusi",
+		"etg/special/SPECIAL_ABILITIES_HYPERSPACE_IN",
+		18.5,
+		NotPlayable,
+		"BEN_",
+	},
+}
+

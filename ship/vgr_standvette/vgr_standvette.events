@@ -1,0 +1,314 @@
+effects = {
+  animations = {
+	animation_damage = 
+	{
+	  name = "Damage",
+	  length = 1,
+	  loop = 1,
+	  parent = "",
+	  minimum = 0,
+	  maximum = 0,
+	  markers = 
+	        { "", }, }, 
+	animation_dmg01 = 
+	{
+	  name = "dmg01",
+	  length = 1,
+	  loop = 1,
+	  parent = "Damage",
+	  minimum = 0.25,
+	  maximum = 1,
+	  markers = 
+	        { "", }, }, 
+	animation_dmg02 = 
+	{
+	  name = "dmg02",
+	  length = 1,
+	  loop = 1,
+	  parent = "Damage",
+	  minimum = 0.5,
+	  maximum = 1,
+	  markers = 
+	        { "", }, }, 
+	animation_dmg03 = 
+	{
+	  name = "dmg03",
+	  length = 1,
+	  loop = 1,
+	  parent = "Damage",
+	  minimum = 0.75,
+	  maximum = 1,
+	  markers = 
+	        { "", }, }, 
+    animation1 = {
+      name = "Death",
+      length = 2,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+    animation2 = 
+        { 
+            name = "Weapon_Bottom", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+    animation3 = 
+        { 
+            name = "Weapon_Bottom1", 
+            length = 0.8, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation4 = 
+        { 
+            name = "AfterBurn", 
+            length = 2, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+  },
+  events = {
+    event1 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0.2",
+      },
+      {
+        "marker",
+        "marker2",
+      },
+      {
+        "fx",
+        "dmg_cloud_explosion_large",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+    event1b = 
+            { 
+                { "anim", "Weapon_Bottom", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_TurretBottom_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/Atchisson Assault Shotgun", },   --"WEAPON/FRIGATE/FIRE/VWEAPON_FIRIGATE_FLECHETTE_REPEATER_SHELL"
+                { "fx_scale", "0.75", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+    special_attack1 = 
+            { 
+                { "anim", "Weapon_Bottom1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_TurretBottom_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/shot", },
+                { "fx_scale", "0.45", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+    special_attack2 = 
+            { 
+                { "anim", "Weapon_Bottom1", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Weapon_TurretBottomSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/shot", },
+                { "fx_scale", "0.45", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+    special_attack3 = 
+            { 
+                { "anim", "Weapon_Bottom1", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_TurretBottomSlave1_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/shot", },
+                { "fx_scale", "0.45", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+    special_attack4 = 
+            { 
+                { "anim", "Weapon_Bottom1", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "Weapon_TurretBottomSlave2_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/shot", },
+                { "fx_scale", "0.45", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+    event2 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "marker3",
+      },
+      {
+        "fx",
+        "dmg_cloud_explosion_large",
+      },
+      {
+        "fx_scale",
+        "0.6",
+      },
+    },
+    event3 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0.5",
+      },
+      {
+        "marker",
+        "Root",
+      },
+      {
+        "fx",
+        "dmg_cloud_main_explosion_combo",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "5",
+      },
+    },
+    event4 = {
+      {
+        "anim",
+        "Death",
+      },
+      {
+        "animtime",
+        "0.1",
+      },
+      {
+        "marker",
+        "marker1",
+      },
+      {
+        "fx",
+        "dmg_cloud_explosion_large",
+      },
+      {
+        "sound",
+        "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_FIREY",
+      },
+      {
+        "fx_scale",
+        "1",
+      },
+    },
+    event5 = {
+      {
+        "anim",
+        "dmg01",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker1,marker2",
+      },
+      { "fx", "dmg_damage_cloud_puff_spray_FiCoDMG,dmg_damage_flash_ring_FiCoDMG,dmg_damage_smoke_spray_FiCoDMG,dmg_damage_spark_spray_FiCoDMG,fiery_trail_spray_FiCoDMG,fiery_trail_spray_small_FiCoDMG,dmg_damage_cloud_steam_spray_FiCoDMG,dmg_damage_flare_spray_FiCoDMG,dmg_lines_spray_missle_lod_FiCoDMG,dmg_capital_mushroom_spray_FiCoDMG,dmg_damage_glow_ring_FiCoDMG", },
+      {
+        "fx_scale",
+        "2",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event6 = {
+      {
+        "anim",
+        "dmg02",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker3,marker4",
+      },
+      { "fx", "dmg_damage_cloud_puff_spray_FiCoDMG,dmg_damage_flash_ring_FiCoDMG,dmg_damage_smoke_spray_FiCoDMG,dmg_damage_spark_spray_FiCoDMG,fiery_trail_spray_FiCoDMG,fiery_trail_spray_small_FiCoDMG,dmg_damage_cloud_steam_spray_FiCoDMG,dmg_damage_flare_spray_FiCoDMG,dmg_lines_spray_missle_lod_FiCoDMG,dmg_capital_mushroom_spray_FiCoDMG,dmg_damage_glow_ring_FiCoDMG", },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event7 = {
+      {
+        "anim",
+        "dmg03",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker5,EngineNozzle1,Weapon_TurretBottom_Position",
+      },
+      { "fx", "dmg_damage_cloud_puff_spray_FiCoDMG,dmg_damage_flash_ring_FiCoDMG,dmg_damage_smoke_spray_FiCoDMG,dmg_damage_spark_spray_FiCoDMG,fiery_trail_spray_FiCoDMG,fiery_trail_spray_small_FiCoDMG,dmg_damage_cloud_steam_spray_FiCoDMG,dmg_damage_flare_spray_FiCoDMG,dmg_lines_spray_missle_lod_FiCoDMG,dmg_capital_mushroom_spray_FiCoDMG,dmg_damage_glow_ring_FiCoDMG", },
+      {
+        "fx_scale",
+        "5",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+        event8 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "missilelike_boost", }, 
+		{ "fx_scale", "3", }, 
+            }, 
+  },
+}

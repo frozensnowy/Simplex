@@ -1,0 +1,77 @@
+NewShipType = StartShipConfig()
+NewShipType.displayedName = "Kharak (Planet)"
+NewShipType.sobDescription = "Planet"
+NewShipType.maxhealth = 100000000
+NewShipType.regentime = 0 --1
+NewShipType.minRegenTime = 0  --1
+NewShipType.alwaysInRenderList = 1
+NewShipType.sideArmourDamage = 1  --0
+NewShipType.rearArmourDamage = 1   --0
+NewShipType.frontArmourDamage = 1   --0
+NewShipType.passiveFormation = "Broad"
+NewShipType.defensiveFormation = "Delta"
+NewShipType.aggressiveFormation = "Claw"
+NewShipType.mass = 10000000
+NewShipType.paradeData = "hgn_commandfortress_parade"
+NewShipType.useTargetRandom = 1
+NewShipType.targetRandomPointXMin = -0.6
+NewShipType.targetRandomPointXMax = 0.6
+NewShipType.targetRandomPointYMin = -0.7
+NewShipType.targetRandomPointYMax = 0.7
+NewShipType.targetRandomPointZMin = -0.55
+NewShipType.targetRandomPointZMax = 0.55
+NewShipType.dustCloudDamageTime = 0
+NewShipType.nebulaDamageTime = 0
+NewShipType.MinimalFamilyToFindPathAround = "None"
+NewShipType.BuildFamily = "NotBuildable"
+NewShipType.AttackFamily = "BigCapitalShip"
+NewShipType.DockFamily = "CantDock"
+NewShipType.AvoidanceFamily = "BigRock"
+NewShipType.DisplayFamily = "Megalith"
+NewShipType.AutoFormationFamily = "Fighter"
+NewShipType.CollisionFamily = "Unmoveable"
+NewShipType.ArmourFamily = "HeavyArmour"
+NewShipType.UnitCapsFamily = "SinglePlayerMisc"
+NewShipType.fighterValue = 0
+NewShipType.corvetteValue = 0
+NewShipType.frigateValue = 0
+NewShipType.neutralValue = 8
+NewShipType.antiFighterValue = 0
+NewShipType.antiCorvetteValue = 0
+NewShipType.antiFrigateValue = 0
+NewShipType.totalValue = 8
+NewShipType.buildCost = 50000
+NewShipType.buildTime = 2
+NewShipType.buildPriorityOrder = 1003
+NewShipType.visualRange = 57000
+NewShipType.prmSensorRange = 0
+NewShipType.secSensorRange = 0
+NewShipType.mouseOverMinFadeSize = 0
+NewShipType.mouseOverMaxFadeSize = 0
+NewShipType.healthBarStyle = 3
+NewShipType.SMRepresentation = "Mesh"
+NewShipType.meshRenderLimit = 10000000
+NewShipType.dotRenderLimit = 100
+NewShipType.visibleInSecondary = 1
+NewShipType.minimumZoomFactor = 1
+NewShipType.selectionLimit = 10000000
+--NewShipType.preciseSelectionLimit = 5000000
+NewShipType.preciseATILimit = 0 --10000000
+NewShipType.selectionPriority = 55
+NewShipType.militaryUnit = 0
+NewShipType.SMHighlightDistMin = 10000000
+NewShipType.SMHighlightDistMax = 10000000
+addAbility(NewShipType, "CanBuildShips", 1, "planet_tech", "planet_tech")
+addAbility(NewShipType,"HyperspaceInhibitorAbility",0,57000)
+AddShipMultiplier(NewShipType, "MaxShield", "ThisShipOnly", "Linear", 1, 1, 57000)
+LoadModel(NewShipType, 1)
+StartShipHardPointConfig(NewShipType, "planet_tech1", "Hardpoint_support", "System", "Innate", "Damageable", "", "planet_tech1", "", "", "", "", "", "", "")
+StartShipHardPointConfig(NewShipType, "planet_tech2", "Hardpoint_support", "System", "Innate", "Damageable", "", "planet_tech2", "", "", "", "", "", "", "")
+StartShipHardPointConfig(NewShipType, "planet_tech3", "Hardpoint_support", "System", "Innate", "Damageable", "", "planet_tech3", "", "", "", "", "", "", "")
+StartShipHardPointConfig(NewShipType, "planet_tech4", "Hardpoint_support", "System", "Innate", "Damageable", "", "planet_tech4", "", "", "", "", "", "", "")
+StartShipHardPointConfig(NewShipType, "planet_tech5", "Hardpoint_support", "System", "Innate", "Damageable", "", "planet_tech5", "", "", "", "", "", "", "")
+StartShipHardPointConfig(NewShipType, "planet_tech6", "Hardpoint_support", "System", "Innate", "Damageable", "", "planet_tech6", "", "", "", "", "", "", "")
+NewShipType.sobDieTime = 2
+NewShipType.deadSobFadeTime = 1
+--NewShipType.battleScarMaxTriBase = 1200
+--NewShipType.battleScarMaxTriInc = 1600

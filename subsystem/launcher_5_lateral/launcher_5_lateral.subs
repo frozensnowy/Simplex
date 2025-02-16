@@ -1,0 +1,33 @@
+NewSubSystemType = StartSubSystemConfig()
+NewSubSystemType.displayedName = "Missile Battery"
+NewSubSystemType.sobDescription = "Missile Launcher"
+NewSubSystemType.tacticalIcon = "hexagon"
+NewSubSystemType.tacticalIconMinSize = 1
+NewSubSystemType.tacticalIconMinFadeSize = 1
+NewSubSystemType.tacticalIconMaxFadeSize = 1
+NewSubSystemType.mouseOverMinFadeSize = 0.045
+NewSubSystemType.mouseOverMaxFadeSize = 0.1
+NewSubSystemType.maxhealth = 10000
+NewSubSystemType.regentime = 100
+NewSubSystemType.nlips = 0
+NewSubSystemType.meshRenderLimit = 15000
+NewSubSystemType.minimumZoomFactor = 0.6800000000000001
+NewSubSystemType.selectionLimit = 5000
+NewSubSystemType.preciseATILimit = 5000
+NewSubSystemType.selectionPriority = 37.5
+NewSubSystemType.type = "Weapon"
+NewSubSystemType.typeString = "TorpedoLauncher"
+NewSubSystemType.collateralDamage = 000
+NewSubSystemType.inactiveTimeAfterDamage = 90
+NewSubSystemType.activateHealthPercentage = 0.1
+NewSubSystemType.costToBuild = 0
+NewSubSystemType.timeToBuild = 0
+NewSubSystemType.isResearch = 0
+NewSubSystemType.visible = 1
+LoadHODFile(NewSubSystemType,1)
+NewSubSystemType.BuildFamily = "SubSystem_Hgn"
+NewSubSystemType.AttackFamily = "Emplacement"
+NewSubSystemType.DockFamily = "CantDock"
+NewSubSystemType.DisplayFamily = "SubSystemModule"
+NewSubSystemType.ArmourFamily = "SubSystemArmour"
+StartSubSystemWeaponConfig(NewSubSystemType,"Concussion_Missile_Launcher_LargeSSD","Weapon_T","")

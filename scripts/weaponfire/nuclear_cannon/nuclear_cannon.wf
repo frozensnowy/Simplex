@@ -1,0 +1,13 @@
+hitfx = "dmg_massive_mesh_sphere_ring"
+bulletfx = "4800mm_bullet_combo"
+nopenetratefx = "4800mm_explosion_combo"
+deathtype = "deathCannon"
+firefx = "4800mm_fireball_fire_combo"
+fire_sfx = "WEAPON/CARRIER/FIRE/VWEAPON_CARRIER_KINETIC_BURST_CANNON_SHELL"
+scartype = "Plasma_Bomb/Plasma_Bomb"
+hit_sfx = "Explosion/Large/ETG_Explode_Large_Firey"
+nopenetrate_sfx = "Explosion/Large/ETG_Explode_Large_Firey"
+hit_clamp = {
+  1,
+  1,
+}

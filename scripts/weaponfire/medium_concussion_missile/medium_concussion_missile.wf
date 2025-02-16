@@ -1,0 +1,13 @@
+hitfx = "Depth_Charge_combo"
+bulletfx = ""
+nopenetratefx = "Depth_Charge_combo"
+deathtype = "deathCannon"
+firefx = "torpedo_steam_spray"
+scartype = "Hgn_Torpedo/Torpedo"
+fire_sfx = "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH"
+hit_sfx = "weapon/megaship/impact/weapon_megaship_hull_defence_gun_hit"
+nopenetrate_sfx = "weapon/megaship/impact/weapon_megaship_hull_defence_gun_hit"
+hit_clamp = {
+  1,
+  1,
+}

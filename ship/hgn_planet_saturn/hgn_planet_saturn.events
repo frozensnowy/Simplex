@@ -1,0 +1,284 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Death",
+      length = 1,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+		disk = 
+		{ 
+			name = "disk", 
+			length = 10, 
+			loop = 1, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		atmosphere = 
+		{ 
+			name = "atmosphere", 
+			length = 10, 
+			loop = 1, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		aurora = 
+		{ 
+			name = "aurora", 
+			length = 100, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+  },
+  events = {
+        aurora_north_rings = 
+            { 
+                { "anim", "aurora", }, 
+                { "animtime", "0", }, 
+                { "marker", "North", }, 
+                { "fx", "aurora_saturne_innerring1,aurora_saturne_innerring2,aurora_saturne_innerring3,aurora_saturne_innerring4,aurora_saturne_innerring5,aurora_saturne_innerring6,aurora_saturne_outerring1,aurora_saturne_outerring2,aurora_saturne_outerring3,aurora_saturne_outerring4,aurora_saturne_outerring5,aurora_saturne_outerring6", },
+                { "fx_scale", "0.91", },
+                { "fx_sm", "on", }, 
+            },
+        aurora_north_bands = 
+            { 
+                { "anim", "aurora", }, 
+                { "animtime", "0", }, 
+                { "marker", "North", }, 
+                { "fx", "aurora_saturne_band1,aurora_saturne_band2,aurora_saturne_band3,aurora_saturne_band4,aurora_saturne_band5,aurora_saturne_band6,aurora_saturne_band7,aurora_saturne_band8,aurora_saturne_band9,aurora_saturne_band10,aurora_saturne_band11,aurora_saturne_band12,aurora_saturne_band13,aurora_saturne_band14,aurora_saturne_band15,aurora_saturne_band16,aurora_saturne_band17,aurora_saturne_band18", },
+                { "fx_scale", "0.91", },
+                { "fx_sm", "on", }, 
+            },
+        aurora_south_rings = 
+            { 
+                { "anim", "aurora", }, 
+                { "animtime", "0", }, 
+                { "marker", "South", }, 
+                { "fx", "aurora_saturne_innerring1,aurora_saturne_innerring2,aurora_saturne_innerring3,aurora_saturne_innerring4,aurora_saturne_innerring5,aurora_saturne_innerring6,aurora_saturne_outerring1,aurora_saturne_outerring2,aurora_saturne_outerring3,aurora_saturne_outerring4,aurora_saturne_outerring5,aurora_saturne_outerring6", },
+                { "fx_scale", "0.91", },
+                { "fx_sm", "on", }, 
+            },
+        aurora_south_bands = 
+            { 
+                { "anim", "aurora", }, 
+                { "animtime", "0", }, 
+                { "marker", "South", }, 
+                { "fx", "aurora_saturne_band1,aurora_saturne_band2,aurora_saturne_band3,aurora_saturne_band4,aurora_saturne_band5,aurora_saturne_band6,aurora_saturne_band7,aurora_saturne_band8,aurora_saturne_band9,aurora_saturne_band10,aurora_saturne_band11,aurora_saturne_band12,aurora_saturne_band13,aurora_saturne_band14,aurora_saturne_band15,aurora_saturne_band16,aurora_saturne_band17,aurora_saturne_band18", },
+                { "fx_scale", "0.91", },
+                { "fx_sm", "on", }, 
+            },
+        atmosphere = 
+            { 
+                { "anim", "atmosphere", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "atmosphere_saturn", },
+                { "fx_scale", "57231.75", }, 
+                { "fx_sm", "on", }, 
+            },
+	
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "-1", }, 
+			{ "marker", "disk", }, 
+			{ "fx", "blackhole_disk_emitter_saturn", }, 
+			{ "sound", "", }, 
+			{ "fx_scale", "6", }, 
+      { "fx_sm", "on", }, 
+		}, 
+		
+---smoke
+        smokeinstant1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },
+        smokeinstant2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+        smokeinstant3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },  
+        smokeinstant4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_instant", },                 
+                { "fx_scale", "entity", }, 
+            },                        
+        smoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_5", },                 
+                { "fx_scale", "entity", }, 
+            },
+        smoke2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_10", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+        smoke3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_15", },                 
+                { "fx_scale", "entity", }, 
+            },  
+        smoke4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.75", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_20", },                 
+                { "fx_scale", "entity", }, 
+            },  
+        smoke5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.85", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_35", },                 
+                { "fx_scale", "entity", }, 
+            }, 
+        smoke6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.95", }, 
+                { "marker", "Root", }, 
+                { "fx", "death_generic_cf_70", },                 
+                { "fx_scale", "entity", }, 
+            },                               
+ 
+---rapid smoke       
+        rapidsmoke1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.800", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_outline_smoke_thick", },                 
+                { "fx_scale", "entity", }, 
+            },         
+        rapidsmoke2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.900", }, 
+                { "marker", "Root", }, 
+                { "fx", "explosionjetinfrequent,dmg_cloud_outline_smoke_thick", },                        
+                { "fx_scale", "entity", }, 
+            },               
+        rapidsmoke3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.915", }, 
+                { "marker", "Root", }, 
+                { "fx", "explosionjet,dmg_cloud_outline_smoke_thick", },                        
+                { "fx_scale", "entity", }, 
+            },     
+
+---final						
+	      eventd1 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "40", }, 
+            },        
+        eventd2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "50", }, 
+            },             
+        eventd3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "60", }, 
+            },     
+        eventd4 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "70", }, 
+            },          
+        eventd5 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "80", }, 
+            },          
+        eventd6 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_capital_explosion_large_hull_flare_cf_noscar_35_final", },                 
+                { "fx_scale", "90", }, 
+            },          						
+        event2 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_BOMB_JUGGERNAUGHT", }, 
+                { "fx_scale", "20", }, 
+                { "fx_sm", "on", }, 
+            },                       
+        event3 = 
+            { 
+                { "anim", "death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Root", }, 
+                { "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+                { "sound", "EXPLOSION/LARGE/ETG_EXPLODE_LARGE_PLASMA_JUGGERNAUGHT", }, 
+                { "fx_scale", "40", }, 
+                { "fx_sm", "on", },                 
+            },                      
+  },
+}

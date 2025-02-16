@@ -1,0 +1,382 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:24:01 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Turret1", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Death", 
+            length = 2, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation3 = 
+        { 
+            name = "Damage", 
+            length = 1, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation4 = 
+        { 
+            name = "dmg01", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.25, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation5 = 
+        { 
+            name = "dmg02", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.5, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation6 = 
+        { 
+            name = "dmg03", 
+            length = 1, 
+            loop = 1, 
+            parent = "Damage", 
+            minimum = 0.75, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, 
+        animation7 = 
+        { 
+            name = "Weapon_Turret2", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation8 = 
+        { 
+            name = "Weapon_Turret3", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation9 = 
+        { 
+            name = "Weapon_Turret4", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation10 = 
+        { 
+            name = "Weapon_Turret1_Heretic", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation11 = 
+        { 
+            name = "Weapon_Turret2_Heretic", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation12 = 
+        { 
+            name = "Weapon_Turret3_Heretic", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation13 = 
+        { 
+            name = "Weapon_Turret4_Heretic", 
+            length = 5, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation14 = 
+        { 
+            name = "ShareDmgFX", 
+            length = 3, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation15 = 
+        { 
+            name = "AfterBurn", 
+            length = 3, 
+            loop = 0,
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+	}, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_Turret1", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Turret1_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_Turret2", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Turret2_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0", }, 
+                { "marker", "marker2", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event4 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker6", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event5 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker4", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "1.5", }, 
+            }, 
+        event6 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "marker8", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        event7 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_cloud_main_explosion_combo", }, 
+                { "sound", "EXPLOSION/MEDIUM/ETG_EXPLODE_MEDIUM_PLASMA", }, 
+                { "fx_scale", "15", }, 
+            }, 
+        event8 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.05", }, 
+                { "marker", "marker1", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "1", }, 
+            }, 
+        event9 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Small/ETG_Explode_Small_Plasma", }, 
+                { "fx_scale", "2.5", }, 
+            }, 
+        event10 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.25", }, 
+                { "marker", "marker7", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "fx_scale", "2", }, 
+            }, 
+        event11 = 
+            { 
+                { "anim", "Death", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "marker3", }, 
+                { "fx", "dmg_cloud_explosion_large", }, 
+                { "sound", "Explosion/Large/ETG_Explode_Large_Firey", }, 
+                { "fx_scale", "0.75", }, 
+            }, 
+        event12 = 
+            { 
+                { "anim", "dmg01", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker1,maker2", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event13 = 
+            { 
+                { "anim", "dmg02", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker3,maker4", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "7.5", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event14 = 
+            { 
+                { "anim", "dmg03", }, 
+                { "animtime", "-1", }, 
+                { "marker", "marker5", }, 
+                { "fx", "dmg_damage_puff_combo_frigate,dmg_damage_cloud_puff_spray", }, 
+                { "sound", "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY", }, 
+                { "fx_scale", "10", }, 
+                { "fx_nlips", "on", }, 
+            },
+        event15 = 
+            { 
+                { "anim", "Weapon_Turret3", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Turret3_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event16 = 
+            { 
+                { "anim", "Weapon_Turret4", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Turret4_Muzzle", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event17 = 
+            { 
+                { "anim", "Weapon_Turret1_Heretic", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_Turret1_Muzzle", }, 
+                { "fx", "ion_beam_kpr_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/KWEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event18 = 
+            { 
+                { "anim", "Weapon_Turret2_Heretic", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_Turret2_Muzzle", }, 
+                { "fx", "ion_beam_kpr_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/KWEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event19 = 
+            { 
+                { "anim", "Weapon_Turret3_Heretic", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_Turret3_Muzzle", }, 
+                { "fx", "ion_beam_kpr_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/KWEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event20 = 
+            { 
+                { "anim", "Weapon_Turret4_Heretic", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_Turret4_Muzzle", }, 
+                { "fx", "ion_beam_kpr_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/KWEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event21 = 
+            { 
+                { "anim", "Fire_SA", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker_fx7", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            },
+        event22 = 
+            { 
+                { "anim", "Fire_SA", }, 
+                { "animtime", "0.15", }, 
+                { "marker", "marker_fx8", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            },
+        event23 = 
+            { 
+                { "anim", "Fire_SA", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_Top_Position", }, 
+                { "fx", "ion_beam_charge_combo", }, 
+                { "sound", "WEAPON/FRIGATE/FIRE/WEAPON_FRIGATE_ION_CANNON_BEAM", }, 
+            }, 
+        event24 = 
+            { 
+                { "anim", "Fire_SA", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "vent2", }, 
+                { "fx", "ion_cannon_steam_spray", }, 
+                { "sound", "DAMAGE/SMOKE/ION_BEAM_DISCHARGE", }, 
+            }, 
+        event25 = 
+            { 
+                { "anim", "ShareDmgFX", }, 
+                { "animtime", "0", }, 
+                { "marker", "Root", }, 
+                { "fx", "kad_sharedamage_garden", }, 
+				{ "fx_scale", "10", },  
+            }, 	
+        AfterBurner1 = 
+            { 
+                { "anim", "AfterBurn", }, 
+                { "animtime", "-1", }, 
+                { "marker", "EngineNozzle1", }, 
+                { "fx", "ion_cannon_steam_spray_kad", }, 
+		{ "fx_scale", "3", }, 
+            }, 
+}, }

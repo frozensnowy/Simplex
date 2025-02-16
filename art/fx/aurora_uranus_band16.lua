@@ -1,0 +1,261 @@
+fx = {
+style = "STYLE_RING",
+properties = {
+property_28 = {
+name = "PointDistance",
+type = "VARTYPE_FLOAT",
+value = -1,
+},
+property_27 = {
+name = "DepthOffset",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+property_26 = {
+name = "SortOrder",
+type = "VARTYPE_INT",
+value = 0,
+},
+property_25 = {
+name = "RandomBitmap",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_24 = {
+name = "BirthSpawn_Fx",
+type = "VARTYPE_STRING",
+value = "",
+},
+property_23 = {
+name = "Spawn_Fx",
+type = "VARTYPE_STRING",
+value = "",
+},
+property_22 = {
+name = "Mesh",
+type = "VARTYPE_STRING",
+value = "DATA:ART/FX/auroraborealis/aurora_uranus_band16.hod",
+},
+property_21 = {
+name = "Texture",
+type = "VARTYPE_STRING",
+value = "Data:art/fx/point.tga",
+},
+property_11 = {
+name = "SpinRandom",
+type = "VARTYPE_BOOL",
+value = 1,
+},
+property_15 = {
+name = "UseDepthSort",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_18 = {
+name = "Billboard",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_17 = {
+name = "AlternateFOV",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_16 = {
+name = "Loop",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_19 = {
+name = "SelfIlluminated",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_09 = {
+name = "SpinEpsilonY",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+property_04 = {
+name = "SpinZ",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+0,
+1,
+0,
+},
+},
+property_03 = {
+name = "SpinY",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+0.09479,
+1,
+0.09479,
+},
+},
+property_06 = {
+name = "RadiusEpsilon",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+property_05 = {
+name = "Colour",
+type = "VARTYPE_ARRAY_TIMECOLOUR",
+value = {
+entry_00 = {
+0,
+0,
+0,
+0,
+0,
+},
+entry_01 = {
+0.02537,
+0.04786,
+0.08491,
+0.04646,
+0.07547,
+},
+entry_02 = {
+0.08657,
+0.13086,
+0.08285,
+0.04568,
+0.08491,
+},
+entry_03 = {
+0.13731,
+0.07659,
+0.07271,
+0.17925,
+0.18868,
+},
+entry_04 = {
+0.16418,
+0.08333,
+0.13940,
+0.05129,
+0.13170,
+},
+entry_05 = {
+0.65224,
+0.04717,
+0.05574,
+0.09434,
+0.11321,
+},
+entry_06 = {
+0.74179,
+0.11321,
+0.10599,
+0.01388,
+0.16520,
+},
+entry_07 = {
+0.85075,
+0.16038,
+0.16038,
+0.16038,
+0.16038,
+},
+entry_08 = {
+0.88060,
+0.13297,
+0.11812,
+0.01631,
+0.09434,
+},
+entry_09 = {
+0.95672,
+0.07547,
+0.07547,
+0.07547,
+0.07547,
+},
+entry_10 = {
+1,
+0,
+0,
+0,
+0,
+},
+},
+},
+property_08 = {
+name = "SpinEpsilonX",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+property_07 = {
+name = "RateEpsilon",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+property_02 = {
+name = "SpinX",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+0,
+1,
+0,
+},
+},
+property_01 = {
+name = "Offset",
+type = "VARTYPE_ARRAY_TIMEVECTOR3",
+value = {
+entry_00 = {
+0,
+0,
+0,
+0,
+},
+entry_01 = {
+1,
+0,
+0,
+0,
+},
+},
+},
+property_13 = {
+name = "UseMesh",
+type = "VARTYPE_BOOL",
+value = 1,
+},
+property_14 = {
+name = "UseDepthTest",
+type = "VARTYPE_BOOL",
+value = 0,
+},
+property_20 = {
+name = "Blending",
+type = "VARTYPE_INT",
+value = 2,
+},
+property_12 = {
+name = "Duration",
+type = "VARTYPE_FLOAT",
+value = 69,
+},
+property_00 = {
+name = "Radius",
+type = "VARTYPE_ARRAY_TIMEFLOAT",
+value = {
+0,
+1,
+1,
+1,
+},
+},
+property_10 = {
+name = "SpinEpsilonZ",
+type = "VARTYPE_FLOAT",
+value = 0,
+},
+},
+}

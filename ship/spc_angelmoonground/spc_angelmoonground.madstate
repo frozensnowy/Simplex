@@ -1,0 +1,4 @@
+SPC_ANGELMOONGROUND_Launched_OnSet = function(ship)
+	startEffect(ship, "disk")
+end
+

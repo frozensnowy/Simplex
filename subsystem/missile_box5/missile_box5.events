@@ -1,0 +1,107 @@
+effects = {
+  animations = {
+    animation1 = {
+      name = "Fire_Missile",
+      length = 4,
+      loop = 0,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },    
+  },
+  events = {
+    event11 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Missile_Position", },
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event12 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.1", }, 
+                { "marker", "Weapon_MissileSlave_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            }, 
+        event13 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.2", }, 
+                { "marker", "Weapon_MissileSlave1_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            }, 
+        event14 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.3", }, 
+                { "marker", "Weapon_MissileSlave2_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            }, 
+         event15 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_MissileSlave3_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            }, 
+        event16 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_MissileSlave4_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            }, 
+        event17 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.6", }, 
+                { "marker", "Weapon_MissileSlave5_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            },    
+        event18 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.7", }, 
+                { "marker", "Weapon_MissileSlave6_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            }, 
+        event19 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.8", }, 
+                { "marker", "Weapon_MissileSlave7_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            }, 
+        event20 = 
+            { 
+                { "anim", "Fire_Missile", }, 
+                { "animtime", "0.9", }, 
+                { "marker", "Weapon_MissileSlave8_Position", }, 
+                { "fx", "torpedo_steam_spray", }, 
+                { "fx_scale", "1,75", },  
+                { "fx_nlips", "on", }, 
+            },    
+  },
+}

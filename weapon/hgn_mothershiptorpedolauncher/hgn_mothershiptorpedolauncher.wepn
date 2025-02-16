@@ -1,0 +1,26 @@
+StartWeaponConfig(NewWeaponType,"Fixed","Missile","Hgn_ClusterTorpedoA","Normal",550,5250,0,0,0,0,1,0,1,10.5,0,0,1,0,0,0,0.1,"Normal",0,0,0)
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 13200, 13200, "")
+setPenetration(NewWeaponType, 5, 0.5, 
+{ 
+    LightArmour = 0.8, 
+}, 
+{ 
+    ResArmour = 0.6, 
+}, 
+{ 
+    PlanetKillerArmour = 0, 
+}, 
+{ 
+    unarmoured = 0.02, })
+setAccuracy(NewWeaponType, 0, 
+{ 
+    Fighter = 0.7, 
+}, 
+{ 
+    Corvette = 0.8, 
+}, 
+{ 
+    munition = 0.9, })
+setAngles(NewWeaponType, 135, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 0, 3)
+addAnimTurretSound(NewWeaponType, "Data:Sound/SFX/ETG/SPECIAL/SPECIAL_ABILITIES_TURRET_ON")

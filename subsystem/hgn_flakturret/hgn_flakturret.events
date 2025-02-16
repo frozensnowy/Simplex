@@ -1,0 +1,69 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_Top", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation2 = 
+        { 
+            name = "Damage", 
+            length = 1, 
+            loop = 1, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", }, }, 
+        animation3 = 
+        { 
+            name = "Dmg1", 
+            length = 1, 
+            loop = 1, 
+            parent = "damage", 
+            minimum = 0.25, 
+            maximum = 1, 
+            markers = 
+                { "", }, }, }, 
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_Top", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_Top_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_frigate", }, 
+                { "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event2 = 
+            { 
+               { "anim", "Weapon_Top", }, 
+                { "animtime", "0.5", }, 
+                { "marker", "Weapon_TopSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_frigate", }, 
+                { "sound", "Weapon/Frigate/Fire/WEAPON_FRIGATE_Flak_Cannon_Shell", }, 
+                { "fx_scale", "1", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event3 = 
+            { 
+                { "anim", "Dmg1", }, 
+                { "animtime", "-1", }, 
+                { "marker", "Root", }, 
+                { "fx", "dmg_damage_subsystem_spray", }, 
+                { "fx_scale", "entity", }, 
+            }, }, }

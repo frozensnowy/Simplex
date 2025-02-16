@@ -1,0 +1,8 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "interceptorhit_combo",
+		distance = 2000,
+	},
+}

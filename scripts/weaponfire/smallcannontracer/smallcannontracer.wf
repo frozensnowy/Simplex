@@ -1,0 +1,14 @@
+hitfx = "interceptorhit_combo"
+bulletfx = "smallcannontracer"
+nopenetratefx = "hit_generic"
+deathtype = "deathCannon"
+scartype = "Bullet/Bullet"
+hit_sfx = "WEAPON/FIGHTER/IMPACT/WEAPON_FIGHTER_PEA_SHOOTER_HIT"
+fire_sfx = "weapon/MortarAttackPistol"
+firefx = "interceptormuzzleflashcombo"
+hit_nlips = 0.0005
+bullet_nlips = 0.0004
+hit_clamp = {
+  1,
+  1,
+}

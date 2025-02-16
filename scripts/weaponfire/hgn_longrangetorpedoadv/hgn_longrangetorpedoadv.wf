@@ -1,0 +1,14 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:23:50 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+hitfx = "dmg_missle_explode_combo_tfs"
+bulletfx = "bullet_generic"
+nopenetratefx = "dmg_missle_explode_combo_tfs"
+deathtype = "deathCannon"
+scartype = "Hgn_Torpedo/Torpedo"
+nopenetrate_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+hit_sfx = "WEAPON/FRIGATE/IMPACT/WEAPON_FRIGATE_TORPEDO_HIT"
+hit_clamp = 
+    { 1, 1, }

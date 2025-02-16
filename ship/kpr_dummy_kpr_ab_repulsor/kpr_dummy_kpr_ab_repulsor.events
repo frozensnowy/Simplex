@@ -1,0 +1,272 @@
+effects = 
+{ 
+	animations = 
+	{ 
+
+		disk = 
+		{ 
+			name = "disk", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		disksmall = 
+		{ 
+			name = "disksmall", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		diskuber = 
+		{ 
+			name = "diskuber", 
+			length = 1, 
+			loop = 0, 
+			parent = "", 
+			minimum = 0, 
+			maximum = 0, 
+			markers = 
+			{ "", },
+		},
+		
+	},
+
+	events = 
+	{ 
+
+		disk = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_phase_repulsor_oneshot", }, 
+			{ "sound", "WEAPON/XPLOSTORM", }, 
+			{ "fx_scale", "100", }, 
+		}, 
+		disk1 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "110", }, 
+		}, 
+		disk2 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.2", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "120", }, 
+		}, 
+		disk3 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.3", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "130", }, 
+		}, 
+		disk4 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.4", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "140", }, 
+		}, 
+		disk5 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.5", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "150", }, 
+		}, 
+		disk6 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "100", }, 
+		}, 
+		disk7 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+			{ "fx_scale", "1.4", }, 
+		}, 
+		disk8 = 
+		{ 
+			{ "anim", "disk", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+			{ "fx_scale", "0.5", }, 
+		}, 
+		
+		
+		disksmall = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_phase_repulsor_oneshot", }, 
+			{ "sound", "WEAPON/XPLOSTORM", }, 
+			{ "fx_scale", "50", }, 
+		}, 
+		disksmall1 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "55", }, 
+		}, 
+		disksmall2 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.2", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "60", }, 
+		}, 
+		disksmall3 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.3", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "65", }, 
+		}, 
+		disksmall4 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.4", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "70", }, 
+		}, 
+		disksmall5 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.5", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "75", }, 
+		}, 
+		disksmall6 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "50", }, 
+		}, 
+		disksmall7 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+			{ "fx_scale", "0.7", }, 
+		}, 
+		disksmall8 = 
+		{ 
+			{ "anim", "disksmall", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+			{ "fx_scale", "0.25", }, 
+		}, 
+
+
+		diskuber = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "kpr_phase_repulsor_oneshot", }, 
+			{ "sound", "WEAPON/XPLOSTORM", }, 
+			{ "fx_scale", "200", }, 
+		}, 
+		diskuber1 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "220", }, 
+		}, 
+		diskuber2 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0.2", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "240", }, 
+		}, 
+		diskuber3 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0.3", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "260", }, 
+		}, 
+		diskuber4 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0.4", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "280", }, 
+		}, 
+		diskuber5 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0.5", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "300", }, 
+		}, 
+		diskuber6 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "emp_sphere_dark_ring", }, 
+			{ "fx_scale", "200", }, 
+		}, 
+		diskuber7 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_combo_bentusi", }, 
+			{ "fx_scale", "2.8", }, 
+		}, 
+		diskuber8 = 
+		{ 
+			{ "anim", "diskuber", }, 
+			{ "animtime", "0.1", }, 
+			{ "marker", "marker1", }, 
+			{ "fx", "DMG_MASSIVE_MESH_SPHERE_ring", }, 
+			{ "fx_scale", "1", }, 
+		}, 
+		
+		
+	},
+	
+}

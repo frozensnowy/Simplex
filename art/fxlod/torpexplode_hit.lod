@@ -1,0 +1,18 @@
+lods = 
+{
+	lod0 = 
+	{
+		fx = "torpexplode_hit_LOD",
+		distance = 1000,
+	},
+	lod1 = 
+	{
+		fx = "torpexplode_hit_LOD",
+		distance = 15000,
+	},
+	lod2 = 
+	{
+		fx = "",
+		distance = 50000,
+	},		
+}

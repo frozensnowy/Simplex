@@ -1,0 +1,94 @@
+levelDesc = "Primordial Soup"
+maxPlayers = 6
+player = {}
+
+for k = 0, maxPlayers - 1 do
+	player[k] = {id = k, name = "", raceName = "Vaygr", resources = 1500, raceID = 2, startPos = 1,}
+end
+
+function DetermChunk()
+	local my_seed_1 = {seed = -random(235)}
+	local cloud_color = {srandom(my_seed_1),srandom(my_seed_1),srandom(my_seed_1),1}
+
+	setWorldBoundsInner({0, 0, 0}, {60000, 60000, 60000})
+	setWorldBoundsInner({0, 0, 0}, {75000, 75000, 75000})
+
+	addSquadron("skybox", "se_hot_oceania_with_life", {0, 0, 0}, -1, {0, 0, 0}, 0, 0)
+	
+	addSquadron("shelter", "meg_gehenna_1ctm", {0+random(-1000,1000), 0+random(-1000,1000), 0+random(-1000,1000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+
+	local pos = {}
+	local r=30000
+	local a=random(0,360)
+	for i=1,maxPlayers,1 do
+		a = a + 360/maxPlayers
+		pos[i] = {r*cos(a),r*sin(a),r*sin(a)*cos(a)}
+	end
+  for w=1,maxPlayers,1 do
+  	local x = pos[w][1]	-- + random(-9000,9000)
+  	local y = pos[w][2]	-- + random(-9000,9000)
+  	local z = pos[w][3]	-- + random(-9000,9000)
+	  --addSquadron("shelter", "meg_gehenna_1ctm", {x+random(-100,100), y+random(-100,100), z+random(-100,100)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+		addPoint("StartPos"..(w-1), {x, y, z}, {0, -a, 0})
+	  addDustCloud("polySurface1", "dustcloud_nores", {x, y, z}, {1.0, 0, 0, 1.0}, 233.16, 10000.0)
+	  addDustCloud("polySurface1", "dustcloud_nores", {x, y, z}, {1.0, 0, 0, 1.0}, 256.41, 10000.0)
+	  addDustCloud("polySurface1", "dustcloud_nores2", {x, y, z}, {1.0, 0, 0, 1.0}, 146.67, 10000.0)
+	  local megalith = {"meg_bentus", "meg_foundry", "meg_veildebris_chunk_lighthouse_nobuild", "meg_dreadnaughtberth", "meg_headshotasteroid", "meg_tanis", "meg_chimera_nobuild","meg_reinforcementpad","meg_bigred"}
+		addSquadron("megalith", megalith[random(1,getn(megalith))], {x+random(-10000,10000), y+random(-10000,10000), z+random(-10000,10000)}, -1, {random(0,360), random(0,360), random(0,360)}, 0, 0)
+	  local gamma = random(0,360)
+	  local small_r = 2000
+	  local large_r = 5000
+	  for i = 1, 29, 1 do
+	  	addSquadron("light", "meg_NavBouy_Red", {x+sin(gamma)*small_r, y+random(-100,100), z+cos(gamma)*small_r}, -1, {0, gamma+180, 0}, 0, 0)
+	  	if random(1,4)==1 then
+		  	addAsteroid("Asteroid_"..random(2,5).."_blue", {x+sin(gamma)*large_r, y+random(-100,100), z+cos(gamma)*large_r}, 100, 0, 0, 0, 0)
+	  	end
+	  	gamma=gamma+12
+	  end
+	end
+
+	local threeRings =
+	{
+		--addAsteroid(<sAsteroidType>, <tPosition>, <fRU>, ?, ?, ?, ?)
+		{256, "Asteroid", "Asteroid_1", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{128, "Asteroid", "Asteroid_2", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{ 64, "Asteroid", "Asteroid_3", {0,0,0,}, 100, 0, 0, 0, 0,},
+		{ 32, "Asteroid", "Asteroid_4", {0,0,0,}, 100, 0, 0, 0, 0,},
+--		{  8, "Asteroid", "Asteroid_5", {0,0,0,}, 100, 0, 0, 0, 0,},
+	}
+
+	local BlobArea_1 = {}
+	local max_blobs = 6
+	for i = 1, max_blobs do
+		local u, v, r = srandom(my_seed_1, 360), srandom(my_seed_1, 180), srandom(my_seed_1, 10000) + 20000
+		local radius = r
+		local tCoo =
+		{
+			r * cos(u) * sin(v),
+			r * cos(v),
+			r * sin(u) * sin(v),
+		}
+		--local rotate_amt = {0,srandom(my_seed_1, 360),0}
+		--addPoint("StartPos"..(i-1), vaddV(tCoo, vrotate({-2000,0,0}, rotate_amt)), rotate_amt)
+--		addCloud("polySurface1", "cloud_text_"..i, tCoo, {1,1,1,1}, 0, 4096)
+		addCloud("polySurface1", "Cloud_0", tCoo, {1,0,0,0.5}, 0, radius)
+		easyPatch(tCoo, 100, my_seed_1)
+		BlobArea_1[i] = {tCoo, radius,}
+	end
+
+	--blobAdd(<tPos>, <tDst>, {<tBlobs>, <fThrsh1>, <fThrsh2>, <tScale>,}, <tRot>, <tSeed>)
+	blobAdd({0,0,0}, threeRings, {BlobArea_1, 4, 4.1, {1,1,1}}, {0,0,0}, my_seed_1)
+	--blobAdd3(tPos, tPar, tRot)
+	--objAdd({0,0,0}, {BlobArea_1, 4, 4.1, 100, 80000}, {0,0,0})
+	
+end
+
+function NonDetermChunk()
+		fogSetActive(0)
+		setGlareIntensity(0)
+		setLevelShadowColour(0, 0, 0, 1)
+		setSensorsManagerCameraDistances(61000, 120000)
+    loadBackground ("se_hot_oceania_with_life")
+end
+
+dofilepath("data:scripts/MapFunctions.lua")

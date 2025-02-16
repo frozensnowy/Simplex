@@ -1,0 +1,41 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:33:08 PM
+-- This file is decrypted. Maybe we should encrypt it again for distribution.
+-- On error, please contact Frozen Snow
+--
+StartWeaponConfig(NewWeaponType, "Fixed", "Missile", "kad_hybridspider", "Normal", 560, 8000, 0, 0, 0, 0, 1, 0, 0, 14, 0, 0, 1, 1, 0, 0, 0.1, "Normal", 0, 0, 0)
+AddWeaponResult(NewWeaponType, "Hit", "LatchWithTarget", "Target", 0, 0, "")
+AddWeaponResult(NewWeaponType, "Hit", "DamageHealth", "Target", 15000, 15000, "")
+AddWeaponResult(NewWeaponType, "Hit", "Disable", "Target", 35, 35, "")
+setPenetration(NewWeaponType, 50, 1, 
+{ 
+    PlanetKillerArmour = 0, })
+setAccuracy(NewWeaponType, 1, 
+{ 
+    Fighter = 0, 
+}, 
+{ 
+    Corvette = 0, 
+}, 
+{ 
+    munition = 0, }, 
+{ 
+    Frigate = 0.8, 
+    damage = 1, 
+}, 
+{ 
+    SmallCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    BigCapitalShip = 0.6, 
+    damage = 1, 
+}, 
+{ 
+    ResourceLarge = 0.6, 
+    damage = 1, },
+{ 
+    SubSystem = 0.6, 
+    damage = 1, })
+setAngles(NewWeaponType, 180, 0, 0, 0, 0)
+setMiscValues(NewWeaponType, 40, 0.2)

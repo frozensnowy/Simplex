@@ -1,0 +1,10 @@
+fps = 30
+startFrame = 0
+loopCount = 1
+texture = 
+    { 
+    "data:/ART/FX/sparks/nyan_cat_spark_00000.tga", 
+    "data:/ART/FX/sparks/nyan_cat_spark_00001.tga", 
+    "data:/ART/FX/sparks/nyan_cat_spark_00002.tga", 
+    "data:/ART/FX/sparks/nyan_cat_spark_00003.tga", 
+    }

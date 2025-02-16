@@ -1,0 +1,13 @@
+NewNebulaType = StartNebulaConfig()
+NewNebulaType.displayedName="Nebula"
+NewNebulaType.sobDescription="Nebula"
+NewNebulaType.maxhealth=1000
+NewNebulaType.nlips=0
+NewNebulaType.nlipsRange=0
+NewNebulaType.nlipsFar=0
+NewNebulaType.nlipsFarRange=0
+NewNebulaType.SMRepresentation="Mesh"
+NewNebulaType.meshRenderLimit=999999999
+NewNebulaType.minimumZoomFactor=0.68
+NewNebulaType.relativeMoveFactor=0
+NewNebulaType.damageMultiplier=4

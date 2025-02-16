@@ -1,0 +1,140 @@
+-- LuaDC version 0.9.19
+-- 5/23/2004 7:30:57 PM
+-- LuaDC by Age2uN
+-- on error send source file (compiled lua) and this outputfile to Age2uN@gmx.net
+--
+effects = 
+{ 
+    animations = 
+    { 
+        animation1 = 
+        { 
+            name = "Weapon_FlechetteTop", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", },
+		},
+        animation2 = 
+        { 
+            name = "Weapon_FlechetteBottom", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", },
+		}, 
+        animation3 = 
+        { 
+            name = "Weapon_FlechetteTopADV", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", },
+		},
+        animation4 = 
+        { 
+            name = "Weapon_FlechetteBottomADV", 
+            length = 1, 
+            loop = 0, 
+            parent = "", 
+            minimum = 0, 
+            maximum = 0, 
+            markers = 
+                { "", },
+		}, 
+	},  
+    events = 
+    { 
+        event1 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_FlechetteTop_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/GepardFire01", }, 
+                { "fx_scale", "3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event2 = 
+            { 
+                { "anim", "Weapon_FlechetteTop", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_FlechetteTopSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/GepardFire01", }, 
+                { "fx_scale", "3", }, 
+                { "fx_nlips", "on", },  
+            }, 
+        event3 = 
+            { 
+                { "anim", "Weapon_FlechetteBottom", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_FlechetteBottom_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/GepardFire01", }, 
+                { "fx_scale", "3", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event4 = 
+            { 
+                { "anim", "Weapon_FlechetteBottom", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_FlechetteBottomSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/GepardFire01", }, 
+                { "fx_scale", "3", }, 
+                { "fx_nlips", "on", },  
+            },
+
+        event1a = 
+            { 
+                { "anim", "Weapon_FlechetteTopADV", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_FlechetteTop_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/Blaster_Fired1", }, 
+                { "fx_scale", "6", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event2a = 
+            { 
+                { "anim", "Weapon_FlechetteTopADV", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_FlechetteTopSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/Blaster_Fired1", }, 
+                { "fx_scale", "6", }, 
+                { "fx_nlips", "on", },  
+            }, 
+        event3a = 
+            { 
+                { "anim", "Weapon_FlechetteBottomADV", }, 
+                { "animtime", "0", }, 
+                { "marker", "Weapon_FlechetteBottom_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/Blaster_Fired1", }, 
+                { "fx_scale", "6", }, 
+                { "fx_nlips", "on", }, 
+            }, 
+        event4a = 
+            { 
+                { "anim", "Weapon_FlechetteBottomADV", }, 
+                { "animtime", "0.4", }, 
+                { "marker", "Weapon_FlechetteBottomSlave_Muzzle", }, 
+                { "fx", "muzzle_flash_combo_small_capital", }, 
+                { "sound", "WEAPON/Blaster_Fired1", }, 
+                { "fx_scale", "6", }, 
+                { "fx_nlips", "on", },  
+            },
+
+	},
+}

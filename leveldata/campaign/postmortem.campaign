@@ -1,0 +1,104 @@
+-- =============================================================================
+-- Name : Postmortem.campaign -- Purpose : campaign for postmortem tutorial.
+--
+-- Copyright Relic Entertainment, Inc. All rights reserved.
+-- =============================================================================
+
+-- localized display name for the UI. DAT strings can be found in "UI.DAT".
+displayName = "Postmortem"
+
+-- create a mission structure
+Mission =
+{
+	{
+		-- This next function tells the game to play Animatic "A00.lua" before the mission starts.
+--		postload =	function ()	playAnimatic("data:animatics/A00.lua", 1, 1)	end,
+		-- This tells the scrtip what Directory to load the mission from. In this case from "Data/Leveldata/Campiagn/Postmortem/Mission_01".
+		directory = "Mission_01",
+		-- This tells the script what ".lua" file to load.
+		level = "Mission_01.level",
+		-- This tells the game what happens when the mission ends.
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		-- Used in the Campaign Description Menu.
+		displayName = "Mission 1",
+		-- Used in the Campaign Description Menu.
+		description = "Build a Ship",
+	},
+	{
+		directory = "Mission_02",
+		level = "Mission_02.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 2",
+		description = "Build a Subsytem",
+	},
+	{
+		directory = "Mission_03",
+		level = "Mission_03.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 3",
+		description = "Gather Resources",
+	},
+	{
+		directory = "Mission_04",
+		level = "Mission_04.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 4",
+		description = "Capture Enemy Ship",
+	},
+	{
+		directory = "Mission_05",
+		level = "Mission_05.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 5",
+		description = "Destroy Enemy Ship",
+	},
+	{
+		directory = "Mission_06",
+		level = "Mission_06.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 6",
+		description = "Destroy Enemy Subsystem",
+	},
+	{
+		directory = "Mission_07",
+		level = "Mission_07.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 7",
+		description = "Defend a Ship",
+	},
+	{
+		directory = "Mission_08",
+		level = "Mission_08.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 8",
+		description = "Move a Ship",
+	},
+	{
+		directory = "Mission_09",
+		level = "Mission_09.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 9",
+		description = "Find a Ship",
+	},
+	{
+		directory = "Mission_10",
+		level = "Mission_10.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 10",
+		description = "Repair a Ship",
+	},
+	{
+		directory = "Mission_11",
+		level = "Mission_11.level",
+		postlevel =	function (bWin)	if (bWin == 1) then	postLevelComplete()	end	end,
+		displayName = "Mission 11",
+		description = "Research an Item",
+	},
+	{
+		directory = "Mission_12",
+		level = "Mission_12.level",
+		postlevel = function ()	postLevelComplete()	end,
+		displayName = "Mission 12",
+		description = "AI Testing",
+	},
+}

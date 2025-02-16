@@ -1,0 +1,530 @@
+effects = {
+animations = {
+
+animation1 = 
+{
+	name = "Death",
+	length = 8,
+	loop = 0,
+	parent = "",
+	minimum = 0,
+	maximum = 0,
+	markers = {"",},
+},
+animation2 = 
+{ 
+	name = "Deathtrail", 
+	length = 2, 
+	loop = 0, 
+	parent = "", 
+	minimum = 0, 
+	maximum = 0, 
+	markers = {"",}, 
+}, 
+    animation3 = 
+{
+      name = "Radiation",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {"",},
+},
+    animation4 = 
+{
+      name = "dmg00",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.925,
+      maximum = 1.0,
+      markers = {
+        "",
+      },
+    },
+    animation5 = {
+      name = "dmg01",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.975,
+      maximum = 1.0,
+      markers = {
+        "",
+      },
+    },
+    animation6 = {
+      name = "dmg02",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.95,
+      maximum = 1.0,
+      markers = {
+        "",
+      },
+    },
+    animation7 = {
+      name = "dmg03",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.925,
+      maximum = 1.0,
+      markers = {
+        "",
+      },
+    },
+    animation8 = {
+      name = "dmg04",
+      length = 1,
+      loop = 1,
+      parent = "Damage",
+      minimum = 0.91,
+      maximum = 1.0,
+      markers = {
+        "",
+      },
+    },
+     animation9 =
+        {
+            name = "Large_Missile",
+            length = 4,
+            loop = 0,
+            parent = "",
+            minimum = 0,
+            maximum = 0,
+            markers = {""}
+        },
+        animation10 =
+        {
+            name = "Small_Missile",
+            length = 4,
+            loop = 0,
+            parent = "",
+            minimum = 0,
+            maximum = 0,
+            markers = {""}
+        },
+        animation11 =
+        {
+            name = "Flames",
+            length = 1,
+            loop = 1,
+            parent = "Damage",
+            minimum = 0.95,
+            maximum = 1.0,
+            markers = {""}
+        },
+        animation12 =
+        {
+            name = "EscapePods",
+            length = 2,
+            loop = 0,
+            parent = "Damage",
+            minimum = 0,
+            maximum = 0,
+            markers = {""}
+        },
+    animation13 = {
+      name = "Damage",
+      length = 1,
+      loop = 1,
+      parent = "",
+      minimum = 0,
+      maximum = 0,
+      markers = {
+        "",
+      },
+    },
+  },
+
+
+
+
+  events = {
+    event1 = {
+      {
+        "anim",
+        "death",
+      },
+      {
+        "animtime",
+        "0",
+      },
+      {
+        "marker",
+        "marker_groan",
+      },
+      {
+        "fx",
+        "detonation_debris_particle_spray",
+      },
+      {
+        "sound",
+        "EXPLOSION/ACCENTS",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+    event2 = {
+      {
+        "anim",
+        "death",
+      },
+      {
+        "animtime",
+        "0.2",
+      },
+      {
+        "marker",
+        "marker_escapepod0",
+      },
+      {
+        "fx",
+        "detonation_debris_particle_spray",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+
+
+event3 = {
+      {
+        "anim",
+        "death",
+      },
+      {
+        "animtime",
+        "0.4",
+      },
+      {
+        "marker",
+        "marker_escapepod1",
+      },
+      {
+        "fx",
+        "detonation_debris_particle_spray",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+event4 = {
+      {
+        "anim",
+        "death",
+      },
+      {
+        "animtime",
+        "0.6",
+      },
+      {
+        "marker",
+        "marker_escapepod2",
+      },
+      {
+        "fx",
+        "detonation_debris_particle_spray",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+event5 = {
+      {
+        "anim",
+        "death",
+      },
+      {
+        "animtime",
+        "0.9",
+      },
+      {
+        "marker",
+        "marker_escapepod3",
+      },
+      {
+        "fx",
+        "detonation_debris_particle_spray",
+      },
+      {
+        "fx_scale",
+        "2",
+      },
+    },
+
+--======================================================
+--SPECIAL DEATH
+--======================================================
+    event6 = {
+      {
+        "anim",
+        "deathtrail",
+      },
+      {
+        "animtime",
+        "0.99",
+      },
+      {
+        "marker",
+        "marker_detonation3",
+      },
+      {
+        "sound",
+        "Explosion/Small/ETG_Explode_Small_Plasma",
+      },
+      {
+        "fx",
+        "dmg_capital_explosion_large,test_damage_explosion,dmg_capital_explosion_large",
+      },
+      {
+        "fx_scale",
+        "3",
+      },
+      {
+        "fx_sm",
+        "on",
+      },
+    },
+   
+--======================================================
+--DAMAGE
+--======================================================
+    event41 = {
+      {
+        "anim",
+        "dmg01",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker_dmg0,marker_dmg1,marker_dmg2,marker_dmg3,marker_dmg4,marker_dmg5,marker_dmg6,marker_dmg7,marker_escapepod0,marker_escapepod1,marker_escapepod2,marker_escapepod3,marker_escapepod4,marker_escapepod5",
+      },
+      {
+        "fx",
+        "test_damage_explosion,dmg_damage_puff_combo,dmg_damage_cloud_puff_spray,dmg_damage_spark_combo,dmg_damage_puff_combo,test_steam_spray_small",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "6",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event42 = {
+      {
+        "anim",
+        "dmg02",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker_dmg0,marker_dmg1,marker_dmg2,marker_dmg3,marker_dmg4,marker_dmg5,marker_dmg6,marker_dmg7,marker_escapepod0,marker_escapepod1,marker_escapepod2,marker_escapepod3,marker_escapepod4,marker_escapepod5",
+      },
+      {
+        "fx",
+        "test_damage_explosion,dmg_damage_puff_combo,dmg_damage_cloud_puff_spray,dmg_damage_spark_combo,dmg_damage_puff_combo,test_steam_spray_small",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "10",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event43 = {
+      {
+        "anim",
+        "dmg03",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker_dmg0,marker_dmg1,marker_dmg2,marker_dmg3,marker_dmg4,marker_dmg5,marker_dmg6,marker_dmg7,marker_escapepod0,marker_escapepod1,marker_escapepod2,marker_escapepod3,marker_escapepod4,marker_escapepod5",
+      },
+      {
+        "fx",
+        "test_damage_explosion,dmg_damage_puff_combo,dmg_damage_cloud_puff_spray,dmg_damage_spark_combo,dmg_damage_puff_combo,test_steam_spray_small",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "9",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event44 = {
+      {
+        "anim",
+        "dmg03",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker_dmg0,marker_dmg1,marker_dmg2,marker_dmg3,marker_dmg4,marker_dmg5,marker_dmg6,marker_dmg7,marker_escapepod0,marker_escapepod1,marker_escapepod2,marker_escapepod3,marker_escapepod4,marker_escapepod5",
+      },
+      {
+        "fx",
+        "test_damage_explosion,dmg_damage_puff_combo,dmg_damage_cloud_puff_spray,dmg_damage_spark_combo,dmg_damage_puff_combo,test_steam_spray_small",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "6",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event45 = {
+      {
+        "anim",
+        "dmg02",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker_dmg0,marker_dmg1,marker_dmg2,marker_dmg3,marker_dmg4,marker_dmg5,marker_dmg6,marker_dmg7,marker_escapepod0,marker_escapepod1,marker_escapepod2,marker_escapepod3,marker_escapepod4,marker_escapepod5",
+      },
+      {
+        "fx",
+        "test_damage_explosion,dmg_damage_puff_combo,dmg_damage_cloud_puff_spray,dmg_damage_spark_combo,dmg_damage_puff_combo,test_steam_spray_small",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "15",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+    event46 = {
+      {
+        "anim",
+        "dmg01",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker_dmg0,marker_dmg1,marker_dmg2,marker_dmg3,marker_dmg4,marker_dmg5,marker_dmg6,marker_dmg7,marker_escapepod0,marker_escapepod1,marker_escapepod2,marker_escapepod3,marker_escapepod4,marker_escapepod5",
+      },
+      {
+        "fx",
+        "test_damage_explosion,dmg_damage_puff_combo,dmg_damage_cloud_puff_spray,dmg_damage_spark_combo,dmg_damage_puff_combo,test_steam_spray_small",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "10",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+event47 = {
+      {
+        "anim",
+        "dmg04",
+      },
+      {
+        "animtime",
+        "-1",
+      },
+      {
+        "marker",
+        "marker_dmg0,marker_dmg1,marker_dmg2,marker_dmg3,marker_dmg4,marker_dmg5,marker_dmg6,marker_dmg7,marker_escapepod0,marker_escapepod1,marker_escapepod2,marker_escapepod3,marker_escapepod4,marker_escapepod5",
+      },
+      {
+        "fx",
+        "test_damage_explosion,dmg_damage_puff_combo,dmg_damage_cloud_puff_spray,dmg_damage_spark_combo,dmg_damage_puff_combo,test_steam_spray_small",
+      },
+      {
+        "sound",
+        "DAMAGE/SMOKE/DAMAGE_SMOKE_EXHAUST_HEAVY",
+      },
+      {
+        "fx_scale",
+        "13",
+      },
+      {
+        "fx_nlips",
+        "on",
+      },
+    },
+  event48 =
+        {
+            { "anim", "Large_Missile" },
+            { "animtime", "0.1" },
+            { "marker", "" },
+            { "fx", "ion_cannon_steam_spray2" },
+            { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH" },
+            { "fx_scale", "5" },
+        },
+        event49 =
+        {
+            { "anim", "Small_Missile" },
+            { "animtime", "0.1" },
+            { "marker", "" },
+            { "fx", "ion_cannon_steam_spray2" },
+            { "sound", "WEAPON/CARRIER/FIRE/WEAPON_DESTROYER_MISSLE_LAUNCH" },
+            { "fx_scale", "2" },
+        },
+  },
+}
