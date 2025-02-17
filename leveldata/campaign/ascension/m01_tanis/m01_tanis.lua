@@ -352,8 +352,8 @@ Events.intelevent_buildpowermodule = {
         { "Objective_AddDescription(obj_prim_buildpowermodule_id, '$40512')", "", }, -- Objective: Click on the Power Station and then on the build menu to build a Torodial Magnet.
         { "Objective_AddDescription(obj_prim_buildpowermodule_id, '$40513')", "", }, -- Objective: Warning: The Power Station will continue to take damage until power levels have stabilized!
 
-        { "ping_powerstation_id = HW2_PingCreateWithLabel( 'This is a test', 'PowerStation' )", "", }, 
-        { "Ping_AddDescription(ping_powerstation_id, 0, 'Another test')", "", },
+        { "ping_powerstation_id = HW2_PingCreateWithLabel( '$40514', 'PowerStation' )", "", }, 
+        { "Ping_AddDescription(ping_powerstation_id, 0, '$40515')", "", },
 
         HW2_Wait(2),
     },
@@ -380,6 +380,8 @@ Events.intelevent_movetochimera =
     {
         { "Sound_EnterIntelEvent()", "", },
         { "Sound_SetMuteActor('Fleet')", "", }, HW2_Wait(4),
+        -- Remove the ping for the power station (ping_powerstation_id)
+        { "Ping_Remove(ping_powerstation_id)", "", },
     },
     { 
         HW2_SubTitleEvent(Actor_FleetIntel, "$40570", 8), --  Torodial Magnet construction completed. Fleet power issues have been resolved. Stand by to begin combat trials.
@@ -831,6 +833,20 @@ function Rule_LimitPilots()
 
 end
 
+function Rule_UnrestrictPowerModules()
+    -- Unrestrict Power Modules power_m1, up to power_m4 based on if they are constructed
+    if SobGroup_GetHardPointHealth("PowerStation", "p1") > 0 then
+        MakeAvailable("power_m2")
+    end
+    if SobGroup_GetHardPointHealth("PowerStation", "p2") > 0 then
+        MakeAvailable("power_m3")
+    end
+    if SobGroup_GetHardPointHealth("PowerStation", "p3") > 0 then
+        MakeAvailable("power_m4")
+        Rule_Remove("Rule_UnrestrictPowerModules")
+    end
+end
+
 -- Add new event for docking warning
 Events.speechevent_dockingwarning = {
     {
@@ -1095,6 +1111,7 @@ end
 function Rule_BuiltPowerModule()
 
     if SobGroup_GetHardPointHealth("PowerStation", "p1") > 0 then
+        Rule_Add("Rule_UnrestrictPowerModules") -- Now the player can if they want to, build up to 4 other power modules.
         print("Torodial Magnet subsystem detected!")  -- Debug statement
         Objective_SetState(obj_prim_buildpowermodule_id, OS_Complete)
         SetEnergyDrain(0, 3)
@@ -1132,6 +1149,7 @@ function Rule_HasBuiltFighterSubsystem()
         -- Basically, if we have a fighter subsystem, we can build interceptors.
         MakeAvailable("Hgn_Scout")
         MakeAvailable("Hgn_Interceptor")
+        MakeAvailable("Hgn_ResourceCollector")
         if SobGroup_GetHardPointHealth("Mothership", "Production 1") > 0 then
         	SobGroup_SetInvulnerabilityOfHardPoint("Mothership", "HardpointProduction1", 1)
         end

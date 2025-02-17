@@ -20,6 +20,9 @@ rangestart 40000 42999
 40512	Click on the Power Station and then on the build menu to build a Torodial
 40513	Warning: The Power Station will continue to take damage until power levels have stabilized!
 
+40514   Power Station
+40515   Build a Torodial Magnet on the Power Station
+
 // location card
 40520	TANIS BASE - GREAT WASTELANDS
 40521	Estimated Time to Vaygr Reinforcements:  %1MINUTES%:%2SECONDS%
@@ -88,7 +91,7 @@ rangestart 40000 42999
 40571	Perimeter Station Chimera will assist by providing target drones.
 40572	The drones are located here.
 40573	Use the Interceptors to destroy the Target Drones.
-40574	The drones will fire EMP missiles, to simulate dog fights in an attempt to simulate fighter combat.
+40574	The drones will fire EMP missiles, in an attempt to simulate fighter combat.
 
 // intelevent_perimiterbreached
 // FI
