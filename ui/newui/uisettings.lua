@@ -674,6 +674,13 @@ GameScreens =
 		activated = 0,
 		type = "ObjectivesList",
 	},
+	{
+		name = "MissionHubScreen",
+		filename = "DATA:\\UI\\NewUI\\MissionHubScreen.lua",
+		activated = 0,
+		type = "UIScreen",
+	},
+	
 	-- Build menu must be loaded before the research menu
 	{
 		name = "NewBuildMenu",

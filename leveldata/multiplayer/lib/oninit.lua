@@ -61,7 +61,8 @@ function OnInit()
   Rule_AddInterval("interfacebuttonsFast", 1.1)
   Rule_AddInterval("selected", 0.7) --ok      
 ---GAME SETTINGS  
-   
+   UI_SetScreenEnabled("MissionHubScreen", 1)
+
   winCondition = GetGameSettingAsString("wincondition");
   if (winCondition == "DestroyMothership") then  
     if GetGameSettingAsNumber("startwith") > 2 and GetGameSettingAsNumber("startwith") ~= 4 and GetGameSettingAsNumber("startwith") ~= 8 and GetGameSettingAsNumber("startwith") ~= 9 and GetGameSettingAsNumber("startwith") ~= 11 then			-- because of new starting fleet

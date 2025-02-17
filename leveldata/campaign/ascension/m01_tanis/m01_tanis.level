@@ -34,30 +34,20 @@ player[3] =
 
 function DetermChunk()
 
-
     -- Mothership Group
     createSOBGroup("Mothership")
     addSquadron("Hgn_MotherShip", "Hgn_MotherShip", {0, 0, -2517}, 0, {0, 180, 0}, 0, 0)
     addToSOBGroup("Hgn_MotherShip", "Mothership")
 
+    -- Volumes
+    addSphere("vol_HyperspaceIn_Position_Power", { -2000, 0, 0 }, 500)
+    addCamera("camera_focusOnStations", { -2000, 0, 0 }, { -2000, 2800, -1117 })
+    addCamera("camera_focusOnPowerStation", { -2000, 0, 0 }, { -2000, 2800, -1117 })
+
     -- Power Station Group
     createSOBGroup("PowerStation")
-    addSquadron("hgn_power", "hgn_power", { -1000, 15000, -517 }, 0, { 0, 180, 0 }, 0, 0)
+    addSquadron("hgn_power", "hgn_power", { -2000, 500000, 0 }, 0, { 0, 180, 0 }, 0, 0)
     addToSOBGroup("hgn_power", "PowerStation")
-
-    -- Research Station Group
-    createSOBGroup("ResearchStation")
-    addSquadron("hgn_researchstation", "hgn_researchstation", { -1000, 15200, -517 }, 0, { 0, 180, 0 }, 0, 0)
-    addToSOBGroup("hgn_researchstation", "ResearchStation")
-
-    -- Crew Station Group
-    createSOBGroup("CrewStation")
-    addSquadron("hgn_crewstation", "hgn_crewstation", { -1000, 15800, -517 }, 0, { 0, 180, 0 }, 0, 0)
-    addToSOBGroup("hgn_crewstation", "CrewStation")
-
-    -- Transport Cell Group
-    addSquadron("hgn_transportcell", "hgn_transportcell", { -800, 10800, -517 }, 0, { 0, 180, 0 }, 0, 0)
-    addSquadron("hgn_transportcell1", "hgn_transportcell", { -800, 10840, -517 }, 0, { 0, 180, 0 }, 0, 0)
 
     -- Tanis Group
     createSOBGroup("Tanis")
@@ -203,10 +193,9 @@ function DetermChunk()
     addToSOBGroup("Vgr_Bomber5", "Vgr_Bombers")
     addToSOBGroup("Vgr_Bomber6", "Vgr_Bombers")
 
-    -- Volumes
-    addSphere("vol_HyperspaceIn_Position_Power", { -1000, 1800, -517 }, 500)
-    addSphere("vol_HyperspaceIn_Position_Research", { -1000, -200, -517 }, 500)
-    addSphere("vol_HyperspaceIn_Position_Crew", { -1000, 800, -517 }, 500)
+
+
+
     addSphere("vol_WaveOne_Gate_2_B", { 12, -651, -6765 }, 310.617)
     addSphere("vol_WaveOne_Gate_1_B", { -2183, -863, -5457 }, 310.617)
     addSphere("vol_WaveOne_Gate_3_B", { 2183, -515, -5457 }, 341.9)
@@ -265,8 +254,7 @@ function DetermChunk()
     addCamera("camera_MSActuallyEntersHS", { 7.508, -156.545, -2739.973 }, { 1479.842, -659.283, -4161.789 })
     addCamera("camera_focusOnCollector", { 815.84, 284.406, -1071.906 }, { 949.146, 368.672, -970.35 })
     addCamera("camera_focusOnMegTanis", { 1420, -745, -2840 }, { 3340.419, -1429.348, -3092.764 })
-    addCamera("camera_focusOnStations", { -1000, 800, -517 }, { -2000, 2800, -1117 })
-    addCamera("camera_focusOnPowerStation", { -1000, 800, -517 }, { -2000, 2800, -1117 })
+
 
     -- Salvage
     addSalvage("StaticContainerHigh", { 1440, -688, -2126 }, 100, 0, 0, 0, 0)

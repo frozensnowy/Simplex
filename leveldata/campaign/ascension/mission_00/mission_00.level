@@ -1,0 +1,19 @@
+dofilepath("data:leveldata\\campaign\\ascension.data")
+dofilepath("player:Campaign\\ASCENSION\\MissionGrid_record.lua")
+dofilepath("data:scripts\\level_loader.lua")
+
+-- Get mission path formatting
+local levelname = currentLevel
+if (levelname == nil or levelname == "") then
+    levelname = currentMission
+    if (tonumber(levelname) < 10) then
+        levelname = "0" .. levelname
+    end
+end
+
+-- Build level path
+levelname = "m" .. levelname
+local levelPath = "data:leveldata\\campaign\\ascension\\" .. levelname .. "\\" .. levelname .. ".level"
+
+-- Load the level
+dofilepath(levelPath)

@@ -2,6 +2,16 @@ displayName = "$5500"
 
 Mission = {}
 
+for i = 1, 100000 do
+    Mission[i] = {
+        directory = "Mission_00",
+        level = "Mission_00.level",
+        postlevel = function() postLevelComplete() end,
+        displayName = "Simplex Mission",
+        description = "Simplex Campaign Mission",
+    }
+end
+
 Mission[1] = {postload = function() playAnimaticNis("data:animatics/A00.lua", "nis/NIS01A") end,
 closure = 1, directory = "M01_Tanis", level = "M01_Tanis.level",
 postlevel = function(bWin) if (bWin == 1) then playAnimatic("data:animatics/A01.lua", 1, 0) else postLevelComplete() end end,

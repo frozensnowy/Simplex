@@ -479,7 +479,7 @@ NewTaskbar =
     position =
         { 229, 19, },
     size =
-        { 35, 13, },
+        { 25, 13, },
     buttonStyle = "Taskbar_MenuButtonStyle",
     Text =
     {
@@ -496,9 +496,9 @@ NewTaskbar =
 {
     type = "TextButton",
     position =
-        { 265, 19, },
+        { 255, 19, },
     size =
-        { 45, 13, },
+        { 34, 13, },
     buttonStyle = "Taskbar_MenuButtonStyle",
     Text =
     {
@@ -514,9 +514,9 @@ NewTaskbar =
     type = "TextButton",
     visible = 0,
     position =
-        { 265, 19, },
+        { 255, 19, },
     size =
-        { 45, 13, },
+        { 34, 13, },
     buttonStyle = "Taskbar_MenuButtonStyle_Wide",
     Text =
     {
@@ -533,9 +533,9 @@ NewTaskbar =
 {
     type = "TextButton",
     position =
-        { 311, 19, },
+        { 290, 19, },
     size =
-        { 61, 13, },
+        { 39, 13, },
     buttonStyle = "Taskbar_MenuButtonStyle",
     Text =
     {
@@ -548,13 +548,30 @@ NewTaskbar =
     hotKeyID = 137,
 },
 
+-- Mission Hub
+{
+    type = "TextButton",
+    position = { 330, 19 },  -- We'll adjust this based on where we place it
+    size = { 49, 13 },
+    buttonStyle = "Taskbar_MenuButtonStyle",
+    Text = {
+        textStyle = "Taskbar_MenuButtonTextStyle",
+        text = "MISSIONS",
+    },
+    name = "btnMissionHub",
+    onMouseClicked = "UI_ToggleScreen('MissionHubScreen', 0)",
+    helpTip = "Open Mission Hub",
+    helpTipTextLabel = "commandsHelpTip",
+    hotKeyID = 143,  -- We'll need to assign an appropriate hotkey ID
+},
+
 ---sensors
 {
     type = "TextButton",
     position =
-        { 373, 19, },
+        { 380, 19, },
     size =
-        { 57, 13, },
+        { 50, 13, },
     buttonStyle = "Taskbar_MenuButtonStyle",
     Text =
     {

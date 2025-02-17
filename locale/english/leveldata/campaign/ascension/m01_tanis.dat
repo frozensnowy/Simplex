@@ -27,6 +27,8 @@ rangestart 40000 42999
 40523	MISSION $40966
 
 
+40526   
+
 // text
 // intelevent_initialization
 42000    Tanis Engineering to Mothership... Good to have you online.
@@ -258,13 +260,14 @@ rangestart 40000 42999
 40985	Attack and Destroy the Target drones with the Interceptors.
 40986	To attack, select the Interceptors, then RIGHT-CLICK on the enemy ships you wish to attack.
 40987	To attack multiple targets, use BAND-BOX attack.
-
-// description used for 40508
-40990
-
 // description used for 40509
 40995	Use Bombers to destroy the Hyperspace Gates.
 
 // description used for 40510
 40998	Protect the Mothership.  It must NOT be destroyed.
+
+
+// FC DockingBaysOffline
+42100 Insufficient power available. Repair bays offline.
+
 rangeend

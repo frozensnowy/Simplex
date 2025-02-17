@@ -1,6 +1,7 @@
 -- Required scripts
 dofilepath("data:scripts/SCAR/SCAR_Util.lua")
 dofilepath("data:leveldata/campaign/singleplayer_oninit.lua")				--COMPLEX SIMPLE ONINIT
+dofilepath("data:scripts/campaign/restriction_utils.lua")
 
 -- Campaign and Objective Variables
 SP_Campaign_Level_ID = 1
@@ -80,7 +81,17 @@ isNIS01BPlaying = false
 g_NISState = 0
 nis1bCompleted = false
 
+-- Pilot limit variables
+g_pilot_warning_played = 0
+g_pilot_limit_initialized = 0
 
+-- Global variables for docking control
+g_docking_warning_played = 0
+g_allow_mission_docking = 1  -- This will be used to allow mission-critical docking
+g_mothership_wait_id = 1     -- Wait ID for Mothership docking
+g_chimera_wait_id = 2        -- Wait ID for Chimera docking
+g_mothership_waiting = 0     -- Flag to track if we're waiting for Mothership undock
+g_chimera_waiting = 0        -- Flag to track if we're waiting for Chimera undock
 
 -- Drones
 g_drone = { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
@@ -143,17 +154,17 @@ Events.intelevent_initialization = {
     { HW2_Wait(1) },
     
     -- Back to Mothership for response
-    {
-        { "Camera_Interpolate('here', 'camera_focusonMothership2', 4)", "" },
-        HW2_SubTitleEvent(Actor_FleetCommand, "$42005", 8), -- Attempting to reroute and compensate for power inefficiency.
-    },
-    { HW2_Wait(1) },
+    --{
+    --    { "Camera_Interpolate('here', 'camera_focusonMothership2', 4)", "" },
+    --    HW2_SubTitleEvent(Actor_FleetCommand, "$42005", 8), -- Attempting to reroute and compensate for power inefficiency.
+    --},
+    --{ HW2_Wait(1) },
     
     -- Stay on Mothership for failure report
-    {
-        HW2_SubTitleEvent(Actor_FleetCommand, "$42006", 7), -- Compensation failed. Core power draw exceeding available capacity.
-    },
-    { HW2_Wait(1) },
+    --{
+    --    HW2_SubTitleEvent(Actor_FleetCommand, "$42006", 7), -- Compensation failed. Core power draw exceeding available capacity.
+    --},
+    --{ HW2_Wait(1) },
     
     -- Pan back to Tanis
     {
@@ -167,6 +178,8 @@ Events.intelevent_initialization = {
         { "Camera_Interpolate('here', 'camera_focusOnPowerStation', 4)", "" },
         HW2_SubTitleEvent(Actor_FleetCommand, "$42008", 6), -- Hyperspace signature detected. Power Station emergence confirmed.
         { "SobGroup_ExitHyperSpace('PowerStation', 'vol_HyperspaceIn_Position_Power')", "" },
+        { "SobGroup_MakeSelectable('PowerStation', 1)", "" },
+        -- Parade the power station on the mothership
     },
     { HW2_Wait(3) },
     
@@ -257,6 +270,7 @@ Events.intelevent_subsystemconstruction =
     {
         { "obj_prim_buildfightersubsystem_id = Objective_Add(obj_prim_buildfightersubsystem, OT_Primary)", "", },
         { "Objective_AddDescription(obj_prim_buildfightersubsystem_id, '$40960')", "", },
+        { "MakeAvailable('FighterProduction')", "", },
         { "UI_FlashButton('NewTaskbar', 'btnBuild', -1)", "", },
         { "Rule_Add('Rule_monitorBuildBtn')", "", }, HW2_SubTitleEvent(Actor_FleetIntel, "$40543", 5), -- Begin construction of a Fighter Facility subsystem.
     },
@@ -338,9 +352,9 @@ Events.intelevent_buildpowermodule = {
         { "Objective_AddDescription(obj_prim_buildpowermodule_id, '$40512')", "", }, -- Objective: Click on the Power Station and then on the build menu to build a Torodial Magnet.
         { "Objective_AddDescription(obj_prim_buildpowermodule_id, '$40513')", "", }, -- Objective: Warning: The Power Station will continue to take damage until power levels have stabilized!
 
+        { "ping_powerstation_id = HW2_PingCreateWithLabel( 'This is a test', 'PowerStation' )", "", }, 
+        { "Ping_AddDescription(ping_powerstation_id, 0, 'Another test')", "", },
 
-        { "ping_powerstation_id = HW2_PingCreateWithLabelPoint(ping_powerstation, 'vol_PowerStation')", "", },
-        { "Ping_AddDescription(ping_powerstation_id, 0, 'Power Station')", "", }, -- Ping: Power Station
         HW2_Wait(2),
     },
     {
@@ -800,6 +814,100 @@ function OnInit()
     Sound_SetMuteActor("All_")
     Sound_EnableAllSpeech(0)
     SinglePlayer_OnInit()		--COMPLEX SIMPLE ONINIT
+    
+
+end
+
+-- Add new function to limit pilots
+function Rule_LimitPilots()
+    local playerIndex = Universe_CurrentPlayer()
+    local playerIndexList = playerIndex + 1
+    
+    -- Normally you have 150 pilots, we limit it to 100
+    -- This will run indefinitely to keep the limit updated.
+    pilotmaxList[playerIndexList] = 100
+    pilotrecruitList[playerIndexList] = 100
+    g_pilot_limit_initialized = 1
+
+end
+
+-- Add new event for docking warning
+Events.speechevent_dockingwarning = {
+    {
+        { "Sound_EnterIntelEvent()", "" },
+        { "Sound_SetMuteActor('Fleet')", "" },
+        HW2_SubTitleEvent(Actor_FleetCommand, "$42100", 5), -- "Insufficient power. Repair bays offline."
+    },
+    {
+        { "Sound_ExitIntelEvent()", "" },
+        { "Sound_SetMuteActor('')", "" },
+    },
+}
+
+-- Function to check if docking is allowed for mission purposes
+function IsMissionCriticalDocking(dockedGroup, dockTarget)
+    -- Allow mothership docking with Tanis for mission start
+    if dockedGroup == "Mothership" and dockTarget == "Tanis" then
+        return 1
+    end
+    
+    -- Allow docking during hyperspace sequence
+    if g_mothershiplaunched == 1 then
+        return 1
+    end
+    
+    return 0
+end
+
+
+-- Rule to prevent docking and repairs
+function Rule_PreventDocking()
+    -- Create temporary SobGroups if they don't exist
+    SobGroup_Create("DockedWithMothership")
+    SobGroup_Create("DockedWithChimera")
+    
+    -- Check Mothership docking
+    SobGroup_GetSobGroupDockedWithGroup("Mothership", "DockedWithMothership")
+    if SobGroup_Empty("DockedWithMothership") == 0 then        
+        -- Launch any docked ships unless it's a mission-critical docking
+        if IsMissionCriticalDocking("DockedWithMothership", "Mothership") == 0 then
+            -- If we're not already waiting
+            if g_mothership_waiting == 0 then
+                g_mothership_wait_id = Wait_Start(3.0)  -- Start 1 second wait
+                g_mothership_waiting = 1
+            elseif Wait_End(g_mothership_wait_id) == 1 then  -- If wait is complete
+                -- Play warning once if this is the first attempt to dock
+                if g_docking_warning_played == 0 then
+                    Event_Start("speechevent_dockingwarning")
+                    g_docking_warning_played = 1
+                end
+                SobGroup_Launch("DockedWithMothership", "Mothership")
+                g_mothership_waiting = 0  -- Reset waiting flag
+            end
+        end
+    end
+    
+    -- Check Chimera docking
+    SobGroup_GetSobGroupDockedWithGroup("Station_Chimera", "DockedWithChimera")
+    if SobGroup_Empty("DockedWithChimera") == 0 then
+        -- Play warning once if this is the first attempt to dock
+        if g_docking_warning_played == 0 then
+            Event_Start("speechevent_dockingwarning")
+            g_docking_warning_played = 1
+        end
+        
+        -- Launch any docked ships unless it's a mission-critical docking
+        if IsMissionCriticalDocking("DockedWithChimera", "Station_Chimera") == 0 then
+            -- If we're not already waiting
+            if g_chimera_waiting == 0 then
+                g_chimera_wait_id = Wait_Start(3.0)  -- Start 1 second wait
+                g_chimera_waiting = 1
+            elseif Wait_End(g_chimera_wait_id) == 1 then  -- If wait is complete
+                SobGroup_Launch("DockedWithChimera", "Station_Chimera")
+                g_chimera_waiting = 0  -- Reset waiting flag
+            end
+        end
+    end
 end
 
 function Rule_Init()
@@ -822,8 +930,12 @@ function Rule_Init()
     Player_SetPlayerNameAdvanced(1, "")
     Player_SetPlayerNameAdvanced(2, "Tanis Defence Force")
     Player_SetPlayerNameAdvanced(3, "Vaygr Assault Force")
+    SobGroup_EnterHyperSpaceOffMap("PowerStation")
+
+
+
     -- Disable the UI research button.
-    UI_SetElementEnabled("NewTaskbar", "btnResearch", 0)
+    --UI_SetElementEnabled("NewTaskbar", "btnResearch", 0)
     SetAlliance(0, 1)
     SetAlliance(1, 0)
     Player_SetDefaultShipTactic(1, AggressiveTactics)
@@ -838,6 +950,8 @@ function Rule_Init()
     Rule_Remove("Rule_Init")
     Rule_Add("Rule_PlayerWins")
     Rule_Add("Rule_PlayerLose")
+    Rule_Add("Rule_LimitPilots")
+    Rule_Add("Rule_PreventDocking")  -- Add our new rule
 end
 
 
@@ -898,9 +1012,7 @@ function Rule_monitorBuildBtn()
 end
 
 function InitialHyperSpaceEntry()
-    SobGroup_EnterHyperSpaceOffMap("PowerStation")
-    SobGroup_EnterHyperSpaceOffMap("ResearchStation")
-    SobGroup_EnterHyperSpaceOffMap("CrewStation")
+
 end
 
 
@@ -933,6 +1045,10 @@ end
 
 function Rule_IntroductionEventComplete()
     if Event_IsDone("intelevent_initialization") == 1 then
+        SobGroup_ExitHyperSpace("PowerStation", "vol_HyperspaceIn_Position_Power") -- Gotta make sure it's not in hyperspace...
+        SobGroup_ParadeSobGroup("PowerStation", "Mothership", 0)
+
+
         Event_Start("intelevent_beginharvesting")
         Rule_Add("Rule_OpeningIntelEventComplete")
         Rule_Remove("Rule_IntroductionEventComplete")
@@ -941,6 +1057,7 @@ end
 
 function Rule_OpeningIntelEventComplete()
     if Event_IsDone("intelevent_beginharvesting") == 1 then
+
         UI_ClearEventScreen()
         Camera_SetLetterboxStateNoUI(0, 0)
         Rule_Add("Rule_BuildSubsystems")
@@ -948,31 +1065,12 @@ function Rule_OpeningIntelEventComplete()
         Rule_Add("Rule_PlaySaveGameLocationCard")
         Rule_AddInterval("Rule_SaveTheGameMissionStart", 1)
 
-        -- simplex restrict
-        local restrictedBuildOptions = {
-            "Hgn_MS_Production_CorvetteMover",
-            "Kpr_Mover",
-            "FighterProduction",
-            "CorvetteProduction",
-            "FrigateProduction",
-            "CapShipProduction",
-            "RepairSystem",
-            "PlatformProduction",
-            "FireControlTower",
-            "Research",
-            "AdvancedResearch",
-            "AdvancedResearch1",
-            "Hgn_power_m1",
-        }
+        -- Apply initial mission configuration
+        ApplyMissionConfiguration(1)  -- Set up mission 1's initial restrictions and available options
+        
         SetEnergyDrain(0, 50)
         local currentEnergy = GetCurrentEnergy(0)  -- Get the current energy of player 0
         print("Player 0 current energy: " .. currentEnergy)
-        -- Manually iterate over the table elements
-        local i = 1
-        while restrictedBuildOptions[i] do
-            Player_RestrictBuildOption(0, restrictedBuildOptions[i])
-            i = i + 1
-        end
     end
 end
 
@@ -1014,10 +1112,11 @@ end
 
 
 function Rule_BuildSubsystems()
-    if  Player_GetRU(g_playerID)>=1700 then
+    if Player_GetRU(g_playerID) >= 1700 then
         Ping_Remove(ping_resource_operation_id)
         Objective_SetState(obj_prim_beginharvesting_id, OS_Complete)
-        Player_UnrestrictBuildOption(0, "FighterProduction")
+        -- Use the new utility function to make FighterProduction available
+        
         Event_Start("intelevent_subsystemconstruction")
         Rule_Add("Rule_HasBuiltFighterSubsystem")
         Rule_Remove("Rule_BuildSubsystems")
@@ -1030,6 +1129,9 @@ end
 
 function Rule_HasBuiltFighterSubsystem()
     if  Player_GetNumberOfSquadronsOfTypeAwakeOrSleeping(g_playerID, "hgn_interceptor")>=1 or SobGroup_GetHardPointHealth("Mothership", "Production 1") > 0 or Player_HasQueuedBuild(g_playerID, "Hgn_Interceptor")==1 then		--Stats_ShipsCreated(g_playerID)>=1 then
+        -- Basically, if we have a fighter subsystem, we can build interceptors.
+        MakeAvailable("Hgn_Scout")
+        MakeAvailable("Hgn_Interceptor")
         if SobGroup_GetHardPointHealth("Mothership", "Production 1") > 0 then
         	SobGroup_SetInvulnerabilityOfHardPoint("Mothership", "HardpointProduction1", 1)
         end
@@ -1048,7 +1150,8 @@ function Rule_HasBuiltInterceptors()
         Objective_SetState(obj_prim_buildtwointerceptors_id, OS_Complete)
         Event_Start("intelevent_buildpowermodule")
         Rule_Remove("Rule_HasBuiltInterceptors")
-        Player_UnrestrictBuildOption(0, "Hgn_power_m1")
+        -- Player_UnrestrictBuildOption(0, "Hgn_power_m1")
+        MakeAvailable("Hgn_power_m1")
         Rule_Add("Rule_BuiltPowerModule")
     end
 end
@@ -1178,7 +1281,8 @@ function Rule_NIS01B_completed()
         SobGroup_Attack(3, "Vgr_Bombers", "Station_Chimera")
         SobGroup_Create("ChimerasInterceptors")
         SobGroup_SpawnNewShipInSobGroup(0, "hgn_railgunfighter", "ChimeraInterceptors", "ChimerasInterceptors", "vol_ChimeraInterceptors")
-        SobGroup_MoveToSobGroup("ChimeraInterceptors", "Vgr_Bombers")
+        SobGroup_FillShipsByType("ChimeraInterceptors", "0", "hgn_railgunfighter")
+        SobGroup_Attack("ChimeraInterceptors", "Vgr_Bombers")
         Rule_AddInterval("Rule_StopNewInterceptors", 1)
         Rule_Remove("Rule_NIS01B_completed")
         Rule_Add("Rule_KeepChimeraAlive")
@@ -1187,9 +1291,6 @@ function Rule_NIS01B_completed()
         Rule_Add("Rule_ChimeraAttackersEliminated")
     end
 end
-
-
-
 
 
 
@@ -1343,8 +1444,6 @@ function Rule_LaunchTheMothership()
     SobGroup_FillShipsByType("tempParade", "0", "hgn_railgunfighter")
     SobGroup_FillShipsByType("tempParade", "0", "hgn_attackbomber")
     SobGroup_FillShipsByType("tempParade", "0", "hgn_power")
-    SobGroup_FillShipsByType("tempParade", "0", "hgn_researchstation")
-    SobGroup_FillShipsByType("tempParade", "0", "hgn_crewstation")
     SobGroup_ParadeSobGroup("tempParade", "Mothership", 0)
     Event_Start("autofocus_mothershiplaunches")
     Rule_Add("Rule_MothershipHasLaunched")

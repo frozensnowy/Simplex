@@ -1,12 +1,87 @@
+---------------------------------------------------------------------
+-- Mission 02 - Nebula Outskirts - Enemy Unknown
+-- Author: Frozen Snow
+-- Date: 2025-02-17
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------
 -- Required scripts
+---------------------------------------------------------------------
+
 dofilepath("data:scripts/SCAR/SCAR_Util.lua")
 dofilepath("data:leveldata/campaign/singleplayer_oninit.lua")
 dofilepath("data:leveldata/campaign/ascension/m02_turanic/datfiles.lua")
+-- WIP dofilepath("data:scripts/level_transition.lua")
 
--- Initialize Events table first
+
+
+---------------------------------------------------------------------
+-- Global variables
+---------------------------------------------------------------------
+
 Events = {}
+g_wave_count = 0
+g_max_waves = 9
+g_wave_increase_difficulty_done = 0
+g_wave_increase_difficulty_needed = 8
+g_wave_interval = 60 
+g_current_units_per_squad = 1 
+g_scout_under_attack = 0
+g_played_analysis = 0
+g_heavy_interceptor_unlocked = 0
+g_waves_active = 1
+g_spawned_due_to_timeout = 0
 
--- Initialize table functions for Lua 4.1
+SP_Campaign_Level_ID = 2
+
+g_eventisdone = 1
+g_now_time = Universe_GameTime()
+g_playerID = Universe_CurrentPlayer()
+g_pointer_default = 0
+g_save_id = 0
+
+-- Scout ping related variables
+ping_scout_1 = "$60450"
+ping_scout_2 = "$60451"
+ping_scout_3 = "$60452"
+ping_scout_4 = "$60453"
+ping_scout_1_id = 0
+ping_scout_2_id = 0
+ping_scout_3_id = 0
+ping_scout_4_id = 0
+pointer_scout_1 = 0
+pointer_scout_2 = 0
+pointer_scout_3 = 0
+pointer_scout_4 = 0
+g_scout_point_1_reached = 0
+g_scout_point_2_reached = 0
+g_scout_point_3_reached = 0
+g_scout_point_4_reached = 0
+g_current_scout_point = 0 
+
+-- Objectives
+obj_prim_scout_id = 0
+obj_prim_defend_ms_id = 1
+obj_sec_build_hft_id = 0
+g_hft_objective_complete = 0
+
+
+-- Carrier support system
+g_carrier_spawned = 0
+g_carrier_reinforcing = 0
+g_next_reinforcement_time = 0
+g_reinforcement_interval = 30 
+g_max_squadron_count = 4 
+g_multiguns_active = 0
+g_hft_active = 0 
+g_railgun_active = 0
+
+
+---------------------------------------------------------------------
+-- Table functions
+---------------------------------------------------------------------
+
+-- Initialize table functions
 if not table then
     table = {}
 end
@@ -26,9 +101,13 @@ function table.insert(t, v)
     t[n + 1] = v
 end
 
+
+---------------------------------------------------------------------
+-- Level functions & Initialization
+---------------------------------------------------------------------
+
 -- Function called when level starts or loads
 function OnStartOrLoad_m02()
-    -- Initialize level-specific state
     Rule_Add("Rule_PlayAmbientMusic")
     Camera_Interpolate("here", "Camera_Start", 0)
 end
@@ -43,121 +122,102 @@ function OnInit()
     Sound_SetMuteActor("All_")
     Sound_EnableAllSpeech(0)
     
-    --SinglePlayer_OnInit()
-    
+    SinglePlayer_OnInit()
+        
     -- Keep accolades hidden for the player (player 0 + 1 for array index)
     PlayerUI_HideAccoladeDisplay[1] = 1
 end
 
--- Wave spawn configuration (moved to global scope for save persistence)
-g_wave_count = 0
-g_max_waves = 10  -- Total number of waves before switching to harder waves
-g_wave_interval = 45 
-g_current_units_per_squad = 1  -- Start with 1 unit per squad
-g_scout_under_attack = 0
-g_played_analysis = 0
-g_heavy_interceptor_unlocked = 0
-g_waves_active = 1
+
+function Rule_Init()
+    -- Basic setup
+    Sound_SpeechSubtitlePath("speech:missions/m_02tur/")
+    
+    -- Load persistent data and create Mothership sobgroup
+    SobGroup_LoadPersistantData("Hgn_Mothership")
+    Players_Mothership = "Players_Mothership"
+    SobGroup_Create(Players_Mothership)
+    SobGroup_FillShipsByType(Players_Mothership, "Player_Ships0", "Hgn_MotherShip")
+    
+    -- Additional SobGroups we might need
+    SobGroup_Create("tempSobGroup_SP")
+    SobGroup_Create("ScoutGroup")
+    
+    -- Create raider groups
+    for i = 1,4 do
+        SobGroup_Create("Raiders_"..i)
+        SobGroup_Create("RaiderGroup_"..i.."_int")
+        SobGroup_Create("RaiderGroup_"..i.."_fnc")
+        SobGroup_Create("RaiderGroup_"..i.."_scv")
+    end
+    
+    -- Create wave groups (for up to 6 waves)
+    for i = 0,5 do
+        SobGroup_Create("RaiderWave_"..i)
+        SobGroup_Create("RaiderWave_"..i.."_int")
+        SobGroup_Create("RaiderWave_"..i.."_fnc")
+        SobGroup_Create("RaiderWave_"..i.."_scv")
+    end
+
+    -- Add health monitoring rules
+    Rule_Add("Rule_CheckMothershipHealth")
+    Rule_Add("Rule_CheckSquadronLosses")
+    Init_CarrierGroups()
+
+    -- Set all player ships to defensive tactics
+    -- First create a sobgroup for player interceptors, bombers and railgunfighters (heavy interceptors)
+    SobGroup_Create("Player_Fighters")
+    SobGroup_FillShipsByType("Player_Fighters", "Player_Ships0", "Hgn_Interceptor")
+    SobGroup_FillShipsByType("Player_Fighters", "Player_Ships0", "hgn_railgunfighter")
+    SobGroup_FillShipsByType("Player_Fighters", "Player_Ships0", "hgn_attackbomber")
+    SobGroup_SetTactics('Player_Fighters', DefensiveTactics)
+
+    -- Disable Researching.
+    UI_SetElementEnabled("NewTaskbar", "btnResearch", 0)
+    
+    -- Spawn carrier
+    SobGroup_SpawnNewShipInSobGroup(2, "Hgn_BattleCarrier", "Selum_Carrier", "Selum_Carrier", "vol_SelumArrival")
 
 
--- Attack positions table
-g_attack_positions = {
-    "vol_RaiderSpawn_1",  -- Corner positions (for scout attack)
-    "vol_RaiderSpawn_2",
-    "vol_RaiderSpawn_3",
-    "vol_RaiderSpawn_4",
-    "vol_RaiderSpawn_5",  -- Side positions (for mothership attack)
-    "vol_RaiderSpawn_6",
-    "vol_RaiderSpawn_7",
-    "vol_RaiderSpawn_8"
-}
+    -- Put them in Hyperspace
+    SobGroup_EnterHyperSpaceOffMap("Selum_Carrier")
 
--- Early and late unit tables
-g_early_units = {
-    "rad_interceptor",
-    "rad_fencer",
-    "rad_scoutcorvette"
-}
+    -- Play ambient music
+    Rule_Add("Rule_PlayAmbientMusic")
+    
+    -- Set up players
+    Player_SetPlayerNameAdvanced(0, "Hiigaran Navy")
+    Player_SetPlayerNameAdvanced(1, "Battlegroup Selum")
+    Player_SetPlayerNameAdvanced(2, "Unknown Attackers")
+    
+    -- CPU setup
+    CPU_Enable(1, 0)
+    CPU_Enable(2, 0)
+    
+    -- Alliance setup
+    SetAlliance(0, 1)
+    SetAlliance(1, 0)
 
-g_late_units = {
-    "rad_interceptor",
-    "rad_fencer",
-    "rad_scoutcorvette",
-    "rad_empcorvette",
-    "rad_missilecorvette",
-    "rad_bomber"
-}
+    -- Don't give the player infinite time to be lazy.
 
--- Campaign and Objective Variables
-SP_Campaign_Level_ID = 2
+    Rule_Add("Rule_WaitForRaiders")
+    -- Start mission sequence
+    Event_Start("intelevent_initialization")
 
--- Event Variables
-g_eventisdone = 1
-g_now_time = Universe_GameTime()
-g_playerID = Universe_CurrentPlayer()
-g_pointer_default = 0
-g_save_id = 0
+    Rule_Add("Rule_CheckScoutPoints")
+    
+    Rule_Remove("Rule_Init")
 
--- Scout point ping variables
-ping_scout_1 = "$60450"
-ping_scout_2 = "$60451"
-ping_scout_3 = "$60452"
-ping_scout_4 = "$60453"
-ping_scout_1_id = 0
-ping_scout_2_id = 0
-ping_scout_3_id = 0
-ping_scout_4_id = 0
+    HW2_ReactiveInfo()
 
--- Scout point pointer variables
-pointer_scout_1 = 0
-pointer_scout_2 = 0
-pointer_scout_3 = 0
-pointer_scout_4 = 0
+    -- Create sobgroup for our state tracking probe
+    SobGroup_Create("Analysis_Tracker")
+end 
 
--- Scout point status tracking
-g_scout_point_1_reached = 0
-g_scout_point_2_reached = 0
-g_scout_point_3_reached = 0
-g_scout_point_4_reached = 0
 
--- Objectives
-obj_prim_scout_id = 0
-obj_prim_defend_ms_id = 1
-
--- Add variables for Heavy Interceptor objective
-obj_sec_build_hft_id = 0
-g_hft_objective_complete = 0
-
-g_current_scout_point = 0  -- Track which scout point was just reached
-
--- Initialize variables for carrier support system
-g_carrier_spawned = 0
-g_carrier_reinforcing = 0
-g_next_reinforcement_time = 0
-g_reinforcement_interval = 30 -- Time between reinforcement checks in seconds
-g_max_squadron_count = 4 -- Maximum number of each squadron type
-
--- Squad counts for tracking
-g_multiguns_active = 0
-g_hft_active = 0 
-g_railgun_active = 0
-
--- Add Heavy Interceptor unlock event
-Events.speechevent_heavyinterceptorunlock = {
-    {
-        { "Sound_EnterIntelEvent()", "" },
-        { "Sound_SetMuteActor('Fleet')", "" },
-        HW2_SubTitleEvent(Actor_FleetIntel, "$60555", 8),  -- We have reverse engineered the missile launch systems...
-    },
-    {
-        { "Rule_AddInterval('Rule_UnrestrictHeavyInterceptor', 1)", "" },  -- Add delay before unrestricting
-        { "obj_sec_build_hft_id = Objective_Add('$60560', OT_Secondary)", "" },
-        { "Objective_AddDescription(obj_sec_build_hft_id, '$60561')", "" },
-        { "Rule_Add('Rule_CheckHeavyInterceptorBuilt')", "" },
-        { "Sound_ExitIntelEvent()", "" },
-        { "Sound_SetMuteActor('')", "" },
-    },
-}
+---------------------------------------------------------------------
+-- Mission Event Rules
+---------------------------------------------------------------------
 
 -- Opening sequence
 Events.intelevent_initialization = {
@@ -246,38 +306,24 @@ Events.intelevent_initialization = {
         { "Universe_EnableSkip(0)", "" },
         { "Sound_ExitIntelEvent()", "" },
         { "Sound_SetMuteActor('')", "" },
+        { "Camera_SetLetterboxStateNoUI(0, 0)", "" },
         HW2_Wait(2),
-        -- Temporarily set PlayerMotherships Health to 50% to jump to the cutscene
-        -- { "SobGroup_SetHealth(Players_Mothership, 0.5)", "" },
     },
 }
 
--- Individual events for each scout position
-Events.speechevent_scout1_reached = {
-    { HW2_SubTitleEvent(Actor_FleetIntel, "$60471", 3) }, 
-    { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) },
-    { { "EventPlaying = 0", "" } },
-}
+-- Scout Reached Alpha
+Events.speechevent_scout1_reached = { { HW2_SubTitleEvent(Actor_FleetIntel, "$60471", 3) }, { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) }, { { "EventPlaying = 0", "" } }, }
 
-Events.speechevent_scout2_reached = {
-    { HW2_SubTitleEvent(Actor_FleetIntel, "$60472", 3) },
-    { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) },
-    { { "EventPlaying = 0", "" } },
-}
+-- Scout Reached Beta
+Events.speechevent_scout2_reached = { { HW2_SubTitleEvent(Actor_FleetIntel, "$60472", 3) }, { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) }, { { "EventPlaying = 0", "" } }, }
 
-Events.speechevent_scout3_reached = {
-    { HW2_SubTitleEvent(Actor_FleetIntel, "$60473", 3) },
-    { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) },
-    { { "EventPlaying = 0", "" } },
-}
+-- Scout Reached Gamma
+Events.speechevent_scout3_reached = { { HW2_SubTitleEvent(Actor_FleetIntel, "$60473", 3) }, { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) }, { { "EventPlaying = 0", "" } }, }
 
-Events.speechevent_scout4_reached = {
-    { HW2_SubTitleEvent(Actor_FleetIntel, "$60474", 3) },
-    { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) },
-    { { "EventPlaying = 0", "" } },
-}
+-- Scout Reached Delta
+Events.speechevent_scout4_reached = { { HW2_SubTitleEvent(Actor_FleetIntel, "$60474", 3) }, { { "Sound_ExitIntelEvent()", "" }, HW2_Wait(1) }, { { "EventPlaying = 0", "" } }, }
 
--- Add these events to your Events table
+-- Turanic Raiders attacking scouts
 Events.intelevent_turanicraidersspotted = {
     {
         { "Sound_EnterIntelEvent()", "" },
@@ -302,8 +348,10 @@ Events.intelevent_turanicraidersspotted = {
         { "Init_WaveSystem()", "" },
         { "Rule_Remove('Rule_PlayAmbientMusic')", "" },
         { "Rule_Add('Rule_PlayRaiderAttackMusic')", "" },
-        -- Order all scouts back
-        { "SobGroup_GuardSobGroup('ScoutGroup', Players_Mothership)", "" },
+
+        -- { "SobGroup_GuardSobGroup('ScoutGroup', Players_Mothership)", "" }, Instead it should be put in a rule.
+        { "Rule_Add('Rule_ScoutsReturnHome')", "" },
+
     },
     { HW2_Wait(1) },
     {
@@ -319,11 +367,11 @@ Events.intelevent_turanicraidersspotted = {
         { "Sound_ExitIntelEvent()", "" },
         { "Sound_SetMuteActor('')", "" },
         { "Rule_Add('Rule_PlayRaiderTaunt')", "" },
-        { "Rule_Add('Rule_KeepPowerStationAlive')", "" },
+
     },
 }
 
--- Raider taunt event (plays after 5 seconds) - no letterbox, just dialogue
+-- Raider taunts us
 Events.speechevent_raiderstaunt = {
     {
         { "Sound_EnterIntelEvent()", "" },
@@ -337,11 +385,10 @@ Events.speechevent_raiderstaunt = {
     {
         { "Sound_ExitIntelEvent()", "" },
         { "Sound_SetMuteActor('')", "" },
-        { "Rule_Add('Rule_PlayRaiderAnalysis')", "" },
     },
 }
 
--- Analysis event (plays during second wave) - no letterbox, just dialogue
+-- Analyised enemy craft
 Events.speechevent_raideranalysis = {
     {
         { "Sound_EnterIntelEvent()", "" },
@@ -358,7 +405,7 @@ Events.speechevent_raideranalysis = {
     },
 }
 
--- Add this event to your Events table
+-- Capital class incoming (Battlegroup Selum)
 Events.intelevent_capitalclassincoming = {
     {
         { "Universe_EnableSkip(1)", "" },
@@ -422,6 +469,45 @@ Events.intelevent_capitalclassincoming = {
     { HW2_Wait(1) },
 }
 
+-- Low pilot warning
+Events.speechevent_lowpilotwarning = {
+    {
+        { "Sound_EnterIntelEvent()", "" },
+        { "Sound_SetMuteActor('Fleet')", "" },
+        HW2_SubTitleEvent(Actor_FleetCommand, "$60570", 5),  -- All available pilots have been deployed... Unable to maintain combat effectiveness.
+    },
+    { HW2_Wait(1) },
+    {
+        HW2_SubTitleEvent(Actor_FleetCommand, "$60571", 6),  -- Mayday. This is the Pride of Hiigara broadcasting on all open frequencies. We are under attack and unable to fight back! I repeat, mayday, mayday!
+    },
+    { HW2_Wait(1) },
+    {
+        HW2_SubTitleEvent(Actor_FleetIntel, "$60572", 5),  -- The signal is being degraded by nebula interference. Transmission range compromised.
+    },
+    -- Now the raiders respond mockingly again
+    { HW2_Wait(12) },
+    {
+        HW2_SubTitleEvent(12, "$60573", 5),  -- Aww, poor Hiigara. Guess you're gonna find out what it's like to lose your homeworld after all!
+    },
+    { HW2_Wait(12) },
+    {
+        HW2_SubTitleEvent(12, "$60574", 5),  -- I call dibs on the bald chick in the core! Bet she's got some fine Hiigaran ass!
+    },
+    { HW2_Wait(1) },
+    {
+        HW2_SubTitleEvent(12, "$60575", 5),  -- Hah, as if I'd let you anywhere near that booty!
+    },
+    {
+        { "Sound_ExitIntelEvent()", "" },
+        { "Sound_SetMuteActor('')", "" },
+    },
+}
+
+
+---------------------------------------------------------------------
+-- Music rules
+---------------------------------------------------------------------
+
 function Rule_PlayAmbientMusic()
     print("trying to play ambient music!")
     Sound_MusicPlayType("data:sound/music/ambient/piratevoyage", MUS_Ambient)
@@ -434,114 +520,11 @@ function Rule_PlayRaiderAttackMusic()
     Rule_Remove("Rule_PlayRaiderAttackMusic")
 end
 
-function Rule_Init()
-    -- Basic setup
-    Sound_SpeechSubtitlePath("speech:missions/m_02tur/")
-    
-    -- Load persistent data and create Mothership sobgroup
-    SobGroup_LoadPersistantData("Hgn_Mothership")
-    Players_Mothership = "Players_Mothership"
-    SobGroup_Create(Players_Mothership)
-    SobGroup_FillShipsByType(Players_Mothership, "Player_Ships0", "Hgn_MotherShip")
-    
-    -- Additional SobGroups we might need
-    SobGroup_Create("tempSobGroup_SP")
-    SobGroup_Create("ScoutGroup")
-    
-    -- Create raider groups
-    for i = 1,4 do
-        SobGroup_Create("Raiders_"..i)
-        SobGroup_Create("RaiderGroup_"..i.."_int")
-        SobGroup_Create("RaiderGroup_"..i.."_fnc")
-        SobGroup_Create("RaiderGroup_"..i.."_scv")
-    end
-    
-    -- Create wave groups (for up to 6 waves)
-    for i = 0,5 do
-        SobGroup_Create("RaiderWave_"..i)
-        SobGroup_Create("RaiderWave_"..i.."_int")
-        SobGroup_Create("RaiderWave_"..i.."_fnc")
-        SobGroup_Create("RaiderWave_"..i.."_scv")
-    end
 
-    -- Add health monitoring rules
-    Rule_Add("Rule_CheckMothershipHealth")
-    Rule_Add("Rule_CheckSquadronLosses")
-    Init_CarrierGroups()
+---------------------------------------------------------------------
+-- Checking rules for Health, Damage taken and points reached
+---------------------------------------------------------------------
 
-    -- Set all player ships to defensive tactics
-    -- First create a sobgroup for player interceptors, bombers and railgunfighters (heavy interceptors)
-    SobGroup_Create("Player_Fighters")
-    SobGroup_FillShipsByType("Player_Fighters", "Player_Ships0", "Hgn_Interceptor")
-    SobGroup_FillShipsByType("Player_Fighters", "Player_Ships0", "hgn_railgunfighter")
-    SobGroup_FillShipsByType("Player_Fighters", "Player_Ships0", "hgn_attackbomber")
-    SobGroup_SetTactics('Player_Fighters', DefensiveTactics)
-
-    
-    -- Spawn carrier
-    SobGroup_SpawnNewShipInSobGroup(2, "Hgn_BattleCarrier", "Selum_Carrier", "Selum_Carrier", "vol_SelumArrival")
-
-
-    -- Put them in Hyperspace
-    SobGroup_EnterHyperSpaceOffMap("Selum_Carrier")
-
-    -- Play ambient music
-    Rule_Add("Rule_PlayAmbientMusic")
-    
-    -- Set up players
-    Player_SetPlayerNameAdvanced(0, "Hiigaran Navy")
-    Player_SetPlayerNameAdvanced(1, "Battlegroup Selum")
-    Player_SetPlayerNameAdvanced(2, "Unknown Attackers")
-    
-    -- CPU setup
-    CPU_Enable(1, 0)
-    CPU_Enable(2, 0)
-    
-    -- Alliance setup
-    SetAlliance(0, 1)
-    SetAlliance(1, 0)
-    
-    -- Start mission sequence
-    Event_Start("intelevent_initialization")
-    Rule_Add("Rule_InitialEventComplete")
-    Rule_Add("Rule_CheckScoutPoints")
-    
-    Rule_Remove("Rule_Init")
-
-    HW2_ReactiveInfo()
-
-    -- Create sobgroup for our state tracking probe
-    SobGroup_Create("Analysis_Tracker")
-end 
-
-function Rule_PlaySaveGameLocationCard()
-    Subtitle_Message("$3651", 3)  -- "Game Saved..."
-    Rule_Remove("Rule_PlaySaveGameLocationCard")
-end
-
-function Rule_InitialEventComplete()
-    if Event_IsDone("intelevent_initialization") == 1 then
-        Camera_SetLetterboxStateNoUI(0, 0)
-        Rule_Remove("Rule_InitialEventComplete")
-    end
-end
-
--- Add new rule to start waves when all scouts are in position
-function Rule_StartWavesWhenScoutsReady()
-    print("Checking if ready to start waves...")
-    if g_scout_point_1_reached == 1 and g_scout_point_2_reached == 1 and 
-       g_scout_point_3_reached == 1 and g_scout_point_4_reached == 1 then
-        print("All scouts confirmed in position - starting wave system")
-        Init_WaveSystem()
-        Rule_Add("Rule_CheckScoutDamage")
-        Objective_SetState(obj_prim_scout_id, OS_Complete)
-        -- Remove both rules to prevent them from running in the background
-        Rule_Remove("Rule_StartWavesWhenScoutsReady")
-        Rule_Remove("Rule_CheckScoutPoints")
-    end
-    -- Remove the rule to prevent it from running infinitely if the scouts are not in position
-    Rule_Remove("Rule_StartWavesWhenScoutsReady")
-end
 
 function Rule_CheckScoutPoints()
     -- Fill scout group with all scouts
@@ -611,13 +594,157 @@ function Rule_CheckScoutDamage()
         
         -- Start the event
         Event_Start("intelevent_turanicraidersspotted")
-        SobGroup_Create("PlayersPowerStation")
-        SobGroup_FillShipsByType("PlayersPowerStation", "Player_Ships0", "hgn_power")
         Rule_Add("Rule_CheckPowerStation")
         Rule_Remove("Rule_CheckScoutDamage")
     end
 end
 
+-- Mothership Health Check for Carrier reinforcements
+function Rule_CheckMothershipHealth()
+
+    if SobGroup_HealthPercentage(Players_Mothership) <= 0.5 and g_carrier_spawned == 0 then
+
+        SobGroup_SpawnNewShipInSobGroup(2, "Hgn_AssaultFrigate", "Selum_Escorts", "Selum_Escorts", "vol_SelumArrival")
+        SobGroup_SpawnNewShipInSobGroup(2, "Hgn_AssaultFrigate", "Selum_Escorts", "Selum_Escorts", "vol_SelumArrival")
+        
+        -- Make the carrier exit hyperspace
+        SobGroup_ExitHyperSpace("Selum_Carrier", "vol_SelumArrival")
+        
+
+        
+        -- Make carrier face the mothership by moving a tiny bit towards it
+        SobGroup_MoveToSobGroup("Selum_Carrier", Players_Mothership)
+        
+        -- Create subsystems immediately
+        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_C_Production_Fighter")
+        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Production_Corvette")
+        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Production_Frigate")
+        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Production_Destroyer")
+        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_C_Module_Defensefield")
+        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_C_Module_FireControl")
+        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Sensors_DetectHyperspace")
+
+        SobGroup_GuardSobGroup("Selum_Escorts", Players_Mothership)
+
+        
+        -- Combine into battle group
+        SobGroup_SobGroupAdd("Battlegroup_Selum", "Selum_Carrier")
+        SobGroup_SobGroupAdd("Battlegroup_Selum", "Selum_Escorts")
+        
+        -- Start as enemy for dramatic reveal
+        SobGroup_SetSwitchOwnerFlag("Battlegroup_Selum", 0)
+        FOW_RevealGroup("Battlegroup_Selum", 1)
+        
+        -- Stop any movement after orientation (so they don't actually move to the mothership)
+        Rule_AddInterval("Rule_StopSelumAfterOrienting", 5)
+        
+        -- Trigger reveal event
+        Rule_Add("Rule_TriggerSelumReveal")
+        g_carrier_spawned = 1
+    end
+
+    -- Keep the player mothership above 30% health
+    if SobGroup_Empty(Players_Mothership) == 0 then
+        if SobGroup_HealthPercentage(Players_Mothership) <= 0.30 then
+            print("Player Mothership is below 30% health, keeping alive")
+            SobGroup_SetHealth(Players_Mothership, 0.35)
+        end
+    elseif SobGroup_Empty(Players_Mothership) == 1 then
+        print("Player Mothership is destroyed. What a shame... Game over!")
+
+    end
+end
+
+function Rule_CheckIdleRaiders()
+    -- Check each raider wave group
+    for i = 1, 8 do
+        local wave_group = "RaiderWave_" .. i
+        -- If the group exists and is not empty
+        if SobGroup_Empty(wave_group) == 0 then
+            -- Check if they're idle (not attacking or moving)
+            if SobGroup_IsDoingAbility(wave_group, AB_Attack) == 0 and 
+               SobGroup_IsDoingAbility(wave_group, AB_Move) == 0 then
+                print("Raider group " .. wave_group .. " is idle, redirecting to attack mothership")
+                -- Fix: Add player ID parameter for SobGroup_Attack
+                SobGroup_Attack(2, wave_group, Players_Mothership)
+            end
+        end
+    end
+end
+
+function Rule_CheckPowerStation()
+    -- Create sobgroup for powerstation if it doesn't exist yet
+    SobGroup_Create("PlayersPowerStation")
+    SobGroup_FillShipsByType("PlayersPowerStation", "Player_Ships0", "hgn_power")
+
+    -- Create sobgroup for attackers if it doesn't exist yet
+    SobGroup_Create("Attackers_Of_PowerStation")
+    
+    -- Get current attackers of powerstation
+    SobGroup_Clear("Attackers_Of_PowerStation") -- Clear previous attackers first
+    SobGroup_GetAttackers("PlayersPowerStation", "Attackers_Of_PowerStation")
+    if SobGroup_Empty("Attackers_Of_PowerStation") == 0 then
+        print("Power station under attack -- Marking as untargeted")
+        SobGroup_MakeUntargeted("Attackers_Of_PowerStation")
+        print("Ordering attackers to attack mothership instead")
+        SobGroup_Attack(2, "Attackers_Of_PowerStation", Players_Mothership)
+        SobGroup_Clear("Attackers_Of_PowerStation")
+    end
+
+    -- Keep the Power Station above 30% health
+    if SobGroup_Empty("PlayersPowerStation") == 0 then
+        print("PlayersPowerStation exists and is not empty, keeping alive")
+        -- Keep the Power Station above 30% health
+        if SobGroup_HealthPercentage("PlayersPowerStation") <= 0.30 then
+            SobGroup_SetHealth("PlayersPowerStation", 0.35)
+        end
+    end
+end
+
+
+function Rule_PlayRaiderTaunt()
+    if Universe_GameTime() - g_now_time >= 5 then
+        Event_Start("speechevent_raiderstaunt")
+        Rule_Remove("Rule_PlayRaiderTaunt")
+    end
+end
+
+-- Add new rule to start waves when all scouts are in position
+function Rule_StartWavesWhenScoutsReady()
+    print("Checking if ready to start waves...")
+    -- Check if there are 4 scouts in position then transition to m01_tanis
+
+    if g_scout_point_1_reached == 1 and g_scout_point_2_reached == 1 and 
+       g_scout_point_3_reached == 1 and g_scout_point_4_reached == 1 then
+
+        print("All scouts confirmed in position - starting wave system")
+        Init_WaveSystem()
+        Rule_Add("Rule_CheckScoutDamage")
+        Objective_SetState(obj_prim_scout_id, OS_Complete)
+        -- Remove both rules to prevent them from running in the background
+        Rule_Remove("Rule_StartWavesWhenScoutsReady")
+        Rule_Remove("Rule_CheckScoutPoints")
+    end
+    -- Remove the rule to prevent it from running infinitely if the scouts are not in position
+    Rule_Remove("Rule_StartWavesWhenScoutsReady")
+end
+
+-- Make scouts return to mothership
+function Rule_ScoutsReturnHome()
+    -- Fill scout group with all scouts
+    SobGroup_FillShipsByType("ScoutGroup", 0, "Hgn_Scout")
+    -- Move back to mothership
+    SobGroup_GuardSobGroup("ScoutGroup", Players_Mothership)
+
+    -- In fact, let's add all Hgn_Bombers, Hgn_Railguns and Hgn_Interceptors to a sobgroup to guard the mothership
+    SobGroup_Create("MothershipGuardGroup")
+    SobGroup_FillShipsByType("MothershipGuardGroup", 0, "Hgn_Bomber")
+    SobGroup_FillShipsByType("MothershipGuardGroup", 0, "Hgn_RailgunFighter")
+    SobGroup_FillShipsByType("MothershipGuardGroup", 0, "Hgn_Interceptor")
+    SobGroup_GuardSobGroup("MothershipGuardGroup", Players_Mothership)
+    
+    Rule_Remove("Rule_ScoutsReturnHome")
+end
 
 function Init_WaveSystem()
     print("Initializing wave system...")
@@ -642,7 +769,6 @@ function Init_WaveSystem()
     Rule_AddInterval("Rule_SpawnWave", g_wave_interval)
 end
 
--- Modify Rule_SpawnWave to focus on scouts first
 function Rule_SpawnWave()
     -- Increment wave count first
     g_wave_count = g_wave_count + 1
@@ -754,6 +880,14 @@ function Rule_SpawnWave()
     end
 
     print("Wave complete. Wave count now: " .. tostring(g_wave_count))
+
+
+    -- Increase wave difficulty after a wave is reached
+    if g_wave_count >= g_wave_increase_difficulty_needed and g_wave_increase_difficulty_done == 0 then
+        print("Increasing wave difficulty")
+        g_wave_increase_difficulty_done = 1
+        g_current_units_per_squad = g_current_units_per_squad + 1
+    end
     
     -- Add rule to check for idle raiders if not already added
     if Rule_Exists("Rule_CheckIdleRaiders") == 0 then
@@ -779,6 +913,13 @@ function Rule_SpawnWave()
         print("Analysis event triggered successfully")
     end
 
+    -- Increase wave diffulty after a wave is reached
+    if g_wave_count >= g_wave_increase_difficulty_needed and g_wave_increase_difficulty_done == 0 then
+        print("Increasing wave difficulty")
+        g_wave_increase_difficulty_done = 1
+        g_current_units_per_squad = g_current_units_per_squad + 1
+    end
+
     -- Possibility to add more banter from the raiders if other wave counters are sent.
     
     -- If carrier is active, stop spawning waves
@@ -788,85 +929,29 @@ function Rule_SpawnWave()
     end
 end
 
-function Rule_CheckPowerStation()
-    -- Create sobgroup for attackers if it doesn't exist yet
-    SobGroup_Create("Attackers_Of_PowerStation")
-    
-    -- Get current attackers of powerstation
-    SobGroup_Clear("Attackers_Of_PowerStation") -- Clear previous attackers first
-    SobGroup_GetAttackers("PlayersPowerStation", "Attackers_Of_PowerStation")
-    if SobGroup_Empty("Attackers_Of_PowerStation") == 0 then
-        print("Power station under attack -- Marking as untargeted")
-        SobGroup_MakeUntargeted("Attackers_Of_PowerStation")
-        print("Ordering attackers to attack mothership instead")
-        SobGroup_Attack(2, "Attackers_Of_PowerStation", Players_Mothership)
-        SobGroup_Clear("Attackers_Of_PowerStation")
-    end
-end
-
--- New function to check for idle raiders and redirect them
-function Rule_CheckIdleRaiders()
-    -- Check each raider wave group
-    for i = 1, 8 do
-        local wave_group = "RaiderWave_" .. i
-        -- If the group exists and is not empty
-        if SobGroup_Empty(wave_group) == 0 then
-            -- Check if they're idle (not attacking or moving)
-            if SobGroup_IsDoingAbility(wave_group, AB_Attack) == 0 and 
-               SobGroup_IsDoingAbility(wave_group, AB_Move) == 0 then
-                print("Raider group " .. wave_group .. " is idle, redirecting to attack mothership")
-                -- Fix: Add player ID parameter for SobGroup_Attack
-                SobGroup_Attack(2, wave_group, Players_Mothership)
-            end
-        end
-    end
-end
-
--- Make scouts return to mothership
-function Rule_ScoutsReturnHome()
-    -- Fill scout group with all scouts
-    SobGroup_FillShipsByType("ScoutGroup", 0, "Hgn_Scout")
-    -- Disable hyperspace for scouts
-    SobGroup_AbilityActivate("ScoutGroup", AB_Hyperspace, 0)
-    -- Form them into a wall formation
-    SobGroup_FormStrikeGroup("ScoutGroup", "wall")
-    -- Move back to mothership
-    SobGroup_MoveToSobGroup("ScoutGroup", Players_Mothership)
-    
-    Rule_Remove("Rule_ScoutsReturnHome")
-end
-
--- Function to modify wave difficulty
-function Increase_Wave_Difficulty()
-    g_current_units_per_squad = g_current_units_per_squad + 1
-end
-
--- Rule to trigger raider taunt after delay
-function Rule_PlayRaiderTaunt()
-    if Universe_GameTime() - g_now_time >= 5 then
-        Event_Start("speechevent_raiderstaunt")
-        Rule_Remove("Rule_PlayRaiderTaunt")
-    end
-end
-
--- Rule to trigger analysis during second wave (now handled in Rule_SpawnWave)
-function Rule_PlayRaiderAnalysis()
-    -- Remove this rule since we handle it in Rule_SpawnWave now
-    Rule_Remove("Rule_PlayRaiderAnalysis")
-end
-
-function Rule_TriggerRaiderEncounter()
-    -- Start timer for event
-    g_now_time = Universe_GameTime()  -- Reset time for the event
-    Rule_Add("Rule_WaitForRaiders")
-    
-    Rule_Remove("Rule_TriggerRaiderEncounter")
-end
-
 function Rule_WaitForRaiders()
-    if Universe_GameTime() - g_now_time >= 15 then
+    -- If it takes longer than 2 minutes, start the encounter event anyway
+    if Universe_GameTime() - g_now_time >= 120 then
+        -- SpawnedDueToTimeout should be set to 1
+        g_spawned_due_to_timeout = 1
+
         -- Start the encounter event
         Event_Start("intelevent_turanicraidersspotted")
+        -- Remove the pings
+        Ping_Remove(ping_scout_1_id)
+        Ping_Remove(ping_scout_2_id)
+        Ping_Remove(ping_scout_3_id)
+        Ping_Remove(ping_scout_4_id)
+
+        -- Start the wave system
+        Init_WaveSystem()
+
+        -- Remove all rules related to scouting
+        Rule_Remove("Rule_CheckScoutPoints")
+        Rule_Remove("Rule_CheckScoutDamage")
+        Rule_Remove("Rule_StartWavesWhenScoutsReady")
+
+        -- Remove the rule
         Rule_Remove("Rule_WaitForRaiders")
     end
 end
@@ -884,50 +969,6 @@ function Init_CarrierGroups()
     SobGroup_Create("Selum_Railguns")
 end
 
--- Check mothership health and trigger carrier arrival
-function Rule_CheckMothershipHealth()
-
-    if SobGroup_HealthPercentage(Players_Mothership) <= 0.5 and g_carrier_spawned == 0 then
-
-        SobGroup_SpawnNewShipInSobGroup(2, "Hgn_AssaultFrigate", "Selum_Escorts", "Selum_Escorts", "vol_SelumArrival")
-        SobGroup_SpawnNewShipInSobGroup(2, "Hgn_AssaultFrigate", "Selum_Escorts", "Selum_Escorts", "vol_SelumArrival")
-        
-        -- Make the carrier exit hyperspace
-        SobGroup_ExitHyperSpace("Selum_Carrier", "vol_SelumArrival")
-        
-
-        
-        -- Make carrier face the mothership by moving a tiny bit towards it
-        SobGroup_MoveToSobGroup("Selum_Carrier", Players_Mothership)
-        
-        -- Create subsystems immediately
-        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_C_Production_Fighter")
-        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Production_Corvette")
-        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Production_Frigate")
-        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Production_Destroyer")
-        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_C_Module_Defensefield")
-        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_C_Module_FireControl")
-        SobGroup_CreateSubSystem("Selum_Carrier", "Hgn_SC_Sensors_DetectHyperspace")
-
-        SobGroup_GuardSobGroup("Selum_Escorts", Players_Mothership)
-
-        
-        -- Combine into battle group
-        SobGroup_SobGroupAdd("Battlegroup_Selum", "Selum_Carrier")
-        SobGroup_SobGroupAdd("Battlegroup_Selum", "Selum_Escorts")
-        
-        -- Start as enemy for dramatic reveal
-        SobGroup_SetSwitchOwnerFlag("Battlegroup_Selum", 0)
-        FOW_RevealGroup("Battlegroup_Selum", 1)
-        
-        -- Stop any movement after orientation (so they don't actually move to the mothership)
-        Rule_AddInterval("Rule_StopSelumAfterOrienting", 5)
-        
-        -- Trigger reveal event
-        Rule_Add("Rule_TriggerSelumReveal")
-        g_carrier_spawned = 1
-    end
-end
 
 -- Add new function to stop movement after orientation
 function Rule_StopSelumAfterOrienting()
@@ -935,24 +976,12 @@ function Rule_StopSelumAfterOrienting()
     Rule_Remove("Rule_StopSelumAfterOrienting")
 end
 
-function Rule_KeepPowerStationAlive()
-    -- First check if the PowerStation exists and is not empty
-    if SobGroup_Empty("PlayersPowerStation") == 0 then
-        print("PlayersPowerStation exists and is not empty, keeping alive")
-        -- Keep the Power Station above 30% health
-        if SobGroup_HealthPercentage("PlayersPowerStation") <= 0.30 then
-            SobGroup_SetHealth("PlayersPowerStation", 0.35)
-        end
-    end
-end
 
 -- Handle carrier reinforcement logic
 function Rule_CarrierReinforcements()
     -- Debug
     print("DEBUG: g_carrier_spawned = " .. tostring(g_carrier_spawned))
     print("DEBUG: g_carrier_reinforcing = " .. tostring(g_carrier_reinforcing))
-
-
 
     if g_carrier_spawned == 1 and g_carrier_reinforcing == 1 then
         print("DEBUG: Entering CarrierReinforcements Function!")
@@ -1069,48 +1098,16 @@ function Rule_CheckHeavyInterceptorBuilt()
     end
 end
 
--- Add new event for low pilot warning
-Events.speechevent_lowpilotwarning = {
-    {
-        { "Sound_EnterIntelEvent()", "" },
-        { "Sound_SetMuteActor('Fleet')", "" },
-        HW2_SubTitleEvent(Actor_FleetCommand, "$60570", 5),  -- All available pilots have been deployed... Unable to maintain combat effectiveness.
-    },
-    { HW2_Wait(1) },
-    {
-        HW2_SubTitleEvent(Actor_FleetCommand, "$60571", 6),  -- Mayday. This is the Pride of Hiigara broadcasting on all open frequencies. We are under attack and unable to fight back! I repeat, mayday, mayday!
-    },
-    { HW2_Wait(1) },
-    {
-        HW2_SubTitleEvent(Actor_FleetIntel, "$60572", 5),  -- The signal is being degraded by nebula interference. Transmission range compromised.
-    },
-    -- Now the raiders respond mockingly again
-    { HW2_Wait(12) },
-    {
-        HW2_SubTitleEvent(12, "$60573", 5),  -- Aww, poor Hiigara. Guess you're gonna find out what it's like to lose your homeworld after all!
-    },
-    { HW2_Wait(12) },
-    {
-        HW2_SubTitleEvent(12, "$60574", 5),  -- I call dibs on the bald chick in the core! Bet she's got some fine Hiigaran ass!
-    },
-    { HW2_Wait(1) },
-    {
-        HW2_SubTitleEvent(12, "$60575", 5),  -- Hah, as if I'd let you anywhere near that booty!
-    },
-    {
-        { "Sound_ExitIntelEvent()", "" },
-        { "Sound_SetMuteActor('')", "" },
-    },
-}
-
 -- Add rule to check pilot count
 function Rule_CheckPilotCount()
     local playerIndex = Universe_CurrentPlayer()
     local playerIndexList = playerIndex + 1
     
-    if NeededPilots[playerIndexList] < 5 and g_pilot_warning_played ~= 1 then
+    if NeededPilots[playerIndexList] < 5 and g_pilot_warning_played == 0 then
         Event_Start("speechevent_lowpilotwarning")
         g_pilot_warning_played = 1  -- Only play once
         Rule_Remove("Rule_CheckPilotCount")
     end
 end
+
+
