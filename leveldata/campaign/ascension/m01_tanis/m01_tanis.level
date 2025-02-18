@@ -272,6 +272,157 @@ function DetermChunk()
     -- World Bounds
     setWorldBoundsInner({ 0, 0, 0 }, { 50724.5, 50724.5, 50724.5 })
 
+
+
+  addSquadron("meg_veildebris_chunk_lighthouse_nobuild", "meg_veildebris_chunk_lighthouse_nobuild", {-23000, -10000, -6500}, -1, {20, -100, 3}, 0, 0)    
+  addSquadron("meg_veildebris_chunk1", "meg_veildebris_chunk1", {-18500, -8050, -7400}, -1, {22, -118, -24}, 0, 0)    
+  addSquadron("meg_veildebris_chunk2", "meg_veildebris_chunk2", {-22150, -8500, -5600}, -1, {-30, 99, -12}, 0, 0)    
+  addSquadron("meg_veildebris_chunk3", "meg_veildebris_chunk3", {-14000, -7300, -6500}, -1, {15, -110, 8}, 0, 0)    
+  addSquadron("meg_veildebris_chunk4", "meg_veildebris_chunk4", {-10250, -6000, -3300}, -1, {-8, 75, 13}, 0, 0)    
+  addSquadron("meg_veildebris_chunk5", "meg_veildebris_chunk5", {-8050, -4650, -6200}, -1, {42, -100, -15}, 0, 0)    
+  addSquadron("meg_veildebris_flake1", "meg_veildebris_flake1", {-17050, -8650, -6900}, -1, {-115, 25, -60}, 0, 0)    
+  addSquadron("meg_veildebris_flake2", "meg_veildebris_flake2", {-22050, -7550, -6000}, -1, {80, 55, 60}, 0, 0)    
+  addSquadron("meg_veildebris_flake3", "meg_veildebris_flake3", {-18500, -6400, -5000}, -1, {-125, -35, -160}, 0, 0)    
+  addSquadron("meg_veildebris_flake4", "meg_veildebris_flake5", {-16150, -6500, -6800}, -1, {-40, 155, 120}, 0, 0)    
+  addSquadron("meg_veildebris_flake5", "meg_veildebris_flake4", {-9000, -4500, -3900}, -1, {99, -135, 55}, 0, 0)    
+  addSquadron("meg_veildebris_flake6", "meg_veildebris_flake6", {-3500, -5500, -3000}, -1, {-115, 25, -60}, 0, 0)    
+  addSquadron("meg_veildebris_flake7", "meg_veildebris_flake7", {-20500, -9000, -6000}, -1, {80, 55, 60}, 0, 0)    
+  addSquadron("meg_veildebris_flake8", "meg_veildebris_flake8", {-11500, -4500, -2500}, -1, {-125, -35, -160}, 0, 0)    
+  addSquadron("meg_veildebris_flake9", "meg_veildebris_flake9", {-10850, -3000, -2800}, -1, {-40, 155, 120}, 0, 0)    
+  addSquadron("meg_veildebris_flake10", "meg_veildebris_flake10", {-4500, -1500, -1800}, -1, {99, -135, 55}, 0, 0)    
+  addSquadron("meg_veildebris_bit1", "meg_veildebris_bit1", {-16500, -2000, -5900}, -1, {99, -15, 27}, 0, 0)    
+  addSquadron("meg_veildebris_bit2", "meg_veildebris_bit2", {-10500, -5000, -900}, -1, {90, -95, 15}, 0, 0)    
+  addSquadron("meg_veildebris_bit3", "meg_veildebris_bit3", {-12500, -1000, -7100}, -1, {20, 35, 32}, 0, 0)    
+  addSquadron("meg_veildebris_bit4", "meg_veildebris_bit4", {-8500, -4000, -3000}, -1, {43, -105, 31}, 0, 0)    
+  addSquadron("meg_veildebris_bit5", "meg_veildebris_bit5", {-19500, -3000, -2900}, -1, {102, 125, 64}, 0, 0)    
+  addSquadron("meg_veildebris_bit6", "meg_veildebris_bit6", {-9500, -5500, -2000}, -1, {36, 85, 29}, 0, 0)    
+  addSquadron("meg_veildebris_bit7", "meg_veildebris_bit7", {-7500, -2800, -6400}, -1, {55, 45, 18}, 0, 0)    
+  addSquadron("meg_veildebris_bit8", "meg_veildebris_bit8", {-8500, -4200, -2180}, -1, {40, -35, 76}, 0, 0)    
+  addSquadron("meg_veildebris_bit9", "meg_veildebris_bit9", {-17500, -6000, -2900}, -1, {17, -35, 14}, 0, 0)    
+  addSquadron("meg_veildebris_bit10", "meg_veildebris_bit10", {3500, 2000, 2900}, -1, {99, -125, 55}, 0, 0)    
+  addSquadron("meg_veildebris_bit11", "meg_veildebris_bit11", {14500, 3000, 900}, -1, {9, -16, 42}, 0, 0)    
+  addSquadron("meg_veildebris_bit12", "meg_veildebris_bit12", {17500, 5000, 8900}, -1, {-99, 35, 44}, 0, 0)    
+  addSquadron("meg_veildebris_bit13", "meg_veildebris_bit13", {20500, 2000, 5000}, -1, {29, 15, -46}, 0, 0)    
+  addSquadron("meg_veildebris_bit14", "meg_veildebris_bit14", {0, 0, 5000}, -1, {39, -135, -88}, 0, 0)    
+  addSquadron("meg_veildebris_bit15", "meg_veildebris_bit15", {-20, 500, -6000}, -1, {-79, 135, 30}, 0, 0)    
+  
+  addSquadron("meg_foundrydebris_chunk1", "meg_foundrydebris_chunk1", {-4000, -1200, -1000}, -1, {20, -95, 12}, 0, 0)    
+  addSquadron("meg_foundrydebris_chunk2", "meg_foundrydebris_chunk2", {3000, 1000, 5000}, -1, {40, 55, 20}, 0, 0)    
+  addSquadron("meg_foundrydebris_chunk3", "meg_foundrydebris_chunk3", {6500, 1500, 1000}, -1, {-30, -65, -60}, 0, 0)    
+  addSquadron("meg_foundrydebris_chunk4", "meg_foundrydebris_chunk4", {8500, 2000, 8000}, -1, {-15, 95, -10}, 0, 0)    
+  addSquadron("meg_foundrydebris_flake1", "meg_foundrydebris_flake1", {10350, 6000, 6300}, -1, {-45, -95, 30}, 0, 0)    
+  addSquadron("meg_foundrydebris_flake2", "meg_foundrydebris_flake2", {14500, 5000, 3900}, -1, {-80, 75, -60}, 0, 0)    
+  addSquadron("meg_foundrydebris_flake3", "meg_foundrydebris_flake3", {17000, 5500, 5000}, -1, {-15, 65, -10}, 0, 0)    
+  addSquadron("meg_foundrydebris_flake4", "meg_foundrydebris_flake4", {19500, 6100, 6900}, -1, {25, 55, 20}, 0, 0)    
+
+
+    addSquadron("Meg_FoundryDebris_Chunk13", "Meg_FoundryDebris_Chunk4", 
+    { -16816, 20, 6141, }, -1, 
+    { -3.713, -10.928, 21.123, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake4", "Meg_FoundryDebris_Flake1", 
+    { -22273, -2229, 1553, }, -1, 
+    { 90.126, 43.764, 90.087, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake10", "Meg_FoundryDebris_Flake2", 
+    { -15728, 476, 9367, }, -1, 
+    { -71.084, -31.068, 56.414, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake11", "Meg_FoundryDebris_Flake3", 
+    { -15178, 3865, -12767, }, -1, 
+    { 34.841, 4.715, -76.068, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake14", "Meg_FoundryDebris_Flake3", 
+    { -20506, -1698, 3510, }, -1, 
+    { 56.808, -14.376, -80.775, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake15", "Meg_FoundryDebris_Flake3", 
+    { -15394, 6070, -16324, }, -1, 
+    { 74.196, 0, -49.454, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake17", "Meg_FoundryDebris_Flake4", 
+    { -14237, 214, -8771, }, -1, 
+    { 49.226, -2.189, -88.114, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake18", "Meg_FoundryDebris_Flake4", 
+    { -19158, -624, 4509, }, -1, 
+    { 30.971, 160.774, 61.248, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake2", "Meg_FoundryDebris_Flake1", 
+    { -18559, -383, -2544, }, -1, 
+    { -43.746, 0, 0, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake3", "Meg_FoundryDebris_Flake1", 
+    { -17341, -383, -106, }, -1, 
+    { -15.724, -11.264, -70.111, }, 0, 0)
+    addSquadron("Meg_FoundryDebris_Flake7", "Meg_FoundryDebris_Flake2", 
+    { -16154, 2330, -8449, }, -1, 
+    { -42.475, -37.956, 17.974, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit3", "Meg_VeilDebris_Bit3", 
+    { -15647, 2559, -9375, }, -1, 
+    { 65, 45, 0, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit1", "Meg_VeilDebris_Bit1", 
+    { -17734, 155, 5401, }, -1, 
+    { -14, 54, 11, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit10", "Meg_VeilDebris_Bit10", 
+    { -21359, -631, 0, }, -1, 
+    { -6, -66, 21, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit11", "Meg_VeilDebris_Bit11", 
+    { -19863, -945, 2505, }, -1, 
+    { 109, 65, 117, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit13", "Meg_VeilDebris_Bit13", 
+    { -16454, 727, 7850, }, -1, 
+    { 31, 46, 82, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit14", "Meg_VeilDebris_Bit14", 
+    { -18387, -249, -1266, }, -1, 
+    { 25, 54, -64, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit15", "Meg_VeilDebris_Bit15", 
+    { -16916, 1208, -1693, }, -1, 
+    { 56, 204, 14, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit2", "Meg_VeilDebris_Bit2", 
+    { -14790, 762, -7936, }, -1, 
+    { 14, -66, -19, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit16", "Meg_VeilDebris_Bit3", 
+    { -14790, 2972, -11582, }, -1, 
+    { 31, 5, 3, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit4", "Meg_VeilDebris_Bit4", 
+    { -14790, 2997, -13211, }, -1, 
+    { 44, 46, 71, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit5", "Meg_VeilDebris_Bit5", 
+    { -14790, 4665, -14648, }, -1, 
+    { -108, 54, 93, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit6", "Meg_VeilDebris_Bit6", 
+    { -17168, 1905, -10502, }, -1, 
+    { 143, -66, 3, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit8", "Meg_VeilDebris_Bit8", 
+    { -14790, 2245, -7693, }, -1, 
+    { 42, -75, 143, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit9", "Meg_VeilDebris_Bit9", 
+    { -14790, 1606, 11798, }, -1, 
+    { 14, 65, 143, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit17", "Meg_VeilDebris_Bit9", 
+    { -13343, 2270, 12466, }, -1, 
+    { -78, 46, 14, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit18", "Meg_VeilDebris_Bit8", 
+    { 20087, 3394, -8811, }, -1, 
+    { -33, 46, 14, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit19", "Meg_VeilDebris_Bit6", 
+    { 21174, 3414, -9742, }, -1, 
+    { 137, 54, 143, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit20", "Meg_VeilDebris_Bit5", 
+    { 17554, 1108, 13135, }, -1, 
+    { 32, -66, 15, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit21", "Meg_VeilDebris_Bit4", 
+    { 14842, 1174, 6207, }, -1, 
+    { 13, -66, -6, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit22", "Meg_VeilDebris_Bit3", 
+    { 16470, 1236, 3515, }, -1, 
+    { 83, 65, -179, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit23", "Meg_VeilDebris_Bit2", 
+    { -7181, 2223, -23089, }, -1, 
+    { 27.142, 13.4, 42.796, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit24", "Meg_VeilDebris_Bit15", 
+    { -5624, 2103, -24409, }, -1, 
+    { -150.876, -11.666, 23.368, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit25", "Meg_VeilDebris_Bit14", 
+    { 17966, 2778, -16167, }, -1, 
+    { 0, 1, 38, }, 0, 0)
+    addSquadron("Meg_VeilDebris_Bit26", "Meg_VeilDebris_Bit13", 
+    { 15195, 2414, -19828, }, -1, 
+    { 83, 32, 14, }, 0, 0)
+
+
 end
 
 
